@@ -1,0 +1,11 @@
+*.pyc
+*.smc
+ff6*.txt
+build/*
+dist/*
+build.bat
+savedflags.txt
+.pylintrc
+custom.zip
+.vscode/*
+.vs/*
