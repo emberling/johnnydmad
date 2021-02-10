@@ -4,7 +4,7 @@ This is basically a testbed for a full-ish rewrite of the Beyond Chaos music ran
 - custom sample import from MML
 - only the samples used by a seed are inserted
 - randomized inn and wipe music
-- music player (courtesy of madsiur, tsushiy, and Lenophis)
+- ingame music player (courtesy of madsiur, tsushiy, and Lenophis)
 
 This update comes alongside a revamp of existing tracks (including the original FF6 tracks) to use new samples.
 
