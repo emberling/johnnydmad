@@ -96,9 +96,9 @@ ds4_lyll:       chocobo
 fz_white1:      chocobo
 
 # 14: boss,           battle
-ff6_boss:       boss
-ff5_boss:       boss
-totr_sboss:     boss
+ff6_boss:       boss, bat4, I50, G99
+ff5_boss:       boss, atma, I60
+totr_sboss:     boss, atma, bat4, I55, G80
 
 # 15: johnny,         default
 ff6_johnny:     johnny
@@ -129,7 +129,7 @@ ff5_book:       empire
 ff6_empire:     empire
 
 # 1C: troops,         default
-# ff6_troops:     troops
+ff6_troops:     troops
 ff5_bal:        troops
 
 # 1D: martiallaw,     default
@@ -146,20 +146,20 @@ ff6_espers:     espers
 lal_labyrinth:  espers
 
 # 22: grandfinale,    default
-ff9_battle:     grandfinale
-ff9_hunt:       grandfinale
+ff9_battle:     grandfinale, battle, bat2
+ff9_hunt:       grandfinale, bat3, bat4, mboss, I25, G75
 
 # 23: mountain,       default
 ff6_mountain:   mountain
 ff5_mountain:   mountain
 
 # 24: battle,         battle
-ct_battle:      battle
-ff1_battle:     battle
+ct_battle:      battle, G5
+ff1_battle:     battle, G10
 
 # 28: serpent,        default
-lu2_savior:     serpent
-sd2_fortress:   serpent
+lu2_savior:     serpent, mboss, bat3, bat4, I30, G95
+sd2_fortress:   serpent, bat3, G90
 
 # 29: zozo,           default
 cc_dragonia:    zozo
@@ -187,22 +187,21 @@ ff3_darkworld:  moogles
 
 # 32: unforgiven,     default
 ff6_unforgiven: unforgiven
-bof2_battle2:   unforgiven
+bof2_battle2:   unforgiven, bat2, bat3, mboss, I35, G65
 
 # 33: atma,           battle
-ff8_laguna:     atma
-ffmq_final:     floating
+ff8_laguna:     atma, mboss, bat2, bat3, I50, G40
 
 # 34: town_ruin,      default
 ff7_sadbar:     town_ruin
 
 # 35: blackjack,      default
 ff7_bronco:     blackjack
-lal_boss:       blackjack
+lal_boss:       blackjack, mboss, bat4, I30
 
 # 36: catastrophe,    default
 ff6_catastrophe: catastrophe
-ct_tension:     catastrophe
+ct_tension:     catastrophe, mboss, I15
     
 # 37: owzer,          default
 ct_sewer:       owzer
@@ -218,6 +217,7 @@ met3_plants:    magitek
 
 # 4B: floating,       default
 ff14_azyslla:   floating
+ffmq_final:     floating, dmad5, I90
 
 # 4C: falcon,         default
 ff6_falcon:     falcon
@@ -225,7 +225,7 @@ fz_silence:     falcon
 
 # 4D: fanatics,       default
 ff6_fanatics:   fanatics
-zaol_temple:    fanatics
+zaol_temple:    fanatics, mboss, I30
     
 # 4E: ktower,         default
 ff6_ktower:     ktower
@@ -235,8 +235,8 @@ ct_undersea:    ktower
 ff8_world:      ruin
 
 # 50: dmad5,          battle
-ff7_rebirth:    dmad5
-ct_final:       dmad5
+ff7_rebirth:    dmad5, atma, I90
+ct_final:       dmad5, I90
 
 # 51: forest,         ext
 ff6_forest:     forest
@@ -255,11 +255,10 @@ ff1_volcano_psx: ancient
 
 # 58: phoenix,        ext
 ff12_crystal:   phoenix
-gd3_moai:       phoenix
+gd3_moai:       phoenix, bat4
 
 # 59: gate,           ext
 ff1_volcano:    gate
-totr_battle:    gate
 
 # 5A: mount2,         ext
 crys_mountain:  mount2
@@ -275,7 +274,9 @@ ff5_village:    village
     
 # 5D: assault,        ext
 doom_e1m1:      assault
-ff14_battlem:   assault
+
+totr_battle:    bat2, bat3
+ff14_battlem:   bat2, bat3, bat4
 
 [victory]
 ff4_fanfare: fanfare
@@ -294,3 +295,9 @@ ff6_death: death
 [tierboss]
 eo3_waves:      dmad123
 
+[battleIntensity]
+ff9_battle: E35
+totr_battle: E40
+ff14_battlem: E50
+gd3_moai: E60
+lal_boss: E90

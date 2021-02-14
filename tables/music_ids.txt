@@ -18,7 +18,7 @@
 11: daryl,          default
 12: celes,          default
 13: chocobo,        default
-14: boss,           battle
+14: boss,           boss
 15: johnny,         default
 16: kefka,          default
 17: narshe,         default
@@ -49,7 +49,7 @@
 30: umaro,          default
 31: moogles,        default
 32: unforgiven,     default
-33: atma,           battle
+33: atma,           boss
 34: town_ruin,      default
 35: blackjack,      default
 36: catastrophe,    default
@@ -78,7 +78,7 @@
 4D: fanatics,       default
 4E: ktower,         default
 4F: ruin,           default
-50: dmad5,          battle
+50: dmad5,          boss
 51: forest,         ext
 52: dmad4,          fixed
 53: ending1,        fixed
@@ -92,3 +92,7 @@
 5B: engine,         ext
 5C: village,        ext
 5D: assault,        ext
+5E: bat2,           battle
+5F: bat3,           battle
+60: bat4,           battle
+61: mboss,          boss

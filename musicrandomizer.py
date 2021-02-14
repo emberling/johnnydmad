@@ -1,4 +1,4 @@
-import os, re, configparser, random
+import os, re, configparser, random, copy
 from mml2mfvi import mml_to_akao, get_variant_list
 from insertmfvi import insertmfvi, byte_insert, int_insert
 
@@ -54,6 +54,7 @@ class Playlist:
         pool = [p for p in pool if song_usage_id(p) not in used_song_names]
         if len(pool) < 1:
             print(f"info: pool for {name} is empty, rerolling playlist")
+            input() #debug, #TODO remove
             return False
         song = random.choice(pool)
         
@@ -137,10 +138,7 @@ def song_variant_id(name, idx):
 def process_music(inrom, meta={}, f_chaos=False, f_battle=True, opera=None, eventmodes=""):
     global used_song_names
     global used_sample_ids
-    
-
-    music_pools = {}
-    
+      
     # -- load sample configs for normal/legacy
     instmap, legacy_instmap = {}, {}
     sample_parser = configparser.ConfigParser()
@@ -168,6 +166,7 @@ def process_music(inrom, meta={}, f_chaos=False, f_battle=True, opera=None, even
         processing_failed = True
         return 0
         
+    music_pools, pool_by_slot = {}, {}
     for line in music_id_datamap:
         # trim comments
         line = line.split('#')[0]
@@ -189,68 +188,86 @@ def process_music(inrom, meta={}, f_chaos=False, f_battle=True, opera=None, even
         song_name_ids[name] = id
         if pool not in music_pools:
             music_pools[pool] = []
+        if pool in ["ext"]:
+            pool = "default"
         music_pools[pool].append(name)
+        pool_by_slot[name] = pool
 
     # -- load random choices configuration for pools
-    music_choice_map = configparser.ConfigParser()
-    music_choice_map.read(os.path.join('custom','music.txt'))
-    
+    music_choice_ini = configparser.ConfigParser()
+    music_choice_ini.read(os.path.join('custom','music.txt'))
+    music_choice_map = {}
+    for section in music_choice_ini:
+        for k, v in music_choice_ini[section].items():
+            if k in music_choice_map:
+                music_choice_map[k] += f", {v}"
+            else:
+                music_choice_map[k] = v
+        
     song_pools = {}
     intensitytable = {}
-    for pool in music_pools:
-        if pool in ["battle", "ext", "fixed", "opera"]:
-            continue
-        for song in music_choice_map.items(pool):
-            valid_slots = [s.strip() for s in song[1].split(',')]
-            intense, epic = 0,0
-            #holiday stuff
-            event_mults = {}
-            for s in valid_slots:
-                if not s: continue
-                if s[0] in eventmodes and ':' not in s:
-                    try:
-                        event_mults[s[0]] = int(s[1:])
-                    except ValueError:
-                        print(f"WARNING: in music.txt: could not interpret '{s}'")
-            static_mult = 1
-            for k, v in event_mults.items():
-                static_mult *= v
-            #for chaos, we add left side as an option for all entries
-            if f_chaos:
-                for k, v in music_choice_map.items(pool):
-                    if k not in song_pools:
-                        song_pools[k] = []
-                    song_pools[k].extend([song[0]]*static_mult)
-            #parse right side
-            for s in valid_slots:
-                if not s: continue
-                #special entries: holiday multipliers, battle scaling
-                if ':' in s and s[0] in eventmodes:
-                    s = s.split(':', 1)[1]
-                if s[0] == "I":
-                    intense = int(s[1:])
-                elif s[0] == "E" or s[0] == "G":
-                    epic = int(s[1:])
-                #for non chaos, we add left side as an option for entries listed on right side
-                elif not f_chaos:
-                    if "*" in s:
-                        slot = s.split('*')
-                        mult = int(slot[1])
-                        slot = slot[0]
-                    else:
-                        slot = s
-                        mult = 1
+    intensitytable["battle"] = {}
+    intensitytable["boss"] = {}
+    for song in music_choice_map.items():
+        valid_slots = [s.strip() for s in song[1].split(',')]
+        intense, epic = 0,0
+        all_pools_of_song = set()
+        #holiday stuff
+        event_mults = {}
+        for s in valid_slots:
+            if not s: continue
+            if s[0] in eventmodes and ':' not in s:
+                try:
+                    event_mults[s[0]] = int(s[1:])
+                except ValueError:
+                    print(f"WARNING: in music.txt: could not interpret '{s}'")
+        static_mult = 1
+        for k, v in event_mults.items():
+            static_mult *= v
+        #parse right side
+        for s in valid_slots:
+            if not s: continue
+            #special entries: holiday multipliers, battle scaling
+            if ':' in s and s[0] in eventmodes:
+                s = s.split(':', 1)[1]
+            if s[0] == "I":
+                intense = int(s[1:])
+            elif s[0] == "E" or s[0] == "G":
+                epic = int(s[1:])
+            #for all modes, link left side to the music_pool containing each right side entry
+            #for non chaos, we add left side as an option for entries listed on right side
+            else:
+                if "*" in s:
+                    slot = s.split('*')
+                    mult = int(slot[1])
+                    slot = slot[0]
+                else:
+                    slot = s
+                    mult = 1
+                pool = pool_by_slot[slot]
+                all_pools_of_song.add(pool)
+                if slot not in song_pools:
+                    song_pools[slot] = []
+                if not f_chaos:
+                    song_pools[slot].extend([song[0]]*mult*static_mult)
+        #for chaos, we add left side as an option for all entries
+        if f_chaos:
+            for pool in all_pools_of_song:
+                for slot in music_pools[pool]:
                     if slot not in song_pools:
                         song_pools[slot] = []
-                    song_pools[slot].extend([song[0]]*mult*static_mult)
-            #battle stuffs part2
-            intense = max(0, min(intense, 99))
-            epic = max(0, min(epic, 99))
-            if (intense or epic):
-                intensitytable[song[0]] = (intense, epic)
+                    song_pools[slot].extend([song[0]]*static_mult)
+        #battle stuffs part2
+        intense = max(0, min(intense, 99))
+        epic = max(0, min(epic, 99))
+        if "boss" in all_pools_of_song:
+            intensitytable["boss"][song[0]] = intense
+        if "battle" in all_pools_of_song:
+            intensitytable["battle"][song[0]] = epic
     
     # -- retry loop
     processing_complete = False
+    attempts = 0
     while not processing_complete:
         processing_failed = False
 
@@ -261,10 +278,54 @@ def process_music(inrom, meta={}, f_chaos=False, f_battle=True, opera=None, even
                     
         windy_intro = random.choice([True, False, False])
         
+        if attempts >= 1000:
+            print("Music randomization failed after 1000 attempts. Your custom music configuration files and/or filters may be too restrictive.")
+            return inrom
+        attempts += 1
+        
         # -- process special cases (battle, opera, tierboss) wrt. choosing tracks
         
+        progression = {}
+        already_added = set()
+        progression['battle'] = ["battle", "bat2", "bat3", "bat4"]
+        progression['boss'] = ["mboss", "boss", "atma", "dmad5"]
+        for cat, order in progression.items():
+            prog_attempts = 0
+            while prog_attempts < 1000:
+                prog_choices = []
+                prog_level = 0
+                temp_used_song_names = copy.copy(used_song_names)
+                for track in order:
+                    # get song options for tier (exclude by used and under level)
+                    if track not in song_pools:
+                        prog_attempts = 1000
+                        break
+                    track_pool = [s for s in song_pools[track] if s not in temp_used_song_names and s not in already_added and intensitytable[cat][s] >= prog_level]
+                    # choose one, if no options retry
+                    if not track_pool:
+                        prog_attempts += 1
+                        continue
+                    choice = random.choice(track_pool)
+                    prog_level = intensitytable[cat][choice]
+                    prog_choices.append(choice)
+                    temp_used_song_names.add(choice)
+                    print(f"prog: {track} - chose {choice} at intensity {prog_level} from pool {track_pool}")
+                if len(prog_choices) == len(order):
+                    break
+            # add to playlist
+            for i, choice in enumerate(prog_choices):
+                ok = playlist.add_random(progression[cat][i], [choice])
+                if not ok:
+                    processing_failed = True
+                    break
+                already_added.add(progression[cat][i])
+            if processing_failed:
+                break
+        if processing_failed: 
+            continue
+
         # -- choose tracklist
-        for pool, tracks in music_pools.items():
+        for pool, tracks in sorted(music_pools.items()):
             # fixed pool - does not randomize, loads from data/music/ only
             # TODO - opera is here for now, eventually it should be here only if not using alasdraco
             if pool == "fixed" or pool == "opera":
@@ -272,11 +333,15 @@ def process_music(inrom, meta={}, f_chaos=False, f_battle=True, opera=None, even
                     playlist.add_fixed(track)
                 continue
             # TODO - battle and ext for now these just auto merge with default
-            elif pool == "battle" or pool == "ext":
+            elif pool == "ext":
                 continue
             elif pool == "default":
-                tracks = tracks + music_pools["battle"] + music_pools["ext"]
+                tracks = tracks + music_pools["ext"]
+            if tracks: #make deterministic based on seed, don't let any undefined order (from dict) sneak in
+                random.shuffle(sorted(tracks))
             for track in tracks:
+                if track in already_added:
+                    continue
                 if track not in song_pools:
                     song_pools[track] = []
                 ok = playlist.add_random(track, song_pools[track])
@@ -353,7 +418,6 @@ def process_music(inrom, meta={}, f_chaos=False, f_battle=True, opera=None, even
                 n = os.path.basename(pl_entry.file).split('.')[0].split('_')[0].upper() + " "
                 n += title
                 n = n[:18]
-                print(f"id {k} @ {pl_name} -> name {n}")
                 meta[k] = n
             #metadata[k] = TrackMetadata(title, album, composer, arranged, menuname)
 
@@ -364,6 +428,7 @@ def process_music(inrom, meta={}, f_chaos=False, f_battle=True, opera=None, even
         #    (will need changes to insertmfvi to get info)
         #    retry ('continue') if bad
         #TODO
+        
         processing_complete = True
         
         # -- we won i think?

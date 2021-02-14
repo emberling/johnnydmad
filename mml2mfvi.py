@@ -132,7 +132,6 @@ def get_brr_imports(mml, variant=None):
     except AttributeError: 
         pass
     for line in mml:
-        if "BRR" in line: print(line)
         if line.upper().startswith("#BRR") and len(line) > 4:
             line = line[4:]
             for c in vtokens:
@@ -218,23 +217,23 @@ def parse_brr_tuning(pitchtext):
             elif mod == "-":
                 semitones += 1
             semitones -= (cents/100)
-            print(f"DEBUG: tuning '{pitchtext}' -> {semitones} st")
+            #print(f"DEBUG: tuning '{pitchtext}' -> {semitones} st")
         if semitones is None and len(pitchtext):
             if pitchtext[0] in ["+", "-"]:
                 semitones = float(pitchtext)
         if semitones is not None:
             pitchscale = 10 ** ((semitones / 12) * math.log(2, 10))
-            print(f"DEBUG: pitch scale {pitchscale}")
+            #print(f"DEBUG: pitch scale {pitchscale}")
         elif len(pitchtext) and pitchtext[0] == "*":
             pitchscale = float(pitchtext[1:])  
         if pitchscale is not None:
             max_pitchscale = 1.5 - (1 / 65536)
             while pitchscale < 0.5:
                 pitchscale *= 2
-                print(f"DEBUG: pitch scale too low, raising octave")
+                #print(f"DEBUG: pitch scale too low, raising octave")
             while pitchscale > max_pitchscale:
                 pitchscale /= 2
-                print(f"DEBUG: pitch scale too high, lowering octave")
+                #print(f"DEBUG: pitch scale too high, lowering octave")
             pitchval = int((pitchscale * 65536) - 65536)
             bytepitch = pitchval.to_bytes(2, "big", signed=True)
         else:

@@ -9,7 +9,7 @@ def johnnydmad():
         inrom = f.read()
         
     metadata = {}
-    outrom = process_music(inrom, meta=metadata)
+    outrom = process_music(inrom, meta=metadata, f_chaos = False)
     outrom = process_map_music(outrom)
     outrom = add_music_player(outrom, metadata)
     

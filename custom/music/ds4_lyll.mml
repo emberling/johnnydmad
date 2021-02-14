@@ -5,7 +5,7 @@
 
 {--------------- Instruments ---------------}
 #WAVE 0x20,  0xA5         {Flute}
-#WAVE 0x21,  0x72         {Violin}
+#WAVE 0x21,  0x70         {Violin}
 #WAVE 0x22,  0xc3         {Choir}
 #WAVE 0x23,  0x23         {Xylophone}
 #WAVE 0x24,  0x56         {Bass}
@@ -54,7 +54,7 @@ v64'flute+o1'
 {--------------- Track 2 ---------------}
 v24p80'flute'l8
 [2aa<d>f16<c16^^^r>]
-$'violin+o1'64 
+$'violin+o1'v64 
 d.>g.<dc.>f.<c
 >b-.e-.b-<c.>f.r<
 d.>g.<dc.>f.<c

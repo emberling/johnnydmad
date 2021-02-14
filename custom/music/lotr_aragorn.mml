@@ -1,3 +1,7 @@
+#TITLE Aragorn BGM
+#ALBUM The Two Towers (1992 DOS)
+#COMPOSER Charles Deenen
+#ARRANGED emberling
 
 #WAVE 0x20 0x66 strings
 #WAVE 0x21 0x85 horn

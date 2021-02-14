@@ -4,7 +4,7 @@ from copy import copy
 import mml2mfvi
 
 DEBUG = False
-VERBOSE = True
+VERBOSE = False
 
 def clean_end():
     print("Processing ended.")
@@ -162,7 +162,7 @@ class Sequence():
                         self.variant = None
                 self.imports = mml2mfvi.get_brr_imports(self.mml, variant=v)
                 if self.imports:
-                    print(f"DEBUG: got imports {self.imports} for {self.filename}")
+                    ifprint(f"DEBUG: got imports {self.imports} for {self.filename}", DEBUG)
                 self.sequence, self.inst = mml2mfvi.mml_to_akao(self.mml, self.filename, variant=v)
                 self.edl = mml2mfvi.get_echo_delay(self.mml, variant=v)
                 if self.edl is None:
