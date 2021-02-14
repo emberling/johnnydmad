@@ -436,6 +436,91 @@ def process_music(inrom, meta={}, f_chaos=False, f_battle=True, opera=None, even
         
 #########################################
 
+def process_formation_music_by_table(data, form_music_overrides={}):
+    
+    o_forms = 0xF6200
+    o_formaux = 0xF5900
+    o_monsters = 0xF0000
+    o_epacks = 0xF5000
+    
+    with open(os.path.join("tables","formationmusic.txt"), "r") as f:
+        tbl = f.readlines()
+    
+    table = []
+    for line in tbl:
+        line = [s.strip() for s in line.split()]
+        if len(line) == 2: line.append(None)
+        if len(line) == 3: table.append(line)
+    
+    event_formations = set()
+    for i in range(0,256):
+        loc = o_epacks + i*4
+        event_formations.add(int.from_bytes(data[loc:loc+2], "little"))
+        event_formations.add(int.from_bytes(data[loc+2:loc+4], "little"))
+    
+    for line in table:
+        #table format: [formation id] [music bitfield] [force music on/off]
+        #value of 'c' forces music on if:
+        #   unrunnable enemy in formation
+        #   hard to run enemy in formation
+        #   "attack first" enemy in formation
+        #   formation is present in packs > 255 (event battles)
+        try:
+            fid = int(line[0])
+        except ValueError:
+            continue
+        
+        # account for random music settings in other parts of the randomizer
+        # ancient cave bosses can be set to 5, 2, or 4
+        # superbosses (formations_hidden) can be set to anything 1-5
+        # I don't recommend using random tierboss in this way; it should only be used on the tierboss itself. So we need to adjust these settings
+        # 1 (boss) remains 1
+        # 2 (superboss) changes to 6 (battle4)
+        # 3 (savethem) changes to 5 (battle3)
+        # 4 (returners) changes to 7 (event)
+        # 5 (dmad1) changes to 2 (superboss)
+        force_music = False
+        if fid in form_music_overrides:
+            mutation_table = [0, 1, 6, 5, 7, 2, 0, 0]
+            line[1] = mutation_table[form_music_overrides[fid]]
+            force_music = True
+            
+        try:
+            mbf = int(line[1]) << 3
+        except ValueError:
+            mbf = 0
+        pos = o_formaux + fid*4
+        dat = bytearray(data[pos:pos+4])
+        
+        dat[3] = (dat[3] & 0b11000111) | mbf
+        if line[2] == "0":
+            dat[1] = dat[1] | 0b00000010
+            dat[3] = dat[3] | 0b10000000
+        elif line[2] == "c":
+            if fid in event_formations:
+                force_music = True
+            else:
+                for m in range(0,6):
+                    fpos = o_forms + fid*15
+                    if (data[fpos+1] >> m) & 1:
+                        mid = data[fpos+2+m] + (((data[fpos+14] >> m) & 1) << 8)
+                        mb = data[o_monsters+mid*32+19]
+                        if mb & 0b00001011:
+                            force_music = True
+                            break
+        if line[2] == "1" or force_music:
+            dat[1] = dat[1] & 0b11111101
+            dat[3] = dat[3] & 0b01111111
+        data = byte_insert(data, pos, dat)
+    
+        #update relevant tables in program code:
+        # IDs of songs that pause/resume current song when played: change to battle1-4 and mboss
+        data = byte_insert(data, 0x506F9, b"\x24\x5E\x5F\x60\x61")
+        # formation battle music table: battle, boss1, boss2, battle2, battle3, dmad123, battle4, mboss
+        data = byte_insert(data, 0x2BF3B, b"\x24\x14\x33\x5E\x5F\x3B\x60\x61")
+        
+    return data
+    
 def process_map_music(data):
     #find range of valid track #s
     songcount_byte = 0x53C5E

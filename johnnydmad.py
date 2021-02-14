@@ -1,4 +1,4 @@
-from musicrandomizer import process_music, process_map_music
+from musicrandomizer import process_music, process_map_music, process_formation_music_by_table
 from insertmfvi import byte_insert, int_insert
 
 def johnnydmad():
@@ -10,6 +10,7 @@ def johnnydmad():
         
     metadata = {}
     outrom = process_music(inrom, meta=metadata, f_chaos = False)
+    outrom = process_formation_music_by_table(outrom)
     outrom = process_map_music(outrom)
     outrom = add_music_player(outrom, metadata)
     

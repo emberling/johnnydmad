@@ -93,7 +93,7 @@
 
 # VOX                                                            -------------
 73: 73_ff7_tvox            , @0240bl, *0.752, FFE0, {729}  [   ] Tenor Choir
-74: 74_sd3_avox            , 2400   , -3.906, FFE0, {730}  [   ] Alto Choir
+74: 74_sd3_avox            , 2400   , -3.906, FAE0, {730}  [   ] Alto Choir
 75: 75_rs2_svox            , 1B00   , c-11  , FFE0, {248}  [+12] Soprano Choir
 76: 76_smr_flute           , 7704   , -3.125, FFE0, {378}  [   ] Voice Oohs
 77: 77_smr_rscbright       , 2103   , -3.082, FFE0, {547}  [   ] BrightnessPad
