@@ -15,7 +15,7 @@
 #def vi= |1 o4 'v' p70
 #def ch= |2 o4 'c' 
 #def gt= |3 o5 'g' p48 
-#def pi= |4 o4 'p' p84 %y3%s3
+#def pi= |4 o4 'p' p84
 
 #def b= v80
 #def v= v81

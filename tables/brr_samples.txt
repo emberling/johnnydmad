@@ -1,7 +1,7 @@
 [Samples]
 
 # PIANO                                                  -------------
-01: 01_fm_gpia6       , BA0C, c+-08 , FFEF, {433}  [+12] GrandPiano6
+01: 01_sd3_gpia6      , 0810, +0    , FFEF, {563}  [+12] GrandPiano6
 02: 02_sd3_gpia5      , 651F, -3.762, FFEB, {915}  [   ] GrandPiano5
 03: 03_sd3_gpia4      , 6426, +2.930, FFEA, {1119} [   ] GrandPiano4
 04: 04_l2_cpia3       , 3B01, f-85  , BF8E, {41}   [   ] CasinoGrand3
@@ -9,16 +9,17 @@
 06: 06_tn_hpia8       , 7500, *.8797, AF2F, {14}   [+36] LQ Piano8
 07: 07_thg_pia        , 6F06, *.658 , DF90, {186}  [   ] ClearPiano~4
 08: 08_ct_lowpia      , 7B03, 5200  , FFEA, {111}  [-12] Bass Piano
+09: 09_fm_gpia6       , BA0C, c+-08 , FFEF, {433}  [+12] G.Piano6 LQ
 
 # ZITHERS N SHIT                                                     -------------
-10: 10_smr_bpia4            , 6F18  , -7.086, FFEC    , {883}  [   ] BrightPiano4
-11: 11_smr_bpia3            , 2913  , +2.875, FFED    , {572}  [   ] BrightPiano3
-12: 12_thg_harpsi           , 9B04  , *1.324, EF8F    , {137}  [   ] Harpsichord
-13: 13_ct_12stg             , D413  , BB74  , FFEE    , {574}  [   ] Bright 12str
-14: 14_rh_dulci             , 330C  , -2.210, F 7 7 0A, {351}  [   ] Dulcimer
-15: 15_ff10_santur4         , @229bl, ^b+20 , FFEC    , {237}  [   ] Santur
-16: 16_rh_clavi             , 4F05  , -3.398, F 7 7 0F, {166}  [-24] Clavinet
-17: 17_sd3_cleang           , 610E  , -0.23 , FFEC    , {418}  [-12] Clean Elec.G
+10: 10_smr_bpia4            , 6F18  , -7.086 , FFEC    , {883}  [   ] BrightPiano4
+11: 11_smr_bpia3            , 2913  , +2.875 , FFED    , {572}  [   ] BrightPiano3
+12: 12_thg_harpsi           , 9B04  , *1.324 , EF8F    , {137}  [   ] Harpsichord
+13: 13_ct_12stg             , D413  , BB74   , FFEE    , {574}  [   ] Bright 12str
+14: 14_rh_dulci             , 330C  , -2.210 , F 7 7 0A, {351}  [   ] Dulcimer
+15: 15_ff10_santur4         , @229bl, ^b+20  , FFEC    , {237}  [   ] Santur
+16: 16_rh_clavi             , 4F05  , -3.398 , F 7 7 0F, {166}  [-24] Clavinet
+17: 17_ff7_cleang           , @0283bl, *0.770, FFEA    , {290}  [-12] Clean Elec.G
 
 # BELLS N SHIT                                                         -------------
 18: 18_rh_softrep             , B706  , -2.210, F 4 3 0A, {195}  [   ] Soft Rock EP

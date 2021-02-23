@@ -3,12 +3,18 @@ from mml2mfvi import mml_to_akao, get_variant_list
 from insertmfvi import insertmfvi, byte_insert, int_insert
 
 JOHNNYDMAD_FREESPACE = ["53C5F-9FDFF", "310000-3FFFFF"]
+TRAIN_SAMPLE_ID = 0x3A
 
 used_sample_ids = set()
+used_song_names = set()
 song_id_names = {}
 song_name_ids = {}
     
 windy_intro = False
+SFXSONGS = []
+APPENDSONGS = []
+LONGSONGS = []
+
 
 class TrackMetadata:
     def __init__(self, title="", album="", composer="", arranged=""):
@@ -47,11 +53,13 @@ class Playlist:
         self[name].file = os.path.join('data', 'music', name + '.mml')
         used_song_names.add(song_usage_id(name))
         
-    def add_random(self, name, pool):
+    def add_random(self, name, pool, idx=None, allow_duplicates=False):
         self.dupe_check(name, "add_random")
         self[name] = PlaylistEntry(name)
         self[name].is_fixed = False
-        pool = [p for p in pool if song_usage_id(p) not in used_song_names]
+        
+        if not allow_duplicates:
+            pool = [p for p in pool if song_usage_id(p) not in used_song_names]
         if len(pool) < 1:
             print(f"info: pool for {name} is empty, rerolling playlist")
             input() #debug, #TODO remove
@@ -59,8 +67,10 @@ class Playlist:
         song = random.choice(pool)
         
         # check various possible file locations over various possible variants
-        vbase, vid = song_variant_id(song, song_name_ids[name])
-        sfxmode = True if name in ["ruin", "zozo"] or (name == "assault" and windy_intro) else False
+        if idx is None:
+            idx = song_name_ids[name]
+        vbase, vid = song_variant_id(song, idx)
+        sfxmode = True if name in SFXSONGS else False
         for searchpath in [os.path.join('custom', 'music'), os.path.join('custom', 'music', 'legacy'), os.path.join('data', 'music')]:
             target = vbase
             potential_files = {}
@@ -134,7 +144,68 @@ def song_variant_id(name, idx):
         return name, "_vic"
     else:
         return name, ""
-            
+
+def init_music_txt():            
+    music_choice_ini = configparser.ConfigParser()
+    music_choice_ini.read(os.path.join('custom','music.txt'))
+    music_choice_map = {}
+    for section in music_choice_ini:
+        for k, v in music_choice_ini[section].items():
+            if k in music_choice_map:
+                music_choice_map[k] += f", {v}"
+            else:
+                music_choice_map[k] = v
+    return music_choice_map
+
+############ variant processing
+
+def apply_variant(mml, type, name="", variant="_default_", check_size=False):
+    
+    def wind_increment(m):
+        val = int(m.group(1))
+        if val in [1, 2, 3, 4, 5, 6, 9, 10, 11, 12, 13, 14]:
+            val += 2
+        elif val in [7, 8, 15, 16]: 
+            val -= 6
+        return "{{{}}}".format(val)
+        return m.group(0)
+
+    use_sfxv = False
+    append_mml = None
+    orig_mml = mml
+    
+    if type == "rain":
+        use_sfxv = True
+        append_mml = "append_rain.mml"
+    elif type == "wind":
+        use_sfxv = True
+        append_mml = "append_wind.mml"
+        try:
+            mml = re.sub("\{[^}']*?([0-9]+)[^}]*?\}", wind_increment, mml)
+        except ValueError:
+            print("WARNING: failed to add wind sounds ({})".format(name))
+    elif type == "train":
+        append_mml = "append_train.mml"
+        mml = re.sub("\{[^}]*?([0-9]+)[^}]*?\}", "$888\g<1>", mml)
+        for i in range(1,9):
+            if "$888{}".format(i) not in mml:
+                mml = mml + "\n$888{} r;".format(i)
+    if append_mml:
+        try:
+            with open(os.path.join("data", "music", append_mml), 'r') as f:
+                mml += f.read()
+        except IOError:
+            print("couldn't open {}".format(sfx))
+    if check_size:
+        if not name:
+            name = type
+        seq = mml_to_akao(mml, name, use_sfxv, variant=variant)
+        if len(seq) > 0x1002:
+            mml = orig_mml
+    return mml
+    
+############ main
+
 def process_music(inrom, meta={}, f_chaos=False, f_battle=True, opera=None, eventmodes=""):
     global used_song_names
     global used_sample_ids
@@ -193,17 +264,10 @@ def process_music(inrom, meta={}, f_chaos=False, f_battle=True, opera=None, even
         music_pools[pool].append(name)
         pool_by_slot[name] = pool
 
-    # -- load random choices configuration for pools
-    music_choice_ini = configparser.ConfigParser()
-    music_choice_ini.read(os.path.join('custom','music.txt'))
-    music_choice_map = {}
-    for section in music_choice_ini:
-        for k, v in music_choice_ini[section].items():
-            if k in music_choice_map:
-                music_choice_map[k] += f", {v}"
-            else:
-                music_choice_map[k] = v
-        
+    # -- load random choices configuration for pools (music.txt)
+    # moved to function for reuse in length test mode
+    music_choice_map = init_music_txt()
+    
     song_pools = {}
     intensitytable = {}
     intensitytable["battle"] = {}
@@ -276,8 +340,13 @@ def process_music(inrom, meta={}, f_chaos=False, f_battle=True, opera=None, even
         
         playlist = Playlist()
                     
+        LONGSONGS = ["ending1", "ending2"]
+        SFXSONGS = ["ruin", "zozo"]
         windy_intro = random.choice([True, False, False])
-        
+        if windy_intro:
+            SFXSONGS.append("assault")
+        APPENDSONGS = SFXSONGS + ["train"]
+            
         if attempts >= 1000:
             print("Music randomization failed after 1000 attempts. Your custom music configuration files and/or filters may be too restrictive.")
             return inrom
@@ -363,7 +432,6 @@ def process_music(inrom, meta={}, f_chaos=False, f_battle=True, opera=None, even
                     print(f"file not found: {pl_entry.file}")
                     processing_failed = True
                     break
-            sfxmode = True if pl_name in ["ruin", "zozo"] or (pl_name == "assault" and windy_intro) else False
             variant = pl_entry.variant if pl_entry.variant else "_default_"
             # grab inst from mml and turn it into a form we can use
             inst_raw = mml_to_akao(pl_entry.mml, inst_only=True, variant=variant)
@@ -385,6 +453,15 @@ def process_music(inrom, meta={}, f_chaos=False, f_battle=True, opera=None, even
                 for i in inst:
                     if i > 0:
                         used_sample_ids.add(i)
+            if pl_name in APPENDSONGS:
+                append_type_map = {
+                    "train":   "train",
+                    "ruin":    "wind",
+                    "assault": "wind",
+                    "zozo":    "rain"}
+                pl_entry.mml = apply_variant(pl_entry.mml, append_type_map[pl_name], name=pl_entry.file, variant=variant, check_size = True if pl_name == "assault" else False)
+                if append_type_map[pl_name] == "train":
+                    used_sample_ids.add(TRAIN_SAMPLE_ID)
         if processing_failed:
             continue
             
@@ -400,7 +477,9 @@ def process_music(inrom, meta={}, f_chaos=False, f_battle=True, opera=None, even
         mml_virtlist = {}
         for pl_name, pl_entry in playlist.data.items():
             k = song_name_ids[pl_name]
-            v = (pl_entry.file, pl_entry.variant, pl_entry.mml)
+            is_sfx = True if pl_name in SFXSONGS else False
+            is_long = True if pl_name in LONGSONGS else False
+            v = (pl_entry.file, pl_entry.variant, is_sfx, is_long, pl_entry.mml)
             mml_virtlist[k] = v
             
             # while we're at it, record some metadata

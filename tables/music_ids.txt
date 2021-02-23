@@ -59,7 +59,7 @@
 3A: sfxwaves,       fixed
 3B: dmad123,        tierboss
 3C: sfxtrain,       fixed
-3D: spinachrag,     default
+3D: spinach,        default
 3E: death,          death
 3F: sfxchocobo,     fixed
 40: sfxrain,        fixed

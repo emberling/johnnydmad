@@ -14,7 +14,7 @@
 #WAVE 0x25 0x63 ~ was 0x94 strings-octave
 #WAVE 0x26 0x06 (piano o7+)
 #WAVE 0x27 0x07 (piano o3-)
-#WAVE 0x28 0x01 (piano o6)
+#WAVE 0x28 0x09 (piano o6)
 
 #drum "b+"=5b- |4 v80 p64 %e1
 #drum "b"=5b- |4 v40 p64 %e1

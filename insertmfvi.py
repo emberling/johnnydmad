@@ -51,7 +51,8 @@ class Sequence():
         self.mml = None
         self.inst = None
         self.variant = None
-        self.sfxfile = None
+        self.is_sfx = False
+        self.is_long = False
         self.spcrip = False
         self.imports = {}
         self.edl = edl
@@ -93,10 +94,12 @@ class Sequence():
                 self.filetype = "bin"
                 
     def init_from_virtlist(self, dat):
-        fn, var, mml = dat
+        fn, var, is_sfx, is_long, mml = dat
         self.filename = fn
         self.filetype = "mml"
         self.variant = var
+        self.is_sfx = is_sfx
+        self.is_long = is_long
         self.mml = mml
         
     def load(self):
@@ -163,7 +166,7 @@ class Sequence():
                 self.imports = mml2mfvi.get_brr_imports(self.mml, variant=v)
                 if self.imports:
                     ifprint(f"DEBUG: got imports {self.imports} for {self.filename}", DEBUG)
-                self.sequence, self.inst = mml2mfvi.mml_to_akao(self.mml, self.filename, variant=v)
+                self.sequence, self.inst = mml2mfvi.mml_to_akao(self.mml, self.filename, variant=v, sfxmode=self.is_sfx)
                 self.edl = mml2mfvi.get_echo_delay(self.mml, variant=v)
                 if self.edl is None:
                     self.edl = edl
@@ -1039,7 +1042,7 @@ def insertmfvi(inrom, argparam=None, virt_sample_list=None, virt_seq_list=None, 
         # Warn for:
         #    -- Sequence data overflow
         #    -- Sample overflow in sequence
-        if len(seq.sequence) >= 0x1002:
+        if len(seq.sequence) >= 0x1002 and not seq.is_long:
             print(f"WARNING: seq {id:02X} ({seq.filename}) is {len(seq.sequence):04X} bytes")
         brr_blocks_used = 0
         for i in range(16):
