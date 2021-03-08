@@ -9,7 +9,6 @@
 #WAVE 0x23 0x84 horn
 #WAVE 0x24 0x86 high horn
 #WAVE 0x25 0xB1 organ
-#WAVE 0x27 0x6C tambourine (anvil)
 #WAVE 0x28 0x1A snare
 #WAVE 0x29 0x4C tom
 #WAVE 0x2A 0x7A conga open
@@ -17,6 +16,7 @@
 #WAVE 0x2C 0xBA rev.cymbal
 #WAVE 0x2D 0xBB booom
 #WAVE 0x2E 0x9D triangle
+#WAVE 0x2F 0x6C tambourine (anvil)
 
 #def init= t111 %x240 %v40 %b0,100 %f0,0
 
@@ -24,14 +24,14 @@
 #def ost= |1 's' p32 o5 m
 #def cbs= |2 'c' p60 o7 m
 #def hrn= |3 'h' p64 o5 m24,18,215
-#def trp= |4 't' p88 o4 m48,18,223
+#def trp= |4 't' p88 o5 m48,18,223
 #def org= |5 'o' p80 o5 m12,18,192
 #def tone= @3 'z' p24 o5 m %a14
 
 #def s= v46
 #def c= v110
 #def h= v92
-#def t= v80
+#def t= v50
 #def o= v64
 #def z= v14
 
@@ -72,8 +72,8 @@
 #drum "c"= 5a+ |E 'triangle*v.77'   
 #drum "b-"=5a+ |E 'triangle*v.5'    
 
-#drum "v"=4g+ |7 'anvil'
-#drum "v+"=4g+ |7 'anvil*v1.5'
+#drum "v"=4g+ |F 'anvil'
+#drum "v+"=4g+ |F 'anvil*v1.5'
 #drum "z+"=4e |D 'boomtown*v1.15'
 #drum "z"=4e |D 'boomtown'
 #drum "z-"=4e |D 'boomtown*v.75'

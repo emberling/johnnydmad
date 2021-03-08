@@ -204,6 +204,35 @@ def apply_variant(mml, type, name="", variant="_default_", check_size=False):
             mml = orig_mml
     return mml
     
+############ tierboss
+
+def generate_tierboss_mml():
+    
+    # get pool of potential segments (mml files)
+
+    # fail a lot
+    attempt = 0
+    while attempt < 1000:
+        attempt += 1
+        
+        # pick three
+        
+        # build sample table
+        # retry if n>16
+        
+        # check sample size
+        # retry if n>3746
+        
+        # grab metadata
+        
+        # regex fix program changes
+        
+        # regex & merge segments
+        
+        # test build akao sequence
+        # retry if n>$1002
+    return None, None
+
 ############ main
 
 def process_music(inrom, meta={}, f_chaos=False, f_battle=True, opera=None, eventmodes=""):
@@ -354,6 +383,7 @@ def process_music(inrom, meta={}, f_chaos=False, f_battle=True, opera=None, even
         
         # -- process special cases (battle, opera, tierboss) wrt. choosing tracks
         
+        # battle
         progression = {}
         already_added = set()
         progression['battle'] = ["battle", "bat2", "bat3", "bat4"]
@@ -392,7 +422,11 @@ def process_music(inrom, meta={}, f_chaos=False, f_battle=True, opera=None, even
                 break
         if processing_failed: 
             continue
-
+            
+        # tierboss
+        tierboss_mml, tierboss_metadata = generate_tierboss_mml()
+        # TODO add tierboss_metadata entries to used_song_names
+        
         # -- choose tracklist
         for pool, tracks in sorted(music_pools.items()):
             # fixed pool - does not randomize, loads from data/music/ only

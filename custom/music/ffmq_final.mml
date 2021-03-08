@@ -20,14 +20,14 @@
 #def opet= o5
 #def odis= o5
 #def ostr= o6
-#def ohrn= o5
+#def ohrn= o6
 #def okey= o5
 #def oodr= o5
 
 #def 1str1= v35p32|9%a10m144,18,223 'ostr'
-#def 1hrn2= v65p64|A%a15m48,18,207 'ohrn'
+#def 1hrn2= v65p64|A%a15m48,18,207 'ohrn' %s5
 #def 1str3= v35p96|9%a13m24,30,201 'ostr'
-#def 1hrn4= v65p64|A%r17m48,18,207 'ohrn'
+#def 1hrn4= v65p64|A%r17m48,18,207 'ohrn' %s5
 #def 1bas6= v80p64|6 'obas'
 #def 1str7= v45p64|9m144,18,223 'ostr'
 #def 8key1= v32p48|2%r14m 'okey'
@@ -46,7 +46,7 @@
 #def 16str1= v30p96|9%a10m48,18,207 'ostr'
 #def 16str2= v70p64|9m48,18,207 'ostr' 
 #def 16key3= v48p32|2%r14m 'okey'
-#def 16hrn4= v70p64|Am48,18,207 'ohrn'
+#def 16hrn4= v70p64|Am48,18,207 'ohrn' %s5
 #def 16key5= v32p32|2%r14m 'okey'
 #def 16dis7= v80p64|8m 'odis'
 #def 19str1= v45p64|9%a10m48,18,207 'ostr'

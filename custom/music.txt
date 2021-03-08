@@ -7,7 +7,8 @@ ff6_omen3:      omen3
 totr_downfall:  omen3
 
 ff6_awakening:  awakening
-ct_zeal:        awakening
+ct_zeal:        awakening, strago
+lu2_peace:      awakening, relm
 
 ff6_balance:    balance
 cc_world2:      balance
@@ -16,12 +17,13 @@ top_world1:     balance
 ff6_shadow:     shadow
 ff4_damcyan:    shadow
     
+ff6_strago:     strago
 ff4_mysidia:    strago
-ff12_ozmone:    strago
-    
-dc2_garden:     gau
-ff7_materia:    gau
 
+ff6_gau:        gau    
+dc2_garden:     gau
+
+ff6_figaro:     figaro
 lotr_aragorn:   figaro
 
 ff6_coin:       coin
@@ -33,12 +35,14 @@ ff9_rose:       cyan
 ff6_locke:      locke
 ct_ayla:        locke
 
+ff6_rachel:     rachel
 lu1_parting:    rachel
 ff7_5years:     rachel
 
 ff6_relm:       relm
 ff4_rydia:      relm
 
+ff6_setzer:     setzer
 sd1s_courage:   setzer
 sd2_final:      setzer
 
@@ -48,6 +52,7 @@ ff4_sorrow:     daryl
 ff6_celes:      celes
 ff4_rosa:       celes
 
+ff6_chocobo:    chocobo
 ds4_lyll:       chocobo
 fz_white1:      chocobo
 ff7_electric:   chocobo
@@ -70,39 +75,48 @@ ct_bobonga:     veldt
 ff9_siege:      savethem
 ff14_forthesky: savethem
 
-ff5_book:       empire
 ff6_empire:     empire
+ff5_book:       empire
 
 ff6_troops:     troops
 ff5_bal:        troops
 
 ff6_martiallaw: martiallaw
+sth1_spring:    johnny, martiallaw
 
+ff6_metamorphosis: metamorphosis
 ff5_hurry:      metamorphosis
 
+ff6_train:      train
 doom2_doom:     train
 
 ff6_espers:     espers
 lal_labyrinth:  espers
 
+ff6_grandfinale: grandfinale
 ff9_battle:     grandfinale
 ff9_hunt:       grandfinale
 
 ff6_mountain:   mountain
 ff5_mountain:   mountain
 
+ff6_serpent:    serpent    
 lu2_savior:     serpent
 sd2_fortress:   serpent
 
+ff6_zozo:       zozo, martiallaw
+ff6_zozo_orig:  zozo
 cc_dragonia:    zozo
-sth1_spring:    johnny, zozo
 
-ff1_end:        town
 ff6_town:       town
+ff1_end:        town
 
+ff6_what:       what    
 ff9_gargan:     what
+ff7_materia:    what, gau
 
 ff3_hyne:       gogo
+ff12_ozmone:    gogo
 
 ff5_pirates:    returners
 
@@ -170,6 +184,7 @@ crys_tower:     mount2
 ff4_moon:       engine
 gd3_desert:     engine
 
+ff9_flamenco:   village, chocobo, johnny
 cc_arni:        village
 ff5_village:    village
     
@@ -200,6 +215,7 @@ ct_battle:      E5,  battle, bat2
 ff1_battle:     E10, battle
 ff7_battle_ff6: E25, battle, bat2
 ff9_battle:     E35, battle, bat2
+top_battle:     E40, battle, bat2, bat3    
 totr_battle:    E40,         bat2, bat3
 ff8_laguna:     E40,         bat2, bat3, bat4
 doom_e1m1:      E45, battle

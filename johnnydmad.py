@@ -4,6 +4,25 @@ from insertmfvi import byte_insert, int_insert
 from mml2mfvi import mml_to_akao
 import configparser
 
+## TO DO LIST
+# - finish ripping FF6 vanilla songs
+# - opera mode
+# - tierboss
+# - write metadata to spoiler
+# - specify seed in jdm launcher
+# - credits generator devtool
+# - music frequency devtool
+# - adjust frequency for battleprog to prevent skewing late
+# - silent mode for insertmfvi
+# - select alternate music.txt (curator mode)
+# - external ignorelist for songs and/or sources
+# - ensure function with pyinstaller
+# - reconcile music player w/ Myria disable sound hack
+# - integration with BC randomizer
+# - allow selection of less intrusive mode(s) in jdm launcher
+# - test with Gaiden
+# - test with WC
+
 def johnnydmad():
     print("johnnydmad EX5 early test")
     
@@ -36,14 +55,18 @@ def johnnydmad():
 def test_sfx():
     global used_song_names
     testbed = [
-        ("---", "plain", 0x4C, False),
-        ("wind", "ruin", 0x4F, True),
+        ("***", "plain", 0x4C, False),
         ("rain", "zozo", 0x29, True),
+        ("wind", "ruin", 0x4F, True),
         ("train", "train", 0x20, False)
         ]
-        
+    cursor = " >)|(<"
     music_choice_map = init_music_txt()
+    results = []
+    i = 0
+    print("")
     for choice in sorted(music_choice_map):
+        binsizes = {}
         for type, name, idx, use_sfx in testbed:
             pl = Playlist()
             pl.add_random(name, [choice], idx=idx, allow_duplicates=True)
@@ -52,11 +75,31 @@ def test_sfx():
                 variant = "_default_"
             mml = apply_variant(pl[name].mml, type, name, variant=pl[name].variant)
             bin = mml_to_akao(mml, choice + ' ' + name, sfxmode=use_sfx, variant=variant)[0]
-            if len(bin) >= 0x1002:
-                print(f"{choice} * {type} *** ${len(bin):0X} bytes ~~WARNING~~")
-                input()
-            else:
-                print(f"{choice} : {type} ::: ${len(bin):0X} bytes")
+            #if len(bin) >= 0x1002:
+            #    print(f"{choice} * {type} *** ${len(bin):0X} bytes ~~WARNING~~")
+            #    input()
+            #else:
+            #    print(f"{choice} : {type} ::: ${len(bin):0X} bytes")
+            binsizes[type] = len(bin)
+        results.append((max(binsizes.values()), choice, binsizes))
+        pct = (i / len(music_choice_map)) * 100
+        full_boxes = int(pct // 2)
+        cursor_idx = int((pct % 2)*(len(cursor)/2))
+        boxtext = "-" * full_boxes + cursor[cursor_idx]
+        print(f"\r[{boxtext:<50}]", end="", flush=True)
+        i += 1
+        
+    results = sorted(results)
+    print("")
+    for largest, name, binsizes in results:
+        print(f"{name:<20} :: ", end="")
+        for k, v in binsizes.items():
+            print(f"[{k} - ${v:0X}] ", end="")
+        if largest >= 0x1002:
+            print("~~WARNING~~")
+        else:
+            print("")
+            
 
 #################################
     

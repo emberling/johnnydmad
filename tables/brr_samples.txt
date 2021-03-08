@@ -11,7 +11,7 @@
 08: 08_ct_lowpia      , 7B03, 5200  , FFEA, {111}  [-12] Bass Piano
 09: 09_fm_gpia6       , BA0C, c+-08 , FFEF, {433}  [+12] G.Piano6 LQ
 
-# ZITHERS N SHIT                                                     -------------
+# ZITHERS ETC                                                         -------------
 10: 10_smr_bpia4            , 6F18  , -7.086 , FFEC    , {883}  [   ] BrightPiano4
 11: 11_smr_bpia3            , 2913  , +2.875 , FFED    , {572}  [   ] BrightPiano3
 12: 12_thg_harpsi           , 9B04  , *1.324 , EF8F    , {137}  [   ] Harpsichord
@@ -21,7 +21,7 @@
 16: 16_rh_clavi             , 4F05  , -3.398 , F 7 7 0F, {166}  [-24] Clavinet
 17: 17_ff7_cleang           , @0283bl, *0.770, FFEA    , {290}  [-12] Clean Elec.G
 
-# BELLS N SHIT                                                         -------------
+# BELLS ETC                                                            -------------
 18: 18_rh_softrep             , B706  , -2.210, F 4 3 0A, {195}  [   ] Soft Rock EP
 19: 19_ff7_chorep             , @279bl, *0.750, FFEA    , {545}  [+12] Chorus Rhodes
 20: 20_tn_celesta             , 3804  , *.807 , FFEF    , {142}  [   ] Celesta/ToyP
@@ -44,7 +44,7 @@
 35: 35_l2_nylong            , 2A03  , *0.769, FFED, {97}   [-12] Nylon Guitar
 36: 36_ff7_classig          , @319bl, *0.605, FFEB, {330}  [   ] Classical Gtr
 
-# ELECTRIC GUITARS (needs work)                                      -------------
+# ELECTRIC GUITARS                                                   -------------
 39: 39_ctx_jcm12st           , @628bl, d-48  , FFE0   , {642}  [   ] SoloOverdrive
 40: 40_ebr_synod             , 5202  , *1.316, F 7 7 0, {69}   [+12] SynthOverdrive
 41: 41_ff6_s50dist           , FA05  , 29C0  , FFE0   , {444}  [-24] S50 DistFuzz
@@ -103,12 +103,12 @@
 
 # BRASS                                                               -------------
 80: 80_smr_mtpet              , 7101  , -7.25 , FFE0   , {44}   [   ] Mute Trumpet 
-81: 81_ct_tpet                , 9C06  , E16C  , FFE0   , {192}  [   ] Trumpet
+81: 81_ct_tpet                , 9C06  , E16C  , F 2 7 0, {192}  [   ] Trumpet
 82: 82_ff4_tpet               , 8C01  , b+19  , F 7 7 0, {48}   [   ] Trumpet LQ
 83: 83_ff6rs_tuba             , 5304  , FDA0  , FFE0   , {131}  [-12] Euphonium
 84: 84_ff7_horn               , @311bl, *0.880, F 3 5 0, {323}  [   ] Horn
 85: 85_rh_horn                , 721E  , -2.210, F 0 7 0, {870}  [   ] Power horn
-86: 86_lal_horn               , 1005  , E100  , FFE0   , {146}  [+12] Mellow horn
+86: 86_mq_horn                , C906  , ^e+20 , F 0 7 0, {196}  [   ] Mellow horn
 87: 87_misc_rscbrass1         , @151bl, ^a-15 , FFE0   , {301}  [   ] Brass Section
 88: 88_misc_rscbrasso         , @301bl, ^a-15 , FFE0   , {451}  [   ] Octave Brass
 89: 89_sd3_obrass             , 1B09  , +8.625, FFE0   , {274}  [   ] OctBrassBrite
@@ -151,14 +151,13 @@ A9: A9_top_harmo              , 8208  , *.875 , FFE0, {246}  [   ] Melodica
 B9: B9_ct_accord              , 7704  , A07F  , FFE0, {410}  [   ] Accordion
 
 # SYNTHS                                                          -------------
-C0: C0_smr_callio             , 7704 , -0.121, FFE0, {350}  [+24] Calliope Oct
-C1: C1_ctrw_pwm               , @9   ,  b+10 , FFE0, {257}  [   ] UltraPulseM
-C2: C2_rhx_saw                , @78bl, ^g+50 , FFE0, {483}  [   ] UltraSawtooth
-
-# PADS                                                           -------------
-C3: C3_fm_warm             , 7704   , FEE0  , FFE0, {551}  [+12] Warmth Pad
-C4: C4_bf2_synstr          , 2901   , d-15  , FFE0, {352}  [   ] SynString Pad
-C5: C5_bl_piapad           , 5F0A   , +5.77 , FFE0, {840}  [+12] Piano Pad
+C0: C0_smr_callio             , 7704 , -0.121  , FFE0    , {350}  [+24] Calliope Oct
+C1: C1_ctrw_pwm               , @9   ,  b+10   , FFE0    , {257}  [   ] UltraPulseM
+C2: C2_rhx_saw                , @78bl, ^g+50   , FFE0    , {483}  [   ] UltraSawtooth
+C3: C3_fm_warm                , 7704   , FEE0  , FFE0    , {551}  [+12] Warmth Pad
+C4: C4_bf2_synstr             , 2901   , d-15  , FFE0    , {352}  [   ] SynString Pad
+C5: C5_bl_piapad              , 5F0A   , +5.77 , FFE0    , {840}  [+12] Piano Pad
+C6: C6_rh_sweep               , E30D, -2.210   , F 7 7 00, {399}  [   ] Sweep Synth
 
 # WAVEFORMS                                              -------------
 D0: D0_rh_sine       , 2400, -14.210, FFE0, {6}    [+12] SineWave
@@ -169,9 +168,10 @@ D4: D4_misc_pduty88  , @1bl, b+21   , FFE0, {5}    [   ] Pulse D88
 D5: D5_fmgh_polytone , 1B00, 5200   , FFE0, {6}    [+24] OctaveTone
 D6: D6_ff7_mog1      , @2bl, *0.933 , FFE0, {19}   [-12] Ff7moog1
 
-E0: E0_fm_x6eris             , 1B00, ^d-40, FFE0, {10}   [-24] CursedDiscord
-E1: E1_fm_x7tari             , 1B00,  e+19, FFE0, {4}    [+12] CursedAtari
-E2: E2_top_odg               , 2307, *.878, FFE0, {207}  [   ] BitcrusherODG
+E0: E0_fm_x6eris             , 1B00, ^d-40 , FFE0    , {10}   [-24] CursedDiscord
+E1: E1_fm_x7tari             , 1B00,  e+19 , FFE0    , {4}    [+12] CursedAtari
+E2: E2_top_odg               , 2307, *.878 , FFE0    , {207}  [   ] BitcrusherODG
+E3: E3_ebr_hobo              , 0A02, *0.657, F 7 7 0 , {61}   [   ] ReedyHornLQ
 
 # KICK
 0A: 0A_ff6_kick            , 6504, 0000 , FFE0, {137}  [   ] Dry Kick A5

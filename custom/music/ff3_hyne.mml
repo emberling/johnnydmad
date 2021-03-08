@@ -20,7 +20,7 @@
 #def violin= |3 o5 'v'
 #def strings= |4 o5 's'
 #def recorder= |5 o5 'r'
-#def trumpet= |6 o3 't'
+#def trumpet= |6 o4 't'
 
 #def d= v48
 #def h= v72
@@ -28,7 +28,7 @@
 #def v= v64
 #def s= v32
 #def r= v64
-#def t= v64
+#def t= v48
 
 #cdef ( %l1
 #cdef ) %l0
