@@ -115,9 +115,11 @@ ff6_what:       what
 ff9_gargan:     what
 ff7_materia:    what, gau
 
+ff6_gogo:       gogo
 ff3_hyne:       gogo
 ff12_ozmone:    gogo
 
+ff6_returners:  returners
 ff5_pirates:    returners
 
 ff6_umaro:      umaro
@@ -129,14 +131,17 @@ ff3_darkworld:  moogles
 ff6_unforgiven: unforgiven
 bof2_battle2:   unforgiven
 
-ff7_sadbar:     town_ruin
+ff6_ruintown:   ruintown
+ff7_sadbar:     ruintown
 
+ff6_blackjack:  blackjack
 ff7_bronco:     blackjack
 lal_boss:       blackjack
 
 ff6_catastrophe: catastrophe
 ff4_fiend:      catastrophe
 
+ff6_owzer:      owzer
 ct_sewer:       owzer
 cv4_chandeliers: owzer
 
@@ -214,6 +219,7 @@ eo3_waves:      dmad123
 ct_battle:      E5,  battle, bat2
 ff1_battle:     E10, battle
 ff7_battle_ff6: E25, battle, bat2
+ff7_battle:     E30, battle, bat2, bat3
 ff9_battle:     E35, battle, bat2
 top_battle:     E40, battle, bat2, bat3    
 totr_battle:    E40,         bat2, bat3
@@ -232,6 +238,7 @@ ff6_boss:       E99,                     bat4
 
 [boss]
 ct_tension:   I15, mboss
+ff7_battle:   I20, mboss
 zaol_temple:  I30, mboss
 bof2_battle2: I35, mboss
 doom_e1m1:    I40, mboss

@@ -50,7 +50,7 @@
 31: moogles,        default
 32: unforgiven,     default
 33: atma,           boss
-34: town_ruin,      default
+34: ruintown,       default
 35: blackjack,      default
 36: catastrophe,    default
 37: owzer,          default

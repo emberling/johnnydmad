@@ -102,8 +102,8 @@
 79: 79_sd2x_ovox           , @1bl   , ^g+   , FEE0, {452}  [   ] Oct Vox Pad
 
 # BRASS                                                               -------------
-7F: 7F_ebr_hobo               , 0A02, *0.657  , F 7 7 0, {61}   [   ] ReedyHornLQ
-80: 80_smr_mtpet              , 7101  , -7.25 , FFE0   , {44}   [   ] Mute Trumpet 
+7F: 7F_ebr_hobo               , 0A02  , *0.657, F 7 7 0, {61}   [   ] ReedyHornLQ
+80: 80_ff4_tpx2               , D002  , b+19  , F 7 7 0, {88}   [   ] OctLQ Trumpet
 81: 81_ct_tpet                , 9C06  , E16C  , F 2 7 0, {192}  [   ] Trumpet
 82: 82_ff4_tpet               , 8C01  , b+19  , F 7 7 0, {48}   [   ] Trumpet LQ
 83: 83_ff6rs_tuba             , 5304  , FDA0  , FFE0   , {131}  [-12] Euphonium
@@ -167,9 +167,10 @@ D4: D4_misc_pduty88  , @1bl, b+21   , FFE0, {5}    [   ] Pulse D88
 D5: D5_fmgh_polytone , 1B00, 5200   , FFE0, {6}    [+24] OctaveTone
 D6: D6_ff7_mog1      , @2bl, *0.933 , FFE0, {19}   [-12] Ff7moog1
 
-E0: E0_fm_x6eris             , 1B00, ^d-40 , FFE0    , {10}   [-24] CursedDiscord
-E1: E1_fm_x7tari             , 1B00,  e+19 , FFE0    , {4}    [+12] CursedAtari
-E2: E2_top_odg               , 2307, *.878 , FFE0    , {207}  [   ] BitcrusherODG
+E0: E0_fm_x6eris             , 1B00, ^d-40  , FFE0    , {10}   [-24] CursedDiscord
+E1: E1_fm_x7tari             , 1B00,  e+19  , FFE0    , {4}    [+12] CursedAtari
+E2: E2_top_odg               , 2307, *.878  , FFE0    , {207}  [   ] BitcrusherODG
+E3: E3_smr_mtpet             , 7101  , -7.25, FFE0    , {44}   [   ] Mute Trumpet 
 
 # KICK
 0A: 0A_ff6_kick            , 6504, 0000 , FFE0, {137}  [   ] Dry Kick A5
