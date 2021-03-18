@@ -97,7 +97,7 @@
 74: 74_sd3_avox            , 2400   , -3.906, FAE0, {730}  [   ] Alto Choir
 75: 75_rs2_svox            , 1B00   , c-11  , FFE0, {248}  [+12] Soprano Choir
 76: 76_smr_flute           , 7704   , -3.125, FFE0, {378}  [   ] Voice Oohs
-77: 77_smr_rscbright       , 2103   , -3.082, FFE0, {547}  [   ] BrightnessPad
+77: 77_fm_rscbright        , 7704   , FFF0  , FFE0, {588}  [   ] BrightnessPad
 78: 78_sd2_vox             , 1B00   , E200  , FEE0, {378}  [   ] Vox Pad
 79: 79_sd2x_ovox           , @1bl   , ^g+   , FEE0, {452}  [   ] Oct Vox Pad
 
