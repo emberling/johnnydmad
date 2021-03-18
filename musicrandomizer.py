@@ -264,7 +264,7 @@ def process_music(inrom, meta={}, f_chaos=False, f_battle=True, opera=None, even
     except IOError:
         print("could not open tables/music_ids.txt, music insertion aborted")
         processing_failed = True
-        return 0
+        return inrom
         
     music_pools, pool_by_slot = {}, {}
     for line in music_id_datamap:
@@ -383,6 +383,11 @@ def process_music(inrom, meta={}, f_chaos=False, f_battle=True, opera=None, even
         
         # -- process special cases (battle, opera, tierboss) wrt. choosing tracks
         
+        # tierboss
+        # processing tierboss first to avoid having to check for used song names
+        tierboss_mml, tierboss_metadata = generate_tierboss_mml()
+        # TODO add tierboss_metadata entries to used_song_names
+        
         # battle
         progression = {}
         already_added = set()
@@ -422,10 +427,6 @@ def process_music(inrom, meta={}, f_chaos=False, f_battle=True, opera=None, even
                 break
         if processing_failed: 
             continue
-            
-        # tierboss
-        tierboss_mml, tierboss_metadata = generate_tierboss_mml()
-        # TODO add tierboss_metadata entries to used_song_names
         
         # -- choose tracklist
         for pool, tracks in sorted(music_pools.items()):
@@ -435,13 +436,14 @@ def process_music(inrom, meta={}, f_chaos=False, f_battle=True, opera=None, even
                 for track in tracks:
                     playlist.add_fixed(track)
                 continue
-            # TODO - battle and ext for now these just auto merge with default
+            # 'ext' uses default pool, it's just a marker to allow excluding those slot
             elif pool == "ext":
                 continue
             elif pool == "default":
                 tracks = tracks + music_pools["ext"]
             if tracks: #make deterministic based on seed, don't let any undefined order (from dict) sneak in
-                random.shuffle(sorted(tracks))
+                tracks = sorted(tracks)
+                random.shuffle(tracks)
             for track in tracks:
                 if track in already_added:
                     continue

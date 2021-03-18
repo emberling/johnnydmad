@@ -57,7 +57,7 @@
 38: sleep,          sleep
 39: sfxwind,        fixed
 3A: sfxwaves,       fixed
-3B: dmad123,        tierboss
+3B: dmad123,        default
 3C: sfxtrain,       fixed
 3D: spinach,        default
 3E: death,          death

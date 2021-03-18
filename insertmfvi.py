@@ -58,11 +58,11 @@ class Sequence():
         self.edl = edl
         
     def init_from_bin(self, fn):
-        self.filename = fn
+        self.filename = sanitize_path(fn)
         self.filetype = "bin"
         
     def init_from_mml(self, fn, variant=None):
-        self.filename = fn
+        self.filename = sanitize_path(fn)
         self.variant = variant
         self.filetype = "mml"
         
@@ -70,7 +70,7 @@ class Sequence():
         text = [s.strip() for s in text.split(',')]
         if not text:
             return None
-        self.filename = os.path.join(args.seqpath, text[0])
+        self.filename = os.path.join(args.seqpath, sanitize_path(text[0]))
         for item in text[1:]:
             item = item.lower()
             value = ""
@@ -95,7 +95,7 @@ class Sequence():
                 
     def init_from_virtlist(self, dat):
         fn, var, is_sfx, is_long, mml = dat
-        self.filename = fn
+        self.filename = sanitize_path(fn)
         self.filetype = "mml"
         self.variant = var
         self.is_sfx = is_sfx
@@ -194,7 +194,7 @@ class Sample():
         text = [s.strip() for s in text.split(',')]
         if not text:
             return None
-        self.filename = os.path.join(args.brrpath, text[0])
+        self.filename = os.path.join(args.brrpath, sanitize_path(text[0]))
         try:
             looptext = text[1].lower().strip()
         except IndexError:
@@ -236,7 +236,7 @@ class Sample():
         ifprint(f"DEBUG: internal sample {id:02X}: {self.blocksize}blk L={self.loop.hex().upper()} T={self.tuning.hex().upper()} E={self.adsr.hex().upper()}", DEBUG)
         
     def init_from_import(self, importinfo, basepath=""):
-        self.filename = os.path.join(basepath, importinfo[0])
+        self.filename = os.path.join(basepath, sanitize_path(importinfo[0]))
         self.loop = mml2mfvi.parse_brr_loop(importinfo[1])
         self.tuning = mml2mfvi.parse_brr_tuning(importinfo[2])
         self.adsr = mml2mfvi.parse_brr_env(importinfo[3])
@@ -284,6 +284,13 @@ class Sample():
                 self.brr = len(brr).to_bytes(2, "little") + brr
                 self.blocksize = (len(self.brr) - 2) // 9
                     
+def sanitize_path(path):
+    path = path.split('\\')
+    path = os.path.join('', *path)
+    path = path.split('/')
+    path = os.path.join('', *path)
+    return path
+    
 def from_rom_address(addr):
     # NOTE ROM offset 7E0000-7E7FFF and 7F000-7F7FFF are inaccessible.
     # This is not handled by this program and it will treat them like 7E8000, etc
@@ -541,6 +548,9 @@ def insertmfvi(inrom, argparam=None, virt_sample_list=None, virt_seq_list=None, 
         
         purge_original_samples = True
         
+    args.seqpath = sanitize_path(args.seqpath)
+    args.brrpath = sanitize_path(args.brrpath)
+    
     if not args.freespace:
         args.freespace = ["300000-3FFFFF"]
     CONFIG['DEFAULT']['free_rom_space'] = ""

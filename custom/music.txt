@@ -1,5 +1,4 @@
 [default]
-
 ff6_prelude:    prelude
 ff10_zanarkand: prelude
 
@@ -196,6 +195,9 @@ ff5_village:    village
 doom_e1m1:      assault
 ct_tension:     assault
 
+#temp
+eo3_waves:      dmad123
+
 [victory]
 ff4_fanfare: fanfare
 ff6_fanfare: fanfare
@@ -212,8 +214,8 @@ lu2_sleep: sleep
 ff5_death: death
 ff6_death: death
 
-[tierboss]
-eo3_waves:      dmad123
+#[tierboss]
+#dm: ff6_tier1, ff6_tier2, ff6_tier3
 
 [battle]
 ct_battle:      E5,  battle, bat2
