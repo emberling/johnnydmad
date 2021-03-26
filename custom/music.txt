@@ -220,10 +220,11 @@ ff6_death: death
 [battle]
 ct_battle:      E5,  battle, bat2
 ff1_battle:     E10, battle
+ff6_battle:     E20, battle, bat2, bat3
+top_battle:     E25, battle, bat2, bat3    
 ff7_battle_ff6: E25, battle, bat2
 ff7_battle:     E30, battle, bat2, bat3
 ff9_battle:     E35, battle, bat2
-top_battle:     E40, battle, bat2, bat3    
 totr_battle:    E40,         bat2, bat3
 ff8_laguna:     E40,         bat2, bat3, bat4
 doom_e1m1:      E45, battle
@@ -250,6 +251,7 @@ lal_boss:     I50, mboss, boss, atma
 totr_sboss:   I55,        boss, atma
 ff5_boss:     I60,        boss, atma
 ff4_fiend:    I80,        boss, atma
+ff6_atma:     I80,        boss, atma, dmad5
 ff7_rebirth:  I90,              atma, dmad5
 ffmq_final:   I90,                    dmad5
 ct_final:     I90,                    dmad5
