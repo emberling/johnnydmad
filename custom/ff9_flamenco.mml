@@ -4,7 +4,7 @@
 #ARRANGED emberling
 
 ##WAVE 0x20 0x35 - was 0x32
-#BRR 0x20; ../../data/samples/legacy/32_acoustic_guitar  , FD0B, 68FC, FFF0   
+#BRR 0x20; ../samples/legacy/32_acoustic_guitar  , FD0B, 68FC, FFF0   
 #WAVE 0x21 0x50 - was 0x18
 #WAVE 0x22 0x65 - was 0x0D
 #WAVE 0x23 0x81 - was 0x9A

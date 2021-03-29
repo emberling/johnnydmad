@@ -5,7 +5,7 @@
 
 ##created with sqspcmml beta 1.1.5
 
-#BRR 0x20; ../../data/samples/legacy/05_cello_1, 4710, B020, FFE0
+#BRR 0x20; ../samples/legacy/05_cello_1, 4710, B020, FFE0
 #WAVE 0x21 0xA5 flute
 #WAVE 0x22 0x36 classical guitar
 #WAVE 0x23 0x65 strings
