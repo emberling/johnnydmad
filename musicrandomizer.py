@@ -5,6 +5,19 @@ from insertmfvi import insertmfvi, byte_insert, int_insert
 JOHNNYDMAD_FREESPACE = ["53C5F-9FDFF", "310000-3FFFFF"]
 TRAIN_SAMPLE_ID = 0x3A
 
+SAMPLE_PATH = 'samples'
+CUSTOM_MUSIC_PATH = 'custom'
+LEGACY_MUSIC_PATH = os.path.join(CUSTOM_MUSIC_PATH, 'legacy')
+STATIC_MUSIC_PATH = 'static_music'
+PLAYLIST_PATH = 'playlists'
+TABLE_PATH = 'tables'
+DEFAULT_PLAYLIST_FILE = os.path.join(PLAYLIST_PATH, 'default.txt')
+LEGACY_LOADBRR_PATH = "../../samples/"
+# For LEGACY_LOADBRR_PATH, note that the filenames from tables/legacy.txt that
+#   are appended to this already contain the "legacy/" bit. Path is relative
+#   to LEGACY_MUSIC_PATH. OS-specific separators are handled later, '/' is
+#   fine here.
+
 used_sample_ids = set()
 used_song_names = set()
 song_id_names = {}
@@ -15,6 +28,16 @@ SFXSONGS = []
 APPENDSONGS = []
 LONGSONGS = []
 
+# Noting some stuff that got confusing because I can't keep my terms straight
+# TODO - change these to be consistent
+# "Playlist" - should refer to the config file determining what songs are used and where.
+#              Also is used in code to refer to the current seed's chosen tracklist. <- should be Tracklist
+# These have not been used consistently, but here is a future plan for how to use them:
+# "Track" - aka "song slot", an ID within game files that corresponds to music played in certain situations.
+# "Song" - A musical piece loaded from an MML file that will be placed in a track.
+# "Category" - A label set in the playlist under which a song is loaded, causing it to randomize into the tracks marked in that category (this is 'pool' atm, but so are other things..)
+# "Pool" - The list of available songs for a particular track, or possibly category
+# In existing varnames "music_pool" is a map by category to the list of (songs? tracks?) within that category, and "song_pool" is a map by track to the list of songs that can be used in that track. i think. maybe. if so, should be "category_pools" and "track_pools" probably.
 
 class TrackMetadata:
     def __init__(self, title="", album="", composer="", arranged=""):
@@ -50,7 +73,7 @@ class Playlist:
     def add_fixed(self, name):
         self.dupe_check(name, "add_fixed")
         self[name] = PlaylistEntry(name)
-        self[name].file = os.path.join('data', 'music', name + '.mml')
+        self[name].file = os.path.join(STATIC_MUSIC_PATH, name + '.mml')
         used_song_names.add(song_usage_id(name))
         
     def add_random(self, name, pool, idx=None, allow_duplicates=False):
@@ -71,7 +94,7 @@ class Playlist:
             idx = song_name_ids[name]
         vbase, vid = song_variant_id(song, idx)
         sfxmode = True if name in SFXSONGS else False
-        for searchpath in [os.path.join('custom', 'music'), os.path.join('custom', 'music', 'legacy'), os.path.join('data', 'music')]:
+        for searchpath in [CUSTOM_MUSIC_PATH, LEGACY_MUSIC_PATH, STATIC_MUSIC_PATH]:
             target = vbase
             potential_files = {}
             found = False
@@ -147,7 +170,7 @@ def song_variant_id(name, idx):
 
 def init_music_txt():            
     music_choice_ini = configparser.ConfigParser()
-    music_choice_ini.read(os.path.join('custom','music.txt'))
+    music_choice_ini.read(DEFAULT_PLAYLIST_FILE)
     music_choice_map = {}
     for section in music_choice_ini:
         for k, v in music_choice_ini[section].items():
@@ -192,7 +215,7 @@ def apply_variant(mml, type, name="", variant="_default_", check_size=False):
                 mml = mml + "\n$888{} r;".format(i)
     if append_mml:
         try:
-            with open(os.path.join("data", "music", append_mml), 'r') as f:
+            with open(os.path.join(STATIC_MUSIC_PATH, append_mml), 'r') as f:
                 mml += f.read()
         except IOError:
             print("couldn't open {}".format(sfx))
@@ -242,7 +265,7 @@ def process_music(inrom, meta={}, f_chaos=False, f_battle=True, opera=None, even
     # -- load sample configs for normal/legacy
     instmap, legacy_instmap = {}, {}
     sample_parser = configparser.ConfigParser()
-    sample_parser.read(os.path.join('tables','brr_samples.txt'))
+    sample_parser.read(os.path.join(TABLE_PATH,'brr_samples.txt'))
     for k, v in sample_parser.items("Samples"):
         try:
             instmap[int(k, 16)] = v
@@ -250,7 +273,7 @@ def process_music(inrom, meta={}, f_chaos=False, f_battle=True, opera=None, even
             print(f"warning: invalid entry {k} in brr_samples.txt")
             
     legacy_parser = configparser.ConfigParser()   
-    legacy_parser.read(os.path.join('tables','brr_legacy.txt'))
+    legacy_parser.read(os.path.join(TABLE_PATH,'brr_legacy.txt'))
     for k, v in legacy_parser.items("Samples"):
         try:
             legacy_instmap[int(k, 16)] = v
@@ -259,10 +282,10 @@ def process_music(inrom, meta={}, f_chaos=False, f_battle=True, opera=None, even
     
     # -- load random pool configuration for tracks
     try:
-        with open(os.path.join('tables','music_ids.txt'), 'r') as f:
+        with open(os.path.join(TABLE_PATH,'music_ids.txt'), 'r') as f:
             music_id_datamap = f.readlines()
     except IOError:
-        print("could not open tables/music_ids.txt, music insertion aborted")
+        print(f"could not open {os.path.join(TABLE_PATH,'music_ids.txt')}, music insertion aborted")
         processing_failed = True
         return inrom
         
@@ -296,6 +319,7 @@ def process_music(inrom, meta={}, f_chaos=False, f_battle=True, opera=None, even
     # -- load random choices configuration for pools (music.txt)
     # moved to function for reuse in length test mode
     music_choice_map = init_music_txt()
+    playlist_filename = DEFAULT_PLAYLIST_FILE #TODO
     
     song_pools = {}
     intensitytable = {}
@@ -313,7 +337,7 @@ def process_music(inrom, meta={}, f_chaos=False, f_battle=True, opera=None, even
                 try:
                     event_mults[s[0]] = int(s[1:])
                 except ValueError:
-                    print(f"WARNING: in music.txt: could not interpret '{s}'")
+                    print(f"WARNING: in playlist {playlist_filename}: could not interpret '{s}'")
         static_mult = 1
         for k, v in event_mults.items():
             static_mult *= v
@@ -430,7 +454,7 @@ def process_music(inrom, meta={}, f_chaos=False, f_battle=True, opera=None, even
         
         # -- choose tracklist
         for pool, tracks in sorted(music_pools.items()):
-            # fixed pool - does not randomize, loads from data/music/ only
+            # fixed pool - does not randomize, loads from static_music/ only
             # TODO - opera is here for now, eventually it should be here only if not using alasdraco
             if pool == "fixed" or pool == "opera":
                 for track in tracks:
@@ -481,7 +505,7 @@ def process_music(inrom, meta={}, f_chaos=False, f_battle=True, opera=None, even
                 appendix = ""
                 for i, id in enumerate(inst):
                     if id > 0:
-                        appendix += f"\n#BRR 0x{i+0x20:02X}; ../../../data/samples/{legacy_instmap[id]}\n"
+                        appendix += f"\n#BRR 0x{i+0x20:02X}; {os.path.join(LEGACY_LOADBRR_PATH, legacy_instmap[id])}\n"
                         #TODO: test if this conflicts with / as variant marker and reconcile somehow
                 pl_entry.mml += appendix
             else:
@@ -558,7 +582,7 @@ def process_formation_music_by_table(data, form_music_overrides={}):
     o_monsters = 0xF0000
     o_epacks = 0xF5000
     
-    with open(os.path.join("tables","formationmusic.txt"), "r") as f:
+    with open(os.path.join(TABLE_PATH,"formationmusic.txt"), "r") as f:
         tbl = f.readlines()
     
     table = []

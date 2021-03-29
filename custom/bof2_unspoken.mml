@@ -3,7 +3,7 @@
 #COMPOSER Yuko Takehara
 #ARRANGED Rushlight
 
-#WAVE 0x20 0x04 ## Bright Piano, originally sample 42
+#WAVE 0x20 0x03 ## Bright Piano, originally sample 42
 #WAVE 0x21 0x02 ## Piano, originally sample 46
 #WAVE 0x22 0x07 ## Muted Piano, originally sample 0
 
@@ -14,7 +14,7 @@
 #def lateTempo= t136
 #def maxTempo=  t144
 
-#def init= 'mainTempo' %x160 %v30 %b0,100 %f0,0
+#def init= 'mainTempo' %x180 %v30 %b0,100 %f0,0
 
 ## It seems like all tracks and all instruments have the same echo and vibrato, so we'll just do it once to start off each track.
 ## Keeping vibrato depth low both because it sounds low in the original and because we need to fend off vibrato-induced lag.
@@ -22,9 +22,9 @@
 
 ## The original seems to use the same volume base for all instruments, but we'll separate it in case we have samples with varying relative volumes
 ## The base macros will correspond to what is volume 100 in the original
-#def bright100=  v65
-#def piano100=   v110
-#def muted100=   v100
+#def bright100=  v120
+#def piano100=   v95
+#def muted100=   v87
 
 ## All other volume macros will use multipliers on top of the 100-volume macro
 #def bright95=  'bright100*v.95'
@@ -51,9 +51,9 @@
 
 ## Use macros to define release rates per instrument
 ## In the original song, all 3 samples have comparable release rates, but things may vary between samples
-#def brightLowRelease=  %r12
-#def brightMedRelease=  %r14
-#def brightHighRelease= %r16
+#def brightLowRelease=  %r4
+#def brightMedRelease=  %r6
+#def brightHighRelease= %r8
 
 #def pianoLowRelease=  %r4
 #def pianoMedRelease=  %r6

@@ -6,7 +6,7 @@
 #WAVE 0x20 0x19 ## Celesta
 #WAVE 0x21 0x65 ## Strings
 #WAVE 0x22 0x64 ## Contrabass
-#WAVE 0x23 0x92 ## Oboe
+#WAVE 0x23 0x94 ## Oboe
 #WAVE 0x24 0x55 ## Bass
 #WAVE 0x25 0x78 ## Chorus
 #WAVE 0x26 0xA7 ## Flute
@@ -25,7 +25,7 @@
 #def celesta=    |0 o4
 #def strings=    |1 o5
 #def flute=      |6 o4
-#def oboe=       |3 o4
+#def oboe=       |3 o5
 #def contrabass= |2 o7
 #def chorus=     |5 o5
 #def vibraphone= |7 o4
@@ -35,16 +35,16 @@
 ## Since the original is Game Boy, it doesn't really have instruments, so macros are named after section and role rather than instrument.
 #def earlyLead1=        'vibraphone' v80  p72  %r16      %e1 m
 #def earlyLead2=        'celesta'    v60  p42  %r6       %e1 m
-#def earlySupport1=     'oboe'       v100 p55  %r4       %e1 m0,9,205
+#def earlySupport1=     'oboe'       v95  p55  %r4       %e1 m0,9,205
 #def earlySupport2=     'contrabass' v100 p85  %r4       %e1 m
-#def earlySupport3=     'chorus'     v70  p32  %r0       %e1 m
+#def earlySupport3=     'chorus'     v70  p32  %r4       %e1 m
 #def earlyLeadEcho=     'vibraphone' v40  p115 %r16      %e1 m
 #def earlyLeadMemory=   'celesta'    v40  p12  %r16      %e1 m
 #def earlyLeadMemoryFadeToMid= v240,20
 #def earlyLeadMemoryFadeToMax= v240,40
 
-#def middleSupport1=    'flute'      v40       %r0       %e1 m0,18,205
-#def middleSupport2=    'chorus'     v65       %r0       %e1 m
+#def middleSupport1=    'flute'      v40       %r6       %e1 m0,18,205
+#def middleSupport2=    'chorus'     v70       %r6       %e1 m
 
 #def lateLead1=         'strings'    v127 p72  'lateSst' %e1 m
 #def lateSupport1=      'strings'    v127 p42  'lateSst' %e1 m

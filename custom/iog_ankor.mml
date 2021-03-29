@@ -3,7 +3,7 @@
 #COMPOSER Yasuhiro Kawasaki
 #ARRANGED Rushlight
 
-#WAVE 0x20 0x62 ## Strings
+#WAVE 0x20 0x66 ## Strings
 #WAVE 0x21 0x81 ## Horn
 #WAVE 0x22 0x64 ## Contrabass
 #WAVE 0x23 0x69 ## Orchestra
@@ -23,7 +23,7 @@
 #def contrabassMed=      'contrabassVol*v.73'
 #def contrabassLo=       'contrabassVol*v.56'
 #def contrabassQuickLo=  'contrabassVol*v.95'
-#def stringsVol=         v30
+#def stringsVol=         v33
 #def backingStringsVol=  v28
 #def timpaniVol=         v95
 #def timpaniLow1=        'timpaniVol*v.15'
@@ -484,37 +484,70 @@ r4 c+2.
   ## 24 / 34
   [44 r8]
   ## Time signature changes to 4/4
+  ## Harp, originally channels 7 and 8
   'harp'
   l24
-  [2
-    ## 28 / 30 / 38 / 40
-    r2
-    'harpLeft' e- 'harpRight' g 'harpLeft' b- 'harpRight' <e- 'harpLeft' g 'harpRight' b-
-    'harpLeft' <e-> 'harpRight' b- 'harpLeft' g 'harpRight' e- 'harpLeft' >b- 'harpRight' g r1 j1,630 j2,632
-  ]
-  $630 %k-2]
-  $632 %k0
+  ## 28 / 38
+  ## Orchestra, originally track 6
+  'orchestra'
+  c2
+  ## Harp, originally channels 7 and 8
+  'harp'
+  l24
+  'harpLeft' e- 'harpRight' g 'harpLeft' b- 'harpRight' <e- 'harpLeft' g 'harpRight' b-
+  'harpLeft' <e-> 'harpRight' b- 'harpLeft' g 'harpRight' e- 'harpLeft' >b- 'harpRight' g r1
+  ## 30 / 40
+  ## Orchestra, originally track 6
+  'orchestra-o1'
+  b-2
+  ## Harp, originally channels 7 and 8
+  'harp'
+  l24
+  %k-2
+  'harpLeft' e- 'harpRight' g 'harpLeft' b- 'harpRight' <e- 'harpLeft' g 'harpRight' b-
+  'harpLeft' <e-> 'harpRight' b- 'harpLeft' g 'harpRight' e- 'harpLeft' >b- 'harpRight' g r1
+  %k0
   ## 32 / 42
+  ## Orchestra, originally track 6
+  'orchestra-o1'
+  a2
+  ## Harp, originally channels 7 and 8
+  'harp'
+  l24
   ## Third harp pattern has different note distances and can't be done by transposing the first one
-  r2
   'harpLeft' c 'harpRight' e 'harpLeft' g 'harpRight' b 'harpLeft' <e 'harpRight' g
   'harpLeft' b 'harpRight' g 'harpLeft' e> 'harpRight' b 'harpLeft' g 'harpRight' e r1
 ]
 ## 44
-[2
-  ## 44/46
-  r2
-  'harpLeft' e- 'harpRight' g 'harpLeft' b- 'harpRight' <e- 'harpLeft' g 'harpRight' b-
-  'harpLeft' <e-> 'harpRight' b- 'harpLeft' g 'harpRight' e- 'harpLeft' >b- 'harpRight' g r1 j1,646 j2,648
-]
-$646 %k-2]
-$648 %k0
+## Orchestra, originally track 6
+'orchestra'
+c2
+## Harp, originally channels 7 and 8
+'harp'
+l24
+'harpLeft' e- 'harpRight' g 'harpLeft' b- 'harpRight' <e- 'harpLeft' g 'harpRight' b-
+'harpLeft' <e-> 'harpRight' b- 'harpLeft' g 'harpRight' e- 'harpLeft' >b- 'harpRight' g r1
+## 46
+## Orchestra, originally track 6
+'orchestra-o1'
+b-2
+## Harp, originally channels 7 and 8
+'harp'
+l24
+%k-2
+'harpLeft' e- 'harpRight' g 'harpLeft' b- 'harpRight' <e- 'harpLeft' g 'harpRight' b-
+'harpLeft' <e-> 'harpRight' b- 'harpLeft' g 'harpRight' e- 'harpLeft' >b- 'harpRight' g r1
+%k0
 ## Third harp pattern has different note distances and can't be done by transposing the first one
 ## 48
-r2
+## Orchestra, originally track 6
+'orchestra-o1'
+a2
+## Harp, originally channels 7 and 8
+'harp'
+l24
 'harpLeft' c 'harpRight' e 'harpLeft' g 'harpRight' b 'harpLeft' <e 'harpRight' g
 'harpLeft' b 'harpRight' g 'harpLeft' e> 'harpRight' b 'harpLeft' g 'harpRight' e r1
-
 [2
   ## 50 / 54
   r2
@@ -538,9 +571,9 @@ $
 ## 9
 b1r1r1r1
 ## 13
-<d1r1r1r1
-## 17
-r1r1r1
+<d1
+## 14
+[6 r1]
 ## 20
 ## Time signature changes to 11/8
 [44 r8]
@@ -549,21 +582,8 @@ r1r1r1
   [44 r8]
   ## Time signature changes to 4/4
   ## 28 / 38
-  c1r1
-  ## 30 / 40
-  >b-1r1
-  ## 32 / 42
-  a1r1<
+  [6 r1]
 ]
 ## 44
-c1r1
-## 46
->b-1r1
-## 48
-a1r1
-## 50
-[6 r1]
+[12 r1]
 ;
-
-
-

@@ -147,6 +147,7 @@ cv4_chandeliers: owzer
 ff6_spinach:    spinach
 ff9_treno:      spinach
 
+ff6_magitek:    magitek
 ff7_mako:       magitek
 met3_plants:    magitek
 

@@ -543,7 +543,7 @@ def insertmfvi(inrom, argparam=None, virt_sample_list=None, virt_seq_list=None, 
         args.hack2 = True
         args.remapbrr = None
         args.brrcount = "0x3F"
-        args.brrpath = "data/samples"
+        args.brrpath = "samples"
         args.seqpath = ""
         
         purge_original_samples = True
