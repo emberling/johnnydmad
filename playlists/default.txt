@@ -151,6 +151,7 @@ ff6_magitek:    magitek
 ff7_mako:       magitek
 met3_plants:    magitek
 
+ff6_floating:   floating
 ff14_azyslla:   floating
 ffmq_final:     floating
 
@@ -163,10 +164,11 @@ zaol_temple:    fanatics
 ff6_ktower:     ktower
 ct_undersea:    ktower
 
+ff6_ruin:       ruin
 ff8_world:      ruin
 top_sylph:      ruin, tomb
 
-ff6_forest:     forest
+ff6_forest:     forest, tomb
 ct_forest:      forest
 
 ff10_via:       tomb
