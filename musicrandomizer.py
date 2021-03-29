@@ -557,11 +557,15 @@ def process_music(inrom, meta={}, f_chaos=False, f_battle=True, opera=None, even
             composer = composer.group(0) if composer else "??"
             arranged = arranged.group(0) if arranged else "??"
             
+            # Jukebox title
             if pl_name not in music_pools["fixed"] and pl_name not in music_pools["opera"]:
-                #n = os.path.basename(pl_entry.file).split('.')[0]
-                n = os.path.basename(pl_entry.file).split('.')[0].split('_')[0].upper() + " "
-                n += title
-                n = n[:18]
+                n = re.search("(?<=#SHORTNAME )([^;\n]*)", pl_entry.mml, re.IGNORECASE)
+                if n:
+                    n = n.group(0)
+                else:
+                    n = os.path.basename(pl_entry.file).split('.')[0].split('_')[0].upper() + " "
+                    n += title
+                    n = n[:18]
                 meta[k] = n
             #metadata[k] = TrackMetadata(title, album, composer, arranged, menuname)
 

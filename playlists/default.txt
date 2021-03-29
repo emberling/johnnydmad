@@ -255,4 +255,5 @@ ff4_fiend:    I80,        boss, atma
 ff6_atma:     I80,        boss, atma, dmad5
 ff7_rebirth:  I90,              atma, dmad5
 ffmq_final:   I90,                    dmad5
-ct_final:     I90,                    dmad5
+ct_final:     I95,              atma, dmad5
+ff6_final:    I95,              atma, dmad5
