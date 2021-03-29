@@ -1,8 +1,13 @@
-#from musicrandomizer import process_music, process_map_music, process_formation_music_by_table, init_music_txt, apply_variant, Playlist
+import configparser
+import os
+import sys
+
+sys.path.append(os.path.dirname(__file__))
+sys.path.append(os.path.join(os.path.dirname(__file__), "mfvitools"))
+
 from musicrandomizer import *
 from insertmfvi import byte_insert, int_insert
 from mml2mfvi import mml_to_akao
-import configparser
 
 ## TO DO LIST
 # - finish ripping FF6 vanilla songs

@@ -1,4 +1,9 @@
-import os, re, configparser, random, copy
+import configparser
+import copy
+import os
+import random
+import re
+
 from mml2mfvi import mml_to_akao, get_variant_list
 from insertmfvi import insertmfvi, byte_insert, int_insert
 
