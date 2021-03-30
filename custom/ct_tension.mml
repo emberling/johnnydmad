@@ -4,6 +4,9 @@
 #ARRANGED emberling
 ##created with sqspcmml beta 1.1.2
 
+#--------- ------------------
+#SHORTNAME CT Strange Happeni
+
 #WAVE 0x20 0x62 - was 0x45 - strings
 #WAVE 0x21 0x59 - was 0x90 - pizz
 #WAVE 0x22 0x01 - was 0x8C - piano

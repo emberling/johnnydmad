@@ -4,6 +4,9 @@
 #ARRANGED emberling
 ##created with sqspcmml beta 1.1.4
 
+########## ------------------
+#SHORTNAME FF4 Bat.w/4 Fiends
+
 #WAVE 0x20 0x5C - was 0x16
 #WAVE 0x21 0x81 - was 0x9A
 #WAVE 0x22 0x51 - was 0x80

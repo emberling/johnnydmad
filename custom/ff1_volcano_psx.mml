@@ -3,6 +3,9 @@
 #COMPOSER Nobuo Uematsu
 #ARRANGED emberling
 
+########## ------------------
+#SHORTNAME FF1 Gurgu V. (PSX)
+
 #WAVE 0x20 - 0xA3 ~ panflute  ~ was 0x03
 #WAVE 0x21 - 0x77 ~ brightfx  ~ was 0x41
 #WAVE 0x22 - 0x25 ~ marimba   ~ was 0x86

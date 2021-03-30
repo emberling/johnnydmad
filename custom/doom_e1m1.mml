@@ -3,6 +3,9 @@
 #COMPOSER Bobby Prince
 #ARRANGED emberling
 
+########## ------------------
+#SHORTNAME E1M1 At DOOMs Gate
+
 #WAVE 0x20 0x47 eguitar-dist-clear
 #WAVE 0x21 0x48 eguitar-dist-palm-mute-open
 #WAVE 0x22 0x49 eguitar-dist-palm-mute-closed

@@ -4,6 +4,9 @@
 #ARRANGED emberling
 ##created with sqspcmml beta 1.1.5
 
+########## ------------------
+#SHORTNAME FF6 Magic House
+
 #WAVE 0x20 0x00 (oboe)
 #WAVE 0x21 0xA5 flute
 #WAVE 0x22 0x12 harpsi

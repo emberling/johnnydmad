@@ -3,6 +3,9 @@
 #COMPOSER Yuzo Koshiro
 #ARRANGED emberling
 
+########## ------------------
+#SHORTNAME EO3 End of Raging_
+
 #WAVE 0x20 0x88  Brass Lead
 #WAVE 0x21 0xD2  Rock Organ
 #WAVE 0x22 0x33  Bassy Pluck

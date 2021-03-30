@@ -3,6 +3,9 @@
 #COMPOSER Kenji Yamamoto
 #ARRANGED emberling
 
+########## ------------------
+#SHORTNAME MET3 B* Plant Area
+
 #WAVE 0x20 0x05 grandpiano
 #WAVE 0x21 0x52 bass_synth
 #WAVE 0x22 0x74 alto choir

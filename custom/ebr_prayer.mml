@@ -3,6 +3,9 @@
 #COMPOSER Yukio Nakajima
 #ARRANGED emberling
 
+########## ------------------
+#SHORTNAME EBr Prayer Bells _
+
 #WAVE 0x20 0x66 strings
 #WAVE 0x21 0x75 vox
 #WAVE 0x22 0x39 lead

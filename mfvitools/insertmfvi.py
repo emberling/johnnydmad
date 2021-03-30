@@ -285,10 +285,11 @@ class Sample():
                 self.blocksize = (len(self.brr) - 2) // 9
                     
 def sanitize_path(path):
+    drive, path = os.path.splitdrive(path)
     path = path.split('\\')
     path = os.path.join('', *path)
     path = path.split('/')
-    path = os.path.join('', *path)
+    path = os.path.join(drive, *path)
     return path
     
 def from_rom_address(addr):

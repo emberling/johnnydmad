@@ -5,6 +5,9 @@
 
 ##created with sqspcmml beta 1.1.5
 
+########## ------------------
+#SHORTNAME SD2 Mana Fortress
+
 #WAVE 0x20 0x0A kick
 #WAVE 0x21 0x1D snare
 #WAVE 0x22 0x3A chat

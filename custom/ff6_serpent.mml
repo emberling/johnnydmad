@@ -4,6 +4,9 @@
 #ARRANGED emberling
 ##created with sqspcmml beta 1.1.5
 
+#--------- ------------------
+#SHORTNAME FF6 Serpent Trench
+
 #WAVE 0x20 0x86 horn
 #WAVE 0x21 0x65 strings
 #WAVE 0x22 0x64 contrabass

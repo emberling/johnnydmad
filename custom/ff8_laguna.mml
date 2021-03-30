@@ -3,6 +3,9 @@
 #COMPOSER Nobuo Uematsu
 #ARRANGED emberling
 
+########## ------------------
+#SHORTNAME FF8 Man w/Machine_
+
 #WAVE 0x20 0xc2 ultrasaw
 #WAVE 0x21 0xc4 synthstrings
 #WAVE 0x22 0xb7 voxatron

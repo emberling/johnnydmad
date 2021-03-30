@@ -3,6 +3,9 @@
 #COMPOSER Masayoshi Soken
 #ARRANGED emberling
 
+########## ------------------
+#SHORTNAME FF14 Azys Lla
+
 #BRR  0x20 0xC4; brr/cs16_synth, 9F0C, F270, F 7 7 0
 #WAVE 0x21 0xB0 - was 0x3B - porgan
 #WAVE 0x22 0xB5 - was 0x9B - rorgan

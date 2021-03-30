@@ -3,6 +3,9 @@
 #COMPOSER Nobuo Uematsu
 #ARRANGED emberling
 
+########## ------------------
+#SHORTNAME FF7 Elec d'Chocobo
+
 #WAVE 0x20 0xB2 - was 0x0B organ
 #WAVE 0x21 0x17 - was 0x80 elecg
 #WAVE 0x22 0x32 - was 0x1D mandolin

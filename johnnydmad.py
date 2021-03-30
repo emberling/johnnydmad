@@ -10,7 +10,7 @@ from insertmfvi import byte_insert, int_insert
 from mml2mfvi import mml_to_akao
 
 ## TO DO LIST
-# - finish ripping FF6 vanilla songs
+# * finish ripping FF6 vanilla songs
 # - opera mode
 # - tierboss
 # - write metadata to spoiler
@@ -24,7 +24,7 @@ from mml2mfvi import mml_to_akao
 # - ensure function with pyinstaller
 # - reconcile music player w/ Myria disable sound hack
 # - integration with BC randomizer
-# - allow selection of less intrusive mode(s) in jdm launcher
+# - allow selection of less intrusive mode(s) in jdm launcher (no event edits, e.g.)
 # - test with Gaiden
 # - test with WC
 
@@ -68,6 +68,7 @@ def test_sfx():
     cursor = " >)|(<"
     music_choice_map = init_music_txt()
     results = []
+    jukebox_titles = {}
     i = 0
     print("")
     for choice in sorted(music_choice_map):
@@ -80,12 +81,9 @@ def test_sfx():
                 variant = "_default_"
             mml = apply_variant(pl[name].mml, type, name, variant=pl[name].variant)
             bin = mml_to_akao(mml, choice + ' ' + name, sfxmode=use_sfx, variant=variant)[0]
-            #if len(bin) >= 0x1002:
-            #    print(f"{choice} * {type} *** ${len(bin):0X} bytes ~~WARNING~~")
-            #    input()
-            #else:
-            #    print(f"{choice} : {type} ::: ${len(bin):0X} bytes")
             binsizes[type] = len(bin)
+            if name not in jukebox_titles:
+                jukebox_titles[choice] = get_jukebox_title(mml, choice)
         results.append((max(binsizes.values()), choice, binsizes))
         pct = (i / len(music_choice_map)) * 100
         full_boxes = int(pct // 2)
@@ -100,6 +98,7 @@ def test_sfx():
         print(f"{name:<20} :: ", end="")
         for k, v in binsizes.items():
             print(f"[{k} - ${v:0X}] ", end="")
+        print(f" :: <{jukebox_titles[name]:<18}>", end="")
         if largest >= 0x1002:
             print("~~WARNING~~")
         else:
@@ -219,15 +218,40 @@ menu_text_table = {
     '-': b'\xC4',
     '.': b'\xC5',
     ',': b'\xC6',
-    '~': b'\xC7', # ellipsis
+    '_': b'\xC7', # ellipsis
     ';': b'\xC8',
     '#': b'\xC9',
     '+': b'\xCA',
     '(': b'\xCB',
     ')': b'\xCC',
     '%': b'\xCD',
-    '_': b'\xCE', # tilde
+    '~': b'\xCE', # tilde
+    '*': b'\xCF', # asterisk
     '=': b'\xD2',
+#   '„': b'\xD3', # (0132) two dot ellipsis
+    '^': b'\xD4', # up arrow
+    '>': b'\xD5', # right arrow
+    '<': b'\xD6', # down left arrow                           
+    '&': b'\xD7', # weird x
+    '`': b'\xD8', # dagger
+#   'Š': b'\xD9', # (0138) sword
+    '|': b'\xDA', # spear
+    '\\': b'\xDB', # katana
+#   'ƒ': b'\xDC', # (0131) staff
+#   '‹': b'\xDD', # (0139) brush
+    '}': b'\xDE', # shuriken
+    '@': b'\xDF', # flail
+    '$': b'\xE0', # gambler
+#   '€': b'\xE1', # (0128) claw
+#   '†': b'\xE2', # (0134) shield
+#   'Œ': b'\xE3', # (0140) helmet
+#   '‡': b'\xE4', # (0135) armor 
+#   '™': b'\xE5', # (0153) tools
+#   '‰': b'\xE6', # (0137) scroll
+    '{': b'\xE7', # ring
+    '[': b'\xE8', # white magic
+    ']': b'\xE9', # black magic
+#   '•': b'\xEA', # (0149) gray magic
     ' ': b'\xFE'
     }
 

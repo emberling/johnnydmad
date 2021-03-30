@@ -185,6 +185,18 @@ def init_music_txt():
                 music_choice_map[k] = v
     return music_choice_map
 
+def get_jukebox_title(mml, fn):
+    n = re.search("(?<=#SHORTNAME )([^;\n]*)", mml, re.IGNORECASE)
+    if n:
+        n = n.group(0)
+    else:
+        title = re.search("(?<=#TITLE )([^;\n]*)", mml, re.IGNORECASE)
+        title = title.group(0)
+        n = os.path.basename(fn).split('.')[0].split('_')[0].upper() + " "
+        n += title
+        n = n[:18]
+    return n
+                    
 ############ variant processing
 
 def apply_variant(mml, type, name="", variant="_default_", check_size=False):
@@ -559,14 +571,7 @@ def process_music(inrom, meta={}, f_chaos=False, f_battle=True, opera=None, even
             
             # Jukebox title
             if pl_name not in music_pools["fixed"] and pl_name not in music_pools["opera"]:
-                n = re.search("(?<=#SHORTNAME )([^;\n]*)", pl_entry.mml, re.IGNORECASE)
-                if n:
-                    n = n.group(0)
-                else:
-                    n = os.path.basename(pl_entry.file).split('.')[0].split('_')[0].upper() + " "
-                    n += title
-                    n = n[:18]
-                meta[k] = n
+                meta[k] = get_jukebox_title(pl_entry.mml, pl_entry.file)
             #metadata[k] = TrackMetadata(title, album, composer, arranged, menuname)
 
         # -- run insertmfvi

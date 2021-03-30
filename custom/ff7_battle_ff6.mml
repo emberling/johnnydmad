@@ -3,6 +3,9 @@
 #COMPOSER Nobuo Uematsu
 #ARRANGED emberling
 
+########## ------------------
+#SHORTNAME FF7 Fighting (FF6)
+
 #WAVE 0x20 0x65 strings
 #WAVE 0x21 0x81 trumpet
 #WAVE 0x22 0x41 dist
