@@ -284,12 +284,13 @@ class Sample():
                 self.brr = len(brr).to_bytes(2, "little") + brr
                 self.blocksize = (len(self.brr) - 2) // 9
                     
-def sanitize_path(path):
-    drive, path = os.path.splitdrive(path)
+def sanitize_path(in_path):
+    drive, path = os.path.splitdrive(in_path)
+    sep = os.path.join('a','a')[1] if (path and path[0] in ['\\', '/']) else ""
     path = path.split('\\')
     path = os.path.join('', *path)
     path = path.split('/')
-    path = os.path.join(drive, *path)
+    path = os.path.join(drive, sep, *path)
     return path
     
 def from_rom_address(addr):
