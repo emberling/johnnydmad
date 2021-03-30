@@ -24,6 +24,7 @@ from mml2mfvi import mml_to_akao
 # - ensure function with pyinstaller
 # - reconcile music player w/ Myria disable sound hack
 # - integration with BC randomizer
+# - allow music sourced from ROM, if specified by host / integrate mfvi2mml
 # - allow selection of less intrusive mode(s) in jdm launcher (no event edits, e.g.)
 # - test with Gaiden
 # - test with WC
@@ -66,26 +67,26 @@ def test_sfx():
         ("train", "train", 0x20, False)
         ]
     cursor = " >)|(<"
-    music_choice_map = init_music_txt()
+    playlist_map = init_playlist()
     results = []
     jukebox_titles = {}
     i = 0
     print("")
-    for choice in sorted(music_choice_map):
+    for choice in sorted(playlist_map):
         binsizes = {}
         for type, name, idx, use_sfx in testbed:
-            pl = Playlist()
-            pl.add_random(name, [choice], idx=idx, allow_duplicates=True)
-            variant = pl[name].variant
+            tl = Tracklist()
+            tl.add_random(name, [choice], idx=idx, allow_duplicates=True)
+            variant = tl[name].variant
             if variant is None:
                 variant = "_default_"
-            mml = apply_variant(pl[name].mml, type, name, variant=pl[name].variant)
+            mml = apply_variant(tl[name].mml, type, name, variant=tl[name].variant)
             bin = mml_to_akao(mml, choice + ' ' + name, sfxmode=use_sfx, variant=variant)[0]
             binsizes[type] = len(bin)
             if name not in jukebox_titles:
                 jukebox_titles[choice] = get_jukebox_title(mml, choice)
         results.append((max(binsizes.values()), choice, binsizes))
-        pct = (i / len(music_choice_map)) * 100
+        pct = (i / len(playlist_map)) * 100
         full_boxes = int(pct // 2)
         cursor_idx = int((pct % 2)*(len(cursor)/2))
         boxtext = "-" * full_boxes + cursor[cursor_idx]

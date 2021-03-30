@@ -25,13 +25,13 @@ LEGACY_LOADBRR_PATH = "../../samples/"
 
 used_sample_ids = set()
 used_song_names = set()
-song_id_names = {}
-song_name_ids = {}
+track_id_names = {}
+track_name_ids = {}
     
 windy_intro = False
-SFXSONGS = []
-APPENDSONGS = []
-LONGSONGS = []
+SFXTRACKS = []
+APPENDTRACKS = []
+LONGTRACKS = []
 
 # Noting some stuff that got confusing because I can't keep my terms straight
 # TODO - change these to be consistent
@@ -48,7 +48,7 @@ class TrackMetadata:
     def __init__(self, title="", album="", composer="", arranged=""):
         self.title, self.album, self.composer, self.arranged = title, album, composer, arranged
         
-class PlaylistEntry:
+class TracklistEntry:
     def __init__(self, name):
         self.slotname = name
         self.file = None
@@ -59,7 +59,7 @@ class PlaylistEntry:
         self.is_legacy = False
         self.is_fixed = True
         
-class Playlist:
+class Tracklist:
     def __init__(self):
         self.data = {}
         
@@ -71,34 +71,34 @@ class Playlist:
         
     def dupe_check(self, name, module="unknown"):
         if name in self.data:
-            print(f"warning: in {module}: duplicate playlist data for {name}, overwriting entry with file {self[name].file}")
+            print(f"warning: in {module}: duplicate tracklist data for {name}, overwriting entry with file {self[name].file}")
             return True
         return False
         
     def add_fixed(self, name):
         self.dupe_check(name, "add_fixed")
-        self[name] = PlaylistEntry(name)
+        self[name] = TracklistEntry(name)
         self[name].file = os.path.join(STATIC_MUSIC_PATH, name + '.mml')
         used_song_names.add(song_usage_id(name))
         
     def add_random(self, name, pool, idx=None, allow_duplicates=False):
         self.dupe_check(name, "add_random")
-        self[name] = PlaylistEntry(name)
+        self[name] = TracklistEntry(name)
         self[name].is_fixed = False
         
         if not allow_duplicates:
             pool = [p for p in pool if song_usage_id(p) not in used_song_names]
         if len(pool) < 1:
-            print(f"info: pool for {name} is empty, rerolling playlist")
+            print(f"info: pool for {name} is empty, rerolling tracklist")
             input() #debug, #TODO remove
             return False
         song = random.choice(pool)
         
         # check various possible file locations over various possible variants
         if idx is None:
-            idx = song_name_ids[name]
+            idx = track_name_ids[name]
         vbase, vid = song_variant_id(song, idx)
-        sfxmode = True if name in SFXSONGS else False
+        sfxmode = True if name in SFXTRACKS else False
         for searchpath in [CUSTOM_MUSIC_PATH, LEGACY_MUSIC_PATH, STATIC_MUSIC_PATH]:
             target = vbase
             potential_files = {}
@@ -173,17 +173,17 @@ def song_variant_id(name, idx):
     else:
         return name, ""
 
-def init_music_txt():            
-    music_choice_ini = configparser.ConfigParser()
-    music_choice_ini.read(DEFAULT_PLAYLIST_FILE)
-    music_choice_map = {}
-    for section in music_choice_ini:
-        for k, v in music_choice_ini[section].items():
-            if k in music_choice_map:
-                music_choice_map[k] += f", {v}"
+def init_playlist(fn=DEFAULT_PLAYLIST_FILE):            
+    playlist_parser = configparser.ConfigParser()
+    playlist_parser.read(fn)
+    playlist_map = {}
+    for section in playlist_parser:
+        for k, v in playlist_parser[section].items():
+            if k in playlist_map:
+                playlist_map[k] += f", {v}"
             else:
-                music_choice_map[k] = v
-    return music_choice_map
+                playlist_map[k] = v
+    return playlist_map
 
 def get_jukebox_title(mml, fn):
     n = re.search("(?<=#SHORTNAME )([^;\n]*)", mml, re.IGNORECASE)
@@ -297,17 +297,17 @@ def process_music(inrom, meta={}, f_chaos=False, f_battle=True, opera=None, even
         except ValueError:
             print(f"warning: invalid entry {k} in brr_legacy.txt")
     
-    # -- load random pool configuration for tracks
+    # -- load map of categories for tracks (i.e. which pool of songs applies to each track)
     try:
-        with open(os.path.join(TABLE_PATH,'music_ids.txt'), 'r') as f:
-            music_id_datamap = f.readlines()
+        with open(os.path.join(TABLE_PATH,'track_ids.txt'), 'r') as f:
+            track_id_map = f.readlines()
     except IOError:
-        print(f"could not open {os.path.join(TABLE_PATH,'music_ids.txt')}, music insertion aborted")
+        print(f"could not open {os.path.join(TABLE_PATH,'track_ids.txt')}, music insertion aborted")
         processing_failed = True
         return inrom
         
-    music_pools, pool_by_slot = {}, {}
-    for line in music_id_datamap:
+    category_tracks, track_categories = {}, {}
+    for line in track_id_map:
         # trim comments
         line = line.split('#')[0]
         # reject blanks and other lines without a xx: ~~ structure
@@ -317,35 +317,35 @@ def process_music(inrom, meta={}, f_chaos=False, f_battle=True, opera=None, even
         name, pool = [s.strip() for s in line.split(',')[:2]]
         # reject bad ids
         if not set(id) <= set("0123456789abcdefABCDEF"):
-            print(f"warning: music_ids.txt ({i}): id {id} contains invalid characters")
+            print(f"warning: track_ids.txt ({i}): id {id} contains invalid characters")
             continue
         id = int(id, 16)
-        if id in song_id_names:
-            print(f"warning: music_ids.txt ({i}): multiple definition of id {id:02X}")
+        if id in track_id_names:
+            print(f"warning: track_ids.txt ({i}): multiple definition of id {id:02X}")
             continue
             
-        song_id_names[id] = name
-        song_name_ids[name] = id
-        if pool not in music_pools:
-            music_pools[pool] = []
+        track_id_names[id] = name
+        track_name_ids[name] = id
+        if pool not in category_tracks:
+            category_tracks[pool] = []
         if pool in ["ext"]:
             pool = "default"
-        music_pools[pool].append(name)
-        pool_by_slot[name] = pool
+        category_tracks[pool].append(name)
+        track_categories[name] = pool
 
     # -- load random choices configuration for pools (music.txt)
     # moved to function for reuse in length test mode
-    music_choice_map = init_music_txt()
+    playlist_map = init_playlist()
     playlist_filename = DEFAULT_PLAYLIST_FILE #TODO
     
-    song_pools = {}
+    track_pools = {}
     intensitytable = {}
     intensitytable["battle"] = {}
     intensitytable["boss"] = {}
-    for song in music_choice_map.items():
+    for song in playlist_map.items():
         valid_slots = [s.strip() for s in song[1].split(',')]
         intense, epic = 0,0
-        all_pools_of_song = set()
+        song_categories = set()
         #holiday stuff
         event_mults = {}
         for s in valid_slots:
@@ -378,25 +378,25 @@ def process_music(inrom, meta={}, f_chaos=False, f_battle=True, opera=None, even
                 else:
                     slot = s
                     mult = 1
-                pool = pool_by_slot[slot]
-                all_pools_of_song.add(pool)
-                if slot not in song_pools:
-                    song_pools[slot] = []
+                pool = track_categories[slot]
+                song_categories.add(pool)
+                if slot not in track_pools:
+                    track_pools[slot] = []
                 if not f_chaos:
-                    song_pools[slot].extend([song[0]]*mult*static_mult)
+                    track_pools[slot].extend([song[0]]*mult*static_mult)
         #for chaos, we add left side as an option for all entries
         if f_chaos:
-            for pool in all_pools_of_song:
-                for slot in music_pools[pool]:
-                    if slot not in song_pools:
-                        song_pools[slot] = []
-                    song_pools[slot].extend([song[0]]*static_mult)
+            for pool in song_categories:
+                for slot in category_tracks[pool]:
+                    if slot not in track_pools:
+                        track_pools[slot] = []
+                    track_pools[slot].extend([song[0]]*static_mult)
         #battle stuffs part2
         intense = max(0, min(intense, 99))
         epic = max(0, min(epic, 99))
-        if "boss" in all_pools_of_song:
+        if "boss" in song_categories:
             intensitytable["boss"][song[0]] = intense
-        if "battle" in all_pools_of_song:
+        if "battle" in song_categories:
             intensitytable["battle"][song[0]] = epic
     
     # -- retry loop
@@ -408,14 +408,14 @@ def process_music(inrom, meta={}, f_chaos=False, f_battle=True, opera=None, even
         used_sample_ids = set()
         used_song_names = set()
         
-        playlist = Playlist()
+        tracklist = Tracklist()
                     
-        LONGSONGS = ["ending1", "ending2"]
-        SFXSONGS = ["ruin", "zozo"]
+        LONGTRACKS = ["ending1", "ending2"]
+        SFXTRACKS = ["ruin", "zozo"]
         windy_intro = random.choice([True, False, False])
         if windy_intro:
-            SFXSONGS.append("assault")
-        APPENDSONGS = SFXSONGS + ["train"]
+            SFXTRACKS.append("assault")
+        APPENDTRACKS = SFXTRACKS + ["train"]
             
         if attempts >= 1000:
             print("Music randomization failed after 1000 attempts. Your custom music configuration files and/or filters may be too restrictive.")
@@ -442,10 +442,10 @@ def process_music(inrom, meta={}, f_chaos=False, f_battle=True, opera=None, even
                 temp_used_song_names = copy.copy(used_song_names)
                 for track in order:
                     # get song options for tier (exclude by used and under level)
-                    if track not in song_pools:
+                    if track not in track_pools:
                         prog_attempts = 1000
                         break
-                    track_pool = [s for s in song_pools[track] if s not in temp_used_song_names and s not in already_added and intensitytable[cat][s] >= prog_level]
+                    track_pool = [s for s in track_pools[track] if s not in temp_used_song_names and s not in already_added and intensitytable[cat][s] >= prog_level]
                     # choose one, if no options retry
                     if not track_pool:
                         prog_attempts += 1
@@ -457,9 +457,9 @@ def process_music(inrom, meta={}, f_chaos=False, f_battle=True, opera=None, even
                     print(f"prog: {track} - chose {choice} at intensity {prog_level} from pool {track_pool}")
                 if len(prog_choices) == len(order):
                     break
-            # add to playlist
+            # add to tracklist
             for i, choice in enumerate(prog_choices):
-                ok = playlist.add_random(progression[cat][i], [choice])
+                ok = tracklist.add_random(progression[cat][i], [choice])
                 if not ok:
                     processing_failed = True
                     break
@@ -470,27 +470,27 @@ def process_music(inrom, meta={}, f_chaos=False, f_battle=True, opera=None, even
             continue
         
         # -- choose tracklist
-        for pool, tracks in sorted(music_pools.items()):
-            # fixed pool - does not randomize, loads from static_music/ only
+        for pool, tracks in sorted(category_tracks.items()):
+            # fixed category - does not randomize, loads from static_music/ only
             # TODO - opera is here for now, eventually it should be here only if not using alasdraco
             if pool == "fixed" or pool == "opera":
                 for track in tracks:
-                    playlist.add_fixed(track)
+                    tracklist.add_fixed(track)
                 continue
-            # 'ext' uses default pool, it's just a marker to allow excluding those slot
+            # 'ext' uses default's pool, it's just a marker to allow excluding those tracks
             elif pool == "ext":
                 continue
             elif pool == "default":
-                tracks = tracks + music_pools["ext"]
+                tracks = tracks + category_tracks["ext"]
             if tracks: #make deterministic based on seed, don't let any undefined order (from dict) sneak in
                 tracks = sorted(tracks)
                 random.shuffle(tracks)
             for track in tracks:
                 if track in already_added:
                     continue
-                if track not in song_pools:
-                    song_pools[track] = []
-                ok = playlist.add_random(track, song_pools[track])
+                if track not in track_pools:
+                    track_pools[track] = []
+                ok = tracklist.add_random(track, track_pools[track])
                 if not ok:
                     processing_failed = True
                     break
@@ -500,44 +500,44 @@ def process_music(inrom, meta={}, f_chaos=False, f_battle=True, opera=None, even
         # -- load tracklist files, while...
         #    - for NON-legacy #WAVE, record used samples in a set
         #    - for legacy #WAVE, convert to #BRR
-        for pl_name, pl_entry in playlist.data.items():
-            if not pl_entry.mml:
+        for tl_name, tl_entry in tracklist.data.items():
+            if not tl_entry.mml:
                 try:
-                    with open(pl_entry.file, "r") as f:
-                        pl_entry.mml = f.read()
+                    with open(tl_entry.file, "r") as f:
+                        tl_entry.mml = f.read()
                 except IOError:
-                    print(f"file not found: {pl_entry.file}")
+                    print(f"file not found: {tl_entry.file}")
                     processing_failed = True
                     break
-            variant = pl_entry.variant if pl_entry.variant else "_default_"
+            variant = tl_entry.variant if tl_entry.variant else "_default_"
             # grab inst from mml and turn it into a form we can use
-            inst_raw = mml_to_akao(pl_entry.mml, inst_only=True, variant=variant)
+            inst_raw = mml_to_akao(tl_entry.mml, inst_only=True, variant=variant)
             inst = []
             for i, b in enumerate(inst_raw):
                 if i % 2:
                     continue
                 inst.append(b)
-            if pl_entry.is_legacy:
+            if tl_entry.is_legacy:
                 #legacy: use legacy instmap to make #BRR
                 appendix = ""
                 for i, id in enumerate(inst):
                     if id > 0:
                         appendix += f"\n#BRR 0x{i+0x20:02X}; {os.path.join(LEGACY_LOADBRR_PATH, legacy_instmap[id])}\n"
                         #TODO: test if this conflicts with / as variant marker and reconcile somehow
-                pl_entry.mml += appendix
+                tl_entry.mml += appendix
             else:
                 #non-legacy: record usage so we can determine which samples are needed this seed
                 for i in inst:
                     if i > 0:
                         used_sample_ids.add(i)
-            if pl_name in APPENDSONGS:
+            if tl_name in APPENDTRACKS:
                 append_type_map = {
                     "train":   "train",
                     "ruin":    "wind",
                     "assault": "wind",
                     "zozo":    "rain"}
-                pl_entry.mml = apply_variant(pl_entry.mml, append_type_map[pl_name], name=pl_entry.file, variant=variant, check_size = True if pl_name == "assault" else False)
-                if append_type_map[pl_name] == "train":
+                tl_entry.mml = apply_variant(tl_entry.mml, append_type_map[tl_name], name=tl_entry.file, variant=variant, check_size = True if tl_name == "assault" else False)
+                if append_type_map[tl_name] == "train":
                     used_sample_ids.add(TRAIN_SAMPLE_ID)
         if processing_failed:
             continue
@@ -552,26 +552,26 @@ def process_music(inrom, meta={}, f_chaos=False, f_battle=True, opera=None, even
             sample_virtlist[f"{id:02X}"] = f"{instmap[id]}"
         # -- generate virtual mml listfile for insertmfvi
         mml_virtlist = {}
-        for pl_name, pl_entry in playlist.data.items():
-            k = song_name_ids[pl_name]
-            is_sfx = True if pl_name in SFXSONGS else False
-            is_long = True if pl_name in LONGSONGS else False
-            v = (pl_entry.file, pl_entry.variant, is_sfx, is_long, pl_entry.mml)
+        for tl_name, tl_entry in tracklist.data.items():
+            k = track_name_ids[tl_name]
+            is_sfx = True if tl_name in SFXTRACKS else False
+            is_long = True if tl_name in LONGTRACKS else False
+            v = (tl_entry.file, tl_entry.variant, is_sfx, is_long, tl_entry.mml)
             mml_virtlist[k] = v
             
             # while we're at it, record some metadata
-            title = re.search("(?<=#TITLE )([^;\n]*)", pl_entry.mml, re.IGNORECASE)
-            album = re.search("(?<=#ALBUM )([^;\n]*)", pl_entry.mml, re.IGNORECASE)
-            composer = re.search("(?<=#COMPOSER )([^;\n]*)", pl_entry.mml, re.IGNORECASE)
-            arranged = re.search("(?<=#ARRANGED )([^;\n]*)", pl_entry.mml, re.IGNORECASE)
+            title = re.search("(?<=#TITLE )([^;\n]*)", tl_entry.mml, re.IGNORECASE)
+            album = re.search("(?<=#ALBUM )([^;\n]*)", tl_entry.mml, re.IGNORECASE)
+            composer = re.search("(?<=#COMPOSER )([^;\n]*)", tl_entry.mml, re.IGNORECASE)
+            arranged = re.search("(?<=#ARRANGED )([^;\n]*)", tl_entry.mml, re.IGNORECASE)
             title = title.group(0) if title else "??"
             album = album.group(0) if album else "??"
             composer = composer.group(0) if composer else "??"
             arranged = arranged.group(0) if arranged else "??"
             
             # Jukebox title
-            if pl_name not in music_pools["fixed"] and pl_name not in music_pools["opera"]:
-                meta[k] = get_jukebox_title(pl_entry.mml, pl_entry.file)
+            if tl_name not in category_tracks["fixed"] and tl_name not in category_tracks["opera"]:
+                meta[k] = get_jukebox_title(tl_entry.mml, tl_entry.file)
             #metadata[k] = TrackMetadata(title, album, composer, arranged, menuname)
 
         # -- run insertmfvi
