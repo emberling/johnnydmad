@@ -34,15 +34,13 @@ APPENDTRACKS = []
 LONGTRACKS = []
 
 # Noting some stuff that got confusing because I can't keep my terms straight
-# TODO - change these to be consistent
 # "Playlist" - should refer to the config file determining what songs are used and where.
-#              Also is used in code to refer to the current seed's chosen tracklist. <- should be Tracklist
-# These have not been used consistently, but here is a future plan for how to use them:
+# "Tracklist" - list of tracks in current seed, with either a song or a pool of potential songs placed in each
 # "Track" - aka "song slot", an ID within game files that corresponds to music played in certain situations.
 # "Song" - A musical piece loaded from an MML file that will be placed in a track.
 # "Category" - A label set in the playlist under which a song is loaded, causing it to randomize into the tracks marked in that category (this is 'pool' atm, but so are other things..)
 # "Pool" - The list of available songs for a particular track, or possibly category
-# In existing varnames "music_pool" is a map by category to the list of (songs? tracks?) within that category, and "song_pool" is a map by track to the list of songs that can be used in that track. i think. maybe. if so, should be "category_pools" and "track_pools" probably.
+#TODO some instances of 'pool' need to be renamed 'category'
 
 class TrackMetadata:
     def __init__(self, title="", album="", composer="", arranged=""):
@@ -97,10 +95,11 @@ class Tracklist:
         # check various possible file locations over various possible variants
         if idx is None:
             idx = track_name_ids[name]
-        vbase, vid = song_variant_id(song, idx)
+        vbase, vsuffix = song_variant_id(song, idx)
         sfxmode = True if name in SFXTRACKS else False
         for searchpath in [CUSTOM_MUSIC_PATH, LEGACY_MUSIC_PATH, STATIC_MUSIC_PATH]:
             target = vbase
+            vid = vsuffix
             potential_files = {}
             found = False
             while True:
@@ -140,7 +139,7 @@ class Tracklist:
                     mml, varlist, variant = "", {}, ""
                     break
             if found:
-                if "legacy" in searchpath:
+                if searchpath == LEGACY_MUSIC_PATH:
                     self[name].is_legacy = True
                 break
         
@@ -314,7 +313,7 @@ def process_music(inrom, meta={}, f_chaos=False, f_battle=True, opera=None, even
         if ':' not in line: continue
         # finish splitting
         id, line = [s.strip() for s in line.split(':')[:2]]
-        name, pool = [s.strip() for s in line.split(',')[:2]]
+        name, category = [s.strip() for s in line.split(',')[:2]]
         # reject bad ids
         if not set(id) <= set("0123456789abcdefABCDEF"):
             print(f"warning: track_ids.txt ({i}): id {id} contains invalid characters")
@@ -326,14 +325,14 @@ def process_music(inrom, meta={}, f_chaos=False, f_battle=True, opera=None, even
             
         track_id_names[id] = name
         track_name_ids[name] = id
-        if pool not in category_tracks:
-            category_tracks[pool] = []
-        if pool in ["ext"]:
-            pool = "default"
-        category_tracks[pool].append(name)
-        track_categories[name] = pool
+        if category not in category_tracks:
+            category_tracks[category] = []
+        if category in ["ext"]:
+            category = "default"
+        category_tracks[category].append(name)
+        track_categories[name] = category
 
-    # -- load random choices configuration for pools (music.txt)
+    # -- load random choices configuration for categories (playlist file)
     # moved to function for reuse in length test mode
     playlist_map = init_playlist()
     playlist_filename = DEFAULT_PLAYLIST_FILE #TODO
@@ -343,12 +342,12 @@ def process_music(inrom, meta={}, f_chaos=False, f_battle=True, opera=None, even
     intensitytable["battle"] = {}
     intensitytable["boss"] = {}
     for song in playlist_map.items():
-        valid_slots = [s.strip() for s in song[1].split(',')]
+        valid_trackslots = [s.strip() for s in song[1].split(',')]
         intense, epic = 0,0
         song_categories = set()
         #holiday stuff
         event_mults = {}
-        for s in valid_slots:
+        for s in valid_trackslots:
             if not s: continue
             if s[0] in eventmodes and ':' not in s:
                 try:
@@ -359,7 +358,7 @@ def process_music(inrom, meta={}, f_chaos=False, f_battle=True, opera=None, even
         for k, v in event_mults.items():
             static_mult *= v
         #parse right side
-        for s in valid_slots:
+        for s in valid_trackslots:
             if not s: continue
             #special entries: holiday multipliers, battle scaling
             if ':' in s and s[0] in eventmodes:
@@ -368,29 +367,34 @@ def process_music(inrom, meta={}, f_chaos=False, f_battle=True, opera=None, even
                 intense = int(s[1:])
             elif s[0] == "E" or s[0] == "G":
                 epic = int(s[1:])
-            #for all modes, link left side to the music_pool containing each right side entry
+            #for all modes, link left side to the category containing each right side entry
             #for non chaos, we add left side as an option for entries listed on right side
             else:
                 if "*" in s:
-                    slot = s.split('*')
-                    mult = int(slot[1])
-                    slot = slot[0]
+                    trackslot = s.split('*')
+                    mult = int(trackslot[1])
+                    trackslot = trackslot[0]
                 else:
-                    slot = s
+                    trackslot = s
                     mult = 1
-                pool = track_categories[slot]
-                song_categories.add(pool)
-                if slot not in track_pools:
-                    track_pools[slot] = []
+                if trackslot in track_categories:
+                    # quietly do nothing for unknown tracknames
+                    category = track_categories[trackslot]
+                    song_categories.add(category)
+                if trackslot not in track_pools:
+                    track_pools[trackslot] = []
                 if not f_chaos:
-                    track_pools[slot].extend([song[0]]*mult*static_mult)
+                    track_pools[trackslot].extend([song[0]]*mult*static_mult)
         #for chaos, we add left side as an option for all entries
         if f_chaos:
-            for pool in song_categories:
-                for slot in category_tracks[pool]:
-                    if slot not in track_pools:
-                        track_pools[slot] = []
-                    track_pools[slot].extend([song[0]]*static_mult)
+            if not song_categories:
+                # If a song has no valid non-chaos tracks, put it in chaos default
+                song_categories.add("default")
+            for category in song_categories:
+                for trackslot in category_tracks[category]:
+                    if trackslot not in track_pools:
+                        track_pools[trackslot] = []
+                    track_pools[trackslot].extend([song[0]]*static_mult)
         #battle stuffs part2
         intense = max(0, min(intense, 99))
         epic = max(0, min(epic, 99))
@@ -470,17 +474,17 @@ def process_music(inrom, meta={}, f_chaos=False, f_battle=True, opera=None, even
             continue
         
         # -- choose tracklist
-        for pool, tracks in sorted(category_tracks.items()):
+        for category, tracks in sorted(category_tracks.items()):
             # fixed category - does not randomize, loads from static_music/ only
             # TODO - opera is here for now, eventually it should be here only if not using alasdraco
-            if pool == "fixed" or pool == "opera":
+            if category == "fixed" or category == "opera":
                 for track in tracks:
                     tracklist.add_fixed(track)
                 continue
             # 'ext' uses default's pool, it's just a marker to allow excluding those tracks
-            elif pool == "ext":
+            elif category == "ext":
                 continue
-            elif pool == "default":
+            elif category == "default":
                 tracks = tracks + category_tracks["ext"]
             if tracks: #make deterministic based on seed, don't let any undefined order (from dict) sneak in
                 tracks = sorted(tracks)

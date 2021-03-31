@@ -69,23 +69,26 @@ def test_sfx():
     cursor = " >)|(<"
     playlist_map = init_playlist()
     results = []
+    legacy_files = set()
     jukebox_titles = {}
     i = 0
     print("")
-    for choice in sorted(playlist_map):
+    for song in sorted(playlist_map):
         binsizes = {}
-        for type, name, idx, use_sfx in testbed:
+        for type, trackname, idx, use_sfx in testbed:
             tl = Tracklist()
-            tl.add_random(name, [choice], idx=idx, allow_duplicates=True)
-            variant = tl[name].variant
+            tl.add_random(trackname, [song], idx=idx, allow_duplicates=True)
+            variant = tl[trackname].variant
             if variant is None:
                 variant = "_default_"
-            mml = apply_variant(tl[name].mml, type, name, variant=tl[name].variant)
-            bin = mml_to_akao(mml, choice + ' ' + name, sfxmode=use_sfx, variant=variant)[0]
+            mml = apply_variant(tl[trackname].mml, type, trackname, variant=tl[trackname].variant)
+            bin = mml_to_akao(mml, song + ' ' + trackname, sfxmode=use_sfx, variant=variant)[0]
             binsizes[type] = len(bin)
-            if name not in jukebox_titles:
-                jukebox_titles[choice] = get_jukebox_title(mml, choice)
-        results.append((max(binsizes.values()), choice, binsizes))
+            if trackname not in jukebox_titles:
+                jukebox_titles[song] = get_jukebox_title(mml, song)
+            if tl[trackname].is_legacy:
+                legacy_files.add(song)
+        results.append((max(binsizes.values()), song, binsizes))
         pct = (i / len(playlist_map)) * 100
         full_boxes = int(pct // 2)
         cursor_idx = int((pct % 2)*(len(cursor)/2))
@@ -95,13 +98,16 @@ def test_sfx():
         
     results = sorted(results)
     print("")
-    for largest, name, binsizes in results:
-        print(f"{name:<20} :: ", end="")
+    for largest, song, binsizes in results:
+        print(f"{song:<20} :: ", end="")
         for k, v in binsizes.items():
             print(f"[{k} - ${v:0X}] ", end="")
-        print(f" :: <{jukebox_titles[name]:<18}>", end="")
+        if song in legacy_files:
+            print(f" :: ~{jukebox_titles[song]:<18}~", end="")
+        else:
+            print(f" :: <{jukebox_titles[song]:<18}>", end="")
         if largest >= 0x1002:
-            print("~~WARNING~~")
+            print(" ~~WARNING~~")
         else:
             print("")
             
