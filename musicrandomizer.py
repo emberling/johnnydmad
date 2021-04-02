@@ -4,14 +4,15 @@ import os
 import random
 import re
 
-from mml2mfvi import mml_to_akao, get_variant_list
+from mml2mfvi import mml_to_akao, get_variant_list, get_brr_imports
 from insertmfvi import insertmfvi, byte_insert, int_insert
 
-JOHNNYDMAD_FREESPACE = ["53C5F-9FDFF", "310000-3FFFFF"]
+JOHNNYDMAD_FREESPACE = ["53C5F-9FDFF", "310000-37FFFF"]
 TRAIN_SAMPLE_ID = 0x3A
 
 SAMPLE_PATH = 'samples'
 CUSTOM_MUSIC_PATH = 'custom'
+TIERBOSS_MUSIC_PATH = os.path.join(CUSTOM_MUSIC_PATH, 'dm')
 LEGACY_MUSIC_PATH = os.path.join(CUSTOM_MUSIC_PATH, 'legacy')
 STATIC_MUSIC_PATH = 'static_music'
 PLAYLIST_PATH = 'playlists'
@@ -72,6 +73,11 @@ class Tracklist:
             print(f"warning: in {module}: duplicate tracklist data for {name}, overwriting entry with file {self[name].file}")
             return True
         return False
+        
+    def add_direct(self, name, mml):
+        self[name] = TracklistEntry(name)
+        self[name].file = ""
+        self[name].mml = mml
         
     def add_fixed(self, name):
         self.dupe_check(name, "add_fixed")
@@ -176,13 +182,16 @@ def init_playlist(fn=DEFAULT_PLAYLIST_FILE):
     playlist_parser = configparser.ConfigParser()
     playlist_parser.read(fn)
     playlist_map = {}
+    tierboss_pool = set()
     for section in playlist_parser:
         for k, v in playlist_parser[section].items():
-            if k in playlist_map:
+            if section == "tierboss":
+                tierboss_pool.update([s.strip() for s in v.split(',')])
+            elif k in playlist_map:
                 playlist_map[k] += f", {v}"
             else:
                 playlist_map[k] = v
-    return playlist_map
+    return playlist_map, tierboss_pool
 
 def get_jukebox_title(mml, fn):
     n = re.search("(?<=#SHORTNAME )([^;\n]*)", mml, re.IGNORECASE)
@@ -195,7 +204,74 @@ def get_jukebox_title(mml, fn):
         n += title
         n = n[:18]
     return n
-                    
+
+brr_size_cache = {}
+
+def append_legacy_imports(mml, iset, raw_inst=False):
+    if raw_inst:
+        inst = []
+        for i, b in enumerate(iset):
+            if i % 2:
+                continue
+            inst.append(b)
+    else:
+        inst = iset
+        
+    if not legacy_instmap:
+        legacy_parser = configparser.ConfigParser()   
+        legacy_parser.read(os.path.join(TABLE_PATH,'brr_legacy.txt'))
+        for k, v in legacy_parser.items("Samples"):
+            try:
+                legacy_instmap[int(k, 16)] = v
+            except ValueError:
+                pass
+                
+    appendix = ""
+    for i, id in enumerate(inst):
+        if id > 0:
+            appendix += f"\n#BRR 0x{i+0x20:02X}; {os.path.join(LEGACY_LOADBRR_PATH, legacy_instmap[id])}\n"
+    mml += appendix
+    return mml
+    
+def get_spc_memory_usage(mml, custompath=CUSTOM_MUSIC_PATH, variant="_default_"):
+    raw_iset = mml_to_akao(mml, variant=variant, inst_only=True)
+    imports = get_brr_imports(mml, variant)
+    
+    if not instmap:
+        sample_parser = configparser.ConfigParser()
+        sample_parser.read(os.path.join(TABLE_PATH, 'brr_samples.txt'))
+        for k, v in sample_parser.items("Samples"):
+            try:
+                instmap[int(k, 16)] = v
+            except ValueError:
+                pass
+    
+    brrsize = []
+    for i in range(0x10):
+        prgid = i + 0x20
+        fn = None
+        if prgid in imports:
+            fn = imports[prgid][0].strip()
+            fn = os.path.join(custompath, fn)
+        else:
+            brrid = raw_iset[i*2]
+            if brrid:
+                fn = instmap[brrid].split(',')[0].strip()
+                fn = os.path.join(SAMPLE_PATH, fn)
+        if not fn:
+            continue
+        if not fn.lower().endswith(".brr"):
+            fn += ".brr"
+        size = brr_size_cache[fn] if fn in brr_size_cache else os.path.getsize(fn) // 9
+        if fn in brr_size_cache:
+            size = brr_size_cache[fn]
+        else:
+            size = os.path.getsize(fn) // 9
+            brr_size_cache[fn] = size
+        brrsize.append(size)
+        
+    return sum(brrsize)
+
 ############ variant processing
 
 def apply_variant(mml, type, name="", variant="_default_", check_size=False):
@@ -225,6 +301,7 @@ def apply_variant(mml, type, name="", variant="_default_", check_size=False):
             print("WARNING: failed to add wind sounds ({})".format(name))
     elif type == "train":
         append_mml = "append_train.mml"
+        mml = re.sub("#BRR 0x2F", "#### 0x2F", mml)
         mml = re.sub("\{[^}]*?([0-9]+)[^}]*?\}", "$888\g<1>", mml)
         for i in range(1,9):
             if "$888{}".format(i) not in mml:
@@ -245,41 +322,190 @@ def apply_variant(mml, type, name="", variant="_default_", check_size=False):
     
 ############ tierboss
 
-def generate_tierboss_mml():
-    
-    # get pool of potential segments (mml files)
-
-    # fail a lot
-    attempt = 0
-    while attempt < 1000:
-        attempt += 1
+def generate_tierboss_mml(pool):
+    if not pool:
+        print("johnnydmad: no tierboss pool present in playlist, falling back")
+        return None, None
+        # TODO fallback
         
-        # pick three
-        
-        # build sample table
-        # retry if n>16
-        
-        # check sample size
-        # retry if n>3746
-        
-        # grab metadata
-        
-        # regex fix program changes
-        
-        # regex & merge segments
-        
-        # test build akao sequence
-        # retry if n>$1002
-    return None, None
+    class TierSong:
+        def __init__(self, name, variant):
+            self.name = name
+            self.variant = variant
+            
+            self.file = os.path.join(TIERBOSS_MUSIC_PATH, name + ".mml")
+            try:
+                with open(self.file, "r") as f:
+                    self.mml = f.read()
+            except OSError:
+                print(f"tierboss_mml: couldn't load {self.file}")
+                self.mml = ""
+                
+            # build sample table
+            sample_table = {}
+            raw_iset = mml_to_akao(self.mml, variant=variant, inst_only=True)
+            for i in range(0x10):
+                if raw_iset[i*2]:
+                    sample_table[i+0x20] = ("#WAVE 0x", f" 0x{raw_iset[i*2]:02X}")
+            imports = get_brr_imports(self.mml, variant)
+            for k, v in imports.items():
+                sample_table[k] = ("#BRR 0x", f"; {v[0]}, {v[1]}, {v[2]}, {v[3]}")
+            self.sample_table = sample_table
+            self.remap_table = {}
+            for sid in sample_table:
+                self.remap_table[sid] = sid
+                
+    # 1000 attempts to fuse 3 songs into one. If this fails, fall back to 2, etc
+    final_mml = None
+    variants_to_use = [["_default_"],
+                       ["tier1", "tier3"],
+                       ["tier1", "tier2", "tier3"]
+                       ] # Defines appropriate intro/outro sets for fallbacks
+    for n in (3, 2, 1):
+        if n > len(pool):
+            continue
+        for attempt in range(1000):
+            retry = False
+            # pick songs to fuse
+            while True:
+                tiers = []
+                songnames = random.sample(pool, n)
+                for i, song in enumerate(songnames):
+                    tier = TierSong(song, variants_to_use[n-1][i])
+                    if not tier.mml:
+                        songnames = None
+                        pool.delete(song)
+                        break
+                    tiers.append(tier)
+                # Retry if a chosen song is blank / file not found
+                if songnames:
+                    break
+                # Contingency
+                if len(pool) < n:
+                    retry = True
+                    break
+            if retry:
+                continue
+                
+            # build sample table
+            # retry if n>16
+            merged_sample_table = {}
+            next_merged_id = 0x20
+            for tier in tiers:
+                for tierid, tierval in tier.sample_table.items():
+                    found = False
+                    for mergedid, mergedval in merged_sample_table.items():
+                        if tierval == mergedval:
+                            tier.remap_table[tierid] = mergedid
+                            found = True
+                            break
+                    if not found:
+                        merged_sample_table[next_merged_id] = tierval
+                        tier.remap_table[tierid] = next_merged_id
+                        next_merged_id += 1
+            if next_merged_id > 0x30:
+                continue
+            print(merged_sample_table)
+            print([t.file for t in tiers])
+            
+            mml_sample_text = "\n"
+            for id, val in merged_sample_table.items():
+                pre, suff = val
+                mml_sample_text += f"{pre}{id:02X}{suff}\n"
+            print(mml_sample_text)
+            
+            # check sample size
+            # retry if n>3746
+            memusage = get_spc_memory_usage(mml_sample_text, custompath=TIERBOSS_MUSIC_PATH)
+            print(memusage)
+            if memusage > 3746:
+                continue
+                
+            # grab metadata
+            #TODO
+            
+            # regex fix program changes
+            for tier in tiers:
+                for old, new in tier.remap_table.items():
+                    new_text = f"(|){new - 0x20:X}"
+                    tier.mml = re.sub(f"@0x{old:02X}", new_text, tier.mml, flags=re.IGNORECASE)
+                    tier.mml = re.sub(f"@{old}", new_text, tier.mml, flags=re.IGNORECASE)
+                    tier.mml = re.sub(f"\|{old - 0x20:X}", new_text, tier.mml, flags=re.IGNORECASE)
+                tier.mml = re.sub("\(\|\)", "|", tier.mml)
+                
+            # regex & merge segments
+            if n > 1:
+                keep = {"tier1": "[~`]",
+                        "tier2": "[?`]",
+                        "tier3": "[?_]"}
+                discard = {"tier1": "[?_]",
+                           "tier2": "[~_]",
+                           "tier3": "[~`]"}
+                prefix = {"tier1": "555",
+                          "tier2": "666",
+                          "tier3": "777"}
+                next = {"tier1": "222",
+                        "tier2": "333",
+                        "tier3": ""}
+                prev = {"tier1": "",
+                        "tier2": "222",
+                        "tier3": "333"}
+                perc = {"tier1": '"',
+                        "tier2": '*',
+                        "tier3": '/'}
+                mml = "#VARIANT ` \n#VARIANT ? ignore\n"
+                for tier in tiers:
+                    v = tier.variant
+                    tier.mml = re.sub(keep[v], "", tier.mml)
+                    tier.mml = re.sub(discard[v], "?", tier.mml)
+                    tier.mml = re.sub("j([0-9]+),([0-9]+)", f"j\g<1>,{prefix[v]}\g<2>", tier.mml)
+                    tier.mml = re.sub("([;:\$])([0-9]+)(?![,0-9])", f"\g<1>{prefix[v]}\g<2>", tier.mml)
+                    if next[v]:
+                        tier.mml = re.sub(f"([;:]){prefix[v]}444([0-9])", f"\g<1>{next[v]}\g<2>", tier.mml)
+                    else:
+                        tier.mml = re.sub(f"([;:]){prefix[v]}444([0-9])", "", tier.mml)
+                    if prev[v]:
+                        tier.mml = re.sub(f"\${prefix[v]}444([0-9])", f"${prev[v]}\g<1>", tier.mml)
+                        tier.mml = re.sub("{.*?}", "", tier.mml)
+                    else:
+                        # BCEX 4 discards {1} type entry points entirely and uses the $4441
+                        # style for both with and without intro. I can't currently remember
+                        # why I did it this way? I'm going to try using the {1} style from
+                        # here on out; if this causes issues the old regex is commented here
+                        ##tier.mml = re.sub(f"\${prefix[v]}444([0-9])", "{\g<1>}", tier.mml)
+                        tier.mml = re.sub(f"\${prefix[v]}444([0-9])", "", tier.mml)
+                    tier.mml = re.sub("#VARIANT|#WAVE|#BRR", "#", tier.mml, flags=re.IGNORECASE)
+                    tier.mml = re.sub("#def\s+(\S+)\s*=", f"#def {prefix[v]}\g<1>=", tier.mml, flags=re.IGNORECASE)
+                    tier.mml = re.sub("'(.*?)'", f"'{prefix[v]}\g<1>'", tier.mml)
+                    tier.mml = re.sub('"', perc[v], tier.mml)
+                    mml += tier.mml
+                mml += mml_sample_text
+            else:
+                mml = tiers[0].mml
+                
+            # test build akao sequence
+            # retry if n>$1002
+            print(mml)
+            akao = mml_to_akao(mml, str(songnames), variant="_default_")
+            print(f"{len(akao[0]):04X}")
+            if len(akao[0]) > 0x1002:
+                continue
+            final_mml = mml
+            break
+        if final_mml:
+            break
+    input()
+    return final_mml, None
 
 ############ main
+
+instmap, legacy_instmap = {}, {}
 
 def process_music(inrom, meta={}, f_chaos=False, f_battle=True, opera=None, eventmodes=""):
     global used_song_names
     global used_sample_ids
       
     # -- load sample configs for normal/legacy
-    instmap, legacy_instmap = {}, {}
     sample_parser = configparser.ConfigParser()
     sample_parser.read(os.path.join(TABLE_PATH,'brr_samples.txt'))
     for k, v in sample_parser.items("Samples"):
@@ -334,7 +560,7 @@ def process_music(inrom, meta={}, f_chaos=False, f_battle=True, opera=None, even
 
     # -- load random choices configuration for categories (playlist file)
     # moved to function for reuse in length test mode
-    playlist_map = init_playlist()
+    playlist_map, tierboss_pool = init_playlist()
     playlist_filename = DEFAULT_PLAYLIST_FILE #TODO
     
     track_pools = {}
@@ -430,7 +656,8 @@ def process_music(inrom, meta={}, f_chaos=False, f_battle=True, opera=None, even
         
         # tierboss
         # processing tierboss first to avoid having to check for used song names
-        tierboss_mml, tierboss_metadata = generate_tierboss_mml()
+        if "tierboss" in category_tracks:
+            tierboss_mml, tierboss_metadata = generate_tierboss_mml(tierboss_pool)
         # TODO add tierboss_metadata entries to used_song_names
         
         # battle
@@ -481,6 +708,11 @@ def process_music(inrom, meta={}, f_chaos=False, f_battle=True, opera=None, even
                 for track in tracks:
                     tracklist.add_fixed(track)
                 continue
+            # Tierboss section is processed elsewhere
+            elif category == "tierboss":
+                for track in tracks:
+                    tracklist.add_direct(track, tierboss_mml)
+                continue
             # 'ext' uses default's pool, it's just a marker to allow excluding those tracks
             elif category == "ext":
                 continue
@@ -527,7 +759,6 @@ def process_music(inrom, meta={}, f_chaos=False, f_battle=True, opera=None, even
                 for i, id in enumerate(inst):
                     if id > 0:
                         appendix += f"\n#BRR 0x{i+0x20:02X}; {os.path.join(LEGACY_LOADBRR_PATH, legacy_instmap[id])}\n"
-                        #TODO: test if this conflicts with / as variant marker and reconcile somehow
                 tl_entry.mml += appendix
             else:
                 #non-legacy: record usage so we can determine which samples are needed this seed

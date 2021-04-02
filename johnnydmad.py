@@ -39,12 +39,15 @@ def johnnydmad():
     f_chaos = False
     print("press enter to continue or type:")
     print('    "chaos" to test chaotic mode')
-    print('    "sfxv" to test sfx append lengths')
+    print('    "sfxv" to check songs for errors, sorted by longest sequence variant')
+    print('    "mem" to check songs for errors, sorted by highest memory use variant')
     i = input()
     if i == "chaos":
         f_chaos = True
     if i == "sfxv":
-        test_sfx()
+        mass_test("sfx")
+    elif i == "mem":
+        mass_test("mem")
     else:
         metadata = {}
         outrom = process_music(inrom, meta=metadata, f_chaos=f_chaos)
@@ -58,7 +61,7 @@ def johnnydmad():
         
 #################################
 
-def test_sfx():
+def mass_test(sort):
     global used_song_names
     testbed = [
         ("***", "plain", 0x4C, False),
@@ -67,7 +70,7 @@ def test_sfx():
         ("train", "train", 0x20, False)
         ]
     cursor = " >)|(<"
-    playlist_map = init_playlist()
+    playlist_map, _ = init_playlist()
     results = []
     legacy_files = set()
     jukebox_titles = {}
@@ -75,38 +78,49 @@ def test_sfx():
     print("")
     for song in sorted(playlist_map):
         binsizes = {}
+        memusage = 0
+        debugtext = f"{song}: "
         for type, trackname, idx, use_sfx in testbed:
             tl = Tracklist()
             tl.add_random(trackname, [song], idx=idx, allow_duplicates=True)
             variant = tl[trackname].variant
             if variant is None:
                 variant = "_default_"
-            mml = apply_variant(tl[trackname].mml, type, trackname, variant=tl[trackname].variant)
-            bin = mml_to_akao(mml, song + ' ' + trackname, sfxmode=use_sfx, variant=variant)[0]
-            binsizes[type] = len(bin)
-            if trackname not in jukebox_titles:
-                jukebox_titles[song] = get_jukebox_title(mml, song)
+            mml = tl[trackname].mml
             if tl[trackname].is_legacy:
                 legacy_files.add(song)
-        results.append((max(binsizes.values()), song, binsizes))
+                iset = mml_to_akao(mml, variant=variant, inst_only=True)
+                mml = append_legacy_imports(mml, iset, raw_inst=True)
+            mml = apply_variant(mml, type, trackname, variant=variant)
+            bin = mml_to_akao(mml, song + ' ' + trackname, sfxmode=use_sfx, variant=variant)[0]
+            binsizes[type] = len(bin)
+            if song not in jukebox_titles:
+                jukebox_titles[song] = get_jukebox_title(mml, song)
+            var_memusage = get_spc_memory_usage(mml, variant=variant, custompath=os.path.dirname(tl[trackname].file))
+            debugtext += f"({var_memusage}) "
+            memusage = max(memusage, var_memusage)
+        order = memusage if sort == "mem" else max(binsizes.values())
+        results.append((order, song, binsizes, memusage))
         pct = (i / len(playlist_map)) * 100
         full_boxes = int(pct // 2)
         cursor_idx = int((pct % 2)*(len(cursor)/2))
         boxtext = "-" * full_boxes + cursor[cursor_idx]
-        print(f"\r[{boxtext:<50}]", end="", flush=True)
+        print(f"\r[{boxtext:<50}] {i}/{len(playlist_map)}", end="", flush=True)
+        #print(debugtext)
         i += 1
         
     results = sorted(results)
     print("")
-    for largest, song, binsizes in results:
+    for largest, song, binsizes, memusage in results:
         print(f"{song:<20} :: ", end="")
         for k, v in binsizes.items():
-            print(f"[{k} - ${v:0X}] ", end="")
+            print(f"[{k} ${v:0X}] ", end="")
         if song in legacy_files:
             print(f" :: ~{jukebox_titles[song]:<18}~", end="")
         else:
             print(f" :: <{jukebox_titles[song]:<18}>", end="")
-        if largest >= 0x1002:
+        print(f" ({memusage})", end="")
+        if largest >= 0x1002 or memusage > 3746:
             print(" ~~WARNING~~")
         else:
             print("")

@@ -518,7 +518,7 @@ def max_blocks(edl):
         brr_ram_size += 0x4800 - remapbrr
     return brr_ram_size // 9
     
-def insertmfvi(inrom, argparam=None, virt_sample_list=None, virt_seq_list=None, freespace=None):
+def insertmfvi(inrom, argparam=None, virt_sample_list=None, virt_seq_list=None, freespace=None, validate_only=False, verbose=True):
     global args
     global remapbrr
     
@@ -1048,14 +1048,17 @@ def insertmfvi(inrom, argparam=None, virt_sample_list=None, virt_seq_list=None, 
             print(f"Error: no sample data location for sample {id} ({smp.filename})")
         
     # Insert sequences, sequence pointers, and instrument tables
+    validation_results = []
     for id, seq in sequence_defs.items():
         if not seq.sequence:
             continue
         # Warn for:
         #    -- Sequence data overflow
         #    -- Sample overflow in sequence
+        valid_seq, valid_smp = True, True
         if len(seq.sequence) >= 0x1002 and not seq.is_long:
             print(f"WARNING: seq {id:02X} ({seq.filename}) is {len(seq.sequence):04X} bytes")
+            valid_seq = False
         brr_blocks_used = 0
         for i in range(16):
             if seq.inst[i*2]:
@@ -1076,8 +1079,11 @@ def insertmfvi(inrom, argparam=None, virt_sample_list=None, virt_seq_list=None, 
         
         if brr_blocks_used > max_blocks(seq.edl):
             print(f"**OVERFLOW**: Uses {brr_blocks_used} / {max_blocks(seq.edl)} BRR blocks (EDL {seq.edl})")
+            valid_smp = False
         else:
             print(f"        Uses {brr_blocks_used} / {max_blocks(seq.edl)} BRR blocks (EDL {seq.edl})")
+        
+        validation_results.append((seq.filename, valid_seq, valid_smp))
         
         # Write seq pointer
         loc = o_bgmtable + id * 3
@@ -1092,6 +1098,9 @@ def insertmfvi(inrom, argparam=None, virt_sample_list=None, virt_seq_list=None, 
         if edl_table_address:
             outrom[edl_table_address + id] = seq.edl
 
+    if validate_only:
+        return validation_results
+        
     # Reattach header and write ROM
     print()
     if len(outrom) % 0x10000:

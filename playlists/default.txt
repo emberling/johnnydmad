@@ -163,6 +163,7 @@ zaol_temple:    fanatics
     
 ff6_ktower:     ktower
 ct_undersea:    ktower
+wa2_heimdal:    ktower, gate, phoenix
 
 ff6_ruin:       ruin
 ff8_world:      ruin
@@ -198,9 +199,6 @@ ff5_village:    village
 doom_e1m1:      assault
 ct_tension:     assault
 
-#temp
-eo3_waves:      dmad123
-
 #mass importing legacy files for chaos only:
 [Legacy]
 blord_2tower:     chaos
@@ -215,7 +213,6 @@ bof2_wander:      chaos
 cc_arni:          chaos
 cc_dragonia:      chaos
 cc_flame:         chaos
-cc_flame_dm:      chaos
 cc_harle:         chaos
 cc_home:          chaos
 cc_hydra:         chaos
@@ -242,7 +239,6 @@ ct_forest:        chaos
 ct_frog:          chaos
 ct_keeper:        chaos
 ct_lavos:         chaos
-ct_lavos_dm:      chaos
 ct_magus:         chaos
 ct_mountain:      chaos
 ct_night:         chaos
@@ -268,12 +264,10 @@ cv4_beginning:    chaos
 cv4_chandeliers:  chaos
 dc2_garden:       chaos
 doom2_doom:       chaos
-dq1_world_ff4:    chaos
 ds4_dungeon:      chaos
 ds4_lyll:         chaos
 ds4_world:        chaos
 eo3_waves:        chaos
-evo_boss:         chaos
 fe15_whatlies:    chaos
 ff12_barheim:     chaos
 ff12_crystal:     chaos
@@ -293,7 +287,6 @@ ff2_theme:        chaos
 ff3_battle:       chaos
 ff3_darkworld:    chaos
 ff3_eureka:       chaos
-ff3_eureka_dm:    chaos
 ff3_hyne:         chaos
 ff3_warrior:      chaos
 ff3_world:        chaos
@@ -353,9 +346,6 @@ ff5_world2:       chaos
 ff5_world3:       chaos
 ff6_forest:       chaos
 ff6_ruin:         chaos
-ff6_tier1_dm:     chaos
-ff6_tier2_dm:     chaos
-ff6_tier3_dm:     chaos
 ff6_town2:        chaos
 ff6_train_ext:    chaos
 ff6_zozo:         chaos
@@ -390,7 +380,6 @@ ff8_mlaw:         chaos
 ff8_oath:         chaos
 ff8_triad:        chaos
 ff8_witches:      chaos
-ff8_witches_dm:   chaos
 ff8_world:        chaos
 ff9_battle:       chaos
 ff9_blackmage:    chaos
@@ -415,7 +404,6 @@ ffmq_forest:      chaos
 ffmq_fossil:      chaos
 ffmq_gale:        chaos
 ffmq_lava:        chaos
-ffmq_lava_dm:     chaos
 ffmq_light:       chaos
 ffmq_rock:        chaos
 ffmq_tower:       chaos
@@ -597,7 +585,6 @@ xg_lahan:         chaos
 xg_mermaid:       chaos
 xg_tears:         chaos
 xg_weltall:       chaos
-xg_weltall_dm:    chaos
 ys1_wars:         chaos
 ys3_house:        chaos
 ys3_time:         chaos
@@ -625,8 +612,8 @@ lu2_sleep: sleep
 ff5_death: death
 ff6_death: death
 
-#[tierboss]
-#dm: ff6_tier1, ff6_tier2, ff6_tier3
+[tierboss]
+lb: ff6_tier1, ff6_tier2, ff6_tier3, ff7_final_part1, ff6_falsetier1, ff6_falsetier3
 
 [battle]
 ct_battle:      E5,  battle, bat2
@@ -644,6 +631,7 @@ gd3_moai:       E60,                     bat4
 bof2_battle2:   E65,         bat2, bat3
 ff9_hunt:       E75,               bat3, bat4
 totr_sboss:     E80,                     bat4
+wa2_heimdal:    E80,                     bat4
 ebr_prayer:     E90,               bat3
 sd2_fortress:   E90,               bat3
 lal_boss:       E90,                     bat4
