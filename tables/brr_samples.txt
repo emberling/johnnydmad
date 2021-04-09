@@ -180,7 +180,7 @@ E3: E3_smr_mtpet             , 7101  , -7.25, FFE0    , {44}   [   ] Mute Trumpe
 
 # SNARE                                                        -------------
 0F: 0F_ff7_trash            , @0bl, *0.579, FFE0, {315}  [   ] Trashcan
-1A: 1A_sd3_msnare           , CA08, +0    , FFF4, {250}  [   ] March Snare
+1A: 1A_sd3_msnare           , CA08, +0    , FFE0, {250}  [   ] March Snare
 1B: 1B_ff6_snare            , 0000, 0000  , FFE0, {250}  [   ] Orch.Snare
 1C: 1C_rs3_snare            , 0000, 0000  , FFE0, {437}  [   ] Rock Snare
 1D: 1D_l2_hsnare            , 9807, *0.500, FFE0, {216}  [   ] Hard Snare

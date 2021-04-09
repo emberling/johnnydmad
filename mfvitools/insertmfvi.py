@@ -42,6 +42,12 @@ MAX_BLOCKS_BASE = 3746
 EDL_OFFSET = 0x5076A
 edl = None
 
+class FreeSpaceError(Exception):
+    pass
+    
+class SampleIDError(Exception):
+    pass
+    
 class Sequence():
     def __init__(self):
         self.filename = None
@@ -286,7 +292,7 @@ class Sample():
                     
 def sanitize_path(in_path):
     drive, path = os.path.splitdrive(in_path)
-    sep = os.path.join('a','a')[1] if (path and path[0] in ['\\', '/']) else ""
+    sep = os.path.sep if (path and path[0] in ['\\', '/']) else ""
     path = path.split('\\')
     path = os.path.join('', *path)
     path = path.split('/')
@@ -365,7 +371,7 @@ def put_somewhere(romdata, newdata, desc, f_silent=False, bank=None):
             break
     if not success:
         if not f_silent: print("ERROR: not enough free space to insert {}\n\n".format(desc))
-        assert False
+        raise FreeSpaceError
     return (romdata, start, end)
             
 def init_freespace():
@@ -815,6 +821,7 @@ def insertmfvi(inrom, argparam=None, virt_sample_list=None, virt_seq_list=None, 
                         sample_defs[this_sampleid] = imported
                     elif imported.internalid is None:
                         print(f"ERROR: Couldn't insert sample {imported.filename}, no IDs left!")
+                        raise SampleIDError
                 if this_sampleid:
                     seq.inst = byte_insert(seq.inst, (k-0x20)*2, this_sampleid.to_bytes(2, "little"))
                 

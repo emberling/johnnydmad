@@ -5,9 +5,9 @@ import random
 import re
 
 from mml2mfvi import mml_to_akao, get_variant_list, get_brr_imports
-from insertmfvi import insertmfvi, byte_insert, int_insert
+from insertmfvi import insertmfvi, byte_insert, int_insert, SampleIDError, FreeSpaceError
 
-JOHNNYDMAD_FREESPACE = ["53C5F-9FDFF", "310000-37FFFF"]
+JOHNNYDMAD_FREESPACE = ["53C5F-9FDFF", "310000-37FFFF", "410000-5FFFFF"]
 TRAIN_SAMPLE_ID = 0x3A
 
 SAMPLE_PATH = 'samples'
@@ -34,6 +34,8 @@ SFXTRACKS = []
 APPENDTRACKS = []
 LONGTRACKS = []
 
+tracklist_spoiler = {}
+
 # Noting some stuff that got confusing because I can't keep my terms straight
 # "Playlist" - should refer to the config file determining what songs are used and where.
 # "Tracklist" - list of tracks in current seed, with either a song or a pool of potential songs placed in each
@@ -44,8 +46,8 @@ LONGTRACKS = []
 #TODO some instances of 'pool' need to be renamed 'category'
 
 class TrackMetadata:
-    def __init__(self, title="", album="", composer="", arranged=""):
-        self.title, self.album, self.composer, self.arranged = title, album, composer, arranged
+    def __init__(self, file="", title="", album="", composer="", arranged="", menuname=""):
+        self.file, self.title, self.album, self.composer, self.arranged, self.menuname = title, album, composer, arranged, menuname
         
 class TracklistEntry:
     def __init__(self, name):
@@ -94,7 +96,7 @@ class Tracklist:
             pool = [p for p in pool if song_usage_id(p) not in used_song_names]
         if len(pool) < 1:
             print(f"info: pool for {name} is empty, rerolling tracklist")
-            input() #debug, #TODO remove
+            #input() #debug, #TODO remove
             return False
         song = random.choice(pool)
         
@@ -152,14 +154,16 @@ class Tracklist:
         if not found:
             print(f"warning: in add_random: file not found: {song + '.mml'}")
             return False
-            
+        
         self[name].mml = mml
         self[name].file = os.path.join(searchpath, file_to_check)
         self[name].variant = variant if variant else None
         used_song_names.add(song_usage_id(song))
+        add_to_spoiler(name)
         return True
                     
 def song_usage_id(name):
+    name = os.path.splitext(os.path.basename(name))[0]
     if name.count("_") <= 1:
         return name
     return "_".join(name.split("_")[0:2])
@@ -199,14 +203,78 @@ def get_jukebox_title(mml, fn):
         n = n.group(0)
     else:
         title = re.search("(?<=#TITLE )([^;\n]*)", mml, re.IGNORECASE)
-        title = title.group(0)
-        n = os.path.basename(fn).split('.')[0].split('_')[0].upper() + " "
-        n += title
+        if title:
+            title = title.group(0)
+            n = os.path.basename(fn).split('.')[0].split('_')[0].upper() + " "
+            n += title
+        else:
+            n = os.path.splitext(os.path.basename(fn))[0]
         n = n[:18]
     return n
 
-brr_size_cache = {}
+def get_music_spoiler():
+    output = ""
+    for id in sorted(tracklist_spoiler.keys()):
+        output += tracklist_spoiler[id][3] + "\n"
+    print(output)
+    input()
+    return output
 
+def add_to_spoiler(track, mml=None, fn=None):
+    song = None
+    if not mml:
+        song = tracklist[track]
+        mml = song.mml
+    if not fn:
+        fn = song.file
+        
+    dir, fn = os.path.split(fn)
+    dir = dir.split(os.path.sep)
+    fn = os.path.splitext(fn)[0]
+    
+    track_name_width = max([len(s) for s in track_id_names.values()])
+    
+    try:
+        id = track_name_ids[track]
+    except KeyError:
+        if tracklist_spoiler:
+            id = max([1000] + list(tracklist_spoiler.keys())) + 1
+        else:
+            id = 1000
+        
+    title = re.search("(?<=#TITLE )([^;\n]*)", mml, re.IGNORECASE)
+    album = re.search("(?<=#ALBUM )([^;\n]*)", mml, re.IGNORECASE)
+    composer = re.search("(?<=#COMPOSER )([^;\n]*)", mml, re.IGNORECASE)
+    arranged = re.search("(?<=#ARRANGED )([^;\n]*)", mml, re.IGNORECASE)
+    title = title.group(0) if title else "??"
+    album = album.group(0) if album else "??"
+    composer = composer.group(0) if composer else "??"
+    arranged = arranged.group(0) if arranged else "??"
+    
+    if song and song.variant and song.variant != "_default_":
+        variant = song.variant
+        vartext = f":{song.variant}"
+    else:
+        vartext = ""
+        variant = None
+        
+    dirtext = ""
+    if "legacy" in dir:
+        dirtext += " [Legacy]"
+    if "dm" in dir:
+        dirtext += " [DM]"
+    
+    indent = " " * (track_name_width - 4)
+    text = (f"{track:<{track_name_width}} -> {fn}{vartext}{dirtext}" "\n"
+            + indent + f"{album} -- {title}" "\n"
+            + indent + f"Composed by {composer}" "\n"
+            + indent + f"Ripped and/or arranged by {arranged}" "\n")
+    if track in track_name_ids:
+        menuname = get_jukebox_title(mml, fn)
+        text += indent + f"(Jukebox title: {menuname})" + "\n"
+    
+    tracklist_spoiler[id] = (track, fn, variant, text)
+    
 def append_legacy_imports(mml, iset, raw_inst=False):
     if raw_inst:
         inst = []
@@ -233,6 +301,8 @@ def append_legacy_imports(mml, iset, raw_inst=False):
     mml += appendix
     return mml
     
+brr_size_cache = {}
+
 def get_spc_memory_usage(mml, custompath=CUSTOM_MUSIC_PATH, variant="_default_"):
     raw_iset = mml_to_akao(mml, variant=variant, inst_only=True)
     imports = get_brr_imports(mml, variant)
@@ -341,6 +411,8 @@ def generate_tierboss_mml(pool):
                 print(f"tierboss_mml: couldn't load {self.file}")
                 self.mml = ""
                 
+            self.orig_mml = self.mml
+            
             # build sample table
             sample_table = {}
             raw_iset = mml_to_akao(self.mml, variant=variant, inst_only=True)
@@ -405,25 +477,22 @@ def generate_tierboss_mml(pool):
                         next_merged_id += 1
             if next_merged_id > 0x30:
                 continue
-            print(merged_sample_table)
-            print([t.file for t in tiers])
+            #print(merged_sample_table)
+            #print([t.file for t in tiers])
             
             mml_sample_text = "\n"
             for id, val in merged_sample_table.items():
                 pre, suff = val
                 mml_sample_text += f"{pre}{id:02X}{suff}\n"
-            print(mml_sample_text)
+            #print(mml_sample_text)
             
             # check sample size
             # retry if n>3746
             memusage = get_spc_memory_usage(mml_sample_text, custompath=TIERBOSS_MUSIC_PATH)
-            print(memusage)
+            #print(memusage)
             if memusage > 3746:
                 continue
                 
-            # grab metadata
-            #TODO
-            
             # regex fix program changes
             for tier in tiers:
                 for old, new in tier.remap_table.items():
@@ -485,26 +554,32 @@ def generate_tierboss_mml(pool):
                 
             # test build akao sequence
             # retry if n>$1002
-            print(mml)
+            #print(mml)
             akao = mml_to_akao(mml, str(songnames), variant="_default_")
-            print(f"{len(akao[0]):04X}")
+            #print(f"{len(akao[0]):04X}")
             if len(akao[0]) > 0x1002:
                 continue
             final_mml = mml
             break
         if final_mml:
             break
-    input()
-    return final_mml, None
+            
+    for i, tier in enumerate(tiers):
+        add_to_spoiler(f"tier{i+1}", mml=tier.orig_mml, fn=tier.file)
+        used_song_names.add(song_usage_id(tier.file))
+        
+    return final_mml
 
 ############ main
 
 instmap, legacy_instmap = {}, {}
 
-def process_music(inrom, meta={}, f_chaos=False, f_battle=True, opera=None, eventmodes=""):
+def process_music(inrom, meta={}, f_chaos=False, f_battle=True, opera=None, eventmodes="", pool_test=False):
     global used_song_names
     global used_sample_ids
-      
+    global tracklist
+    global tracklist_spoiler
+    
     # -- load sample configs for normal/legacy
     sample_parser = configparser.ConfigParser()
     sample_parser.read(os.path.join(TABLE_PATH,'brr_samples.txt'))
@@ -532,7 +607,9 @@ def process_music(inrom, meta={}, f_chaos=False, f_battle=True, opera=None, even
         return inrom
         
     category_tracks, track_categories = {}, {}
-    for line in track_id_map:
+    track_id_names.clear()
+    track_name_ids.clear()
+    for i, line in enumerate(track_id_map):
         # trim comments
         line = line.split('#')[0]
         # reject blanks and other lines without a xx: ~~ structure
@@ -637,7 +714,8 @@ def process_music(inrom, meta={}, f_chaos=False, f_battle=True, opera=None, even
 
         used_sample_ids = set()
         used_song_names = set()
-        
+        tracklist_spoiler = {}
+
         tracklist = Tracklist()
                     
         LONGTRACKS = ["ending1", "ending2"]
@@ -657,9 +735,8 @@ def process_music(inrom, meta={}, f_chaos=False, f_battle=True, opera=None, even
         # tierboss
         # processing tierboss first to avoid having to check for used song names
         if "tierboss" in category_tracks:
-            tierboss_mml, tierboss_metadata = generate_tierboss_mml(tierboss_pool)
-        # TODO add tierboss_metadata entries to used_song_names
-        
+            tierboss_mml = generate_tierboss_mml(tierboss_pool)
+                        
         # battle
         progression = {}
         already_added = set()
@@ -677,7 +754,7 @@ def process_music(inrom, meta={}, f_chaos=False, f_battle=True, opera=None, even
                         prog_attempts = 1000
                         break
                     track_pool = [s for s in track_pools[track] if s not in temp_used_song_names and s not in already_added and intensitytable[cat][s] >= prog_level]
-                    # choose one, if no options retry
+                    # choose one; if no options retry
                     if not track_pool:
                         prog_attempts += 1
                         continue
@@ -685,7 +762,7 @@ def process_music(inrom, meta={}, f_chaos=False, f_battle=True, opera=None, even
                     prog_level = intensitytable[cat][choice]
                     prog_choices.append(choice)
                     temp_used_song_names.add(choice)
-                    print(f"prog: {track} - chose {choice} at intensity {prog_level} from pool {track_pool}")
+                    #print(f"prog: {track} - chose {choice} at intensity {prog_level} from pool {track_pool}")
                 if len(prog_choices) == len(order):
                     break
             # add to tracklist
@@ -703,12 +780,21 @@ def process_music(inrom, meta={}, f_chaos=False, f_battle=True, opera=None, even
         # -- choose tracklist
         for category, tracks in sorted(category_tracks.items()):
             # fixed category - does not randomize, loads from static_music/ only
-            # TODO - opera is here for now, eventually it should be here only if not using alasdraco
-            if category == "fixed" or category == "opera":
+            if category == "fixed":
                 for track in tracks:
                     tracklist.add_fixed(track)
                 continue
-            # Tierboss section is processed elsewhere
+            elif category == "opera":
+                for track in tracks:
+                    if opera:
+                        if track in opera:
+                            tracklist.add_direct(opera[track])
+                        else:
+                            print(f"warning: expected alasdraco info for {track} not present")
+                            tracklist.add_fixed(track)
+                    else:
+                        tracklist.add_fixed(track)
+                continue
             elif category == "tierboss":
                 for track in tracks:
                     tracklist.add_direct(track, tierboss_mml)
@@ -732,6 +818,16 @@ def process_music(inrom, meta={}, f_chaos=False, f_battle=True, opera=None, even
                     break
         if processing_failed: 
             continue
+            
+        # If we're just simulating pools, finish up and exit here
+        if pool_test:
+            results = {}
+            for id in sorted(tracklist_spoiler.keys()):
+                track, song, variant, _ = tracklist_spoiler[id]
+                if variant:
+                    song = f"{song}:{variant}"
+                results[track] = song
+            return results
             
         # -- load tracklist files, while...
         #    - for NON-legacy #WAVE, record used samples in a set
@@ -777,10 +873,6 @@ def process_music(inrom, meta={}, f_chaos=False, f_battle=True, opera=None, even
         if processing_failed:
             continue
             
-        # -- process special cases wrt. editing mml content (maybe have to do some of this earlier?)
-        #                                                   variant stuff should be figured in add_random
-        # TODO
-        
         # -- generate virtual sample listfile for insertmfvi
         sample_virtlist = {}
         for id in used_sample_ids:
@@ -794,28 +886,20 @@ def process_music(inrom, meta={}, f_chaos=False, f_battle=True, opera=None, even
             v = (tl_entry.file, tl_entry.variant, is_sfx, is_long, tl_entry.mml)
             mml_virtlist[k] = v
             
-            # while we're at it, record some metadata
-            title = re.search("(?<=#TITLE )([^;\n]*)", tl_entry.mml, re.IGNORECASE)
-            album = re.search("(?<=#ALBUM )([^;\n]*)", tl_entry.mml, re.IGNORECASE)
-            composer = re.search("(?<=#COMPOSER )([^;\n]*)", tl_entry.mml, re.IGNORECASE)
-            arranged = re.search("(?<=#ARRANGED )([^;\n]*)", tl_entry.mml, re.IGNORECASE)
-            title = title.group(0) if title else "??"
-            album = album.group(0) if album else "??"
-            composer = composer.group(0) if composer else "??"
-            arranged = arranged.group(0) if arranged else "??"
-            
             # Jukebox title
             if tl_name not in category_tracks["fixed"] and tl_name not in category_tracks["opera"]:
                 meta[k] = get_jukebox_title(tl_entry.mml, tl_entry.file)
             #metadata[k] = TrackMetadata(title, album, composer, arranged, menuname)
 
         # -- run insertmfvi
-        outrom = insertmfvi(inrom, virt_sample_list=sample_virtlist, virt_seq_list=mml_virtlist, freespace=JOHNNYDMAD_FREESPACE)
-        #outrom = insertmfvi(inrom, virt_sample_list=sample_virtlist, virt_seq_list=None, freespace=JOHNNYDMAD_FREESPACE)
-        # -- verify insert worked within parameters (total # samples, size etc)
-        #    (will need changes to insertmfvi to get info)
-        #    retry ('continue') if bad
-        #TODO
+        try:
+            outrom = insertmfvi(inrom, virt_sample_list=sample_virtlist, virt_seq_list=mml_virtlist, freespace=JOHNNYDMAD_FREESPACE)
+        except SampleIDError:
+            print("NOTICE: Rerolling music - too many samples in last attempt")
+            continue
+        except FreeSpaceError:
+            print("NOTICE: Rerolling music - not enough free space for last attempt")
+            continue
         
         processing_complete = True
         

@@ -616,6 +616,10 @@ ff6_death: death
 lb: ff6_tier1, ff6_tier2, ff6_tier3, ff7_final_part1, ff6_falsetier1, ff6_falsetier3
 
 [battle]
+# BATTLE plays in formations through 3 Scenarios / K@N
+# BAT2 plays in formations through the rest of WoB
+# BAT3 plays throughout WoR
+# BAT4 plays in Kefka's Tower and in special event battles and MiBs such as Siegfried, Presenter, KatanaSoul
 ct_battle:      E5,  battle, bat2
 ff1_battle:     E10, battle
 ff6_battle:     E20, battle, bat2, bat3
@@ -629,6 +633,7 @@ doom_e1m1:      E45, battle
 ff14_battlem:   E50,         bat2, bat3, bat4
 gd3_moai:       E60,                     bat4
 bof2_battle2:   E65,         bat2, bat3
+ot_treasure:    E70,                     bat4
 ff9_hunt:       E75,               bat3, bat4
 totr_sboss:     E80,                     bat4
 wa2_heimdal:    E80,                     bat4
@@ -639,11 +644,16 @@ lu2_savior:     E95,               bat3, bat4
 ff6_boss:       E99,                     bat4
 
 [boss]
+# mboss (miniboss) plays in event encounters like Marshal, Leader, Rizopas
+# boss plays on most bosses
+# atma plays on Kefka at Narshe, Atma (Weapon), MagiMaster, Goddess/Poltrgeist/Doom, the 8 Dragons, Doom Gaze
+# dmad5 plays on False & Final Kefka
 ct_tension:   I15, mboss
 ff7_battle:   I20, mboss
 zaol_temple:  I30, mboss
 bof2_battle2: I35, mboss
 doom_e1m1:    I40, mboss
+ot_treasure:  I45, mboss, boss
 ff6_boss:     I50,        boss
 ff8_laguna:   I50, mboss,       atma
 lal_boss:     I50, mboss, boss, atma

@@ -1,15 +1,19 @@
-#TITLE Dungeon Type 2
+#TITLE Dungeon — Type 2
 #ALBUM Wild Arms 2
 #COMPOSER Michiko Naruke
 #ARRANGED Rushlight
 
+#VARIANT !
+#VARIANT ~ tr
+
 #WAVE 0x20 0x23 ## Xylophone
-#WAVE 0x21 0x86 ## Horn
-#WAVE 0x22 0x81 ## Trumpet
+#WAVE 0x21 !0x86!~0x7F~ ## Horn
+#WAVE 0x22 0x82 ## Trumpet
 #WAVE 0x23 0xB5 ## Hammond Organ
 #WAVE 0x24 0x66 ## Strings
 #WAVE 0x25 0x75 ## Choir
-#WAVE 0x26 0x50 ## Bass
+#WAVE 0x26 0x52 ## Bass
+#WAVE 0x27 0x87 ## Brass
 
 #WAVE 0x28 0x0A ## Kick
 #WAVE 0x29 0x1D ## Snare
@@ -18,9 +22,9 @@
 #WAVE 0x2C 0x2D ## Crash
 #WAVE 0x2D 0x4D ## Toms
 
-#def init= t130 %x240 %v40 %b0,70 %f0,0
+#def init= t130 %x255 %v40 %b0,70 %f0,0
 
-#def rhythmXyloVol=          v40
+#def rhythmXyloVol=          v37
 #def rhythmXylo2Vol=         'rhythmXyloVol*v.5'
 #def rhythmXylo2QuietVol=    'rhythmXyloVol*v.3'
 #def xyloEchoVol=            'rhythmXyloVol*v.4'
@@ -28,9 +32,9 @@
 ## The higher notes don't sound as much, and need to contend with the accent trumpets, so increase volume
 #def highAccentLeftVol=      'rhythmXyloVol*v1.8'
 
-#def leadHornVol=            v127
+#def leadHornVol=            !v119!~v80~
 
-#def bassVol=                v60
+#def bassVol=                v28
 
 ## Accent trumpet needs to really pop against the rest of the song
 #def soloAccentTrumpetVol=   v127
@@ -38,26 +42,26 @@
 #def lowAccentTrumpetHiVol=  'soloAccentTrumpetVol*v.45'
 #def highAccentTrumpetLoVol= 'soloAccentTrumpetVol*v.6'
 #def lowAccentTrumpetLoVol=  'soloAccentTrumpetVol*v.3'
-#def leadTrumpetVol=         v100
+#def leadTrumpetVol=         v75
 
-#def leadStringsVol=         v80
-#def accentStringsHiVol=     v110
-#def accentStringsLowVol=    v11 ## accentStringsHiVol * .1
-#def accentStringsFadeUp=    v120,110 ## Over 120 ticks, move to accentStringsHiVol
-#def accentStringsFadeDown=  v120,11  ## Over 120 ticks, move to accentStringsLowVol
+#def leadStringsVol=         v75
+#def accentStringsHiVol=     v103
+#def accentStringsLowVol=    v10 ## accentStringsHiVol * .1
+#def accentStringsFadeUp=    v120,102 ## Over 120 ticks, move to accentStringsHiVol
+#def accentStringsFadeDown=  v120,10  ## Over 120 ticks, move to accentStringsLowVol
 #def supportStringsPairVol=  'leadStringsVol*v.4'
 #def supportStringsTrioVol=  'leadStringsVol*v.33'
 
-#def baseOrganVol=           v50
+#def baseOrganVol=           v47
 #def highOrganSoloVol=      'baseOrganVol*v1.3'
 #def organDuoVol=           'baseOrganVol*v.95'
 #def highAccentOrganVol=    'baseOrganVol*v2'
 #def lowAccentOrganVol=     'baseOrganVol*v1'
 
-#def highChoirVol=          v50
+#def highChoirVol=          v47
 
-#def orchestraLeftVol=      v90
-#def orchestraCenterVol=    v100
+#def orchestraLeftVol=      v88
+#def orchestraCenterVol=    v94
 
 #def leadSustain= %r9
 #def leadDecay= %r24
@@ -75,12 +79,12 @@
 
 #def bass=                   |6 o3 'bassVol'                p64  %r20          %e0 m
 
-#def soloAccentTrumpet=      |2 o5 'soloAccentTrumpetVol'   p43  %r0           %e1 m
-#def highAccentTrumpet=      |2 o5 'highAccentTrumpetHiVol' p43  %r0           %e1 m
-#def lowAccentTrumpet=       |2 o5 'lowAccentTrumpetHiVol'  p43  %r0           %e1 m
-#def highAccentTrumpetQuiet= |2 o5 'highAccentTrumpetLoVol' p43  %r0           %e1 m
-#def lowAccentTrumpetQuiet=  |2 o5 'lowAccentTrumpetLoVol'  p43  %r0           %e1 m
-#def leadTrumpet=            |2 o5 'leadTrumpetVol'         p64  'leadSustain' %e1 m0,9,205
+#def soloAccentTrumpet=      |7 o5 'soloAccentTrumpetVol'   p43  %r0           %e1 m
+#def highAccentTrumpet=      |7 o5 'highAccentTrumpetHiVol' p43  %r0           %e1 m
+#def lowAccentTrumpet=       |7 o5 'lowAccentTrumpetHiVol'  p43  %r0           %e1 m
+#def highAccentTrumpetQuiet= |7 o5 'highAccentTrumpetLoVol' p43  %r0           %e1 m
+#def lowAccentTrumpetQuiet=  |7 o5 'lowAccentTrumpetLoVol'  p43  %r0           %e1 m
+#def leadTrumpet=            |2 o5 'leadTrumpetVol'         p64  'leadSustain' %e1 m
 
 #def accentStrings=          |4 o6 'accentStringsHiVol'     p114 %r0           %e1 m
 #def leadStrings=            |4 o6 'leadStringsVol'         p64  %r6           %e1 m
@@ -538,7 +542,7 @@ f+g+b- 'organDuoVol' <c
   ## Accent Organ, low note
   'lowAccentOrgan'
   l8
-  r8.ff16e-
+  r8.fe-16f
   ## Accent Trumpet, low note
   'lowAccentTrumpet'
   l16
@@ -588,4 +592,3 @@ e-2f+ b-8 m12,1 ^16 m12,-1 ^16 <f+fc+e->
 l1
 c+>b-b-a
 ;
-

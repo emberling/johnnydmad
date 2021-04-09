@@ -2,6 +2,9 @@ import configparser
 import os
 import sys
 
+from collections import Counter
+from operator import itemgetter
+
 sys.path.append(os.path.dirname(__file__))
 sys.path.append(os.path.join(os.path.dirname(__file__), "mfvitools"))
 
@@ -11,12 +14,13 @@ from mml2mfvi import mml_to_akao
 
 ## TO DO LIST
 # * finish ripping FF6 vanilla songs
-# - opera mode
-# - tierboss
-# - write metadata to spoiler
+# * opera mode - johnnydmad side
+# * tierboss - coding
+# - tierboss - mml setup
+# * write metadata to spoiler
 # - specify seed in jdm launcher
 # - credits generator devtool
-# - music frequency devtool
+# * music frequency devtool
 # - adjust frequency for battleprog to prevent skewing late
 # - silent mode for insertmfvi
 # - select alternate music.txt (curator mode)
@@ -24,11 +28,20 @@ from mml2mfvi import mml_to_akao
 # - ensure function with pyinstaller
 # - reconcile music player w/ Myria disable sound hack
 # - integration with BC randomizer
+# - opera mode - beyondchaos side
 # - allow music sourced from ROM, if specified by host / integrate mfvi2mml
 # - allow selection of less intrusive mode(s) in jdm launcher (no event edits, e.g.)
 # - test with Gaiden
 # - test with WC
 
+def print_progress_bar(cur, max):
+    pct = (cur / max) * 100
+    cursor = " >)|(<-"
+    full_boxes = int(pct // 2)
+    cursor_idx = int((pct % 2) * (len(cursor)/2))
+    boxtext = cursor[-1] * full_boxes + cursor[cursor_idx]
+    print(f"\r[{boxtext:<50}] {cur}/{max}", end="", flush=True)
+    
 def johnnydmad():
     print("johnnydmad EX5 early test")
     
@@ -41,6 +54,8 @@ def johnnydmad():
     print('    "chaos" to test chaotic mode')
     print('    "sfxv" to check songs for errors, sorted by longest sequence variant')
     print('    "mem" to check songs for errors, sorted by highest memory use variant')
+    print('    "pool" to simulate many seeds and report the observed probability pools for each track')
+    print('    "battle" to simulate many seeds and report probabilities for only battle music')
     i = input()
     if i == "chaos":
         f_chaos = True
@@ -48,6 +63,10 @@ def johnnydmad():
         mass_test("sfx")
     elif i == "mem":
         mass_test("mem")
+    elif i == "pool":
+        pool_test(inrom)
+    elif i == "battle":
+        pool_test(inrom, battle_only=True)
     else:
         metadata = {}
         outrom = process_music(inrom, meta=metadata, f_chaos=f_chaos)
@@ -59,8 +78,43 @@ def johnnydmad():
         with open("mytest.smc", "wb") as f:
             f.write(outrom)
         
+        get_music_spoiler()
+        
 #################################
 
+def pool_test(inrom, battle_only=False):
+    results = {}
+    iterations = 100
+    
+    print()
+    for i in range(iterations):
+        tracklist = process_music(inrom, pool_test=True)
+        for track, song in tracklist.items():
+            if track not in results:
+                results[track] = []
+            results[track].append(song)
+        print_progress_bar(i, iterations)
+    
+    if battle_only:
+        tracks_to_check = ["battle", "bat2", "bat3", "bat4", "mboss", "boss",
+                           "atma", "dmad5", "tier1", "tier2", "tier3"]
+    else:
+        tracks_to_check = results.keys()
+        
+    for track in tracks_to_check:
+        pool = results[track]
+        if len(pool) < iterations:
+            pool.extend(["not present"] * (iterations - len(pool)))
+            
+        print(f"[{track.upper()}]:")
+        
+        c = Counter(pool)
+        rank = sorted(c.items(), key=itemgetter(1), reverse=True)
+        songlen = max([len(s) for s in c.keys()])
+        for song, reps in rank:
+            pct = (reps / iterations) * 100
+            print(f"    {pct:04.1f}% {song:<{songlen}} ({reps} / {iterations})")
+        
 def mass_test(sort):
     global used_song_names
     testbed = [
@@ -69,7 +123,7 @@ def mass_test(sort):
         ("wind", "ruin", 0x4F, True),
         ("train", "train", 0x20, False)
         ]
-    cursor = " >)|(<"
+    #cursor = " >)|(<"
     playlist_map, _ = init_playlist()
     results = []
     legacy_files = set()
@@ -101,11 +155,12 @@ def mass_test(sort):
             memusage = max(memusage, var_memusage)
         order = memusage if sort == "mem" else max(binsizes.values())
         results.append((order, song, binsizes, memusage))
-        pct = (i / len(playlist_map)) * 100
-        full_boxes = int(pct // 2)
-        cursor_idx = int((pct % 2)*(len(cursor)/2))
-        boxtext = "-" * full_boxes + cursor[cursor_idx]
-        print(f"\r[{boxtext:<50}] {i}/{len(playlist_map)}", end="", flush=True)
+        #pct = (i / len(playlist_map)) * 100
+        print_progress_bar(i, len(playlist_map))
+        #full_boxes = int(pct // 2)
+        #cursor_idx = int((pct % 2)*(len(cursor)/2))
+        #boxtext = "-" * full_boxes + cursor[cursor_idx]
+        #print(f"\r[{boxtext:<50}] {i}/{len(playlist_map)}", end="", flush=True)
         #print(debugtext)
         i += 1
         
