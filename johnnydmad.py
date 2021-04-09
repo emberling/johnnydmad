@@ -94,6 +94,7 @@ def pool_test(inrom, battle_only=False):
                 results[track] = []
             results[track].append(song)
         print_progress_bar(i, iterations)
+    print()
     
     if battle_only:
         tracks_to_check = ["battle", "bat2", "bat3", "bat4", "mboss", "boss",

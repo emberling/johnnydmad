@@ -159,7 +159,7 @@ class Tracklist:
         self[name].file = os.path.join(searchpath, file_to_check)
         self[name].variant = variant if variant else None
         used_song_names.add(song_usage_id(song))
-        add_to_spoiler(name)
+        add_to_spoiler(name, tl=self)
         return True
                     
 def song_usage_id(name):
@@ -220,10 +220,12 @@ def get_music_spoiler():
     input()
     return output
 
-def add_to_spoiler(track, mml=None, fn=None):
+def add_to_spoiler(track, mml=None, fn=None, tl=None):
     song = None
+    if not tl:
+        tl = tracklist
     if not mml:
-        song = tracklist[track]
+        song = tl[track]
         mml = song.mml
     if not fn:
         fn = song.file
@@ -232,7 +234,7 @@ def add_to_spoiler(track, mml=None, fn=None):
     dir = dir.split(os.path.sep)
     fn = os.path.splitext(fn)[0]
     
-    track_name_width = max([len(s) for s in track_id_names.values()])
+    track_name_width = max([len(s) for s in track_id_names.values()]) if track_id_names else 0
     
     try:
         id = track_name_ids[track]
@@ -745,28 +747,33 @@ def process_music(inrom, meta={}, f_chaos=False, f_battle=True, opera=None, even
         for cat, order in progression.items():
             prog_attempts = 0
             while prog_attempts < 1000:
-                prog_choices = []
+                prog_choices = {}
                 prog_level = 0
+                prog_max = 100
                 temp_used_song_names = copy.copy(used_song_names)
-                for track in order:
+                for i in (0, 3, 1, 2):
+                    track = order[i]
                     # get song options for tier (exclude by used and under level)
                     if track not in track_pools:
                         prog_attempts = 1000
                         break
-                    track_pool = [s for s in track_pools[track] if s not in temp_used_song_names and s not in already_added and intensitytable[cat][s] >= prog_level]
+                    track_pool = [s for s in track_pools[track] if s not in temp_used_song_names and s not in already_added and intensitytable[cat][s] >= prog_level and intensitytable[cat][s] <= prog_max]
                     # choose one; if no options retry
                     if not track_pool:
                         prog_attempts += 1
                         continue
                     choice = random.choice(track_pool)
-                    prog_level = intensitytable[cat][choice]
-                    prog_choices.append(choice)
+                    if i == 3:
+                        prog_max = intensitytable[cat][choice]
+                    else:
+                        prog_level = intensitytable[cat][choice]
+                    prog_choices[i] = (choice)
                     temp_used_song_names.add(choice)
                     #print(f"prog: {track} - chose {choice} at intensity {prog_level} from pool {track_pool}")
                 if len(prog_choices) == len(order):
                     break
             # add to tracklist
-            for i, choice in enumerate(prog_choices):
+            for i, choice in prog_choices.items():
                 ok = tracklist.add_random(progression[cat][i], [choice])
                 if not ok:
                     processing_failed = True
