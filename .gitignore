@@ -3,7 +3,7 @@
 ff6*.txt
 build/*
 dist/*
-build.bat
+*.spec
 savedflags.txt
 .pylintrc
 custom.zip

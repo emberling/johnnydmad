@@ -9,6 +9,8 @@
 #VARIANT ?` tier2
 #VARIANT ?_ tier3
 
+#UID tier3
+
 #WAVE 0x20 -- 0x63  #C.Organ
 #WAVE 0x21 -- 0x64  #P.Organ
 #WAVE 0x27 -- 0x28  #Bells

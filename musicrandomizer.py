@@ -3,6 +3,7 @@ import copy
 import os
 import random
 import re
+import sys
 
 from mml2mfvi import mml_to_akao, get_variant_list, get_brr_imports
 from insertmfvi import insertmfvi, byte_insert, int_insert, SampleIDError, FreeSpaceError
@@ -19,6 +20,7 @@ PLAYLIST_PATH = 'playlists'
 TABLE_PATH = 'tables'
 DEFAULT_PLAYLIST_FILE = os.path.join(PLAYLIST_PATH, 'default.txt')
 LEGACY_LOADBRR_PATH = "../../samples/"
+BASEPATH = os.getcwd()
 # For LEGACY_LOADBRR_PATH, note that the filenames from tables/legacy.txt that
 #   are appended to this already contain the "legacy/" bit. Path is relative
 #   to LEGACY_MUSIC_PATH. OS-specific separators are handled later, '/' is
@@ -43,8 +45,43 @@ tracklist_spoiler = {}
 # "Song" - A musical piece loaded from an MML file that will be placed in a track.
 # "Category" - A label set in the playlist under which a song is loaded, causing it to randomize into the tracks marked in that category (this is 'pool' atm, but so are other things..)
 # "Pool" - The list of available songs for a particular track, or possibly category
-#TODO some instances of 'pool' need to be renamed 'category'
 
+
+# resource -- built in files, baked into executable
+# asset -- may be customizable files, located in folders
+
+def resource_path(rel):
+    base = getattr(sys, '_MEIPASS', BASEPATH)
+    return os.path.normpath(os.path.join(base, rel))
+    
+def open_resource(fn, *args, **kwargs):
+    if os.path.isabs(fn):
+        print(f"warning: {fn}: resource paths should be relative")
+    else:
+        fn = resource_path(fn)
+    return open(fn, *args, **kwargs)
+    
+def asset_path(rel):
+    return os.path.normpath(os.path.join(BASEPATH, rel))
+    
+def open_asset(fn, *args, **kwargs):
+    if not os.path.isabs(fn):
+        fn = asset_path(fn)
+    return open(fn, *args, **kwargs)
+    
+def fallback_path(rel, ext=""):
+    if ext and rel.endswith(ext):
+        ext = ""
+    p = asset_path(rel)
+    if not os.path.exists(p + ext):
+        p = resource_path(rel)
+    return p
+    
+def open_fallback(fn, *args, **kwargs):
+    if not os.path.isabs(fn):
+        fn = fallback_path(fn)
+    return open(fn, *args, **kwargs)
+    
 class TrackMetadata:
     def __init__(self, file="", title="", album="", composer="", arranged="", menuname=""):
         self.file, self.title, self.album, self.composer, self.arranged, self.menuname = title, album, composer, arranged, menuname
@@ -105,7 +142,11 @@ class Tracklist:
             idx = track_name_ids[name]
         vbase, vsuffix = song_variant_id(song, idx)
         sfxmode = True if name in SFXTRACKS else False
-        for searchpath in [CUSTOM_MUSIC_PATH, LEGACY_MUSIC_PATH, STATIC_MUSIC_PATH]:
+        if hasattr(sys, "_MEIPASS"):
+            paths_to_search = [CUSTOM_MUSIC_PATH, LEGACY_MUSIC_PATH, resource_path(CUSTOM_MUSIC_PATH), resource_path(LEGACY_MUSIC_PATH), resource_path(STATIC_MUSIC_PATH)]
+        else:
+            paths_to_search = [CUSTOM_MUSIC_PATH, LEGACY_MUSIC_PATH, STATIC_MUSIC_PATH]
+        for searchpath in paths_to_search:
             target = vbase
             vid = vsuffix
             potential_files = {}
@@ -119,7 +160,7 @@ class Tracklist:
                         mml, varlist = potential_files[file_to_check]
                     else:
                         try:
-                            with open(os.path.join(searchpath, file_to_check + ".mml"), 'r') as mmlf:
+                            with open_asset(os.path.join(searchpath, file_to_check + ".mml"), 'r') as mmlf:
                                 mml = mmlf.read()
                             varlist = get_variant_list(mml, sfxmode)
                             potential_files[file_to_check] = (mml, varlist)
@@ -147,7 +188,7 @@ class Tracklist:
                     mml, varlist, variant = "", {}, ""
                     break
             if found:
-                if searchpath == LEGACY_MUSIC_PATH:
+                if searchpath in [LEGACY_MUSIC_PATH, resource_path(LEGACY_MUSIC_PATH)]:
                     self[name].is_legacy = True
                 break
         
@@ -184,7 +225,7 @@ def song_variant_id(name, idx):
 
 def init_playlist(fn=DEFAULT_PLAYLIST_FILE):            
     playlist_parser = configparser.ConfigParser()
-    playlist_parser.read(fn)
+    playlist_parser.read(fallback_path(fn))
     playlist_map = {}
     tierboss_pool = set()
     for section in playlist_parser:
@@ -216,8 +257,6 @@ def get_music_spoiler():
     output = ""
     for id in sorted(tracklist_spoiler.keys()):
         output += tracklist_spoiler[id][3] + "\n"
-    print(output)
-    input()
     return output
 
 def add_to_spoiler(track, mml=None, fn=None, tl=None):
@@ -289,7 +328,7 @@ def append_legacy_imports(mml, iset, raw_inst=False):
         
     if not legacy_instmap:
         legacy_parser = configparser.ConfigParser()   
-        legacy_parser.read(os.path.join(TABLE_PATH,'brr_legacy.txt'))
+        legacy_parser.read(resource_path(os.path.join(TABLE_PATH,'brr_legacy.txt')))
         for k, v in legacy_parser.items("Samples"):
             try:
                 legacy_instmap[int(k, 16)] = v
@@ -311,7 +350,7 @@ def get_spc_memory_usage(mml, custompath=CUSTOM_MUSIC_PATH, variant="_default_")
     
     if not instmap:
         sample_parser = configparser.ConfigParser()
-        sample_parser.read(os.path.join(TABLE_PATH, 'brr_samples.txt'))
+        sample_parser.read(resource_path(os.path.join(TABLE_PATH, 'brr_samples.txt')))
         for k, v in sample_parser.items("Samples"):
             try:
                 instmap[int(k, 16)] = v
@@ -329,7 +368,7 @@ def get_spc_memory_usage(mml, custompath=CUSTOM_MUSIC_PATH, variant="_default_")
             brrid = raw_iset[i*2]
             if brrid:
                 fn = instmap[brrid].split(',')[0].strip()
-                fn = os.path.join(SAMPLE_PATH, fn)
+                fn = resource_path(os.path.join(SAMPLE_PATH, fn))
         if not fn:
             continue
         if not fn.lower().endswith(".brr"):
@@ -380,7 +419,7 @@ def apply_variant(mml, type, name="", variant="_default_", check_size=False):
                 mml = mml + "\n$888{} r;".format(i)
     if append_mml:
         try:
-            with open(os.path.join(STATIC_MUSIC_PATH, append_mml), 'r') as f:
+            with open_resource(os.path.join(STATIC_MUSIC_PATH, append_mml), 'r') as f:
                 mml += f.read()
         except IOError:
             print("couldn't open {}".format(sfx))
@@ -407,7 +446,7 @@ def generate_tierboss_mml(pool):
             
             self.file = os.path.join(TIERBOSS_MUSIC_PATH, name + ".mml")
             try:
-                with open(self.file, "r") as f:
+                with open_fallback(self.file, "r") as f:
                     self.mml = f.read()
             except OSError:
                 print(f"tierboss_mml: couldn't load {self.file}")
@@ -415,6 +454,9 @@ def generate_tierboss_mml(pool):
                 
             self.orig_mml = self.mml
             
+            uids = re.search("(?<=#UID )([^;\n]*)", self.mml, re.IGNORECASE)
+            self.uids = [s.strip() for s in uids.group(0).split(',')] if uids else []
+
             # build sample table
             sample_table = {}
             raw_iset = mml_to_akao(self.mml, variant=variant, inst_only=True)
@@ -443,6 +485,7 @@ def generate_tierboss_mml(pool):
             # pick songs to fuse
             while True:
                 tiers = []
+                uids = []
                 songnames = random.sample(pool, n)
                 for i, song in enumerate(songnames):
                     tier = TierSong(song, variants_to_use[n-1][i])
@@ -451,6 +494,16 @@ def generate_tierboss_mml(pool):
                         pool.delete(song)
                         break
                     tiers.append(tier)
+                    # Duplicate check
+                    for uid in tier.uids:
+                        if uid in uids:
+                            retry = True
+                            break
+                    uids.extend(tier.uids)
+                    if retry:
+                        break
+                if retry:
+                    break
                 # Retry if a chosen song is blank / file not found
                 if songnames:
                     break
@@ -576,15 +629,22 @@ def generate_tierboss_mml(pool):
 
 instmap, legacy_instmap = {}, {}
 
-def process_music(inrom, meta={}, f_chaos=False, f_battle=True, opera=None, eventmodes="", pool_test=False):
+def process_music(inrom, meta={}, f_chaos=False, f_battle=True, opera=None, eventmodes="", basepath=None, pool_test=False):
     global used_song_names
     global used_sample_ids
     global tracklist
     global tracklist_spoiler
+    global BASEPATH
     
+    if basepath:
+        if os.path.isabs(basepath):
+            BASEPATH = basepath
+        else:
+            BASEPATH = os.path.join(BASEPATH, basepath)
+            
     # -- load sample configs for normal/legacy
     sample_parser = configparser.ConfigParser()
-    sample_parser.read(os.path.join(TABLE_PATH,'brr_samples.txt'))
+    sample_parser.read(resource_path(os.path.join(TABLE_PATH,'brr_samples.txt')))
     for k, v in sample_parser.items("Samples"):
         try:
             instmap[int(k, 16)] = v
@@ -592,7 +652,7 @@ def process_music(inrom, meta={}, f_chaos=False, f_battle=True, opera=None, even
             print(f"warning: invalid entry {k} in brr_samples.txt")
             
     legacy_parser = configparser.ConfigParser()   
-    legacy_parser.read(os.path.join(TABLE_PATH,'brr_legacy.txt'))
+    legacy_parser.read(resource_path(os.path.join(TABLE_PATH,'brr_legacy.txt')))
     for k, v in legacy_parser.items("Samples"):
         try:
             legacy_instmap[int(k, 16)] = v
@@ -601,7 +661,7 @@ def process_music(inrom, meta={}, f_chaos=False, f_battle=True, opera=None, even
     
     # -- load map of categories for tracks (i.e. which pool of songs applies to each track)
     try:
-        with open(os.path.join(TABLE_PATH,'track_ids.txt'), 'r') as f:
+        with open_resource(os.path.join(TABLE_PATH,'track_ids.txt'), 'r') as f:
             track_id_map = f.readlines()
     except IOError:
         print(f"could not open {os.path.join(TABLE_PATH,'track_ids.txt')}, music insertion aborted")
@@ -842,7 +902,7 @@ def process_music(inrom, meta={}, f_chaos=False, f_battle=True, opera=None, even
         for tl_name, tl_entry in tracklist.data.items():
             if not tl_entry.mml:
                 try:
-                    with open(tl_entry.file, "r") as f:
+                    with open_fallback(tl_entry.file, "r") as f:
                         tl_entry.mml = f.read()
                 except IOError:
                     print(f"file not found: {tl_entry.file}")
@@ -890,7 +950,7 @@ def process_music(inrom, meta={}, f_chaos=False, f_battle=True, opera=None, even
             k = track_name_ids[tl_name]
             is_sfx = True if tl_name in SFXTRACKS else False
             is_long = True if tl_name in LONGTRACKS else False
-            v = (tl_entry.file, tl_entry.variant, is_sfx, is_long, tl_entry.mml)
+            v = (fallback_path(tl_entry.file, ext=".mml"), tl_entry.variant, is_sfx, is_long, tl_entry.mml)
             mml_virtlist[k] = v
             
             # Jukebox title
@@ -900,7 +960,7 @@ def process_music(inrom, meta={}, f_chaos=False, f_battle=True, opera=None, even
 
         # -- run insertmfvi
         try:
-            outrom = insertmfvi(inrom, virt_sample_list=sample_virtlist, virt_seq_list=mml_virtlist, freespace=JOHNNYDMAD_FREESPACE)
+            outrom = insertmfvi(inrom, virt_sample_list=sample_virtlist, virt_seq_list=mml_virtlist, freespace=JOHNNYDMAD_FREESPACE, brrpath=resource_path(SAMPLE_PATH), quiet=True)
         except SampleIDError:
             print("NOTICE: Rerolling music - too many samples in last attempt")
             continue
@@ -922,7 +982,7 @@ def process_formation_music_by_table(data, form_music_overrides={}):
     o_monsters = 0xF0000
     o_epacks = 0xF5000
     
-    with open(os.path.join(TABLE_PATH,"formationmusic.txt"), "r") as f:
+    with open_resource(os.path.join(TABLE_PATH,"formationmusic.txt"), "r") as f:
         tbl = f.readlines()
     
     table = []

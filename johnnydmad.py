@@ -12,7 +12,7 @@ from musicrandomizer import *
 from insertmfvi import byte_insert, int_insert
 from mml2mfvi import mml_to_akao
 
-## TO DO LIST
+## TO DO LIST (* = essentially complete)
 # * finish ripping FF6 vanilla songs
 # * opera mode - johnnydmad side
 # * tierboss - coding
@@ -21,11 +21,12 @@ from mml2mfvi import mml_to_akao
 # - specify seed in jdm launcher
 # - credits generator devtool
 # * music frequency devtool
-# - adjust frequency for battleprog to prevent skewing late
-# - silent mode for insertmfvi
+# * adjust frequency for battleprog to prevent skewing late
+# * silent mode for insertmfvi
 # - select alternate music.txt (curator mode)
 # - external ignorelist for songs and/or sources
-# - ensure function with pyinstaller
+# * ensure function with pyinstaller
+# - ensure function as module of another program
 # - reconcile music player w/ Myria disable sound hack
 # - integration with BC randomizer
 # - opera mode - beyondchaos side
@@ -68,6 +69,8 @@ def johnnydmad():
     elif i == "battle":
         pool_test(inrom, battle_only=True)
     else:
+        print()
+        print('generating..')
         metadata = {}
         outrom = process_music(inrom, meta=metadata, f_chaos=f_chaos)
         outrom = process_formation_music_by_table(outrom)

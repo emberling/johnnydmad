@@ -164,6 +164,7 @@ zaol_temple:    fanatics
 ff6_ktower:     ktower
 ct_undersea:    ktower
 wa2_heimdal:    ktower, gate, phoenix
+ff6_dmad:       ktower, fanatics, floating, catastrophe, grandfinale
 
 ff6_ruin:       ruin
 ff8_world:      ruin
