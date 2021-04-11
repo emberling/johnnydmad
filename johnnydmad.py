@@ -23,7 +23,7 @@ from mml2mfvi import mml_to_akao
 # * music frequency devtool
 # * adjust frequency for battleprog to prevent skewing late
 # * silent mode for insertmfvi
-# - select alternate music.txt (curator mode)
+# * select alternate music.txt (curator mode)
 # - external ignorelist for songs and/or sources
 # * ensure function with pyinstaller
 # - reconcile music player w/ Myria disable sound hack

@@ -632,7 +632,7 @@ def generate_tierboss_mml(pool):
 
 instmap, legacy_instmap = {}, {}
 
-def process_music(inrom, meta={}, f_chaos=False, f_battle=True, opera=None, eventmodes="", playlist_filename=DEFAULT_PLAYLIST_FILE, basepath=None, pool_test=False):
+def process_music(inrom, meta={}, f_chaos=False, f_battle=True, opera=None, eventmodes="", playlist_filename=DEFAULT_PLAYLIST_FILE, basepath=None, freespace=JOHNNYDMAD_FREESPACE, pool_test=False):
     global used_song_names
     global used_sample_ids
     global tracklist
