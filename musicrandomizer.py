@@ -18,7 +18,7 @@ LEGACY_MUSIC_PATH = os.path.join(CUSTOM_MUSIC_PATH, 'legacy')
 STATIC_MUSIC_PATH = 'static_music'
 PLAYLIST_PATH = 'playlists'
 TABLE_PATH = 'tables'
-DEFAULT_PLAYLIST_FILE = os.path.join(PLAYLIST_PATH, 'default.txt')
+DEFAULT_PLAYLIST_FILE = 'default.txt'
 LEGACY_LOADBRR_PATH = "../../samples/"
 BASEPATH = os.getcwd()
 # For LEGACY_LOADBRR_PATH, note that the filenames from tables/legacy.txt that
@@ -225,7 +225,10 @@ def song_variant_id(name, idx):
 
 def init_playlist(fn=DEFAULT_PLAYLIST_FILE):            
     playlist_parser = configparser.ConfigParser()
-    playlist_parser.read(fallback_path(fn))
+    plfile = playlist_parser.read(fallback_path(os.path.join(PLAYLIST_PATH, fn)))
+    if not plfile:
+        print(f"Playlist file {fn} empty or not found, falling back to {DEFAULT_PLAYLIST_FILE}")
+        playlist_parser.read(fallback_path(os.path.join(PLAYLIST_PATH, DEFAULT_PLAYLIST_FILE)))
     playlist_map = {}
     tierboss_pool = set()
     for section in playlist_parser:
@@ -629,7 +632,7 @@ def generate_tierboss_mml(pool):
 
 instmap, legacy_instmap = {}, {}
 
-def process_music(inrom, meta={}, f_chaos=False, f_battle=True, opera=None, eventmodes="", basepath=None, pool_test=False):
+def process_music(inrom, meta={}, f_chaos=False, f_battle=True, opera=None, eventmodes="", playlist_filename=DEFAULT_PLAYLIST_FILE, basepath=None, pool_test=False):
     global used_song_names
     global used_sample_ids
     global tracklist
@@ -699,8 +702,7 @@ def process_music(inrom, meta={}, f_chaos=False, f_battle=True, opera=None, even
 
     # -- load random choices configuration for categories (playlist file)
     # moved to function for reuse in length test mode
-    playlist_map, tierboss_pool = init_playlist()
-    playlist_filename = DEFAULT_PLAYLIST_FILE #TODO
+    playlist_map, tierboss_pool = init_playlist(fn=playlist_filename)
     
     track_pools = {}
     intensitytable = {}

@@ -26,7 +26,6 @@ from mml2mfvi import mml_to_akao
 # - select alternate music.txt (curator mode)
 # - external ignorelist for songs and/or sources
 # * ensure function with pyinstaller
-# - ensure function as module of another program
 # - reconcile music player w/ Myria disable sound hack
 # - integration with BC randomizer
 # - opera mode - beyondchaos side
@@ -51,13 +50,25 @@ def johnnydmad():
         inrom = f.read()
         
     f_chaos = False
-    print("press enter to continue or type:")
-    print('    "chaos" to test chaotic mode')
-    print('    "sfxv" to check songs for errors, sorted by longest sequence variant')
-    print('    "mem" to check songs for errors, sorted by highest memory use variant')
-    print('    "pool" to simulate many seeds and report the observed probability pools for each track')
-    print('    "battle" to simulate many seeds and report probabilities for only battle music')
-    i = input()
+    kw = {}
+    while True:
+        print()
+        if "playlist_filename" in kw:
+            print(f"Playlist file is set to {kw['playlist_filename']}")
+        print()
+        print("press enter to continue or type:")
+        print('    "chaos" to test chaotic mode')
+        print('    "sfxv" to check songs for errors, sorted by longest sequence variant')
+        print('    "mem" to check songs for errors, sorted by highest memory use variant')
+        print('    "pool" to simulate many seeds and report the observed probability pools for each track')
+        print('    "battle" to simulate many seeds and report probabilities for only battle music')
+        print('    "pl FILENAME" to set FILENAME as playlist instead of default')
+        i = input()
+        print()
+        if i.startswith("pl "):
+            kw["playlist_filename"] = i[3:]
+            continue
+        break
     if i == "chaos":
         f_chaos = True
     if i == "sfxv":
@@ -69,10 +80,9 @@ def johnnydmad():
     elif i == "battle":
         pool_test(inrom, battle_only=True)
     else:
-        print()
         print('generating..')
         metadata = {}
-        outrom = process_music(inrom, meta=metadata, f_chaos=f_chaos)
+        outrom = process_music(inrom, meta=metadata, f_chaos=f_chaos, **kw)
         outrom = process_formation_music_by_table(outrom)
         outrom = process_map_music(outrom)
         outrom = add_music_player(outrom, metadata)
