@@ -21,6 +21,7 @@ TABLE_PATH = 'tables'
 DEFAULT_PLAYLIST_FILE = 'default.txt'
 LEGACY_LOADBRR_PATH = "../../samples/"
 BASEPATH = os.getcwd()
+SUBPATH = ""
 # For LEGACY_LOADBRR_PATH, note that the filenames from tables/legacy.txt that
 #   are appended to this already contain the "legacy/" bit. Path is relative
 #   to LEGACY_MUSIC_PATH. OS-specific separators are handled later, '/' is
@@ -52,7 +53,7 @@ tracklist_spoiler = {}
 
 def resource_path(rel):
     base = getattr(sys, '_MEIPASS', BASEPATH)
-    return os.path.normpath(os.path.join(base, rel))
+    return os.path.normpath(os.path.join(base, SUBPATH, rel))
     
 def open_resource(fn, *args, **kwargs):
     if os.path.isabs(fn):
@@ -62,7 +63,7 @@ def open_resource(fn, *args, **kwargs):
     return open(fn, *args, **kwargs)
     
 def asset_path(rel):
-    return os.path.normpath(os.path.join(BASEPATH, rel))
+    return os.path.normpath(os.path.join(BASEPATH, SUBPATH, rel))
     
 def open_asset(fn, *args, **kwargs):
     if not os.path.isabs(fn):
@@ -632,18 +633,18 @@ def generate_tierboss_mml(pool):
 
 instmap, legacy_instmap = {}, {}
 
-def process_music(inrom, meta={}, f_chaos=False, f_battle=True, opera=None, eventmodes="", playlist_filename=DEFAULT_PLAYLIST_FILE, basepath=None, freespace=JOHNNYDMAD_FREESPACE, pool_test=False):
+def process_music(inrom, meta={}, f_chaos=False, f_battle=True, opera=None, eventmodes="", playlist_filename=DEFAULT_PLAYLIST_FILE, subpath=None, freespace=JOHNNYDMAD_FREESPACE, pool_test=False):
     global used_song_names
     global used_sample_ids
     global tracklist
     global tracklist_spoiler
+    global SUBPATH
     global BASEPATH
     
-    if basepath:
-        if os.path.isabs(basepath):
-            BASEPATH = basepath
-        else:
-            BASEPATH = os.path.join(BASEPATH, basepath)
+    if subpath:
+        SUBPATH = subpath
+        if os.path.isabs(subpath):
+            BASEPATH = subpath
             
     # -- load sample configs for normal/legacy
     sample_parser = configparser.ConfigParser()
