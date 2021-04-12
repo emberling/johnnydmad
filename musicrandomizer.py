@@ -490,7 +490,7 @@ def generate_tierboss_mml(pool):
             while True:
                 tiers = []
                 uids = []
-                songnames = random.sample(pool, n)
+                songnames = random.sample(sorted(pool), n)
                 for i, song in enumerate(songnames):
                     tier = TierSong(song, variants_to_use[n-1][i])
                     if not tier.mml:
