@@ -749,6 +749,10 @@ def process_music(inrom, meta={}, f_chaos=False, f_battle=True, opera=None, even
                     # quietly do nothing for unknown tracknames
                     category = track_categories[trackslot]
                     song_categories.add(category)
+                elif f_chaos and trackslot == "chaos":
+                    # 'chaos' keyword -- set something into the main chaos pool
+                    #         even if no non-chaos trackslots match default
+                    song_categories.add("default")
                 if trackslot not in track_pools:
                     track_pools[trackslot] = []
                 if not f_chaos:

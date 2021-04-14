@@ -3,21 +3,24 @@
 #COMPOSER Yasunori Mitsuda
 #ARRANGED emberling
 
-#WAVE 0x20 0x53     was 0x6b Bass
-#WAVE 0x21 0x22     was 0x42 Vibraphone
-#WAVE 0x22 0x14     was 0x95 Crystal
-#WAVE 0x23 0x34     was 0x32 Ac.Guitar
-#WAVE 0x24 0x58     was 0x19 Pizza
-#WAVE 0x25 0xA4     was 0x1F Ocarina
-#WAVE 0x26 0x79     was 0x92 Choir
-#WAVE 0x27 0x57     was 0x18 Ac.Bass
+#VARIANT !
+#VARIANT _ tr
+
+#WAVE 0x20 0x53         was 0x6b Bass
+#WAVE 0x21 0x22         was 0x42 Vibraphone
+#WAVE 0x22 0x14         was 0x95 Crystal
+#WAVE 0x23 0x34         was 0x32 Ac.Guitar
+#WAVE 0x24 0x58         was 0x19 Pizza
+#WAVE 0x25 0xA4         was 0x1F Ocarina
+#WAVE 0x26 0x79         was 0x92 Choir
+#WAVE 0x27 0x57         was 0x18 Ac.Bass
                     
-#WAVE 0x28 0x6B     was 0x5F Maraca
-#WAVE 0x29 0x7C     was 0x66 Tom-tom
-#WAVE 0x2A 0x0A     was 0x22 Kick
-#WAVE 0x2B 0x6E     was 0x57 Conga open
-#WAVE 0x2C 0x6F     was 0x85 Conga slap
-#WAVE 0x2D 0x9B     was 0x2D Guiro
+#WAVE 0x28 !0x6B!_0x6A_ was 0x5F Maraca
+#WAVE 0x29 0x4F         was 0x66 Tom-tom
+#WAVE 0x2A 0x0A         was 0x22 Kick
+#WAVE 0x2B 0x6E         was 0x57 Conga open
+#WAVE 0x2C 0x6F         was 0x85 Conga slap
+#WAVE 0x2D 0x9B         was 0x2D Guiro
 
 #def global= t110 %v50 %x240 %b0,70 %f0,0
 
@@ -70,9 +73,9 @@
 ##kick midi c3
 #drum "k"=5c |A v64 p64 %r %e0
 ##tom-tom, midi c5d5
-#drum "j"=4a |9 v32 p64 %r25 %e0
-#drum "t"=5d+ |9 v64 p64 %r28 %e1
-#drum "u"=5f |9 v64 p64 %r25 %e1
+#drum "j"=4a |9 v12 p64 %r28 %e0
+#drum "t"=5d+ |9 v28 p64 %r29 %e1
+#drum "u"=5f |9 v28 p64 %r25 %e1
 ##conga, midi e6f+6g+6/a6
 #drum "a"=5g+ |B v56 p28 %r %e0
 #drum "b"=6c |B v40 p28 %a12 %e0
@@ -86,10 +89,10 @@
 #drum "h"=4^ m18,244
 #drum "i"=4f |D v32 p16 %e0
 ##tom-tom loop @ midi e5
-#drum "v"=4g |9 v64 p64 %e1 %y%r23
-#drum "w"=4b |9 v64 p64 %e1 %a%y5%s2%r23
-#drum "x"=4f |9 v64 p64 %e1 %y%r23
-#drum "y"=4c |9 v64 p64 %e1 %y%a12%r23
+#drum "v"=4g |9 v16 p64 %e1 %y%r23
+#drum "w"=4b |9 v16 p64 %e1 %a%y5%s2%r23
+#drum "x"=4f |9 v16 p64 %e1 %y%r23
+#drum "y"=4c |9 v16 p64 %e1 %y%a12%r23
 
 ## Drum pattern |.8.4.8.2.8.4.8.|.8.4.8.2.8.4.8.|.8.4.8.2.8.4.8.|.8.4.8.2.8.4.8.
 ## SHAKER       p  qr s p  qr s p  qr s p  qr s p  qr s p  qr s p  qr s pQ Rs s 
