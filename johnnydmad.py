@@ -72,13 +72,13 @@ def johnnydmad():
     if i == "chaos":
         f_chaos = True
     if i == "sfxv":
-        mass_test("sfx")
+        mass_test("sfx", **kw)
     elif i == "mem":
-        mass_test("mem")
+        mass_test("mem", **kw)
     elif i == "pool":
-        pool_test(inrom)
+        pool_test(inrom, **kw)
     elif i == "battle":
-        pool_test(inrom, battle_only=True)
+        pool_test(inrom, battle_only=True, **kw)
     else:
         print('generating..')
         metadata = {}
@@ -95,13 +95,13 @@ def johnnydmad():
         
 #################################
 
-def pool_test(inrom, battle_only=False):
+def pool_test(inrom, battle_only=False, playlist_filename=None, **kwargs):
     results = {}
     iterations = 100
     
     print()
     for i in range(iterations):
-        tracklist = process_music(inrom, pool_test=True)
+        tracklist = process_music(inrom, pool_test=True, playlist_filename=playlist_filename)
         for track, song in tracklist.items():
             if track not in results:
                 results[track] = []
@@ -129,7 +129,7 @@ def pool_test(inrom, battle_only=False):
             pct = (reps / iterations) * 100
             print(f"    {pct:04.1f}% {song:<{songlen}} ({reps} / {iterations})")
         
-def mass_test(sort):
+def mass_test(sort, playlist_filename=None, **kwargs):
     global used_song_names
     testbed = [
         ("***", "plain", 0x4C, False),
@@ -138,7 +138,7 @@ def mass_test(sort):
         ("train", "train", 0x20, False)
         ]
     #cursor = " >)|(<"
-    playlist_map, _ = init_playlist()
+    playlist_map, _ = init_playlist(playlist_filename)
     results = []
     legacy_files = set()
     jukebox_titles = {}
