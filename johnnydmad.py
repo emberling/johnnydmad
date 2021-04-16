@@ -142,18 +142,21 @@ def mass_test(sort):
     results = []
     legacy_files = set()
     jukebox_titles = {}
+    song_warnings = {}
     i = 0
     print("")
     for song in sorted(playlist_map):
         binsizes = {}
         memusage = 0
         debugtext = f"{song}: "
+        song_warnings[song] = set()
         for type, trackname, idx, use_sfx in testbed:
             tl = Tracklist()
             tl.add_random(trackname, [song], idx=idx, allow_duplicates=True)
             variant = tl[trackname].variant
             if variant is None:
                 variant = "_default_"
+                
             mml = tl[trackname].mml
             if tl[trackname].is_legacy:
                 legacy_files.add(song)
@@ -162,20 +165,26 @@ def mass_test(sort):
             mml = apply_variant(mml, type, trackname, variant=variant)
             bin = mml_to_akao(mml, song + ' ' + trackname, sfxmode=use_sfx, variant=variant)[0]
             binsizes[type] = len(bin)
+            
             if song not in jukebox_titles:
                 jukebox_titles[song] = get_jukebox_title(mml, song)
             var_memusage = get_spc_memory_usage(mml, variant=variant, custompath=os.path.dirname(tl[trackname].file))
             debugtext += f"({var_memusage}) "
             memusage = max(memusage, var_memusage)
+            
+            if memusage > 3746:
+                song_warnings[song].add("BRR memory overflow")
+            if len(bin) > 0x1002:
+                song_warnings[song].add("Sequence memory overflow")
+            if "%f" not in mml:
+                song_warnings[song].add("Echo FIR unset (%f)")
+            if "%b" not in mml:
+                song_warnings[song].add("Echo feedback unset (%b)")
+            if "%v" not in mml:
+                song_warnings[song].add("Echo volume unset (%v)")
         order = memusage if sort == "mem" else max(binsizes.values())
         results.append((order, song, binsizes, memusage))
-        #pct = (i / len(playlist_map)) * 100
         print_progress_bar(i, len(playlist_map))
-        #full_boxes = int(pct // 2)
-        #cursor_idx = int((pct % 2)*(len(cursor)/2))
-        #boxtext = "-" * full_boxes + cursor[cursor_idx]
-        #print(f"\r[{boxtext:<50}] {i}/{len(playlist_map)}", end="", flush=True)
-        #print(debugtext)
         i += 1
         
     results = sorted(results)
@@ -189,8 +198,11 @@ def mass_test(sort):
         else:
             print(f" :: <{jukebox_titles[song]:<18}>", end="")
         print(f" ({memusage})", end="")
-        if largest >= 0x1002 or memusage > 3746:
+        #if largest >= 0x1002 or memusage > 3746 or song in song_warnings:
+        if song_warnings[song]:
             print(" ~~WARNING~~")
+            for w in song_warnings[song]:
+                print("    " + w)
         else:
             print("")
             
