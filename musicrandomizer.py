@@ -971,7 +971,7 @@ def process_music(inrom, meta={}, f_chaos=False, f_battle=True, opera=None, even
 
         # -- run insertmfvi
         try:
-            outrom = insertmfvi(inrom, virt_sample_list=sample_virtlist, virt_seq_list=mml_virtlist, freespace=JOHNNYDMAD_FREESPACE, brrpath=resource_path(SAMPLE_PATH), quiet=True)
+            outrom = insertmfvi(inrom, virt_sample_list=sample_virtlist, virt_seq_list=mml_virtlist, freespace=freespace, brrpath=resource_path(SAMPLE_PATH), quiet=True)
         except SampleIDError:
             print("NOTICE: Rerolling music - too many samples in last attempt")
             continue
