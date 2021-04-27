@@ -11,19 +11,19 @@
 08: 08_ct_lowpia      , 7B03, 5200  , FFEA, {111}  [-12] Bass Piano
 09: 09_fm_gpia6       , BA0C, c+-08 , FFEF, {433}  [+12] G.Piano6 LQ
 
-# ZITHERS ETC                                                         -------------
-10: 10_smr_bpia4            , 6F18  , -7.086 , FFEC    , {883}  [   ] BrightPiano4
-11: 11_smr_bpia3            , 2913  , +2.875 , FFED    , {572}  [   ] BrightPiano3
-12: 12_thg_harpsi           , 9B04  , *1.324 , EF8F    , {137}  [   ] Harpsichord
-13: 13_ct_12stg             , D413  , BB74   , FFEE    , {574}  [   ] Bright 12str
-14: 14_rh_dulci             , 330C  , -2.210 , F 7 7 0A, {351}  [   ] Dulcimer
-15: 15_ff10_santur4         , @229bl, ^b+20  , FFEC    , {237}  [   ] Santur
-16: 16_rh_clavi             , 4F05  , -3.398 , F 7 7 0F, {166}  [-24] Clavinet
-17: 17_ff7_cleang           , @0283bl, *0.770, FFEA    , {290}  [-12] Clean Elec.G
+# ZITHERS ETC                                                        -------------
+10: 10_smr_bpia4            , 6F18  , -7.086, FFEC    , {883}  [   ] BrightPiano4
+11: 11_smr_bpia3            , 2913  , +2.875, FFED    , {572}  [   ] BrightPiano3
+12: 12_thg_harpsi           , 9B04  , *1.324, EF8F    , {137}  [   ] Harpsichord
+13: 13_ct_12stg             , D413  , BB74  , FFEE    , {574}  [   ] Bright 12str
+14: 14_rh_dulci             , 330C  , -2.210, F 7 7 0A, {351}  [   ] Dulcimer
+15: 15_ff10_santur4         , @229bl, ^b+20 , FFEC    , {237}  [   ] Santur
+16: 16_rh_clavi             , 4F05  , -3.398, F 7 7 0F, {166}  [-24] Clavinet
+17: 17_rh_softrep           , B706  , -2.210, F 4 3 0A, {195}  [   ] Soft Rock EP
+18: 18_ff7_choreplq         , @75bl ,  ^d-26, F 1 3 0B, {105}  [   ] Chorus EP LQ
+19: 19_ff7_chorep           , @279bl, *0.750, FFEA    , {545}  [+12] Chorus Epiano
 
 # BELLS ETC                                                            -------------
-18: 18_rh_softrep             , B706  , -2.210, F 4 3 0A, {195}  [   ] Soft Rock EP
-19: 19_ff7_chorep             , @279bl, *0.750, FFEA    , {545}  [+12] Chorus Rhodes
 20: 20_tn_celesta             , 3804  , *.807 , FFEF    , {142}  [   ] Celesta/ToyP
 21: 21_ff5_glock              , F504  , FE48  , FFF0    , {297}  [+36] Glockenspiel
 22: 22_rs3_vibra              , 4605  , E100  , FFEC    , {152}  [+12] Vibraphone
@@ -45,6 +45,7 @@
 36: 36_ff7_classig          , @319bl, *0.605, FFEB, {330}  [   ] Classical Gtr
 
 # ELECTRIC GUITARS                                                   -------------
+38: 38_ff7_cleang            , @283bl, *0.770, FFEA   , {290}  [-12] Clean Elec.G
 39: 39_ctx_jcm12st           , @628bl, d-48  , FFE0   , {642}  [   ] SoloOverdrive
 40: 40_ebr_synod             , 5202  , *1.316, F 7 7 0, {69}   [+12] SynthOverdrive
 41: 41_ff6_s50dist           , FA05  , 29C0  , FFE0   , {444}  [-24] S50 DistFuzz
