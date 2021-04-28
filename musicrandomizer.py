@@ -986,14 +986,15 @@ def process_music(inrom, meta={}, f_chaos=False, f_battle=True, opera=None, even
         
 #########################################
 
-def process_formation_music_by_table(data, form_music_overrides={}):
+def process_formation_music_by_table(data, form_music_overrides={}, kan_mode=False):
     
     o_forms = 0xF6200
     o_formaux = 0xF5900
     o_monsters = 0xF0000
     o_epacks = 0xF5000
     
-    with open_resource(os.path.join(TABLE_PATH,"formationmusic.txt"), "r") as f:
+    tablefile = "formationmusic_kan.txt" if kan_mode else "formationmusic.txt"
+    with open_resource(os.path.join(TABLE_PATH,"formationmusic_kan.txt"), "r") as f:
         tbl = f.readlines()
     
     table = []
@@ -1026,12 +1027,12 @@ def process_formation_music_by_table(data, form_music_overrides={}):
         # I don't recommend using random tierboss in this way; it should only be used on the tierboss itself. So we need to adjust these settings
         # 1 (boss) remains 1
         # 2 (superboss) changes to 6 (battle4)
-        # 3 (savethem) changes to 5 (battle3)
+        # 3 (savethem) changes to 4 (battle3)
         # 4 (returners) changes to 7 (event)
         # 5 (dmad1) changes to 2 (superboss)
         force_music = False
         if fid in form_music_overrides:
-            mutation_table = [0, 1, 6, 5, 7, 2, 0, 0]
+            mutation_table = [0, 1, 6, 4, 7, 2, 0, 0]
             line[1] = mutation_table[form_music_overrides[fid]]
             force_music = True
             

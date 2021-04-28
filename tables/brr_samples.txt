@@ -20,7 +20,7 @@
 15: 15_ff10_santur4         , @229bl, ^b+20 , FFEC    , {237}  [   ] Santur
 16: 16_rh_clavi             , 4F05  , -3.398, F 7 7 0F, {166}  [-24] Clavinet
 17: 17_rh_softrep           , B706  , -2.210, F 4 3 0A, {195}  [   ] Soft Rock EP
-18: 18_ff7_choreplq         , @75bl ,  ^d-26, F 1 3 0B, {105}  [   ] Chorus EP LQ
+18: 18_ff7_choreplq         , @75bl ,  ^d-26, F 1 3 0B, {105}  [+12] Chorus EP LQ
 19: 19_ff7_chorep           , @279bl, *0.750, FFEA    , {545}  [+12] Chorus Epiano
 
 # BELLS ETC                                                            -------------
