@@ -3,6 +3,7 @@
 Refer to mfvitools docs at https://github.com/emberling/mfvitools/wiki for help with MML syntax.
 This guide is a work in progress.
 To do list:
+* Extend style guide to encompass channel order, etc.
 * Explain jdm devtools and features
 * Info on folder structure, uniqueness rules, using variants within jdm etc.
 * Info on playlist files
@@ -10,9 +11,26 @@ To do list:
 * Quickstart for adding music using sqspcmml
 * Guide to using/obtaining custom samples for your MML
 
+## JOHNNYDMAD STYLE GUIDE - basic concerns
+
+The main purpose of this guide is to provide some direction for which samples are appropriate to use to meet johnnydmad style standards, but I'll take the opportunity here to discuss a few other important structural concerns first.
+
+### Sound effects and variants
+
+There are several points in the game where ambient sound effects are combined into the music sequence. johnnydmad maintains this by programmatically adding these sound effects into whatever MML is selected for that area. The affected tracks are: `ruin`, `zozo`, `train`, and (in some % of seeds) `assault`.
+
+Due to the popularity of `johnnyachaotic` you should always design your songs around the possibility that they will sometimes receive these automated edits.
+* In the case of `zozo`, the last two tracks will be replaced by a rain sound effect.
+* In the case of `ruin` and `assault`, a wind sound effect is placed in the first two tracks, and every other track is moved up by 2, with the last two tracks becoming unused.
+* In the case of `train`, looping train track sound effects are added which advance to your song after an event trigger. No direct changes are made to the song itself, however sample 3A is loaded in program 2F, replacing whatever you may have had there.
+
+Therefore, you must always design your songs to be resilient to either losing their last two channels in their entirety, or to having sample 2F replaced with a closed hi-hat. If you want to change anything in channel order, percussion use, or whatever in response to these changes, you can use *variants*.
+
+Another place that may demand variants is `fanfare` - the end of a battle is one of the few places when a new music track is loaded without the loading time being camouflaged by a natural fade or pause. It's also extremely common. Because of this, you should aim to keep memory usage (and thus loading time) as low as possible, using the smallest samples you can get away with. The original FF6 victory fanfare is 1698 blocks, so that should be your target, though anything under 2000 should be fine. But if you're using the same song in any context outside of victory, you'll want access to the full sample memory. You can use variants to design for both cases at once.
+
 ## JOHNNYDMAD STYLE GUIDE for sample selection (WIP)
 
-THE HIGHEST PRIORITY IS SOUNDING GOOD. The second priority is sounding "right", meaning either the original mood, melodic line, and whatever accompaniment is feasible is preserved, or you as the arranger chose to change one or more of those things and the arrangement owns those changes; it should be obvious that any changes are not a mistake. The below sample selection guidelines should be followed only to the point that they don't endanger those first two priorities.
+For sample selection, THE HIGHEST PRIORITY IS SOUNDING GOOD. The second priority is sounding "right", meaning either the original mood, melodic line, and whatever accompaniment is feasible is preserved, or you as the arranger chose to change one or more of those things and the arrangement owns those changes; it should be obvious that any changes are not a mistake. The below sample selection guidelines should be followed only to the point that they don't endanger those first two priorities.
 
 On sounding "right", though, a caveat: this stays within the context of late SNES RPG music. While we do want to do our best to preserve the *mood* of the source, be it from NES, PC MIDI, one of the various FM chips, or a live orchestra, or even from a SNES game with significantly more memory limitations or very different aesthetic requirements. We don't want a reproduction; we want the "Fight Against Culex" version, something that incorporates both the style of the original and the mood and sensibility of the surrounding game. NES tracks should be orchestral, for example, instead of or in addition to mimicking the NES sound capabilities using our own triangle and pulse wave samples. Natively orchestral tracks may have to add bass or rethink percussion in order to preserve a sense of impact, rhythm, or bombast that SPC700 isn't really capable of imitating in original form. And SNES original tracks with lower quality, heavily artifacted or FM-derived samples -- piano being the most common offender -- should aim for using the higher quality, more naturalistic equivalents, not imitating the originals.
 
@@ -86,9 +104,57 @@ On sounding "right", though, a caveat: this stays within the context of late SNE
 * 85 is a really big-sounding horn that can add a sense of epic scale: the horn of the army approaching on the horizon. It's relatively quiet and blendy for all its dynamism, making it sound like something really big off in the distance. Try not to use without at least a light vibrato, as the transition from onset to loop is jarring without.
 * 86 is a more unassuming and mellow horn. It's both blendy and not very dynamic, but its simplicity can lead to its own problems. Approaches a flutelike sound at higher octaves. Like 81, may need adjustment for shorter notes.
 * 7F ... if you must. This is provided as a match for those annoying ambiguous timbres in SNES games that sound somewhere between a horn and an oboe -- for instance, the first lead in FF6's Under Martial Law. (Did you realize the lead changes from horn to oboe when the chord changes in that song? I didn't!) In the interest of having our horn parts sound like they're being played by horns, ideally if memory and channels permit this should be subtly layered with one of the horns that sound like horns.
-* 88 should be favored over 89 when feasible. Try to watch closely whether the source is octaved and use 87 or 88 accordingly; don't swap it around heedlessly.
-    
-    
+* 88 should be favored over 89 when feasible. Try to watch closely whether the source is octaved and use 87 or 88 accordingly; don't swap it around heedlessly. If the weird tremolo is a problem on 88, feel free to jump to 89.
+### PERCUSSION - GENERAL
+* Most percussion that doesn't typically sound on multiple notes (e.g. kicks and snares, not toms and congas) is tuned to typically play on A at octave 5. Feel free to shift this around as needed, but if there's no particular need to, leave it on A.
+* I'll often make references to two main styles of percussion found in game music: orchestral and rock. In orchestral, you'll typically have a snare drum on its own channel, usually with timpani and cymbals on other channels. In the rock style, you have kick and snare drums sharing a channel, and usually hi-hats and cymbals on another. This is a vast oversimplification of all the possibilities, but for sample selection purposes, those are the distinctions you need to watch. Typically you see short, repeated snare hits and rolls, with main beats emphasized, on the orchestral style, while the rock style usually has about two snares per measure, generally on offbeats, almost never on the first beat.
+* You should almost never use rests with percussion. Fill space with ties to let each note ring as long as possible.
+### PERCUSSION - KICK
+* The vast majority of the time you should be using 0A. Most sources, SNES and otherwise, use this sort of unassuming kick. In almost all cases you should not use echo for this sound. 
+* 0B and 0C are available for similar sounding or otherwise "extra" sources. You'll particularly want to use one of these for any songs that use multiple bass drum notes. Unlike most percussion, the origin note on these is F5 instead of A5.
+* 0D -- synthetic kick, the oon in oontz. Don't use it unless it matches the source. Do use it if it does. Don't confuse this with the "HiQ" punchy chirp, which is at AC.
+### PERCUSSION - SNARE
+* Default snare for orchestral style is 1A. Feel free to experiment with 1F instead, particularly if the song is especially martial and/or has a slower tempo, but only use this if it's a solid upgrade. Adding a release rate of roughly 14 to 24 is highly recommended for 1F and optional for 1A. Feel free to lower the pitch a bit with 1F.
+* 1B is available if neither of the above work out; it's much more suited for unobtrusively sitting in the background.
+* 1C is the default snare for rock styles.
+* 1D is our "hard snare", or gated snare. Many games have one of these, used for particularly intense songs like boss fights. Use this if the original song used something similar. This sample can be dampened significantly with ADSR to either act as a normal rock snare when 1C is too expensive, or to match snares like FF5's hard snare, which lacks the "gated reverb" sound that this and most SNES hard snare samples display.
+* Either 1A or 1F can be used for rock styles if necessary; they may be appropriate for e.g. jazzy songs. 1C should be an absolute last resort for orchestral styles, and kept at a relatively low volume and muted by ADSR. 1D should not be used for orchestral styles.
+* Echo is optional on snares. Feel free to add or remove it without necessarily matching the original. If the original is deliberately cutting snares short for effect, though, be careful not to mess up that effect with echo.
+### PERCUSSION - CYMBALS
+* Ride cymbals 2A vs 2B - usually one sounds better, use that one. If neither sounds better, go with 2A.
+* 2C - clash cymbal - while very few SNES-era songs use a recognizable "clash" rather than "crash", you should strongly consider changing any "crash" sounds to this in orchestral-style songs. Doesn't scale very well to pitch shifting - keep it around A5.
+* 2D - default crash cymbal for all rock-style songs and any orchestral songs that 2C isn't good for.
+* 2E - alternate crash cymbal, use only if you need to save memory vs. 2D.
+* 2F - gong - play this at 4A or thereabouts. This is a gong. Do not randomly replace cymbals with it. You can experiment with it if the original track is doing weird pitch shifty effects that aren't recognizably cymbals, or if it's got those cliches that are often accompanied by gongs (you know the ones).
+* Applying `%a3`, `%a5` etc. to any of the above cymbals (other than ride) will produce a passable cymbal roll or "reverse cymbal" sound.
+* BA - if the only cymbal you need is that "reverse cymbal" sound, and you're short on memory, you can use this. A5 is a bit high for this one - usable, but try lower pitches. You can also use BA alongside 2C since that doesn't "reverse" quite as well as the others. Try to keep the tone matching if you do - the BA note should be lower by a few tones to match. 
+* Echo is optional on cymbals, but there is rarely a downside and a pretty big upside - you can take advantage of the echo to allow a fairly short cymbal note to sound much bigger, freeing the channel for other instruments earlier. If you do crop cymbal notes short, make sure you use ADSR or other functions so that the edges aren't noticeably clipped. It should be fading out rapidly, not cutting instantaneously.
+### PERCUSSION - HI HATS
+* To my ear, there are basically four common hi hat sample shapes. 3A through 3D provides one example of each shape. Memory and aesthetics permitting, you should try to use the sample matching the original shape. Unfortunately I don't really have the vocabulary to correctly communicate what these shapes represent, but I'll try my best.
+* 3A is a "tick" style closed hihat, a sound that rings out pretty loudly then immediately cuts off to silence.
+* 3D is a closed hihat that has less harsh boundaries, with a slightly lighter hit and a gradual fade with a longer ring time.
+* 3B is an open hihat that has a similar profile, with a lighter onset and a gradual fade before its end.
+* 3C is an open hihat with harsh boundaries, possibly heavily compressed, or just an originally much longer sound that is harshly truncated. It has a pretty constant volume until its end.
+* Any open hihat sample can be used as a closed hihat via ADSR, if loading two separate samples is impractical. It's lightly recommended to prefer using 3B in this way over 3D, since 3D is a lower quality sample. Try a technique lifted from FFMQ - set sustain to 0 and then swap decay between [0..2] for open and [5..6] for closed. 3B comes with default decay of 5 so you can also swap sustain between 0 and 7 for the same effect. You may want to use different pitches for open and closed when you do this.
+* 3D can also be used as an open hihat with the same method; sustain is already 0 so just switch decay. This should primarily/only be used to save memory (vs. using 3B/3C)
+* 3E is not intended for use, but only to allow SF2 preview of 3D as an open hihat. The only circumstances under which 3E should ever be used are if sequence memory does not permit using 3D with ADSR.
+### PERCUSSION - TOMS
+* 4A should be considered the default tom and used in general cases.
+* 4B is the same sample as 4A, but cropped less aggressively. Use this rather than 4A whenever sample memory permits - which won't be very often.
+* 4C is a gated tom suitable for very synthetic tracks or when the source is also using a gated tom sound, or something unusual that you can approximate with it.
+* 4D is a fairly bland backup tom for use in cases when 4A doesn't sound good, or in less intense synthetic drum tracks.
+### PERCUSSION - TIMPANI
+* 5A is the default timpani. Needs to be played at an octave higher than other timpani. Has an unusual clipped, vaguely glitchy sound that often adds an interesting character but also sometimes just sounds bad. In the cases when it sounds bad, try one of the other timpani.
+* 5B is essentially 5A without the weird cropping. A general-purpose fallback, rarely bad, but rarely inspiring.
+* 5C is an alternate sound that has a good bit less treble, leaving a more bassy sound. Is a pretty close match to many other games, like FF7; try it first in those cases. Also use it when 5A sounds bad and 5B is too large, or just whenever it sounds significantly better.
+* 5D is an alternate sound that's got a little more everything. It's mostly too extra for general use, but can be helpful for certain tracks that lean really heavily on the timpani (e.g. FF5's boss theme).
+### PERCUSSION - VERY LARGE DRUMS
+* The usual tradition for SNES games is to just use a tom or timpani sound at a low octave, so you always have that option.
+* 4E (timbale) at a low octave is often a very effective tonal large drum sound that keeps a fairly heavy onset without being too melodic. Heavy ADSR can also render it into a lot of diverse configurations - see ff12_prison.mml for an example.
+* 5E (miyadaiko) is a powerful taiko sound for those long echoing beats, unfortunately at a high memory cost.
+* 5F has not proven useful and might get replaced at this point.
+* BB (distant boom) is not an effective sound on its own but can be added to another drum for a serious impact. Hold it for a similar long-echoing-beat sound to the miyadaiko (but depending on another sample for the onset), or play a note of even a very short length with echo to get a burst of power added to whatever other drum plays on that beat. See ff14_forthesky.mml for examples.
+
 ## LEGACY SAMPLE CONVERSION SUGGESTIONS:
 * `01` (Acoustic Guitar) -> try 34 > 36 > 35. No clear match though. Note: 35 sounds one octave lower.
 * `02` (Bass Guitar) -> 51. Note: sounds one octave higher.
@@ -165,7 +231,7 @@ On sounding "right", though, a caveat: this stays within the context of late SNE
 * `4B` (2300AD glass synth) -> if this is the original sound, import it (it's a fifth, so you need to). if it's just there to be fancy, try ... just about anything in the choir/organ/synth sections, really (7x/Bx/Cx). C5 is probably closest.
 * `4C` (gong) -> 2F, same sample.
 * `4D` (fretless bass) -> 53, sounds one octave higher.
-* `4E` (violin) -> 71, or 70/72 (sounds one higher) or import.
+* `4E` (violin) -> 71, or 70/72 (sounds one lower) or import.
 * `4F` (sax) -> 98, same sample.
 * `50` (crash cymbal) -> 2D.
 * `51` (clap) -> 8F, same sample.
@@ -183,3 +249,67 @@ On sounding "right", though, a caveat: this stays within the context of late SNE
 * `5D` (od.guitar) -> 
 * `5E` (wood block) ->
 * `5F` (shaker) -> 
+* `60` (bass piano) -> 08, same sample.
+* `61` (violin) -> 70, same sample, sounds one octave lower.
+* `62` (e.piano) -> 
+* `63` (ocarina/whistle) -> 
+* `64` (vox) -> 
+* `65` (kick) -> 
+* `66` (tom) -> 4A, adjust pitch.
+* `67` (e.piano) -> 
+* `68` (open hihat) -> 3C, same sample.
+* `69` (fiddle) -> 72, same sample.
+* `6A` (oct.brass) -> 88, sounds one lower.
+* `6B` (bass) -> 51, same timbre, sounds one higher.
+* `6C` (fuzzy dist.) -> 45, same sample.
+* `6D` (cymbal) -> 2D.
+* `6E` (tom) -> 4A or 4D, adjust pitch.
+* `6F` (elec.guitar) -> 
+* `70` (filter sweep synth) -> C6, same sample.
+* `71` (hard snare) -> 1D with heavy ADSR
+* `72` (brass) -> 87
+* `73` (horn) -> 85, same sample. Default ADSR slightly different, adjust if needed.
+* `74` (clarinet) -> 96
+* `75` (timpani) -> 5D, same sample.
+* `76` (glockenspiel) -> 21, same sample.
+* `77` (orch hit) -> 68 or 69
+* `78` (bassoon?cello?) -> 72 or 90/99
+* `79` (piano) -> 01
+* `7A` (horn) -> 86
+* `7B` (12str/dulcimer) -> 13, same sample.
+* `7C` (ultra-sawtooth) -> C2, same timbre.
+* `7D` (
+* `7E` (
+* `7F` (
+* `80` (
+* `81` (
+* `82` (
+* `83` (
+* `84` (
+* `85` (
+* `86` (
+* `87` (
+* `88` (
+* `89` (
+* `8A` (
+* `8B` (
+* `8C` (
+* `8D` (
+* `8E` (
+* `8F` (
+* `90` (
+* `91` (
+* `92` (
+* `93` (
+* `94` (
+* `95` (
+* `96` (
+* `97` (
+* `98` (
+* `99` (
+* `9A` (
+* `9B` (
+* `9C` (
+* `9D` (
+* `9E` (
+* `9F` (

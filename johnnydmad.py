@@ -97,7 +97,7 @@ def johnnydmad():
 
 def pool_test(inrom, battle_only=False, playlist_filename=None, **kwargs):
     results = {}
-    iterations = 100
+    iterations = 10000
     
     print()
     for i in range(iterations):
