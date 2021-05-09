@@ -4,13 +4,13 @@
 #ARRANGED Rushlight
 
 #WAVE 0x20 0x66 ## Strings
-#WAVE 0x21 0x52 ## Bass
+#WAVE 0x21 0x51 ## Bass
 #WAVE 0x22 0x5A ## Timpani
 
-#WAVE 0x2A 0x1C ## Snare
+#WAVE 0x2A 0x1B ## Snare
 #WAVE 0x2B 0x2D ## Cymbal
 
-#def init= t140 %x240 %v40 %b0,85 %f 0,0
+#def init= t140 %x240 %v40 %b0,85 %f0,0
 
 #def strings= |0 o5 %r0 %e1
 
@@ -18,24 +18,24 @@
 #def supportStringsVol=         'leadStringsVol*v.65'
 ## Volume doesn't change in the original for the lower notes, but low notes don't necessarily come out noticeable enough depending on sample
 #def supportStringsLowNotesVol= 'supportStringsVol*v1.3'
-#def bassVol=           v24
+#def bassVol=           v36
 #def timpaniVol=        v120
 #def timpaniRoll1=      'timpaniVol*v.54'
 #def timpaniRoll2=      'timpaniVol*v.68'
 #def timpaniRoll3=      'timpaniVol*v.81'
 #def timpaniRoll4=      'timpaniVol*v.91'
-#def snareVol=          v80
+#def snareVol=          v100
 
-#def leadStrings=    |0 o5 'leadStringsVol'    p64 %r0       %e1
-#def supportStrings= |0 o5 'supportStringsVol' p84 %r0  %a10 %e1
-#def bass=           |1 o6 'bassVol'           p64 %r11      %e0
-#def timpani=        |2 o7 'timpaniVol'        p64 %r20      %e1
+#def leadStrings=    |0 o5 'leadStringsVol'    p64      %r0       %e1
+#def supportStrings= |0 o5 'supportStringsVol' p84      %r0  %a10 %e1
+#def bass=           |1 o7 'bassVol'           p64 %a10 %r11      %e0
+#def timpani=        |2 o7 'timpaniVol'        p64      %r20      %e1
 
 ## Vanilla volume multipliers are .73 and .89
-#DRUM "q"=5g+        |a 'snareVol*v.42'     p64 %r18 %e0
-#DRUM "r"=5g+        |a 'snareVol*v.63'     p64 %r18 %e0
-#DRUM "s"=5g+        |a 'snareVol'          p64 %r18 %e0
-#DRUM "c"=5g+        |b  v95               p80 %r17 %e0
+#DRUM "q"=5f         |a 'snareVol*v.42'    p64 %y0 %s6 %r25 %e0
+#DRUM "r"=5f         |a 'snareVol*v.63'    p64 %y0 %s6 %r25 %e0
+#DRUM "s"=5f         |a 'snareVol'         p64 %y0 %s6 %r25 %e0
+#DRUM "c"=5g+        |b  v95               p80         %r17 %e0
 
 
 
@@ -135,7 +135,7 @@ l4
   [3 ae] a j2 e
 ]
 ## Measure 20 beat 4
-l32 'timpaniRoll1' ee 'timpaniRoll2' ee 'timpaniRoll3' ee 'timpaniRoll4' e 'timpaniVol' e l4
+l32 %g1'timpaniRoll1' ee 'timpaniRoll2' ee 'timpaniRoll3' ee 'timpaniRoll4' e 'timpaniVol' e %g0 l4
 [2
   ## 21 / 25
   b-2.b-8b-16b-16 b-2<c>b-
@@ -291,13 +291,3 @@ l1
 ## 27
 "c2c2c2c2"
 ;
-
-
-
-
-
-
-
-
-
-
