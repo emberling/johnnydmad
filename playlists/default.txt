@@ -418,7 +418,6 @@ ffx_calm:         chaos
 ffx_decision:     chaos
 ffx_gagazet:      chaos
 ffx_luca:         chaos
-ffx_seymour:      chaos
 ffx_via:          chaos
 ffx_zanarkand:    chaos
 fz_port:          chaos
@@ -574,7 +573,6 @@ tyr_theme:        chaos
 wa_zed:           chaos
 wc2_human1:       chaos
 wc2_orc1:         chaos
-xc1_names:        chaos
 xc1_valakn:       chaos
 xc2_morardain:    chaos
 xc2_tantal:       chaos

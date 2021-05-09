@@ -1,5 +1,6 @@
 import configparser
 import os
+import re
 import sys
 
 from collections import Counter
@@ -176,8 +177,9 @@ def mass_test(sort, playlist_filename=None, **kwargs):
                 song_warnings[song].add("BRR memory overflow")
             if len(bin) > 0x1002:
                 song_warnings[song].add("Sequence memory overflow")
-            if "%f" not in mml:
-                song_warnings[song].add("Echo FIR unset (%f)")
+            if "%f0" not in mml:
+                if re.search("%[Ff][0-9]", mml) is None:
+                    song_warnings[song].add("Echo FIR unset (%f)")
             if "%b" not in mml:
                 song_warnings[song].add("Echo feedback unset (%b)")
             if "%v" not in mml:
