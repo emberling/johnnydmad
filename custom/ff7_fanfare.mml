@@ -10,7 +10,7 @@
 #WAVE 0x24 0xD6 synth
 #WAVE 0x28 0x0A kick
 #WAVE 0x29 0x1C snare (rock)
-#WAVE 0x2A 0x1A snare (march)
+#WAVE 0x2A 0x1F snare (march)
 #WAVE 0x2B 0x6C tambourine
 #WAVE 0x2C 0x3D hihat
 
@@ -33,16 +33,16 @@
 #def vroll= v64
 #def vtamb= v48
 
-#drum "a"= 5e  |A p64 %e1 'vroll'
-#drum "a-"= 5e |A p64 %e1 'vroll*v.8'
-#drum "b"= 5d+ |A p64 %e1 'vroll*v.7'
-#drum "c"= 5d  |A p64 %e1 'vroll*v.5'
-#drum "d"= 5d+ |A p64 %e1 'vroll*v.65'
-#drum "e"= 5d  |A p64 %e1 'vroll*v.48'
-#drum "f"= 5d+ |A p64 %e1 'vroll*v.6'
-#drum "g"= 5d  |A p64 %e1 'vroll*v.45'
+#drum "a"= 5e  |A p64 %e1 'vroll'      k16
+#drum "a-"= 5e |A p64 %e1 'vroll*v.8'  k16
+#drum "b"= 5e  |A p64 %e1 'vroll*v.7'  k8
+#drum "c"= 5e  |A p64 %e1 'vroll*v.5'  k0
+#drum "d"= 5e  |A p64 %e1 'vroll*v.65' k8
+#drum "e"= 5e  |A p64 %e1 'vroll*v.48' k0
+#drum "f"= 5e  |A p64 %e1 'vroll*v.6'  k8
+#drum "g"= 5e  |A p64 %e1 'vroll*v.45' k0
 
-#drum "s"= 5b |A p64 %e1 v64
+#drum "s"= 5a |A p64 %e1 v64
 #drum "r"= 5g |9 p64 %e1 v80
 #drum "k"= 5a |8 p64 %e0 v104 m0,0
 
@@ -57,7 +57,7 @@
 
 {1}
 'init'
-"a16.b16.b16"
+"a16.b16.b16" k0
 'syn*v.7' p120 l12
 ( ceg<c>ge c+d+g+a+<df> fg+a+<c+fg+ l16 <c>g+fc+c>g+fc+ <
 $##
@@ -70,7 +70,7 @@ $##
 ;
 
 {2}
-r32 "a-16.c16.c32"
+r32 "a-16.c16.c32" k0
 'trp+o2' p50 l24
 crcrcr c4>g+4a+4< l12 cr>a+<c2.
 $##
@@ -80,7 +80,7 @@ l8 [6 "!!!o k4.kr4ku" ]
 ;
 
 {3}
-r16 "c16.c16."
+r16 "c16.c16." k0
 'tbn-o1' p80
 l24 crcrcr c4g+4g4 l12 frd+ c+2.
 $##
@@ -92,7 +92,7 @@ $##
 
 {4}
 r4 l12
-"sss" "a16.b16.b16" "s6sssss6s" "a16.b16.b16. d16.d16.d16. f16.f16."
+"sss" "a16.b16.b16" "s6sssss6s" "a16.b16.b16. d16.d16.d16. f16.f16." k0
 $##
 'str*v.7' p35 l16
 [8g+r] [8ar] [24g+r] [8ar]
@@ -135,7 +135,7 @@ l8
 
 {8}
 r4 l32
-r4 "^a-c^cc^c" r2. "^a-c^cc^ce ^ee^ee^gg ^gg^gg"
+r4 "^a-c^cc^c" r2. "^a-c^cc^ce ^ee^ee^gg ^gg^gg" k0
 $##
 'oct*v1.22-o1' p105 l16
 frr4 frr4 frr8    grr4 grr4 grr8    c+rr4 c+rr4 c+rr8    f+rr4 f+rr4 f+rr8

@@ -1,7 +1,9 @@
-#TITLE Final Battle // The Last Duel)
+#TITLE Final Battle // The Last Duel
 #ALBUM Lufia II: Rise of the Sinistrals
 #COMPOSER Yasunori Shiono
 #ARRANGED Rushlight
+
+#SHORTNAME LU2 The Last Duel
 
 #WAVE 0x20 0x66 ## Strings
 #WAVE 0x21 0x81 ## Trumpet
@@ -14,22 +16,22 @@
 #WAVE 0x2C 0x0A ## Kick
 #WAVE 0x2D 0x1C ## Snare
 
-#def init= t144 %x240 %v40 %b0,85 %f 0,0
+#def init= t144 %x224 %v40 %b0,85 %f0,0
 
 ## The lead strings get a release rate halfway through.... %r8
 #def strings=        |0 o5 %e1
 
-#def trumpet=         |1 o5 %e1 %r10 m0,31,205 p64  v100
-#def leadStrings=     'strings' %r0  m0,8,197  p64  v110
-#def lateLeadStrings= 'strings' %r8  m0,8,197  p64  v110
+#def trumpet=         |1 o5 %e1 %r10 m1,31,205 p64  v100
+#def leadStrings=     'strings' %r0  m1,8,197  p64  v110
+#def lateLeadStrings= 'strings' %r8  m1,8,197  p64  v110
 #def supportStrings=  'strings' %r0  m         p64  v80
 #def backStrings1=    'strings' %r0  m         p16  v50
 #def backStrings2=    'strings' %r0  m         p105 v50
 #def bass=            |2 o6 %e0 %r11 m         p64  v70
 #def harp=            |3 o5 %e1 %r18 m         p64  v50
 
-#DRUM "k"=6c  |c v120 p64
-#DRUM "s"=5g+ |d v120 p64
+#DRUM "k"=6c  |c v100 p64
+#DRUM "s"=5g+ |d v80  p64
 #DRUM "t"=4g+ |b v100 p70
 #DRUM "u"=5e- |b v100 p64
 #DRUM "v"=5f+ |b v100 p54
@@ -38,6 +40,7 @@
 #DRUM "o"=5a  |8 v127 p46      %y2
 #DRUM "c"=5g+ |a v127 p80 %r17
 
+#drum "r"=5r
 
 {1}
 'init'
@@ -102,7 +105,7 @@ l8
 [2
   da<d>a<e>a<f>a<  g>a<f>a<e>a<d>a
   >b-<fb-f<c>f<d>f< e>f<d>f<c>fb- j2 c
-] >-b<
+] >b-<
 ##25
 [2
   da<d>a<e>a<f>a<  g>a<f>a<e>a<d>c
@@ -281,21 +284,21 @@ d2^8d8e8f8 g2<c2>
 
 {8}
 ## Drums, originally track 7
-r2.."k8k2s4.k8"
+r2.."k8k2s12r24r4k8"
 ##3
 $
 "!!!o"
-"k2..k8k2s4.k8"
+"k2..k8k2s12r24r4k8"
 ##5
-[3 "k2..k8k2s4k4k2..k8k2" j3 "s4k4"] "k16v32v32v16v16u16u16t16t16"
+[3 "k2..k8k2s12r24r8k4k2..k8k2" j3 "s12r24r8k4"] "k16v32v32v16v16u16u16t16t16"
 ##17
 l16
 [6
-  "!o k4s4.k8s8kk k8kk" j6 "s4.k8s8kk"
-] "s4kss8s8ss"
+  "!o k4s12r24r4k8s12r24kk k8kk" j6 "s12r24r4k8s12r24kk"
+] "s12r24r8kss12r24s12r24ss"
 ##29
 [7
-  "!o k4s4.k8s8kk k8kk" j7 "s4.k8s8kk"
-] "s4kss8s8ss"
-"k2..k8k2s4.k8"
+  "!o k4s12r24r4k8s12r24kk k8kk" j7 "s12r24r4k8s12r24kk"
+] "s12r24r8kss12r24s12r24ss"
+"k2..k8k2s12r24r4k8"
 ;

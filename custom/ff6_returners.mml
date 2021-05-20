@@ -10,7 +10,7 @@
 #WAVE 0x23 0x64 cbass
 #WAVE 0x24 0x2D crash
 #WAVE 0x25 0x55 bass
-#WAVE 0x26 0x1A snare
+#WAVE 0x26 0x1F snare
 
 #def 0i=   |0 %s5
 #def 0o=   o5
@@ -49,7 +49,7 @@
 ## auto percussion  0x24
 #drum "h"= 5a
 ## auto percussion  0x26
-#drum "i"= 5a
+#drum "i"= 5f+ %y6%s4%r22
 
 
 {1}

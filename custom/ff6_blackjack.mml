@@ -8,27 +8,30 @@
 
 ##created with sqspcmml beta 1.1.5
 
-#WAVE 0x20 0x65 strings
-#WAVE 0x21 0x81 trumpet
-#WAVE 0x22 0x84 horn
-#WAVE 0x23 0x51 bass
-#WAVE 0x24 0x3A c.hihat
-#WAVE 0x25 0x3C o.hihat
-#WAVE 0x26 0x0A kick
-#WAVE 0x27 0x1C snare
-#WAVE 0x28 0xA5 flute
+#VARIANT ~
+#VARIANT / vic
 
-#def 0i=   |0
+#WAVE 0x20 ~0x65~/0x67/ strings
+#WAVE 0x21 ~0x81~/0x82/ trumpet
+#WAVE 0x22 ~0x84~/0x7F/ horn
+#WAVE 0x23 ~0x51~/0x51/ bass
+#WAVE 0x24 ~0x3A~/0x3A/ c.hihat
+#WAVE 0x25 ~0x3C~/0x3C/ o.hihat
+#WAVE 0x26 ~0x0A~/0x0A/ kick
+#WAVE 0x27 ~0x1C~/0x1D/ snare
+#WAVE 0x28 ~0xA5~/0xA7/ flute
+
+#def 0i=   |0     /%a8%s7
 #def 0o=   o5
-#def 0v=   v100
-#def 0f= v1,100
+#def 0v= ~  v100~ /  v67/
+#def 0f= ~v1,100~ /v1,67/
 
 #def 1i=   |1 
 #def 1o=   o4
-#def 1v=   v100
-#def 1f= v1,100
+#def 1v= ~  v100~ /  v75/
+#def 1f= ~v1,100~ /v1,75/
 
-#def 2i=   |2 %y2%s3
+#def 2i=   |2 ~%y2%s3~
 #def 2o=   o5
 #def 2v=   v100
 #def 2f= v1,100
@@ -53,7 +56,7 @@
 #def 6v=   v100
 #def 6f= v1,100
 
-#def 7i=   |7
+#def 7i=   |7 /%y3%s2/
 #def 7o=   o5
 #def 7v=   v100
 #def 7f= v1,100

@@ -10,7 +10,7 @@
 #WAVE 0x24 0x53 ~ was 0x4D bass
 #WAVE 0x25 0x51            bass2
 
-#WAVE 0x28 0x1A ~ was 0x81 snare
+#WAVE 0x28 0x1F ~ was 0x81 snare
 #WAVE 0x2B 0x3C ~ was 0x68 hihat
 #WAVE 0x2C 0x2C ~ was 0x50 cymbal
 
@@ -41,16 +41,16 @@
 
 #drum "c"=5a |C v56 p64 %r17
 #drum "h"=5g |B v32 p85 %r26
-#drum "r"=5a |8 'sv*v.77' p64 ##77
-#drum "s"=5a |8 'sv*v.87' p64 ##87
-#drum "t"=5a |8 'sv*v.92' p64 ##92
-#drum "u"=5a |8 'sv*v.97' p64 ##97
-#drum "w"=5a |8 'sv*v1.07' p64 ##107
-#drum "x"=5a |8 'sv*v1.17' p64 ##117
-#drum "y"=5a |8 'sv*v1.22' p64 ##122
-#drum "z"=5a |8 'sv*v1.27' p64 ##127
+#drum "r"=5g+ |8 'sv*v.77' p64  %y4%s3%r21
+#drum "s"=5g+ |8 'sv*v.87' p64  %y4%s3%r21
+#drum "t"=5g+ |8 'sv*v.92' p64  %y4%s3%r21
+#drum "u"=5g+ |8 'sv*v.97' p64  %y4%s3%r21
+#drum "w"=5g+ |8 'sv*v1.07' p64 %y4%s3%r21
+#drum "x"=5g+ |8 'sv*v1.17' p64 %y4%s3%r21
+#drum "y"=5g+ |8 'sv*v1.22' p64 %y4%s3%r21
+#drum "z"=5g+ |8 'sv*v1.27' p64 %y4%s3%r21
 
-#def sv= v48
+#def sv= v36
 
 {1}
 $'global' %e1
@@ -142,7 +142,7 @@ ec>ae <c>aec aec>a< ec>ae   f+a<df+> a<df+a df+a<d> f+a<df+
 
 {3}
 $
-%e1%g1 l16
+%e0%g1 l16
 [8"z8ss"[3"x8ss"]  "z8ss" l48"z8stw"l16"s  xwx8 z8wx"
 "z8ss"["x8ss"] "xwxy"   "z8ss z8"l48"stwz^32wx^32"l16"xx8 z8wu"]
 ##33

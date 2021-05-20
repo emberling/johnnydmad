@@ -3,6 +3,9 @@
 #COMPOSER Yasuhiro Kawasaki
 #ARRANGED Rushlight
 
+#VARIANT ~ 
+#VARIANT ` nobird
+
 #WAVE 0x20 0x36 ## Guitar
 #WAVE 0x21 0xA3 ## Pan Flute
 #WAVE 0x22 0x22 ## Vibraphone
@@ -50,10 +53,10 @@
 
 ## It should be noted that the chocobo effect sections take 24 ticks, or one eighth note
 ## These macros will take a quarter note to simplify things
-#def kwehR1= p110 [j1,9001] r8
-#def kwehR2= p110 [j1,9002] r8
-#def kwehL1= p17  [j1,9001] r8
-#def kwehL2= p17  [j1,9002] r8
+#def kwehR1= p110 ~[j1,9001]~ r8 `r8`
+#def kwehR2= p110 ~[j1,9002]~ r8 `r8`
+#def kwehL1= p17  ~[j1,9001]~ r8 `r8`
+#def kwehL2= p17  ~[j1,9002]~ r8 `r8`
 
 ## #drum "k"=5a  |8 v120 p75  %r0  %e0 m
 #drum  "s"=5b- |8 v40 p43 %r0 %e0 m

@@ -5,16 +5,19 @@
 
 ##created with sqspcmml beta 1.1.5
 
-#WAVE 0x20 0x0b kick
-#WAVE 0x21 0x1e 808snare
-#WAVE 0x22 0x6c tamb
-#WAVE 0x23 0x1c snare
-#WAVE 0x24 0x88 brass
-#WAVE 0x25 0x54 bass
-#WAVE 0x26 0x42 fuzzy
-#WAVE 0x27 0x47 overdrive
-#WAVE 0x28 0xb0 pipe organ
-#WAVE 0x29 0x44 dist 5th
+#VARIANT ~ 
+#VARIANT ! vic
+
+#WAVE 0x20 ~0x0b~ !0x0A! kick
+#WAVE 0x21 ~0x1e~ !0x1E! 808snare
+#WAVE 0x22 ~0x6c~ !0x6C! tamb
+#WAVE 0x23 ~0x1c~ !0x1D! snare
+#WAVE 0x24 ~0x88~ !0x88! brass
+#WAVE 0x25 ~0x54~ !0x52! bass
+#WAVE 0x26 ~0x42~ !0x43! fuzzy
+#WAVE 0x27 ~0x47~ !0x00! overdrive
+#WAVE 0x28 ~0xb0~ !0xD5! pipe organ
+#WAVE 0x29 ~0x44~ !0x44! dist 5th
 
 #def 0i=   |0
 #def 0v=   v113
@@ -37,23 +40,23 @@
 #def 4v=   v175
 #def 4f= v1,175
 
-#def 5i=   |5
-#def 5o=   o5
-#def 5v=   v100
-#def 5f= v1,100
+#def 5i=   |5 %y5%s0
+#def 5o=   ~o5~ !o4!
+#def 5v=   ~v100~ !v75!
+#def 5f= ~v1,100~ !v1,75!
 
 #def 6i=   |6
 #def 6o=   o5
 #def 6v=   v75
 #def 6f= v1,75
 
-#def 7i=   |7
-#def 7o=   o5
-#def 7v=   v100
-#def 7f= v1,100
+#def 7i=   |6
+#def 7o=   ~o5~ !o5!
+#def 7v=   ~v100~ !v75!
+#def 7f= ~v1,100~ !v1,75!
 
 #def 8i=   |8
-#def 8o=   o5
+#def 8o=   ~o5~ !o3!
 #def 8v=   v67
 #def 8f= v1,67
 

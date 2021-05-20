@@ -4,7 +4,7 @@
 #ARRANGED Rushlight
 
 #WAVE 0x20 0xB0 ## Organ
-#WAVE 0x21 0x78 ## Chorus
+#WAVE 0x21 0x75 ## Chorus
 
 #def init= t101 %x230 %v40 %b0,70 %f0,0
 
@@ -17,7 +17,7 @@
 #def organ=          |0 o6 %e1 %r0
 ## The original has a second, slightly different organ sample (single octave, pretty much). We're using the same sample for both, but we can still define separate macros.
 #def altOrgan=       'organ'
-#def vox=            |1 o5 %e1 %r0
+#def vox=            |1 o4 %e1 %r0
 
 #def leadOrganHiVol=          v50
 #def leadOrganMedVol=         'leadOrganHiVol*v.85'
@@ -343,3 +343,7 @@ g+4..(^16)e4..(^16) d2^8^16(^16)c>b<
 ## 1/3 beat into 31
 c2...(^8.)
 ;
+
+## EDITOR NOTES:
+## Changed vox from 78 to 75 per style guide
+## -emberling

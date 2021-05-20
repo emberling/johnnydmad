@@ -1,5 +1,5 @@
 #TITLE Holy Ruins
-#ALBUM Final Fantasy Legend III
+#ALBUM Final Fantasy Legend III (SaGa 3)
 #COMPOSER Ryuji Sasai
 #ARRANGED Rushlight
 
@@ -17,7 +17,7 @@
 #WAVE 0x2A 0x6C ## Tambourine
 
 ## Time signature is 5/4
-#def init= t176 %x90 %v40 %b0,85 %f 0,0
+#def init= t176 %x90 %v40 %b0,85 %f0,0
 
 #def lateSst= %r0
 #def lateDcy= %r14
@@ -57,8 +57,8 @@
 #def bass=              |4 o4        v90  p64  %r20      %e0 m
 
 #DRUM "k"=4a  |8 v120 p27  %r0  %e0 m
-#DRUM "s"=5e  |9 v90  p100 %r0  %e0 m
-#DRUM "t"=6c  |a v100 p64  %r0  %e0 m
+#DRUM "s"=5e  |9 v105 p100 %r0  %e0 m
+#DRUM "t"=6c  |a v85  p64  %r0  %e0 m
 
 
 {1}

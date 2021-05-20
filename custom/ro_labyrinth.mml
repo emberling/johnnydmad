@@ -6,6 +6,8 @@
 #VARIANT !
 #VARIANT ~ tr
 
+#SFXV ` *
+
 #WAVE 0x20 0x62 ## Strings
 #WAVE 0x21 0x60 ## Harp
 #WAVE 0x22 0x75 ## Choir
@@ -135,10 +137,10 @@
 #def choirLowNote=       'choir'          'choirLowNoteVol'             p64           %a15                %r0                     %e1 m
 #def choirHighNote=      'choir'          'choirHighNoteVol'            p64           %a15                %r0                     %e1 m
 
-#drum "a"=6e- |D v12 p102 %a10         %r24
-#drum "b"=6e- |D v28 p102 %a8  %y4 %s4 %r20
-#drum "c"=6e- |D v47 p102 %a4  %y4 %s3 %r14
-#drum "d"=6e- |D v32 p102 %a2  %y1 %s1 %r13
+#drum "a"=5e- |D v12 p102 %a10         %r24
+#drum "b"=5e- |D v28 p102 %a8  %y4 %s4 %r20
+#drum "c"=5e- |D v47 p102 %a4  %y4 %s3 %r14
+#drum "d"=5e- |D v32 p102 %a2  %y1 %s1 %r13
 
 
 {1}
@@ -444,9 +446,12 @@ g4
 ## 16
 r1
 ## 17
-'timpaniPartialStrike''timpaniVol'g2r2
+'timpaniPartialStrike''timpaniVol' k8 g2r2 k0
 ## 18
 r1
+## For measures 19 through 74, in sfx variant, move to an alternate sequencing
+## that merges channels 3 and 7
+` %j3719 `*
 ## Piano right hand, ring finger
 'pianoRightRing'
 [2
@@ -494,6 +499,8 @@ r1
 ^4.c+2<c+8
 ## 74
 ^4.>c+4.b4
+## End sfx-variant merge
+*$3775
 ## 75
 ## Play a note from the final chord here, to free up the channel that would normally play it so it can prepare the loop
 'pianoRightRing''pianoRightHandRelease'
@@ -501,7 +508,6 @@ b-1
 ## 76
 ## We can hold the note for a measure more before we loop into beat 3 of measure 2
 ^1
-
 ;
 
 
@@ -791,7 +797,7 @@ e1
 ^1
 ;
 
-
+*
 {7}
 ## First measure lasts 2 beats
 ## Backing Strings, Low Note
@@ -899,5 +905,43 @@ r2
 r1
 ## 76
 r1
+;*
 
-;
+`
+## Alternate sequence for piano portion of track 3, measures 19 through 74
+## Plays in sfx-variant mode, merging in the piano notes from track 7
+$3719 l8
+[
+ [2
+   ## 19 / 27 / 43 / 51
+   [4 ^8 'pianoRightThumb-o1' b-4 'pianoRightRing' e-4 'pianoRightThumb-o1' b-4 'pianoRightRing' e-8]
+   ## 23 / 31 / 47 / 55
+   [4 ^8 'pianoRightThumb-o1' b-4 'pianoRightRing' e4 'pianoRightThumb-o1' b-4 'pianoRightRing' e8]
+ ]
+ [2
+   ## 35 / 37 / 59 / 61
+   [2 ^8 'pianoRightThumb-o1' b-4 'pianoRightRing' f+4 'pianoRightThumb-o1' b-4 'pianoRightRing' j2 f+8]
+   ## End of 36 / 38 / 60 / 62
+   b-8
+ ]
+ ## 39 / 63
+ [4 ^8 'pianoRightThumb-o1' b-4 'pianoRightRing' e-4 'pianoRightThumb-o1' b-4 'pianoRightRing' e-8]
+]
+## 67
+^8 'pianoRightThumb-o1' e4 'pianoRightRing' e4 'pianoRightThumb-o1' e4 'pianoRightRing' e8
+## 68
+^8 'pianoRightThumb-o1' g4 'pianoRightRing' e4 'pianoRightThumb-o1' g4 'pianoRightRing-o1' b8
+## 69
+^8 'pianoRightThumb-o1' f+4 'pianoRightRing' e4 'pianoRightThumb-o1' f+4 'pianoRightRing' f+8
+## 70
+^8 'pianoRightRing' f+4f+4 'pianoRightThumb-o1' f+4 'pianoRightRing' d8
+## 71
+^8 'pianoRightThumb-o1' f4 'pianoRightRing' f4 'pianoRightThumb-o1' f4 'pianoRightRing' g+8
+## 72
+^8 'pianoRightThumb-o1' f4 'pianoRightRing' f4 'pianoRightThumb-o1' f4 'pianoRightRing' c+8
+## 73
+^8 'pianoRightThumb-o1' f+4 'pianoRightRing' c+4 'pianoRightThumb-o1' f+4 'pianoRightRing+o1' c+8
+## 74
+^8 'pianoRightThumb-o1' f+4 'pianoRightRing' c+4 'pianoRightThumb-o1' f+8 'pianoRightRing' b4
+;3775
+`

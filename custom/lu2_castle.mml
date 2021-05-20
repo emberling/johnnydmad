@@ -3,6 +3,8 @@
 #COMPOSER Yasunori Shiono
 #ARRANGED Rushlight
 
+#SHORTNAME LU2 Castle Theme
+
 #def init= t90 %x180 %v40 %b0,70 %f0,0
 
 #WAVE 0x20 0x81 ## Trumpet
@@ -11,7 +13,7 @@
 #WAVE 0x24 0x28 ## Tubular Bell
 #WAVE 0x25 0x5A ## Timpani
 #WAVE 0x26 0x14 ## Dulcimer
-#WAVE 0x28 0x1C ## Snare
+#WAVE 0x28 0x1F ## Snare
 #WAVE 0x29 0x2D ## Crash
 #WAVE 0x2B 0x94 ## Oboe A5
 
@@ -65,11 +67,11 @@
 
 
 #drum "c"=5g+ |9 v127             p80 %r17
-#drum "o"=5g+ |8 'snareVol*v.25'  p64 %r20 %e0
-#drum "p"=5g+ |8 'snareVol*v.375' p64 %r20 %e0
-#drum "q"=5g+ |8 'snareVol*v.5'   p64 %r20 %e0
-#drum "r"=5g+ |8 'snareVol*v.75'  p64 %r20 %e0
-#drum "s"=5g+ |8 'snareVol'       p64 %r20 %e0
+#drum "o"=5g  |8 'snareVol*v.25'  p64 %r15 %e0
+#drum "p"=5g  |8 'snareVol*v.375' p64 %r15 %e0
+#drum "q"=5g  |8 'snareVol*v.5'   p64 %r15 %e0
+#drum "r"=5g  |8 'snareVol*v.75'  p64 %r15 %e0
+#drum "s"=5g  |8 'snareVol'       p64 %r15 %e0
 
 
 {1}

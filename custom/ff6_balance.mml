@@ -12,7 +12,7 @@
 #WAVE 0x24 0x86 horn
 #WAVE 0x25 0x5B timpani
 #WAVE 0x26 0x55 synth bass
-#WAVE 0x27 0x1B snare
+#WAVE 0x27 0x1F snare
 #WAVE 0x28 0x85 horn2
 
 #def 0i=   |0
@@ -51,8 +51,8 @@
 
 #def 7i=   |7
 #def 7o=   o5
-#def 7v=   v100
-#def 7f= v1,100
+#def 7v=   v88
+#def 7f= v1,88
 
 #def 8i=   |8
 #def 8o=   o5
@@ -62,7 +62,7 @@
 ## auto percussion  0x21
 #drum "h"= 5a
 ## auto percussion  0x27
-#drum "i"= 5a
+#drum "i"= 5f+ %a13%r21
 
 
 {1}

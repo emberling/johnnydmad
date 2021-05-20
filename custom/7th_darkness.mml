@@ -5,7 +5,7 @@
 
 #SHORTNAME 7TH Battle 3
 
-#WAVE 0x20 0x91 ## Oboe
+#WAVE 0x20 0xB2 ## Oboe
 #WAVE 0x21 0x81 ## Trumpet
 #WAVE 0x22 0x5A ## Timpani
 #WAVE 0x23 0x54 ## Bass
@@ -18,38 +18,41 @@
 #def introOboeVol=       v50
 #def leadOboeVol=        v90
 #def supportOboeVol=     'leadOboeVol*v.7'
-#def supportTrumpetVol=  v65
+#def supportTrumpetVol=  v84
 #def accentTrumpetVol=   'supportTrumpetVol*v1.1'
-#def introLowTrumpetVol= v80
-#def introTrumpetHiVol=  v40
+#def introLowTrumpetVol= v104
+#def introTrumpetHiVol=  v52
 #def introTrumpetMedVol= 'introTrumpetHiVol*v.8'
 #def introTrumpetLowVol= 'introTrumpetHiVol*v.7'
 #def introTimpaniHiVol=  v127
 #def fadeToTimpaniHi=    v240,127
 #def introTimpaniLowVol= 'introTimpaniHiVol*v.3'
 #def mainTimpaniVol=     'introTimpaniHiVol*v1'
-#def bassVol=            v50
+#def bassVol=            v75
+#def bassLayerVol=       'bassVol*v.50'
 
-#def oboe=            |0 o4
+#def oboe=            |0 o5
 #def timpani=         |2 o6
 #def trumpet=         |1 o5
 
 #def introTrumpet1=   'trumpet' 'introTrumpetHiVol'  p64  %r0  %e0 m
-#def introTrumpet2=   'trumpet' 'introTrumpetMedVol' p23  %r0  %e0 m
-#def introTrumpet3=   'trumpet' 'introTrumpetHiVol'  p103 %r0  %e0 m
+#def introTrumpet2=   'trumpet' 'introTrumpetMedVol' p43  %r0  %e0 m
+#def introTrumpet3=   'trumpet' 'introTrumpetHiVol'  p83  %r0  %e0 m
 #def introTrumpet4=   'trumpet' 'introTrumpetHiVol'  p64  %r0  %e0 m
-#def introOboe=       'oboe'    'introOboeVol'       p9   %r0  %e0 m
+#def introOboe=       'oboe'    'introOboeVol'       p36  %r0  %e0 m
 #def leadOboe=        'oboe'    'leadOboeVol'        p64  %r0  %e1 m24,18,218
 #def supportOboe=     'oboe'    'supportOboeVol'     p64  %r0  %e1 m
-#def introLowTrumpet= 'trumpet' 'introLowTrumpetVol' p9   %r0  %e0 m
+#def introLowTrumpet= 'trumpet' 'introLowTrumpetVol' p36   %r0  %e0 m
 #def supportTrumpet=  'trumpet' 'supportTrumpetVol'  p64  %r0  %e1 m
 #def accentTrumpet=   'trumpet' 'accentTrumpetVol'   p64  %r0  %e1 m
 #def introTimpani=    'timpani' 'introTimpaniHiVol'  p64  %r18 %e0 m
-#def mainTimpani=     'timpani' 'mainTimpaniVol'     p23  %r18 %e0 m
-#def bass=            |3 o6     'bassVol'            p97  %r20 %e0 m
+#def mainTimpani=     'timpani' 'mainTimpaniVol'     p43  %r18 %e0 m
+#def bass=            |3 o6     'bassVol'            p81  %r0 %e0 m
+#def bassHiLayer=     |3 o7     'bassLayerVol'       p89  %y2%s3%r0 %e0 m
 
 #DRUM "k"=5f  |8 v70 p9  %r0  %e1 m
-#DRUM "s"=5a  |9 v85 p9  %r0  %e1 m
+#DRUM "s"=5a  |9 v85 p9  %r0  %e0 m %y3%s3%r15
+#DRUM "e"=5^  %e1
 
 
 {1}
@@ -71,7 +74,7 @@ l16
 [2 f+rf+<f+>f+rf+<f+f+>f+f+rr4]
 $
 ## Lead Oboe, originally track 1
-'leadOboe'
+'leadOboe' k1
 l16
 [2
   ## 5 / 9
@@ -352,4 +355,71 @@ l16
 ]
 ## last 8th note of 36
 g+r
+;
+
+{8}
+## Bass +5th layer
+%k-5
+{7}
+## Bass +oct layer
+r1r1
+## Bass, originally track 3a
+'bassHiLayer-o1'
+l16
+## 3
+[2 f+rf+<f+>f+rf+<f+f+>f+f+rr4]
+$
+## Bass, originally track 3
+'bassHiLayer-o1'
+l16
+## 5 / 6 / 7 / 8 / 9
+[5 f+rf+<f+>f+rf+<f+f+>f+f+rr4]
+l8
+## 10
+e<e>e<e>e16e16<e>e<e>
+## 11
+c+<c+>c+<c+>c+16c+16<c+>c+<c+>
+## 12
+[2 d<d>] [2e<e>]
+## 13
+[4 d<d>]
+## 14
+[4 g+<g+>]
+## 15
+[4 a<a>]
+## 16
+[4 d<d>]
+## 17
+[4 g+<g+>]
+## 18
+[4 c+<c+>]
+## 19
+[4 f+<f+>]
+## 20
+[4 b-<b->]
+## 21
+[4 b<b>]
+## 22
+[4 e<e>]
+## 23
+[4 a<a>]
+## 24
+[4 d<d>]
+## 25
+[4 g+<g+>]
+## 26
+[4 c+<c+>]
+## 27
+[8 f+<f+>]
+l16
+[2
+  ## 29 / 33
+  [2 dr<dr>] [2 er<er>]
+  ## 30 / 34
+  [4 f+r<f+r>]
+  ## 31 / 35
+  [2 ar<ar>] [2 g+r<g+r>]
+  ## 32 / 36
+  [4 f+r<f+r>]
+]
 ;

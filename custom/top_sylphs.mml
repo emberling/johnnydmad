@@ -10,7 +10,7 @@
 #WAVE 0x24 0xB4 - was 0x0B organ
 #WAVE 0x25 0x57 - was 0x96 pizz big
 #WAVE 0x26 0x59 - was 0x19 pizz lil
-#WAVE 0x28 0x1C - was 0x56 snare
+#WAVE 0x28 0x1F - was 0x56 snare
 #WAVE 0x29 0x5B - was 0x16 timpani
 
 #def init= t90 %x255 %v64 %b0,84 %f0,0
@@ -37,13 +37,13 @@
 
 #def snare= |8 %y5%s0 v40 %e0
 
-#drum "t"=5a 'snare*v1.20'
-#drum "s"=5a 'snare*v1.00'
-#drum "r"=5a 'snare*v0.92'
-#drum "q"=5a 'snare*v0.80'
-#drum "p"=5a 'snare*v0.72'
-#drum "b"=5a 'snare*v0.70'
-#drum "a"=5a 'snare*v0.60'
+#drum "t"=5g 'snare*v1.20'
+#drum "s"=5g 'snare*v1.00'
+#drum "r"=5g 'snare*v0.92'
+#drum "q"=5g 'snare*v0.80'
+#drum "p"=5g 'snare*v0.72'
+#drum "b"=5g 'snare*v0.70'
+#drum "a"=5g 'snare*v0.60'
 #drum "x"=5^ %e1
 
 {1} 'init' $ 

@@ -3,6 +3,12 @@
 #COMPOSER Nobuo Uematsu
 #ARRANGED Rushlight
 
+##         ------------------
+#SHORTNAME FF9 Silver Dragons
+
+#VARIANT ~
+#VARIANT ` tr
+
 #WAVE 0x20 0x66 ## Strings
 #WAVE 0x21 0xA7 ## Flute
 #WAVE 0x22 0x84 ## Horn
@@ -125,24 +131,24 @@
 #drum "y"= 5g+ |C 'tambourineLowVol'  p64
 #drum "z"= 5g+ |C 'tambourineBaseVol' p64
 ## Bunch of snares with different volumes...
-#drum "d"= 5g+ |B 'snareBaseVol*v.1'  p64
-#drum "e"= 5g+ |B 'snareBaseVol*v.12' p64
-#drum "f"= 5g+ |B 'snareBaseVol*v.13' p64
-#drum "g"= 5g+ |B 'snareBaseVol*v.15' p64
-#drum "h"= 5g+ |B 'snareBaseVol*v.16' p64
-#drum "i"= 5g+ |B 'snareBaseVol*v.2'  p64
-#drum "j"= 5g+ |B 'snareBaseVol*v.21' p64
-#drum "k"= 5g+ |B 'snareBaseVol*v.24' p64
-#drum "l"= 5g+ |B 'snareBaseVol*v.25' p64
-#drum "m"= 5g+ |B 'snareBaseVol*v.3'  p64
-#drum "n"= 5g+ |B 'snareBaseVol*v.33' p64
-#drum "o"= 5g+ |B 'snareBaseVol*v.36' p64
-#drum "p"= 5g+ |B 'snareBaseVol*v.38' p64
-#drum "q"= 5g+ |B 'snareBaseVol*v.39' p64
-#drum "r"= 5g+ |B 'snareBaseVol*v.49' p64
-#drum "s"= 5g+ |B 'snareBaseVol*v.5'  p64
-#drum "t"= 5g+ |B 'snareBaseVol*v.52' p64
-#drum "u"= 5g+ |B 'snareBaseVol*v.6'  p64
+#drum "d"= 5g+ |B ~'snareBaseVol*v.1' ~ `'snareBaseVol*v.15' p64
+#drum "e"= 5g+ |B ~'snareBaseVol*v.12'~ `'snareBaseVol*v.15' p64
+#drum "f"= 5g+ |B ~'snareBaseVol*v.13'~ `'snareBaseVol*v.15' p64
+#drum "g"= 5g+ |B ~'snareBaseVol*v.15'~ `'snareBaseVol*v.15' p64
+#drum "h"= 5g+ |B ~'snareBaseVol*v.16'~ `'snareBaseVol*v.15' p64
+#drum "i"= 5g+ |B ~'snareBaseVol*v.2' ~ `'snareBaseVol*v.25' p64
+#drum "j"= 5g+ |B ~'snareBaseVol*v.21'~ `'snareBaseVol*v.25' p64
+#drum "k"= 5g+ |B ~'snareBaseVol*v.24'~ `'snareBaseVol*v.25' p64
+#drum "l"= 5g+ |B ~'snareBaseVol*v.25'~ `'snareBaseVol*v.25' p64
+#drum "m"= 5g+ |B ~'snareBaseVol*v.3' ~ `'snareBaseVol*v.35' p64
+#drum "n"= 5g+ |B ~'snareBaseVol*v.33'~ `'snareBaseVol*v.35' p64
+#drum "o"= 5g+ |B ~'snareBaseVol*v.36'~ `'snareBaseVol*v.35' p64
+#drum "p"= 5g+ |B ~'snareBaseVol*v.38'~ `'snareBaseVol*v.35' p64
+#drum "q"= 5g+ |B ~'snareBaseVol*v.39'~ `'snareBaseVol*v.35' p64
+#drum "r"= 5g+ |B ~'snareBaseVol*v.49'~ `'snareBaseVol*v.50' p64
+#drum "s"= 5g+ |B ~'snareBaseVol*v.5' ~ `'snareBaseVol*v.50' p64
+#drum "t"= 5g+ |B ~'snareBaseVol*v.52'~ `'snareBaseVol*v.50' p64
+#drum "u"= 5g+ |B ~'snareBaseVol*v.6' ~ `'snareBaseVol*v.60' p64
 
 {1}
 'init'%e1
@@ -1266,17 +1272,21 @@ a4.%l1 a24b-24b24<c2 %l0
 
 ## Snare and Clang, channels 17 and 29 in VGMTrans output
 ## 21 / 22 / 23 / 24 / 25 / 26 / 27 / 28 / 29 / 30 / 31
+~
 [11 "!!!o u2x4.i24o24r24"]
 ## 32
 ## Play the normal notes, but squeeze a couple accent notes from channel 22 in VGMTrans output in-between.
-"!!!o u4" 'regularOctaveStrings+o1''stringAccentVol'g+8r8 "!!!ox4" 'regularOctaveStrings+o1''stringAccentVol'g8 "!!!oi24o24r24"
+"u4" 'regularOctaveStrings+o1''stringAccentVol'g+8r8 "!!!ox4" 'regularOctaveStrings+o1''stringAccentVol'g8 "!!!oi24o24r24"
 ## 33 / 34 / 35 / 36
-[4"!!!o u2x4.i24o24r24"]
+[4"u2x4.i24o24r24"]
 ## 37
 ## Replace the first snare hit in this measure with a (shortened) orchestra clash note. This clash note will obscure the snare's absence.
-"!!!o b2x4.i24o24r24"
+"b2x4.i24o24r24"
 ## 38 / 39 / 40
-[3"!!!o u2x4.i24o24r24"]
+[3"u2x4.i24o24r24"]
+~
+## 'tr' data space optimized / downgraded version of 21 ~ 40  -emberling
+`[20 j17,837 "!!!o u2" $838 "!!!o x4.i24o24r24"]`
 $
 ## 41
 ## Orchestra Clash, channel 20 in VGMTrans output
@@ -1287,33 +1297,40 @@ $
   ## Orchestra Clash, Clang, Snare (Channels 20, 29, nnd 17 in VGMTrans out)
   "!!!o b2x4.i24o24r24"
   ## 50 / 51 / 58 / 59
-  [2 "!!!o u2x4.i24o24r24"]
+  [2 "u2x4.i24o24r24"]
   ## 52 / 60
   ## Play the normal notes, but squeeze a couple accent notes from channel 22 in VGMTrans output in-between.
-  "!!!o u4" 'regularOctaveStrings+o1''stringAccentVol'g+8r8 "!!!ox4" 'regularOctaveStrings+o1''stringAccentVol'g8 "!!!oi24o24r24"
+  "u4" 'regularOctaveStrings+o1''stringAccentVol'g+8r8 "!!!ox4" 'regularOctaveStrings+o1''stringAccentVol'g8 "!!!oi24o24r24"
   ## 53 / 54 / 55 / 61 / 62 / 63
-  [3 "!!!o u2x4.i24o24r24"]
+  [3 "u2x4.i24o24r24"]
   ## 56
   j2
-  "!!!o u2x4.i24o24r24"
+  "u2x4.i24o24r24"
 ]
 ## 64
 l24
 "!!!o u2x4mnnoop"
-[2
-  ## 65 / 73
-  l8
-  ## Squeeze one timpani note from channel 19 in VGMTrans output
-  'regularTimpani-o1''timpaniVol*v1.1'c+
-  ## Snare, channel 17 in VGMTrans output
-  "!!!o lplplp16p16l"
-  ## 66 / 67 / 69 / 69 / 70 / 74 / 75 / 76 / 77 / 78
-  [5 "!!!o plplplp16p16l"]
-  j2,879
-  ## 71 / 72
-  [2 "!!!o plplplp16p16l"]
+#  [2
+#    ## 65 / 73
+#    l8
+#    ## Squeeze one timpani note from channel 19 in VGMTrans output
+#    'regularTimpani-o1''timpaniVol*v1.1'c+
+#    ## Snare, channel 17 in VGMTrans output
+#    "!!!o lplplp16p16l"
+#    ## 66 / 67 / 69 / 69 / 70 / 74 / 75 / 76 / 77 / 78
+#    [5 "!!!o plplplp16p16l"]
+#    j2,879
+#    ## 71 / 72
+#    [2 "!!!o plplplp16p16l"]
+#  ]
+#  $879
+## More efficient 65 ~ 78  -emberling
+[14 l8
+ j1,865 j9,865
+ ":l: p"
+ $866
+ "!!!o lplplp16p16l"
 ]
-$879
 ## 79
 ## Orchestra Clash, channel 20 in VGMTrans output
 "!!!o c1"
@@ -1321,8 +1338,8 @@ $879
 r1
 ;
 
-
-
+$865 'regularTimpani-o1''timpaniVol*v1.1' c+8 ;866
+` $837 ":r: b2" ;838 `
 
 
 ## Plays the lower notes pattern that appears first at measure 14 (then also at 18).

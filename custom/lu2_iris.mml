@@ -3,6 +3,8 @@
 #COMPOSER Yasunori Shiono
 #ARRANGED Rushlight
 
+#SHORTNAME LU2 The Prophet
+
 #WAVE 0x20 0x61 ## Harp
 #WAVE 0x21 0x53 ## Bass
 #WAVE 0x22 0x66 ## Strings
@@ -14,7 +16,7 @@
 #WAVE 0x2D 0x94 ## Oboe A5
 
 
-#def init= t135 %x180 %v40 %b0,85 %f 0,0
+#def init= t135 %x180 %v40 %b0,85 %f0,0
 
 #def harpVol=    v95
 #def oboeVol=    v80

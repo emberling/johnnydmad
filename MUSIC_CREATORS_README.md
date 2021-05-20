@@ -55,6 +55,7 @@ On sounding "right", though, a caveat: this stays within the context of late SNE
 ### CHROMATIC PERC.:
 * Use 20 for music box parts; octaved with the lower octave delayed by 2 ticks seems effective, if possible.
 * It can be hard to tell what is what but try your best to match instrument types rather than just using whatever. Marimba/xylophone should be considered one type (it's all marimba, really) and 23/24 (labelled marimba) should be preferred if feasible.
+* 7C can also work well in a marimba-like role. Play with the ADSR; attack of 13-14 might help.
 * 28 is the preferred tubular bell.
 ### ACOUSTIC GUITARS:
 * 34 (steel guitar) is the preferred acoustic guitar; even if it's not a match for the original, give it a shot. After that, try 36, then fall back to 35. 
@@ -184,10 +185,10 @@ On sounding "right", though, a caveat: this stays within the context of late SNE
 * `1A` (tuba) -> 83. Same timbre, sounds one octave higher.
 * `1B` (harp) -> 60. Same sample.
 * `1C` (synth bass) -> 55 is the same sample, but please see if you can use 54 instead.
-* `1D` (bouzouki) -> 32, same timbre.
+* `1D` (bouzouki/mandolin) -> 32, same timbre.
 * `1E` (dist guitar) -> 41, same sample, but experiment with 42/43/literally anything.
 * `1F` (ocarina) -> If it's being used as a thin flute, A4 (sounds one octave higher). If it's being used as a whistle, A6 (sounds one lower) or D0 with a bit of attack.
-* `20` (rhodes) -> 19 if you can swing the cost (sounds one higher), maybe 20 if you can't, or 22 (sounds one higher).
+* `20` (rhodes) -> 19 or 18 (sounds one higher)
 * `21` (hard snare) -> 1D
 * `22` (kick) -> 0A, same sample.
 * `23` (cowbell) -> 9D or 9C.
@@ -278,38 +279,39 @@ On sounding "right", though, a caveat: this stays within the context of late SNE
 * `7A` (horn) -> 86
 * `7B` (12str/dulcimer) -> 13, same sample.
 * `7C` (ultra-sawtooth) -> C2, same timbre.
-* `7D` (
-* `7E` (
-* `7F` (
-* `80` (
-* `81` (
-* `82` (
-* `83` (
-* `84` (
-* `85` (
-* `86` (
-* `87` (
-* `88` (
-* `89` (
-* `8A` (
-* `8B` (
-* `8C` (
-* `8D` (
-* `8E` (
-* `8F` (
-* `90` (
-* `91` (
-* `92` (
-* `93` (
-* `94` (
-* `95` (
-* `96` (
-* `97` (
-* `98` (
-* `99` (
-* `9A` (
-* `9B` (
-* `9C` (
-* `9D` (
-* `9E` (
-* `9F` (
+* `7D` (solo-overdrive) -> 39, or 40 (apply vibrato). 39 sounds one octave lower.
+* `7E` (hard snare) -> 1D
+* `7F` (trumpet) -> 82, same sample.
+* `80` (electric bass) -> 51 or 35. 35 sounds one octave higher.
+* `81` (march snare) -> 1A, same sample.
+* `82` (brass sect. - octave) -> 89, same sample.
+* `83` (calliope) -> C0, same sample.
+* `84` (tom) -> 4D is a close timbre match, but consider 4A/4B instead. Transpose down about 4 semitones.
+* `85` (conga slap) -> 7B
+* `86` (marimba/xylo) -> 23/24/25. Sounds one octave lower.
+* `87` (accordion) -> B9 or A9, or maybe A8 (-1) or E3
+* `88` (ride) -> 2B (same sample) or 2A. Pitch is different for both.
+* `89` (fuzzy synth) -> experimentation will be necessary; consider C1, C3, B5, B6, 67, 42 etc.
+* `8A` (piano O4) -> 03, same sample
+* `8B` (piano O5) -> 02, same sample
+* `8C` (piano O6) -> 01, same sample. sounds one octave higher
+* `8D` (tubular bell) -> 28, or 29
+* `8E` (cymbal) -> 2D, or 2E
+* `8F` (hi-hat) -> 3C, or if size is an issue, use 3D with ADSR (%y0 ~ %y2)
+* `90` (pizzicato) -> experimentation will likely be necessary among 57/57/59
+* `91` (tubular bell) -> 29, same sample
+* `92` (vox pad) -> 78, same sample
+* `93` (choir ahhhs) -> 73
+* `94` (octave strings) -> 63
+* `95` (dulcimer/santur) -> 15 (same source)
+* `96` (pizzicato bass) -> 57, same sample
+* `97` (clean guitar) -> 35, same timbre
+* `98` (kid lawl) -> import lawl
+* `99` (rena lawl) -> import lawl
+* `9A` (trumpet) -> 81, same sample
+* `9B` (rotary organ) -> B5, same sample, sounds one octave lower
+* `9C` (clavinet) -> 16, same sample
+* `9D` (timbale) -> 4E, same sample
+* `9E` (steel drum) -> 26, same sample
+* `9F` (bass clarinet) -> 97, same sample
+* `A0` (synth overdrive) -> 40, same sample, or 39, E2, D2 ~ D6 etc.

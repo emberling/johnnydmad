@@ -11,22 +11,22 @@
 
 #def 0i=   |0 %y4%s4
 #def 0o=   o6
-#def 0v=   v233
-#def 0f= v1,233
+#def 0v=   v115
+#def 0f= v1,115
 
 #def 1i=   |1
 #def 1o=   o5
-#def 1v=   v211
-#def 1f= v1,211
+#def 1v=   v120
+#def 1f= v1,120
 
-#def 2i=   |2
+#def 2i=   |2 %y0%s6%r2
 #def 2o=   o5
-#def 2v=   v200
-#def 2f= v1,200
+#def 2v=   v85
+#def 2f= v1,85
 
 
 {1}
-t70%b0,70%f0,3%v50%x120'0v*v.60'
+t70%b0,70%f0,3%v50'0v*v.60'
 '0i' p64%e1r1r1r1r1
 $101'0o'a4<e8d8c+4.>a8b8<c+8>b4g4b4a1^2^4.^8a4<e8d8c+4.>a8<g4f4e4.d8e1
 ^2^4.^8e8d8c8>a8b8<c8d8e8^2^4^4^1^2^4>d4f2^4e8f8g2^4^8d8f2^8a8g8f8g2^8

@@ -16,7 +16,7 @@
 #WAVE 0x27 0x96 clari
 #WAVE 0x28 0x90 bassoon
 #WAVE 0x29 0x54 synbass
-#WAVE 0x2A 0x1A msnare
+#WAVE 0x2A 0x1F msnare
 #WAVE 0x2B 0x5C timpani
 #WAVE 0x2C 0x2C orch-clash
 
@@ -61,18 +61,18 @@
 
 #drum "y"=5a |C p40 v96
 #drum "y-"=5a |C p40 v96 %r16
-#drum "s"=5a |A p30 'snarevol*v.75'
-#drum "t"=5a |A p30 'snarevol*v.52'
-#drum "s-"=5a |A p30 'snarevol*v.61'
-#drum "t-"=5a |A p30 'snarevol*v.43'
-#drum "a"=5a |A p30 'snarevol*v.47'
-#drum "b"=5a |A p30 'snarevol*v.52'
-#drum "c"=5a |A p30 'snarevol*v.57'
-#drum "d"=5a |A p30 'snarevol*v.61'
-#drum "e"=5a |A p30 'snarevol*v.65'
-#drum "f"=5a |A p30 'snarevol*v.68'
-#drum "g"=5a |A p30 'snarevol*v.72'
-#drum "h"=5a |A p30 'snarevol*v.75'
+#drum "s"=5g |A p30 'snarevol*v.75'
+#drum "t"=5g |A p30 'snarevol*v.52'
+#drum "s-"=5g |A p30 'snarevol*v.61'
+#drum "t-"=5g |A p30 'snarevol*v.43'
+#drum "a"=5g |A p30 'snarevol*v.47'
+#drum "b"=5g |A p30 'snarevol*v.52'
+#drum "c"=5g |A p30 'snarevol*v.57'
+#drum "d"=5g |A p30 'snarevol*v.61'
+#drum "e"=5g |A p30 'snarevol*v.65'
+#drum "f"=5g |A p30 'snarevol*v.68'
+#drum "g"=5g |A p30 'snarevol*v.72'
+#drum "h"=5g |A p30 'snarevol*v.75'
 
 {1} $ 'init' %e1
 r1r1 [

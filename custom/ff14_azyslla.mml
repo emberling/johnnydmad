@@ -18,7 +18,7 @@
 #WAVE 0x2C 0x2D - was 0x8E - crash
 #WAVE 0x2E 0x3C - was 0x8F - hihat
 
-#def init= t110 %x255 %v35 %b0,100 %f0,0
+#def init= t110 %v35 %b0,100 %f0,0
 
 #def bz= |0 'z' o5
 #def po= |1 'o' o5

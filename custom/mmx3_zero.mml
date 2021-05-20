@@ -1,17 +1,20 @@
 #TITLE Zero
-#ALBUM Megaman X3
+#ALBUM Mega Man X3
 #COMPOSER Kinuyo Yamashita
 #ARRANGED Rushlight
 
-#WAVE 0x20 0x39 ## Solo Electric Guitar
-#WAVE 0x21 0x45 ## Distorsion Guitar
-#WAVE 0x22 0x47 ## Support Electric Guitar
-#WAVE 0x23 0x56 ## Bass
+#VARIANT ! vic
+#VARIANT ~ a
 
-#WAVE 0x28 0x0A ## Kick
-#WAVE 0x29 0x1D ## Snare
-#WAVE 0x2A 0x2D ## Crash
-#WAVE 0x2B 0x4D ## Toms
+#WAVE 0x20 ~0x39~ !0x40! ## Solo Electric Guitar
+#WAVE 0x21 ~0x45~ !0x45! ## Distorsion Guitar
+#WAVE 0x22 ~0x47~ !0x43! ## Support Electric Guitar
+#WAVE 0x23 ~0x56~ !0x56! ## Bass
+          
+#WAVE 0x28 ~0x0A~ !0x0A! ## Kick
+#WAVE 0x29 ~0x1D~ !0x1D! ## Snare
+#WAVE 0x2A ~0x2D~ !0x2D! ## Crash
+#WAVE 0x2B ~0x4D~ !0x4D! ## Toms
 
 #def init= t122 %x255%v40 %b0,55 %f0,0
 
@@ -47,41 +50,41 @@
 #def introRhythmDistorsionGuitarVol= 'distorsionGuitarVol*v.6'
 #def rhythmDistorsionGuitarQuietVol= 'distorsionGuitarVol*v.28'
 
-#def supportGuitarVol=               v48
+#def supportGuitarVol=               ~v48~ !v24!
 #def bassVol=                        v35
 
-#def overdrive=     |0 o5
-#def distorsion=    |1 o7
-#def supportGuitar= |2 o6
+#def overdrive=     |0 ~o5~ !o4!
+#def distorsion=    |1 ~o7~ !o7!
+#def supportGuitar= |2 ~o6~ !o6!
 
-#def leadGuitar=                               'overdrive'     'leadGuitarVol'                  p82 'generalSustain'
-#def leadGuitarLeftLayer=                      'overdrive'     'layerGuitarVol'                 p28 'generalSustain'
-#def leadGuitarRightLayer=                     'overdrive'     'layerGuitarVol'                 p99 'generalSustain'
-#def leadGuitarSingleLayer=                    'overdrive'     'layerGuitarVol'                 p45 'generalSustain'
-#def leadGuitarEcho=                           'overdrive'     'leadGuitarEchoVol'              p45 'generalSustain'
-#def leadGuitarEchoCentered=                   'overdrive'     'leadGuitarEchoVol'              p64 'generalSustain'
-#def introDistorsionGuitar=                    'distorsion'    'distorsionGuitarVol'            p64 'generalSustain'
-#def rhythmDistorsionGuitar=                   'distorsion'    'distorsionGuitarMainVol'        p64 'generalSustain'
-#def introRhythmDistorsionGuitar=              'distorsion'    'introRhythmDistorsionGuitarVol' p45 'generalSustain'
-#def introRhythmDistorsionGuitarLayer=         'distorsion'    'introRhythmDistorsionGuitarVol' p64 'generalSustain'
-#def leadDistorsionGuitar=                     'distorsion'    'distorsionGuitarMainVol'        p82 'generalSustain'
-#def leadDistorsionGuitarLayerLeft=            'distorsion'    'distorsionGuitarMainVol'        p28 'generalSustain'
-#def leadDistorsionGuitarLayerRight=           'distorsion'    'distorsionGuitarMainVol'        p99 'generalSustain'
-#def leadDistorsionGuitarLayerCenter=          'distorsion'    'distorsionGuitarMainVol'        p64 'generalSustain'
-#def supportGuitarLeft=                        'supportGuitar' 'supportGuitarVol'               p28 'generalSustain'
-#def supportGuitarRight=                       'supportGuitar' 'supportGuitarVol'               p99 'generalSustain'
-#def bass=                                     |3 o7           'bassVol'                        p64 %r15
+#def leadGuitar=                               'overdrive'     'leadGuitarVol'                  p82 'generalSustain' %e1 m
+#def leadGuitarLeftLayer=                      'overdrive'     'layerGuitarVol'                 p28 'generalSustain' %e0 m
+#def leadGuitarRightLayer=                     'overdrive'     'layerGuitarVol'                 p99 'generalSustain' %e0 m
+#def leadGuitarSingleLayer=                    'overdrive'     'layerGuitarVol'                 p45 'generalSustain' %e0 m
+#def leadGuitarEcho=                           'overdrive'     'leadGuitarEchoVol'              p45 'generalSustain' %e0 m
+#def leadGuitarEchoCentered=                   'overdrive'     'leadGuitarEchoVol'              p64 'generalSustain' %e0 m
+#def introDistorsionGuitar=                    'distorsion'    'distorsionGuitarVol'            p64 'generalSustain' %e0 m
+#def rhythmDistorsionGuitar=                   'distorsion'    'distorsionGuitarMainVol'        p64 'generalSustain' %e0 m
+#def introRhythmDistorsionGuitar=              'distorsion'    'introRhythmDistorsionGuitarVol' p45 'generalSustain' %e0 m
+#def introRhythmDistorsionGuitarLayer=         'distorsion'    'introRhythmDistorsionGuitarVol' p64 'generalSustain' %e0 m
+#def leadDistorsionGuitar=                     'distorsion'    'distorsionGuitarMainVol'        p82 'generalSustain' %e1 m
+#def leadDistorsionGuitarLayerLeft=            'distorsion'    'distorsionGuitarMainVol'        p28 'generalSustain' %e0 m
+#def leadDistorsionGuitarLayerRight=           'distorsion'    'distorsionGuitarMainVol'        p99 'generalSustain' %e0 m
+#def leadDistorsionGuitarLayerCenter=          'distorsion'    'distorsionGuitarMainVol'        p64 'generalSustain' %e0 m
+#def supportGuitarLeft=                        'supportGuitar' 'supportGuitarVol'               p28 'generalSustain' %e0 m
+#def supportGuitarRight=                       'supportGuitar' 'supportGuitarVol'               p99 'generalSustain' %e0 m
+#def bass=                                     |3 o7           'bassVol'                        p64 %r15             %e0 m
 
-#drum "k"=5f  |8                                               v73                              p64
-#drum "s"=5g+ |9                                               v81                              p64
-#drum "c"=5f+ |A                                               v127                             p64 %r17
+#drum "k"=5f  |8                                               v73                              p64                  %e0 m
+#drum "s"=5g+ |9                                               v81                              p64                  %e0 m
+#drum "c"=5f+ |A                                               v127                             p64 %r17             %e0 m
 
 #def tomVol=                                                   v80
-#drum "t"=4e  |B                                               'tomVol'                         p64
-#drum "u"=4g  |B                                               'tomVol'                         p64
-#drum "v"=4g+ |B                                               'tomVol'                         p64
-#drum "w"=5c+ |B                                               'tomVol'                         p64
-#drum "x"=5e- |B                                               'tomVol'                         p64
+#drum "t"=4e  |B                                               'tomVol'                         p64                  %e0 m
+#drum "u"=4g  |B                                               'tomVol'                         p64                  %e0 m
+#drum "v"=4g+ |B                                               'tomVol'                         p64                  %e0 m
+#drum "w"=5c+ |B                                               'tomVol'                         p64                  %e0 m
+#drum "x"=5e- |B                                               'tomVol'                         p64                  %e0 m
 
 
 {1}

@@ -10,7 +10,7 @@
 #WAVE 0x21 0x60 ## Harp
 #WAVE 0x22 0x01 ## Piano
 
-#def init= t57 %x160 %v40 %b0,105% f0,0
+#def init= t57 %x160 %v40 %b0,105% %f0,0
 
 #def 0i=   |0
 #def 0o=   o5

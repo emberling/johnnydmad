@@ -8,7 +8,7 @@
 #WAVE 0x21 0x65 strings
 #WAVE 0x22 0x60 harp
 #WAVE 0x23 0x84 horn
-#WAVE 0x24 0x1B snare
+#WAVE 0x24 0x1F snare
 #WAVE 0x25 0x52 bass
 
 #def 0i=   |D
@@ -42,7 +42,7 @@
 #def 5f= v1,100
 
 ## auto percussion  0x24
-#drum "h"= 5a
+#drum "h"= 5g %a13%r22
 
 ##WAVE 0x2A 0x91 oboe B6 (G+6+)
 #WAVE 0x2B 0x92 oboe F6 (D+6 - G6)

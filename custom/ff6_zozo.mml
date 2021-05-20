@@ -7,18 +7,18 @@
 
 #SFXV ` *
 
-#VARIANT ~
-#VARIANT _ orig
+#VARIANT _
+#VARIANT ~ orig
 
-#WAVE 0x21 ~0x04~
-#WAVE 0x22 ~0xC2~
-#WAVE 0x23 ~0xC3~
-#WAVE 0x26 ~0x52~
-#WAVE 0x28 ~0x0D~
-#WAVE 0x29 ~0x1D~
-#WAVE 0x2A ~0x3D~
-#WAVE 0x2B ~0x8F~
-#WAVE 0x2C ~0x8E~
+#WAVE 0x21 _0_ ~0x04~ 
+#WAVE 0x22 _0_ ~0xC2~
+#WAVE 0x23 _0_ ~0xC3~
+#WAVE 0x26 _0_ ~0x52~
+#WAVE 0x28 _0_ ~0x0D~
+#WAVE 0x29 _0_ ~0x1D~
+#WAVE 0x2A _0_ ~0x3D~
+#WAVE 0x2B _0_ ~0x8F~
+#WAVE 0x2C _0_ ~0x8E~
 
 ## clavinet
 #def 1@i= _   @1  _ ~    |1  ~
@@ -159,8 +159,8 @@ _
 ## pitch modulation operator (orig mode only)
 *_
 {6}
-p64'7@v*v0'r64%e1
-'7@i' v0,180,201'7@o+o13'p0,255,60%p1%a4%l1 c64
+@7p64'7@v*v0'r64%e1
+'7@i' v0,180,201'7@o+o13'p0,255,60%a4%l1 c64
 $701 c64
 ;701
 _*

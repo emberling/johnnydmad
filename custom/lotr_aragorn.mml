@@ -9,10 +9,10 @@
 #WAVE 0x23 0xA4 piccolo
 #WAVE 0x24 0x64 bass
 #WAVE 0x25 0x5C timpani
-#WAVE 0x28 0x1A snare
+#WAVE 0x28 0x1F snare
 #WAVE 0x2C 0x2C clash
 #WAVE 0x2D 0x2D crash
-#WAVE 0x2F 0x3d hihat
+#WAVE 0x2E 0x3d hihat
 
 #def init= t103 %x255 %v40 %b0,100 %f0,0
 
@@ -36,16 +36,16 @@
 #def bf= v1,96
 #def kf= v1,72
 
-#def d= v72
-#def df= v1,72
+#def d= v60
+#def df= v1,60
 
-#drum "t"=5a |8 'd'        p64
-#drum "s+"=5a |8 'd*v.9'   p64
-#drum "s"=5a |8 'd*v.8'    p64
-#drum "r+"=5a |8 'd*v.7'   p64
-#drum "r"=5a |8 'd*v.6'    p64
-#drum "q+"=5a |8 'd*v.5'   p64
-#drum "q"=5a |8 'd*v.4'    p64
+#drum "t"= 5g |8 'd'        p64  %r23 %g1
+#drum "s+"=5g |8 'd*v.9'   p64   %r23 %g1
+#drum "s"= 5g |8 'd*v.8'    p64  %r23 %g1
+#drum "r+"=5g |8 'd*v.7'   p64   %r23 %g1
+#drum "r"= 5g |8 'd*v.6'    p64  %r23 %g1
+#drum "q+"=5g |8 'd*v.5'   p64   %r23 %g1
+#drum "q"= 5g |8 'd*v.4'    p64  %r23 %g1
 
 #drum "y"=5a |C v64            p64
 #drum "y-"=5a |C v64 %r17      p64
@@ -53,10 +53,12 @@
 #drum "z"=5f+ |D v36 %a12%r17  p64
 #drum "z-"=5f+ |D v24 %a12%r17 p64
 
-#drum "h"=5a |F v64 p64 %r21
+#drum "h"=5a |E v64 p64 %r21
 
 #cdef ( %l1
 #cdef ) %l0
+
+#def j1,405= [j1,405] %g1
 
 {1} %e1 'init'
 'horn' l16
@@ -207,20 +209,20 @@ l16 [ d8.r e8.r f+8..r32 g8.r > g8.r a8..r32 a+8..r32 < c8.r ]
 ;
 
 {4} %e1 l16 [
-"s+8r+s t8ss+ t4.s32r+32s+" j2
-"t8r+s t8ss+ t4 t48s48r+48r+32q+32q+48r+32s32r+48s48" ]
-"t8r+s t8ss+ t8ss+ t8q+48r+32s32r+48s48"
+"s+8r+s t8ss+ t4.s32r+32s+"
+"t8r+s t8ss+" j2 "t4 t48s48r+48r+32q+32q+48r+32s32r+48s48" ]
+"t8ss+ t8q+48r+32s32r+48s48"
 $## 5, 11
 l24
-[ [j1,405] ] ":r+:"
+[ 'j1,405' ] ":r+:"
 ["t8r+q+r+"] "t8s12r+" "r+12ss+rq"
 "s+4.r12r+ t4" v0'df*v48,.9' [8"\s32"]
-[ [j1,405] ] l16 "!v s4s8.ss2"
+[ 'j1,405' ] l16 "!v s4s8.ss2"
 ## 16
 "s4s8q+32r+32s32s+32 t4t8r+32r+32r+32s32
 t4sttt t8s+r32s32ts8t
 y1"
-[ "!o s8" 'd*v.7''df*v24,.9'[4"\s32"] ":s+:s+8s+8  t8r12s24s+8s+8" ]
+[ "!o!%g0 s8" 'd*v.7''df*v24,.9'[4"\s32"] ":s+:s+8s+8  t8r12s24s+8s+8" ]
 ## 21
 [ "s+4.s+8s4" 'df*v24,.5' [4"s32"] 'df*v24,1' [4"s32"]
 ":t:t4.s+8"j2"s+4s+32r+32^8r+32s+32" ] 'd*v.5''df*v80,1' [8"\s16"]
@@ -228,13 +230,13 @@ y1"
 [4 ["t8r+s t8ss+ t4"j2"^8s32r+32s+"] 'df*v24,.4' [4"\s32"] 'df*v24,1' [4"\s32"] ]
 ":t: s+2s+8ss+s+r+tr+"
 ## 34
-[4 [j1,405] ] ":r+"
+[4 'j1,405' ] ":r+"
 ## 43
 [ "h4h4h4h4 h4h4h8h8h4" ]
 ## 47
-[ "s4s4s8ss+t4" "s+4s4s8r+ssrs8" ]
+[ "!%g0" "s4s4s8ss+t4" "s+4s4s8r+ssrs8" ]
 ## 51
-[ [j1,405] ]
+[ 'j1,405' ]
 ;
 
 {5} %e1

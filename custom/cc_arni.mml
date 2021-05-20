@@ -1,8 +1,10 @@
-#TITLE Arni Village
+#TITLE Arni (Home World)
 #ALBUM Chrono Cross
 #COMPOSER Yasunori Mitsuda
 #ARRANGED Gi Nattak & emberling
 # Converted from binary by mfvitools
+
+#SHORTNAME CC Arni (Home)
 
 #WAVE 0x20 -- 0x34 guitar
 #WAVE 0x21 -- 0x62 strings
@@ -13,13 +15,13 @@
 #def guitar= |0 o5
 #def strings= |1 o4 %r3
 #def piccolo= |2 o3
-#def bass= |3 o6 %s3 %r10
+#def bass= |3 o6 %y0%s3 %r10
 
-#def gv= v60
-#def fv= v48
-#def sv= v18
-#def bv= v112
-#def sf= v100,18
+#def gv= v68
+#def fv= v52
+#def sv= v20
+#def bv= v96
+#def sf= v100,20
 #def sa= 'sv*v.4''sf'
 
 #cdef ( %l1
@@ -105,7 +107,7 @@ r1r1r1"c1^1^1 ^1^1^1 ^1.c1.^2.c24"
 
 l16
 {3}
-l16'bv'p64%e1 
+l16'bv'p64%e0
 'bass-o3' r8a+8<
 $8 d+2  ^8d+8>g+2^4  
 <d+2^8d+8>g+4  ^8<d+8a+8g+8d+2  ^8d+8>g+2^4  a+2<f8^^32r32d+2  

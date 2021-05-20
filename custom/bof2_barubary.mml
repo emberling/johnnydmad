@@ -16,7 +16,7 @@
 #WAVE 0x2D 0x4D ## Tom
 
 
-#def init= t179 %x220 %v20 %b0,70 %f0,0
+#def init= t179 %x220 %v40 %b0,70 %f0,0
 
 #def synthSustain=      %r0
 #def synthRelease=      %r24
@@ -27,33 +27,33 @@
 #def distorsionSustain= %r0
 #def distorsionRelease= %r26
 
-#def leadSynthVol=  v50
+#def leadSynthVol=  v80
 #def layerSynthVol= 'leadSynthVol*v.92'
 #def echoSynthVol=  'leadSynthVol*v.5'
-#def bassVol=       v50
-#def stringsVol=    v50
-#def distorsionVol= v40
+#def bassVol=       v65
+#def stringsVol=    v65
+#def distorsionVol= v55
 
 
 #def synth= |0 o4
 
-#def leadSynth=  'synth' 'leadSynthVol'  p64  'synthSustain'      m0,18,231
-#def layerSynth= 'synth' 'layerSynthVol' p40  'synthSustain'      m0,18,231
-#def echoSynth=  'synth' 'echoSynthVol'  p87  'synthSustain'      m0,18,231
-#def bass=       |3 o7   'bassVol'       p64  'bassSustain'       m
-#def strings=    |2 o5   'stringsVol'    p27  'stringsSustain'    m0,18,231
-#def distorsion= |1 o7   'distorsionVol' p100 'distorsionSustain' m48,18,231
+#def leadSynth=  'synth' 'leadSynthVol'  p64  'synthSustain'      m0,18,231  %e1
+#def layerSynth= 'synth' 'layerSynthVol' p40  'synthSustain'      m0,18,231  %e1
+#def echoSynth=  'synth' 'echoSynthVol'  p87  'synthSustain'      m0,18,231  %e1
+#def bass=       |3 o7   'bassVol'       p64  'bassSustain'       m          %e0
+#def strings=    |2 o5   'stringsVol'    p27  'stringsSustain'    m0,18,231  %e1
+#def distorsion= |1 o7   'distorsionVol' p100 'distorsionSustain' m48,18,231 %e1
 
-#drum "k"=5g  |8  v60  p64
-#drum "s"=6d  |9  v60  p64
-#drum "t"=4g  |D  v80  p10
-#drum "u"=5c+ |D  v80  p64
-#drum "v"=5g  |D  v80  p117
+#drum "k"=5g  |8  v60  p64  %e0
+#drum "s"=6d  |9  v80  p64  %e1
+#drum "t"=4g  |D  v80  p10  %e1
+#drum "u"=5c+ |D  v80  p64  %e1
+#drum "v"=5g  |D  v80  p117 %e1
 
-#drum "h"=5a  |B  v50  p107
-#drum "o"=5f- |C  v70  p107
-#drum "c"=5g  |A  v110 p15
-
+#drum "h"=5a  |B  v50  p107 %e1
+#drum "o"=5f- |C  v70  p107 %e1
+#drum "c"=5g  |A  v110 p15  %e1 %r14
+#drum "r"=5^                    %r18
 
 {1}
 'init'
@@ -186,17 +186,21 @@ c8'stringsRelease'^8'stringsSustain'> [8 bg]
 
 {5}
 ## Cymbals, originally track 2
-"c2.c2.c4c4c1^1"
+#"c2.c2.c4c4c1^1"
+"c16r8.^2 c16r8.^2 c16r8. c16r8. c16r1...."
 $
 ## Cymbals, originally track 2
 "!!!o"
 l8
 ## 5
-"c2" [27 "h"] "o"
+#"c2" [27 "h"] "o"
+"c16r4.." [27 "h"] "o"
 ## 9
-"c2" [24 "h"]^2
+#"c2" [24 "h"]^2
+"c16r4.." [24 "h"]^2
 ## 13
-"c2.c2.c2.c4c4c4c4"
+#"c2.c2.c2.c4c4c4c4"
+[3"c16r8.^2"][4"c16r8."]
 ;
 
 
@@ -293,3 +297,9 @@ g+'synthRelease'^8'synthSustain'ba16'synthRelease'^16'synthSustain'b<c16'synthRe
 ## 16
 ef
 ;
+
+## * EDITOR COMMENTS
+## Added missing echo param to instrument macros. Adjusted global echo param
+## Raised snare and non-percussion volume by around 30% (60% for lead). The original has a sort of overcompressed "wall of sound" feel to me, and while I don't want to mimic that exactly, we still want to have a lot of punch.
+## Gave cymbal a two-stage decay, more or less imitating original's behavior and addressing an issue in submitted version where the cymbal was interrupted without decaying sufficiently.
+## - emberling

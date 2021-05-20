@@ -202,400 +202,398 @@ ct_tension:     assault
 
 #mass importing legacy files for chaos only:
 [Legacy]
-blord_2tower:     chaos, prelude, falcon, ruin
-blord_ruins:      chaos, prelude, falcon, ruin
-bl_fahrenheit:    chaos, prelude, falcon, ruin
-bl_rebels:        chaos, prelude, falcon, ruin
-bof1_dawn:        chaos, prelude, falcon, ruin
-bof2_battle:      chaos, prelude, falcon, ruin
-bof2_dragnier:    chaos, prelude, falcon, ruin
-bof2_town:        chaos, prelude, falcon, ruin
-bof2_wander:      chaos, prelude, falcon, ruin
-cc_arni:          chaos, prelude, falcon, ruin
-cc_dragonia:      chaos, prelude, falcon, ruin
-cc_flame:         chaos, prelude, falcon, ruin
-cc_harle:         chaos, prelude, falcon, ruin
-cc_home:          chaos, prelude, falcon, ruin
-cc_hydra:         chaos, prelude, falcon, ruin
-cc_life:          chaos, prelude, falcon, ruin
-cc_miguel:        chaos, prelude, falcon, ruin
-cc_pyre:          chaos, prelude, falcon, ruin
-cc_valley:        chaos, prelude, falcon, ruin
-cc_world2:        chaos, prelude, falcon, ruin
-crys_fields:      chaos, prelude, falcon, ruin
-crys_mountain:    chaos, prelude, falcon, ruin
-crys_tower:       chaos, prelude, falcon, ruin
-ct_600ad:         chaos, prelude, falcon, ruin
-ct_battle:        chaos, prelude, falcon, ruin
-ct_battle2:       chaos, prelude, falcon, ruin
-ct_bike:          chaos, prelude, falcon, ruin
-ct_bobonga:       chaos, prelude, falcon, ruin
-ct_boss:          chaos, prelude, falcon, ruin
-ct_boss2:         chaos, prelude, falcon, ruin
-ct_epoch:         chaos, prelude, falcon, ruin
-ct_factory:       chaos, prelude, falcon, ruin
-ct_fair:          chaos, prelude, falcon, ruin
-ct_final:         chaos, prelude, falcon, ruin
-ct_forest:        chaos, prelude, falcon, ruin
-ct_frog:          chaos, prelude, falcon, ruin
-ct_keeper:        chaos, prelude, falcon, ruin
-ct_lavos:         chaos, prelude, falcon, ruin
-ct_magus:         chaos, prelude, falcon, ruin
-ct_mountain:      chaos, prelude, falcon, ruin
-ct_night:         chaos, prelude, falcon, ruin
-ct_omen:          chaos, prelude, falcon, ruin
-ct_revolution:    chaos, prelude, falcon, ruin
-ct_rhythm:        chaos, prelude, falcon, ruin
-ct_robo:          chaos, prelude, falcon, ruin
-ct_schala:        chaos, prelude, falcon, ruin
-ct_sewer:         chaos, prelude, falcon, ruin
-ct_silent:        chaos, prelude, falcon, ruin
-ct_spekkio:       chaos, prelude, falcon, ruin
-ct_tension:       chaos, prelude, falcon, ruin
-ct_theme:         chaos, prelude, falcon, ruin
-ct_town:          chaos, prelude, falcon, ruin
-ct_trial:         chaos, prelude, falcon, ruin
-ct_truth:         chaos, prelude, falcon, ruin
-ct_tylair:        chaos, prelude, falcon, ruin
-ct_tyran:         chaos, prelude, falcon, ruin
-ct_undersea:      chaos, prelude, falcon, ruin
-ct_zeal:          chaos, prelude, falcon, ruin
-cv3_aquarius:     chaos, prelude, falcon, ruin
-cv4_beginning:    chaos, prelude, falcon, ruin
-cv4_chandeliers:  chaos, prelude, falcon, ruin
-dc2_garden:       chaos, prelude, falcon, ruin
-doom2_doom:       chaos, prelude, falcon, ruin
-ds4_dungeon:      chaos, prelude, falcon, ruin
-ds4_lyll:         chaos, prelude, falcon, ruin
-ds4_world:        chaos, prelude, falcon, ruin
-eo3_waves:        chaos, prelude, falcon, ruin
-fe15_whatlies:    chaos, prelude, falcon, ruin
-ff12_barheim:     chaos, prelude, falcon, ruin
-ff12_crystal:     chaos, prelude, falcon, ruin
-ff12_estersand:   chaos, prelude, falcon, ruin
-ff12_ozmone:      chaos, prelude, falcon, ruin
-ff12_paramina:    chaos, prelude, falcon, ruin
-ff12_prison:      chaos, prelude, falcon, ruin
-ff14_azyslla:     chaos, prelude, falcon, ruin
-ff14_battlem:     chaos, prelude, falcon, ruin
-ff1_battle:       chaos, prelude, falcon, ruin
-ff1_bossb:        chaos, prelude, falcon, ruin
-ff1_dungeon:      chaos, prelude, falcon, ruin
-ff1_matoya:       chaos, prelude, falcon, ruin
-ff2_battle2:      chaos, prelude, falcon, ruin
-ff2_battleb:      chaos, prelude, falcon, ruin
-ff2_theme:        chaos, prelude, falcon, ruin
-ff3_battle:       chaos, prelude, falcon, ruin
-ff3_darkworld:    chaos, prelude, falcon, ruin
-ff3_eureka:       chaos, prelude, falcon, ruin
-ff3_hyne:         chaos, prelude, falcon, ruin
-ff3_warrior:      chaos, prelude, falcon, ruin
-ff3_world:        chaos, prelude, falcon, ruin
-ff4_airship:      chaos, prelude, falcon, ruin
-ff4_babil:        chaos, prelude, falcon, ruin
-ff4_baron:        chaos, prelude, falcon, ruin
-ff4_battle:       chaos, prelude, falcon, ruin
-ff4_bomb:         chaos, prelude, falcon, ruin
-ff4_boss:         chaos, prelude, falcon, ruin
-ff4_calcobrena:   chaos, prelude, falcon, ruin
-ff4_cave:         chaos, prelude, falcon, ruin
-ff4_damcyan:      chaos, prelude, falcon, ruin
-ff4_giant:        chaos, prelude, falcon, ruin
-ff4_giant_remix:  chaos, prelude, falcon, ruin
-ff4_golbez:       chaos, prelude, falcon, ruin
-ff4_illusion:     chaos, prelude, falcon, ruin
-ff4_longway:      chaos, prelude, falcon, ruin
-ff4_mysidia:      chaos, prelude, falcon, ruin
-ff4_overworld:    chaos, prelude, falcon, ruin
-ff4_prologue:     chaos, prelude, falcon, ruin
-ff4_redwings:     chaos, prelude, falcon, ruin
-ff4_restless:     chaos, prelude, falcon, ruin
-ff4_rosa:         chaos, prelude, falcon, ruin
-ff4_rydia:        chaos, prelude, falcon, ruin
-ff4_somewhere:    chaos, prelude, falcon, ruin
-ff4_sorrow:       chaos, prelude, falcon, ruin
-ff4_town:         chaos, prelude, falcon, ruin
-ff4_troia:        chaos, prelude, falcon, ruin
-ff4_underworld:   chaos, prelude, falcon, ruin
-ff4_whale:        chaos, prelude, falcon, ruin
-ff4_zeromus:      chaos, prelude, falcon, ruin
-ff4_zot:          chaos, prelude, falcon, ruin
-ff5_bal:          chaos, prelude, falcon, ruin
-ff5_battle:       chaos, prelude, falcon, ruin
-ff5_boss:         chaos, prelude, falcon, ruin
-ff5_bridge:       chaos, prelude, falcon, ruin
-ff5_cave:         chaos, prelude, falcon, ruin
-ff5_curse:        chaos, prelude, falcon, ruin
-ff5_curse_tr:     chaos, prelude, falcon, ruin
-ff5_dawn:         chaos, prelude, falcon, ruin
-ff5_excastle:     chaos, prelude, falcon, ruin
-ff5_exdeath:      chaos, prelude, falcon, ruin
-ff5_final:        chaos, prelude, falcon, ruin
-ff5_home:         chaos, prelude, falcon, ruin
-ff5_hurry:        chaos, prelude, falcon, ruin
-ff5_lenna:        chaos, prelude, falcon, ruin
-ff5_library:      chaos, prelude, falcon, ruin
-ff5_mountain:     chaos, prelude, falcon, ruin
-ff5_seal:         chaos, prelude, falcon, ruin
-ff5_ship:         chaos, prelude, falcon, ruin
-ff5_theme:        chaos, prelude, falcon, ruin
-ff5_void:         chaos, prelude, falcon, ruin
-ff5_what:         chaos, prelude, falcon, ruin
-ff5_wings:        chaos, prelude, falcon, ruin
-ff5_world1:       chaos, prelude, falcon, ruin
-ff5_world2:       chaos, prelude, falcon, ruin
-ff5_world3:       chaos, prelude, falcon, ruin
-ff6_forest:       chaos, prelude, falcon, ruin
-ff6_ruin:         chaos, prelude, falcon, ruin
-ff6_town2:        chaos, prelude, falcon, ruin
-ff6_train_ext:    chaos, prelude, falcon, ruin
-ff6_zozo:         chaos, prelude, falcon, ruin
-ff7_5years:       chaos, prelude, falcon, ruin
-ff7_battle:       chaos, prelude, falcon, ruin
-ff7_boss:         chaos, prelude, falcon, ruin
-ff7_corel:        chaos, prelude, falcon, ruin
-ff7_costa:        chaos, prelude, falcon, ruin
-ff7_desert:       chaos, prelude, falcon, ruin
-ff7_gun:          chaos, prelude, falcon, ruin
-ff7_hurry:        chaos, prelude, falcon, ruin
-ff7_hurry2:       chaos, prelude, falcon, ruin
-ff7_judgment:     chaos, prelude, falcon, ruin
-ff7_materia:      chaos, prelude, falcon, ruin
-ff7_pizza:        chaos, prelude, falcon, ruin
-ff7_planet:       chaos, prelude, falcon, ruin
-ff7_rebirth:      chaos, prelude, falcon, ruin
-ff7_reunion:      chaos, prelude, falcon, ruin
-ff7_sadbar:       chaos, prelude, falcon, ruin
-ff7_snow:         chaos, prelude, falcon, ruin
-ff7_temple:       chaos, prelude, falcon, ruin
-ff7_tifa:         chaos, prelude, falcon, ruin
-ff7_weapon:       chaos, prelude, falcon, ruin
-ff8_battle:       chaos, prelude, falcon, ruin
-ff8_boss:         chaos, prelude, falcon, ruin
-ff8_heresy:       chaos, prelude, falcon, ruin
-ff8_horizon:      chaos, prelude, falcon, ruin
-ff8_laguna:       chaos, prelude, falcon, ruin
-ff8_landing:      chaos, prelude, falcon, ruin
-ff8_lion:         chaos, prelude, falcon, ruin
-ff8_mlaw:         chaos, prelude, falcon, ruin
-ff8_oath:         chaos, prelude, falcon, ruin
-ff8_triad:        chaos, prelude, falcon, ruin
-ff8_witches:      chaos, prelude, falcon, ruin
-ff8_world:        chaos, prelude, falcon, ruin
-ff9_battle:       chaos, prelude, falcon, ruin
-ff9_blackmage:    chaos, prelude, falcon, ruin
-ff9_blackwaltz:   chaos, prelude, falcon, ruin
-ff9_dali:         chaos, prelude, falcon, ruin
-ff9_extraction:   chaos, prelude, falcon, ruin
-ff9_flamenco:     chaos, prelude, falcon, ruin
-ff9_gargan:       chaos, prelude, falcon, ruin
-ff9_home:         chaos, prelude, falcon, ruin
-ff9_hunt:         chaos, prelude, falcon, ruin
-ff9_memoria:      chaos, prelude, falcon, ruin
-ff9_messenger:    chaos, prelude, falcon, ruin
-ff9_rose:         chaos, prelude, falcon, ruin
-ff9_siege:        chaos, prelude, falcon, ruin
-ff9_treno:        chaos, prelude, falcon, ruin
-ff9_world:        chaos, prelude, falcon, ruin
-ffmq_battle:      chaos, prelude, falcon, ruin
-ffmq_boss:        chaos, prelude, falcon, ruin
-ffmq_doom:        chaos, prelude, falcon, ruin
-ffmq_final:       chaos, prelude, falcon, ruin
-ffmq_forest:      chaos, prelude, falcon, ruin
-ffmq_fossil:      chaos, prelude, falcon, ruin
-ffmq_gale:        chaos, prelude, falcon, ruin
-ffmq_lava:        chaos, prelude, falcon, ruin
-ffmq_light:       chaos, prelude, falcon, ruin
-ffmq_rock:        chaos, prelude, falcon, ruin
-ffmq_tower:       chaos, prelude, falcon, ruin
-ffmq_tristam:     chaos, prelude, falcon, ruin
-ffmq_victory:     chaos, prelude, falcon, ruin
-fft_apoplexy:     chaos, prelude, falcon, ruin
-fft_apoplexy_vic: chaos, prelude, falcon, ruin
-ffx_ambition:     chaos, prelude, falcon, ruin
-ffx_battle:       chaos, prelude, falcon, ruin
-ffx_calm:         chaos, prelude, falcon, ruin
-ffx_decision:     chaos, prelude, falcon, ruin
-ffx_gagazet:      chaos, prelude, falcon, ruin
-ffx_luca:         chaos, prelude, falcon, ruin
-ffx_seymour:      chaos, prelude, falcon, ruin
-ffx_via:          chaos, prelude, falcon, ruin
-ffx_zanarkand:    chaos, prelude, falcon, ruin
-fz_port:          chaos, prelude, falcon, ruin
-fz_silence:       chaos, prelude, falcon, ruin
-fz_white1:        chaos, prelude, falcon, ruin
-gd3_desert:       chaos, prelude, falcon, ruin
-gd3_moai:         chaos, prelude, falcon, ruin
-gs_tunnel:        chaos, prelude, falcon, ruin
-gs_venus:         chaos, prelude, falcon, ruin
-iog_boss:         chaos, prelude, falcon, ruin
-iog_larai:        chaos, prelude, falcon, ruin
-iog_whispers:     chaos, prelude, falcon, ruin
-iog_womb:         chaos, prelude, falcon, ruin
-jts_stage1:       chaos, prelude, falcon, ruin
-lagoon_spirits:   chaos, prelude, falcon, ruin
-lal_boss:         chaos, prelude, falcon, ruin
-lal_labyrinth:    chaos, prelude, falcon, ruin
-lal_pogo:         chaos, prelude, falcon, ruin
-lal_psycho:       chaos, prelude, falcon, ruin
-lal_theme:        chaos, prelude, falcon, ruin
-lotr_hobbits:     chaos, prelude, falcon, ruin
-lo_battle:        chaos, prelude, falcon, ruin
-lu1_battle:       chaos, prelude, falcon, ruin
-lu1_boss:         chaos, prelude, falcon, ruin
-lu1_final:        chaos, prelude, falcon, ruin
-lu1_spoils:       chaos, prelude, falcon, ruin
-lu1_world:        chaos, prelude, falcon, ruin
-lu2_battle:       chaos, prelude, falcon, ruin
-lu2_battle3:      chaos, prelude, falcon, ruin
-lu2_boss:         chaos, prelude, falcon, ruin
-lu2_mountain:     chaos, prelude, falcon, ruin
-lu2_narvick:      chaos, prelude, falcon, ruin
-lu2_priphea:      chaos, prelude, falcon, ruin
-lu2_world:        chaos, prelude, falcon, ruin
-met3_brain:       chaos, prelude, falcon, ruin
-met3_crateria:    chaos, prelude, falcon, ruin
-met3_surface:     chaos, prelude, falcon, ruin
-mi_scummbar:      chaos, prelude, falcon, ruin
-mmx_prologue:     chaos, prelude, falcon, ruin
-ng3_defeat:       chaos, prelude, falcon, ruin
-ob_battle:        chaos, prelude, falcon, ruin
-ot_cliftlands:    chaos, prelude, falcon, ruin
-ot_oasis:         chaos, prelude, falcon, ruin
-ot_stillsnow:     chaos, prelude, falcon, ruin
-ot_sunshade:      chaos, prelude, falcon, ruin
-rd_summer:        chaos, prelude, falcon, ruin
-rs1_battle:       chaos, prelude, falcon, ruin
-rs2_heroes:       chaos, prelude, falcon, ruin
-rs3_devil2:       chaos, prelude, falcon, ruin
-rs3_getpet:       chaos, prelude, falcon, ruin
-rs3_gwain:        chaos, prelude, falcon, ruin
-rs3_julian:       chaos, prelude, falcon, ruin
-rs3_sarah:        chaos, prelude, falcon, ruin
-rs3_underwater:   chaos, prelude, falcon, ruin
-rsms_battle:      chaos, prelude, falcon, ruin
-sd1s_boss:        chaos, prelude, falcon, ruin
-sd1s_courage:     chaos, prelude, falcon, ruin
-sd1s_decision:    chaos, prelude, falcon, ruin
-sd1s_fate:        chaos, prelude, falcon, ruin
-sd1s_field:       chaos, prelude, falcon, ruin
-sd1s_risingsun:   chaos, prelude, falcon, ruin
-sd2_8bells:       chaos, prelude, falcon, ruin
-sd2_always:       chaos, prelude, falcon, ruin
-sd2_angel:        chaos, prelude, falcon, ruin
-sd2_boss:         chaos, prelude, falcon, ruin
-sd2_city:         chaos, prelude, falcon, ruin
-sd2_desert:       chaos, prelude, falcon, ruin
-sd2_dwarf:        chaos, prelude, falcon, ruin
-sd2_eternal:      chaos, prelude, falcon, ruin
-sd2_flammie:      chaos, prelude, falcon, ruin
-sd2_forest:       chaos, prelude, falcon, ruin
-sd2_forget:       chaos, prelude, falcon, ruin
-sd2_fortress:     chaos, prelude, falcon, ruin
-sd2_hope:         chaos, prelude, falcon, ruin
-sd2_intruder:     chaos, prelude, falcon, ruin
-sd2_jema:         chaos, prelude, falcon, ruin
-sd2_legend:       chaos, prelude, falcon, ruin
-sd2_lofty:        chaos, prelude, falcon, ruin
-sd2_mana:         chaos, prelude, falcon, ruin
-sd2_matango:      chaos, prelude, falcon, ruin
-sd2_memories:     chaos, prelude, falcon, ruin
-sd2_meridian:     chaos, prelude, falcon, ruin
-sd2_morning:      chaos, prelude, falcon, ruin
-sd2_popoi:        chaos, prelude, falcon, ruin
-sd2_prayer:       chaos, prelude, falcon, ruin
-sd2_prophecy:     chaos, prelude, falcon, ruin
-sd2_pureland:     chaos, prelude, falcon, ruin
-sd2_rose:         chaos, prelude, falcon, ruin
-sd2_scorpion:     chaos, prelude, falcon, ruin
-sd2_sea:          chaos, prelude, falcon, ruin
-sd2_spirit:       chaos, prelude, falcon, ruin
-sd2_star:         chaos, prelude, falcon, ruin
-sd2_steel:        chaos, prelude, falcon, ruin
-sd2_tasnica:      chaos, prelude, falcon, ruin
-sd2_thanatos:     chaos, prelude, falcon, ruin
-sd2_thick:        chaos, prelude, falcon, ruin
-sd2_thunder:      chaos, prelude, falcon, ruin
-sd2_town:         chaos, prelude, falcon, ruin
-sd2_wish:         chaos, prelude, falcon, ruin
-sd3_angels:       chaos, prelude, falcon, ruin
-sd3_blackmarket:  chaos, prelude, falcon, ruin
-sd3_charlotte:    chaos, prelude, falcon, ruin
-sd3_counterpoint: chaos, prelude, falcon, ruin
-sd3_faith:        chaos, prelude, falcon, ruin
-sd3_final3:       chaos, prelude, falcon, ruin
-sd3_flight:       chaos, prelude, falcon, ruin
-sd3_intolerance:  chaos, prelude, falcon, ruin
-sd3_mana:         chaos, prelude, falcon, ruin
-sd3_paths:        chaos, prelude, falcon, ruin
-sd3_sea:          chaos, prelude, falcon, ruin
-sd3_tension:      chaos, prelude, falcon, ruin
-sd3_winter:       chaos, prelude, falcon, ruin
-sdlm_bonds:       chaos, prelude, falcon, ruin
-sdlm_nostalgic:   chaos, prelude, falcon, ruin
-sdlm_pain:        chaos, prelude, falcon, ruin
-sdlm_snowfield:   chaos, prelude, falcon, ruin
-sf2_balrog:       chaos, prelude, falcon, ruin
-sf2_guile:        chaos, prelude, falcon, ruin
-sf2_ken:          chaos, prelude, falcon, ruin
-smb2_select:      chaos, prelude, falcon, ruin
-smrpg_battle:     chaos, prelude, falcon, ruin
-smrpg_road:       chaos, prelude, falcon, ruin
-smw_castle:       chaos, prelude, falcon, ruin
-so2_kurik:        chaos, prelude, falcon, ruin
-so2_rescue:       chaos, prelude, falcon, ruin
-so2_victory:      chaos, prelude, falcon, ruin
-so2_world1:       chaos, prelude, falcon, ruin
-so2_world1_a:     chaos, prelude, falcon, ruin
-so2_world1_b:     chaos, prelude, falcon, ruin
-spo_fight:        chaos, prelude, falcon, ruin
-st_dungeon:       chaos, prelude, falcon, ruin
-tn_evergreen:     chaos, prelude, falcon, ruin
-top_cold:         chaos, prelude, falcon, ruin
-top_freeze:       chaos, prelude, falcon, ruin
-top_harmony:      chaos, prelude, falcon, ruin
-top_mint:         chaos, prelude, falcon, ruin
-top_resur:        chaos, prelude, falcon, ruin
-top_spirit:       chaos, prelude, falcon, ruin
-top_treant:       chaos, prelude, falcon, ruin
-top_victory:      chaos, prelude, falcon, ruin
-top_world1:       chaos, prelude, falcon, ruin
-top_world3:       chaos, prelude, falcon, ruin
-totr_arrow:       chaos, prelude, falcon, ruin
-totr_battle:      chaos, prelude, falcon, ruin
-totr_ruins:       chaos, prelude, falcon, ruin
-totr_ship:        chaos, prelude, falcon, ruin
-totr_sion:        chaos, prelude, falcon, ruin
-totr_spirit:      chaos, prelude, falcon, ruin
-totr_underworld:  chaos, prelude, falcon, ruin
-totr_wind:        chaos, prelude, falcon, ruin
-totr_worlds:      chaos, prelude, falcon, ruin
-tyr_theme:        chaos, prelude, falcon, ruin
-wa_zed:           chaos, prelude, falcon, ruin
-wc2_human1:       chaos, prelude, falcon, ruin
-wc2_orc1:         chaos, prelude, falcon, ruin
-xc1_names:        chaos, prelude, falcon, ruin
-xc1_valakn:       chaos, prelude, falcon, ruin
-xc2_morardain:    chaos, prelude, falcon, ruin
-xc2_tantal:       chaos, prelude, falcon, ruin
-xcx_sylvan:       chaos, prelude, falcon, ruin
-xg_boss:          chaos, prelude, falcon, ruin
-xg_chuchu:        chaos, prelude, falcon, ruin
-xg_flight:        chaos, prelude, falcon, ruin
-xg_lahan:         chaos, prelude, falcon, ruin
-xg_mermaid:       chaos, prelude, falcon, ruin
-xg_tears:         chaos, prelude, falcon, ruin
-xg_weltall:       chaos, prelude, falcon, ruin
-ys1_wars:         chaos, prelude, falcon, ruin
-ys3_house:        chaos, prelude, falcon, ruin
-ys3_time:         chaos, prelude, falcon, ruin
-ys3_wings:        chaos, prelude, falcon, ruin
-ys4_danan:        chaos, prelude, falcon, ruin
-ys8_idance:       chaos, prelude, falcon, ruin
-zaol_overworld:   chaos, prelude, falcon, ruin
-zlttp_darkworld:  chaos, prelude, falcon, ruin
-zlttp_dungeon:    chaos, prelude, falcon, ruin
-zoot_storms:      chaos, prelude, falcon, ruin
+blord_2tower:     chaos
+blord_ruins:      chaos
+bl_fahrenheit:    chaos
+bl_rebels:        chaos
+bof1_dawn:        chaos
+bof2_battle:      chaos
+bof2_dragnier:    chaos
+bof2_town:        chaos
+bof2_wander:      chaos
+cc_arni:          chaos
+cc_dragonia:      chaos
+cc_flame:         chaos
+cc_harle:         chaos
+cc_home:          chaos
+cc_hydra:         chaos
+cc_life:          chaos
+cc_miguel:        chaos
+cc_pyre:          chaos
+cc_valley:        chaos
+cc_world2:        chaos
+crys_fields:      chaos
+crys_mountain:    chaos
+crys_tower:       chaos
+ct_600ad:         chaos
+ct_battle:        chaos
+ct_battle2:       chaos
+ct_bike:          chaos
+ct_bobonga:       chaos
+ct_boss:          chaos
+ct_boss2:         chaos
+ct_epoch:         chaos
+ct_factory:       chaos
+ct_fair:          chaos
+ct_final:         chaos
+ct_forest:        chaos
+ct_frog:          chaos
+ct_keeper:        chaos
+ct_lavos:         chaos
+ct_magus:         chaos
+ct_mountain:      chaos
+ct_night:         chaos
+ct_omen:          chaos
+ct_revolution:    chaos
+ct_rhythm:        chaos
+ct_robo:          chaos
+ct_schala:        chaos
+ct_sewer:         chaos
+ct_silent:        chaos
+ct_spekkio:       chaos
+ct_tension:       chaos
+ct_theme:         chaos
+ct_town:          chaos
+ct_trial:         chaos
+ct_truth:         chaos
+ct_tylair:        chaos
+ct_tyran:         chaos
+ct_undersea:      chaos
+ct_zeal:          chaos
+cv3_aquarius:     chaos
+cv4_beginning:    chaos
+cv4_chandeliers:  chaos
+dc2_garden:       chaos
+doom2_doom:       chaos
+ds4_dungeon:      chaos
+ds4_lyll:         chaos
+ds4_world:        chaos
+eo3_waves:        chaos
+fe15_whatlies:    chaos
+ff12_barheim:     chaos
+ff12_crystal:     chaos
+ff12_estersand:   chaos
+ff12_ozmone:      chaos
+ff12_paramina:    chaos
+ff12_prison:      chaos
+ff14_azyslla:     chaos
+ff14_battlem:     chaos
+ff1_battle:       chaos
+ff1_bossb:        chaos
+ff1_dungeon:      chaos
+ff1_matoya:       chaos
+ff2_battle2:      chaos
+ff2_battleb:      chaos
+ff2_theme:        chaos
+ff3_battle:       chaos
+ff3_darkworld:    chaos
+ff3_eureka:       chaos
+ff3_hyne:         chaos
+ff3_warrior:      chaos
+ff3_world:        chaos
+ff4_airship:      chaos
+ff4_babil:        chaos
+ff4_baron:        chaos
+ff4_battle:       chaos
+ff4_bomb:         chaos
+ff4_boss:         chaos
+ff4_calcobrena:   chaos
+ff4_cave:         chaos
+ff4_damcyan:      chaos
+ff4_giant:        chaos
+ff4_giant_remix:  chaos
+ff4_golbez:       chaos
+ff4_illusion:     chaos
+ff4_longway:      chaos
+ff4_mysidia:      chaos
+ff4_overworld:    chaos
+ff4_prologue:     chaos
+ff4_redwings:     chaos
+ff4_restless:     chaos
+ff4_rosa:         chaos
+ff4_rydia:        chaos
+ff4_somewhere:    chaos
+ff4_sorrow:       chaos
+ff4_town:         chaos
+ff4_troia:        chaos
+ff4_underworld:   chaos
+ff4_whale:        chaos
+ff4_zeromus:      chaos
+ff4_zot:          chaos
+ff5_bal:          chaos
+ff5_battle:       chaos
+ff5_boss:         chaos
+ff5_bridge:       chaos
+ff5_cave:         chaos
+ff5_curse:        chaos
+ff5_curse_tr:     chaos
+ff5_dawn:         chaos
+ff5_excastle:     chaos
+ff5_exdeath:      chaos
+ff5_final:        chaos
+ff5_home:         chaos
+ff5_hurry:        chaos
+ff5_lenna:        chaos
+ff5_library:      chaos
+ff5_mountain:     chaos
+ff5_seal:         chaos
+ff5_ship:         chaos
+ff5_theme:        chaos
+ff5_void:         chaos
+ff5_what:         chaos
+ff5_wings:        chaos
+ff5_world1:       chaos
+ff5_world2:       chaos
+ff5_world3:       chaos
+ff6_forest:       chaos
+ff6_ruin:         chaos
+ff6_town2:        chaos
+ff6_train_ext:    chaos
+ff6_zozo:         chaos
+ff7_5years:       chaos
+ff7_battle:       chaos
+ff7_boss:         chaos
+ff7_corel:        chaos
+ff7_costa:        chaos
+ff7_desert:       chaos
+ff7_gun:          chaos
+ff7_hurry:        chaos
+ff7_hurry2:       chaos
+ff7_judgment:     chaos
+ff7_materia:      chaos
+ff7_pizza:        chaos
+ff7_planet:       chaos
+ff7_rebirth:      chaos
+ff7_reunion:      chaos
+ff7_sadbar:       chaos
+ff7_snow:         chaos
+ff7_temple:       chaos
+ff7_tifa:         chaos
+ff7_weapon:       chaos
+ff8_battle:       chaos
+ff8_boss:         chaos
+ff8_heresy:       chaos
+ff8_horizon:      chaos
+ff8_laguna:       chaos
+ff8_landing:      chaos
+ff8_lion:         chaos
+ff8_mlaw:         chaos
+ff8_oath:         chaos
+ff8_triad:        chaos
+ff8_witches:      chaos
+ff8_world:        chaos
+ff9_battle:       chaos
+ff9_blackmage:    chaos
+ff9_blackwaltz:   chaos
+ff9_dali:         chaos
+ff9_extraction:   chaos
+ff9_flamenco:     chaos
+ff9_gargan:       chaos
+ff9_home:         chaos
+ff9_hunt:         chaos
+ff9_memoria:      chaos
+ff9_messenger:    chaos
+ff9_rose:         chaos
+ff9_siege:        chaos
+ff9_treno:        chaos
+ff9_world:        chaos
+ffmq_battle:      chaos
+ffmq_boss:        chaos
+ffmq_doom:        chaos
+ffmq_final:       chaos
+ffmq_forest:      chaos
+ffmq_fossil:      chaos
+ffmq_gale:        chaos
+ffmq_lava:        chaos
+ffmq_light:       chaos
+ffmq_rock:        chaos
+ffmq_tower:       chaos
+ffmq_tristam:     chaos
+ffmq_victory:     chaos
+fft_apoplexy:     chaos
+fft_apoplexy_vic: chaos
+ffx_ambition:     chaos
+ffx_battle:       chaos
+ffx_calm:         chaos
+ffx_decision:     chaos
+ffx_gagazet:      chaos
+ffx_luca:         chaos
+ffx_via:          chaos
+ffx_zanarkand:    chaos
+fz_port:          chaos
+fz_silence:       chaos
+fz_white1:        chaos
+gd3_desert:       chaos
+gd3_moai:         chaos
+gs_tunnel:        chaos
+gs_venus:         chaos
+iog_boss:         chaos
+iog_larai:        chaos
+iog_whispers:     chaos
+iog_womb:         chaos
+jts_stage1:       chaos
+lagoon_spirits:   chaos
+lal_boss:         chaos
+lal_labyrinth:    chaos
+lal_pogo:         chaos
+lal_psycho:       chaos
+lal_theme:        chaos
+lotr_hobbits:     chaos
+lo_battle:        chaos
+lu1_battle:       chaos
+lu1_boss:         chaos
+lu1_final:        chaos
+lu1_spoils:       chaos
+lu1_world:        chaos
+lu2_battle:       chaos
+lu2_battle3:      chaos
+lu2_boss:         chaos
+lu2_mountain:     chaos
+lu2_narvick:      chaos
+lu2_priphea:      chaos
+lu2_world:        chaos
+met3_brain:       chaos
+met3_crateria:    chaos
+met3_surface:     chaos
+mi_scummbar:      chaos
+mmx_prologue:     chaos
+ng3_defeat:       chaos
+ob_battle:        chaos
+ot_cliftlands:    chaos
+ot_oasis:         chaos
+ot_stillsnow:     chaos
+ot_sunshade:      chaos
+rd_summer:        chaos
+rs1_battle:       chaos
+rs2_heroes:       chaos
+rs3_devil2:       chaos
+rs3_getpet:       chaos
+rs3_gwain:        chaos
+rs3_julian:       chaos
+rs3_sarah:        chaos
+rs3_underwater:   chaos
+rsms_battle:      chaos
+sd1s_boss:        chaos
+sd1s_courage:     chaos
+sd1s_decision:    chaos
+sd1s_fate:        chaos
+sd1s_field:       chaos
+sd1s_risingsun:   chaos
+sd2_8bells:       chaos
+sd2_always:       chaos
+sd2_angel:        chaos
+sd2_boss:         chaos
+sd2_city:         chaos
+sd2_desert:       chaos
+sd2_dwarf:        chaos
+sd2_eternal:      chaos
+sd2_flammie:      chaos
+sd2_forest:       chaos
+sd2_forget:       chaos
+sd2_fortress:     chaos
+sd2_hope:         chaos
+sd2_intruder:     chaos
+sd2_jema:         chaos
+sd2_legend:       chaos
+sd2_lofty:        chaos
+sd2_mana:         chaos
+sd2_matango:      chaos
+sd2_memories:     chaos
+sd2_meridian:     chaos
+sd2_morning:      chaos
+sd2_popoi:        chaos
+sd2_prayer:       chaos
+sd2_prophecy:     chaos
+sd2_pureland:     chaos
+sd2_rose:         chaos
+sd2_scorpion:     chaos
+sd2_sea:          chaos
+sd2_spirit:       chaos
+sd2_star:         chaos
+sd2_steel:        chaos
+sd2_tasnica:      chaos
+sd2_thanatos:     chaos
+sd2_thick:        chaos
+sd2_thunder:      chaos
+sd2_town:         chaos
+sd2_wish:         chaos
+sd3_angels:       chaos
+sd3_blackmarket:  chaos
+sd3_charlotte:    chaos
+sd3_counterpoint: chaos
+sd3_faith:        chaos
+sd3_final3:       chaos
+sd3_flight:       chaos
+sd3_intolerance:  chaos
+sd3_mana:         chaos
+sd3_paths:        chaos
+sd3_sea:          chaos
+sd3_tension:      chaos
+sd3_winter:       chaos
+sdlm_bonds:       chaos
+sdlm_nostalgic:   chaos
+sdlm_pain:        chaos
+sdlm_snowfield:   chaos
+sf2_balrog:       chaos
+sf2_guile:        chaos
+sf2_ken:          chaos
+smb2_select:      chaos
+smrpg_battle:     chaos
+smrpg_road:       chaos
+smw_castle:       chaos
+so2_kurik:        chaos
+so2_rescue:       chaos
+so2_victory:      chaos
+so2_world1:       chaos
+so2_world1_a:     chaos
+so2_world1_b:     chaos
+spo_fight:        chaos
+st_dungeon:       chaos
+tn_evergreen:     chaos
+top_cold:         chaos
+top_freeze:       chaos
+top_harmony:      chaos
+top_mint:         chaos
+top_resur:        chaos
+top_spirit:       chaos
+top_treant:       chaos
+top_victory:      chaos
+top_world1:       chaos
+top_world3:       chaos
+totr_arrow:       chaos
+totr_battle:      chaos
+totr_ruins:       chaos
+totr_ship:        chaos
+totr_sion:        chaos
+totr_spirit:      chaos
+totr_underworld:  chaos
+totr_wind:        chaos
+totr_worlds:      chaos
+tyr_theme:        chaos
+wa_zed:           chaos
+wc2_human1:       chaos
+wc2_orc1:         chaos
+xc1_valakn:       chaos
+xc2_morardain:    chaos
+xc2_tantal:       chaos
+xcx_sylvan:       chaos
+xg_boss:          chaos
+xg_chuchu:        chaos
+xg_flight:        chaos
+xg_lahan:         chaos
+xg_mermaid:       chaos
+xg_tears:         chaos
+xg_weltall:       chaos
+ys1_wars:         chaos
+ys3_house:        chaos
+ys3_time:         chaos
+ys3_wings:        chaos
+ys4_danan:        chaos
+ys8_idance:       chaos
+zaol_overworld:   chaos
+zlttp_darkworld:  chaos
+zlttp_dungeon:    chaos
+zoot_storms:      chaos
 
 [victory]
 ff4_fanfare: fanfare

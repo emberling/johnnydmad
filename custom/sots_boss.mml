@@ -3,6 +3,9 @@
 #COMPOSER Tukushi Sasaki
 #ARRANGED Rushlight
 
+#VARIANT `
+#VARIANT ~ nointro
+
 #WAVE 0x20 0x62 ## Strings
 #WAVE 0x21 0xD6 ## Moog Waveform
 #WAVE 0x22 0x99 Trumpet ## Bagpipe?
@@ -94,7 +97,7 @@
 ## Velocity runs from 0 to 126, and can be seen to multiply note volume by (velocity/126)^2
 
 {1}
-'init' %e0
+'init' %e0`
 ## Strings 1, originally channel 1
 'introStrings1-o1' l32
 'introStrings1Vol*v.36' [8gg+]
@@ -104,11 +107,12 @@
 'masterVol*%x1.28'
 'introStrings1Vol*v.82' gg+ab<c
 'introStrings1Vol*v1' de-f
+`
 $
 ## 2
 'masterVol*%x1.05'
 ## Strings 1, originally channel 1
-'earlyStrings1'
+'earlyStrings1' l32
 'earlyStrings1Vol*v.64' g4.. 'earlyStrings1Vol*v.82' g+ 'earlyStrings1Vol*v.5' g 'earlyStrings1Vol*v.64' f8. 'earlyStrings1Vol*v.82' g 'earlyStrings1Vol*v.5' f  'earlyStrings1Vol*v.64' e-8. 'earlyStrings1Vol*v.82' f 'earlyStrings1Vol*v.5' e- 
 ## 3
 'earlyStrings1Vol*v.64' d8. 'earlyStrings1Vol*v.82' e- 'earlyStrings1Vol*v.5' d
@@ -152,8 +156,9 @@ b2.. 'lateStrings1Vol*v.82' c 'lateStrings1Vol*v.73' d 'lateStrings1Vol*v.64' e-
 
 {2}
 ## Bagpipe 1, originally channel 2
-%e0 'introBagpipe1' l8
+%e0` 'introBagpipe1' l8
 r 'introBagpipe1Vol*v.36' f 'introBagpipe1Vol*v.5' e 'introBagpipe1Vol*v.64' e- d d- 'introBagpipe1Vol*v.82' c 'introBagpipe1Vol*v1' d 
+`
 $
 ## 2
 ## Oboe 1, originally channel 2
@@ -196,10 +201,11 @@ $
 
 {3}
 ## Low base, originally channel 5
-%e0 'introLowBase-o3' l8
+%e0` 'introLowBase-o3' l8
 'introLowBaseVol*v.64' g16 'introLowBaseVol*v.09' g16<
 'introLowBaseVol*v.64' g f+ 'introLowBaseVol*v.5' f 'introLowBaseVol*v.36' e e-
 'introLowBaseVol*v.64' d> 'introLowBaseVol*v.82' b
+`
 $
 ## 2
 ## Flute 1, originally channel 6
@@ -257,12 +263,13 @@ c 'lateFlute1Vol*v.57' d 'lateFlute1Vol*v.73' e- 'lateFlute1Vol*v.82' f
 
 {4}
 ## Bagpipe 2, originally channel 6
-%e0 'introBagpipe2-o1' l32
+%e0` 'introBagpipe2-o1' l32
 r16. 'introBagpipe2Vol*v.36' [8gg+] [2 'introBagpipe2Vol*v.5' g 'introBagpipe2Vol*v.25' g+] 'introBagpipe2Vol*v.64' g
 ## Flute 1, originally channel 6
 'introFlute1-o1' l32
 'introFlute1Vol*v.64' g 'introFlute1Vol*v.36' g+ 'introFlute1Vol*v.5' a 'introFlute1Vol*v.57' b<
 'introFlute1Vol*v.64' c d 'introFlute1Vol*v.73' e- 'introFlute1Vol*v.82' f
+`
 $
 ## 2
 ## Low base, originally channel 5
@@ -297,12 +304,13 @@ l8
 
 {5}
 ## Bagpipe 3, originally channel 7
-%e0 'introBagpipe3' l32
+%e0` 'introBagpipe3' l32
 'introBagpipe3Vol*v.36' [8 gg+]
 'introBagpipe3Vol*v.5'  gg+gg+
 'introBagpipe3Vol*v.64' gg+gg+
 'introBagpipe3Vol*v.82' gg+gg+
 'introBagpipe3Vol*v.64' g 'introBagpipe3Vol*v1' g+ab
+`
 $
 ## 2
 ## Strings 2, originally channel 4
@@ -339,9 +347,10 @@ l12
 
 {6}
 ## Strings 2, originally channel 3
-%e0 'introStrings2-o1' l32
+%e0` 'introStrings2-o1' l32
 r16 [10 'introStrings2Vol*v.5' g 'introStrings2Vol*v.25' g+] [3 'introStrings2Vol*v.64' g 'introStrings2Vol*v.36' g+]
 'introStrings2Vol*v.5' a 'introStrings2Vol*v.57' b 'introStrings2Vol*v.64' c 'introStrings2Vol*v.73' d
+`
 $
 ## 2
 ## Oboe 2, originally channel 3
@@ -385,8 +394,9 @@ l16
 
 {7}
 ## Bagpipe 4, originally channel 8
-%e0 'introBagpipe4' l8
+%e0` 'introBagpipe4' l8
 'introBagpipe4Vol*v.42' r d d- 'introBagpipe4Vol*v.64' c> b b- 'introBagpipe4Vol*v.82' a 'introBagpipe4Vol*v1' b
+`
 $
 ## 2
 ## Flute 2, originally channel 7
@@ -439,9 +449,10 @@ $
 
 {8}
 ## Strings 3, originally channel 4
-%e0 'introStrings3-o1' l32
+%e0` 'introStrings3-o1' l32
 [13 'introStrings3Vol*v.64' g 'introStrings3Vol*v.36' g+]
 'introStrings3Vol*v.64' g 'introStrings3Vol*v.57' g+ 'introStrings3Vol*v.64' g 'introStrings3Vol*v.73' g+ 'introStrings3Vol*v.82' a 'introStrings3Vol*v.92' b
+`
 $
 ## 2
 ## Strings 3, originally channel 8

@@ -6,12 +6,9 @@
 ########## ------------------
 #SHORTNAME OT Town Veiled in_
 
-#VARIANT !
-#VARIANT _ tr
-
 #WAVE 0x20 0x02 ~ was 0x0C piano
-#WAVE 0x21 !0x71! _0x92_ ~ was 0x69 fiddle
-#WAVE 0x22 0x21 ~ was 0x20 rhodes
+#WAVE 0x21 0x71 ~ was 0x69 fiddle
+#WAVE 0x22 0x18 ~ was 0x20 rhodes
 #WAVE 0x23 0x66 ~ was 0x0D strings-mono
 #WAVE 0x24 0x6D ~ was 0x37 jingle bells
 #WAVE 0x25 0x63 ~ was 0x94 strings-octave
@@ -28,7 +25,7 @@
 
 #def oct0= o5
 #def oct1= o4
-#def oct2= o3
+#def oct2= o4
 #def oct3= o5
 #def oct4= o5
 #def oct5= o5
@@ -52,7 +49,7 @@
 #def >= |0<
 
 {1}
-t90 %x255 %v60 %b0,100 %f0,0
+t90 %x255 %v50 %b0,100 %f0,0
 $ |6 'vol6*v.96' p64 %e1 'oct6+o2' %y1
 l2 d->a-b-f<d->a-r1<d->a-b-f3a-6<c3d-6c6>a-6f6e-3a-6f<d->a-b-f<d->a-r2f6g-6a-6b-r6<c6d-6e-f3c3d-6c6>b-r1
  'vol8*v1.27' |8 'oct8+o1' #%y0%s2
@@ -60,12 +57,12 @@ l2 d->a-b-f<d->a-r1<d->a-b-f3a-6<c3d-6c6>a-6f6e-3a-6f<d->a-b-f<d->a-r2f6g-6a-6b-
 ;
 
 {2}
-$ |0 'vol0*v.64' p64 %e1 'oct0-o1'
+$ |8 'vol8*v.64' p64 %e1 'oct8-o1'
 l6
 g-<d-g-a-2> g-<d-a-b-2 [>f<cga-2]>
-g-<d-g-a-2> g-<d-a-b-2> b-<fb-<c2>> b-<f<'<'fd-'>'c>f>
+g-<d-g-a-2> g-<d-a-b-2> b-<fb-<c2>> b-<f<fd-c>f>
 g-<d-g-a-2> g-<d-a-b-2 [>f<cga-2]>
-e-b-<fg-2>  e-<cfa-2>   b-<f<'<'cd-2'>'>> b-<f<'<'d-c>b-'>'f
+e-b-<fg-2>  e-<cfa-2>   b-<f<cd-2>> b-<f<d-c>b-f
 |7 'oct7''vol7*v.96'
 >>g-<d-g-a-2>g-<d-a-b-2[>f<cga-2]>g-<d-g-a-2>g-<d-a-b-2>b-<fb-<c3r6>>b-<f<fd-c>f l12 'vol7*v1.27'[>g-<d-g-d-b-<cd-c>b-a-d-a-][>f<ca-fa-<ce-c>a-fa-d-]>e-b-<g->b-<g-b-<d->b-g-fe->b-f<ca-ca-<ce-c>a-<c>a-e->b-<<d-c>b-fb-d-fe-d-cd->b-1
 ;
@@ -107,12 +104,12 @@ l1 'vol3*v.64' d->b-<ce-2c2d-cd-.r2
 
 {7}
 $
-$ |8 'vol8*v.4' p64 %e1 'oct8-o1'
+$ |0 'vol0*v.24' p64 %e1 'oct0-o1'
 l6
 g-<d-g-a-2> g-<d-a-b-2 [>f<cga-2]>
-g-<d-g-a-2> g-<d-a-b-2> b-<fb-<c2>> b-<f<'>'fd-'<'c>f>
+g-<d-g-a-2> g-<d-a-b-2> b-<fb-<c2>> b-<f<fd-c>f>
 g-<d-g-a-2> g-<d-a-b-2 [>f<cga-2]>
-e-b-<fg-2>  e-<cfa-2>   b-<f<'>'cd-2'<'>> b-<f<'>'d-c>b-'<'f
+e-b-<fg-2>  e-<cfa-2>   b-<f<cd-2>> b-<f<d-c>b-f
 ##measure 17-24
 |3 %e1 'vol3*v.64' p64 %a6%r2 'oct3-o2'
 l1 r2g-.f^g-^b-^

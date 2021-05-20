@@ -8,7 +8,7 @@
 #WAVE 0x20 0x01
 #WAVE 0x21 0x36
 #WAVE 0x22 0x50
-#WAVE 0x23 0x1B
+#WAVE 0x23 0x1F
 
 #def 0i=   |0
 #def 0o=   o4
@@ -27,11 +27,11 @@
 
 #def 3i=   |3
 #def 3o=   o5
-#def 3v=   v100
-#def 3f= v1,100
+#def 3v=   v70
+#def 3f= v1,70
 
 ## auto percussion  0x23
-#drum "h"= 5f
+#drum "h"= 5e %a13%r23
 
 
 {1}
@@ -126,7 +126,7 @@ d8c+8>b8g+8b8<d+8f+8g+8>a8<c+8e8f+8>e8g+8a8a+8b8a8g+8f+8
 
 
 {4}
-'3v*v.60'
+'3v*v.60' &15
 '3i' p60%e1r12'3o''3v*v1.00'" !!!o h24h24"^24"h24"'3v*v.50'"h8"'3v*v1.00'
 "h12"'3v*v.50'"h8h24"'3v*v1.00'"h12"'3v*v.50'"h24h12h24"'3v*v1.00'"h12
 "'3v*v.50'"h24"'3f*v48,1.00'"h24h24h24h24h24h24

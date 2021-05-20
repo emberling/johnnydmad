@@ -14,7 +14,7 @@
 #WAVE 0x25 0xA4 flute
 #WAVE 0x26 0x54 bass
 #WAVE 0x27 0x5C timpani
-#WAVE 0x28 0x1A snare
+#WAVE 0x28 0x1F snare
 #WAVE 0x29 0x0F trash
 #WAVE 0x2A 0x4A tom
 #WAVE 0x2C 0x2D crash
@@ -32,15 +32,15 @@
 #def bass= |6 o7 'b' %e0
 #def timp= |7 o5 'd' 
 
-#def s= v80
-#def t= v80
+#def s= v100
+#def t= v60
 #def r= v80
 #def h= v80
 #def f= v90
 #def b= v80
 #def d= v100
 
-#def tf= v1,80
+#def tf= v1,60
 #def hf= v1,80
 #def df= v1,100
 
@@ -61,9 +61,9 @@
 
 #drum "y"=5a |C p40 v88 %y0%s4%r24
 
-#drum "q"=5g |8 p50
-#drum "r"=5g |8 p50 'snv*v.3'
-#drum "s"=5g |8 p50 'snv*v.6'
+#drum "q"=5g+ |8 p50
+#drum "r"=5g+ |8 p50 'snv*v.3'
+#drum "s"=5g+ |8 p50 'snv*v.6'
 
 #drum "t"=5d |A p90 v40 
 #drum "o"=4a |A p60 v40 
@@ -166,7 +166,6 @@ r8 'st'>f+4< 'ot' [4f.r32j4r4] 'st'>f+4f+4f+4
 ;
 
 ## Recurring trombone/tuba line weaved with bass
-## If space issues arise, investigate putting this in first phrase
 $3015 l16 [5'otrp*v.9-o1' %e1 p95 f.r32 'bass-o3*v.37' %e0 p64 f.r32j5f.r32] 'strp*v.9-o2' %e1 p95 f+4
           [4'otrp*v.9-o1' %e1 p95 f.r32 j4 'bass-o3*v.37' %e0 p64 f.r32f.r32] ]
           
@@ -206,7 +205,7 @@ $ [3crr4] r8
 'strp*v.9-o1' p95 d+4d+4d+4
 [## 9
 'sstr*v.75-o1' p20 m48,18,207 l4 c.d+.f.g.g+a+
-'rtrp*v.68' p80 m48,18,202 c+.d+.f.g.g+a+
+'rtrp*v.68' p80 m48,18,202 f.g.g+.a+.<cd+
 'flute*v.41+o2' p50 m f.g.g+.a+.<c2
 ## 15
 'horn*v.6' p35 c4.>b8
@@ -318,7 +317,7 @@ $7008 l8 "!!!o mttoomm" ]
 'rtrp*v.68' p80 l16 g+rf+rr4f+r8.f+r
 [## 9
 "!!!o y1^1"
-'rtrp*v.68' p80 l4 m48,18,202 f.g.g+.a+.<cd+
+'rtrp*v.68' p80 l4 m48,18,202 c+.d+.f.g.g+a+
 'flute*v.41+o2' p50 m c+.d+.f.g.g+2
 ## 15
 "!!!o y4."

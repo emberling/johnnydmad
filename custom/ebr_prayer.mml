@@ -34,7 +34,7 @@
 #def v8= m24,18,239
 #def v16= m12,18,239
 
-#def init= t135 %x255 %v25 %b0,80
+#def init= t135 %x255 %v25 %b0,80 %f0,0
 
 #cdef ( %l1
 #cdef ) %l0

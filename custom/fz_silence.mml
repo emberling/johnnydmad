@@ -32,8 +32,8 @@
 #def v=v44
 #def b=v104
 #def t=v48
-#def s=v16
-#def h=v32
+#def s=v8
+#def h=v16
 #def o=v72
 #def c=v52
 #def g=v112
@@ -77,7 +77,7 @@ rg+a+g+<c+.d+.f+
 {2}
 r1r1
 $
-'hc+o1' p127 l1
+'sx' p96 l1
 g+ g c+ ^   d+ f+ g+ e
 ##
 c+ g+ a+
@@ -179,7 +179,7 @@ rg+a+g+<c+.d+.f+
 {7}
 r1r1
 $
-'sx+o1'> p96 l1
+'hc+o1' p127 l1
 g+ g c+ ^   d+ f+ g+ e
 ##
 c+ g+ a+

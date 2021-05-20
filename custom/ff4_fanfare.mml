@@ -8,7 +8,7 @@
 #WAVE 0x20 0x82
 #WAVE 0x21 0x51
 #WAVE 0x22 0x0A
-#WAVE 0x23 0x1A
+#WAVE 0x23 0x1F
 
 #def 0i=   |0
 #def 0o=   o5
@@ -31,7 +31,7 @@
 ## auto percussion  0x22
 #drum "h"= 5a
 ## auto percussion  0x23
-#drum "i"= 5a
+#drum "i"= 5f+
 
 
 {1}

@@ -23,7 +23,7 @@
 #WAVE 0x2E 0x6C tamvil
 #WAVE 0x2F 0x3D hihat
 
-#def init= t140 %x255 %v40 %b0,100 %f0,0
+#def init= t140 %v40 %b0,100 %f0,0
 
 #def saw= |0 'y' o5 'sawrel'
 #def str= |1 's' o5 
@@ -139,10 +139,6 @@ f.g.f e.c.e   d.e.f a+.f.e   d1..%r25^4 p
 ## 47
 ;
 
-## Lead tail iteration 1
-$111 
-     ]
-      
 {2} $ %e1
 'vox*v.423''vv''vox_slow' p40
 'vf*v192,.526' d1 'vf*v192,.611' ^1 'vf*v192,.752' ^1
@@ -341,17 +337,17 @@ r1r1r1r1 "!!!o" l16
 ;
 
 ## Bassline
-$1401 l16 [
-      'b'd'b*v.8'd'b*v.6'd'b*v.4'd j2
-      'b'd'b*v.8'd'b*v.6'd
-      'b'd8d8'b*v.6'd]
-      ]
+#$1401 l16 [
+#      'b'd'b*v.8'd'b*v.6'd'b*v.4'd j2
+#      'b'd'b*v.8'd'b*v.6'd
+#      'b'd8d8'b*v.6'd]
+#      ]
 ## Clavi
-$1531 l16 [
-      'c'd'c*v.8'd'c*v.6'd'c*v.4'd j2
-      'c'd'c*v.8'd'c*v.6'd
-      'c'd8d8'c*v.6'd]
-      ]
+#$1531 l16 [
+#      'c'd'c*v.8'd'c*v.6'd'c*v.4'd j2
+#      'c'd'c*v.8'd'c*v.6'd
+#      'c'd8d8'c*v.6'd]
+#      ]
       
 ##def ptn_bass= [j1,1401]
 ##def ptn_clav= [j1,1531]
@@ -361,5 +357,3 @@ $1531 l16 [
 
 #def ptn_bass= 'b'd16'b*v.8'd16'b*v.6'd16'b*v.4'd16 'b'd16'b*v.8'd16'b*v.6'd16 'b'd8d8'b*v.6'd16 'b'd16'b*v.8'd16'b*v.6'd16'b*v.4'd16
 #def ptn_clav= 'c'd16'c*v.8'd16'c*v.6'd16'c*v.4'd16 'c'd16'c*v.8'd16'c*v.6'd16 'c'd8d8'c*v.6'd16 'c'd16'c*v.8'd16'c*v.6'd16'c*v.4'd16
-
-##def ptn_bass= [8d8]
