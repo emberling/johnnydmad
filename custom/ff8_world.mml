@@ -15,7 +15,7 @@
 #def oboe= |1 o5 'o' %r7 m48,18,207
 #def clari= |2 o5 'c' %r6 m48,18,223
 #def bsn= |3 o5 'b' %r5 m48,18,199
-#def steel= |4 o4 's' m
+#def steel= |4 o5 's' m
 #def mba= |5 o5 'm' m
 #def flute= |6 o4 'f' %r8 m48,18,215
 

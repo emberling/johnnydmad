@@ -134,7 +134,7 @@ class Tracklist:
             pool = [p for p in pool if song_usage_id(p) not in used_song_names]
         if len(pool) < 1:
             print(f"info: pool for {name} is empty, rerolling tracklist")
-            #input() #debug, #TODO remove
+            # input() #debug, #TODO remove
             return False
         song = random.choice(pool)
         
@@ -812,9 +812,9 @@ def process_music(inrom, meta={}, f_chaos=False, f_battle=True, opera=None, even
                         
         # battle
         progression = {}
-        already_added = set()
         progression['battle'] = ["battle", "bat2", "bat3", "bat4"]
         progression['boss'] = ["mboss", "boss", "atma", "dmad5"]
+        already_added = set()
         for cat, order in progression.items():
             prog_attempts = 0
             while prog_attempts < 1000:
@@ -828,7 +828,7 @@ def process_music(inrom, meta={}, f_chaos=False, f_battle=True, opera=None, even
                     if track not in track_pools:
                         prog_attempts = 1000
                         break
-                    track_pool = [s for s in track_pools[track] if s not in temp_used_song_names and s not in already_added and intensitytable[cat][s] >= prog_level and intensitytable[cat][s] <= prog_max]
+                    track_pool = [s for s in track_pools[track] if song_usage_id(s) not in temp_used_song_names and intensitytable[cat][s] >= prog_level and intensitytable[cat][s] <= prog_max]
                     # choose one; if no options retry
                     if not track_pool:
                         prog_attempts += 1
@@ -839,8 +839,8 @@ def process_music(inrom, meta={}, f_chaos=False, f_battle=True, opera=None, even
                     else:
                         prog_level = intensitytable[cat][choice]
                     prog_choices[i] = (choice)
-                    temp_used_song_names.add(choice)
-                    #print(f"prog: {track} - chose {choice} at intensity {prog_level} from pool {track_pool}")
+                    temp_used_song_names.add(song_usage_id(choice))
+                    # print(f"prog: {track} - chose {choice} at intensity {prog_level} from pool {track_pool}")
                 if len(prog_choices) == len(order):
                     break
             # add to tracklist

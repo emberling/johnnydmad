@@ -30,7 +30,7 @@
 23: 23_ff6_marimb             , 5406  , A960  , FFEC    , {195}  [   ] Marimba
 24: 24_smr_marimb             , F300  , -0.25 , FFF4    , {36}   [   ] Marimba LQ
 25: 25_rh_xylo                , CE07  , -2.210, F 3 1 0A, {226}  [   ] Xylophone
-26: 26_smr_steeld             , F207  , +4.773, FFD3    , {229}  [+12] Steel Drum
+26: 26_smr_steeld             , F207  , A8A6  , FFD3    , {229}  [   ] Steel Drum
 27: 27_rs1_bell               , D104  , E300  , FFF2    , {141}  [+12] Melodic Bell
 28: 28_ff7_tbell              , @268bl, *0.505, FFEB    , {317}  [+12] Tubular Bell
 29: 29_sd2_tbell              , 3B01  , F200  , FF8D    , {49}   [+12] T.Bell Alt.
