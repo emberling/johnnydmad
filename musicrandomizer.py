@@ -114,9 +114,9 @@ class Tracklist:
             return True
         return False
         
-    def add_direct(self, name, mml):
+    def add_direct(self, name, mml, path=""):
         self[name] = TracklistEntry(name)
-        self[name].file = ""
+        self[name].file = os.path.join(path, f"_VIRTUAL_{name}")
         self[name].mml = mml
         
     def add_fixed(self, name):
@@ -246,6 +246,24 @@ def init_playlist(fn=DEFAULT_PLAYLIST_FILE):
                 playlist_map[k] = v
     return playlist_map, tierboss_pool
 
+def init_instmap():
+    if not instmap:
+        sample_parser = configparser.ConfigParser()
+        sample_parser.read(resource_path(os.path.join(TABLE_PATH,'brr_samples.txt')))
+        for k, v in sample_parser.items("Samples"):
+            try:
+                instmap[int(k, 16)] = v
+            except ValueError:
+                print(f"warning: invalid entry {k} in brr_samples.txt")
+    if not legacy_instmap:
+        legacy_parser = configparser.ConfigParser()   
+        legacy_parser.read(resource_path(os.path.join(TABLE_PATH,'brr_legacy.txt')))
+        for k, v in legacy_parser.items("Samples"):
+            try:
+                legacy_instmap[int(k, 16)] = v
+            except ValueError:
+                print(f"warning: invalid entry {k} in brr_legacy.txt")
+            
 def get_jukebox_title(mml, fn):
     n = re.search("(?<=#SHORTNAME )([^;\n]*)", mml, re.IGNORECASE)
     if n:
@@ -324,6 +342,11 @@ def add_to_spoiler(track, mml=None, fn=None, tl=None):
     
     tracklist_spoiler[id] = (track, fn, variant, text)
     
+def get_legacy_import(id, subpath=None):
+    set_subpath(subpath)
+    init_instmap()
+    return os.path.join("dummy", LEGACY_LOADBRR_PATH, legacy_instmap[id])
+        
 def append_legacy_imports(mml, iset, raw_inst=False):
     if raw_inst:
         inst = []
@@ -334,14 +357,7 @@ def append_legacy_imports(mml, iset, raw_inst=False):
     else:
         inst = iset
         
-    if not legacy_instmap:
-        legacy_parser = configparser.ConfigParser()   
-        legacy_parser.read(resource_path(os.path.join(TABLE_PATH,'brr_legacy.txt')))
-        for k, v in legacy_parser.items("Samples"):
-            try:
-                legacy_instmap[int(k, 16)] = v
-            except ValueError:
-                pass
+    init_instmap()
                 
     appendix = ""
     for i, id in enumerate(inst):
@@ -352,18 +368,12 @@ def append_legacy_imports(mml, iset, raw_inst=False):
     
 brr_size_cache = {}
 
-def get_spc_memory_usage(mml, custompath=CUSTOM_MUSIC_PATH, variant="_default_"):
+def get_spc_memory_usage(mml, subpath=None, custompath=CUSTOM_MUSIC_PATH, variant="_default_"):
+    set_subpath(subpath)
+    init_instmap()
+    
     raw_iset = mml_to_akao(mml, variant=variant, inst_only=True)
     imports = get_brr_imports(mml, variant)
-    
-    if not instmap:
-        sample_parser = configparser.ConfigParser()
-        sample_parser.read(resource_path(os.path.join(TABLE_PATH, 'brr_samples.txt')))
-        for k, v in sample_parser.items("Samples"):
-            try:
-                instmap[int(k, 16)] = v
-            except ValueError:
-                pass
     
     brrsize = []
     for i in range(0x10):
@@ -371,7 +381,7 @@ def get_spc_memory_usage(mml, custompath=CUSTOM_MUSIC_PATH, variant="_default_")
         fn = None
         if prgid in imports:
             fn = imports[prgid][0].strip()
-            fn = os.path.join(custompath, fn)
+            fn = fallback_path(os.path.join(custompath, fn))
         else:
             brrid = raw_iset[i*2]
             if brrid:
@@ -637,11 +647,7 @@ def generate_tierboss_mml(pool):
 
 instmap, legacy_instmap = {}, {}
 
-def process_music(inrom, meta={}, f_chaos=False, f_battle=True, opera=None, eventmodes="", playlist_filename=DEFAULT_PLAYLIST_FILE, subpath=None, freespace=JOHNNYDMAD_FREESPACE, pool_test=False):
-    global used_song_names
-    global used_sample_ids
-    global tracklist
-    global tracklist_spoiler
+def set_subpath(subpath):
     global SUBPATH
     global BASEPATH
     
@@ -650,22 +656,18 @@ def process_music(inrom, meta={}, f_chaos=False, f_battle=True, opera=None, even
         if os.path.isabs(subpath):
             BASEPATH = subpath
             
-    # -- load sample configs for normal/legacy
-    sample_parser = configparser.ConfigParser()
-    sample_parser.read(resource_path(os.path.join(TABLE_PATH,'brr_samples.txt')))
-    for k, v in sample_parser.items("Samples"):
-        try:
-            instmap[int(k, 16)] = v
-        except ValueError:
-            print(f"warning: invalid entry {k} in brr_samples.txt")
+def process_music(inrom, meta={}, f_chaos=False, f_battle=True, opera=None, eventmodes="", playlist_filename=DEFAULT_PLAYLIST_FILE, subpath=None, freespace=JOHNNYDMAD_FREESPACE, pool_test=False):
+    global used_song_names
+    global used_sample_ids
+    global tracklist
+    global tracklist_spoiler
+    global SUBPATH
+    global BASEPATH
+    
+    set_subpath(subpath)
             
-    legacy_parser = configparser.ConfigParser()   
-    legacy_parser.read(resource_path(os.path.join(TABLE_PATH,'brr_legacy.txt')))
-    for k, v in legacy_parser.items("Samples"):
-        try:
-            legacy_instmap[int(k, 16)] = v
-        except ValueError:
-            print(f"warning: invalid entry {k} in brr_legacy.txt")
+    # -- load sample configs for normal/legacy
+    init_instmap()
     
     # -- load map of categories for tracks (i.e. which pool of songs applies to each track)
     try:
@@ -863,19 +865,22 @@ def process_music(inrom, meta={}, f_chaos=False, f_battle=True, opera=None, even
                     tracklist.add_fixed(track)
                 continue
             elif category == "opera":
+                print(f"cat is opera for {tracks}")
+                print(opera)
                 for track in tracks:
                     if opera:
                         if track in opera:
-                            tracklist.add_direct(opera[track])
+                            tracklist.add_direct(track, opera[track], path=CUSTOM_MUSIC_PATH)
                         else:
                             print(f"warning: expected alasdraco info for {track} not present")
                             tracklist.add_fixed(track)
                     else:
+                        print(f"{track} - nope-ra")
                         tracklist.add_fixed(track)
                 continue
             elif category == "tierboss":
                 for track in tracks:
-                    tracklist.add_direct(track, tierboss_mml)
+                    tracklist.add_direct(track, tierboss_mml, path=TIERBOSS_MUSIC_PATH)
                 continue
             # 'ext' uses default's pool, it's just a marker to allow excluding those tracks
             elif category == "ext":
