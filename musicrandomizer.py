@@ -865,8 +865,6 @@ def process_music(inrom, meta={}, f_chaos=False, f_battle=True, opera=None, even
                     tracklist.add_fixed(track)
                 continue
             elif category == "opera":
-                print(f"cat is opera for {tracks}")
-                print(opera)
                 for track in tracks:
                     if opera:
                         if track in opera:
@@ -875,7 +873,6 @@ def process_music(inrom, meta={}, f_chaos=False, f_battle=True, opera=None, even
                             print(f"warning: expected alasdraco info for {track} not present")
                             tracklist.add_fixed(track)
                     else:
-                        print(f"{track} - nope-ra")
                         tracklist.add_fixed(track)
                 continue
             elif category == "tierboss":
