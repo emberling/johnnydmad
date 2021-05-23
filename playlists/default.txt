@@ -215,7 +215,6 @@ bl_fahrenheit:  fanfare, grandfinale, setzer, locke, figaro, returners, savethem
 bl_fahrenheit_nointro: prelude, chocobo, blackjack*2, falcon, mount2, serpent
 bl_rebels:      fanfare, locke, figaro, returners, savethem
 blord_2tower:   setzer, locke, chocobo, blackjack, johnny, falcon*2, mount2
-blord_ruins:    train, gate, ancient*2, magitek*2, engine, phoenix
 bof1_dawn:      prelude, omen3*2, falcon, serpent*2
 bof2_battle:    I65, G05, unforgiven, grandfinale, battle, bat2, mboss
 bof2_dragnier:  espers, strago, town_ruin, serpent*2, tomb, ancient, gate*2, dream
@@ -235,8 +234,8 @@ ct_bike:        I99, G10, battle, grandfinale, unforgiven, johnny, chocobo*2, se
 ct_boss:        I99, G30, boss, unforgiven, grandfinale, magitek
 ct_boss2:       I95, G75, atma*2, metamorphosis, grandfinale, catastrophe
 ct_epoch:       prelude, setzer, chocobo, blackjack*2, johnny, serpent, falcon
-ct_fair:        johnny, spinachrag, moogles*2, town, village
 ct_factory:     zozo, narshe, martiallaw, engine, magitek*2
+ct_fair:        johnny, spinachrag, moogles*2, town, village
 ct_frog:        fanfare, cyan*2, returners
 ct_keeper:      espers, fanatics, ruin, dream, gate, ancient
 ct_lavos:       metamorphosis, catastrophe*2
