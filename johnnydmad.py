@@ -6,13 +6,16 @@ import sys
 from collections import Counter
 from operator import itemgetter
 
-sys.path.append(os.path.dirname(__file__))
-sys.path.append(os.path.join(os.path.dirname(__file__), "mfvitools"))
+try:
+    from .musicrandomizer import *
+    from .mfvitools.insertmfvi import byte_insert, int_insert
+    from .mfvitools.mml2mfvi import mml_to_akao
+except ImportError:
+    from musicrandomizer import *
+    from mfvitools.insertmfvi import byte_insert, int_insert
+    from mfvitools.mml2mfvi import mml_to_akao
 
-from musicrandomizer import *
-from insertmfvi import byte_insert, int_insert
-from mml2mfvi import mml_to_akao
-
+    
 ## TO DO LIST (* = essentially complete)
 # * finish ripping FF6 vanilla songs
 # * opera mode - johnnydmad side

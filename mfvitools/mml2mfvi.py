@@ -1,7 +1,10 @@
 #!/usr/bin/env python3
 
 import sys, os, re, traceback, copy, math
-from mmltbl import *
+try:
+    from mmltbl import *
+except ImportError:
+    from .mmltbl import *
 
 mml_log = "\n" if __name__ == "__main__" else None
 
@@ -14,7 +17,6 @@ def byte_insert(data, position, newdata, maxlength=0, end=0):
         newdata = newdata[:maxlength]
     return data[:position] + newdata + data[position+len(newdata):]
 
-    
 def int_insert(data, position, newdata, length, reversed=True):
     n = int(newdata)
     l = []

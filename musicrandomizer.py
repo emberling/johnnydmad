@@ -5,8 +5,12 @@ import random
 import re
 import sys
 
-from mml2mfvi import mml_to_akao, get_variant_list, get_brr_imports
-from insertmfvi import insertmfvi, byte_insert, int_insert, SampleIDError, FreeSpaceError
+try:
+    from .mfvitools.mml2mfvi import mml_to_akao, get_variant_list, get_brr_imports
+    from .mfvitools.insertmfvi import insertmfvi, byte_insert, int_insert, SampleIDError, FreeSpaceError
+except ImportError:
+    from mfvitools.mml2mfvi import mml_to_akao, get_variant_list, get_brr_imports
+    from mfvitools.insertmfvi import insertmfvi, byte_insert, int_insert, SampleIDError, FreeSpaceError
 
 JOHNNYDMAD_FREESPACE = ["53C5F-9FDFF", "310000-37FFFF", "410000-5FFFFF"]
 TRAIN_SAMPLE_ID = 0x3A
@@ -20,36 +24,24 @@ PLAYLIST_PATH = 'playlists'
 TABLE_PATH = 'tables'
 DEFAULT_PLAYLIST_FILE = 'default.txt'
 LEGACY_LOADBRR_PATH = "../../samples/"
-
+BASEPATH = os.getcwd()
+SUBPATH = ""
 # For LEGACY_LOADBRR_PATH, note that the filenames from tables/legacy.txt that
 #   are appended to this already contain the "legacy/" bit. Path is relative
 #   to LEGACY_MUSIC_PATH. OS-specific separators are handled later, '/' is
 #   fine here.
 
-def initialize():
-    global BASEPATH, SUBPATH
-    global used_sample_ids, used_song_names, track_id_names, track_name_ids
-    global windy_intro, SFXTRACKS, APPENDTRACKS, LONGTRACKS
-    global tracklist_spoiler
-    global instmap, legacy_instmap
+used_sample_ids = set()
+used_song_names = set()
+track_id_names = {}
+track_name_ids = {}
     
-    BASEPATH = os.getcwd()
-    SUBPATH = ""
-    
-    used_sample_ids = set()
-    used_song_names = set()
-    track_id_names = {}
-    track_name_ids = {}
-        
-    windy_intro = False
-    SFXTRACKS = []
-    APPENDTRACKS = []
-    LONGTRACKS = []
-    
-    tracklist_spoiler = {}
-    
-    instmap, legacy_instmap = {}, {}
-initialize()
+windy_intro = False
+SFXTRACKS = []
+APPENDTRACKS = []
+LONGTRACKS = []
+
+tracklist_spoiler = {}
 
 # Noting some stuff that got confusing because I can't keep my terms straight
 # "Playlist" - should refer to the config file determining what songs are used and where.
@@ -58,6 +50,7 @@ initialize()
 # "Song" - A musical piece loaded from an MML file that will be placed in a track.
 # "Category" - A label set in the playlist under which a song is loaded, causing it to randomize into the tracks marked in that category (this is 'pool' atm, but so are other things..)
 # "Pool" - The list of available songs for a particular track, or possibly category
+
 
 # resource -- built in files, baked into executable
 # asset -- may be customizable files, located in folders
@@ -655,6 +648,8 @@ def generate_tierboss_mml(pool):
     return final_mml
 
 ############ main
+
+instmap, legacy_instmap = {}, {}
 
 def set_subpath(subpath):
     global SUBPATH
