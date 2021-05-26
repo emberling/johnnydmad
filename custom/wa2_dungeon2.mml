@@ -120,7 +120,7 @@
 
 #### toms - pitched for external legacy
 #drum "t"=5g+ |D v100 p64       %e0 m
-#drum "u"=5b+ |D v100 p64       %e0 m
+#drum "u"=5b- |D v100 p64       %e0 m
 #drum "v"=6c  |D v100 p64       %e0 m
 
 #drum "k"=5a  |8 v92  p75       %e0 m
