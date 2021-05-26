@@ -28,32 +28,36 @@ def warning(*a, **kw):
     # be useful in the future
     print(*a, **kw)
     
-HIROM = 0xC00000
-CONFIG = configparser.RawConfigParser({
-        'free_rom_space': '310600-380000',
-        'brrpointers': '53C5F, 53D1B',
-        'brrloops': '53D1C, 53D99',
-        'brrpitch': '53D9A, 53E17',
-        'brradsr': '53E18, 53E95',
-        'songpointers': '53E96, 53F94',
-        'instruments': '53F95, 54A34',
-        'brrpointerpointer': '50222, 50228, 5022E',
-        'brrlooppointer': '5041C',
-        'brrpitchpointer': '5049C',
-        'brradsrpointer': '504DE',
-        'songpointerpointer': '50538',
-        'instrumentpointer': '501E3',
-        'songdata': '85C7A, 9FDFF',
-        })
-freespace = None
-spoiler = {}
-args = None
-remapbrr = None
-offsets = {}
-
-MAX_BLOCKS_BASE = 3746
-EDL_OFFSET = 0x5076A
-edl = None
+def initialize():
+    global HIROM, CONFIG
+    global freespace, spoiler, args, remapbrr, offsets
+    global MAX_BLOCKS_BASE, EDL_OFFSET, edl
+    HIROM = 0xC00000
+    CONFIG = configparser.RawConfigParser({
+            'free_rom_space': '310600-380000',
+            'brrpointers': '53C5F, 53D1B',
+            'brrloops': '53D1C, 53D99',
+            'brrpitch': '53D9A, 53E17',
+            'brradsr': '53E18, 53E95',
+            'songpointers': '53E96, 53F94',
+            'instruments': '53F95, 54A34',
+            'brrpointerpointer': '50222, 50228, 5022E',
+            'brrlooppointer': '5041C',
+            'brrpitchpointer': '5049C',
+            'brradsrpointer': '504DE',
+            'songpointerpointer': '50538',
+            'instrumentpointer': '501E3',
+            'songdata': '85C7A, 9FDFF',
+            })
+    freespace = None
+    spoiler = {}
+    args = None
+    remapbrr = None
+    offsets = {}
+    MAX_BLOCKS_BASE = 3746
+    EDL_OFFSET = 0x5076A
+    edl = None
+initialize()
 
 class FreeSpaceError(Exception):
     pass
@@ -564,6 +568,7 @@ def insertmfvi(inrom, argparam=None, virt_sample_list=None, virt_seq_list=None, 
         args = argparam
         purge_original_samples = False
     else:
+        initialize()
         args = argparse.Namespace()
         args.quiet = quiet
         args.mmlfiles = None

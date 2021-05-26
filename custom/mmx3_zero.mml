@@ -4,7 +4,7 @@
 #ARRANGED Rushlight
 
 #VARIANT ! vic
-#VARIANT ~ a
+#VARIANT ~
 
 #WAVE 0x20 ~0x39~ !0x40! ## Solo Electric Guitar
 #WAVE 0x21 ~0x45~ !0x45! ## Distorsion Guitar

@@ -1,7 +1,7 @@
 import configparser
 import copy
 import os
-import random
+import random as pyrandom
 import re
 import sys
 
@@ -24,24 +24,39 @@ PLAYLIST_PATH = 'playlists'
 TABLE_PATH = 'tables'
 DEFAULT_PLAYLIST_FILE = 'default.txt'
 LEGACY_LOADBRR_PATH = "../../samples/"
-BASEPATH = os.getcwd()
-SUBPATH = ""
+
 # For LEGACY_LOADBRR_PATH, note that the filenames from tables/legacy.txt that
 #   are appended to this already contain the "legacy/" bit. Path is relative
 #   to LEGACY_MUSIC_PATH. OS-specific separators are handled later, '/' is
 #   fine here.
 
-used_sample_ids = set()
-used_song_names = set()
-track_id_names = {}
-track_name_ids = {}
+def initialize(rng=pyrandom):
+    global BASEPATH, SUBPATH
+    global used_sample_ids, used_song_names, track_id_names, track_name_ids
+    global windy_intro, SFXTRACKS, APPENDTRACKS, LONGTRACKS
+    global tracklist_spoiler
+    global instmap, legacy_instmap
+    global random
     
-windy_intro = False
-SFXTRACKS = []
-APPENDTRACKS = []
-LONGTRACKS = []
-
-tracklist_spoiler = {}
+    BASEPATH = os.getcwd()
+    SUBPATH = ""
+    
+    used_sample_ids = set()
+    used_song_names = set()
+    track_id_names = {}
+    track_name_ids = {}
+        
+    windy_intro = False
+    SFXTRACKS = []
+    APPENDTRACKS = []
+    LONGTRACKS = []
+    
+    tracklist_spoiler = {}
+    
+    instmap, legacy_instmap = {}, {}
+    
+    random = rng
+initialize()
 
 # Noting some stuff that got confusing because I can't keep my terms straight
 # "Playlist" - should refer to the config file determining what songs are used and where.
@@ -649,8 +664,6 @@ def generate_tierboss_mml(pool):
 
 ############ main
 
-instmap, legacy_instmap = {}, {}
-
 def set_subpath(subpath):
     global SUBPATH
     global BASEPATH
@@ -660,7 +673,8 @@ def set_subpath(subpath):
         if os.path.isabs(subpath):
             BASEPATH = subpath
             
-def process_music(inrom, meta={}, f_chaos=False, f_battle=True, opera=None, eventmodes="", playlist_filename=DEFAULT_PLAYLIST_FILE, subpath=None, freespace=JOHNNYDMAD_FREESPACE, pool_test=False):
+def process_music(inrom, meta={}, f_chaos=False, f_battle=True, opera=None, eventmodes="", playlist_filename=DEFAULT_PLAYLIST_FILE, subpath=None, freespace=JOHNNYDMAD_FREESPACE, pool_test=False, ext_rng=random):
+    global random
     global used_song_names
     global used_sample_ids
     global tracklist
@@ -668,6 +682,7 @@ def process_music(inrom, meta={}, f_chaos=False, f_battle=True, opera=None, even
     global SUBPATH
     global BASEPATH
     
+    random = ext_rng
     set_subpath(subpath)
             
     # -- load sample configs for normal/legacy
