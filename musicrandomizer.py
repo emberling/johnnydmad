@@ -12,7 +12,7 @@ except ImportError:
     from mfvitools.mml2mfvi import mml_to_akao, get_variant_list, get_brr_imports
     from mfvitools.insertmfvi import insertmfvi, byte_insert, int_insert, SampleIDError, FreeSpaceError
 
-JOHNNYDMAD_FREESPACE = ["53C5F-9FDFF", "310000-37FFFF", "410000-5FFFFF"]
+JOHNNYDMAD_FREESPACE = ["53C5F-9FDFF", "310000-37FFFF", "410000-4FFFFF"]
 TRAIN_SAMPLE_ID = 0x3A
 
 SAMPLE_PATH = 'samples'
@@ -612,8 +612,8 @@ def generate_tierboss_mml(pool):
                         "tier2": "222",
                         "tier3": "333"}
                 perc = {"tier1": '"',
-                        "tier2": '*',
-                        "tier3": '/'}
+                        "tier2": '«',
+                        "tier3": '»'}
                 mml = "#VARIANT ` \n#VARIANT ? ignore\n"
                 for tier in tiers:
                     v = tier.variant
@@ -639,7 +639,7 @@ def generate_tierboss_mml(pool):
                     tier.mml = re.sub("#def\s+(\S+)\s*=", f"#def {prefix[v]}\g<1>=", tier.mml, flags=re.IGNORECASE)
                     tier.mml = re.sub("'(.*?)'", f"'{prefix[v]}\g<1>'", tier.mml)
                     tier.mml = re.sub('"', perc[v], tier.mml)
-                    mml += tier.mml
+                    mml += tier.mml + "\n"
                 mml += mml_sample_text
             else:
                 mml = tiers[0].mml

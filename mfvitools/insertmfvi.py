@@ -1155,7 +1155,7 @@ def insertmfvi(inrom, argparam=None, virt_sample_list=None, virt_seq_list=None, 
         if outrom[0xFFD5] == 0x31:
             outrom = byte_insert(outrom, 0xFFD5, b"\x35")
             outrom = byte_insert(outrom, 0xFFD7, b"\x0D")
-            outrom = byte_insert(outrom, 0x408000, outrom[0x8000:0xFFFF])
+            outrom = byte_insert(outrom, 0x400000, outrom[0x0000:0xFFFF])
             warning(f"ROM mapping mode changed to ExHIROM")
     if len(outrom) != len(inrom):
         inform(f"ROM file size is now 0x{len(outrom):06X} bytes")
