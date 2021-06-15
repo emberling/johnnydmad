@@ -307,7 +307,11 @@ def get_music_spoiler():
 def add_to_spoiler(track, mml=None, fn=None, tl=None):
     song = None
     if not tl:
-        tl = tracklist
+        try:
+            tl = tracklist
+        except NameError:
+            # If we're not maintaining a tracklist, we're also not maintaining a spoiler
+            return
     if not mml:
         song = tl[track]
         mml = song.mml
@@ -350,8 +354,8 @@ def add_to_spoiler(track, mml=None, fn=None, tl=None):
     if "dm" in dir:
         dirtext += " [DM]"
     
-    indent = " " * (track_name_width - 4)
-    text = (f"{track:<{track_name_width}} -> {fn}{vartext}{dirtext}" "\n"
+    indent = " " * (track_name_width)
+    text = (f"{id:02}. {track:<{track_name_width}}-> {fn}{vartext}{dirtext}" "\n"
             + indent + f"{album} -- {title}" "\n"
             + indent + f"Composed by {composer}" "\n"
             + indent + f"Ripped and/or arranged by {arranged}" "\n")
@@ -470,11 +474,14 @@ def apply_variant(mml, type, name="", variant="_default_", check_size=False):
     
 ############ tierboss
 
-def generate_tierboss_mml(pool):
+def generate_tierboss_mml(pool, force_include=None):
     if not pool:
         print("johnnydmad: no tierboss pool present in playlist, falling back")
         return None, None
         # TODO fallback
+    if force_include and force_include not in pool:
+        print(f"note: requested tierboss file {force_include} is not in standard pool")
+        pool.add(force_include)
         
     class TierSong:
         def __init__(self, name, variant):
@@ -550,7 +557,11 @@ def generate_tierboss_mml(pool):
                     break
             if retry:
                 continue
-                
+            if force_include:
+                chosen = [tier.name for tier in tiers]
+                if force_include not in chosen:
+                    continue
+                print(f"tierboss: selected {chosen} (forced {force_include})")
             # build sample table
             # retry if n>16
             merged_sample_table = {}
