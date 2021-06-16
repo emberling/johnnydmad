@@ -843,15 +843,18 @@ def insertmfvi(inrom, argparam=None, virt_sample_list=None, virt_seq_list=None, 
                     continue
                 
                 this_sampleid = None
+                is_duplicate = False
                 for sid, smp in sorted(sample_defs.items()):
                     if imported.brr == smp.brr:
-                        inform(f"BRR-FROM-MML: Note: {relpath(seq.filename)} prg0x{k:02X} duplicates existing sample {sid:02X}")
                         if imported.loop == smp.loop and imported.tuning == smp.tuning and imported.adsr == smp.adsr:
+                            inform(f"BRR-FROM-MML: Note: {relpath(seq.filename)} prg0x{k:02X} duplicates existing sample {sid:02X}")
                             this_sampleid = sid
+                            break
                         else:
-                            inform(f"              Metadata differs. Shadowing existing sample in new ID.")
+                            is_duplicate = True
                             imported.internalid = sid
-                        break
+                if is_duplicate and not this_sampleid:
+                    inform(f"BRR-FROM-MML: Note: {relpath(seq.filename)} prg0x{k:02X} duplicates existing sample {sid:02X} (metadata differs, shadowing in new ID)")
                 if this_sampleid is None:
                     if sampleid_queue:
                         this_sampleid = sampleid_queue.pop(0)
