@@ -482,7 +482,7 @@ def generate_tierboss_mml(pool, force_include=None):
     if force_include and force_include not in pool:
         print(f"note: requested tierboss file {force_include} is not in standard pool")
         pool.add(force_include)
-        
+    tierboss_debug = False if force_include is None else True
     class TierSong:
         def __init__(self, name, variant):
             self.name = name
@@ -557,11 +557,14 @@ def generate_tierboss_mml(pool, force_include=None):
                     break
             if retry:
                 continue
-            if force_include:
+            if tierboss_debug:
                 chosen = [tier.name for tier in tiers]
-                if force_include not in chosen:
-                    continue
-                print(f"tierboss: selected {chosen} (forced {force_include})")
+                if force_include:
+                    if force_include not in chosen:
+                        continue
+                    print(f"tierboss: selected {chosen} (forced {force_include})")
+                else:
+                    print(f"tierboss: selected {chosen}")
             # build sample table
             # retry if n>16
             merged_sample_table = {}
@@ -579,6 +582,8 @@ def generate_tierboss_mml(pool, force_include=None):
                         tier.remap_table[tierid] = next_merged_id
                         next_merged_id += 1
             if next_merged_id > 0x30:
+                if tierboss_debug:
+                    print("tierboss: rejected selection (1) - too many samples")
                 continue
             #print(merged_sample_table)
             #print([t.file for t in tiers])
@@ -594,6 +599,8 @@ def generate_tierboss_mml(pool, force_include=None):
             memusage = get_spc_memory_usage(mml_sample_text, custompath=TIERBOSS_MUSIC_PATH)
             #print(memusage)
             if memusage > 3746:
+                if tierboss_debug:
+                    print("tierboss: rejected selection (2) - BRR memory overflow")
                 continue
                 
             # regex fix program changes
@@ -661,6 +668,8 @@ def generate_tierboss_mml(pool, force_include=None):
             akao = mml_to_akao(mml, str(songnames), variant="_default_")
             #print(f"{len(akao[0]):04X}")
             if len(akao[0]) > 0x1002:
+                if tierboss_debug:
+                    print("tierboss: rejected selection (3) - sequence overflow")
                 continue
             final_mml = mml
             break

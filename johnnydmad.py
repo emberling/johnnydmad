@@ -2,6 +2,7 @@ import configparser
 import os
 import re
 import sys
+import traceback
 
 from collections import Counter
 from operator import itemgetter
@@ -37,6 +38,8 @@ except ImportError:
 # - opera mode - beyondchaos side
 # - allow music sourced from ROM, if specified by host / integrate mfvi2mml
 # - allow selection of less intrusive mode(s) in jdm launcher (no event edits, e.g.)
+#       NOTE: the existing event edits remove the save point tutorial event!
+#       This has no effect on Beyond Chaos, but in an unmodified ROM, the first save point breaks!
 # - test with Gaiden
 # - test with WC
 
@@ -108,11 +111,26 @@ def johnnydmad():
 #################################
 
 def tierboss_test(test_song, playlist_filename=None, **kwargs):
-    _, pool = init_playlist(playlist_filename)
-    mml = generate_tierboss_mml(pool, force_include=test_song)
-    with open("tierboss.mml", "w") as f:
-        f.write(mml)
-    print("wrote tierboss.mml")
+    _, original_pool = init_playlist(playlist_filename)
+    while True:
+        mml = None
+        pool = set((a for a in original_pool))
+        try:
+            mml = generate_tierboss_mml(pool, force_include=test_song)
+        except Exception:
+            traceback.print_exc()  
+        if mml:
+            with open("tierboss.mml", "w") as f:
+                f.write(mml)
+            print("wrote tierboss.mml", end=" ")
+        else:
+            print(f"failed to generate with \"{test_song}\"", end=" ")
+        print("(press enter to reroll; or type a new filename; or type q to quit)")
+        i = input()
+        if i.lower() == "q":
+            break
+        elif i:
+            test_song = i.strip()
     
 def pool_test(inrom, battle_only=False, playlist_filename=None, **kwargs):
     results = {}
