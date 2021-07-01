@@ -12,6 +12,8 @@
 7th_darkness:       grandfinale, unforgiven, gogo, magitek, engine*2, floating
 arc_battle:         grandfinale, unforgiven
 arc_battle_nointro: unforgiven, chocobo, mount2, serpent, ancient, floating, phoenix, ktower
+bl_fahrenheit:      setzer, locke, figaro
+bl_fahrenheit_nointro: prelude, setzer, savethem, blackjack, falcon, mountain, mount2, serpent
 blord_ruins:        shadow, umaro, zozo, owzer, cave, train, tomb, gate, ancient, magitek, engine, dream
 bof2_barubary:      metamorphosis, grandfinale, unforgiven, assault
 bof2_battle2:       grandfinale, unforgiven
@@ -49,6 +51,7 @@ ff1_volcano:        gogo, umaro, mountain, mount2, serpent, gate*2, floating, ph
 ff1_volcano_psx:    umaro, zozo, owzer, serpent, cave, gate*2, ancient, dream, phoenix
 ff3_darkworld:      shadow, moogles, mountain, mount2, serpent, forest*2, dream
 ff3_hyne:           kefka, owzer*2, strago, train, ancient, dream, fanatics
+ff3_warrior:        prelude, cyan, locke, figaro*2, returners
 ff4_fiend:          catastrophe, grandfinale, savethem, floating, phoenix, ktower
 ff4_moon:           empire, zozo, ruin*2, train, engine
 ff4_mysidia:        what, strago*2, dream
@@ -129,6 +132,7 @@ ff7_temple:         omen3, espers, ruin, cave, forest, tomb, gate, dream
 ff8_laguna:         grandfinale, unforgiven, chocobo, blackjack, johnny, magitek, ktower
 ff8_world:          prelude, what, narshe, ruin, balance*2, forest
 ff9_battle:         grandfinale
+ff9_blackwaltz:     empire, kefka, owzer, train*2
 ff9_dragons:        metamorphosis*2, catastrophe, grandfinale, assault, savethem, floating, phoenix, ktower
 ff9_flamenco:       prelude, grandfinale, chocobo, johnny*2, what, village
 ff9_gargan:         kefka, shadow, spinach, what*2, moogles, gogo, umaro, zozo, owzer, engine, dream
@@ -180,6 +184,7 @@ saga3_ruins:        espers, zozo*2, owzer, ruin, cave, tomb, dream
 sd1s_courage:       grandfinale, setzer, locke, savethem*2, johnny
 sd2_final:          metamorphosis, catastrophe, grandfinale, savethem, falcon, floating
 sd2_fortress:       metamorphosis, falcon, mountain, mount2*2, serpent, ancient, magitek, floating, ktower
+sd3_flight:         setzer, blackjack*2, moogles, falcon, mountain, serpent
 sd3_counterpoint:   shadow, gogo, umaro, veldt*2, mountain, phoenix, ktower
 sf2_balrog:         grandfinale, unforgiven, chocobo, johnny, engine
 sots_boss:          grandfinale, gogo, owzer, serpent, dream
@@ -300,7 +305,9 @@ sots_boss:          I00, mboss, boss
 totr_sboss:         I00, mboss, boss, atma
 
 [victory]
+bl_fahrenheit:  fanfare
 ct_ayla:        fanfare
+ff3_warrior:    fanfare
 ff4_fanfare:    fanfare
 ff6_blackjack:  fanfare
 ff6_fanfare:    fanfare

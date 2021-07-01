@@ -19,9 +19,11 @@
 #def 1o= o6
 #def 7o= o5
 
+#def chorg= |0 %a14
+
 {1}
 l16 $4441
-t85%b0,100%f0,0%v192,100v60@32p64%e1r1  r1  
+t85%b0,100%f0,0%v192,100v60'chorg'p64%e1r1  r1  
  $41 t85'0o-o1'g+ff+g+a+<cc+d+f8.cc+d+ff+  g+<c+>a+<c+>g+f+fd+fg+f+a+g+f+fc+  
 d+4fd+c+>a+<c8.r4r  r<d+c+d+c>a+g+a+<c>g+a+gg+r8.  fc+cc+>g+<c+cc+f+c+cc+>a+<c+cc+  
 g+c+cc+>g+<c+cc+a+c+cc+>a+<c+cc+  f4f+fd+8f8.d+c+d+ff+  f4f+fd+8f8.d+c+4  
@@ -41,7 +43,7 @@ t40<c8.rt85%g1>>f+32a32<c32d+32f+32a32<c32d+32t50f+4r8t40c8  t70c+1
 
 {2}
 l16 $4442
- v60@32p64%e1r1  r1   $42 r1  
+ v60'chorg'p64%e1r1  r1   $42 r1  
 r1  '0o-o1'c>g+a+<cc+d+fgg+8.d+fgg+a+  <c>d+fgg+a+<cc+d+8c+8c8>g+8  r1  
 r1  g+4a+8f+8g+8.r4r  g+4a+8f+8g+8.r4r  r1  
 r1  r1  r1  r1  
@@ -55,7 +57,7 @@ d+4r8>a8a+1  ^1
 
 {3}
 l16 $4443
-v60@32p64%e1r1  r1  
+v60'chorg'p64%e1r1  r1  
  $43 r1  r1  r1  r1  
 '0o-o1'c+1  ^1  c+4c+8c+8c+8.r4r  c+4c+8c+8c+8.r4r  
 r1  r1  r1  r1  
@@ -85,7 +87,7 @@ r8.d8d+8.r2  r8.d+8c+1  >g+1  <
 l16 $4445
  v100@39p64%e1'7o'
 r2c+2  
-^2c+2  ^1   $45 v60@32p64%e1
+^2c+2  ^1   $45 v60'chorg'p64%e1
 [26r1]
 '0o'd8.r2  
 r8.d8d+8.r2  r8.d+8e1  d+1
@@ -108,7 +110,6 @@ r2d8.r2  r8.d8d+8.r2  r8.d+8c+1  >g+1
 
 {7}
 l16 $4447
-%e0
 r1r1 $
 [31r1]
 `:4447`
@@ -116,7 +117,6 @@ r1r1 $
 
 {8}
 l16 $4448
-%e0
 r1r1 $
 [31r1]
 `:4448`

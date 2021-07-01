@@ -7,6 +7,8 @@
 7th_darkness:       grandfinale, engine*2
 arc_battle:         grandfinale, unforgiven
 arc_battle_nointro: unforgiven, mount2, serpent
+bl_fahrenheit:      setzer, locke
+bl_fahrenheit_nointro: setzer, mount2, blackjack, falcon
 blord_ruins:        train, ancient, magitek, engine, dream
 bof2_barubary:      grandfinale, unforgiven
 bof2_battle2:       grandfinale, unforgiven
@@ -44,6 +46,7 @@ ff1_volcano:        umaro, mount2, gate*2, floating, phoenix
 ff1_volcano_psx:    gate*2, ancient, dream, phoenix
 ff3_darkworld:      moogles, serpent, forest*2
 ff3_hyne:           owzer*2, train, ancient, dream, fanatics
+ff3_warrior:        cyan, locke, figaro*2, returners
 ff4_fiend:          catastrophe, grandfinale, savethem
 ff4_moon:           zozo, ruin*2, train
 ff4_mysidia:        what, strago*2
@@ -124,6 +127,7 @@ ff7_temple:         omen3, espers, forest, tomb, dream
 ff8_laguna:         grandfinale, magitek
 ff8_world:          prelude, ruin, balance, forest
 ff9_battle:         grandfinale
+ff9_blackwaltz:     empire, owzer, train*2
 ff9_dragons:        metamorphosis*2, catastrophe, grandfinale, savethem, floating
 ff9_flamenco:       grandfinale, johnny*2
 ff9_gargan:         spinach, what*2, gogo, umaro
@@ -175,6 +179,7 @@ sd1s_courage:       grandfinale, savethem*2
 sd2_final:          grandfinale, floating
 sd2_fortress:       falcon, mount2*2, serpent, floating
 sd3_counterpoint:   umaro, veldt*2
+sd3_flight:         setzer, blackjack*2, falcon, serpent
 sf2_balrog:         grandfinale, johnny
 sots_boss:          grandfinale, dream
 sots_boss_nointro:  cyan*2, mountain, cave
@@ -211,8 +216,6 @@ ff9_notalone:       grandfinale
 [legacysongstxtcopypasta]
 # temporarily filling in the rest of the legacy song set here without reviewing the track selections (will be more permissive than desired)
 # relevant battle related tags will be added as well matching the approximate I/G quadrant specified
-bl_fahrenheit:  fanfare, grandfinale, setzer, locke, figaro, returners, savethem
-bl_fahrenheit_nointro: prelude, chocobo, blackjack*2, falcon, mount2, serpent
 bl_rebels:      fanfare, locke, figaro, returners, savethem
 blord_2tower:   setzer, locke, chocobo, blackjack, johnny, falcon*2, mount2
 bof1_dawn:      prelude, omen3*2, falcon, serpent*2
@@ -262,7 +265,6 @@ ds4_world:      setzer, chocobo, blackjack, moogles, strago, mountain
 fe15_whatlies:  I40, G80, grandfinale, cyan, savethem, assault, falcon*2, mount2, omen3, balance, ancient, bat4
 ff1_bossb:      I85, G70, grandfinale, boss, atma, savethem, catastrophe, bat4
 ff1_dungeon:    I85, G25, metamorphosis, grandfinale, unforgiven, floating, gate, phoenix, mboss
-ff1_matoya:     relm, moogles, gogo, strago*2, village, mountain, dream
 ff2_battle2:    I75, G75, metamorphosis, catastrophe, grandfinale, assault*2, bat3, bat4
 ff2_battleb:    H4, train, kefka, gogo, owzer*2, espers, fanatics*2, grandfinale, dream*2, gate, H:I50, H:G30, H:prelude, H:omen3, H:shadow, H:strago, H:balance, H:cave, H:forest, H:tomb, H:engine
 ff2_theme:      prelude, awakening, town_ruin, ruin, balance, gau, forest*2
@@ -614,7 +616,9 @@ sd2_final:          I95,              atma, dmad5
 ff6_final:          I97,              atma, dmad5
 
 [victory]
+bl_fahrenheit:  fanfare
 ct_ayla:        fanfare
+ff3_warrior:    fanfare
 ff4_fanfare:    fanfare
 ff6_fanfare:    fanfare
 ff7_fanfare:    fanfare
@@ -634,4 +638,11 @@ ff6_death: death
 sd2_death: death
 
 [tierboss]
-lb: ff6_tier1, ff6_tier2, ff6_tier3, ff7_final_part1, ff6_falsetier1, ff6_falsetier3
+#lb: cc_flame, ct_lavos, ff3_eureka, ff6_fanatics_chorus, ff6_fanatics_dm, ff6_tier1_chorus, ff6_tier1_dm, ff6_tier2_chorus, ff6_tier2_dm, ff6_tier3, ff7_final_part1, ff8_witches, ff9_blackwaltz, ffmq_lava, xg_weltall
+ct: cc_flame, ct_lavos
+ff: ff3_eureka, ff5_excastle, ff7_final_part1, ff8_witches, ff9_blackwaltz, ffmq_lava
+ff6: ff6_fanatics_dm, ff6_tier1_dm, ff6_tier2_dm, ff6_tier3
+i: iog_whispers
+chorus: ff6_fanatics_chorus, ff6_tier1_chorus, ff6_tier2_chorus
+sd: sd2_thanatos
+x: xg_weltall
