@@ -3,54 +3,60 @@
 #COMPOSER Hiroki Kikuta
 #ARRANGED emberling
 
-#VARIANT ~ enh
-#VARIANT / nat
-
-#WAVE 0x20 ~0x49~/0x0D/
-#WAVE 0x21 ~0x36~/0x36/
-#WAVE 0x22 ~0x3E~/0x3E/
-#WAVE 0x23 ~0x42~/0x20/
-#WAVE 0x24 ~0x6b~/0x02/
-#WAVE 0x2A ~0x59~/0x22/
-#WAVE 0x2B ~0x7e~/0x21/
-#WAVE 0x2C ~0x55~/0x2F/
+#WAVE 0x20 0x65 - was 0x49 - strings
+#WAVE 0x21 0xA2 - was 0x36 - flute
+#WAVE 0x22 0x23 - was 0x3E - marimba
+#WAVE 0x23 0x19 - was 0x42 - vibraphone/rhodes
+#WAVE 0x24 0x51 - was 0x6b - bass
+#WAVE 0x2A 0x0C - was 0x59 - kick
+#WAVE 0x2B 0x1D - was 0x7e - snare
+#WAVE 0x2C 0x6C - was 0x55 - tambourine
 
 #def global= t120 %v50 %x224 %b0,70 %f0,0
-#def str= |0 ~o5~/o6/
-#def flt= |1 ~o6~/o6/
-#def xyl= |2 o5
-#def cel= |3 ~o5~/o6/
-#def bass= |4 ~o5~/o5/
+#def str= |0 o6  %e1
+#def flt= |1 o5  %e1
+#def xyl= |2 o5  %e1
+#def cel= |3 o5  %e1
+#def bass= |4 o4 %e0
 
-#drum "a"=5e |A v64
-#drum "a+"=5e |A v72
-#drum "b"=5e |A v80
-#drum "b+"=5e |A v88
-#drum "c"=5e |A v96
-#drum "c+"=5e |A v104
-#drum "d"=5e |A v112
-#drum "d+"=5e |A v120
-#drum "e"=5e |A v127
+#def s= v70
+#def f= v150
+#def m= v90
+#def v= v200
+#def b= v100
+#def k= v90
+#def sd=v100
+#def t= v75
 
-#drum "r"=5e |B v112
-#drum "r+"=5e |B v120
-#drum "s"=5e |B v127
+#drum "a"= 5f |A %e0 'k*v.64'
+#drum "a+"=5f |A %e0 'k*v.72'
+#drum "b"= 5f |A %e0 'k*v.80'
+#drum "b+"=5f |A %e0 'k*v.88'
+#drum "c"= 5f |A %e0 'k*v.96'
+#drum "c+"=5f |A %e0 'k*v1.04'
+#drum "d"= 5f |A %e0 'k*v1.12'
+#drum "d+"=5f |A %e0 'k*v1.20'
+#drum "e"= 5f |A %e0 'k*v1.27'
 
-#drum "v"=5g |C v32
-#drum "v+"=5g |C v40
-#drum "w"=5g |C v48
-#drum "w+"=5g |C v56
-#drum "x"=5g |C v64
-#drum "x+"=5g |C v72
-#drum "y"=5g |C v80
-#drum "y+"=5g |C v88
-#drum "z"=5g |C v96
+#drum "r"= 5f+ |B %e0 'sd*v1.12'
+#drum "r+"=5f+ |B %e0 'sd*v1.20'
+#drum "s"= 5f+ |B %e0 'sd*v1.27'
 
-{1}
+#drum "v"= 5g |C %e0 't*v.32'
+#drum "v+"=5g |C %e0 't*v.40'
+#drum "w"= 5g |C %e0 't*v.48'
+#drum "w+"=5g |C %e0 't*v.56'
+#drum "x"= 5g |C %e0 't*v.64'
+#drum "x+"=5g |C %e0 't*v.72'
+#drum "y"= 5g |C %e0 't*v.80'
+#drum "y+"=5g |C %e0 't*v.88'
+#drum "z"= 5g |C %e0 't*v.96'
+
+{3}
 'global'
 r1
 $l16[##2
-'bass' p64 v127
+'bass' p64 'b*v1.27'
 [[g8g<g8>g ggg8<g8> j2 g8g<g8>g ggg<g8>g]
 j2 g8g<g8>g ggg<gg>g] d8d<d8>d ddd<dd>d
 ##6
@@ -62,20 +68,21 @@ j2 g8g<g8>g ggg<gg>g] d8d<d8>d ddd<dd>d
 [3g+rg+]g+g+g+ [3grg]gg+a+  [3g+rg+]g+g+g+ [3g+rg+]g+<cf
 g8.gf d+d8.d+dc  >b8.<c>bg+ g8r4
 ]##28
-'xyl' p64 v64 l16
+'xyl' p64 'm*v.64' l16
 [[bgd][af+d][gd+>a+<][f+d>a<]    [gd+>a+<][fd>a+<]g+d+cd+g+d+ gcdgaa+
 [g+d+c][a+gd+]g+c+cg+fc+ cdd+gg+<c  [c+>g+f<][c>g+d+<][c+>a+f<]c>gfecj2g]^
 ;
 
-{2}
+{5}
 'flt' p96 l24
-> v16 agf+gab v20 <c>bab<cd v24 edcdef+ v28 gf+ef+ga
+> 'f*v.16' agf+gab 'f*v.20' <c>bab<cd 'f*v.24' edcdef+ 'f*v.28' gf+ef+ga
 $l16[##2
-'flt' p96 v32
-[brbb8b araa8a grgg8g a8g8a8 j2
- brbb8b araa8a g4.a4.]
- b8.<d8.c8.>b8.a4.a4.
+'xyl' p48 'm*v.64'
+[bgdgbd af+df+ad gdcdgc af+df+aj2d]a+
+ bgdgbd af+df+ad gdcdgc af+df+ad
+ bgd<d>gd <c>gebge [4af+d]
 l16##6
+'flt' p96 'f*v.32'
 [cga<c>gd cga<c>gc [>b<egbge]
 >a<deaf+e >a<dea j2 >a<degb<e> egdga<d>af+]
 c+eg<c+egec+>g<c+e>gec+
@@ -84,23 +91,23 @@ c+eg<c+egec+>g<c+e>gec+
 [4g+d+c] [4gd>a+<]  >[4g+<cgg+g>a+]
 gb<dg> b<dgb<dgd>bgd gbgd>g< rr4
 ]##28
-v28
+'f*v.28'
 [bgdgbg af+df+ad gd+>a+<d+gd+ f+d>a<df+d
 gd+>a+<d+gd+ fd>a+<dfd c>g+d+g+<cd+ dcdgag
 g+d+cd+g+d+ gd+>a+<d+gd+ fc+cc+fc+ cdd+gg+<c
 c+>g+fg+<c+>g+ <c>g+d+g+<c>g+ a+f+ff+a+f <c>gfecj2g]^
 ;
 
-{3}
+{6}
 'flt' p80 l24
-> v16 f+edef+g v20 agf+gab v24 <c>bab<cd v28 edcdef+
+> 'f*v.16' f+edef+g 'f*v.20' agf+gab 'f*v.24' <c>bab<cd 'f*v.28' edcdef+
 $l16[##2
-'flt' p80 v32
+'flt' p80 'f*v.32'
 [grgg8g f+rf+f+8f+ eree8e f+8e8f+8 j2
  grgg8g f+rf+f+8f+ e4.f+4.]
  g8.b8.a8.g8.f+4.f+4.
 ##6
-'str' p16 l16 v72 >
+'str' p16 l16 's*v.72' >
 [a8aa8aa8a8a8 g8gg8gg8g8gg j2
 g8ggaab8<c+8d8e4eeg8.>a8.]
 g8gggga8a8aa a8aaaab8b8bb
@@ -109,16 +116,16 @@ g8gggga8a8aa a8aaaab8b8bb
 <c4>g+g+g+8g+8g+8 g8.d8.>a+8.<d8.   [4d+4d+d+]
 [d8.ddd]d8dd8dd rr4
 ]##28
-['flt' p32 v28 l16 <
+['flt' p32 'f*v.28' l16 <
 dr8.drdr8.dr d8c8>a+8ar8.ar     a+r8.a+ra+r8.a+r g+gg+8<d+8d8>a+<cd>a+
 cr8.cr>a+r8.a+r g+r8.g+rg8ga+<cd+   fr8.frd+r8.d+r c+r8.c+r4..]
 ;
 
-{4}
-'str' p32 v72 l24
+{2}
+'str' p32 's*v.72' l24
 > f+edef+g agf+gab <c>bab<cd edcdef+
 $l16[##2
-'str' p32 v72
+'str' p32 's*v.72'
 [ >g<dgf+g8  >g<cgf+g8  >g<dgf+g8  >g<cg8gf+ j2
   >g<dgf+g8  >g<cgf+g8  >g<dgf+gf+  >g<c%l1g24a24g24%l0f+8 ]
   >g<dgf+g8  >g<cgd>b<c  >g<dgcf+g  agf+d>ab<
@@ -131,19 +138,21 @@ a+4a+a+a+8<c8>a+8 a8.f8.c8.>a8.<    g4d+d+d+8f8d+8 d8.>a+8.f8.da+<f
 g+4d+d+d+8f8d+8 d8.>a+8.g8.a+8.<    [4c4cc]
 >[b8.bbb]b8bb8bb rr4
 ]##28
-'cel' p48 v32 l16 <
+'cel' p48 'v*v.32' l16 <
 [d4.d4. d8c8>a+8a4.     a+4.a+4. g+gg+8<d+8d4d8
 c4.>a+4. g+8a+8<c+8c8d8d+8      c+4.c4. c+8d+8c+8c4.]
 ;
 
-{5}
-'str' p48 l24 v72
+{1}
+'str' p48 l24 's*v.72'
 > dc>b<cde  f+edef+g    agf+gab     <c>bab<cd
-$l16[##2
-'xyl' p64 v60
-[b4.a4.g4.a8g8a8 j2 b4.a4.g4.cdga<cd>] g8.b8.a8.g8.a4.f+4.
+$l16[##2.
+'flt' p96 'f*v.32'
+[brbb8b araa8a grgg8g a8g8a8 j2
+ brbb8b araa8a g4.a4.]
+ b8.<d8.c8.>b8.a4.a4.
 ##6
-v80
+'xyl' 'm*v.80' p64
 [<c4>bag8a8<c8> b8.g8.e8.g8. j2
  a4f+ed8g8a8 b4<c>ba4.]
  a4bag8b8<d8 c+4dc+>b8g8e8
@@ -154,20 +163,18 @@ g+4d+d+d+8f8d+8 d8.>a+8.g8.a+8.
 g+a+<cc+c>a+ g+<cd+fd+d cd+gg+gf d+g+<cd+dc>
 [g8.ggg]g8gg8ggrr4
 ]##28
-'cel' p48 v32 l16
+'cel' p48 'v*v.32' l16
 [b4.a4. g4.f+4.     g4.f4. d+dd+8g+8g8.aa+g
 g+4.g4. f8g8g+8gdd+gg+<c>   a+4.g+4. a+8<c8>a+8a4.]
 ;
 
-{6}
+{7}
 r1
 $l16[##2
-'xyl' p48 v64
-[bgdgbd af+df+ad gdcdgc af+df+aj2d]a+
- bgdgbd af+df+ad gdcdgc af+df+ad
- bgd<d>gd <c>gebge [4af+d]
+'xyl' p64 'm*v.60' k1
+[b4.a4.g4.a8g8a8 j2 b4.a4.g4.cdga<cd>] g8.b8.a8.g8.a4.f+4. k0
 ##6
-'str' p48 l16 v72
+'str' p48 l16 's*v.72'
 [c8cc8cc8c8c8 >b8bb8bb8b8bb j2
 a8aab<c+d8e8f+8g4agd4.]
 a8aaaab8b8bb <d8ddddd8d8dd
@@ -180,7 +187,7 @@ d+4ccc8c8c8 >a+8.g8.d8.g8.  [4g+4g+g+]
 l16[4"zwww ywzw ww"l32"w+w+xx x+x+"l16"yy+y+ zwzy" j4 "wwzw"]"!!wzzz"
 ;
 
-{7}
+{4}
 r2. p64 l24
 "bcd d+ss"
 $l16 %g1[##2

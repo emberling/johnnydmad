@@ -6,75 +6,75 @@
 #VARIANT ~_
 #VARIANT /_ vic
 #VARIANT ~ nointro
-#VARIANT ~\ tr
+#VARIANT ~ tr
 #SFXV ` *
 
 #WAVE 0x2F 0x00 c.hihat
-#WAVE 0x21 ~0x5a~/0x8f/ o.hihat
-#WAVE 0x22 0x84 tom
-#WAVE 0x28 0x7f trumpet (lead)
-#WAVE 0x29 ~0x73~/0x08/ horn
-#WAVE 0x2A ~0x49~/0x46/ strings
-#WAVE 0x2B ~0x9a~/0x00/ trumpet (fanfare)
-#WAVE 0x2C 0x16 timpani
-#WAVE 0x2D ~0x0a~/0x00/ oboe
-#WAVE 0x2E \0x8e\ ~0x6d~/0x8e/ crash
-#WAVE 0x23 0x81 snare
+#WAVE 0x21 ~0x3B~/0x3D/ o.hihat
+#WAVE 0x22 ~0x4C~/0x4A/ tom
+#WAVE 0x23 0x1F snare
+#WAVE 0x28 0x82 trumpet (lead)
+#WAVE 0x29 ~0x85~/0x7F/ horn
+#WAVE 0x2A ~0x62~/0x67/ strings
+#WAVE 0x2B ~0x81~/0x00/ trumpet (fanfare)
+#WAVE 0x2C 0x5A timpani
+#WAVE 0x2D ~0x92~/0x00/ oboe
+#WAVE 0x2E 0x2d crash
 
 #def 8i= |8
 #def 9i= |9 %s7
 #def Ai= |A
 #def Bi= ~|B~/|8/
 #def Ci= |C
-#def Di= ~|D~/|8/
+#def Di= ~|D~/|9/
 #def Ei= |E
 
 #def 8o= o5
 #def 9o= o5
-#def Ao= ~o5~/o6/
+#def Ao= o6
 #def Bo= o5
-#def Co= o5
-#def Do= o5
+#def Co= o6
+#def Do= ~o4~/o5/
 #def Eo= o5
 
 #def 0v=   v67
 #def 0f= v1,67
 #def 1v=   v67
 #def 1f= v1,67
-#def 2v=   v125
-#def 2f= v1,125
+#def 2v=   v100
+#def 2f= v1,100
 #def 8v=   v75
 #def 8f= v1,75
-#def 9v=   ~v150~/v80/
-#def 9f= ~v1,150~/v80/
+#def 9v= ~  v175~/  v120/
+#def 9f= ~v1,175~/v1,120/
 #def Av=   v133
 #def Af= v1,133
 #def Bv=   v100
 #def Bf= v1,100
 #def Cv=   v150
 #def Cf= v1,150
-#def Dv=   v100
-#def Df= v1,100
+#def Dv=   v150
+#def Df= v1,150
 #def Ev=   v100
 #def Ef= v1,100
-#def Fv=   v75
-#def Ff= v1,75
+#def Fv=   v100
+#def Ff= v1,100
 
 #drum "a"= 5g |1 p120 %r
 #drum "b"= 5a |3 p64
 #drum "f"= 5a |1 p120 %r25
-#drum "g"= 5c |2 '2v*v.84' p40
-#drum "g+"= 5e |2 '2v*v.84' p10
+#drum "g"= 4g |2 '2v*v.84' p40
+#drum "g+"= 4b |2 '2v*v.84' p10
 
-#drum "y"= 5c
-#drum "z"= 5c |E p64 'Ev*v.89' %r17
-#drum "n"= 5b |1 p120 '1v*v.70' %r 
-#drum "o"= 5b |1 p120 '1v*v.56' %r 
-#drum "p"= 5b |1 p120 '1v*v.28' %r 
-#drum "q"= 5b |1 p120 '1v*v.28' %r 
-#drum "h"= 5a |1 p120 '1v*v.56' %r25
-#drum "i"= 5a |1 p120 '1v*v.28' %r25
-#drum "j"= 5a |1 p120 '1v*v.28' %r25
+#drum "y"= 5e
+#drum "z"= 5e |E p64 'Ev*v.89' %r17
+#drum "n"= 5b |1 p120 '1v*v.70' ~%r  ~ /%y2/
+#drum "o"= 5b |1 p120 '1v*v.56' ~%r  ~ /%y2/
+#drum "p"= 5b |1 p120 '1v*v.28' ~%r  ~ /%y2/
+#drum "q"= 5b |1 p120 '1v*v.28' ~%r  ~ /%r /
+#drum "h"= 5a |1 p120 '1v*v.56' ~%r25~ /%r /
+#drum "i"= 5a |1 p120 '1v*v.28' ~%r25~ /%r /
+#drum "j"= 5a |1 p120 '1v*v.28' ~%r25~ /%r /
 #drum "s"= 5a |3 p64 'Fv*v.84'
 #drum "t"= 5a |3 p64 'Fv*v.70'
 #drum "u"= 5a |3 p64 'Fv*v.56'

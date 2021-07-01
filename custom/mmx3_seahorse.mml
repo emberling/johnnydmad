@@ -12,7 +12,7 @@
 #WAVE 0x28 0x0A ## Kick
 #WAVE 0x29 0x1D ## Snare
 #WAVE 0x2A 0x4D ## Toms
-#WAVE 0x2B 0x3E ## Open hihat and quick cymbal
+#WAVE 0x2B 0x3D ## Open hihat and quick cymbal
 #WAVE 0x2C 0x2D ## Crash
 
 #def init= t171 %x180 %v40 %b0,55 %f0,0
@@ -67,7 +67,7 @@
 #DRUM "h"=4b  @4 'hihatVol'     p64 %a12 'hihatRelease'
 #DRUM "i"=4b  @4 'hihatVol*v.5' p64 %a12 %r0
 
-#DRUM "o"=5a  |b v90  p64
+#DRUM "o"=5a  |b v90  p64      %y2
 #DRUM "c"=5g+ |c v80  p64      %r17
 #DRUM "d"=5f+ |c v100 p64      %r17
 #DRUM "e"=5g+ |c v100 p64      %r17

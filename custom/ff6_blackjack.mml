@@ -21,7 +21,7 @@
 #WAVE 0x27 ~0x1C~/0x1D/ snare
 #WAVE 0x28 ~0xA5~/0xA7/ flute
 
-#def 0i=   |0     /%a8%s7
+#def 0i=   |0     /%a8%s7/
 #def 0o=   o5
 #def 0v= ~  v100~ /  v67/
 #def 0f= ~v1,100~ /v1,67/

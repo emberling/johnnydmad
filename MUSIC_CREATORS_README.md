@@ -28,6 +28,92 @@ Therefore, you must always design your songs to be resilient to either losing th
 
 Another place that may demand variants is `fanfare` - the end of a battle is one of the few places when a new music track is loaded without the loading time being camouflaged by a natural fade or pause. It's also extremely common. Because of this, you should aim to keep memory usage (and thus loading time) as low as possible, using the smallest samples you can get away with. The original FF6 victory fanfare is 1698 blocks, so that should be your target, though anything under 2000 should be fine. But if you're using the same song in any context outside of victory, you'll want access to the full sample memory. You can use variants to design for both cases at once.
 
+### Loudness
+
+Legacy music hasn't generally maintained any sort of standard for loudness and therefore has been somewhat prone to certain tracks being randomly too quiet or jarringly loud. While this is an amateur, collaborative project and worrying too much about loudness is a bit boring, I do feel like as quality improves moving forward it's a good idea to at least establish some standards and tests so that things stay within a certain degree of consistency wherever possible.
+
+Moving forward, I'm going to tentatively try measuring each new track with standard loudness measurements (peak and RMS) and adjusting these to fit within vanilla music ranges for similar songs. I'll include a table of vanilla music loudness values here for reference.
+
+It seems like a solid general target is **-25 dB** RMS and **-8 dB** peak, ranging to a maximum around **-23 dB** RMS and **-6.5 dB** peak and a minimum around **-28 dB** RMS and **-12 dB** peak. Aside from battle music, it actually seems like the grand brassy and martial themes that sound like they *should* be loud (e.g. Edgar and Sabin, Save Them! etc.) are more on the average side, while naturally subtler or lower-impact timbres (Kids Run Through the City, Spinach Rag) sometimes get some extra loudness to compensate for their nature.
+
+Method: Convert SPC to WAV using SNES SPC700 Player's "save" function. Player volume must be at 100%. Open resulting WAV file in Audacity, select the whole thing, `"Tracks->Mix->Mix Stereo Down to Mono"` and then  use `"Analyze->Contrast" -> Measure selection` for RMS and `"Effect->Amplify" -> Set Amplification to 0 -> "New Peak Amplitude"` for peak.
+
+| Song                      |RMS (dB)|Peak (dB)|
+| ----                      | ------  | ----   |
+| The Prelude               | -29.74  |-14.665 |
+| Omen pt.1                 | -25.26  | -6.386 |
+| Omen pt.2                 | -23.54  | -7.131 |
+| Omen pt.3                 | -24.30  | -8.360 |
+| Awakening                 | -28.93  |-11.642 |
+| Terra                     | -22.84  | -7.484 |
+| Shadow                    | -26.38  | -7.374 |
+| Strago                    | -26.64  | -9.266 |
+| Gau                       | -24.86  | -9.435 |
+| Edgar and Sabin           | -25.14  | -9.577 |
+| Coin of Fate              | -24.52  |-10.190 |
+| Cyan                      | -23.75  | -7.813 |
+| Locke                     | -25.59  | -8.850 |
+| Forever Rachel            | -24.24  | -8.565 |
+| Relm                      | -25.84  | -8.764 |
+| Setzer                    | -23.33  | -7.775 |
+| Epitaph                   | -25.75  |-11.048 |
+| Celes                     | -25.00  | -8.798 |
+| Techno de Chocobo         | -24.04  | -8.438 |
+| The Decisive Battle       | -22.38  | -8.034 |
+| Johnny C. Bad             | -25.67  | -7.271 |
+| Kefka                     | -26.64  | -7.256 |
+| The Mines of Narshe       | -27.86  | -8.842 |
+| The Phantom Forest        | -24.11  | -6.753 |
+| The Veldt                 | -25.30  | -7.178 |
+| Protect the Espers!       | -26.89  | -9.187 |
+| The Gestahl Empire        | -24.99  | -8.809 |
+| Troops March On           | -24.64  | -7.219 |
+| Under Martial Law         | -25.40  | -7.010 |
+| Metamorphosis             | -24.22  | -8.120 |
+| The Phantom Train         | -24.90  | -8.559 |
+| Esper World               | -22.74  | -8.255 |
+| Grand Finale?             | -25.33  | -9.920 |
+| Mt. Koltz                 | -24.08  | -7.610 |
+| Battle Theme              | -23.53  | -7.048 |
+| Aria di Mezzo Carattere   | -23.12  | -7.805 |
+| The Serpent Trench        | -28.69  |-12.094 |
+| Slam Shuffle              | -25.35  | -8.456 |
+| Kids Run Through the City | -22.80  | -7.482 |
+| What?!                    | -33.91  |-13.525 |
+| Gogo                      | -24.68  | -6.452 |
+| The Returners             | -26.14  | -9.347 |
+| Victory Fanfare           | -25.63  | -6.902 |
+| Umaro                     | -25.09  | -8.812 |
+| Mog                       | -24.94  | -7.530 |
+| The Unforgiven            | -24.68  | -7.808 |
+| Battle to the Death       | -23.90  | -8.476 |
+| From That Day On...       | -23.10  | -7.867 |
+| The Airship Blackjack     | -23.55  | -7.252 |
+| Catastrophe               | -21.54  | -7.266 |
+| The Magic House           | -27.08  |-10.355 |
+| Dancing Mad pt.1          | -21.80  | -6.475 |
+| Dancing Mad pt.2          | -25.46  | -9.248 |
+| Dancing Mad pt.3          | -24.25  | -6.206 |
+| Dancing Mad pt.4          | -22.40  | -6.792 |
+| Dancing Mad pt.5          | -21.30  | -6.704 |
+| Spinach Rag               | -23.24  | -6.803 |
+| Rest In Peace             | -25.97  |-11.204 |
+| Overture pt.1             | -28.33  |-11.170 |
+| Overture pt.2             | -24.77  |-10.038 |
+| Overture pt.3             | -27.16  |-10.549 |
+| Wedding Waltz pt.1        | -25.53  |-10.747 |
+| Wedding Waltz pt.2        | -28.68  |-12.161 |
+| Wedding Waltz pt.3        | -24.60  | -9.882 |
+| Wedding Waltz pt.4        | -28.24  |-11.924 |
+| Devil's Lab               | -25.12  | -7.815 |
+| Floating Continent        | -22.31  | -6.447 |
+| Searching For Friends     | -22.92  | -8.790 |
+| The Fanatics              | -22.77  | -7.160 |
+| Kefka's Tower             | -24.27  |-10.136 |
+| Dark World                | -24.82  | -7.411 |
+| Balance Is Restored pt.1  | -24.39  | -5.965 |
+| Balance Is Restored pt.2  | -23.36  | -5.798 |
+
 ## JOHNNYDMAD STYLE GUIDE for sample selection (WIP)
 
 For sample selection, THE HIGHEST PRIORITY IS SOUNDING GOOD. The second priority is sounding "right", meaning either the original mood, melodic line, and whatever accompaniment is feasible is preserved, or you as the arranger chose to change one or more of those things and the arrangement owns those changes; it should be obvious that any changes are not a mistake. The below sample selection guidelines should be followed only to the point that they don't endanger those first two priorities.
@@ -51,9 +137,8 @@ On sounding "right", though, a caveat: this stays within the context of late SNE
 * Not much to note; use what fits and aggressively replace not-quite-harpsichord originals with harpsichord if it sounds better that way. 13 can sub as a honky-tonk-type piano, as it does extensively in CT.
 * No "clean" electric piano is provided because @3 exists, as well as D0 (sine) and D1 (triangle).
 * 52 is not any instrument in particular but can sub in for many of this style of timbre; it's basically midway between electric piano and clavinet, though the ADSR may need some tweaking for this use case. (The origin of this sample is a tone similar to @3 with a serendipitous typo in its loop point; it's technically closer to e.piano than bass.)
-* A budget rhodes-type piano may be included in the future but I'm not currently happy with the options I have in that area.
 ### CHROMATIC PERC.:
-* Use 20 for music box parts; octaved with the lower octave delayed by 2 ticks seems effective, if possible.
+* Try 20 for music box parts; octaved with the lower octave delayed by 2 ticks seems effective, if possible.
 * It can be hard to tell what is what but try your best to match instrument types rather than just using whatever. Marimba/xylophone should be considered one type (it's all marimba, really) and 23/24 (labelled marimba) should be preferred if feasible.
 * 7C can also work well in a marimba-like role. Play with the ADSR; attack of 13-14 might help.
 * 28 is the preferred tubular bell.

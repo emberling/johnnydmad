@@ -131,24 +131,24 @@
 #drum "y"= 5g+ |C 'tambourineLowVol'  p64
 #drum "z"= 5g+ |C 'tambourineBaseVol' p64
 ## Bunch of snares with different volumes...
-#drum "d"= 5g+ |B ~'snareBaseVol*v.1' ~ `'snareBaseVol*v.15' p64
-#drum "e"= 5g+ |B ~'snareBaseVol*v.12'~ `'snareBaseVol*v.15' p64
-#drum "f"= 5g+ |B ~'snareBaseVol*v.13'~ `'snareBaseVol*v.15' p64
-#drum "g"= 5g+ |B ~'snareBaseVol*v.15'~ `'snareBaseVol*v.15' p64
-#drum "h"= 5g+ |B ~'snareBaseVol*v.16'~ `'snareBaseVol*v.15' p64
-#drum "i"= 5g+ |B ~'snareBaseVol*v.2' ~ `'snareBaseVol*v.25' p64
-#drum "j"= 5g+ |B ~'snareBaseVol*v.21'~ `'snareBaseVol*v.25' p64
-#drum "k"= 5g+ |B ~'snareBaseVol*v.24'~ `'snareBaseVol*v.25' p64
-#drum "l"= 5g+ |B ~'snareBaseVol*v.25'~ `'snareBaseVol*v.25' p64
-#drum "m"= 5g+ |B ~'snareBaseVol*v.3' ~ `'snareBaseVol*v.35' p64
-#drum "n"= 5g+ |B ~'snareBaseVol*v.33'~ `'snareBaseVol*v.35' p64
-#drum "o"= 5g+ |B ~'snareBaseVol*v.36'~ `'snareBaseVol*v.35' p64
-#drum "p"= 5g+ |B ~'snareBaseVol*v.38'~ `'snareBaseVol*v.35' p64
-#drum "q"= 5g+ |B ~'snareBaseVol*v.39'~ `'snareBaseVol*v.35' p64
-#drum "r"= 5g+ |B ~'snareBaseVol*v.49'~ `'snareBaseVol*v.50' p64
-#drum "s"= 5g+ |B ~'snareBaseVol*v.5' ~ `'snareBaseVol*v.50' p64
-#drum "t"= 5g+ |B ~'snareBaseVol*v.52'~ `'snareBaseVol*v.50' p64
-#drum "u"= 5g+ |B ~'snareBaseVol*v.6' ~ `'snareBaseVol*v.60' p64
+#drum "d"= 5g+ |B ~'snareBaseVol*v.1' ~ `'snareBaseVol*v.15' p64`
+#drum "e"= 5g+ |B ~'snareBaseVol*v.12'~ `'snareBaseVol*v.15' p64`
+#drum "f"= 5g+ |B ~'snareBaseVol*v.13'~ `'snareBaseVol*v.15' p64`
+#drum "g"= 5g+ |B ~'snareBaseVol*v.15'~ `'snareBaseVol*v.15' p64`
+#drum "h"= 5g+ |B ~'snareBaseVol*v.16'~ `'snareBaseVol*v.15' p64`
+#drum "i"= 5g+ |B ~'snareBaseVol*v.2' ~ `'snareBaseVol*v.25' p64`
+#drum "j"= 5g+ |B ~'snareBaseVol*v.21'~ `'snareBaseVol*v.25' p64`
+#drum "k"= 5g+ |B ~'snareBaseVol*v.24'~ `'snareBaseVol*v.25' p64`
+#drum "l"= 5g+ |B ~'snareBaseVol*v.25'~ `'snareBaseVol*v.25' p64`
+#drum "m"= 5g+ |B ~'snareBaseVol*v.3' ~ `'snareBaseVol*v.35' p64`
+#drum "n"= 5g+ |B ~'snareBaseVol*v.33'~ `'snareBaseVol*v.35' p64`
+#drum "o"= 5g+ |B ~'snareBaseVol*v.36'~ `'snareBaseVol*v.35' p64`
+#drum "p"= 5g+ |B ~'snareBaseVol*v.38'~ `'snareBaseVol*v.35' p64`
+#drum "q"= 5g+ |B ~'snareBaseVol*v.39'~ `'snareBaseVol*v.35' p64`
+#drum "r"= 5g+ |B ~'snareBaseVol*v.49'~ `'snareBaseVol*v.50' p64`
+#drum "s"= 5g+ |B ~'snareBaseVol*v.5' ~ `'snareBaseVol*v.50' p64`
+#drum "t"= 5g+ |B ~'snareBaseVol*v.52'~ `'snareBaseVol*v.50' p64`
+#drum "u"= 5g+ |B ~'snareBaseVol*v.6' ~ `'snareBaseVol*v.60' p64`
 
 {1}
 'init'%e1
