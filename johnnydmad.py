@@ -1,3 +1,26 @@
+# JOHNNYDMAD - developer tool/test interface for FF6 music randomization
+
+# *** READ THIS BEFORE EDITING THIS FILE ***
+
+# This file is part of the johnnydmad project.
+# ( https://github.com/emberling/johnnydmad )
+# johnnydmad is designed to be used inside larger projects, e.g.
+# Beyond Chaos, Beyond Chaos Gaiden, or potentially others in the future.
+# If you are editing this file as part of "Beyond Chaos" or any other
+# container project, please respect the independence of these projects:
+# - Keep johnnydmad project files in a subdirectory, and do not modify
+#   the directory structure or mix in arbitrary code files specific to
+#   your project.
+# - Keep changes to johnnydmad files in this repository to a minimum.
+#   Don't make style changes to code based on the standards of your
+#   containing project. Don't remove functionality that you feel your
+#   containing project won't need. Keep it simple so that code and
+#   changes can be easily shared across projects.
+# - Major changes and improvements should be handled through, or at
+#   minimum shared with, the johnnydmad project, whether through
+#   submitting changes or through creating a fork that other johnnydmad
+#   maintainers can easily see and pull from.
+
 import configparser
 import os
 import re
@@ -7,6 +30,7 @@ import traceback
 from collections import Counter
 from operator import itemgetter
 
+# This construction is required for devtool functionality. Do not remove.
 try:
     from .musicrandomizer import *
     from .mfvitools.insertmfvi import byte_insert, int_insert
@@ -21,7 +45,7 @@ except ImportError:
 # * finish ripping FF6 vanilla songs
 # * opera mode - johnnydmad side
 # * tierboss - coding
-# - tierboss - mml setup
+# * tierboss - mml setup
 # * tierboss insertion devtool
 # - sfx insertion devtool
 # * write metadata to spoiler
@@ -34,8 +58,8 @@ except ImportError:
 # - external ignorelist for songs and/or sources
 # * ensure function with pyinstaller
 # - reconcile music player w/ Myria disable sound hack
-# - integration with BC randomizer
-# - opera mode - beyondchaos side
+# * integration with BC randomizer
+# * opera mode - beyondchaos side
 # - allow music sourced from ROM, if specified by host / integrate mfvi2mml
 # - allow selection of less intrusive mode(s) in jdm launcher (no event edits, e.g.)
 #       NOTE: the existing event edits remove the save point tutorial event!
