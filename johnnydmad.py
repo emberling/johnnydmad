@@ -76,11 +76,22 @@ def print_progress_bar(cur, max):
     print(f"\r[{boxtext:<50}] {cur}/{max}", end="", flush=True)
     
 def johnnydmad():
-    print("johnnydmad EX5 early test")
+    print("johnnydmad EX5 test console")
     
-    print("using ff6_plus.smc as source")
-    with open("ff6_plus.smc", "rb") as f:
-        inrom = f.read()
+    try:
+        print("using ff6.smc as source")
+        with open("ff6.smc", "rb") as f:
+            inrom = f.read()
+    except IOError:
+        while True:
+            print("File not found. Enter source ROM filename:")
+            fn = input()
+            try:
+                with open(fn, "rb") as f:
+                    inrom = f.read()
+            except:
+                continue
+            break
         
     f_chaos = False
     kw = {}
