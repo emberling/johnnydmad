@@ -1,0 +1,83 @@
+Included here are the files needed to compile the FF6 Music Player hack
+as required for johnnydmad to update it with randomized track names, etc.
+
+The full FF6 Music Player hack package is available at
+https://www.ff6hacking.com/wiki/doku.php?id=ff3:ff3us:patches:madsiur:music_player
+
+Original readme copied below.
+
+-----
+
+FF6 Music Player
+by madsiur (themadsiur@gmail.com)
+version 1.3.3
+released on 06/28/2017
+
+Files
+-----
+nh: Patch for headerless ROM
+ANTI: Revert patch
+music_main: Main Menu Implementation
+music_config1: Config menu Implementation (next to "Stereo" option)
+music_config2: Config menu Implementation (additional row)
+
+*** Other Files ***
+mplayercore.asm: Music player code used by all implementations
+mplayerdata.asm: Music player data used by al implementations
+soundresume.asm: SPC code (bank $C5) ASM changes used by all implementations
+menu.tbl: Menu table file used to edit song names (see mplayerdata.asm)
+music_sfc.asm: Reference SFC implementation used as a base for this project.
+
+Patches and files in the "optional fixes" folder have their own readme in 
+the same folder.
+
+
+Space Used (Detail in ASM files)
+--------------------------------
+C5061F-C5063F (all implementations)
+C3F091~C3FA20 (depends of implementation)
+
+RAM usage (Song and volume saving)
+----------------------------------
+$D2: Map Song ID
+$D3: Map Song Volume 
+
+
+Description
+-----------
+
+This hack implement a music player available from the Main menu or Config menu. 
+This code is heavily based from FF6-T Edition implementation of the music player
+which is more or so a copy of Pandora's Box music player.
+
+If you want to change you song titles or the order / number of entries in the player,
+edit the mplayerdata.asm file then assemble either music_main.asm, 
+music_config1.asm or music_config2.asm with xkas 0.06. The only thing that you 
+should change if you are not in friendly waters are song name (always ends with $00) 
+and the playlist (table with all song IDs). 
+
+Song $51 is nothing so it was omitted from the default list. Generally, the songs list 
+follow a chronological order with sound effects at the end. You must always end your 
+song IDs list with silence ($00). This is how the music player stop reading entries. 
+If you want to add more songs and song titles just add more entries, no need of 
+extra changes in the code. You can type directly the names since the ASM file use the
+menu.tbl table file.
+
+The song selected in the player will play during the whole time you are in the menus 
+or until it ends. I coded a current field song save when entering main menu 
+and song restore when pressing B to exit the main menu. This should guarantee 
+the music player song will never play on the field, even if silence was the 
+previous field song.
+
+More implementations should follow, probably implementations made for the optimized 
+$C3 bank made by Novalia Spirit. These patches should work with FF3us 1.1 though I 
+have not tested them on this ROM.
+
+I'd like to thanks Lenophis for the original music player and tsushiy, 
+author of FF6-T Edition for sharing his SFC ASM file two years ago. 
+I would also like to thank Novalia Spirit for his $C3 Compendium. 
+Without the full documented SFC and US disassemblies, this would have take longer.
+
+
+
+ 
