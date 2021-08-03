@@ -30,6 +30,7 @@ ct_battle:          grandfinale, unforgiven, assault, magitek, engine, floating
 ct_bobonga:         what, moogles, gogo, umaro, veldt*2
 ct_final:           metamorphosis, grandfinale, magitek, engine, floating, ktower
 ct_forest:          zozo, ruin, mountain, cave*2, forest*2, dream
+ct_revolution:      catastrophe, grandfinale, assault, savethem, floating*2, ktower
 ct_sewer:           gogo, zozo, owzer*2, martiallaw, cave, train, dream
 ct_silent:          zozo, owzer, cave*2, train, tomb, dream
 ct_singing:         prelude, rachel, ruin, forest, tomb, dream*2
@@ -49,17 +50,21 @@ ff1_end:            prelude, relm, village, town*2, ruintown
 ff1_matoya:         relm, moogles, strago*2, village, dream
 ff1_volcano:        gogo, umaro, mountain, mount2, serpent, gate*2, floating, phoenix, ktower
 ff1_volcano_psx:    umaro, zozo, owzer, serpent, cave, gate*2, ancient, dream, phoenix
+ff1_world:          relm, cyan, strago, balance*2, forest
 ff3_darkworld:      shadow, moogles, mountain, mount2, serpent, forest*2, dream
 ff3_hyne:           kefka, owzer*2, strago, train, ancient, dream, fanatics
 ff3_warrior:        prelude, cyan, locke, figaro*2, returners
+ff4_cave:           espers, awakening, narshe, balance, cave*2, forest, tomb, ancient, dream
 ff4_fiend:          catastrophe, grandfinale, savethem, floating, phoenix, ktower
 ff4_moon:           empire, zozo, ruin*2, train, engine
 ff4_mysidia:        what, strago*2, dream
 ff5_book:           empire, zozo, owzer, ruin, cave, train*2, tomb, gate, ancient, dream
 ff5_boss:           catastrophe, grandfinale, savethem
+ff5_decisive:       catastrophe*2, grandfinale, floating, fanatics, phoenix, ktower
 ff5_hurry:          grandfinale, unforgiven
 ff5_mountain:       setzer, moogles, mountain*2, mount2, engine
 ff5_pirates:        shadow, setzer, returners*2, umaro, veldt, mountain, engine
+ff5_seal:           espers, shadow, gogo, umaro, zozo, owzer, train, tomb, gate*2, ancient
 ff5_village:        grandfinale, moogles, village*2
 ff6_atma:           metamorphosis, catastrophe, grandfinale, savethem, floating, ktower
 ff6_awakening:      prelude, celes, awakening*2
@@ -164,6 +169,7 @@ iog_village:        village*2, town
 iog_village_nobird: prelude, relm, forest
 lal_boss:           unforgiven, savethem, johnny
 lal_labyrinth:      omen3, espers*2, zozo, owzer, cave, train, tomb, gate, ancient, dream, phoenix
+lal_pogo:           gau, what, moogles, umaro, veldt*2, mountain, forest
 lotr_aragorn:       locke, figaro, returners, falcon, balance, mountain*2
 lotr_hobbits:       prelude, relm, moogles, strago, village, town, balance, mountain, forest*2
 lu1_parting:        prelude, omen3, celes, daryl, rachel, relm, gau*2, ruintown
@@ -204,6 +210,7 @@ totr_underworld:    grandfinale, metamorphosis, zozo, train, gate, magitek, engi
 wa2_dungeon2:       setzer, gogo, zozo, martiallaw, mountain, mount2, gate*2, ancient, dream, phoenix
 wa2_heimdal:        metamorphosis, unforgiven, setzer, locke, assault, savethem, falcon, mount2, serpent, gate, engine, phoenix
 xcx_sylvan:         omen3, espers, zozo, narshe, ruin*2, cave, forest, train, tomb, ancient, dream, phoenix
+xg_mermaid:         prelude, omen3, daryl, espers, awakening, ruin, train, tomb*2, ancient
 zaol_temple:        serpent, train, gate, ancient, engine, dream, floating, fanatics, phoenix, ktower
 
 [legacy]
@@ -222,44 +229,47 @@ saga2_aspiration:   catastrophe, savethem, umaro, floating, fanatics*2
 # BAT3 plays throughout WoR
 # BAT4 plays in Kefka's Tower and in special event battles and MiBs such as Siegfried, Presenter, KatanaSoul
 
-7th_darkness:       E00, battle, bat2, bat3, bat4
-arc_battle:         E00, battle, bat2, bat3, bat4
-bof2_barubary:      E00,                     bat4
-bof2_battle2:       E00, battle, bat2, bat3, bat4
-crys_mountain:      E00, battle, bat2, bat3, bat4
-ct_battle:          E00, battle, bat2, bat3
-ct_tension:         E00,                     bat4
-ct_undersea:        E00,                     bat4
-doom_e1m1:          E00, battle, bat2
-ebr_prayer:         E00,               bat3, bat4
-ff1_battle:         E00, battle, bat2, bat3
-ff1_volcano:        E00,         bat2, bat3
-ff6_battle:         E00, battle, bat2, bat3
-ff6_boss:           E00,               bat3, bat4
-ff6_metamorphosis:  E00,                     bat4
-ff6_unforgiven:     E00,                     bat4
-ff7_battle:         E00, battle, bat2, bat3, bat4
-ff7_battle_ff6:     E00, battle, bat2, bat3
-ff8_laguna:         E00, battle, bat2, bat3, bat4
-ff9_battle:         E00, battle, bat2, bat3, bat4
-ff9_hunt:           E00,         bat2, bat3, bat4
-ff9_siege:          E00,                     bat4
-ff14_battlem:       E00, battle, bat2, bat3
-fft_trisection:     E00,                     bat4
-grad3_desert:       E00, battle, bat2, bat3
-lal_boss:           E00,                     bat4
-lu2_fortress:       E00,                     bat4
-lu2_savior:         E00,               bat3, bat4
-mmx_seahorse:       E00, battle, bat2, bat3, bat4
-pw_cornered:        E00, battle, bat2, bat3, bat4
-sd1s_courage:       E00,         bat2, bat3, bat4
-sd2_fortress:       E00,                     bat4
-sf2_balrog:         E00, battle, bat2, bat3, bat4
-sots_boss:          E00,         bat2, bat3
-top_battle:         E00, battle, bat2, bat3
-totr_battle:        E00, battle, bat2, bat3, bat4
-totr_sboss:         E00, battle, bat2, bat3, bat4
-zaol_temple:        E00,                     bat4
+ct_battle:          E10, battle, bat2, bat3
+doom_e1m1:          E15, battle, bat2
+ff6_battle:         E15, battle, bat2, bat3
+ff7_battle_ff6:     E15, battle, bat2, bat3
+ff1_battle:         E20, battle, bat2, bat3
+ff9_battle:         E25, battle, bat2, bat3, bat4
+top_battle:         E27, battle, bat2, bat3
+7th_darkness:       E30, battle, bat2, bat3, bat4
+ff7_battle:         E30, battle, bat2, bat3, bat4
+ff8_battle:         E30, battle, bat2, bat3, bat4
+grad3_desert:       E30, battle, bat2, bat3
+totr_battle:        E35, battle, bat2, bat3, bat4
+arc_battle:         E38, battle, bat2, bat3, bat4
+sf2_balrog:         E40, battle, bat2, bat3, bat4
+sots_boss:          E40,         bat2, bat3
+ff1_volcano:        E45,         bat2, bat3
+ff9_siege:          E45,                     bat4
+ff8_laguna:         E50, battle, bat2, bat3, bat4
+ff14_battlem:       E55, battle, bat2, bat3
+mmx3_seahorse:      E55, battle, bat2, bat3, bat4
+pw_cornered:        E55, battle, bat2, bat3, bat4
+crys_mountain:      E60, battle, bat2, bat3, bat4
+zaol_temple:        E60,                     bat4
+ct_tension:         E68,                     bat4
+ct_undersea:        E70,                     bat4
+ff6_unforgiven:     E70,                     bat4
+fft_trisection:     E70,                     bat4
+lu2_fortress:       E70,                     bat4
+sd1s_courage:       E75,         bat2, bat3, bat4
+ff9_hunt:           E75,         bat2, bat3, bat4
+ot_treasure:        E77,         bat2, bat3, bat4
+bof2_battle2:       E80, battle, bat2, bat3, bat4
+totr_underworld:    E80,         bat2, bat3, bat4
+sd2_fortress:       E82,                     bat4
+ff6_metamorphosis:  E85,                     bat4
+lu2_savior:         E85,               bat3, bat4
+totr_sboss:         E85, battle, bat2, bat3, bat4
+ebr_prayer:         E88,               bat3, bat4
+lal_boss:           E90,                     bat4
+bof2_barubary:      E95,                     bat4
+ff6_boss:           E95,               bat3, bat4
 
 [boss]
 # mboss (miniboss) plays in event encounters like Marshal, Leader, Rizopas
@@ -267,46 +277,50 @@ zaol_temple:        E00,                     bat4
 # atma plays on Kefka at Narshe, Atma (Weapon), MagiMaster, Goddess/Poltrgeist/Doom, the 8 Dragons, Doom Gaze
 # dmad5 plays on False & Final Kefka
 
-7th_darkness:       I00, mboss
-arc_battle:         I00, mboss
-bof2_barubary:      I00, mboss, boss, atma, dmad5
-bof2_battle2:       I00, mboss
-ct_final:           I00,        boss, atma, dmad5
-ct_tension:         I00, mboss
-doom_e1m1:          I00, mboss
-eb_final1:          I00,                    dmad5
-eo3_waves:          I00,        boss, atma, dmad5
 ff1_battle:         I00, mboss
-ff4_fiend:          I00,        boss, atma, dmad5    
-ff5_boss:           I00,        boss, atma
-ff5_hurry:          I00, mboss
-ff6_atma:           I00,        boss, atma, dmad5
 ff6_battle:         I00, mboss
-ff6_boss:           I00, mboss, boss, atma
-ff6_dmad:           I00,              atma, dmad5
-ff6_final:          I00,              atma, dmad5
-ff6_grandfinale:    I00, mboss, boss, atma
-ff6_metamorphosis:  I00, mboss, boss, atma
-ff6_unforgiven:     I00, mboss
-ff7_battle:         I00, mboss
 ff7_battle_ff6:     I00, mboss
-ff7_rebirth:        I00,        boss, atma, dmad5
-ff8_laguna:         I00, mboss, boss, atma, dmad5
-ff9_hunt:           I00, mboss, boss, atma
-ff9_siege:          I00, mboss
-ff14_battlem:       I00, mboss
-ffmq_final:         I00,        boss, atma, dmad5
-fft_trisection:     I00,        boss, atma, dmad5
-grad3_desert:       I00, mboss
-ff9_dragons:        I00, mboss,       atma, dmad5
-lal_boss:           I00, mboss, boss, atma, dmad5
-lu2_savior:         I00, mboss, boss, atma, dmad5
-pw_cornered:        I00, mboss
-sd1s_courage:       I00, mboss, boss, atma
-sd2_final:          I00,        boss, atma, dmad5
-sf2_balrog:         I00, mboss
-sots_boss:          I00, mboss, boss
-totr_sboss:         I00, mboss, boss, atma
+ff5_hurry:          I02, mboss
+7th_darkness:       I05, mboss
+ct_tension:         I05, mboss
+ff7_battle:         I15, mboss
+ff8_battle:         I15, mboss
+ff9_siege:          I15, mboss
+grad3_desert:       I20, mboss
+sf2_balrog:         I20, mboss
+arc_battle:         I25, mboss, boss
+ff8_laguna:         I25, mboss, boss, atma, dmad5
+ff14_battlem:       I25, mboss
+pw_cornered:        I25, mboss
+ff6_grandfinale:    I30, mboss, boss, atma
+ff6_unforgiven:     I35, mboss
+ot_treasure:        I35, mboss, boss
+bof2_battle2:       I40, mboss
+doom_e1m1:          I40, mboss
+sots_boss:          I45, mboss, boss
+ff6_metamorphosis:  I45, mboss, boss, atma
+ff6_boss:           I50, mboss, boss, atma
+totr_sboss:         I50, mboss, boss, atma
+ff9_hunt:           I52, mboss, boss, atma
+fft_trisection:     I55,        boss, atma, dmad5
+ff5_boss:           I60,        boss, atma
+lu2_savior:         I60, mboss, boss, atma, dmad5
+bof2_barubary:      I67, mboss, boss, atma, dmad5
+lal_boss:           I70, mboss, boss, atma, dmad5
+ff4_fiend:          I75,        boss, atma, dmad5    
+ff9_dragons:        I75, mboss,       atma, dmad5
+sd1s_courage:       I75, mboss, boss, atma
+ff5_decisive:       I80,        boss, atma, dmad5
+ff6_atma:           I82,        boss, atma, dmad5
+ffmq_final:         I82,        boss, atma, dmad5
+ct_revolution:      I85,        boss, atma, dmad5    
+ct_final:           I85,        boss, atma, dmad5
+ff7_rebirth:        I88,        boss, atma, dmad5
+eo3_waves:          I90,        boss, atma, dmad5
+ff6_dmad:           I90,              atma, dmad5
+eb_final1:          I95,                    dmad5
+ff6_final:          I95,              atma, dmad5
+sd2_final:          I95,        boss, atma, dmad5
 
 [victory]
 bl_fahrenheit:  fanfare
@@ -320,15 +334,35 @@ lal_boss:       fanfare
 mmx3_zero:      fanfare
 
 [sleep]
-ff4_inn:        sleep
-ff5_inn:        sleep
-ff6_inn:        sleep
-lu2_sleep:      sleep
-sd2_ally:       sleep
+ff4_inn: sleep
+ff5_inn: sleep
+ff6_inn: sleep
+lu2_sleep: sleep
+sd2_ally: sleep
+
+ct_inn: sleep
+ct_prayer: sleep
+rs1_inn: sleep
+rs2_inn: sleep
 
 [death]
-ff5_death:      death
-ff6_death:      death
-sd2_death:      death
+ff5_death: death
+ff6_death: death
+ff7_death: death
+sd2_death: death
+
+wa2_gameover: death
+dkc_gameover: death
+fft_gameover: death
+uwnh_gameover: death
+hm_badend: death
+ct_magusintro: death
 
 [tierboss]
+ct: cc_flame, ct_lavos
+ff: ff3_eureka, ff5_excastle, ff5_seal, ff7_final_part1, ff8_witches, ff9_blackwaltz, ffmq_lava
+ff6: ff6_fanatics_dm, ff6_tier1_dm, ff6_tier2_dm, ff6_tier3
+i: iog_whispers
+chorus: ff6_fanatics_chorus, ff6_tier1_chorus, ff6_tier2_chorus
+sd: sd2_thanatos
+x: xg_weltall
