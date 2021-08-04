@@ -54,6 +54,7 @@ ff4_cave:           balance, cave*2, forest, tomb
 ff4_fiend:          catastrophe, grandfinale, savethem
 ff4_moon:           zozo, ruin*2, train
 ff4_mysidia:        what, strago*2
+ff4_rosa:           celes, rachel*2, awakening
 ff5_book:           zozo, owzer, ruin, train*2, tomb, gate, ancient
 ff5_boss:           catastrophe, grandfinale, savethem
 ff5_decisive:       catastrophe*2, grandfinale, floating, ktower
@@ -301,7 +302,6 @@ ff4_overworld:  balance*2, setzer, mountain, falcon, serpent
 ff4_prologue:   prelude*2, omen3, grandfinale
 ff4_redwings:   omen3, figaro, setzer, troops*2, umaro, engine, assault
 ff4_restless:   I95, G20, unforgiven*2, assault, mboss
-ff4_rosa:       prelude, celes, daryl, coin, relm, rachel*2, awakening
 ff4_rydia:      prelude, celes, daryl, coin, relm*2, awakening, gau, town, village
 ff4_somewhere:  shadow, empire, zozo, ruin, train
 ff4_sorrow:     prelude, coin*2, ruin
