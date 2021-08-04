@@ -190,6 +190,7 @@ sd1s_courage:       grandfinale, savethem*2
 sd2_final:          grandfinale, floating
 sd2_fortress:       falcon, mount2*2, serpent, floating
 sd2_thanatos:       owzer, train, dream, fanatics*2
+sd2_matango:        what, veldt*2
 sd3_counterpoint:   umaro, veldt*2
 sd3_flight:         setzer, blackjack*2, falcon, serpent
 sf2_balrog:         grandfinale, johnny
@@ -457,7 +458,6 @@ sd2_jema:       fanfare, cyan*2, locke, figaro*2, returners*2
 sd2_legend:     shadow, umaro, gogo, zozo, falcon, mountain, mount2, serpent, forest, dream, ancient
 sd2_lofty:      shadow, cyan, owzer, martiallaw, town_ruin, ruin, forest, mountain, cave, espers, ancient
 sd2_mana:       daryl, owzer, ruin, cave, tomb, gate
-sd2_matango:    what*2, veldt*2
 sd2_memories:   daryl*2, coin*2, gau*2
 sd2_morning:    metamorphosis*2, catastrophe*2, floating
 sd2_popoi:      fanfare, prelude, moogles*2, johnny, spinachrag, village
