@@ -37,6 +37,7 @@ dc2_garden:         relm, awakening*2, gau, ruintown, forest
 dc2_palmbrinks:     spinach, what, zozo
 doom_e1m1:          grandfinale, assault
 doom2_doom:         train*2, phoenix, ktower
+ds4_dungeon:        zozo, gate*2, ancient, magitek, engine
 ds4_lyll:           setzer, chocobo, mount2*2
 ebr_prayer:         mount2, floating, phoenix*2, ktower
 eo3_waves:              chaos
@@ -271,7 +272,6 @@ ct_tyran:       catastrophe, umaro*2, floating, ktower, phoenix
 ct_zeal:        relm*2, awakening, owzer, strago*2
 cv3_aquarius:   H2, I35, G55, magitek, floating, ktower, assault*2
 cv4_beginning:  H2, I00, G35, battle, locke, falcon, floating, mount2, phoenix, gate, ancient, assault*2, train, bat2, bat3
-ds4_dungeon:    gate, ancient, magitek, engine, dream, phoenix*2, ktower
 ds4_world:      setzer, chocobo, blackjack, moogles, strago, mountain
 fe15_whatlies:  I40, G80, grandfinale, cyan, savethem, assault, falcon*2, mount2, omen3, balance, ancient, bat4
 ff1_bossb:      I85, G70, grandfinale, boss, atma, savethem, catastrophe, bat4
