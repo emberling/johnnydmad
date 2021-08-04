@@ -197,8 +197,9 @@ sd2_final:          metamorphosis, catastrophe, grandfinale, savethem, falcon, f
 sd2_fortress:       metamorphosis, falcon, mountain, mount2*2, serpent, ancient, magitek, floating, ktower
 sd2_thanatos:       kefka, zozo, owzer, ruin, train, tomb, gate, dream, fanatics*2
 sd2_matango:        what, moogles, umaro, veldt*2, engine
-sd3_flight:         setzer, blackjack*2, moogles, falcon, mountain, serpent
 sd3_counterpoint:   shadow, gogo, umaro, veldt*2, mountain, phoenix, ktower
+sd3_final3:         grandfinale, unforgiven, chocobo, blackjack, falcon*2, mount2, serpent, floating, ktower
+sd3_flight:         setzer, blackjack*2, moogles, falcon, mountain, serpent
 sf2_balrog:         grandfinale, unforgiven, chocobo, johnny, engine
 sots_boss:          grandfinale, gogo, owzer, serpent, dream
 sots_boss_nointro:  cyan*2, moogles, mountain, mount2, cave, forest
@@ -473,14 +474,11 @@ sd2_thick:      balance, mountain*2, forest*2, cave, serpent*2
 sd2_thunder:    moogles, gogo*2, umaro, zozo, mountain*2, mount2, cave
 sd2_town:       relm, moogles*2, town, village*2
 sd2_wish:       W4, ruin*2, tomb, W:prelude, W:omen3, W:coin, W:zozo, W:owzer, W:narshe, W:town_ruin, W:forest*2, W:espers, W:cave, W:dream
-smrpg_battle:   I30, G0, fanfare, battle, grandfinale*4, chocobo*2, blackjack*2, johnny*2, spinachrag, moogles, mount2
-smrpg_road:     prelude, relm, chocobo, blackjack, johnny, spinachrag, what, moogles*2, village, mountain
-smw_castle:     H2, gogo, umaro, zozo, owzer*2, ruin, train, dream, H:empire, H:kefka, H:ancient, H:gate, H:tomb, H:fanatics, H:ktower
+
 sd3_angels:     omen3, espers*2, awakening, gate, phoenix
 sd3_blackmarket: shadow*2, moogles, umaro, gogo, zozo, owzer, martiallaw, train, dream
 sd3_charlotte:  prelude, relm, spinachrag, what*2, moogles, strago
 sd3_faith:      I55, G70, boss, atma, grandfinale, umaro
-sd3_final3:     I65, G99, atma, grandfinale, dmad5*2, falcon, floating
 sd3_flight:     setzer, chocobo, blackjack*2, mountain
 sd3_intolerance: empire*2, train, ruin
 sd3_mana:       I80, G45, boss*2, atma, metamorphosis*2, catastrophe, grandfinale, unforgiven, ancient, magitek, dream, floating*2, phoenix, ktower
@@ -494,6 +492,9 @@ sdlm_pain:      G75, I70, boss, atma, grandfinale
 sdlm_snowfield: W4, moogles, zozo, serpent*2, dream, ancient, W:cyan, W:setzer, W:troops, W:savethem, W:martiallaw, W:town_ruin, W:falcon, W:mountain, W:espers, W:floating, W:gate, W:phoenix
 sf2_guile:      I50, G30, battle, grandfinale*2, locke*2, setzer, savethem, chocobo, blackjack, johnny, floating, mount2, bat2, bat3, mboss
 sf2_ken:        I40, G60, battle*2, grandfinale, unforgiven*2, setzer, locke, johnny, bat2, bat3, mboss
+smrpg_battle:   I30, G0, fanfare, battle, grandfinale*4, chocobo*2, blackjack*2, johnny*2, spinachrag, moogles, mount2
+smrpg_road:     prelude, relm, chocobo, blackjack, johnny, spinachrag, what, moogles*2, village, mountain
+smw_castle:     H2, gogo, umaro, zozo, owzer*2, ruin, train, dream, H:empire, H:kefka, H:ancient, H:gate, H:tomb, H:fanatics, H:ktower
 smb2_select:    prelude*2, johnny, spinachrag*2, moogles
 so2_kurik:      cyan, moogles, gogo, town*2, village, figaro
 so2_rescue:     I70, G20, unforgiven, savethem, magitek*2, floating, mount2, mboss, bat2
@@ -642,6 +643,7 @@ ff6_dmad:           I90,              atma, dmad5
 eb_final1:          I95,                    dmad5
 ff6_final:          I95,              atma, dmad5
 sd2_final:          I95,        boss, atma, dmad5
+sd3_final3:         I95,        boss, atma, dmad5
 
 [victory]
 bl_fahrenheit:  fanfare
