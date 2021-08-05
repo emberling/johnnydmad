@@ -16,6 +16,7 @@ bof2_evrai:         owzer, tomb*2
 bof2_unspoken:      prelude, daryl, coin*2, ruin
 cc_arni:            village*2, town
 cc_dragonia:        zozo, owzer, ancient*2, dream, phoenix, ktower
+cc_eden:            prelude*2, relm
 cc_hydra:           umaro, zozo, veldt*2, dream
 cc_world2:          prelude, omen3, awakening, balance*2
 crys_mountain:      chocobo, blackjack, mount2*2, serpent
