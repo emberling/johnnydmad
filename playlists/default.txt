@@ -159,6 +159,7 @@ fz_silence:         chocobo*2, blackjack, johnny
 fz_white1:          chocobo*2, blackjack, johnny
 grad3_desert:       magitek
 grad3_moai:         catastrophe*2, phoenix, ktower
+homm2_sorceress:    owzer, strago, dream*2
 iog_ankor:          ancient, dream
 iog_larai:          umaro, train, ancient*2
 iog_village:        village*2, town
