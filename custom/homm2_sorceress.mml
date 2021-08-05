@@ -55,7 +55,7 @@
 #def baseFiddleMidVol=         'baseFiddleVol*v.7'
 #def highBaseFiddleVol=        'baseFiddleVol*v.35'
 #def tambourineVol=            v50
-#def cymbalVol=                v110
+#def cymbalVol=                v64
 #def supportStringsVol=        v25
 #def supportStringsQuietVol=   'supportStringsVol*v.5'
 #def supportStringsLateVol=    'supportStringsVol*v.8'

@@ -155,6 +155,7 @@ fz_silence:         prelude, chocobo*2, blackjack, johnny, falcon
 fz_white1:          chocobo*2, blackjack, johnny, serpent
 grad3_desert:       unforgiven, chocobo, johnny, serpent, magitek, floating*2, phoenix
 grad3_moai:         empire, metamorphosis, catastrophe*2, grandfinale, umaro, train, gate, ancient, floating, fanatics, phoenix, ktower
+homm2_sorceress:    owzer, strago, forest, train, tomb, dream*2
 iog_ankor:          catastrophe, umaro, train, ancient*2, dream, floating, phoenix
 iog_larai:          espers, gogo, umaro, owzer, cave, forest, train, tomb, ancient*2
 iog_village:        village*2, town
