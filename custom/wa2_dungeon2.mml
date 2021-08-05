@@ -23,7 +23,7 @@
 #WAVE 0x2B 0x69 ## Orchestra Hit
 #WAVE 0x2C 0x2D ## Crash
 ##WAVE 0x2D 0x4D ## Toms
-#BRR 0x2D; ../samples/legacy/top20_tom_tom,   D401, -11.226, FFF1
+#BRR 0x2D; brr/top20_tom_tom,   D401, -11.226, FFF1
 
 #def init= t130 %x255 %v40 %b0,70 %f0,0
 
