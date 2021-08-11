@@ -26,6 +26,8 @@ ct_battle:          grandfinale, unforgiven, magitek, engine
 ct_bobonga:         umaro, veldt*2
 ct_final:           grandfinale, floating
 ct_forest:          cave*2, forest*2
+ct_lavos:           metamorphosis
+ct_lavos_full:      kefka, catastrophe*2, grandfinale
 ct_revolution:      grandfinale, floating*2, ktower
 ct_sewer:           zozo, owzer*2, train, dream
 ct_silent:          zozo, owzer, cave*2, tomb, dream
@@ -260,8 +262,6 @@ ct_factory:     zozo, narshe, martiallaw, engine, magitek*2
 ct_fair:        johnny, spinachrag, moogles*2, town, village
 ct_frog:        fanfare, cyan*2, returners
 ct_keeper:      espers, fanatics, ruin, dream, gate, ancient
-ct_lavos:       metamorphosis, catastrophe*2
-ct_lavos_full:  kefka, grandfinale, fanatics, catastrophe, empire
 ct_magus:       H3, I99, G85, atma, dmad5, floating, fanatics, ktower, grandfinale, H:kefka, H:empire, H:falcon, H:phoenix, H:gate, H:train, H:tomb
 ct_mountain:    moogles, gogo, umaro, veldt*2, mountain, engine
 ct_night:       coin*2, daryl, celes*2, ruin, tomb
