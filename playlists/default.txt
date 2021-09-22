@@ -166,6 +166,7 @@ lu2_fortress:       grandfinale, assault, floating*2, ktower
 lu2_iris:           prelude, awakening*2, ruin
 lu2_peace:          prelude, relm, awakening*2
 lu2_savior:         metamorphosis*2, grandfinale, savethem, floating
+lu2_submarine:      prelude*2, espers, ruin, cave, tomb
 lu2_town:           village*2, town
 lu2_turret:         savethem*2, mount2, floating
 met3_plants:        umaro, magitek, engine*2, dream
