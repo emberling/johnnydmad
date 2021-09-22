@@ -203,6 +203,7 @@ sd2_fortress:       metamorphosis, falcon, mountain, mount2*2, serpent, ancient,
 sd2_thanatos:       kefka, zozo, owzer, ruin, train, tomb, gate, dream, fanatics*2
 sd2_matango:        what, moogles, umaro, veldt*2, engine
 sd3_counterpoint:   shadow, gogo, umaro, veldt*2, mountain, phoenix, ktower
+sd3_faith:          kefka, metamorphosis, catastrophe, grandfinale, floating, phoenix, ktower
 sd3_final3:         grandfinale, unforgiven, chocobo, blackjack, falcon*2, mount2, serpent, floating, ktower
 sd3_flight:         setzer, blackjack*2, moogles, falcon, mountain, serpent
 sf2_balrog:         grandfinale, unforgiven, chocobo, johnny, engine
@@ -213,6 +214,7 @@ tn_darkworld:       omen3, espers, zozo, ruin*2, falcon, cave, forest, train, to
 top_battle:         grandfinale, unforgiven, falcon, mount2, gate, magitek, engine
 top_sylphs:         omen3, espers, umaro, zozo, narshe, ruin*2, cave, forest, tomb, dream
 top_world1:         omen3, falcon, balance*2, mountain, forest
+totr_aquarians:     empire, catastrophe, espers, umaro, zozo, ruin, train, gate, ancient, dream, floating
 totr_battle:        grandfinale, unforgiven, umaro, serpent, ancient, magitek, engine
 totr_downfall:      prelude, omen3, espers, shadow*2, zozo, ruin, cave, train, tomb, dream
 totr_sboss:         grandfinale, unforgiven, magitek, floating, engine
@@ -480,7 +482,6 @@ sd2_wish:       W4, ruin*2, tomb, W:prelude, W:omen3, W:coin, W:zozo, W:owzer, W
 sd3_angels:     omen3, espers*2, awakening, gate, phoenix
 sd3_blackmarket: shadow*2, moogles, umaro, gogo, zozo, owzer, martiallaw, train, dream
 sd3_charlotte:  prelude, relm, spinachrag, what*2, moogles, strago
-sd3_faith:      I55, G70, boss, atma, grandfinale, umaro
 sd3_flight:     setzer, chocobo, blackjack*2, mountain
 sd3_intolerance: empire*2, train, ruin
 sd3_mana:       I80, G45, boss*2, atma, metamorphosis*2, catastrophe, grandfinale, unforgiven, ancient, magitek, dream, floating*2, phoenix, ktower
@@ -581,6 +582,7 @@ ct_undersea:        E70,                     bat4
 ff6_unforgiven:     E70,                     bat4
 fft_trisection:     E70,                     bat4
 lu2_fortress:       E70,                     bat4
+sd3_faith:          E70,               bat3, bat4
 ct_theme:           E75,               bat3, bat4
 sd1s_courage:       E75,         bat2, bat3, bat4
 ff9_hunt:           E75,         bat2, bat3, bat4
@@ -631,6 +633,7 @@ ff9_hunt:           I52, mboss, boss, atma
 fft_trisection:     I55,        boss, atma, dmad5
 ff5_boss:           I60,        boss, atma
 lu2_savior:         I60, mboss, boss, atma, dmad5
+sd3_faith:          I60,        boss, atma, dmad5
 bof2_barubary:      I67, mboss, boss, atma, dmad5
 lal_boss:           I70, mboss, boss, atma, dmad5
 ff4_fiend:          I75,        boss, atma, dmad5    

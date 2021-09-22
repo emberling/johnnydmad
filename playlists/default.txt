@@ -197,6 +197,7 @@ sd2_fortress:       falcon, mount2*2, serpent, floating
 sd2_thanatos:       owzer, train, dream, fanatics*2
 sd2_matango:        what, veldt*2
 sd3_counterpoint:   umaro, veldt*2
+sd3_faith:          metamorphosis, grandfinale, floating, ktower
 sd3_final3:         grandfinale, unforgiven, falcon*2, floating, ktower
 sd3_flight:         setzer, blackjack*2, falcon, serpent
 sf2_balrog:         grandfinale, johnny
@@ -207,6 +208,7 @@ tn_darkworld:       omen3, espers, ruin*2, falcon, cave
 top_battle:         grandfinale, mount2, gate
 top_sylphs:         omen3, ruin*2, forest, tomb
 top_world1:         omen3, falcon, balance*2
+totr_aquarians:     empire, umaro*2, ruin, train, gate, ancient
 totr_battle:        grandfinale, unforgiven, serpent, magitek, engine
 totr_downfall:      omen3, shadow*2, zozo, tomb
 totr_sboss:         grandfinale, engine
@@ -612,6 +614,7 @@ totr_sboss:         I50,        boss
 ff9_hunt:           I52, mboss, boss
 ff5_boss:           I60,        boss, atma
 lu2_savior:         I60, mboss,             dmad5
+sd3_faith:          I60,        boss, atma
 bof2_barubary:      I67, mboss
 lal_boss:           I70, mboss, boss, atma, dmad5
 ff4_fiend:          I75,              atma, dmad5
