@@ -67,6 +67,7 @@ ff5_mountain:       setzer, mountain*2, mount2
 ff5_pirates:        returners*2, umaro, veldt, mountain, engine
 ff5_seal:           umaro, zozo, owzer, train, gate*2, ancient
 ff5_village:        village
+ff5_void2:          setzer, returners, troops, savethem, mountain, ktower
 ff6_atma:           metamorphosis, catastrophe, grandfinale, floating
 ff6_awakening:      prelude, celes, awakening*2
 ff6_balance:        omen3, balance*2, forest
@@ -163,6 +164,7 @@ fz_silence:         chocobo*2, blackjack, johnny
 fz_white1:          chocobo*2, blackjack, johnny
 grad3_desert:       magitek
 grad3_moai:         catastrophe*2, phoenix, ktower
+gs_venus:           setzer, mountain, mount2*2, gate, floating
 homm2_sorceress:    owzer, strago, dream*2
 iog_ankor:          ancient, dream
 iog_larai:          umaro, train, ancient*2
@@ -214,6 +216,7 @@ totr_battle:        grandfinale, unforgiven, serpent, magitek, engine
 totr_downfall:      omen3, shadow*2, zozo, tomb
 totr_sboss:         grandfinale, engine
 totr_underworld:    grandfinale, gate, magitek, floating*2, phoenix, ktower
+wa_zed:             grandfinale, shadow, setzer, gogo*2
 wa2_dungeon2:       zozo, martiallaw, mount2, gate*2, phoenix
 wa2_heimdal:        setzer, assault*2, savethem, gate
 xcx_sylvan:         omen3, espers, narshe, ruin*2, cave, ancient, dream, phoenix
@@ -223,20 +226,11 @@ zaol_temple:        train, gate, floating*2, phoenix, ktower
 
 [legacy]
 # songs that still use legacy sample set and have not gone through editing to meet EX5 standards
-ar_sacrifices:      awakening, ruintown, forest, tomb
-bof2_wings:         blackjack, falcon
-dt_skullbone:       shadow*2, zozo, martiallaw*2, train
-ff5_void2:          setzer, returners, troops, savethem, mountain, ktower
 
 [draft]
 # filing songs here that are not legacy but nevertheless have not gone through editing to meet EX5 standards
 # mostly, such songs will not be included in this playlist but some are worthwhile despite major issues in channel priority, accuracy, etc
 ff9_notalone:       grandfinale
-
-## TO DO LIST for songs not listed above that could be listed after editing/replacement:
-# lal_master
-# kq6_bookworm
-# saga2_aspiration
 
 [legacysongstxtcopypasta]
 # temporarily filling in the rest of the legacy song set here without reviewing the track selections (will be more permissive than desired)
@@ -401,7 +395,6 @@ fft_apoplexy_part1: I15, G50, battle, savethem*2, bat2, bat3, bat4, mboss
 fft_apoplexy_part2: empire, catastrophe, umaro, train, gate, fanatics
 fz_port:        I35, G40, grandfinale, falcon*2, serpent, magitek, floating, mount2
 gs_tunnel:      H4, ancient*2, dream, floating, fanatics*2, phoenix*2, ktower, H:omen3, H:grandfinale, H:espers, H:shadow, H:umaro, H:zozo, H:owzer, H:serpent, H:train, H:cave
-gs_venus:       I10, G75, battle, locke, mount2*2, gate, mountain
 iog_boss:       I95, G55, boss, metamorphosis*2, catastrophe, unforgiven
 iog_whispers:   H2, zozo, owzer*2, ruin*2, forest*2, cave*2, tomb*2, dream, train, espers, gate, phoenix, H:prelude, H:daryl, H:shadow
 iog_womb:       W2, prelude, daryl, coin, rachel, awakening, ruin, forest, tomb, espers
@@ -528,7 +521,6 @@ totr_spirit:    I99, G75, atma*2, grandfinale, dmad5
 totr_wind:      prelude, relm, awakening, strago, village, mountain, moogles
 totr_worlds:    omen3, celes, rachel*2, awakening, ruin, serpent, tomb, dream, phoenix, balance
 tyr_theme:      omen3, assault, magitek, floating, dream, ktower
-wa_zed:         grandfinale, shadow, setzer, moogles, umaro, gogo*2
 wc2_human1:     empire, troops, assault*2, savethem, umaro
 wc2_orc1:       I20, G95, catastrophe, grandfinale, savethem, umaro, veldt, floating, ktower, assault*2, bat3, bat4
 xc1_valakn:     W4, omen3, celes, daryl, narshe, ruin*2, cave*2, tomb*2, W:prelude, W:coin, W:shadow, W:zozo, W:town_ruin, W:falcon, W:balance, W:mountain, W:espers, W:forest, W:ancient

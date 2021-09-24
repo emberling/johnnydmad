@@ -72,6 +72,7 @@ ff5_mountain:       setzer, moogles, mountain*2, mount2, engine
 ff5_pirates:        shadow, setzer, returners*2, umaro, veldt, mountain, engine
 ff5_seal:           espers, shadow, gogo, umaro, zozo, owzer, train, tomb, gate*2, ancient
 ff5_village:        grandfinale, moogles, village*2
+ff5_void2:          setzer, locke, returners, troops, savethem, umaro, mountain, mount2, floating, ktower
 ff6_atma:           metamorphosis, catastrophe, grandfinale, savethem, floating, ktower
 ff6_awakening:      prelude, celes, awakening*2
 ff6_balance:        omen3, cyan, falcon, balance*2, forest
@@ -169,6 +170,7 @@ fz_silence:         prelude, chocobo*2, blackjack, johnny, falcon
 fz_white1:          chocobo*2, blackjack, johnny, serpent
 grad3_desert:       unforgiven, chocobo, johnny, serpent, magitek, floating*2, phoenix
 grad3_moai:         empire, metamorphosis, catastrophe*2, grandfinale, umaro, train, gate, ancient, floating, fanatics, phoenix, ktower
+gs_venus:           setzer, locke, falcon, mountain, mount2*2, serpent, gate, floating, phoenix, ktower
 homm2_sorceress:    owzer, strago, forest, train, tomb, dream*2
 iog_ankor:          catastrophe, umaro, train, ancient*2, dream, floating, phoenix
 iog_larai:          espers, gogo, umaro, owzer, cave, forest, train, tomb, ancient*2
@@ -220,6 +222,7 @@ totr_battle:        grandfinale, unforgiven, umaro, serpent, ancient, magitek, e
 totr_downfall:      prelude, omen3, espers, shadow*2, zozo, ruin, cave, train, tomb, dream
 totr_sboss:         grandfinale, unforgiven, magitek, floating, engine
 totr_underworld:    grandfinale, metamorphosis, zozo, train, gate, magitek, engine, floating*2, phoenix, ktower
+wa_zed:             grandfinale, unforgiven, shadow, setzer, moogles, umaro, gogo*2
 wa2_dungeon2:       setzer, gogo, zozo, martiallaw, mountain, mount2, gate*2, ancient, dream, phoenix
 wa2_heimdal:        metamorphosis, unforgiven, setzer, locke, assault, savethem, falcon, mount2, serpent, gate, engine, phoenix
 xcx_sylvan:         omen3, espers, zozo, narshe, ruin*2, cave, forest, train, tomb, ancient, dream, phoenix
@@ -227,14 +230,7 @@ xg_mermaid:         prelude, omen3, daryl, espers, awakening, ruin, train, tomb*
 zaol_temple:        serpent, train, gate, ancient, engine, dream, floating, fanatics, phoenix, ktower
 
 [legacy]
-ar_sacrifices:      prelude, omen3, awakening, village, ruintown, forest, tomb, dream
-bof2_wings:         prelude, chocobo, blackjack*2, falcon, serpent
-dt_skullbone:       shadow*2, johnny, gogo, umaro, zozo, owzer, martiallaw*2, train, dream
-eb_final1:              chaos
-ff5_void2:          setzer, locke, returners, troops, savethem, umaro, mountain, mount2, floating, ktower
-lal_master:         prelude, relm*2, awakening, strago, forest
-kq6_bookworm:       spinach, what*2
-saga2_aspiration:   catastrophe, savethem, umaro, floating, fanatics*2
+
 
 [legacysongstxtcopypasta]
 # temporarily filling in the rest of the legacy song set here without reviewing the track selections (will be more permissive than desired)
@@ -399,7 +395,6 @@ fft_apoplexy_part1: I15, G50, battle, savethem*2, bat2, bat3, bat4, mboss
 fft_apoplexy_part2: empire, catastrophe, umaro, train, gate, fanatics
 fz_port:        I35, G40, grandfinale, falcon*2, serpent, magitek, floating, mount2
 gs_tunnel:      H4, ancient*2, dream, floating, fanatics*2, phoenix*2, ktower, H:omen3, H:grandfinale, H:espers, H:shadow, H:umaro, H:zozo, H:owzer, H:serpent, H:train, H:cave
-gs_venus:       I10, G75, battle, locke, mount2*2, gate, mountain
 iog_boss:       I95, G55, boss, metamorphosis*2, catastrophe, unforgiven
 iog_whispers:   H2, zozo, owzer*2, ruin*2, forest*2, cave*2, tomb*2, dream, train, espers, gate, phoenix, H:prelude, H:daryl, H:shadow
 iog_womb:       W2, prelude, daryl, coin, rachel, awakening, ruin, forest, tomb, espers
@@ -526,7 +521,6 @@ totr_spirit:    I99, G75, atma*2, grandfinale, dmad5
 totr_wind:      prelude, relm, awakening, strago, village, mountain, moogles
 totr_worlds:    omen3, celes, rachel*2, awakening, ruin, serpent, tomb, dream, phoenix, balance
 tyr_theme:      omen3, assault, magitek, floating, dream, ktower
-wa_zed:         grandfinale, shadow, setzer, moogles, umaro, gogo*2
 wc2_human1:     empire, troops, assault*2, savethem, umaro
 wc2_orc1:       I20, G95, catastrophe, grandfinale, savethem, umaro, veldt, floating, ktower, assault*2, bat3, bat4
 xc1_valakn:     W4, omen3, celes, daryl, narshe, ruin*2, cave*2, tomb*2, W:prelude, W:coin, W:shadow, W:zozo, W:town_ruin, W:falcon, W:balance, W:mountain, W:espers, W:forest, W:ancient
@@ -578,6 +572,7 @@ mmx3_seahorse:      E55, battle, bat2, bat3, bat4
 pw_cornered:        E55, battle, bat2, bat3, bat4
 crys_mountain:      E60, battle, bat2, bat3, bat4
 zaol_temple:        E60,                     bat4
+gs_venus:           E65,               bat3, bat4
 ct_tension:         E68,                     bat4
 ct_undersea:        E70,                     bat4
 ff6_unforgiven:     E70,                     bat4
