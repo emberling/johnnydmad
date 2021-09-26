@@ -205,6 +205,7 @@ sd3_faith:          metamorphosis, grandfinale, floating, ktower
 sd3_final3:         grandfinale, unforgiven, falcon*2, floating, ktower
 sd3_flight:         setzer, blackjack*2, falcon, serpent
 sf2_balrog:         grandfinale, johnny
+smrpg_road2:        johnny, spinach*2, moogles, gogo, mountain
 sots_boss:          grandfinale, dream
 sots_boss_nointro:  cyan*2, mountain, cave
 sth1_spring:        johnny*2, moogles
