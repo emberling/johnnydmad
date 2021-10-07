@@ -163,6 +163,7 @@ ff12_ozmone:        chocobo, johnny, what, moogles, gogo, strago, veldt*2, mount
 ff14_azyslla:       zozo, ruin, train, magitek, floating*2, ktower
 ff14_battlem:       metamorphosis, grandfinale, unforgiven, assault, savethem
 ff14_forthesky:     grandfinale, cyan, figaro, assault, savethem*2, falcon
+ffmq_boss:          grandfinale, unforgiven, magitek, ktower
 ffmq_faeria:        prelude, johnny, moogles, town*2
 ffmq_final:         grandfinale, floating, ktower
 fft_trisection:     empire, grandfinale, troops, savethem*2, floating, ktower
@@ -381,7 +382,6 @@ ff12_estersand: locke, chocobo, moogles, balance*2, veldt, mountain*2, mount2, s
 ff12_paramina:  W4, omen3*2, empire*2, catastrophe, narshe*2, martiallaw, town_ruin, ruin*2, cave*2, tomb, ancient, assault, W:shadow, W:awakening, W:cyan, W:troops*2, W:umaro, W:zozo, W:owzer, W:balance, W:train*2, W:serpent, W:espers*2, W:forest
 ff12_prison:    H2, empire, umaro, zozo, martiallaw, veldt, train, gate, H:dream, H:fanatics, H:ancient, H:tomb
 ffmq_battle:    I50, G15, battle*2, bat2, bat3
-ffmq_boss:      I55, G60, boss*2, atma
 ffmq_doom:      I40, G75, catastrophe, gate, engine, floating, ktower*2, bat4
 ffmq_forest:    omen3, shadow, awakening, owzer, narshe, town_ruin, ruin, forest*2, train, cave, tomb, dream, espers, serpent
 ffmq_fossil:    cyan*2, figaro, troops*2, returners, martiallaw, engine, assault
@@ -631,6 +631,7 @@ fft_trisection:     I55,        boss, atma, dmad5
 ff5_boss:           I60,        boss, atma
 lu2_savior:         I60, mboss, boss, atma, dmad5
 sd3_faith:          I60,        boss, atma, dmad5
+ffmq_boss:          I65,        boss, atma, dmad5
 bof2_barubary:      I67, mboss, boss, atma, dmad5
 lal_boss:           I70, mboss, boss, atma, dmad5
 ff4_fiend:          I75,        boss, atma, dmad5    
@@ -687,7 +688,7 @@ ct_magusintro: death
 
 [tierboss]
 ct: cc_flame, ct_lavos
-ff: ff3_eureka, ff5_excastle, ff5_seal, ff7_final_part1, ff8_witches, ff9_blackwaltz, ffmq_lava
+ff: ff3_eureka, ff5_excastle, ff5_seal, ff7_final_part1, ff8_witches, ff9_blackwaltz, ffmq_boss, ffmq_lava
 ff6: ff6_fanatics_dm, ff6_tier1_dm, ff6_tier2_dm, ff6_tier3
 i: iog_whispers
 chorus: ff6_fanatics_chorus, ff6_tier1_chorus, ff6_tier2_chorus
