@@ -52,6 +52,7 @@ ff1_matoya:         relm, moogles, strago*2
 ff1_volcano:        umaro, mount2, gate*2, floating, phoenix
 ff1_volcano_psx:    gate*2, ancient, dream, phoenix
 ff1_world:          balance*2, forest
+ff3_battle:         grandfinale, savethem
 ff3_darkworld:      moogles, serpent, forest*2
 ff3_hyne:           owzer*2, train, ancient, dream, fanatics
 ff3_warrior:        cyan, locke, figaro*2, returners
@@ -285,7 +286,6 @@ ff1_dungeon:    I85, G25, metamorphosis, grandfinale, unforgiven, floating, gate
 ff2_battle2:    I75, G75, metamorphosis, catastrophe, grandfinale, assault*2, bat3, bat4
 ff2_battleb:    H4, train, kefka, gogo, owzer*2, espers, fanatics*2, grandfinale, dream*2, gate, H:I50, H:G30, H:prelude, H:omen3, H:shadow, H:strago, H:balance, H:cave, H:forest, H:tomb, H:engine
 ff2_theme:      prelude, awakening, town_ruin, ruin, balance, gau, forest*2
-ff3_battle:     I25, G30, battle*2, metamorphosis, grandfinale, assault, savethem, bat2
 ff3_eureka:     mountain, mount2, espers, dream, serpent, falcon, setzer
 ff3_warrior:    figaro, returners*2, fanfare*2
 ff3_world:      prelude, relm, village, balance*2
@@ -557,6 +557,7 @@ ff1_battle:         E20, battle, bat2
 ff9_battle:         E25, battle, bat2, bat3
 top_battle:         E27, battle, bat2, bat3
 7th_darkness:       E30,         bat2, bat3
+ff3_battle:         E30, battle, bat2
 ff7_battle:         E30, battle, bat2, bat3, bat4
 ff8_battle:         E30, battle, bat2, bat3
 totr_battle:        E35, battle, bat2, bat3
@@ -594,6 +595,7 @@ ff6_battle:         I00, mboss
 ff7_battle_ff6:     I00, mboss
 ff5_hurry:          I02, mboss
 ct_tension:         I05, mboss
+ff3_battle:         I15, mboss
 ff7_battle:         I15, mboss
 ff8_battle:         I15, mboss
 ff9_siege:          I15, mboss
