@@ -28,6 +28,7 @@ crys_mountain:      chocobo, blackjack, mountain, mount2*2, serpent, gate, ancie
 crys_tower:         setzer, chocobo, blackjack, moogles, mountain, mount2*2
 ct_ayla:            locke*2, savethem
 ct_battle:          grandfinale, unforgiven, assault, magitek, engine, floating
+ct_battle2:         grandfinale, unforgiven
 ct_bobonga:         what, moogles, gogo, umaro, veldt*2
 ct_final:           metamorphosis, grandfinale, magitek, engine, floating, ktower
 ct_forest:          zozo, ruin, mountain, cave*2, forest*2, dream
@@ -254,7 +255,6 @@ cc_pyre:        ruin, train, cave, gate*2, phoenix*2, ancient
 cc_valley:      awakening, moogles, veldt, mountain*2, mount2, serpent, forest
 crys_fields:    chocobo, johnny, gogo, moogles*2, mountain, setzer
 ct_600ad:       zozo, owzer*2, town_ruin, ruin, forest
-ct_battle2:     I05, G40, battle*2, grandfinale, bat2
 ct_bike:        I99, G10, battle, grandfinale, unforgiven, johnny, chocobo*2, serpent, magitek, mboss
 ct_boss:        I99, G30, boss, unforgiven, grandfinale, magitek
 ct_boss2:       I95, G75, atma*2, metamorphosis, grandfinale, catastrophe
@@ -550,7 +550,8 @@ zoot_storms:    kefka*2, shadow*2, gogo*2, umaro, owzer, strago, dream*2
 # BAT3 plays throughout WoR
 # BAT4 plays in Kefka's Tower and in special event battles and MiBs such as Siegfried, Presenter, KatanaSoul
 
-ct_battle:          E10, battle, bat2, bat3
+ct_battle:          E05, battle, bat2, bat3
+ct_battle2:         E10, battle, bat2, bat3
 doom_e1m1:          E15, battle, bat2
 ff6_battle:         E15, battle, bat2, bat3
 ff7_battle_ff6:     E15, battle, bat2, bat3
@@ -601,6 +602,7 @@ ff6_boss:           E95,               bat3, bat4
 # atma plays on Kefka at Narshe, Atma (Weapon), MagiMaster, Goddess/Poltrgeist/Doom, the 8 Dragons, Doom Gaze
 # dmad5 plays on False & Final Kefka
 
+ct_battle:          I00, mboss
 ff1_battle:         I00, mboss
 ff6_battle:         I00, mboss
 ff7_battle_ff6:     I00, mboss
@@ -687,7 +689,7 @@ hm_badend: death
 ct_magusintro: death
 
 [tierboss]
-ct: cc_flame, ct_lavos
+ct: cc_flame, ct_battle2, ct_lavos
 ff: ff3_eureka, ff5_excastle, ff5_seal, ff7_final_part1, ff8_witches, ff9_blackwaltz, ffmq_boss, ffmq_lava
 ff6: ff6_fanatics_dm, ff6_tier1_dm, ff6_tier2_dm, ff6_tier3
 i: iog_whispers
