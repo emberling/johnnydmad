@@ -158,6 +158,7 @@ ff9_siege:          metamorphosis*2, catastrophe, grandfinale, assault, savethem
 ff9_notalone:       prelude, grandfinale, rachel, falcon, dream
 ff9_treno:          prelude, johnny, spinach*2
 ff9_vivi:           spinach, what, moogles, gogo, strago*2, martiallaw
+ff10_calm:          prelude, omen3, espers, ruin, cave*2, forest, tomb, dream
 ff10_via:           prelude, espers, zozo, owzer, tomb*2, dream
 ff10_zanarkand:     prelude, omen3, celes, daryl, coin, awakening, ruin, tomb
 ff12_crystal:       omen3, espers*2, narshe, ruin, cave, forest, train, tomb, gate, ancient, dream, phoenix
@@ -373,7 +374,6 @@ ff9_rose:       prelude, celes*2, coin*2, daryl, cyan
 ff9_world:      strago, town_ruin, balance*2, forest
 ffx_ambition:   H2, omen3, kefka, owzer, fanatics*2, dream, gate, phoenix, ancient
 ffx_battle:     I55, G10, battle*2, savethem, bat2, bat3, mboss
-ffx_calm:       omen3, shadow, awakening, ruin, forest*2, espers, tomb, dream
 ffx_decision:   relm, awakening, town, martiallaw, forest, village
 ffx_gagazet:    W4, omen3, gau, cyan, umaro, narshe, ruin*2, veldt, forest, tomb, ancient, W:rachel, W:awakening, W:zozo, W:owzer, W:strago, W:martiallaw, W:town_ruin
 ffx_luca:       relm, spinachrag, town*2
