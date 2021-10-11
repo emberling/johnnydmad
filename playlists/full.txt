@@ -215,6 +215,7 @@ sd3_counterpoint:   shadow, gogo, umaro, veldt*2, mountain, phoenix, ktower
 sd3_faith:          kefka, metamorphosis, catastrophe, grandfinale, floating, phoenix, ktower
 sd3_final3:         grandfinale, unforgiven, chocobo, blackjack, falcon*2, mount2, serpent, floating, ktower
 sd3_flight:         setzer, blackjack*2, moogles, falcon, mountain, serpent
+sd3_pray:           coin, rachel, awakening, narshe, ruintown*2, ruin, forest, train, tomb
 sf2_balrog:         grandfinale, unforgiven, chocobo, johnny, engine
 smrpg_road2:        chocobo, johnny, spinach*2, what, moogles, gogo, mountain, forest
 sots_boss:          grandfinale, gogo, owzer, serpent, dream
