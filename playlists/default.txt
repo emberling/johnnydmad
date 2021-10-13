@@ -137,6 +137,7 @@ ff7_battle_ff6:     grandfinale, unforgiven
 ff7_bronco:             chaos
 ff7_corel:          gau*2, narshe, martiallaw, ruintown
 ff7_electric:       chocobo*2, johnny
+ff7_gun:            grandfinale, troops, assault, savethem*2, floating
 ff7_mako:           omen3, zozo, ruin, train, magitek*2
 ff7_rebirth:        grandfinale, floating
 ff7_sadbar:         gau, martiallaw*2, ruintown
@@ -343,7 +344,6 @@ ff7_5years:     omen3, empire*2, celes, daryl, zozo, narshe, ruin*2, train, fore
 ff7_boss:       I80, G60, boss*2, atma, grandfinale, unforgiven, magitek
 ff7_costa:      prelude, spinachrag*2, town, veldt, moogles, village
 ff7_desert:     prelude, omen3, gau, ruin*2, train, tomb, zozo, cave
-ff7_gun:        I15, G70, grandfinale, troops, assault, savethem*2, floating, bat3, bat4
 ff7_hurry:      I99, G00, unforgiven, magitek, floating, engine, assault*2, mboss
 ff7_hurry2:     I35, G30, battle, metamorphosis, grandfinale, unforgiven, savethem*2, mboss, bat2, bat3
 ff7_judgment:   omen3, catastrophe, troops, floating*2, ktower*2, phoenix, assault
@@ -571,6 +571,7 @@ pw_cornered:        E55,         bat2,       bat4
 crys_mountain:      E60,         bat2, bat3
 ct_tension:         E68,                     bat4
 ff6_unforgiven:     E70,                     bat4
+ff7_gun:            E70,               bat3, bat4
 ct_theme:           E75,                     bat4
 sd1s_courage:       E75,               bat3, bat4
 ff9_hunt:           E75,               bat3, bat4

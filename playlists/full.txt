@@ -142,6 +142,7 @@ ff7_battle_ff6:     grandfinale, unforgiven, magitek, engine
 ff7_bronco:         setzer, assault, savethem, blackjack
 ff7_corel:          shadow, gau*2, zozo, narshe, strago, martiallaw, ruintown, ruin
 ff7_electric:       chocobo*2, johnny
+ff7_gun:            catastrophe, grandfinale, troops, assault, savethem*2, engine, floating, ktower
 ff7_mako:           omen3, empire, catastrophe, espers, zozo, ruin, train, ancient, magitek*2, fanatics, ktower
 ff7_rebirth:        grandfinale, floating, ktower
 ff7_sadbar:         prelude, gau, zozo, narshe, martiallaw*2, ruintown, ruin
@@ -343,7 +344,6 @@ ff7_5years:     omen3, empire*2, celes, daryl, zozo, narshe, ruin*2, train, fore
 ff7_boss:       I80, G60, boss*2, atma, grandfinale, unforgiven, magitek
 ff7_costa:      prelude, spinachrag*2, town, veldt, moogles, village
 ff7_desert:     prelude, omen3, gau, ruin*2, train, tomb, zozo, cave
-ff7_gun:        I15, G70, grandfinale, troops, assault, savethem*2, floating, bat3, bat4
 ff7_hurry:      I99, G00, unforgiven, magitek, floating, engine, assault*2, mboss
 ff7_hurry2:     I35, G30, battle, metamorphosis, grandfinale, unforgiven, savethem*2, mboss, bat2, bat3
 ff7_judgment:   omen3, catastrophe, troops, floating*2, ktower*2, phoenix, assault
@@ -580,6 +580,7 @@ gs_venus:           E65,               bat3, bat4
 ct_tension:         E68,                     bat4
 ct_undersea:        E70,                     bat4
 ff6_unforgiven:     E70,                     bat4
+ff7_gun:            E70,               bat3, bat4
 fft_trisection:     E70,                     bat4
 lu2_fortress:       E70,                     bat4
 sd3_faith:          E70,               bat3, bat4
@@ -633,6 +634,7 @@ totr_sboss:         I50, mboss, boss, atma
 ct_theme:           I52,              atma, dmad5
 ff9_hunt:           I52, mboss, boss, atma
 fft_trisection:     I55,        boss, atma, dmad5
+ff7_gun:            I55,              atma
 ff5_boss:           I60,        boss, atma
 lu2_savior:         I60, mboss, boss, atma, dmad5
 sd3_faith:          I60,        boss, atma, dmad5
