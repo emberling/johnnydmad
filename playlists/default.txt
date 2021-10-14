@@ -203,6 +203,7 @@ rtrek_world:        relm, awakening*2, ruintown
 saga3_ruins:        espers, zozo*2, cave, tomb, dream
 sd1s_courage:       grandfinale, savethem*2
 sd2_final:          grandfinale, floating
+sd2_flammie:        setzer, blackjack*2, falcon
 sd2_fortress:       falcon, mount2*2, serpent, floating
 sd2_thanatos:       owzer, train, dream, fanatics*2
 sd2_matango:        what, veldt*2
@@ -451,7 +452,6 @@ sd2_city:       relm*2, awakening, moogles, town*2, martiallaw*2
 sd2_desert:     shadow, gau, cyan, gogo*2, umaro, zozo, owzer, strago*2, veldt, mountain*2, serpent*2, cave, dream, ancient, engine
 sd2_dwarf:      prelude, what*2, moogles, village
 sd2_eternal:    omen3, empire*2, ruin*2, train*2, fanatics, forest, tomb*2, dream, phoenix, ancient
-sd2_flammie:    setzer, blackjack*2, moogles
 sd2_forest:     moogles, prelude, relm, forest*2, mountain
 sd2_forget:     celes*2, daryl, coin*2
 sd2_hope:       catastrophe, setzer, espers, gate
