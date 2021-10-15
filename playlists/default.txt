@@ -231,6 +231,7 @@ wa2_dungeon2:       zozo, martiallaw, mount2, gate*2, phoenix
 wa2_heimdal:        setzer, assault*2, savethem, gate
 xcx_sylvan:         omen3, espers, narshe, ruin*2, cave, ancient, dream, phoenix
 xg_mermaid:         daryl, ruin, train, tomb*2, ancient
+ys4_danan:          omen3, espers, narshe, ruin, ancient*2
 zaol_temple:        train, gate, floating*2, phoenix, ktower
 
 
@@ -539,7 +540,6 @@ ys1_wars:       I25, G90, battle, grandfinale, chocobo, falcon, magitek, floatin
 ys3_house:      shadow, gogo, owzer, strago, village, dream
 ys3_time:       I5, G65, battle, unforgiven, locke, setzer, chocobo, blackjack, gogo, mount2, engine, floating*2, bat2, bat3, mboss
 ys3_wings:      setzer*2, locke, savethem, blackjack, chocobo, serpent*2, mountain, mount2
-ys4_danan:      prelude, omen3, espers*2, strago, town_ruin, cave, tomb, dream, ancient, gate, phoenix, train
 ys8_idance:     chocobo, blackjack, johnny*2, falcon*2, mountain, mount2*2, serpent, setzer, dream, ancient
 zlttp_darkworld: troops, assault, umaro, ruin, falcon*2, mount2, serpent, ancient
 zlttp_dungeon:  ruin, train*2, cave, tomb, dream, gate, phoenix, ancient
