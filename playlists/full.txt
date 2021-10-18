@@ -237,6 +237,7 @@ wa_zed:             grandfinale, unforgiven, shadow, setzer, moogles, umaro, gog
 wa2_dungeon2:       setzer, gogo, zozo, martiallaw, mountain, mount2, gate*2, ancient, dream, phoenix
 wa2_heimdal:        metamorphosis, unforgiven, setzer, locke, assault, savethem, falcon, mount2, serpent, gate, engine, phoenix
 xcx_sylvan:         omen3, espers, zozo, narshe, ruin*2, cave, forest, train, tomb, ancient, dream, phoenix
+xg_boss:            metamorphosis, grandfinale, troops, assault*2, savethem, serpent, gate, magitek, engine, floating, fanatics
 xg_mermaid:         prelude, omen3, daryl, espers, awakening, ruin, train, tomb*2, ancient
 ys4_danan:          omen3, espers, zozo, narshe, strago, ruin, cave, gate, ancient*2, dream, phoenix
 zaol_temple:        serpent, train, gate, ancient, engine, dream, floating, fanatics, phoenix, ktower
@@ -527,7 +528,6 @@ xc1_valakn:     W4, omen3, celes, daryl, narshe, ruin*2, cave*2, tomb*2, W:prelu
 xc2_morardain:  grandfinale, setzer*2, moogles, umaro, martiallaw, falcon
 xc2_morardain_vic: fanfare
 xc2_tantal:     W4, omen3, empire, zozo, narshe*2, train*2, ruin*2, serpent, espers, gate, phoenix, cave, W:celes, W:cyan, W:gogo, W:umaro*2, W:owzer, W:balance, W:forest, W:floating, W:ktower
-xg_boss:        I85, G50, boss*2, metamorphosis, grandfinale, troops, savethem, assault
 xg_chuchu:      spinach*2, what*2, moogles, gogo, strago, village
 xg_flight:      I30, G90, grandfinale, locke*2, setzer, returners, savethem*2, falcon, assault
 xg_lahan:       relm, johnny, spinach, moogles, village*2, town
@@ -637,6 +637,7 @@ lu2_savior:         I60, mboss, boss, atma, dmad5
 sd3_faith:          I60,        boss, atma, dmad5
 ffmq_boss:          I65,        boss, atma, dmad5
 bof2_barubary:      I67, mboss, boss, atma, dmad5
+xg_boss:            I70, mboss, boss, atma, dmad5
 lal_boss:           I70, mboss, boss, atma, dmad5
 ff4_fiend:          I75,        boss, atma, dmad5    
 ff9_dragons:        I75, mboss,       atma, dmad5
