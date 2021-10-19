@@ -209,6 +209,7 @@ ro_labyrinth:       omen3, espers, zozo, owzer, ruin, cave, forest, train, tomb*
 rtrek_world:        prelude, rachel, relm, awakening*2, gau, ruintown, ruin
 saga3_ruins:        espers, zozo*2, owzer, ruin, cave, tomb, dream
 sd1s_courage:       grandfinale, setzer, locke, savethem*2, johnny
+sd2_dwarf:          prelude, grandfinale, johnny, spinach, what, moogles, village
 sd2_final:          metamorphosis, catastrophe, grandfinale, savethem, falcon, floating
 sd2_flammie:        setzer, chocobo, blackjack*2, moogles, falcon, mount2
 sd2_fortress:       metamorphosis, falcon, mountain, mount2*2, serpent, ancient, magitek, floating, ktower
@@ -449,7 +450,6 @@ sd2_angel:      omen3*2, celes*2, rachel*2, tomb
 sd2_boss:       I99, G55, boss*2, metamorphosis, unforgiven, grandfinale, atma
 sd2_city:       relm*2, awakening, moogles, town*2, martiallaw*2
 sd2_desert:     shadow, gau, cyan, gogo*2, umaro, zozo, owzer, strago*2, veldt, mountain*2, serpent*2, cave, dream, ancient, engine
-sd2_dwarf:      prelude, what*2, moogles, village
 sd2_eternal:    omen3, empire*2, ruin*2, train*2, fanatics, forest, tomb*2, dream, phoenix, ancient
 sd2_forest:     moogles, prelude, relm, forest*2, mountain
 sd2_forget:     celes*2, daryl, coin*2
