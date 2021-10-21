@@ -200,6 +200,7 @@ ot_stillsnow:       omen3, narshe*2, ruintown
 ot_treasure:        grandfinale, unforgiven
 pw_cornered:        metamorphosis*2, grandfinale, engine
 ro_labyrinth:       ruin, cave, train, tomb*2, ancient
+rs3_underwater:     omen3, espers, narshe, cave, tomb, ancient*2, dream
 rtrek_world:        relm, awakening*2, ruintown
 saga3_ruins:        espers, zozo*2, cave, tomb, dream
 sd1s_courage:       grandfinale, savethem*2
@@ -437,7 +438,6 @@ rs3_getpet:     metamorphosis, umaro, veldt
 rs3_gwain:      H2, catastrophe, assault, umaro, phoenix, dream, fanatics*2, phoenix, ktower, H:omen3, H:kefka, H:grandfinale, H:gogo, H:tomb, H:gate
 rs3_julian:     prelude, chocobo, johnny, village, forest
 rs3_sarah:      prelude, celes, daryl, coin, gau, ruintown*2
-rs3_underwater: omen3, shadow, owzer, narshe*2, ruintown*2, ruin, cave*2, tomb*2, gate, phoenix, ancient
 rsms_battle:    I50, G65, battle*2, unforgiven, bat2, bat3, mboss
 sd1s_boss:      I50, G40, boss*2, unforgiven, floating
 sd1s_decision:  empire*2, shadow, gau, owzer, narshe, ruin*2, train*2, tomb*2, phoenix, ancient
