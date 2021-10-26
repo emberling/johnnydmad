@@ -209,6 +209,7 @@ ro_labyrinth:       omen3, espers, zozo, owzer, ruin, cave, forest, train, tomb*
 rs3_underwater:     omen3, espers, narshe, ruin, serpent, cave, forest, tomb, ancient*2, dream
 rtrek_world:        prelude, rachel, relm, awakening*2, gau, ruintown, ruin
 saga3_ruins:        espers, zozo*2, owzer, ruin, cave, tomb, dream
+sd1_boss:           grandfinale, unforgiven, chocobo, mount2, serpent, magitek, engine, floating*2, ktower
 sd1s_courage:       grandfinale, setzer, locke, savethem*2, johnny
 sd2_dwarf:          prelude, grandfinale, johnny, spinach, what, moogles, village
 sd2_final:          metamorphosis, catastrophe, grandfinale, savethem, falcon, floating
@@ -439,7 +440,6 @@ rs3_gwain:      H2, catastrophe, assault, umaro, phoenix, dream, fanatics*2, pho
 rs3_julian:     prelude, chocobo, johnny, village, forest
 rs3_sarah:      prelude, celes, daryl, coin, gau, ruintown*2
 rsms_battle:    I50, G65, battle*2, unforgiven, bat2, bat3, mboss
-sd1s_boss:      I50, G40, boss*2, unforgiven, floating
 sd1s_decision:  empire*2, shadow, gau, owzer, narshe, ruin*2, train*2, tomb*2, phoenix, ancient
 sd1s_fate:      omen3, empire, celes, narshe, ruin*2, train, forest, ruintown*2
 sd1s_field:     I35, G75, battle, grandfinale, savethem*2, falcon*2, mount2
@@ -592,6 +592,7 @@ ff6_metamorphosis:  E85,                     bat4
 lu2_savior:         E85,               bat3, bat4
 totr_sboss:         E85, battle, bat2, bat3, bat4
 ebr_prayer:         E88,               bat3, bat4
+sd1_boss:           E90,                     bat4
 lal_boss:           E90,                     bat4
 bof2_barubary:      E95,                     bat4
 ff6_boss:           E95,               bat3, bat4
@@ -639,6 +640,7 @@ ffmq_boss:          I65,        boss, atma, dmad5
 bof2_barubary:      I67, mboss, boss, atma, dmad5
 xg_boss:            I70, mboss, boss, atma, dmad5
 lal_boss:           I70, mboss, boss, atma, dmad5
+sd1_boss:           I72, mboss, boss, atma, dmad5
 ff4_fiend:          I75,        boss, atma, dmad5    
 ff9_dragons:        I75, mboss,       atma, dmad5
 sd1s_courage:       I75, mboss, boss, atma
