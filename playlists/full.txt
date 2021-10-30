@@ -72,6 +72,7 @@ ff5_airship:        setzer, locke, savethem, chocobo, blackjack*2, falcon, mount
 ff5_book:           empire, zozo, owzer, ruin, cave, train*2, tomb, gate, ancient, dream
 ff5_boss:           catastrophe, grandfinale, savethem
 ff5_decisive:       catastrophe*2, grandfinale, floating, fanatics, phoenix, ktower
+ff5_home:           prelude, daryl, coin, relm, gau, strago, village, ruintown*2
 ff5_hurry:          grandfinale, unforgiven
 ff5_mountain:       setzer, moogles, mountain*2, mount2, engine
 ff5_pirates:        shadow, setzer, returners*2, umaro, veldt, mountain, engine
@@ -163,6 +164,7 @@ ff9_notalone:       prelude, grandfinale, rachel, falcon, dream
 ff9_treno:          prelude, johnny, spinach*2
 ff9_vivi:           spinach, what, moogles, gogo, strago*2, martiallaw
 ff10_calm:          prelude, omen3, espers, ruin, cave*2, forest, tomb, dream
+ff10_seymour:       grandfinale, magitek, engine, dream, floating*2, ktower
 ff10_via:           prelude, espers, zozo, owzer, tomb*2, dream
 ff10_zanarkand:     prelude, omen3, celes, daryl, coin, awakening, ruin, tomb
 ff12_crystal:       omen3, espers*2, narshe, ruin, cave, forest, train, tomb, gate, ancient, dream, phoenix
@@ -333,7 +335,6 @@ ff5_dawn:       cyan, locke, figaro*2, returners, savethem, umaro, gogo, falcon,
 ff5_excastle:   kefka, troops*2, savethem, gogo, umaro, ktower, engine, assault
 ff5_exdeath:    metamorphosis*2, grandfinale, fanatics
 ff5_final:      I90, G95, atma, dmad5
-ff5_home:       prelude, daryl*2, coin*2, ruintown*2, gau, village
 ff5_lenna:      gau*2, awakening, rachel, ruintown, ruin
 ff5_library:    H4, gogo, zozo, owzer*2, strago*2, dream, phoenix, ancient, H:omen3, H:kefka, H:catastrophe, H:shadow, H:spinach, H:what, H:umaro, H:engine, H:gate
 ff5_ship:       prelude, cyan, figaro*2, returners, troops, gogo, engine*2
@@ -638,6 +639,7 @@ lu2_savior:         I60, mboss, boss, atma, dmad5
 sd3_faith:          I60,        boss, atma, dmad5
 ffmq_boss:          I65,        boss, atma, dmad5
 bof2_barubary:      I67, mboss, boss, atma, dmad5
+ff10_seymour:       I70,        boss, atma, dmad5
 xg_boss:            I70, mboss, boss, atma, dmad5
 lal_boss:           I70, mboss, boss, atma, dmad5
 sd1_boss:           I72, mboss, boss, atma, dmad5

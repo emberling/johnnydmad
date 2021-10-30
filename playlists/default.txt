@@ -67,6 +67,7 @@ ff5_airship:        setzer, blackjack*2, mount2
 ff5_book:           zozo, owzer, ruin, train*2, tomb, gate, ancient
 ff5_boss:           catastrophe, grandfinale, savethem
 ff5_decisive:       catastrophe*2, grandfinale, floating, ktower
+ff5_home:           prelude, daryl, coin, gau, ruintown*2
 ff5_hurry:          unforgiven
 ff5_mountain:       setzer, mountain*2, mount2
 ff5_pirates:        returners*2, umaro, veldt, mountain, engine
@@ -157,6 +158,7 @@ ff9_siege:          metamorphosis*2, grandfinale, assault, savethem
 ff9_treno:          spinach*2
 ff9_vivi:           spinach, strago*2, martiallaw
 ff10_calm:          espers, cave*2, forest, tomb
+ff10_seymour:       grandfinale, magitek, engine, floating*2, ktower
 ff10_via:           prelude, owzer, ruin, tomb*2, dream
 ff10_zanarkand:     prelude, celes, coin, ruin
 ff12_crystal:       omen3, espers*2, ruin, gate, ancient, phoenix
@@ -333,7 +335,6 @@ ff5_dawn:       cyan, locke, figaro*2, returners, savethem, umaro, gogo, falcon,
 ff5_excastle:   kefka, troops*2, savethem, gogo, umaro, ktower, engine, assault
 ff5_exdeath:    metamorphosis*2, grandfinale, fanatics
 ff5_final:      I90, G95, atma, dmad5
-ff5_home:       prelude, daryl*2, coin*2, ruintown*2, gau, village
 ff5_lenna:      gau*2, awakening, rachel, ruintown, ruin
 ff5_library:    H4, gogo, zozo, owzer*2, strago*2, dream, phoenix, ancient, H:omen3, H:kefka, H:catastrophe, H:shadow, H:spinach, H:what, H:umaro, H:engine, H:gate
 ff5_ship:       prelude, cyan, figaro*2, returners, troops, gogo, engine*2
@@ -613,6 +614,7 @@ lu2_savior:         I60, mboss,             dmad5
 sd3_faith:          I60,        boss, atma
 ffmq_boss:          I65,        boss, atma
 bof2_barubary:      I67, mboss
+ff10_seymour:       I70,              atma, dmad5
 lal_boss:           I70, mboss, boss, atma, dmad5
 xg_boss:            I70,        boss, atma
 sd1_boss:           I72, mboss, boss, atma, dmad5
