@@ -140,6 +140,7 @@ ff7_bronco:             chaos
 ff7_corel:          gau*2, narshe, martiallaw, ruintown
 ff7_electric:       chocobo*2, johnny
 ff7_gun:            grandfinale, troops, assault, savethem*2, floating
+ff7_hurry2:         metamorphosis*2, grandfinale, unforgiven, assault, savethem, engine
 ff7_judgment:       catastrophe, assault, umaro, magitek, engine, floating, ktower*2
 ff7_mako:           omen3, zozo, ruin, train, magitek*2
 ff7_rebirth:        grandfinale, floating
@@ -351,7 +352,6 @@ ff7_boss:       I80, G60, boss*2, atma, grandfinale, unforgiven, magitek
 ff7_costa:      prelude, spinach*2, town, veldt, moogles, village
 ff7_desert:     prelude, omen3, gau, ruin*2, train, tomb, zozo, cave
 ff7_hurry:      I99, G00, unforgiven, magitek, floating, engine, assault*2, mboss
-ff7_hurry2:     I35, G30, battle, metamorphosis, grandfinale, unforgiven, savethem*2, mboss, bat2, bat3
 ff7_materia:    prelude, kefka, shadow, spinach, what*2, owzer, strago, dream*2
 ff7_pizza:      shadow, zozo, narshe, martiallaw*2, train, cave, engine, magitek
 ff7_planet:     H2, omen3, shadow, zozo, ruin*2, train, espers, tomb, dream, gate*2, phoenix, ancient
@@ -561,6 +561,7 @@ ff8_battle:         E30, battle, bat2, bat3
 totr_battle:        E35, battle, bat2, bat3
 arc_battle:         E38, battle, bat2, bat3, bat4
 sf2_balrog:         E40,         bat2, bat3
+ff7_hurry2:         E45, battle, bat2, bat3, bat4
 ff8_laguna:         E50,         bat2, bat3, bat4
 ff14_battlem:       E55,         bat2, bat3
 mmx3_seahorse:      E55,                     bat4
@@ -606,6 +607,7 @@ ff6_unforgiven:     I35, mboss
 ot_treasure:        I35, mboss
 bof2_battle2:       I40, mboss, boss
 doom_e1m1:          I40, mboss
+ff7_hurry2:         I45, mboss, boss
 ff6_boss:           I50,        boss
 totr_sboss:         I50,        boss
 ff9_hunt:           I52, mboss, boss
