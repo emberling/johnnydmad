@@ -203,8 +203,10 @@ lu2_submarine:      prelude*2, espers, ruin, serpent, cave, forest, tomb, dream
 lu2_town:           relm, awakening, village*2, town, ruintown
 lu2_turret:         savethem*2, mountain, mount2, serpent, floating, fanatics
 met3_plants:        umaro, zozo, train, ancient, magitek, engine*2, dream
+mm2_metal:          grandfinale, unforgiven, chocobo, johnny, mount2, magitek*2, engine, ktower
 mmx3_seahorse:      chocobo, johnny, serpent*2, magitek, engine, phoenix
 mmx3_zero:          prelude, setzer, locke, johnny
+omf_desert:         magitek*2, engine, floating, ktower
 ot_saintsbridge:    prelude, relm, awakening, strago, village*2, town
 ot_stillsnow:       omen3, awakening, narshe*2, ruintown, ruin
 ot_treasure:        grandfinale, unforgiven, locke
@@ -226,6 +228,7 @@ sd3_faith:          kefka, metamorphosis, catastrophe, grandfinale, floating, ph
 sd3_final3:         grandfinale, unforgiven, chocobo, blackjack, falcon*2, mount2, serpent, floating, ktower
 sd3_flight:         setzer, blackjack*2, moogles, falcon, mountain, serpent
 sd3_pray:           coin, rachel, awakening, narshe, ruintown*2, ruin, forest, train, tomb
+sd3_steel:          figaro*2, returners, martiallaw
 sf2_balrog:         grandfinale, unforgiven, chocobo, johnny, engine
 smrpg_road2:        chocobo, johnny, spinach*2, what, moogles, gogo, mountain, forest
 sots_boss:          grandfinale, gogo, owzer, serpent, dream
@@ -562,6 +565,8 @@ ff3_battle:         E30, battle, bat2, bat3
 ff7_battle:         E30, battle, bat2, bat3, bat4
 ff8_battle:         E30, battle, bat2, bat3, bat4
 grad3_desert:       E30, battle, bat2, bat3
+mm2_metal:          E30, battle, bat2, bat3
+omf_desert:         E35, battle, bat2, bat3
 totr_battle:        E35, battle, bat2, bat3, bat4
 arc_battle:         E38, battle, bat2, bat3, bat4
 sf2_balrog:         E40, battle, bat2, bat3, bat4
@@ -612,11 +617,13 @@ ff7_battle_ff6:     I00, mboss
 ff5_hurry:          I02, mboss
 7th_darkness:       I05, mboss
 ct_tension:         I05, mboss
+mm2_metal:          I10, mboss
 ff3_battle:         I15, mboss, boss
 ff7_battle:         I15, mboss
 ff8_battle:         I15, mboss
 ff9_siege:          I15, mboss
 grad3_desert:       I20, mboss
+omf_desert:         I20,        boss
 sf2_balrog:         I20, mboss
 arc_battle:         I25, mboss, boss
 ff8_laguna:         I25, mboss, boss, atma, dmad5
@@ -671,6 +678,7 @@ ff6_fanfare:    fanfare
 ff7_fanfare:    fanfare
 lal_boss:       fanfare
 mmx3_zero:      fanfare
+sd3_steel:      fanfare
 
 [sleep]
 ff4_inn: sleep

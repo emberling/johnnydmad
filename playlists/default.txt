@@ -197,8 +197,10 @@ lu2_submarine:      prelude*2, espers, ruin, cave, tomb
 lu2_town:           village*2, town
 lu2_turret:         savethem*2, mount2, floating
 met3_plants:        umaro, magitek, engine*2, dream
+mm2_metal:          mount2, magitek*2, engine
 mmx3_seahorse:      johnny, phoenix
 mmx3_zero:          chaos
+omf_desert:         magitek*2, engine
 ot_saintsbridge:    relm, village*2, town
 ot_stillsnow:       omen3, narshe*2, ruintown
 ot_treasure:        grandfinale, unforgiven
@@ -220,6 +222,7 @@ sd3_faith:          metamorphosis, grandfinale, floating, ktower
 sd3_final3:         grandfinale, unforgiven, falcon*2, floating, ktower
 sd3_flight:         setzer, blackjack*2, falcon, serpent
 sd3_pray:           rachel, awakening, ruintown*2, ruin
+sd3_steel:          figaro*2, returners
 sf2_balrog:         grandfinale, johnny
 smrpg_road2:        johnny, spinach*2, moogles, gogo, mountain
 sots_boss:          grandfinale, dream
@@ -558,6 +561,8 @@ top_battle:         E27, battle, bat2, bat3
 ff3_battle:         E30, battle, bat2
 ff7_battle:         E30, battle, bat2, bat3, bat4
 ff8_battle:         E30, battle, bat2, bat3
+mm2_metal:          E30,         bat2, bat3
+omf_desert:         E35,         bat2, bat3
 totr_battle:        E35, battle, bat2, bat3
 arc_battle:         E38, battle, bat2, bat3, bat4
 sf2_balrog:         E40,         bat2, bat3
@@ -600,6 +605,7 @@ ff3_battle:         I15, mboss
 ff7_battle:         I15, mboss
 ff8_battle:         I15, mboss
 ff9_siege:          I15, mboss
+omf_desert:         I20,        boss
 ff8_laguna:         I25, mboss, boss, atma
 pw_cornered:        I25, mboss
 ff6_grandfinale:    I30, mboss, boss
@@ -644,6 +650,7 @@ ff6_fanfare:    fanfare
 ff7_fanfare:    fanfare
 lal_boss:       fanfare
 mmx3_zero:      fanfare
+sd3_steel:      fanfare
 
 [sleep]
 ff4_inn: sleep
