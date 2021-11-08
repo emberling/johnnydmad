@@ -229,6 +229,7 @@ sd3_final3:         grandfinale, unforgiven, chocobo, blackjack, falcon*2, mount
 sd3_flight:         setzer, blackjack*2, moogles, falcon, mountain, serpent
 sd3_pray:           coin, rachel, awakening, narshe, ruintown*2, ruin, forest, train, tomb
 sd3_steel:          figaro*2, returners, martiallaw
+sdlm_wind:          chocobo, blackjack, mountain*2, mount2, forest
 sf2_balrog:         grandfinale, unforgiven, chocobo, johnny, engine
 smrpg_road2:        chocobo, johnny, spinach*2, what, moogles, gogo, mountain, forest
 sots_boss:          grandfinale, gogo, owzer, serpent, dream
