@@ -206,6 +206,7 @@ ot_stillsnow:       omen3, narshe*2, ruintown
 ot_treasure:        grandfinale, unforgiven
 pw_cornered:        metamorphosis*2, grandfinale, engine
 ro_labyrinth:       ruin, cave, train, tomb*2, ancient
+rs3_devil2:         grandfinale, fanatics
 rs3_underwater:     omen3, espers, narshe, cave, tomb, ancient*2, dream
 rtrek_world:        relm, awakening*2, ruintown
 saga3_ruins:        espers, zozo*2, cave, tomb, dream
@@ -439,7 +440,6 @@ ot_sunshade:    shadow*2, spinach, zozo*2, narshe, martiallaw
 rd_summer:      omen3*2, celes, daryl*2, coin, rachel, espers, ruintown, ruin, forest, tomb*2, dream
 rs1_battle:     I16, G35, battle, grandfinale, unforgiven, savethem, johnny, serpent, mount2
 rs2_heroes:     I50, G75, boss, catastrophe, grandfinale
-rs3_devil2:     H2, I90, G99, atma, dmad5, catastrophe, floating, ktower, H:phoenix, H:johnny
 rs3_getpet:     metamorphosis, umaro, veldt
 rs3_gwain:      H2, catastrophe, assault, umaro, phoenix, dream, fanatics*2, phoenix, ktower, H:omen3, H:kefka, H:grandfinale, H:gogo, H:tomb, H:gate
 rs3_julian:     prelude, chocobo, johnny, village, forest
@@ -639,6 +639,7 @@ ct_final:           I85,              atma, dmad5
 ff7_rebirth:        I88,              atma, dmad5
 eo3_waves:          I90,              atma, dmad5
 ff6_dmad:           I90,              atma, dmad5
+rs3_devil2:         I90,              atma, dmad5
 ff6_final:          I95,              atma, dmad5
 sd2_final:          I95,              atma, dmad5
 sd3_final3:         I95,              atma, dmad5
