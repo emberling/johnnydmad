@@ -12,6 +12,7 @@ bl_fahrenheit_nointro: setzer, mount2, blackjack, falcon
 blord_ruins:        train, ancient, magitek, engine, dream
 bof1_dawn:          setzer, falcon, serpent*2
 bof2_barubary:      grandfinale, unforgiven
+bof2_battle:        grandfinale, unforgiven
 bof2_battle2:       grandfinale, unforgiven
 bof2_evrai:         owzer, tomb*2
 bof2_unspoken:      prelude, daryl, coin*2, ruin
@@ -262,7 +263,6 @@ ff9_notalone:       grandfinale
 # relevant battle related tags will be added as well matching the approximate I/G quadrant specified
 bl_rebels:      fanfare, locke, figaro, returners, savethem
 blord_2tower:   setzer, locke, chocobo, blackjack, johnny, falcon*2, mount2
-bof2_battle:    I65, G05, unforgiven, grandfinale, battle, bat2, mboss
 bof2_dragnier:  espers, strago, ruintown, serpent*2, tomb, ancient, gate*2, dream
 bof2_town:      prelude, relm, awakening, village*2, town
 bof2_wander:    espers, awakening, mountain, cave, serpent, forest*2, tomb, dream
@@ -556,6 +556,7 @@ ct_battle2:         E10, battle, bat2
 ff6_battle:         E15, battle, bat2
 ff7_battle_ff6:     E15, battle, bat2
 ff1_battle:         E20, battle, bat2
+bof2_battle:        E25, battle, bat2, bat3
 ff9_battle:         E25, battle, bat2, bat3
 top_battle:         E27, battle, bat2, bat3
 7th_darkness:       E30,         bat2, bat3

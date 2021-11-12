@@ -17,6 +17,7 @@ bl_fahrenheit_nointro: prelude, setzer, savethem, blackjack, falcon, mountain, m
 blord_ruins:        shadow, umaro, zozo, owzer, cave, train, tomb, gate, ancient, magitek, engine, dream
 bof1_dawn:          prelude, espers, cyan, setzer, ruin, falcon, serpent*2, cave
 bof2_barubary:      metamorphosis, grandfinale, unforgiven, assault
+bof2_battle:        grandfinale, unforgiven
 bof2_battle2:       grandfinale, unforgiven
 bof2_evrai:         prelude, omen3, empire, kefka, owzer, train, tomb*2, fanatics
 bof2_unspoken:      prelude, celes, daryl, coin*2, ruin, tomb
@@ -262,7 +263,6 @@ zaol_temple:        serpent, train, gate, ancient, engine, dream, floating, fana
 # relevant battle related tags will be added as well matching the approximate I/G quadrant specified
 bl_rebels:      fanfare, locke, figaro, returners, savethem
 blord_2tower:   setzer, locke, chocobo, blackjack, johnny, falcon*2, mount2
-bof2_battle:    I65, G05, unforgiven, grandfinale, battle, bat2, mboss
 bof2_dragnier:  espers, strago, ruintown, serpent*2, tomb, ancient, gate*2, dream
 bof2_town:      prelude, relm, awakening, village*2, town
 bof2_wander:    espers, awakening, mountain, cave, serpent, forest*2, tomb, dream
@@ -559,6 +559,7 @@ doom_e1m1:          E15, battle, bat2
 ff6_battle:         E15, battle, bat2, bat3
 ff7_battle_ff6:     E15, battle, bat2, bat3
 ff1_battle:         E20, battle, bat2, bat3
+bof2_battle:        E25, battle, bat2, bat3
 ff9_battle:         E25, battle, bat2, bat3, bat4
 top_battle:         E27, battle, bat2, bat3
 7th_darkness:       E30, battle, bat2, bat3, bat4
@@ -618,6 +619,7 @@ ff7_battle_ff6:     I00, mboss
 ff5_hurry:          I02, mboss
 7th_darkness:       I05, mboss
 ct_tension:         I05, mboss
+bof2_battle:        I10, mboss
 mm2_metal:          I10, mboss
 ff3_battle:         I15, mboss, boss
 ff7_battle:         I15, mboss
