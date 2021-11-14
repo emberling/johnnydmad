@@ -195,6 +195,7 @@ lu2_castle:         cyan, figaro*2, returners
 lu2_fortress:       grandfinale, assault, floating*2, ktower
 lu2_iris:           prelude, awakening*2, ruin
 lu2_peace:          prelude, relm, awakening*2
+lu2_priphea:        daryl, rachel, relm*2, village, ruintown
 lu2_savior:         metamorphosis*2, grandfinale, savethem, floating
 lu2_submarine:      prelude*2, espers, ruin, cave, tomb
 lu2_town:           village*2, town
@@ -425,7 +426,6 @@ lu2_battle3:    I85, G99, atma*2, grandfinale, dmad5
 lu2_boss:       I95, G40, boss*2, grandfinale
 lu2_mountain:   fanfare, cyan*2, figaro, returners*2, mountain, engine, mount2
 lu2_narvick:    omen3, empire, shadow, cyan, zozo, narshe, strago, martiallaw, ruintown*2, ruin, forest, tomb, espers
-lu2_priphea:    prelude, daryl, rachel, relm*2, town
 lu2_world:      awakening, mountain, serpent, balance*2, forest
 met3_brain:     metamorphosis*2
 met3_crateria:  H4, zozo, ruin, train, gate, dream, fanatics*2, tomb, H:prelude, H:assault, H:cave, H:ancient, H:phoenix

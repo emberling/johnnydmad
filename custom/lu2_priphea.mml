@@ -3,26 +3,26 @@
 #COMPOSER Yasunori Shiono
 #ARRANGED emberling
 
-#WAVE 0x20 0x54
-#WAVE 0x21 0x32
-#WAVE 0x22 0x6b
-#WAVE 0x23 0x07
-#WAVE 0x24 0x63
+#WAVE 0x20 0xD1
+#WAVE 0x21 0x36
+#WAVE 0x22 0x53
+#WAVE 0x23 0xA5
+#WAVE 0x24 0xA1
 
-#def init= t100 %x255 %v40 %b0,85 %f0,0
+#def init= t100 %x224 %v40 %b0,85 %f0,0
 
-#def gs= |0 o5 p72 m 'g' %k-15 %r12 %a9
-#def gp= |1 o5 p72 m 'a' %k-15 %r18
-#def gt= |1 o5 p72 m 'a' %k-15 %r12
-#def bs= |2 o6 p64 m 'b' %k2 %r10
+#def gs= |0 o5 p72 'g' %k-15 %r13 %a9 m24,18,193 %y0%s5
+#def gp= |1 o5 p72 'a' %k-15 %r18 m
+#def gt= |1 o5 p72 'a' %k-15 %r12 m24,18,193
+#def bs= |2 o4 p64 'b' %k2 m %r10
 #def fl= |3 o4 p64 'f' %k1 m48,18,239 %r9
 #def tw= |4 o3 p56 'w' %k1 m48,18,239 %r14
 
-#def g=v72
-#def a=v104
-#def b=v64
-#def f=v56
-#def w=v26
+#def g=v40
+#def a=v96
+#def b=v72
+#def f=v48
+#def w=v24
 
 {1} 'init' %e1
 'fl' $ $1
