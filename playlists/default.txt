@@ -194,6 +194,7 @@ lal_pogo:           umaro, veldt*2, mountain
 lotr_aragorn:       figaro, returners, balance, mountain*2
 lotr_hobbits:       strago, balance, mountain, forest*2
 lu1_parting:        prelude, daryl, rachel, gau*2, ruintown
+lu1_prologue:       omen3, empire, catastrophe*2, ruin
 lu2_castle:         cyan, figaro*2, returners
 lu2_fortress:       grandfinale, assault, floating*2, ktower
 lu2_iris:           prelude, awakening*2, ruin

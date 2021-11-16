@@ -1,9 +1,9 @@
-#TITLE The Memory of Last War
+#TITLE The Doom Island War
 #ALBUM Lufia and the Fortress of Doom
 #COMPOSER Yasunori Shiono
 #ARRANGED Rushlight
 
-#SHORTNAME LU1 Last War
+#SHORTNAME LU1 Doom Isl. War
 
 #WAVE 0x20 0x65 ## Strings
 #WAVE 0x21 0x61 ## Harp
@@ -19,27 +19,27 @@
 #WAVE 0x2C 0x93 ## Oboe C+6
 #WAVE 0x2D 0x94 ## Oboe A5
 
-#def init= t120 %x220 %v40 %b0,70 %f0,0
+#def init= t120 %v64 %b0,50 %f0,0
 
-#def stringsBaseVol=       v127
+#def stringsBaseVol=       v96
 #def stringsEarlyVol=      'stringsBaseVol*v.72'
 #def stringsMiddleVol=     'stringsBaseVol*v.78'
 #def stringsLateVol=       'stringsBaseVol*v.82'
-#def harpEarlyVol=         v70
-#def harpEarlyFade=      v1,75 ## Keep in line with harpEarlyVol
+#def harpEarlyVol=         v53
+#def harpEarlyFade=      v1,53 ## Keep in line with harpEarlyVol
 #def harpLateVol=          'harpEarlyVol*v1.5'
-#def contrabassVol=        v120
-#def timpaniMaxVol=        v120
-#def timpaniFade=        v1,120 ## Keep in line with timpaniMaxVol
+#def contrabassVol=        v90
+#def timpaniMaxVol=        v90
+#def timpaniFade=        v1,90 ## Keep in line with timpaniMaxVol
 #def timpaniMinVol=        'timpaniMaxVol*v.2'
 #def timpaniStrikeVol=     'timpaniMaxVol*v.5'
 #def timpaniLoudStrikeVol= 'timpaniMaxVol*v.75'
-#def recorderVol=          v30
-#def bassVol=              v65
-#def oboeMiddleVol=        v75
+#def recorderVol=          v23
+#def bassVol=              v49
+#def oboeMiddleVol=        v56
 #def oboeLateVol=          'oboeMiddleVol*v.75'
-#def bottleVol=            v45
-#def crashVol=             v120
+#def bottleVol=            v34
+#def crashVol=             v127
 
 #def contrabassSustain= %r0
 #def contrabassRelease= %r26
@@ -48,10 +48,10 @@
 #def harp=       |1 o5      p54 'harpEarlyVol'                 %e1 m
 #def oboeAdsr=                                     %r10
 #def oboe=       'oboe4' o5 p54 'oboeMiddleVol'                %e1 m
-#def contrabass= |2 o7      p84 'contrabassVol'                %e1 m
+#def contrabass= |2 o7      p64 'contrabassVol'                %e1 m
 #def bottle=     |4 o4      p54 'bottleVol'        %r10        %e1 m
 #def recorder=   |3 o4      p84 'recorderVol'                  %e1 m
-#def bass=       |5 o6      p44 'bassVol'          %r13        %e1 m
+#def bass=       |5 o6      p64 'bassVol'          %r13        %e1 m
 #def timpani=    |6 o6      p64 'timpaniStrikeVol'             %e1 m
 
 ## Use those macros when switching between oboe1 and oboe2, or when switching between oboe3 and oboe4.
@@ -66,7 +66,7 @@
 #def downToOboe3= 'oboe3'<
 #def downToOboe4= 'oboe4'<
 
-#DRUM "c"= 5f+ |7 p64 'crashVol' %e0 m
+#DRUM "c"= 5f+ |7 p64 'crashVol' %e0 m %y1%s2%r13
 
 {1}
 'init'
@@ -504,7 +504,7 @@ $
   ## 5 / 13
   "c2."
   ## 6-11 / 14-19
-  [18 r4]
+  [18 ^4]
   j2
   ## 12
   r2.
@@ -542,7 +542,7 @@ $
 ## Crash, originally channel 8
 "c2."
 ## 22-27
-[18 r4]
+[18 ^4]
 ## 28
 ## Timpani, originally channel 4 (half the notes of the roll)
 'timpani-o2'
@@ -552,7 +552,7 @@ r32[11 a]a32
 ## Crash, originally channel 8
 "!!!oc2."
 ## 30-50
-[63 r4]
+[63 ^4]
 ## Timpani, originally channel 4 (half the notes of the roll)
 'timpani-o2'
 'timpaniMinVol' 'timpaniFade*v240,1' l16
