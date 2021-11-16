@@ -180,6 +180,7 @@ ff14_forthesky:     grandfinale, cyan, figaro, assault, savethem*2, falcon
 ffmq_boss:          grandfinale, unforgiven, magitek, ktower
 ffmq_faeria:        prelude, johnny, moogles, town*2
 ffmq_final:         grandfinale, floating, ktower
+fft_antipyretic:    empire, catastrophe, grandfinale, troops, assault*2, savethem, train, ancient, phoenix
 fft_trisection:     empire, grandfinale, troops, savethem*2, floating, ktower
 fft_data:           prelude*2, relm, awakening, gau, village, ruintown, forest
 fz_silence:         prelude, chocobo*2, blackjack, johnny, falcon
@@ -598,6 +599,7 @@ sd1s_courage:       E75,         bat2, bat3, bat4
 ff9_hunt:           E75,         bat2, bat3, bat4
 ot_treasure:        E77,         bat2, bat3, bat4
 bof2_battle2:       E80, battle, bat2, bat3, bat4
+fft_antipyretic:    E80,                     bat4
 totr_underworld:    E80,         bat2, bat3, bat4
 sd2_fortress:       E82,                     bat4
 ff6_metamorphosis:  E85,                     bat4
@@ -662,6 +664,7 @@ totr_pathboss:      I70, mboss, boss, atma, dmad5
 sd1_boss:           I72, mboss, boss, atma, dmad5
 ff4_fiend:          I75,        boss, atma, dmad5    
 ff9_dragons:        I75, mboss,       atma, dmad5
+fft_antipyretic:    I75,        boss, atma, dmad5
 sd1s_courage:       I75, mboss, boss, atma
 ff5_decisive:       I80,        boss, atma, dmad5
 ff6_atma:           I82,        boss, atma, dmad5
