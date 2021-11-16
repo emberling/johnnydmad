@@ -5,7 +5,7 @@
 
 #SHORTNAME Mother2 Bus
 
-#WAVE 0x21 0x56 ## Deeper Bass
+#WAVE 0x21 0x38 ## Deeper Bass
 #WAVE 0x22 0x36 ## Guitar + Early Bass
 #WAVE 0x23 0xB2 ## Organ
 
@@ -38,7 +38,7 @@
 #def earlyBassVol3=    'earlyBassBaseVol*v.45'
 #def earlyBassVol4=    'earlyBassBaseVol*v.57'
 
-#def bassVol= v85
+#def bassVol= v127
 
 #def guitar= |2 o5 'guitarVol' %r18 %e1 m
 
@@ -46,8 +46,8 @@
 #def guitar2=   'guitar'                 p39
 #def guitar3=   'guitar'                 p30
 #def organ=     |3 o5    'organVol30'    'organCenter'      %r20 %e1 m1,6,232
-#def earlyBass= |2 o5    'earlyBassVol1' p89           %a12 %r18 %e0 m
-#def bass=      |1 o7    'bassVol'       p64                %r16 %e0 m %a8
+#def earlyBass= |2 o5    'earlyBassVol1' p89           %a12 %r18 %e0 mv
+#def bass=      |1 o6    'bassVol'       p64                %r16 %e0 m %y3%s4%r13 m6,9,239 v6,9,191
 
 #def baseKickVol= v220
 #DRUM "k"=5e  |a 'baseKickVol*v.24' p64 %e0
@@ -75,7 +75,7 @@
 ## Till end of song
 
 ## So we got 3 pans and a bunch of volumes...
-#def baseCongaVol= v140
+#def baseCongaVol= v200
 ## The 3 pans are 89, 64, and 30
 #def congaLeft=   p30
 #def congaCenter= p64
