@@ -184,6 +184,8 @@ fft_trisection:     empire, grandfinale, troops, savethem*2, floating, ktower
 fft_data:           prelude*2, relm, awakening, gau, village, ruintown, forest
 fz_silence:         prelude, chocobo*2, blackjack, johnny, falcon
 fz_white1:          chocobo*2, blackjack, johnny, serpent
+garou_hotaru_nobell: relm, setzer, village*2
+garou_hotaru:       grandfinale, chocobo, moogles, dream, forest
 grad3_desert:       unforgiven, chocobo, johnny, serpent, magitek, floating*2, phoenix
 grad3_moai:         empire, metamorphosis, catastrophe*2, grandfinale, umaro, train, gate, ancient, floating, fanatics, phoenix, ktower
 gs_venus:           setzer, locke, falcon, mountain, mount2*2, serpent, gate, floating, phoenix, ktower

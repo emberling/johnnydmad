@@ -178,6 +178,8 @@ fft_trisection:     grandfinale, troops, savethem*2, floating, ktower
 fft_data:           prelude*2, relm, village, forest
 fz_silence:         chocobo*2, blackjack, johnny
 fz_white1:          chocobo*2, blackjack, johnny
+garou_hotaru_nobell: relm, village*2
+garou_hotaru:       grandfinale, moogles, dream
 grad3_desert:       magitek
 grad3_moai:         catastrophe*2, phoenix, ktower
 gs_venus:           setzer, mountain, mount2*2, gate, floating
