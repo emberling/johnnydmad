@@ -3,8 +3,14 @@
 #COMPOSER Hitoshi Sakimoto
 #ARRANGED Rushlight
 
-#VARIANT ~
-#VARIANT ` tr
+## Summary of variant characters: 
+## ~ is for stuff that's excluded only from the train variant
+## ` is for stuff that is specific to the train variant
+## _ is for stuff that's excluded only from the SFX variant
+
+#VARIANT ~_ 
+#VARIANT `_ tr
+#VARIANT ~ sfx
 
 #WAVE 0x20 0x64 ## Contrabass
 #WAVE 0x21 0x66 ## Strings
@@ -392,7 +398,7 @@ r8
   ## 2 / 7 (at beat 1.5)
   ## Lead strings, originally channels 2-3
   'strings-o1' 'leadStringsPan' 'leadStrings_125' l8
-  gg+<e-d>f<c>e-16'stringsRelease'^16
+  gg+<e-d>f<c>e-16~'stringsRelease'^16~`r16`
   ## Measures 3 and 8 are different, so fork here then reconvene for 4/9 which are identical
   j2,108
   ## 3
@@ -417,14 +423,14 @@ r8
   ## 5
   g+e-f<d'leadStrings_110'e-2
   ## 6
-  ^2'leadStrings_125'd4..'stringsRelease'^16>>
+  ^2'leadStrings_125'd4..~'stringsRelease'^16~`r16`>>
   ## 7
   ## Support Deep Brass Low Note, originally channel 16 or 17
   'supportDeepBrass+o1' 'supportDeepBrass_125'
   c16r16
 ]
 ## 10
-g+e-f<d'leadStrings_110'e-4..'stringsRelease'^16
+g+e-f<d'leadStrings_110'e-4..~'stringsRelease'^16~`r16`
 ## 11
 ## Percussions, originally channel 13
 'reverseCymbal'
@@ -462,7 +468,7 @@ g+e-f<d'leadStrings_110'e-4..'stringsRelease'^16
   ## 16
   bf+g+<f'leadStrings_110'f+2
   ## 17
-  ^2'leadStrings_125'f4..'stringsRelease'^16>>
+  ^2'leadStrings_125'f4..~'stringsRelease'^16~`r16`>>
 ]
 ## 21
 l8
@@ -615,9 +621,9 @@ gcde-
 'strings' 'lowLayerStringsPan' 'lowLayerStrings_125' l8
 c>'lowLayerStrings_115'gg+b-'lowLayerStrings_125'cgfb-
 ## 11
-g+e-f<d>cg16'stringsQuickRelease'^16'stringsSustain'fb-16'stringsQuickRelease'^16'stringsSustain'
+g+e-f<d>cg16~'stringsQuickRelease'^16'stringsSustain'~`r16`fb-16~'stringsQuickRelease'^16'stringsSustain'~`r16`
 ## 12
-g+<e-16'stringsQuickRelease'^16'stringsSustain'cf16'stringsQuickRelease'^16'stringsSustain'>b-<f16'stringsQuickRelease'^16'stringsSustain'fb-16'stringsQuickRelease'^16
+g+<e-16~'stringsQuickRelease'^16'stringsSustain'~`r16`cf16~'stringsQuickRelease'^16'stringsSustain'~`r16`>b-<f16~'stringsQuickRelease'^16'stringsSustain'~`r16`fb-16~'stringsQuickRelease'^16~`r16`
 ## 13
 ## High Bell, originally channel 14
 'bell' 'bell_95' r64 l4 e-1
@@ -644,13 +650,13 @@ e-'lowLayerStrings_115'>b-b<c+'lowLayerStrings_125'>e-b-g+<c+
 ## 23
 'lowLayerStrings_115'^2f2
 ## 24
-e-4.'stringsQuickRelease'^8'stringsSustain'e-8'stringsQuickRelease'^8'stringsSustain'c+8'stringsQuickRelease'^8'stringsSustain'
+e-4.~'stringsQuickRelease'^8'stringsSustain'~`r8`e-8~'stringsQuickRelease'^8'stringsSustain'~`r8`c+8~'stringsQuickRelease'^8'stringsSustain'~`r8`
 ## 25
 >b2e2
 ## 26
-^8'stringsQuickRelease'^8'stringsSustain'<e8'stringsQuickRelease'^8'stringsSustain'e8'stringsQuickRelease'^8'stringsSustain'e-4
+^8~'stringsQuickRelease'^8'stringsSustain'~`r8`<e8~'stringsQuickRelease'^8'stringsSustain'~`r8`e8~'stringsQuickRelease'^8'stringsSustain'~`r8`e-4
 ## 27
-c+2.'stringsQuickRelease'^4'stringsSustain'
+c+2.~'stringsQuickRelease'^4'stringsSustain'~`r4`
 ## 28
 l4
 'lowLayerStrings_120'g+b<c+>b8b-8
@@ -696,7 +702,7 @@ e-4>b4<f4e-8c+8
 ## 49
 f+4b-4b4b-8g+8
 ## 50
-'mellowHornRelease'^4
+~'mellowHornRelease'^4~`r4`
 ## Horn, originally channels 10-11
 'quickRiseHorn-o1' l64
 'horn_125'g+8^32 %g1 'horn_105'f+g+'horn_115'b-b'horn_120'<c+e-e4.%g0r8 `'hornAttack'`
@@ -712,15 +718,15 @@ g+8f+16r16f+16r16 e16r16e16r16 e-16r16e-16r16 c+16r16
 ## 55
 ## Mellow Horn High Note, originally channels 10-11
 'accentMellowHorn'
-'accentMellowHorn_85'[2 g4.'mellowHornRelease'^8'mellowHornSustain']
+'accentMellowHorn_85'[2 g4.~'mellowHornRelease'^8'mellowHornSustain'~`r8`]
 ## 56
-'accentMellowHorn_65'>f+2.'mellowHornRelease'^4'mellowHornSustain'
+'accentMellowHorn_65'>f+2.~'mellowHornRelease'^4'mellowHornSustain'~`r4`
 ## 57
-g4.'mellowHornRelease'^8'mellowHornSustain'<d4.'mellowHornRelease'^8'mellowHornSustain'
+g4.~'mellowHornRelease'^8'mellowHornSustain'~`r8`<d4.~'mellowHornRelease'^8'mellowHornSustain'~`r8`
 ## 58
-'accentMellowHorn_85'e2.'mellowHornRelease'^4'mellowHornSustain'
+'accentMellowHorn_85'e2.~'mellowHornRelease'^4'mellowHornSustain'~`r4`
 ## 59
-'accentMellowHorn_105'a2.'mellowHornRelease'^4'mellowHornSustain'
+'accentMellowHorn_105'a2.~'mellowHornRelease'^4'mellowHornSustain'~`r4`
 
 ;
 
@@ -910,13 +916,13 @@ f'oboeFadeTo65Lasting80'f+ff+ff+f'oboe_55'f+g+'oboe_70'b-'oboe_55'e-g+
 ## 39
 ^1
 ## 40
-'supportStrings_85'f+4'stringsRelease'^4'stringsSustain''supportStrings_75'e-
+'supportStrings_85'f+4~'stringsRelease'^4'stringsSustain'~`r4`'supportStrings_75'e-
 ## 41
-^4'stringsRelease'^4'stringsSustain''supportStrings_95'>g+
+^4~'stringsRelease'^4'stringsSustain'~`r4`'supportStrings_95'>g+
 ## 42
-'supportStrings_105'b-4'stringsRelease'^4'stringsSustain''supportStrings_95'<e-
+'supportStrings_105'b-4~'stringsRelease'^4'stringsSustain'~`r4`'supportStrings_95'<e-
 ## 43
-^4'stringsRelease'^4'stringsSustain''supportStrings_55'>g+
+^4~'stringsRelease'^4'stringsSustain'~`r4`'supportStrings_55'>g+
 ## 44
 'supportStrings_75'f+1
 ## 45
@@ -1028,19 +1034,19 @@ e->b-b<c+e-b-g+<c+
 ## 23
 ^2'accentMellowHorn_115'f2
 ## 24
-e-4.'mellowHornRelease'^8'mellowHornSustain'c+4.'mellowHornRelease'^8'mellowHornSustain'
+e-4.~'mellowHornRelease'^8'mellowHornSustain'~`r8`c+4.~'mellowHornRelease'^8'mellowHornSustain'~`r8`
 ## 25
->b4.'mellowHornRelease'^8'mellowHornSustain'b-4.'mellowHornRelease'^8'mellowHornSustain'
+>b4.~'mellowHornRelease'^8'mellowHornSustain'~`r8`b-4.~'mellowHornRelease'^8'mellowHornSustain'~`r8`
 ## 26
-g+4.'mellowHornRelease'^8'mellowHornSustain'f+4.'mellowHornRelease'^8'mellowHornSustain'
+g+4.~'mellowHornRelease'^8'mellowHornSustain'~`r8`f+4.~'mellowHornRelease'^8'mellowHornSustain'~`r8`
 ## 27
 e2e-2
 ## 28
 >b2g+2
 ## 29
-'mellowHornRelease'^4'mellowHornSustain''accentMellowHorn_85'g+4^16'mellowHornRelease'^8.'mellowHornSustain''accentMellowHorn_80'g+4
+~'mellowHornRelease'^4'mellowHornSustain'~`r4`'accentMellowHorn_85'g+4^16~'mellowHornRelease'^8.'mellowHornSustain'~`r8.`'accentMellowHorn_80'g+4
 ## 30
-^16'mellowHornRelease'^8.'mellowHornSustain''accentMellowHorn_70'g+4^16'mellowHornRelease'^8.'mellowHornSustain'g+4
+^16~'mellowHornRelease'^8.'mellowHornSustain'~`r8.`'accentMellowHorn_70'g+4^16~'mellowHornRelease'^8.'mellowHornSustain'~`r8.`g+4
 ## 31
 ## Low Oboe, originally channels 16-17
 'oboe+o1''softWindCenter'l12
@@ -1069,22 +1075,22 @@ r1
 ## 39
 >b1
 ## 40
-b-4'stringsRelease'^4'stringsSustain'g+2
+b-4~'stringsRelease'^4'stringsSustain'~`r4`g+2
 ## 41
-^4'stringsRelease'^4'stringsSustain''lowLayerStrings_100'c2
+^4~'stringsRelease'^4'stringsSustain'~`r4`'lowLayerStrings_100'c2
 ## 42
 ## Contrabass, originally channels (10-11)
 'contrabass-o2'
-'contrabass_120'e-4'contrabassRelease'^4'contrabassSustain'>g+2
+'contrabass_120'e-4~'contrabassRelease'^4'contrabassSustain'~`r4`>g+2
 ## 43
-^4'contrabassRelease'^4
+~^4'contrabassRelease'~`r4`^4
 ## Backing Strings, originally channels 10-11 (but using the volume of low layer strings)
 'strings-o1''backingStringsPan'
 'lowLayerStrings_55'c2
 ## 44
 'lowLayerStrings_75'>b1
 ## 45
-'stringsRelease'^4
+~'stringsRelease'^4~`r4`
 ## Backing Clarinet, originally channels 16-17
 'clarinet''softWindCenter' l8
 'clarinet_80'f<c+>b4'clarinet_70'b-4
@@ -1115,7 +1121,7 @@ r4
 ## 55
 ## Mellow Horn Low Note, originally channels 10-11
 'accentMellowHorn'
-'accentMellowHorn_85'e4.'mellowHornRelease'^8'mellowHornSustain'>b4.'mellowHornRelease'^8'mellowHornSustain'
+'accentMellowHorn_85'e4.~'mellowHornRelease'^8'mellowHornSustain'~`r8`>b4.~'mellowHornRelease'^8'mellowHornSustain'~`r8`
 ## 56
 ## Low bell, originally channel 12
 'bell-o1'
@@ -1151,7 +1157,7 @@ $
 ]
 ## 10
 ## Accent Strings low note, originally a channel between 4 and 6
-'strings' 'accentStringsPan' 'accentStrings_120' c16'stringsRelease'^8.
+'strings' 'accentStringsPan' 'accentStrings_120' c16~'stringsRelease'^8.~`r8.`
 ## High Bell, originally channel 14
 'bell' 'bell_115' l4 r64 de-g
 ## 11 (one 64th note in)
@@ -1241,13 +1247,13 @@ e4.r8e4.r8
 ## 56
 ## Accent Mellow Horn Low Note, originally channels 10-11
 'accentMellowHorn-o2'
-'accentMellowHorn_65'b2.'mellowHornRelease'^4'mellowHornSustain'
+'accentMellowHorn_65'b2.~'mellowHornRelease'^4'mellowHornSustain'~`r4`
 ## 57
-b4.'mellowHornRelease'^8'mellowHornSustain'<g4.'mellowHornRelease'^8'mellowHornSustain'
+b4.~'mellowHornRelease'^8'mellowHornSustain'~`r8`<g4.~'mellowHornRelease'^8'mellowHornSustain'~`r8`
 ## 58
-'accentMellowHorn_85'a2.'mellowHornRelease'^4'mellowHornSustain'
+'accentMellowHorn_85'a2.~'mellowHornRelease'^4'mellowHornSustain'~`r4`
 ## 59
-'accentMellowHorn_105'<e2.'mellowHornRelease'^4'mellowHornSustain'
+'accentMellowHorn_105'<e2.~'mellowHornRelease'^4'mellowHornSustain'~`r4`
 
 ;
 
@@ -1273,12 +1279,12 @@ e-rfrf+rb-r<
 f+4.rg+4.r
 ] ## Back to the start of the loop for measure 18
 
-
+_
 {7}
 $
 %e1
 ## Accent Strings Lowest Note, originally channel 4 or 5 or 6
-'stringsNoAttack+o1' 'accentStringsPan' 'accentStrings_110' 'stringsInstantAttack' c16'stringsQuickRelease'^16r4.r2
+'stringsNoAttack+o1' 'accentStringsPan' 'accentStrings_110' 'stringsInstantAttack' c16 ~'stringsQuickRelease'^16~`r16` r4.r2
 ## 2
 r8
 [2
@@ -1292,7 +1298,7 @@ r8
   <'lowLayerStrings_125'g16'stringsSlowRelease'^8'stringsSustain'r4^16
   ## 4 / 9
   ## Accent Strings Lowest Note, originally channel 4 or 5 or 6
-  'stringsNoAttack+o1' 'accentStringsPan' 'accentStrings_110' 'stringsInstantAttack' c16'stringsQuickRelease'^16
+  'stringsNoAttack+o1' 'accentStringsPan' 'accentStrings_110' 'stringsInstantAttack' c16~'stringsQuickRelease'^16~`r16`
   ## Low layer strings, originally channels 7-8
   'strings-o2' 'lowLayerStringsPan' 'lowLayerStrings_110' l8
   gg+<e-f>b-<cg
@@ -1303,7 +1309,7 @@ r8
   ^2d2 >>
   ## 7
   ## Accent Strings Lowest Note, originally channel 4 or 5 or 6
-  'stringsNoAttack+o1' 'accentStringsPan' 'accentStrings_110' 'stringsInstantAttack' c16'stringsQuickRelease'^16
+  'stringsNoAttack+o1' 'accentStringsPan' 'accentStrings_110' 'stringsInstantAttack' c16~'stringsQuickRelease'^16~`r16`
 ]
 ## 10
 ## Support Deep Brass, originally channels 16-17
@@ -1318,7 +1324,7 @@ e-4.rf4.r
 [2
   ## 13 / 18
   ## Accent Strings Lowest Note, originally channel 4 or 5 or 6
-  'stringsNoAttack+o1' 'accentStringsPan' 'accentStrings_110' 'stringsInstantAttack' e-16'stringsQuickRelease'^16
+  'stringsNoAttack+o1' 'accentStringsPan' 'accentStrings_110' 'stringsInstantAttack' e-16~'stringsQuickRelease'^16~`r16`
   ## Low layer strings, originally channels 7-8
   'strings-o2' 'lowLayerStringsPan' 'lowLayerStrings_110' l8
   b-b<f+f>g+<e->f+
@@ -1329,7 +1335,7 @@ e-4.rf4.r
   j2
   ## 15
   ## Accent Strings Lowest Note, originally channel 4 or 5 or 6
-  'stringsNoAttack+o1' 'accentStringsPan' 'accentStrings_110' 'stringsInstantAttack' e-16'stringsQuickRelease'^16
+  'stringsNoAttack+o1' 'accentStringsPan' 'accentStrings_110' 'stringsInstantAttack' e-16~'stringsQuickRelease'^16~`r16`
   ## Low layer strings, originally channels 7-8
   'strings-o2' 'lowLayerStringsPan' 'lowLayerStrings_110' l8
   b-b<f+g+c+e-b-
@@ -1360,11 +1366,11 @@ frf+rb-r
 l4
 f+'leadStrings_120'e-g+f+8f8
 ## 24
-f+2.'stringsQuickRelease'^4'stringsSustain'
+f+2.~'stringsQuickRelease'^4'stringsSustain'~`r4`
 ## 25
 g+>b<b-g+8f+8
 ## 26
-g+2.'stringsQuickRelease'^4'stringsSustain'
+g+2.~'stringsQuickRelease'^4'stringsSustain'~`r4`
 ## 27 through 34
 [8 r1]
 ## 35
@@ -1391,7 +1397,7 @@ f+4e-4g+4f+8f8
 ## 48
 f+1
 ## 49
-'stringsRelease'^2
+~'stringsRelease'^2~`r2`
 ## Half of Timpani notes, originally channels 9 and 15
 'timpani-o1' 'timpaniHighRollAttack' l16
 'timpani_35'f+'timpani_40'f+'timpani_50'f+'timpani_60'f+'timpani_70'f+'timpani_85'f+'timpani_100'f+'timpani_110'f+
@@ -1401,11 +1407,11 @@ r1
 r4
 ## Accent Strings, originally channels 4-6
 'strings-o1''accentStringsPan'
-'accentStrings_115'e16'stringsRelease'^16'stringsSustain'f+16'stringsRelease'^16'stringsSustain'g+16'stringsRelease'^8.'stringsSustain'b-16'stringsRelease'^8.'stringsSustain'
+'accentStrings_115'e16~'stringsRelease'^16'stringsSustain'~`r16`f+16~'stringsRelease'^16'stringsSustain'~`r16`g+16~'stringsRelease'^8.'stringsSustain'~`r8.`b-16~'stringsRelease'^8.'stringsSustain'~`r8.`
 ## 52
-'accentStrings_100'b4g+4^16'stringsRelease'^4..'stringsSustain'
+'accentStrings_100'b4g+4^16~'stringsRelease'^4..'stringsSustain'~`r4..`
 ## 53
-r4'accentStrings_125'g+16'stringsRelease'^16'stringsSustain'b-16'stringsRelease'^16'stringsSustain''accentStrings_110'b4<c+4
+r4'accentStrings_125'g+16~'stringsRelease'^16'stringsSustain'~`r16`b-16~'stringsRelease'^16'stringsSustain'~`r16`'accentStrings_110'b4<c+4
 ## 54
 ## Backing Deep Brass Low Note, originally channels 7-8
 'backingDeepBrass-o1''backingDeepBrassQuietDuo_105'g+4.r8c+4g+4
@@ -1522,3 +1528,4 @@ $817
 'bell' 'bell_95' l4 b<c+
 'timpani-o1'
 %j818 ## Then go back to middle of the loop for measure 18
+_
