@@ -212,6 +212,7 @@ lu2_submarine:      prelude*2, espers, ruin, serpent, cave, forest, tomb, dream
 lu2_town:           relm, awakening, village*2, town, ruintown
 lu2_turret:         savethem*2, mountain, mount2, serpent, floating, fanatics
 met3_plants:        umaro, zozo, train, ancient, magitek, engine*2, dream
+mg64_menu:          prelude, chocobo, johnny, spinach, moogles*2, village
 mm2_metal:          grandfinale, unforgiven, chocobo, johnny, mount2, magitek*2, engine, ktower
 mmx3_seahorse:      chocobo, johnny, serpent*2, magitek, engine, phoenix
 mmx3_zero:          prelude, setzer, locke, johnny
@@ -706,11 +707,11 @@ rs1_inn: sleep
 rs2_inn: sleep
 
 [death]
+cc_gameover: death
 ff5_death: death
 ff6_death: death
 ff7_death: death
 sd2_death: death
-cc_gameover: death
 
 wa2_gameover: death
 dkc_gameover: death

@@ -6,14 +6,14 @@
 #WAVE 0x20 0x26 steel drum
 #WAVE 0x21 0xA2 pan flute
 #WAVE 0x22 0xA6 ocarina
-#WAVE 0x23 0x55 synth bass
+#WAVE 0x23 0x54 synth bass
 #WAVE 0x24 0x65 strings
 #WAVE 0x25 0x6B shaker
 #WAVE 0x26 0x1A snare
-#WAVE 0x27 0x5B timpani
-#WAVE 0x28 0x0A kick
+#WAVE 0x27 0x4E timbale
+#WAVE 0x28 0x0B kick
 #WAVE 0x29 0x2D cymbals
-#WAVE 0x2A 0x3A closed hi-hat
+#WAVE 0x2F 0x3A closed hi-hat
 
 #def 0i=   |0
 #def 0o=   o5
@@ -29,7 +29,7 @@
 
 #def 3i=   |3
 #def 3o=   o4
-#def 3v=   v100
+#def 3v=   v150
 
 #def 4i=   |4 %a9
 #def 4o=   o5
@@ -37,29 +37,29 @@
 
 #def 5i=   @6
 #def 5o=   o4
-#def 5v=   v100
+#def 5v=   v80
 
-#def 6i=   |5
+#def 6i=   |5 %e1
 #def 6o=   o6
 #def 6v=   v100
 
-#def 7i=   |6
+#def 7i=   |6 %e1
 #def 7o=   o5
 #def 7v=   v100
 
-#def 8i=   |7
+#def 8i=   |7 %e1
 #def 8o=   o5
 #def 8v=   v100
 
-#def 9i=   |8
+#def 9i=   |8 %s0%r20 %e0
 #def 9o=   o5
-#def 9v=   v100
+#def 9v=   v150
 
 #def 10i=   |9 %r16
 #def 10o=   o5
 #def 10v=   v100
 
-#def 11i=   |A
+#def 11i=   |F
 #def 11o=   o5
 #def 11v=   v100
 
@@ -67,8 +67,19 @@
 #def 12o=   o5
 #def 12v=   v100
 
+#drum "a"=3a+ m12,-5 ## low bang
+#drum "d"=6c  ## kick
+#drum "e"=5e  ## snare
+#drum "f"=5f+ ## timbale
+#drum "r"=5r
+
+#drum "t"=5e '7i''7v*v.6' p64
+#drum "s"=5e '7i''7v' p64 ## snare full ver.
+#drum "c"=6a+ '6i''6v*v.5' p32
+#drum "k"=6c '9v*v.7''9i' p96
+
 {1}
-t63%b0,70%f0,0%v32%x180
+t63%b0,70%f0,0%v40%x208
 l16%e1'0v*v1.27''0i''0o+o1'p64
 d32d16d16d32d16e8>e8
 $'0v*v1.27''0i''0o'
@@ -126,7 +137,7 @@ a16^32a16r8^16g16g16g32a16^32a16r8^16g16g16g32
 [4<c16^32c32>g16^32<c32>f16^32f32<f16>f16<d16^32d32>a16^32<d32>g16^32g32<g16>g16]
 <c24>b24a24g24a24b24g12<g12>g12<c16r16^32c24c24c16r8^24^32;
 
-{4}
+{7}
 l16%e1
 r2
 $p64
@@ -182,29 +193,37 @@ a2g2
 a2g4%l0
 r1;
 
-{7}
+{4}
 l16%e1'7v''7i''7o'p64
-e32e16e32r32e32e16e8
+"e32e16e32r32e32e16e8"
 '8v''8i''8o'
-f8
-$p96'9v*v.7''9i''9o'
-[8d16^32d32d8d16^32d32d8d16^32d32d8d16^32d32d16d16]
-'8v''8i''8o'
-r16f16f32f16f32r8f16f16r4f32f16f32f16r2^16
-f24f24f24f24r12f16f16f32f16r32
-'7i''7o'
-[4'7v'4r8e8r8e8r8e8r8'7v*v.6'e16e16]
-'8v''8i''8o'
-f24f24f24f24r12f12f12f12f16r16^32f24f24f16r16>>a16^24^32;
+"f8"
+$
+##p96'9v*v.7''9i'
+##[8"!o d16^32d32d8d16^32d32d8d16^32d32d8d16^32d32d16d16"]
+[8 "!!!o"
+ [3 "k16c32k32 k16c32c32"]
+    "k16c32k32 k16k32c32"]
+'8v''8i'p96
+"r16f16f32f16f32r8f16f16r4f32f16f32f16r2^16
+f24f24f24f24r12f16f16f32f16r32"
+##'7i'
+##[4'7v'"!o r8e8r8e8r8e8r8"'7v*v.6'"e16e16"]
+[4 [3"!!!o" "c16c32c32 s16c32c32"]
+            "c16c32c32 t16t16" ]
+'8v''8i'
+"f24f24f24f24r12f12f12f12f16r16^32f24f24f16r16" "a16^24^32";
 
 {8}
 l16%e1
 r2
 $'6v*v.5''6i''6o'p32
-[64a+16a+32a+32]
+## [64a+16a+32a+32]
+[8 [3a+16r32a+32 a+16r16] a+16r32a+32 a+16a+32r32]
 [16a+16]
 '11v*v.5''11i''11o'
 [16g+16]
 '6v*v.5''6i''6o'
-[32a+16a+32a+32]
+## [32a+16a+32a+32]
+[4 [3r8 a+16r16] r8 a+16a+32a+32 ]
 r1;

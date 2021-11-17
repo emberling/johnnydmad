@@ -206,6 +206,7 @@ lu2_submarine:      prelude*2, espers, ruin, cave, tomb
 lu2_town:           village*2, town
 lu2_turret:         savethem*2, mount2, floating
 met3_plants:        umaro, magitek, engine*2, dream
+mg64_menu:          chocobo, johnny, moogles*2, village
 mm2_metal:          mount2, magitek*2, engine
 mmx3_seahorse:      johnny, phoenix
 mmx3_zero:          chaos
@@ -678,11 +679,11 @@ rs1_inn: sleep
 rs2_inn: sleep
 
 [death]
+cc_gameover: death
 ff5_death: death
 ff6_death: death
 ff7_death: death
 sd2_death: death
-cc_gameover: death
 
 # Temporarily adding these, they haven't been checked/edited yet
 wa2_gameover: death
