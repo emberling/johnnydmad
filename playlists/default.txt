@@ -681,6 +681,7 @@ ff5_death: death
 ff6_death: death
 ff7_death: death
 sd2_death: death
+cc_gameover: death
 
 # Temporarily adding these, they haven't been checked/edited yet
 wa2_gameover: death

@@ -709,6 +709,7 @@ ff5_death: death
 ff6_death: death
 ff7_death: death
 sd2_death: death
+cc_gameover: death
 
 wa2_gameover: death
 dkc_gameover: death

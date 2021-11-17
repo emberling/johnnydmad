@@ -10,19 +10,22 @@
 
 #def init=t84 %v70 %b0,40 %f0,0
 
-#def guitarBaseVol=      v110
+#def guitarBaseVol=      v125 %a13
 ## The original song has another guitar sample that sounds like the normal guitar, but more accented.
 ## We don't have a separate sample for this, but we can at least play it a bit louder.
-#def sharpGuitarBaseVol= v120
+#def sharpGuitarBaseVol= v117 %a15
+#def sharpGuitarAddlVol= v20
 #def fretVol=            v20
 
 #def lowGuitarSustain= %r8
 #def guitarSustain=    %r12
 #def guitarRelease=    %r18
+#def guitarSharp=      %y2%s3%r15
 
-#def lowGuitar= |0 o5 p64 'guitarSustain' %e1 m
-#def guitar=    |0 o5 p64 'guitarSustain' %e1 m
-#def fret=      |1 o5 p64 'fretVol'       %e0 m
+#def lowGuitar=      |0 o5 p64 'guitarSustain' %e1 m
+#def guitar=         |0 o5 p64 'guitarSustain' %e1 m
+#def guitarOverflow= |0 o5 p64 'guitarSharp'   %e1 m
+#def fret=           |1 o5 p64 'fretVol'       %e0 m
 
 
 
@@ -161,9 +164,25 @@ r4'guitarBaseVol*v.77'c+4'guitarRelease'^4'guitarSustain''guitarBaseVol*v.91'>b4
 ## 2
 &187r &5g+
 ## 3
-^4 &20r &124g
+^4 &20r &28g
+'guitarOverflow''sharpGuitarAddlVol*v1.04'g+4. r8
 ## 4
-&188r &4e-
+'fret'&188r &4e-
 ## 5
-^4 &38r &10f+^2
+^4 &38r &10f+^4
+'guitarOverflow''sharpGuitarAddlVol*v1.05'e4
+;
+
+{8}
+## High volume overflow notes, additional copies of existing notes that need > 127 volume
+'guitarOverflow'
+r2'sharpGuitarAddlVol*v1.03'g+8^4r8
+## 2
+r1
+## 3
+r4.'sharpGuitarAddlVol*v1.03'a4'sharpGuitarAddlVol*v1.05'e-4.
+## 4
+r1
+## 5
+r4.'sharpGuitarAddlVol*v1.06'>b4<'sharpGuitarAddlVol*v1.08'e-4
 ;
