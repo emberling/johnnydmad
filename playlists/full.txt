@@ -231,6 +231,7 @@ saga3_ruins:        espers, zozo*2, owzer, ruin, cave, tomb, dream
 sd1_boss:           grandfinale, unforgiven, chocobo, mount2, serpent, magitek, engine, floating*2, ktower
 sd1s_courage:       grandfinale, setzer, locke, savethem*2, johnny
 sd2_dwarf:          prelude, grandfinale, johnny, spinach, what, moogles, village
+sd2_field:          relm, espers, balance, mountain, serpent, cave, forest, tomb, dream
 sd2_final:          metamorphosis, catastrophe, grandfinale, savethem, falcon, floating
 sd2_flammie:        setzer, chocobo, blackjack*2, moogles, falcon, mount2
 sd2_fortress:       metamorphosis, falcon, mountain, mount2*2, serpent, ancient, magitek, floating, ktower
@@ -486,7 +487,6 @@ sd2_spirit:     celes, coin*2, ruin
 sd2_star:       empire*2, ruin*2
 sd2_steel:      troops, what, umaro*2, zozo*2, martiallaw, magitek*2
 sd2_tasnica:    figaro*2, returners*2
-sd2_thick:      balance, mountain*2, forest*2, cave, serpent*2
 sd2_thunder:    moogles, gogo*2, umaro, zozo, mountain*2, mount2, cave
 sd2_town:       relm, moogles*2, town, village*2
 sd2_wish:       W4, ruin*2, tomb, W:prelude, W:omen3, W:coin, W:zozo, W:owzer, W:narshe, W:ruintown, W:forest*2, W:espers, W:cave, W:dream
