@@ -113,7 +113,7 @@ ff6_magitek:        magitek*2, engine, ktower
 ff6_martiallaw:     shadow, zozo, martiallaw*2, ruintown
 ff6_metamorphosis:  metamorphosis*2, catastrophe, grandfinale, unforgiven
 ff6_moogles:        what, moogles*2, gogo
-ff6_mountain:       figaro, umaro, veldt, mountain*2, mount2
+ff6_mountain:       umaro, veldt, mountain*2, mount2
 ff6_narshe:         shadow, umaro, zozo, narshe*2, martiallaw
 ff6_omen3:          omen3, cyan, ruin, balance*2
 ff6_owzer:          zozo, owzer*2, strago, dream
