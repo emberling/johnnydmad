@@ -31,6 +31,7 @@ ct_battle2:         grandfinale
 ct_bobonga:         umaro, veldt*2
 ct_final:           grandfinale, floating
 ct_forest:          cave*2, forest*2
+ct_frog:            cyan, setzer, locke*2
 ct_keeper:          espers, ruin, forest, train, dream*2
 ct_lavos:           metamorphosis
 ct_lavos_full:      kefka, catastrophe*2, grandfinale
@@ -704,6 +705,7 @@ sd3_final3:         I95,              atma, dmad5
 [victory]
 bl_fahrenheit:  fanfare
 ct_ayla:        fanfare
+ct_frog:        fanfare
 ff3_warrior:    fanfare
 ff4_fanfare:    fanfare
 ff6_fanfare:    fanfare
