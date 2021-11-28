@@ -74,6 +74,7 @@ ff4_moon:           empire, zozo, ruin*2, train, engine
 ff4_mysidia:        what, strago*2, dream
 ff4_restless:       metamorphosis, catastrophe, grandfinale, unforgiven*2, assault, engine
 ff4_rosa:           prelude, celes, daryl, coin, relm, rachel*2, awakening, village, ruin
+ff4_world:          blackjack, ruin, falcon, balance*2, mountain, serpent
 ff5_airship:        setzer, locke, savethem, chocobo, blackjack*2, falcon, mountain, mount2, serpent, floating
 ff5_book:           empire, zozo, owzer, ruin, cave, train*2, tomb, gate, ancient, dream
 ff5_boss:           catastrophe, grandfinale, savethem
@@ -333,7 +334,6 @@ ff4_giant_remix: blackjack*2, setzer, serpent
 ff4_golbez:     H2, kefka*2, fanatics*2, owzer
 ff4_illusion:   prelude, awakening, owzer, ruintown, ruin, forest*2, espers, cave, tomb, dream, gate, ancient, train
 ff4_longway:    omen3, ruin, forest, tomb, train
-ff4_overworld:  balance*2, setzer, mountain, falcon, serpent
 ff4_prologue:   prelude*2, omen3, grandfinale
 ff4_redwings:   omen3, figaro, setzer, troops*2, umaro, engine, assault
 ff4_rydia:      prelude, celes, daryl, coin, relm*2, awakening, gau, town, village
