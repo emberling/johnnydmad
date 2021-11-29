@@ -37,6 +37,7 @@ ct_lavos:           metamorphosis
 ct_lavos_full:      kefka, catastrophe*2, grandfinale
 ct_night:           celes, coin*2, ruin
 ct_revolution:      grandfinale, floating*2, ktower
+ct_seal:            espers, zozo, narshe, ruin, tomb*2
 ct_sewer:           zozo, owzer*2, train, dream
 ct_silent:          zozo, owzer, cave*2, tomb, dream
 ct_singing:         prelude, forest, tomb, dream*2
