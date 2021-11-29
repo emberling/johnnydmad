@@ -79,6 +79,7 @@ ff5_home:           prelude, daryl, coin, gau, ruintown*2
 ff5_hurry:          unforgiven
 ff5_mountain:       setzer, mountain*2, mount2
 ff5_pirates:        returners*2, umaro, veldt, mountain, engine
+ff5_ronka:          magitek*2, engine, floating
 ff5_seal:           umaro, zozo, owzer, train, gate*2, ancient
 ff5_village:        village
 ff5_void2:          setzer, returners, troops, savethem, mountain, ktower
