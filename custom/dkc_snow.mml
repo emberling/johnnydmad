@@ -3,12 +3,15 @@
 #COMPOSER Eveline Fischer
 #ARRANGED Rushlight
 
+#SHORTNAME DKC N. Hemispheres
+
 #WAVE 0x20 0x04 ## Piano, but it's used to play the creaking noise in the intro
 #WAVE 0x21 0x61 ## Harp
 #WAVE 0x22 0xD3 ## Pulse
 #WAVE 0x23 0x01 ## Piano
 #WAVE 0x24 0xC3 ## Warmth Pad, to play low base
 #WAVE 0x25 0xA4 ## Piccolo, to play the airy, atmospheric flute
+#WAVE 0x26 0x78 ## Vox Pad, used in a separate channel to layer the Warmth Pad and give it some of the tremolo the original sample has
 #WAVE 0x27 0xD1 ## Triangle Wave, used for the Low Tone Harp
 #WAVE 0x28 0xAD ## Fret noise, used to play squeak noise
 
@@ -31,8 +34,8 @@
 #def lowBaseAlternanceQuietVol=     'lowBaseVol*v.45'
 #def lowBaseAlternanceSemiQuietVol= 'lowBaseVol*v.61'
 #def lowBaseSecondLoopVol=          'lowBaseVol*v.55'
-## Volume for the additional channel where we'll also play the low base, because max volume isn't high enough
-#def lowBaseAddVol= v99
+## Volume for the additional channel where we'll also play the low base, using a second sample to combine the best properties of both
+#def lowBaseAddVol= v80
 #def lowBaseAddInitialVol=             'lowBaseAddVol*v.71'
 #def lowBaseAddAccentVol=              'lowBaseAddVol*v.79'
 #def lowBaseAddAlternanceVol=          'lowBaseAddVol*v.64'
@@ -41,19 +44,19 @@
 #def lowBaseAddSecondLoopVol=          'lowBaseAddVol*v.55'
 
 
-#def atmoFluteBaseVol= v130
+#def atmoFluteBaseVol= v144
 #def atmoFluteVol4= 'atmoFluteBaseVol*v.25'
 #def atmoFluteVol1= 'atmoFluteBaseVol*v.21'
 ## Those two volumes are originally lower (.24 and .23), but our sample doesn't seem to come out as well at lowernotes so we'll bump the volume up a bit
-#def atmoFluteVol3= 'atmoFluteBaseVol*v.4'
-#def atmoFluteVol2= 'atmoFluteBaseVol*v.35'
+#def atmoFluteVol3= 'atmoFluteBaseVol*v.32'
+#def atmoFluteVol2= 'atmoFluteBaseVol*v.28'
 
 
 ## Multiplied by up to .61
-#def pianoBaseVol= v188
+#def pianoBaseVol= v209
 
 
-#def creakingbaseVol= v54
+#def creakingbaseVol= v60
 #def creakingVolPan1= 'creakingBaseVol*v1.92' p53
 #def creakingVolPan2= 'creakingBaseVol*v1.6'  p64
 #def creakingVolPan3= 'creakingBaseVol*v1.76' p69
@@ -63,7 +66,7 @@
 #def creakingVolPan7= 'creakingBaseVol*v1.22'
 
 
-#def squeakBaseVol= v13
+#def squeakBaseVol= v14
 #def squeakVolPan1= 'squeakBaseVol*v1.58' p77
 #def squeakVolPan2= 'squeakBaseVol*v1.38' p56
 #def squeakVolPan3= 'squeakBaseVol*v1.26' p69
@@ -73,26 +76,26 @@
 #def squeakVolPan7= 'squeakBaseVol*v.39'  p69
 
 
-#def highToneVol= v20
+#def highToneVol= v22
 
 
-#def electronicBeatBaseVol= v130
+#def electronicBeatBaseVol= v144
 #def electronicBeatVol=    'electronicBeatBaseVol*v.29'
 
 
-#def synthHarpBaseVol= v130
+#def synthHarpBaseVol= v144
 #def synthHarpVol=     'synthHarpBaseVol*v.73'
 
 
-#def toneHarpBaseVol= v76
+#def toneHarpBaseVol= v84
 #def toneHarpVol=     'toneHarpBaseVol*v.7'
 
 
-#def lowToneHarpBaseVol= v86
+#def lowToneHarpBaseVol= v95
 #def lowToneHarpVol=     'lowToneHarpBaseVol*v.73'
 
 
-#def harpBaseVol= v130
+#def harpBaseVol= v144
 ## Early harp has 12 different Pan/Vol combinations, but only 5 different actual volumes
 #def harpEarlyVolPan1=   'harpBaseVol*v.73' p54
 #def harpEarlyVolPan2=                      p61
@@ -130,34 +133,34 @@
 
 
 ## Gets multiplied by up to 1.27
-#def snowStepBaseVol= v97
-#def snowStepFade = v1,97 ## Keep in line with snowStepBaseVol
+#def snowStepBaseVol= v100
+#def snowStepFade = v1,100 ## Keep in line with snowStepBaseVol
 
 
 ## Does not get multiplied
-#def electronicPercussionVol= v55
+#def electronicPercussionVol= v61
 
 
 ## Does not get multiplied
-#def clickVol= v100
+#def clickVol= v110
 
 
 ## Gets multiplied by up to 1.34
 #def kickBaseVol= v95
 
 
-## GEts multiplied by up to 1.23
-#def shakerBaseVol= v14
+## Gets multiplied by up to 1.23
+#def shakerBaseVol= v15
 
 
-#def timbaleBaseVol=     v81
-#def timbaleFade=      v1,81 ## Keep in line with timbaleBaseVol
+#def timbaleBaseVol=     v90
+#def timbaleFade=      v1,90 ## Keep in line with timbaleBaseVol
 #def timbaleLowVol=      'timbaleBaseVol*v.23'
 #def timbaleSteadyVol=   'timbaleBaseVol*v.26'
 #def timbaleFadeToHigh=  'timbaleFade*v126,.29'
 
 
-#def icicleBaseVol= v60
+#def icicleBaseVol= v66
 #def icicleEarlyVolPan1=  'icicleBaseVol*v1.56' p72
 #def icicleEarlyVolPan2=  'icicleBaseVol*v1.46' p57
 #def icicleEarlyVolPan3=                        p71
@@ -205,14 +208,15 @@
 #def lowBaseAddAccentSetup=          'lowBaseAddAccentVol'     %a10
 #def lowBaseAddAlternanceSetup=      'lowBaseAddAlternanceVol' %a2 %y0 %s5 %r7
 #def lowBaseAddSecondLoopSetup=      'lowBaseAddSecondLoopVol' %a8
-#def lowBaseAdd=           'lowBaseCommon' 'lowBaseAddInitialSetup'
-#def lowBaseAddAlternance= 'lowBaseCommon' 'lowBaseAddAlternanceSetup'
+#def lowBaseAddCommon= |6 o5 p64 %e1 m
+#def lowBaseAdd=           'lowBaseAddCommon' 'lowBaseAddInitialSetup'
+#def lowBaseAddAlternance= 'lowBaseAddCommon' 'lowBaseAddAlternanceSetup'
 
 #def atmoFluteCommonRelease= %r11
 #def atmoFluteSlowerRelease= %r7
 #def atmoFluteSlowAttack=     %a2
 #def atmoFluteFastAttack=     %a7
-#def atmoFluteFastAttackLate= %a8
+#def atmoFluteFasterAttack=   %a8
 
 #def atmoFluteCommon= |5 o3
 #def atmoFluteEarlyLeading=   'atmoFluteCommon' 'atmoFluteVol4' 'atmoFluteSlowAttack'     'atmoFluteCommonRelease' p66 %e1 m6,34,202
@@ -221,8 +225,8 @@
 #def atmoFluteChordEarlyLow=  'atmoFluteCommon' 'atmoFluteVol1' 'atmoFluteSlowAttack'     %r3                      p61 %e1 m6,32,202
 #def atmoFluteChordLate=      'atmoFluteCommon' 'atmoFluteVol1' 'atmoFluteSlowAttack'     %r5                      p61 %e1 m
 #def atmoFluteChordLatest=    'atmoFluteCommon' 'atmoFluteVol1' 'atmoFluteSlowAttack'     %r6                      p61 %e1 m6,32,202
-#def atmoFluteMelody=         'atmoFluteCommon' 'atmoFluteVol3' 'atmoFluteFastAttackLate' %r7                      p69 %e0 m6,38,208
-#def atmoFluteMelodyEcho=     'atmoFluteCommon' 'atmoFluteVol2' 'atmoFluteFastAttackLate' %r7                      p61 %e1 m6,38,208
+#def atmoFluteMelody=         'atmoFluteCommon' 'atmoFluteVol3' 'atmoFluteFasterAttack'   %r7                      p69 %e0 m6,38,208
+#def atmoFluteMelodyEcho=     'atmoFluteCommon' 'atmoFluteVol2' 'atmoFluteFasterAttack'   %r7                      p61 %e1 m6,38,208
 
 #def pianoTranquilRelease= %r21
 #def pianoFrenzyRelease=  %r19
@@ -529,7 +533,7 @@ r4^16..
 'atmoFluteMelody'
 g32.<c32.d32.
 ## 43
-e-2^8^32d32.e-32.d2
+'atmoFluteFastAttack'e-2^8^32'atmoFluteFasterAttack'd32.e-32.'atmoFluteFastAttack'd2
 ## 44(at beat 3)
 ^16>b-8.<c2
 ## 45
@@ -966,7 +970,7 @@ r8
 ## 43
 ## Melody Atmospheric Flute Echo, originally channel 7
 'atmoFluteMelodyEcho'
-r32.g32.<c32.d32.e-2^8^32d32.e-32.d16
+r32.g32.<c32.d32.'atmoFluteFastAttack'e-2^8^32'atmoFluteFasterAttack'd32.e-32.'atmoFluteFastAttack'd16
 ## 44
 ^2>b-8.<c16^4
 ## 45
