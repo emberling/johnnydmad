@@ -36,7 +36,7 @@ except ImportError:
     from mfvitools.mml2mfvi import mml_to_akao, get_variant_list, get_brr_imports
     from mfvitools.insertmfvi import insertmfvi, byte_insert, int_insert, SampleIDError, FreeSpaceError
 
-JOHNNYDMAD_FREESPACE = ["53C5F-9FDFF", "310000-37FFFF", "410000-4FFFFF"]
+JOHNNYDMAD_FREESPACE = ["310000-3FFFFF"]
 TRAIN_SAMPLE_ID = 0x3A
 
 SAMPLE_PATH = 'samples'

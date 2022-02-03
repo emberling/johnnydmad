@@ -39,7 +39,7 @@ VERBOSE = False
 
 def clean_end():
     print("Processing ended.")
-    input("Press enter to close.")
+    # input("Press enter to close.")
     quit()
 
 def ifprint(text, condition, **kwargs):
