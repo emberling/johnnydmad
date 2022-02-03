@@ -880,7 +880,7 @@ def mml_to_akao_main(mml, ignore='', fileid='mml'):
     
 def clean_end():
     print("Processing ended.")
-    input("Press enter to close.")
+    # input("Press enter to close.")
     quit()
     
 if __name__ == "__main__":

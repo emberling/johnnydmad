@@ -82,7 +82,7 @@ def johnnydmad():
     
     try:
         print("using ff6.smc as source")
-        with open("ff6.smc", "rb") as f:
+        with open("../worldscollide/seedbot.smc", "rb") as f:
             inrom = f.read()
     except IOError:
         while True:
@@ -98,53 +98,54 @@ def johnnydmad():
     f_chaos = False
     kw = {}
     force_dm = None
-    while True:
-        print()
-        if "playlist_filename" in kw:
-            print(f"Playlist file is set to {kw['playlist_filename']}")
-        print()
-        print("press enter to continue or type:")
-        print('    "chaos" to test chaotic mode')
-        print('    "sfxv" to check songs for errors, sorted by longest sequence variant')
-        print('    "mem" to check songs for errors, sorted by highest memory use variant')
-        print('    "pool" to simulate many seeds and report the observed probability pools for each track')
-        print('    "battle" to simulate many seeds and report probabilities for only battle music')
-        print('    "pl FILENAME" to set FILENAME as playlist instead of default')
-        print('    "dm FILENAME" to generate a test tierboss MML file including FILENAME')
-        i = input()
-        print()
-        if i.startswith("pl "):
-            kw["playlist_filename"] = i[3:]
-            continue
-        break
-    if i == "chaos":
-        f_chaos = True
-    if i == "sfxv":
-        mass_test("sfx", **kw)
-    elif i == "mem":
-        mass_test("mem", **kw)
-    elif i == "pool":
-        pool_test(inrom, **kw)
-    elif i == "battle":
-        pool_test(inrom, battle_only=True, **kw)
-    elif i.startswith("dm "):
-        tierboss_test(i[3:], **kw)
-    else:
-        print('generating..')
-        metadata = {}
-        outrom = process_music(inrom, meta=metadata, f_chaos=f_chaos, **kw)
-        outrom = process_formation_music_by_table(outrom)
-        outrom = process_map_music(outrom)
-        outrom = add_music_player(outrom, metadata)
+    # while True:
+    #     print()
+    #     if "playlist_filename" in kw:
+    #         print(f"Playlist file is set to {kw['playlist_filename']}")
+    #     print()
+    #     print("press enter to continue or type:")
+    #     print('    "chaos" to test chaotic mode')
+    #     print('    "sfxv" to check songs for errors, sorted by longest sequence variant')
+    #     print('    "mem" to check songs for errors, sorted by highest memory use variant')
+    #     print('    "pool" to simulate many seeds and report the observed probability pools for each track')
+    #     print('    "battle" to simulate many seeds and report probabilities for only battle music')
+    #     print('    "pl FILENAME" to set FILENAME as playlist instead of default')
+    #     print('    "dm FILENAME" to generate a test tierboss MML file including FILENAME')
+    #     i = input()
+    #     print()
+    #     if i.startswith("pl "):
+    #         kw["playlist_filename"] = i[3:]
+    #         continue
+    #     break
+    # if i == "chaos":
+    #     f_chaos = True
+    # if i == "sfxv":
+    #     mass_test("sfx", **kw)
+    # elif i == "mem":
+    #     mass_test("mem", **kw)
+    # elif i == "pool":
+    #     pool_test(inrom, **kw)
+    # elif i == "battle":
+    #     pool_test(inrom, battle_only=True, **kw)
+    # elif i.startswith("dm "):
+    #     tierboss_test(i[3:], **kw)
+    # else:
+    print('generating..')
+    metadata = {}
+    outrom = process_music(inrom, meta=metadata, f_chaos=f_chaos, **kw)
+    outrom = process_formation_music_by_table(outrom)
+    outrom = process_map_music(outrom)
+    # outrom = add_music_player(outrom, metadata)
     
-        print("writing to mytest.smc")
-        with open("mytest.smc", "wb") as f:
-            f.write(outrom)
-        
-        sp = get_music_spoiler()
-        with open("spoiler.txt", "w") as f:
-            f.write(sp)
-            
+    print("writing to mytest.smc")
+    with open("../worldscollide/seedbot.smc", "wb") as f:
+        f.write(outrom)
+
+    sp = get_music_spoiler()
+    with open("spoiler.txt", "w") as f:
+        f.write(sp)
+
+
 #################################
 
 def tierboss_test(test_song, playlist_filename=None, **kwargs):
@@ -285,5 +286,5 @@ def mass_test(sort, playlist_filename=None, **kwargs):
 
 if __name__ == "__main__":
     johnnydmad()
-    print("end")
-    input()
+    # print("end")
+    # input()
