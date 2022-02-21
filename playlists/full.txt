@@ -247,6 +247,7 @@ sd2_flammie:        setzer, chocobo, blackjack*2, moogles, falcon, mount2
 sd2_fortress:       metamorphosis, falcon, mountain, mount2*2, serpent, ancient, magitek, floating, ktower
 sd2_thanatos:       kefka, zozo, owzer, ruin, train, tomb, gate, dream, fanatics*2
 sd2_matango:        what, moogles, umaro, veldt*2, engine
+sd2_steel:          troops, zozo*2, martiallaw, train, magitek, engine
 sd3_blackmarket:    shadow, gogo, umaro, zozo*2, owzer, narshe, strago, martiallaw, ruintown, train, ancient
 sd3_counterpoint:   shadow, gogo, umaro, veldt*2, mountain, phoenix, ktower
 sd3_faith:          kefka, metamorphosis, catastrophe, grandfinale, floating, phoenix, ktower
@@ -493,7 +494,6 @@ sd2_scorpion:   grandfinale, shadow, setzer, johnny*2, spinach, moogles, gogo*2,
 sd2_sea:        zozo, serpent*2, floating, mountain, mount2, ancient*2
 sd2_spirit:     celes, coin*2, ruin
 sd2_star:       empire*2, ruin*2
-sd2_steel:      troops, what, umaro*2, zozo*2, martiallaw, magitek*2
 sd2_tasnica:    figaro*2, returners*2
 sd2_thunder:    moogles, gogo*2, umaro, zozo, mountain*2, mount2, cave
 sd2_town:       relm, moogles*2, town, village*2
