@@ -48,6 +48,7 @@ ct_undersea:        catastrophe, gate, ancient*2, magitek, floating, phoenix, kt
 cv4_chandeliers:    zozo, owzer*2, train, tomb
 dc2_garden:         relm, awakening*2, gau, ruintown, forest
 dc2_palmbrinks:     spinach, what, zozo
+dkc_snow:           ruin*2, ancient, dream
 doom_e1m1:          grandfinale, assault
 doom2_doom:         train*2, phoenix, ktower
 ds4_dungeon:        zozo, gate*2, ancient, magitek, engine
@@ -568,6 +569,7 @@ zoot_storms:    kefka*2, shadow*2, gogo*2, umaro, owzer, strago, dream*2
 
 [winter]
 ct_singing:         W:prelude, W:rachel, W:ruin, W:forest, W:tomb, W:dream*2, W:omen3, W:espers, W:awakening, W:balance
+dkc_snow:           W:umaro, W:zozo, W:cave, W:phoenix, W:owzer, W:gate, W:serpent, W:falcon
 ff6_narshe:         W:shadow, W:umaro, W:zozo, W:narshe*2, W:martiallaw, W:cave, W:train, W:dream, W:balance, W:veldt, W:ruin
 ff6_omen3:          W:omen3, W:cyan, W:ruin, W:balance*2, W:falcon
 ff6_ruin:           W:empire, W:umaro, W:owzer, W:narshe, W:cave

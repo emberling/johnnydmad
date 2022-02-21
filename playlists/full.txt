@@ -53,6 +53,7 @@ ct_undersea:        catastrophe, zozo, serpent, gate, ancient, magitek, floating
 cv4_chandeliers:    gogo, umaro, zozo, owzer*2, train, tomb, dream, fanatics
 dc2_garden:         rachel, relm, awakening*2, gau, village, town, ruintown, forest, tomb, dream
 dc2_palmbrinks:     kefka, grandfinale, spinach, what*2, moogles, gogo, train
+dkc_snow:           umaro, zozo, ruin*2, cave, ancient, dream, phoenix
 doom_e1m1:          grandfinale, unforgiven, assault, magitek
 doom2_doom:         train*2, tomb, dream, fanatics, phoenix, ktower
 ds4_dungeon:        zozo, martiallaw, serpent, cave, gate*2, ancient, magitek, engine, dream, phoenix
