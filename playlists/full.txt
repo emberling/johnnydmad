@@ -183,6 +183,7 @@ ff12_ozmone:        chocobo, johnny, what, moogles, gogo, strago, veldt*2, mount
 ff14_azyslla:       zozo, ruin, train, magitek, floating*2, ktower
 ff14_battlem:       metamorphosis, grandfinale, unforgiven, assault, savethem
 ff14_forthesky:     grandfinale, cyan, figaro, assault, savethem*2, falcon
+ff14_labten:        unforgiven, locke, savethem, falcon, mount2*2, floating
 ffmq_boss:          grandfinale, unforgiven, magitek, ktower
 ffmq_faeria:        prelude, johnny, moogles, town*2
 ffmq_final:         grandfinale, floating, ktower
@@ -604,6 +605,7 @@ sd3_faith:          E70,               bat3, bat4
 ct_theme:           E75,               bat3, bat4
 sd1s_courage:       E75,         bat2, bat3, bat4
 ff9_hunt:           E75,         bat2, bat3, bat4
+ff14_labten:        E75,                     bat4
 ot_treasure:        E77,         bat2, bat3, bat4
 bof2_battle2:       E80, battle, bat2, bat3, bat4
 fft_antipyretic:    E80,                     bat4
@@ -650,6 +652,7 @@ ff6_unforgiven:     I35, mboss
 ot_treasure:        I35, mboss, boss
 bof2_battle2:       I40, mboss
 doom_e1m1:          I40, mboss
+ff14_labten:        I40, mboss
 sots_boss:          I45, mboss, boss
 ff6_metamorphosis:  I45, mboss, boss, atma
 ff7_hurry2:         I45, mboss, boss

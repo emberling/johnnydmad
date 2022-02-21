@@ -177,6 +177,7 @@ ff12_ozmone:        what, moogles, veldt*2, mountain
 ff14_azyslla:       floating*2, ktower
 ff14_battlem:       metamorphosis, grandfinale, assault
 ff14_forthesky:     grandfinale, cyan, savethem*2
+ff14_labten:        unforgiven, savethem, mount2*2
 ffmq_boss:              chaos
 ffmq_faeria:        prelude, johnny, town*2
 ffmq_final:         grandfinale, floating, ktower
@@ -673,6 +674,7 @@ ff6_unforgiven:     I35, mboss
 ot_treasure:        I35, mboss
 bof2_battle2:       I40, mboss, boss
 doom_e1m1:          I40, mboss
+ff14_labten:        I40, mboss
 ff7_hurry2:         I45, mboss, boss
 ff6_boss:           I50,        boss
 totr_sboss:         I50,        boss
