@@ -723,6 +723,7 @@ ff4_fanfare:    fanfare
 ff6_fanfare:    fanfare
 ff7_fanfare:    fanfare
 lal_boss:       fanfare
+lu2_fanfare:    fanfare
 mmx3_zero:      fanfare
 sd3_steel:      fanfare
 
