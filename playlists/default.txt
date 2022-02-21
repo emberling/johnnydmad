@@ -145,6 +145,7 @@ ff6_zozo_orig:      zozo
 ff7_aerith:         celes*2, daryl, coin, rachel, awakening
 ff7_battle:         grandfinale, unforgiven, savethem
 ff7_battle_ff6:     grandfinale, unforgiven
+ff7_bothfeet:       spinach*2, what, gogo
 ff7_bronco:             chaos
 ff7_corel:          gau*2, narshe, martiallaw, ruintown
 ff7_electric:       chocobo*2, johnny

@@ -150,6 +150,7 @@ ff6_zozo_orig:      zozo
 ff7_aerith:         prelude, omen3, celes*2, daryl, coin, rachel, awakening
 ff7_battle:         metamorphosis, grandfinale, unforgiven, savethem
 ff7_battle_ff6:     grandfinale, unforgiven, magitek, engine
+ff7_bothfeet:       kefka, spinach*2, what, moogles, gogo
 ff7_bronco:         setzer, assault, savethem, blackjack
 ff7_corel:          shadow, gau*2, zozo, narshe, strago, martiallaw, ruintown, ruin
 ff7_electric:       chocobo*2, johnny
