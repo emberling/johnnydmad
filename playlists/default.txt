@@ -162,6 +162,7 @@ ff8_laguna:         grandfinale, magitek
 ff8_world:          prelude, ruin, balance, forest
 ff9_battle:         grandfinale
 ff9_blackwaltz:     empire, owzer, train*2, ruin
+ff9_boss:           metamorphosis*2, grandfinale, assault
 ff9_dragons:        metamorphosis*2, catastrophe, grandfinale, savethem, floating
 ff9_flamenco:       grandfinale, johnny*2
 ff9_gargan:         spinach, what*2, gogo, umaro
@@ -689,8 +690,9 @@ ffmq_boss:          I65,        boss, atma
 bof2_barubary:      I67, mboss
 ff10_seymour:       I70,              atma, dmad5
 lal_boss:           I70, mboss, boss, atma, dmad5
-xg_boss:            I70,        boss, atma
 totr_pathboss:      I70,              atma, dmad5
+xg_boss:            I70,        boss, atma
+ff9_boss:           I72, mboss, boss, atma
 sd1_boss:           I72, mboss, boss, atma, dmad5
 ff4_fiend:          I75,              atma, dmad5
 ff9_dragons:        I75,              atma, dmad5

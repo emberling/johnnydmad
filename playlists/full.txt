@@ -167,6 +167,7 @@ ff8_world:          prelude, what, narshe, ruin, balance*2, forest
 ff8_battle:         grandfinale, assault, savethem, engine, floating
 ff9_battle:         grandfinale
 ff9_blackwaltz:     empire, kefka, owzer, train*2, ruin, fanatics
+ff9_boss:           metamorphosis*2, grandfinale, unforgiven, assault, savethem, engine
 ff9_dragons:        metamorphosis*2, catastrophe, grandfinale, assault, savethem, floating, phoenix, ktower
 ff9_flamenco:       prelude, grandfinale, chocobo, johnny*2, what, village
 ff9_gargan:         kefka, shadow, spinach, what*2, moogles, gogo, umaro, zozo, owzer, engine, dream
@@ -671,9 +672,10 @@ sd3_faith:          I60,        boss, atma, dmad5
 ffmq_boss:          I65,        boss, atma, dmad5
 bof2_barubary:      I67, mboss, boss, atma, dmad5
 ff10_seymour:       I70,        boss, atma, dmad5
-xg_boss:            I70, mboss, boss, atma, dmad5
 lal_boss:           I70, mboss, boss, atma, dmad5
 totr_pathboss:      I70, mboss, boss, atma, dmad5
+xg_boss:            I70, mboss, boss, atma, dmad5
+ff9_boss:           I72, mboss, boss, atma, dmad5
 sd1_boss:           I72, mboss, boss, atma, dmad5
 ff4_fiend:          I75,        boss, atma, dmad5    
 ff9_dragons:        I75, mboss,       atma, dmad5
