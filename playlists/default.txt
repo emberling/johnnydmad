@@ -150,6 +150,7 @@ ff7_corel:          gau*2, narshe, martiallaw, ruintown
 ff7_electric:       chocobo*2, johnny
 ff7_gun:            grandfinale, troops, assault, savethem*2, floating
 ff7_hurry2:         metamorphosis*2, grandfinale, unforgiven, assault, savethem, engine
+ff7_jenova:         grandfinale, floating
 ff7_judgment:       catastrophe, assault, umaro, magitek, engine, floating, ktower*2
 ff7_mako:           omen3, zozo, ruin, train, magitek*2
 ff7_rebirth:        grandfinale, floating
@@ -699,6 +700,7 @@ ff6_atma:           I82,              atma, dmad5
 ffmq_final:         I82,              atma, dmad5
 ct_revolution:      I85,              atma, dmad5    
 ct_final:           I85,              atma, dmad5
+ff7_jenova:         I85,              atma, dmad5
 ff7_rebirth:        I88,              atma, dmad5
 eo3_waves:          I90,              atma, dmad5
 ff6_dmad:           I90,              atma, dmad5
