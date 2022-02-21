@@ -178,6 +178,7 @@ ff14_azyslla:       floating*2, ktower
 ff14_battlem:       metamorphosis, grandfinale, assault
 ff14_forthesky:     grandfinale, cyan, savethem*2
 ff14_labten:        unforgiven, savethem, mount2*2
+ff14_remnants:      falcon*2
 ffmq_boss:              chaos
 ffmq_faeria:        prelude, johnny, town*2
 ffmq_final:         grandfinale, floating, ktower

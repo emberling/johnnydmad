@@ -184,6 +184,7 @@ ff14_azyslla:       zozo, ruin, train, magitek, floating*2, ktower
 ff14_battlem:       metamorphosis, grandfinale, unforgiven, assault, savethem
 ff14_forthesky:     grandfinale, cyan, figaro, assault, savethem*2, falcon
 ff14_labten:        unforgiven, locke, savethem, falcon, mount2*2, floating
+ff14_remnants:      falcon*2, dream, floating
 ffmq_boss:          grandfinale, unforgiven, magitek, ktower
 ffmq_faeria:        prelude, johnny, moogles, town*2
 ffmq_final:         grandfinale, floating, ktower
