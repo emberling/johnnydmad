@@ -212,6 +212,7 @@ lu1_prologue:       omen3, empire, catastrophe*2, ruin
 lu2_castle:         cyan, figaro*2, returners
 lu2_fortress:       grandfinale, assault, floating*2, ktower
 lu2_iris:           prelude, awakening*2, ruin
+lu2_parting:        coin, rachel*2, awakening, gau, ruintown
 lu2_peace:          prelude, relm, awakening*2
 lu2_priphea:        daryl, rachel, relm*2, village, ruintown
 lu2_savior:         metamorphosis*2, grandfinale, savethem, floating
