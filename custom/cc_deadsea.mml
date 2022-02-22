@@ -5,6 +5,9 @@
 
 #SHORTNAME CC The Dead Sea
 
+#VARIANT `
+#VARIANT _ tr
+
 #WAVE 0x20 0x75 ## Chorus
 #WAVE 0x21 0x27 ## Bell
 #WAVE 0x22 0x65 ## Strings
@@ -15,7 +18,7 @@
 #WAVE 0x27 0x29 ## Tubular Bell, used kind of like a triangle
 #WAVE 0x28 0x5A ## Timpani
 #WAVE 0x29 0x7A ## Conga
-#WAVE 0x2A 0x6B ## Shaker
+#WAVE 0x2A `0x6B`_0x6A_ ## Shaker
 #WAVE 0x2D 0xC0 ## Played as a layer to staccato echo
 
 

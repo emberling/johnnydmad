@@ -732,7 +732,7 @@ c8
   ## Snow Steps, originally channel 1
   "!!!o l32.l32.m32."
   ## Low Base, originally channel 1
-  'lowBaseAlternance-o2' j3,340 j4,341 c4^64.^1
+  'lowBaseAlternance-o2' j3,340 j4,341 c4^64^1
 ]
 ## 49-51
 ## This loop lasts 3 beats. 4 Loops covers 12 beats (so 3 measures)
@@ -1143,7 +1143,7 @@ c8
   ## Snow Steps, originally channel 1
   r8r64
   ## Low Base, originally channel 1
-  j3,340 j4,341 c4^64.^1
+  j3,340 j4,341 c4^64^1
 ]
 ## 49-51
 ## This loop lasts 3 beats. 4 Loops covers 12 beats (so 3 measures)
