@@ -166,6 +166,7 @@ ff9_blackwaltz:     empire, owzer, train*2, ruin
 ff9_boss:           metamorphosis*2, grandfinale, assault
 ff9_dragons:        metamorphosis*2, catastrophe, grandfinale, savethem, floating
 ff9_flamenco:       grandfinale, johnny*2
+ff9_freya:          spinach, owzer, strago, tomb*2, dream
 ff9_gargan:         spinach, what*2, gogo, umaro
 ff9_hunt:           grandfinale, assault, savethem*2
 ff9_siege:          metamorphosis*2, grandfinale, assault, savethem
