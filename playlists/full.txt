@@ -17,6 +17,7 @@ bl_fahrenheit:      setzer, locke, figaro
 bl_fahrenheit_nointro: prelude, setzer, savethem, blackjack, falcon, mountain, mount2, serpent
 blord_ruins:        shadow, umaro, zozo, owzer, cave, train, tomb, gate, ancient, magitek, engine, dream
 bof1_dawn:          prelude, espers, cyan, setzer, ruin, falcon, serpent*2, cave
+bof1_jade:          catastrophe*2, assault, umaro, train, floating, phoenix
 bof2_barubary:      metamorphosis, grandfinale, unforgiven, assault
 bof2_battle:        grandfinale, unforgiven
 bof2_battle2:       grandfinale, unforgiven
@@ -669,6 +670,7 @@ ct_theme:           I52,              atma, dmad5
 ff9_hunt:           I52, mboss, boss, atma
 fft_trisection:     I55,        boss, atma, dmad5
 ff7_gun:            I55,              atma
+bof1_jade:          I60,        boss, atma, dmad5
 ff5_boss:           I60,        boss, atma
 lu2_savior:         I60, mboss, boss, atma, dmad5
 sd3_faith:          I60,        boss, atma, dmad5

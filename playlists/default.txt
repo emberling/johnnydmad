@@ -12,6 +12,7 @@ bl_fahrenheit:      setzer, locke
 bl_fahrenheit_nointro: setzer, mount2, blackjack, falcon
 blord_ruins:        train, ancient, magitek, engine, dream
 bof1_dawn:          setzer, falcon, serpent*2
+bof1_jade:          catastrophe*2, assault, phoenix
 bof2_barubary:      grandfinale, unforgiven
 bof2_battle:        grandfinale, unforgiven
 bof2_battle2:       grandfinale, unforgiven
