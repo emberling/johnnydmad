@@ -18,10 +18,10 @@
 #WAVE 0x28 0x4D ## Tom
 
 ## Original tempo is actually 150, but it runs a tad slow
-#def init= %x255{'27 131'} t152 %b0,60 %f0,0 %v50{'05'}
+#def init= %x255{'27 131'} t152 %b0,80 %f0,0 %v30{'05'}
 
-#def synthBaseVol=  v140
-#def synthFade=   v1,140
+#def synthBaseVol=  v160
+#def synthFade=   v1,160
 #def synth= |0 o6 'synthBaseVol*v.40' %a15 %y4 %s3 %r0 m24,8,213
 #def highAccentSynth= 'synth' p94
 #def midAccentSynth=  'synth' p34
@@ -57,6 +57,7 @@
 #DRUM "k"= 5a  |6 p64 'baseKickVol*v.50' %e0 m
 
 #DRUM "s"= 6c  |7 p64 'baseSnareVol*v.63' %e1 m  %y7 %s4 %r20
+#DRUM "s"= 6c  |7 p64 'baseSnareVol*v.63' %e1 m  %y2 %s2 %r0
 
 #DRUM "t"= 4f+ |8 p34 'baseTomVol*v1.00' %e1 m
 #DRUM "u"= 4g+ |8 p54 'baseTomVol*v1.00' %e1 m

@@ -274,6 +274,7 @@ top_world1:         omen3, falcon, balance*2, mountain, forest
 totr_aquarians:     empire, catastrophe, espers, umaro, zozo, ruin, train, gate, ancient, dream, floating
 totr_battle:        grandfinale, unforgiven, umaro, serpent, ancient, magitek, engine
 totr_downfall:      prelude, omen3, espers, shadow*2, zozo, ruin, cave, train, tomb, dream
+totr_mountain:      setzer, locke, chocobo, moogles, gogo, falcon, mountain, mount2*2, serpent
 totr_pathboss:      grandfinale, chocobo, johnny, magitek, engine, floating, ktower*2
 totr_sboss:         grandfinale, unforgiven, magitek, floating, engine
 totr_underworld:    grandfinale, metamorphosis, zozo, train, gate, magitek, engine, floating*2, phoenix, ktower

@@ -268,6 +268,7 @@ top_world1:         omen3, falcon, balance*2
 totr_aquarians:     empire, umaro*2, ruin, train, gate, ancient
 totr_battle:        grandfinale, unforgiven, serpent, magitek, engine
 totr_downfall:      omen3, shadow*2, zozo, tomb
+totr_mountain:      setzer, locke, falcon, mountain, mount2*2, serpent
 totr_pathboss:      grandfinale, magitek, floating, ktower
 totr_sboss:         grandfinale, engine
 totr_underworld:    grandfinale, gate, magitek, floating*2, phoenix, ktower
