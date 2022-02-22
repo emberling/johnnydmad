@@ -744,7 +744,7 @@ ct_magusintro: death
 
 [tierboss]
 ct: cc_flame, ct_battle2, ct_lavos
-ff: ff3_eureka, ff5_excastle, ff5_seal, ff7_final_part1, ff8_witches, ff9_blackwaltz, ffmq_boss, ffmq_lava
+ff: ff3_eureka, ff4_fiend, ff5_excastle, ff5_seal, ff7_final_part1, ff8_witches, ff9_blackwaltz, ffmq_boss, ffmq_lava
 ff6: ff6_fanatics_dm, ff6_tier1_dm, ff6_tier2_dm, ff6_tier3
 i: iog_whispers
 chorus: ff6_fanatics_chorus, ff6_tier1_chorus, ff6_tier2_chorus
