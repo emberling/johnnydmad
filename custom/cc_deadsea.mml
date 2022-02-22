@@ -16,7 +16,7 @@
 #WAVE 0x28 0x5A ## Timpani
 #WAVE 0x29 0x7A ## Conga
 #WAVE 0x2A 0x6B ## Shaker
-#WAVE 0x2D 0x06 ## Piano8, played as a layer to staccato echo
+#WAVE 0x2D 0xC0 ## Played as a layer to staccato echo
 
 
 #def normalEchoFeedback=             %b0,100
@@ -32,12 +32,12 @@
 #def lowChorusFade=       v1,65 ## Keep in line with lowchorusMaxVol
 #def midChorusVol=         'lowChorusMaxVol*v.76'
 
-#def staccatoChorusBaseVol= v140
+#def staccatoChorusBaseVol= v150
 #def staccatoChorus_x105=   'staccatoChorusBaseVol*v.69'
 #def staccatoChorus_x100=   'staccatoChorusBaseVol*v.63'
 #def staccatoChorus_x90=    'staccatoChorusBaseVol*v.51'
 
-#def staccatoEchoBaseVol= v120
+#def staccatoEchoBaseVol= v90
 #def staccatoLayer_x105=   'staccatoEchoBaseVol*v.69'
 #def staccatoLayer_x100=   'staccatoEchoBaseVol*v.63'
 #def staccatoLayer_x90=    'staccatoEchoBaseVol*v.51'
@@ -156,7 +156,7 @@
 #def midStrings=     'strings' 'supportStringsBaseVol*v.11' p54
 #def lowStrings=     'strings' 'supportStringsBaseVol*v.11' p82
 #def timpani=        |8 o6     'timpani_x95'                p48                                        %e1 m
-#def staccatoLayer=  |D o2                                  p84                 %a8 %y4 %s6 %r14      %e1 m ## 06 version
+#def staccatoLayer=  |D o3                                  p84                 %a8 %y1 %s2 %r17      %e1 m ## 06 version
 
 ## Volume varies too much, so exclude it from the conga macros
 #drum "c"=4c+ |9              p74       %e0 m
@@ -557,13 +557,14 @@ r8
 'pianoLayer_x75'&26d 'pianoLayer_x80'e-8 'pianoLayer_x85'&22b-
 $
 ## Piano layer for extra volume, channels 8-12 in VGMTrans output
-'piano+o1'
+
 ## 2
 ## Hold for 2 extra ticks
 &2^
 ^1
 ## 3 (2 ticks in)
-^4. 'pianoLayer_x75' &27g+ 'pianoLayer_x85' &35g 'pianoLayer_x65' c6 'pianoLayer_x85' &27f
+^4.
+'piano+o1''pianoLayer_x75' &27g+ 'pianoLayer_x85' &35g 'pianoLayer_x65' c6 'pianoLayer_x85' &27f
 ## 4 (3 ticks in)
 'pianoLayer_x75'd1
 ## 5 (3 ticks in)
