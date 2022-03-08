@@ -257,6 +257,7 @@ sd3_flight:         setzer, blackjack*2, falcon, serpent
 sd3_holyland:       strago, ruintown, ruin, forest, tomb*2
 sd3_pray:           rachel, awakening, ruintown*2, ruin
 sd3_steel:          figaro*2, returners
+sdlm_landscape:     falcon, mountain, mount2, serpent*2, floating
 sdlm_wind:          blackjack, mountain*2, mount2, forest
 sf2_balrog:         grandfinale, johnny
 smrpg_road2:        johnny, spinach*2, moogles, gogo, mountain

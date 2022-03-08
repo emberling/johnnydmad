@@ -263,6 +263,7 @@ sd3_flight:         setzer, blackjack*2, moogles, falcon, mountain, serpent
 sd3_holyland:       omen3, espers, narshe, strago, martiallaw, ruintown, ruin, cave, forest, train, tomb*2, dream
 sd3_pray:           coin, rachel, awakening, narshe, ruintown*2, ruin, forest, train, tomb
 sd3_steel:          figaro*2, returners, martiallaw
+sdlm_landscape:     assault, savethem, gogo, umaro, falcon, mountain, mount2, serpent*2, dream, floating
 sdlm_wind:          chocobo, blackjack, mountain*2, mount2, forest
 sf2_balrog:         grandfinale, unforgiven, chocobo, johnny, engine
 smrpg_road2:        chocobo, johnny, spinach*2, what, moogles, gogo, mountain, forest
