@@ -223,6 +223,7 @@ lu2_fortress:       grandfinale, assault, serpent, ancient, floating*2, ktower
 lu2_iris:           prelude, espers, awakening*2, strago, ruin
 lu2_parting:        celes, coin, rachel*2, awakening, gau, ruintown
 lu2_peace:          prelude, relm, awakening*2, village, town, ruintown
+lu2_port:           johnny, moogles, strago, village, town*2, mountain
 lu2_priphea:        prelude, celes, daryl, coin, rachel, relm*2, village, town, ruintown
 lu2_savior:         metamorphosis*2, grandfinale, assault, savethem, floating, phoenix, ktower
 lu2_submarine:      prelude*2, espers, ruin, serpent, cave, forest, tomb, dream

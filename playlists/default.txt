@@ -217,6 +217,7 @@ lu2_fortress:       grandfinale, assault, floating*2, ktower
 lu2_iris:           prelude, awakening*2, ruin
 lu2_parting:        coin, rachel*2, awakening, gau, ruintown
 lu2_peace:          prelude, relm, awakening*2
+lu2_port:           village, town*2
 lu2_priphea:        daryl, rachel, relm*2, village, ruintown
 lu2_savior:         metamorphosis*2, grandfinale, savethem, floating
 lu2_submarine:      prelude*2, espers, ruin, cave, tomb
