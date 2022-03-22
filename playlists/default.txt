@@ -267,6 +267,7 @@ so2_world1_a:       figaro
 so2_world1_b:       espers, gate, phoenix
 sots_boss:          grandfinale, dream
 sots_boss_nointro:  cyan*2, mountain, cave
+st_dungeon:         cave*2, train, dream
 sth1_spring:        johnny*2, moogles
 tn_darkworld:       omen3, espers, ruin*2, falcon, cave
 top_battle:         grandfinale, mount2, gate
@@ -532,7 +533,6 @@ so2_kurik:      cyan, moogles, gogo, town*2, village, figaro
 so2_rescue:     I70, G20, unforgiven, savethem, magitek*2, floating, mount2, mboss, bat2
 so2_victory:    fanfare*2
 spo_fight:      I30, G15, battle, grandfinale, unforgiven, bat2, mboss
-st_dungeon:     H2, moogles, gogo, veldt, mountain, cave*2, serpent, dream, phoenix, ancient, H:umaro, H:owzer, H:falcon
 tn_evergreen:   awakening*2, relm*2, forest
 top_cold:       W4, shadow, zozo, owzer, narshe*2, ruin*2, cave*2, tomb, serpent, espers*2, gate, ancient, W:prelude, W:omen3, W:celes, W:daryl, W:umaro, W:ruintown, W:veldt, W:mountain, W:ktower
 top_freeze:     W4, espers, awakening, ruintown*2, serpent*2, forest, tomb, dream, W:prelude, W:omen3, W:relm, W:shadow, W:zozo, W:strago, W:village, W:town, W:martiallaw, W:ruin, W:balance, W:cave, W:gate, W:ancient, W:phoenix
@@ -617,6 +617,7 @@ sd2_thanatos:       H2, H:kefka, H:zozo, H:owzer, H:ruin, H:train, H:tomb, H:gat
 sd3_blackmarket:    H:shadow, H:gogo, H:umaro, H:zozo*2, H:owzer, H:narshe, H:strago, H:martiallaw, H:ruintown, H:train, H:ancient
 sd3_counterpoint:   H:shadow, H:gogo, H:umaro, H:veldt*2, H:mountain, H:phoenix, H:ktower
 sd3_faith:          H:kefka, H:metamorphosis, H:catastrophe, H:grandfinale, H:floating, H:phoenix, H:ktower
+st_dungeon:         H:chocobo, H:johnny, H:moogles, H:strago, H:ruintown, H:veldt, H:espers, H:shadow, H:gogo, H:umaro, H:serpent, H:ancient
 totr_aquarians:     H:empire, H:catastrophe, H:espers, H:umaro, H:zozo, H:ruin, H:train, H:gate, H:ancient, H:dream, H:floating, H:cave
 
 [battle]
