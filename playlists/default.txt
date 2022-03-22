@@ -287,6 +287,7 @@ wa2_heimdal:        setzer, assault*2, savethem, gate
 xcx_sylvan:         omen3, espers, narshe, ruin*2, cave, ancient, dream, phoenix
 xg_boss:            grandfinale, assault*2, savethem, floating
 xg_mermaid:         daryl, ruin, train, tomb*2, ancient
+xg_weltall:         metamorphosis*2, grandfinale, unforgiven, assault, savethem
 ys4_danan:          omen3, espers, narshe, ruin, ancient*2
 zaol_temple:        train, gate, floating*2, phoenix, ktower
 
@@ -561,7 +562,6 @@ xg_chuchu:      spinach*2, what*2, moogles, gogo, strago, village
 xg_flight:      I30, G90, grandfinale, locke*2, setzer, returners, savethem*2, falcon, assault
 xg_lahan:       relm, johnny, spinach, moogles, village*2, town
 xg_tears:       celes*2, rachel, awakening, ruin
-xg_weltall:     I50, G50, boss*2, metamorphosis, grandfinale, unforgiven*2, savethem*2, assault
 ys1_wars:       I25, G90, battle, grandfinale, chocobo, falcon, magitek, floating*2, ktower, mount2, assault, bat2, bat3, mboss
 ys3_house:      shadow, gogo, owzer, strago, village, dream
 ys3_time:       I5, G65, battle, unforgiven, locke, setzer, chocobo, blackjack, gogo, mount2, engine, floating*2, bat2, bat3, mboss
@@ -661,6 +661,7 @@ sd2_fortress:       E82,                     bat4
 ff6_metamorphosis:  E85,                     bat4
 lu2_savior:         E85,                     bat4
 totr_sboss:         E85,               bat3, bat4
+xg_weltall:         E85,                     bat4
 ebr_prayer:         E88,                     bat4
 lal_boss:           E90,                     bat4
 sd1_boss:           E90,                     bat4
@@ -694,6 +695,7 @@ ff14_labten:        I40, mboss
 ff7_hurry2:         I45, mboss, boss
 ff6_boss:           I50,        boss
 totr_sboss:         I50,        boss
+xg_weltall:         I50,        boss        
 ff9_hunt:           I52, mboss, boss
 top_spirit:         I55,        boss, atma        
 ff5_boss:           I60,        boss, atma
