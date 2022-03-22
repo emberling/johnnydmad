@@ -271,6 +271,7 @@ st_dungeon:         cave*2, train, dream
 sth1_spring:        johnny*2, moogles
 tn_darkworld:       omen3, espers, ruin*2, falcon, cave
 top_battle:         grandfinale, mount2, gate
+top_spirit:         grandfinale, unforgiven
 top_sylphs:         omen3, ruin*2, forest, tomb
 top_world1:         omen3, falcon, balance*2
 totr_aquarians:     empire, umaro*2, ruin, train, gate, ancient
@@ -539,7 +540,6 @@ top_freeze:     W4, espers, awakening, ruintown*2, serpent*2, forest, tomb, drea
 top_harmony:    relm, moogles*2, town, strago, village*2
 top_mint:       omen3, celes, rachel, awakening*2, ruintown, tomb
 top_resur:      empire, catastrophe, assault, zozo, owzer, tomb, gate, ancient, fanatics, phoenix
-top_spirit:     I60, G65, grandfinale, unforgiven, boss, atma
 top_treant:     W2, omen3, daryl, coin, espers, ruin, serpent, forest*2, cave, tomb
 top_victory:    fanfare*2
 top_world3:     I00, G85, johnny, umaro, zozo, falcon*2, floating, ktower, ancient, mount2
@@ -695,6 +695,7 @@ ff7_hurry2:         I45, mboss, boss
 ff6_boss:           I50,        boss
 totr_sboss:         I50,        boss
 ff9_hunt:           I52, mboss, boss
+top_spirit:         I55,        boss, atma        
 ff5_boss:           I60,        boss, atma
 lu2_savior:         I60, mboss,             dmad5
 sd3_faith:          I60,        boss, atma

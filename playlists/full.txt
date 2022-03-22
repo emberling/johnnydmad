@@ -277,6 +277,7 @@ st_dungeon:         espers, shadow, gogo, umaro, serpent, cave*2, train, ancient
 sth1_spring:         shadow, setzer, blackjack, johnny*2, moogles, martiallaw
 tn_darkworld:       omen3, espers, zozo, ruin*2, falcon, cave, forest, train, tomb, ancient
 top_battle:         grandfinale, unforgiven, falcon, mount2, gate, magitek, engine
+top_spirit:         grandfinale, unforgiven, magitek, floating
 top_sylphs:         omen3, espers, umaro, zozo, narshe, ruin*2, cave, forest, tomb, dream
 top_world1:         omen3, falcon, balance*2, mountain, forest
 totr_aquarians:     empire, catastrophe, espers, umaro, zozo, ruin, train, gate, ancient, dream, floating
@@ -540,7 +541,6 @@ top_freeze:     W4, espers, awakening, ruintown*2, serpent*2, forest, tomb, drea
 top_harmony:    relm, moogles*2, town, strago, village*2
 top_mint:       omen3, celes, rachel, awakening*2, ruintown, tomb
 top_resur:      empire, catastrophe, assault, zozo, owzer, tomb, gate, ancient, fanatics, phoenix
-top_spirit:     I60, G65, grandfinale, unforgiven, boss, atma
 top_treant:     W2, omen3, daryl, coin, espers, ruin, serpent, forest*2, cave, tomb
 top_victory:    fanfare*2
 top_world3:     I00, G85, johnny, umaro, zozo, falcon*2, floating, ktower, ancient, mount2
@@ -675,6 +675,7 @@ ct_theme:           I52,              atma, dmad5
 ff9_hunt:           I52, mboss, boss, atma
 fft_trisection:     I55,        boss, atma, dmad5
 ff7_gun:            I55,              atma
+top_spirit:         I55, mboss, boss, atma, dmad5
 bof1_jade:          I60,        boss, atma, dmad5
 ff5_boss:           I60,        boss, atma
 lu2_savior:         I60, mboss, boss, atma, dmad5
