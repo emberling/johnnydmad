@@ -181,6 +181,7 @@ ff10_via:           prelude, owzer, ruin, tomb*2, dream
 ff10_zanarkand:     prelude, celes, coin, ruin
 ff12_crystal:       omen3, espers*2, ruin, gate, ancient, phoenix
 ff12_ozmone:        what, moogles, veldt*2, mountain
+ff12_paramina:      omen3, empire, narshe, ruin*2, train, tomb
 ff14_azyslla:       floating*2, ktower
 ff14_battlem:       metamorphosis, grandfinale, assault
 ff14_forthesky:     grandfinale, cyan, savethem*2
@@ -421,7 +422,6 @@ ffx_decision:   relm, awakening, town, martiallaw, forest, village
 ffx_luca:       relm, spinach, town*2
 ff12_barheim:   owzer, martiallaw, cave, train*2, dream, ancient*2, tomb
 ff12_estersand: locke, chocobo, moogles, balance*2, veldt, mountain*2, mount2, serpent
-ff12_paramina:  W4, omen3*2, empire*2, catastrophe, narshe*2, martiallaw, ruintown, ruin*2, cave*2, tomb, ancient, assault, W:shadow, W:awakening, W:cyan, W:troops*2, W:umaro, W:zozo, W:owzer, W:balance, W:train*2, W:serpent, W:espers*2, W:forest
 ff12_prison:    H2, empire, umaro, zozo, martiallaw, veldt, train, gate, H:dream, H:fanatics, H:ancient, H:tomb
 ffmq_battle:    I50, G15, battle*2, bat2, bat3
 ffmq_doom:      I40, G75, catastrophe, gate, engine, floating, ktower*2, bat4
@@ -583,6 +583,7 @@ ff6_omen3:          W:omen3, W:cyan, W:ruin, W:balance*2, W:falcon
 ff6_ruin:           W:empire, W:umaro, W:owzer, W:narshe, W:cave
 ff10_gagazet:       W:omen3*2, W:espers, W:gau, W:umaro, W:narshe, W:strago, W:ruin, W:veldt, W:forest, W:cyan
 ff12_crystal:       W:omen3, W:espers*2, W:narshe, W:ruin, W:cave, W:forest, W:train, W:tomb, W:gate, W:ancient, W:dream, W:phoenix
+ff12_paramina:      W:espers, W:umaro, W:martiallaw, W:forest, W:tomb, W:gate, W:ancient, W:troops, W:zozo, W:ruintown, W:balance, W:cave, W:dream
 fz_white1:          W:chocobo*2, W:blackjack, W:johnny, W:serpent
 ot_stillsnow:       W:omen3, W:awakening, W:narshe*2, W:ruintown, W:ruin, W:town, W:village
 rtrek_world:        W:prelude, W:rachel, W:relm, W:awakening*2, W:gau, W:ruintown, W:ruin, W:balance, W:omen3
@@ -590,7 +591,7 @@ tn_darkworld:       W:balance
 top_sylphs:         W:omen3, W:espers, W:umaro, W:zozo, W:narshe, W:ruin*2, W:cave, W:forest, W:tomb, W:dream, W:balance
 xcx_sylvan:         W:omen3, W:espers, W:zozo, W:narshe, W:ruin*2, W:cave, W:forest, W:train, W:tomb, W:ancient, W:dream, W:phoenix, W:balance, W:falcon
 
-[spooky]
+[haunted]
 ff6_train:          H:empire, H:gogo, H:umaro, H:zozo, H:owzer, H:train*2, H:tomb, H:dream, H:cave, H:gate, H:kefka, H:phoenix, H:veldt
 blord_ruins:        H:shadow, H:umaro, H:zozo, H:owzer, H:cave, H:train, H:tomb, H:gate, H:ancient, H:magitek, H:engine, H:dream, H:narshe, H:ruin
 cc_dragonia:        H:omen3, H:zozo, H:owzer, H:train, H:ancient*2, H:dream, H:phoenix, H:ktower, H:cave, H:gogo, H:gate, H:falcon, H:ruin

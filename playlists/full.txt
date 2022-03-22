@@ -187,6 +187,7 @@ ff10_via:           prelude, espers, zozo, owzer, tomb*2, dream
 ff10_zanarkand:     prelude, omen3, celes, daryl, coin, awakening, ruin, tomb
 ff12_crystal:       omen3, espers*2, narshe, ruin, cave, forest, train, tomb, gate, ancient, dream, phoenix
 ff12_ozmone:        chocobo, johnny, what, moogles, gogo, strago, veldt*2, mountain
+ff12_paramina:      omen3, empire, espers, umaro, zozo, narshe, martiallaw, ruin*2, forest, train, tomb, gate, ancient
 ff14_azyslla:       zozo, ruin, train, magitek, floating*2, ktower
 ff14_battlem:       metamorphosis, grandfinale, unforgiven, assault, savethem
 ff14_forthesky:     grandfinale, cyan, figaro, assault, savethem*2, falcon
@@ -421,7 +422,6 @@ ffx_decision:   relm, awakening, town, martiallaw, forest, village
 ffx_luca:       relm, spinach, town*2
 ff12_barheim:   owzer, martiallaw, cave, train*2, dream, ancient*2, tomb
 ff12_estersand: locke, chocobo, moogles, balance*2, veldt, mountain*2, mount2, serpent
-ff12_paramina:  W4, omen3*2, empire*2, catastrophe, narshe*2, martiallaw, ruintown, ruin*2, cave*2, tomb, ancient, assault, W:shadow, W:awakening, W:cyan, W:troops*2, W:umaro, W:zozo, W:owzer, W:balance, W:train*2, W:serpent, W:espers*2, W:forest
 ff12_prison:    H2, empire, umaro, zozo, martiallaw, veldt, train, gate, H:dream, H:fanatics, H:ancient, H:tomb
 ffmq_battle:    I50, G15, battle*2, bat2, bat3
 ffmq_doom:      I40, G75, catastrophe, gate, engine, floating, ktower*2, bat4
