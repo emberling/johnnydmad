@@ -20,7 +20,7 @@ def print_progress_bar(cur, max):
     pct = (cur / max) * 100
     cursor = " >)|(<-"
     full_boxes = int(pct // 2)
-    cursor_idx = int((pct % 2) * (len(cursor)/2))
+    cursor_idx = int((pct % 2) * (len(cursor) / 2))
     boxtext = cursor[-1] * full_boxes + cursor[cursor_idx]
     print(f"\r[{boxtext:<50}] {cur}/{max}", end="", flush=True)
 
@@ -38,8 +38,8 @@ def johnnydmad():
             except:
                 continue
             break
-        
-    f_chaos = False
+
+    f_chaos = True
     kw = {}
     force_dm = None
     metadata = {}
@@ -63,7 +63,7 @@ def tierboss_test(test_song, playlist_filename=None, **kwargs):
         try:
             mml = generate_tierboss_mml(pool, force_include=test_song)
         except Exception:
-            traceback.print_exc()  
+            traceback.print_exc()
         if mml:
             with open("tierboss.mml", "w") as f:
                 f.write(mml)
@@ -76,11 +76,12 @@ def tierboss_test(test_song, playlist_filename=None, **kwargs):
             break
         elif i:
             test_song = i.strip()
-    
+
+
 def pool_test(inrom, battle_only=False, playlist_filename=None, **kwargs):
     results = {}
     iterations = 10000
-    
+
     print()
     for i in range(iterations):
         tracklist = process_music(inrom, pool_test=True, playlist_filename=playlist_filename)
@@ -90,27 +91,28 @@ def pool_test(inrom, battle_only=False, playlist_filename=None, **kwargs):
             results[track].append(song)
         print_progress_bar(i, iterations)
     print()
-    
+
     if battle_only:
         tracks_to_check = ["battle", "bat2", "bat3", "bat4", "mboss", "boss",
                            "atma", "dmad5", "tier1", "tier2", "tier3"]
     else:
         tracks_to_check = results.keys()
-        
+
     for track in tracks_to_check:
         pool = results[track]
         if len(pool) < iterations:
             pool.extend(["not present"] * (iterations - len(pool)))
-            
+
         print(f"[{track.upper()}]:")
-        
+
         c = Counter(pool)
         rank = sorted(c.items(), key=itemgetter(1), reverse=True)
         songlen = max([len(s) for s in c.keys()])
         for song, reps in rank:
             pct = (reps / iterations) * 100
             print(f"    {pct:04.1f}% {song:<{songlen}} ({reps} / {iterations})")
-        
+
+
 def mass_test(sort, playlist_filename=None, **kwargs):
     global used_song_names
     testbed = [
@@ -118,8 +120,8 @@ def mass_test(sort, playlist_filename=None, **kwargs):
         ("rain", "zozo", 0x29, True),
         ("wind", "ruin", 0x4F, True),
         ("train", "train", 0x20, False)
-        ]
-    #cursor = " >)|(<"
+    ]
+    # cursor = " >)|(<"
     playlist_map, _ = init_playlist(playlist_filename)
     results = []
     legacy_files = set()
@@ -138,7 +140,7 @@ def mass_test(sort, playlist_filename=None, **kwargs):
             variant = tl[trackname].variant
             if variant is None:
                 variant = "_default_"
-                
+
             mml = tl[trackname].mml
             if tl[trackname].is_legacy:
                 legacy_files.add(song)
@@ -147,13 +149,13 @@ def mass_test(sort, playlist_filename=None, **kwargs):
             mml = apply_variant(mml, type, trackname, variant=variant)
             bin = mml_to_akao(mml, song + ' ' + trackname, sfxmode=use_sfx, variant=variant)[0]
             binsizes[type] = len(bin)
-            
+
             if song not in jukebox_titles:
                 jukebox_titles[song] = get_jukebox_title(mml, song)
             var_memusage = get_spc_memory_usage(mml, variant=variant, custompath=os.path.dirname(tl[trackname].file))
             debugtext += f"({var_memusage}) "
             memusage = max(memusage, var_memusage)
-            
+
             if memusage > 3746:
                 song_warnings[song].add("BRR memory overflow")
             if len(bin) > 0x1002:
@@ -169,7 +171,7 @@ def mass_test(sort, playlist_filename=None, **kwargs):
         results.append((order, song, binsizes, memusage))
         print_progress_bar(i, len(playlist_map))
         i += 1
-        
+
     results = sorted(results)
     print("")
     for largest, song, binsizes, memusage in results:
@@ -181,14 +183,15 @@ def mass_test(sort, playlist_filename=None, **kwargs):
         else:
             print(f" :: <{jukebox_titles[song]:<18}>", end="")
         print(f" ({memusage})", end="")
-        #if largest >= 0x1002 or memusage > 3746 or song in song_warnings:
+        # if largest >= 0x1002 or memusage > 3746 or song in song_warnings:
         if song_warnings[song]:
             print(" ~~WARNING~~")
             for w in song_warnings[song]:
                 print("    " + w)
         else:
             print("")
-            
+
+
 #################################
 
 if __name__ == "__main__":
