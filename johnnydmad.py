@@ -26,6 +26,7 @@ def print_progress_bar(cur, max):
 
 
 def johnnydmad():
+    print("jdm standard")
     try:
         with open("../worldscollide/seedbot.smc", "rb") as f:
             inrom = f.read()
