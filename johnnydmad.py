@@ -1,30 +1,3 @@
-# JOHNNYDMAD - developer tool/test interface for FF6 music randomization
-
-# *** READ THIS BEFORE EDITING THIS FILE ***
-
-# This file is part of the johnnydmad project.
-# ( https://github.com/emberling/johnnydmad )
-# johnnydmad is designed to be used inside larger projects, e.g.
-# Beyond Chaos, Beyond Chaos Gaiden, or potentially others in the future.
-# If you are editing this file as part of "Beyond Chaos" or any other
-# container project, please respect the independence of these projects:
-# - Keep johnnydmad project files in a subdirectory, and do not modify
-#   the directory structure or mix in arbitrary code files specific to
-#   your project.
-# - Keep changes to johnnydmad files in this repository to a minimum.
-#   Don't make style changes to code based on the standards of your
-#   containing project. Don't remove functionality that you feel your
-#   containing project won't need. Keep it simple so that code and
-#   changes can be easily shared across projects.
-# - Major changes and improvements should be handled through, or at
-#   minimum shared with, the johnnydmad project, whether through
-#   submitting changes or through creating a fork that other johnnydmad
-#   maintainers can easily see and pull from.
-
-import configparser
-import os
-import re
-import sys
 import traceback
 
 from collections import Counter
@@ -42,32 +15,6 @@ except ImportError:
     from mfvitools.insertmfvi import byte_insert, int_insert
     from mfvitools.mml2mfvi import mml_to_akao
 
-    
-## TO DO LIST (* = essentially complete)
-# * finish ripping FF6 vanilla songs
-# * opera mode - johnnydmad side
-# * tierboss - coding
-# * tierboss - mml setup
-# * tierboss insertion devtool
-# - sfx insertion devtool
-# * write metadata to spoiler
-# - specify seed in jdm launcher
-# - credits generator devtool
-# * music frequency devtool
-# * adjust frequency for battleprog to prevent skewing late
-# * silent mode for insertmfvi
-# * select alternate music.txt (curator mode)
-# - external ignorelist for songs and/or sources
-# * ensure function with pyinstaller
-# - reconcile music player w/ Myria disable sound hack
-# * integration with BC randomizer
-# * opera mode - beyondchaos side
-# - allow music sourced from ROM, if specified by host / integrate mfvi2mml
-# - allow selection of less intrusive mode(s) in jdm launcher (no event edits, e.g.)
-#       NOTE: the existing event edits remove the save point tutorial event!
-#       This has no effect on Beyond Chaos, but in an unmodified ROM, the first save point breaks!
-# - test with Gaiden
-# - test with WC
 
 def print_progress_bar(cur, max):
     pct = (cur / max) * 100
@@ -76,17 +23,14 @@ def print_progress_bar(cur, max):
     cursor_idx = int((pct % 2) * (len(cursor)/2))
     boxtext = cursor[-1] * full_boxes + cursor[cursor_idx]
     print(f"\r[{boxtext:<50}] {cur}/{max}", end="", flush=True)
-    
+
+
 def johnnydmad():
-    print("johnnydmad EX5 test console")
-    
     try:
-        print("using ff6.smc as source")
         with open("../worldscollide/seedbot.smc", "rb") as f:
             inrom = f.read()
     except IOError:
         while True:
-            print("File not found. Enter source ROM filename:")
             fn = input()
             try:
                 with open(fn, "rb") as f:
@@ -98,46 +42,43 @@ def johnnydmad():
     f_chaos = False
     kw = {}
     force_dm = None
-    # while True:
-    #     print()
-    #     if "playlist_filename" in kw:
-    #         print(f"Playlist file is set to {kw['playlist_filename']}")
-    #     print()
-    #     print("press enter to continue or type:")
-    #     print('    "chaos" to test chaotic mode')
-    #     print('    "sfxv" to check songs for errors, sorted by longest sequence variant')
-    #     print('    "mem" to check songs for errors, sorted by highest memory use variant')
-    #     print('    "pool" to simulate many seeds and report the observed probability pools for each track')
-    #     print('    "battle" to simulate many seeds and report probabilities for only battle music')
-    #     print('    "pl FILENAME" to set FILENAME as playlist instead of default')
-    #     print('    "dm FILENAME" to generate a test tierboss MML file including FILENAME')
-    #     i = input()
-    #     print()
-    #     if i.startswith("pl "):
-    #         kw["playlist_filename"] = i[3:]
-    #         continue
-    #     break
-    # if i == "chaos":
-    #     f_chaos = True
-    # if i == "sfxv":
-    #     mass_test("sfx", **kw)
-    # elif i == "mem":
-    #     mass_test("mem", **kw)
-    # elif i == "pool":
-    #     pool_test(inrom, **kw)
-    # elif i == "battle":
-    #     pool_test(inrom, battle_only=True, **kw)
-    # elif i.startswith("dm "):
-    #     tierboss_test(i[3:], **kw)
-    # else:
-    print('generating..')
     metadata = {}
     outrom = process_music(inrom, meta=metadata, f_chaos=f_chaos, **kw)
     outrom = process_formation_music_by_table(outrom)
     outrom = process_map_music(outrom)
-    # outrom = add_music_player(outrom, metadata)
-    
-    print("writing to mytest.smc")
+
+    with open("../worldscollide/seedbot.smc", "wb") as f:
+        f.write(outrom)
+
+    sp = get_music_spoiler()
+    with open("spoiler.txt", "w") as f:
+        f.write(sp)
+
+
+#################################
+
+def johnnydmad_chaos():
+    try:
+        with open("../worldscollide/seedbot.smc", "rb") as f:
+            inrom = f.read()
+    except IOError:
+        while True:
+            fn = input()
+            try:
+                with open(fn, "rb") as f:
+                    inrom = f.read()
+            except:
+                continue
+            break
+
+    f_chaos = True
+    kw = {}
+    force_dm = None
+    metadata = {}
+    outrom = process_music(inrom, meta=metadata, f_chaos=f_chaos, **kw)
+    outrom = process_formation_music_by_table(outrom)
+    outrom = process_map_music(outrom)
+
     with open("../worldscollide/seedbot.smc", "wb") as f:
         f.write(outrom)
 
