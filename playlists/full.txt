@@ -277,6 +277,7 @@ st_dungeon:         espers, shadow, gogo, umaro, serpent, cave*2, train, ancient
 sth1_spring:         shadow, setzer, blackjack, johnny*2, moogles, martiallaw
 tn_darkworld:       omen3, espers, zozo, ruin*2, falcon, cave, forest, train, tomb, ancient
 top_battle:         grandfinale, unforgiven, falcon, mount2, gate, magitek, engine
+top_boss:           unforgiven, engine
 top_spirit:         grandfinale, unforgiven, magitek, floating
 top_sylphs:         omen3, espers, umaro, zozo, narshe, ruin*2, cave, forest, tomb, dream
 top_world1:         omen3, falcon, balance*2, mountain, forest
@@ -606,6 +607,7 @@ ff14_battlem:       E55, battle, bat2, bat3
 mmx3_seahorse:      E55, battle, bat2, bat3, bat4
 pw_cornered:        E55, battle, bat2, bat3, bat4
 crys_mountain:      E60, battle, bat2, bat3, bat4
+top_boss:           E60, battle, bat2, bat3, bat4
 zaol_temple:        E60,                     bat4
 gs_venus:           E65,               bat3, bat4
 ct_tension:         E68,                     bat4
@@ -667,6 +669,7 @@ ot_treasure:        I35, mboss, boss
 bof2_battle2:       I40, mboss
 doom_e1m1:          I40, mboss
 ff14_labten:        I40, mboss
+top_boss:           I40, mboss, boss, atma
 sots_boss:          I45, mboss, boss
 ff6_metamorphosis:  I45, mboss, boss, atma
 ff7_hurry2:         I45, mboss, boss
@@ -755,4 +758,5 @@ ff6: ff6_fanatics_dm, ff6_tier1_dm, ff6_tier2_dm, ff6_tier3
 i: iog_whispers
 chorus: ff6_fanatics_chorus, ff6_tier1_chorus, ff6_tier2_chorus
 sd: sd2_thanatos
+to: top_boss
 x: xg_weltall
