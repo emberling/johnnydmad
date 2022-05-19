@@ -272,6 +272,7 @@ sth1_spring:        johnny*2, moogles
 tn_darkworld:       omen3, espers, ruin*2, falcon, cave
 top_battle:         grandfinale, mount2, gate
 top_boss:           unforgiven, engine
+top_morlia:         zozo, gate, ancient*2, phoenix
 top_spirit:         grandfinale, unforgiven
 top_sylphs:         omen3, ruin*2, forest, tomb
 top_world1:         omen3, falcon, balance*2
