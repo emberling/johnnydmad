@@ -11,6 +11,7 @@
 [default]
 7th_darkness:       grandfinale, unforgiven, gogo, magitek, engine*2, floating
 7th_ruins:          prelude, spinach, gogo, zozo, owzer, strago, ruintown, ruin, train, dream
+7th_town:           prelude, relm, narshe, strago, town, ruintown*2
 arc_battle:         grandfinale, unforgiven
 arc_battle_nointro: unforgiven, chocobo, mount2, serpent, ancient, floating, phoenix, ktower
 bl_fahrenheit:      setzer, locke, figaro

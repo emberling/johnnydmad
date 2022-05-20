@@ -6,6 +6,7 @@
 [default]
 7th_darkness:       grandfinale, engine*2
 7th_ruins:          prelude, strago*2, ruintown, dream
+7th_town:           prelude, strago, town, ruintown*2
 arc_battle:         grandfinale, unforgiven
 arc_battle_nointro: unforgiven, mount2, serpent
 bl_fahrenheit:      setzer, locke
