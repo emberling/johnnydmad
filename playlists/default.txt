@@ -286,6 +286,7 @@ totr_underworld:    grandfinale, gate, magitek, floating*2, phoenix, ktower
 wa_zed:             grandfinale, shadow, setzer, gogo*2
 wa2_dungeon2:       zozo, martiallaw, mount2, gate*2, phoenix
 wa2_heimdal:        setzer, assault*2, savethem, gate
+xc1_machina:        cyan*2, figaro, returners
 xcx_sylvan:         omen3, espers, narshe, ruin*2, cave, ancient, dream, phoenix
 xg_boss:            grandfinale, assault*2, savethem, floating
 xg_mermaid:         daryl, ruin, train, tomb*2, ancient
