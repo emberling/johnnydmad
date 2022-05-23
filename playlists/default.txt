@@ -231,6 +231,7 @@ mm2_metal:          mount2, magitek*2, engine
 mmx3_seahorse:      johnny, phoenix
 mmx3_zero:          chaos
 mother2_bus:        chocobo, johnny*2, zozo
+ob_thunder:         cyan, locke, savethem*2
 omf_desert:         magitek*2, engine
 ot_saintsbridge:    relm, village*2, town
 ot_stillsnow:       omen3, narshe*2, ruintown

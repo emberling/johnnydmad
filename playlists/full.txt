@@ -237,6 +237,7 @@ mm2_metal:          grandfinale, unforgiven, chocobo, johnny, mount2, magitek*2,
 mmx3_seahorse:      chocobo, johnny, serpent*2, magitek, engine, phoenix
 mmx3_zero:          prelude, setzer, locke, johnny
 mother2_bus:        chocobo, blackjack, johnny*2, what, moogles, zozo, martiallaw, serpent
+ob_thunder:         cyan, locke, figaro, troops, savethem*2, falcon
 omf_desert:         magitek*2, engine, floating, ktower
 ot_saintsbridge:    prelude, relm, awakening, strago, village*2, town
 ot_stillsnow:       omen3, awakening, narshe*2, ruintown, ruin
@@ -726,6 +727,7 @@ ff7_fanfare:    fanfare
 lal_boss:       fanfare
 lu2_fanfare:    fanfare
 mmx3_zero:      fanfare
+ob_thunder:     fanfare
 sd3_steel:      fanfare
 
 [sleep]
