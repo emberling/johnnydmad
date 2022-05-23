@@ -1,0 +1,10 @@
+# Change all tracks into silent track
+
+[silence]
+silent:		prelude, omen1, omen3, awakening, balance, shadow, strago, gau, figaro, coin, cyan, locke, rachel, relm, setzer, daryl, celes, chocobo, boss,
+            johnny, kefka, narshe, cave, veldt, savethem, empire, troops, martiallaw, metamorphosis, train, espers, grandfinale, mountain, battle,
+            serpent, zozo, town, what, gogo, returners, fanfare, umaro, moogles, unforgiven, atma, ruintown, blackjack, catastrophe, owzer, sleep,
+            spinach, death, wed_rafters, magitek, floating, falcon, fanatics, ktower, ruin, dmad5, forest, dmad4, tomb, dream, ancient, phoenix,
+            gate, mount2, engine, village, assault, bat2, bat3, bat4, mboss
+[tierboss]
+chorus:     silent, silent, silent
