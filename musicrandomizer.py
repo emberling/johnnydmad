@@ -80,6 +80,7 @@ def initialize(rng=pyrandom):
     instmap, legacy_instmap = {}, {}
     
     random = rng
+    allow_duplicates = False
 initialize()
 
 # Noting some stuff that got confusing because I can't keep my terms straight
@@ -175,7 +176,7 @@ class Tracklist:
         self[name].file = os.path.join(STATIC_MUSIC_PATH, name + '.mml')
         used_song_names.add(song_usage_id(name))
         
-    def add_random(self, name, pool, idx=None, allow_duplicates=False):
+    def add_random(self, name, pool, allow_duplicates=False, idx=None):
         self.dupe_check(name, "add_random")
         self[name] = TracklistEntry(name)
         self[name].is_fixed = False
@@ -725,7 +726,7 @@ def set_subpath(subpath):
             BASEPATH = subpath
 
 
-def process_music(inrom, meta={}, f_chaos={}, f_battle=True, opera=None, eventmodes="", playlist_filename=DEFAULT_PLAYLIST_FILE, subpath=None, freespace=JOHNNYDMAD_FREESPACE, pool_test=False, ext_rng=random):
+def process_music(inrom, meta={}, f_chaos={}, f_dupes=False, f_battle=True, opera=None, eventmodes="", playlist_filename=DEFAULT_PLAYLIST_FILE, subpath=None, freespace=JOHNNYDMAD_FREESPACE, pool_test=False, ext_rng=random):
     global random
     global used_song_names
     global used_sample_ids
@@ -741,13 +742,22 @@ def process_music(inrom, meta={}, f_chaos={}, f_battle=True, opera=None, eventmo
     init_instmap()
     
     # -- load map of categories for tracks (i.e. which pool of songs applies to each track)
-    try:
-        with open_resource(os.path.join(TABLE_PATH,'track_ids.txt'), 'r') as f:
-            track_id_map = f.readlines()
-    except IOError:
-        print(f"could not open {os.path.join(TABLE_PATH,'track_ids.txt')}, music insertion aborted")
-        processing_failed = True
-        return inrom
+    if playlist_filename == 'full.txt' or playlist_filename == 'default.txt':
+        try:
+            with open_resource(os.path.join(TABLE_PATH,'track_ids.txt'), 'r') as f:
+                track_id_map = f.readlines()
+        except IOError:
+            print(f"could not open {os.path.join(TABLE_PATH,'track_ids.txt')}, music insertion aborted")
+            processing_failed = True
+            return inrom
+    else:
+        try:
+            with open_resource(os.path.join(TABLE_PATH,'track_ids2.txt'), 'r') as f:
+                track_id_map = f.readlines()
+        except IOError:
+            print(f"could not open {os.path.join(TABLE_PATH,'track_ids2.txt')}, music insertion aborted")
+            processing_failed = True
+            return inrom
         
     category_tracks, track_categories = {}, {}
     track_id_names.clear()
@@ -918,7 +928,7 @@ def process_music(inrom, meta={}, f_chaos={}, f_battle=True, opera=None, eventmo
                     break
             # add to tracklist
             for i, choice in prog_choices.items():
-                ok = tracklist.add_random(progression[cat][i], [choice])
+                ok = tracklist.add_random(progression[cat][i], [choice], f_dupes)
                 if not ok:
                     processing_failed = True
                     break
@@ -963,7 +973,7 @@ def process_music(inrom, meta={}, f_chaos={}, f_battle=True, opera=None, eventmo
                     continue
                 if track not in track_pools:
                     track_pools[track] = []
-                ok = tracklist.add_random(track, track_pools[track])
+                ok = tracklist.add_random(track, track_pools[track], f_dupes)
                 if not ok:
                     processing_failed = True
                     break
