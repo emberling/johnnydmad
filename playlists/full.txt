@@ -11,6 +11,7 @@
 [default]
 7th_darkness:       grandfinale, unforgiven, gogo, magitek, engine*2, floating
 7th_ruins:          prelude, spinach, gogo, zozo, owzer, strago, ruintown, ruin, train, dream
+7th_town:           prelude, relm, narshe, strago, town, ruintown*2
 arc_battle:         grandfinale, unforgiven
 arc_battle_nointro: unforgiven, chocobo, mount2, serpent, ancient, floating, phoenix, ktower
 bl_fahrenheit:      setzer, locke, figaro
@@ -236,6 +237,7 @@ mm2_metal:          grandfinale, unforgiven, chocobo, johnny, mount2, magitek*2,
 mmx3_seahorse:      chocobo, johnny, serpent*2, magitek, engine, phoenix
 mmx3_zero:          prelude, setzer, locke, johnny
 mother2_bus:        chocobo, blackjack, johnny*2, what, moogles, zozo, martiallaw, serpent
+ob_thunder:         cyan, locke, figaro, troops, savethem*2, falcon
 omf_desert:         magitek*2, engine, floating, ktower
 ot_saintsbridge:    prelude, relm, awakening, strago, village*2, town
 ot_stillsnow:       omen3, awakening, narshe*2, ruintown, ruin
@@ -277,6 +279,8 @@ st_dungeon:         espers, shadow, gogo, umaro, serpent, cave*2, train, ancient
 sth1_spring:         shadow, setzer, blackjack, johnny*2, moogles, martiallaw
 tn_darkworld:       omen3, espers, zozo, ruin*2, falcon, cave, forest, train, tomb, ancient
 top_battle:         grandfinale, unforgiven, falcon, mount2, gate, magitek, engine
+top_boss:           unforgiven, engine
+top_morlia:         zozo, cave, train, tomb, gate, ancient*2, phoenix
 top_spirit:         grandfinale, unforgiven, magitek, floating
 top_sylphs:         omen3, espers, umaro, zozo, narshe, ruin*2, cave, forest, tomb, dream
 top_world1:         omen3, falcon, balance*2, mountain, forest
@@ -290,6 +294,7 @@ totr_underworld:    grandfinale, metamorphosis, zozo, train, gate, magitek, engi
 wa_zed:             grandfinale, unforgiven, shadow, setzer, moogles, umaro, gogo*2
 wa2_dungeon2:       setzer, gogo, zozo, martiallaw, mountain, mount2, gate*2, ancient, dream, phoenix
 wa2_heimdal:        metamorphosis, unforgiven, setzer, locke, assault, savethem, falcon, mount2, serpent, gate, engine, phoenix
+xc1_machina:        cyan*2, figaro, returners, troops, martiallaw
 xcx_sylvan:         omen3, espers, zozo, narshe, ruin*2, cave, forest, train, tomb, ancient, dream, phoenix
 xg_boss:            metamorphosis, grandfinale, troops, assault*2, savethem, serpent, gate, magitek, engine, floating, fanatics
 xg_mermaid:         prelude, omen3, daryl, espers, awakening, ruin, train, tomb*2, ancient
@@ -606,6 +611,7 @@ ff14_battlem:       E55, battle, bat2, bat3
 mmx3_seahorse:      E55, battle, bat2, bat3, bat4
 pw_cornered:        E55, battle, bat2, bat3, bat4
 crys_mountain:      E60, battle, bat2, bat3, bat4
+top_boss:           E60, battle, bat2, bat3, bat4
 zaol_temple:        E60,                     bat4
 gs_venus:           E65,               bat3, bat4
 ct_tension:         E68,                     bat4
@@ -667,6 +673,7 @@ ot_treasure:        I35, mboss, boss
 bof2_battle2:       I40, mboss
 doom_e1m1:          I40, mboss
 ff14_labten:        I40, mboss
+top_boss:           I40, mboss, boss, atma
 sots_boss:          I45, mboss, boss
 ff6_metamorphosis:  I45, mboss, boss, atma
 ff7_hurry2:         I45, mboss, boss
@@ -720,6 +727,7 @@ ff7_fanfare:    fanfare
 lal_boss:       fanfare
 lu2_fanfare:    fanfare
 mmx3_zero:      fanfare
+ob_thunder:     fanfare
 sd3_steel:      fanfare
 
 [sleep]
@@ -755,4 +763,5 @@ ff6: ff6_fanatics_dm, ff6_tier1_dm, ff6_tier2_dm, ff6_tier3
 i: iog_whispers
 chorus: ff6_fanatics_chorus, ff6_tier1_chorus, ff6_tier2_chorus
 sd: sd2_thanatos
+to: top_boss
 x: xg_weltall

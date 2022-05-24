@@ -6,6 +6,7 @@
 [default]
 7th_darkness:       grandfinale, engine*2
 7th_ruins:          prelude, strago*2, ruintown, dream
+7th_town:           prelude, strago, town, ruintown*2
 arc_battle:         grandfinale, unforgiven
 arc_battle_nointro: unforgiven, mount2, serpent
 bl_fahrenheit:      setzer, locke
@@ -230,6 +231,7 @@ mm2_metal:          mount2, magitek*2, engine
 mmx3_seahorse:      johnny, phoenix
 mmx3_zero:          chaos
 mother2_bus:        chocobo, johnny*2, zozo
+ob_thunder:         cyan, locke, savethem*2
 omf_desert:         magitek*2, engine
 ot_saintsbridge:    relm, village*2, town
 ot_stillsnow:       omen3, narshe*2, ruintown
@@ -271,6 +273,8 @@ st_dungeon:         cave*2, train, dream
 sth1_spring:        johnny*2, moogles
 tn_darkworld:       omen3, espers, ruin*2, falcon, cave
 top_battle:         grandfinale, mount2, gate
+top_boss:           unforgiven, engine
+top_morlia:         zozo, gate, ancient*2, phoenix
 top_spirit:         grandfinale, unforgiven
 top_sylphs:         omen3, ruin*2, forest, tomb
 top_world1:         omen3, falcon, balance*2
@@ -284,6 +288,7 @@ totr_underworld:    grandfinale, gate, magitek, floating*2, phoenix, ktower
 wa_zed:             grandfinale, shadow, setzer, gogo*2
 wa2_dungeon2:       zozo, martiallaw, mount2, gate*2, phoenix
 wa2_heimdal:        setzer, assault*2, savethem, gate
+xc1_machina:        cyan*2, figaro, returners
 xcx_sylvan:         omen3, espers, narshe, ruin*2, cave, ancient, dream, phoenix
 xg_boss:            grandfinale, assault*2, savethem, floating
 xg_mermaid:         daryl, ruin, train, tomb*2, ancient
@@ -648,6 +653,7 @@ ff14_battlem:       E55,         bat2, bat3
 mmx3_seahorse:      E55,                     bat4
 pw_cornered:        E55,         bat2,       bat4
 crys_mountain:      E60,         bat2, bat3
+top_boss:           E60,               bat3, bat4
 ct_tension:         E68,                     bat4
 ff6_unforgiven:     E70,                     bat4
 ff7_gun:            E70,               bat3, bat4
@@ -692,6 +698,7 @@ ot_treasure:        I35, mboss
 bof2_battle2:       I40, mboss, boss
 doom_e1m1:          I40, mboss
 ff14_labten:        I40, mboss
+top_boss:           I40, mboss, boss
 ff7_hurry2:         I45, mboss, boss
 ff6_boss:           I50,        boss
 totr_sboss:         I50,        boss
@@ -775,4 +782,5 @@ ff6: ff6_fanatics_dm, ff6_tier1_dm, ff6_tier2_dm, ff6_tier3
 i: iog_whispers
 chorus: ff6_fanatics_chorus, ff6_tier1_chorus, ff6_tier2_chorus
 sd: sd2_thanatos
+to: top_boss
 x: xg_weltall
