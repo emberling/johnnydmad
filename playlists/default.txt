@@ -70,6 +70,7 @@ ff3_hyne:           owzer*2, train, ancient, dream, fanatics
 ff3_warrior:        cyan, locke, figaro*2, returners
 ff4_cave:           balance, cave*2, forest, tomb
 ff4_fiend:          catastrophe, grandfinale, savethem
+ff4_golbez:         kefka, train, owzer, fanatics*2
 ff4_moon:           zozo, ruin*2, train
 ff4_mysidia:        what, strago*2
 ff4_restless:       metamorphosis, grandfinale, unforgiven*2, assault
@@ -360,7 +361,6 @@ ff4_calcobrena: kefka, grandfinale, gogo, dream
 ff4_damcyan:    omen3, cyan, zozo, strago, ruintown*2, martiallaw, cave, tomb
 ff4_giant:      gogo, magitek, floating*2, falcon, ktower, mount2, phoenix, engine*2
 ff4_giant_remix: blackjack*2, setzer, serpent
-ff4_golbez:     H2, kefka*2, fanatics*2, owzer
 ff4_illusion:   prelude, awakening, owzer, ruintown, ruin, forest*2, espers, cave, tomb, dream, gate, ancient, train
 ff4_longway:    omen3, ruin, forest, tomb, train
 ff4_prologue:   prelude*2, omen3, grandfinale
@@ -606,6 +606,7 @@ dc2_palmbrinks:     H:kefka, H:grandfinale, H:spinach, H:what*2, H:moogles, H:go
 doom2_doom:         H:train*2, H:tomb, H:dream, H:fanatics, H:phoenix, H:ktower, H:owzer, H:zozo, H:ruin, H:cave
 ff1_volcano_psx:    H:umaro, H:zozo, H:owzer, H:serpent, H:cave, H:gate*2, H:ancient, H:dream, H:phoenix
 ff3_hyne:           H:kefka, H:owzer*2, H:strago, H:train, H:ancient, H:dream, H:fanatics
+ff4_golbez:         H:prelude, H:omen3, H:empire, H:catastrophe, H:espers, H:zozo, H:ruin, H:tomb
 ff4_moon:           H:empire, H:zozo, H:ruin*2, H:train, H:engine, H:umaro, H:gogo, H:ancient, H:phoenix, H:gate, H:owzer
 ff5_book:           H:empire, H:zozo, H:owzer, H:ruin, H:cave, H:train*2, H:tomb, H:gate, H:ancient, H:dream
 ff5_seal:           H:espers, H:shadow, H:gogo, H:umaro, H:zozo, H:owzer, H:train, H:tomb, H:gate*2, H:ancient, H:kefka
@@ -777,7 +778,7 @@ ct_magusintro: death
 
 [tierboss]
 ct: cc_flame, ct_battle2, ct_lavos
-ff: ff3_eureka, ff4_fiend, ff5_excastle, ff5_seal, ff7_final_part1, ff8_witches, ff9_blackwaltz, ffmq_boss, ffmq_lava
+ff: ff3_eureka, ff4_fiend, ff4_golbez, ff5_excastle, ff5_seal, ff7_final_part1, ff8_witches, ff9_blackwaltz, ffmq_boss, ffmq_lava
 ff6: ff6_fanatics_dm, ff6_tier1_dm, ff6_tier2_dm, ff6_tier3
 i: iog_whispers
 chorus: ff6_fanatics_chorus, ff6_tier1_chorus, ff6_tier2_chorus

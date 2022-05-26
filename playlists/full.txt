@@ -75,6 +75,7 @@ ff3_hyne:           kefka, owzer*2, strago, train, ancient, dream, fanatics
 ff3_warrior:        prelude, cyan, locke, figaro*2, returners
 ff4_cave:           espers, awakening, narshe, balance, cave*2, forest, tomb, ancient, dream
 ff4_fiend:          catastrophe, grandfinale, savethem, floating, phoenix, ktower
+ff4_golbez:         omen3, empire, kefka, catastrophe, owzer, train, fanatics*2
 ff4_moon:           empire, zozo, ruin*2, train, engine
 ff4_mysidia:        what, strago*2, dream
 ff4_restless:       metamorphosis, catastrophe, grandfinale, unforgiven*2, assault, engine
@@ -360,7 +361,6 @@ ff4_calcobrena: kefka, grandfinale, gogo, dream
 ff4_damcyan:    omen3, cyan, zozo, strago, ruintown*2, martiallaw, cave, tomb
 ff4_giant:      gogo, magitek, floating*2, falcon, ktower, mount2, phoenix, engine*2
 ff4_giant_remix: blackjack*2, setzer, serpent
-ff4_golbez:     H2, kefka*2, fanatics*2, owzer
 ff4_illusion:   prelude, awakening, owzer, ruintown, ruin, forest*2, espers, cave, tomb, dream, gate, ancient, train
 ff4_longway:    omen3, ruin, forest, tomb, train
 ff4_prologue:   prelude*2, omen3, grandfinale
@@ -758,7 +758,7 @@ ct_magusintro: death
 
 [tierboss]
 ct: cc_flame, ct_battle2, ct_lavos
-ff: ff3_eureka, ff4_fiend, ff5_excastle, ff5_seal, ff7_final_part1, ff8_witches, ff9_blackwaltz, ffmq_boss, ffmq_lava
+ff: ff3_eureka, ff4_fiend, ff4_golbez, ff5_excastle, ff5_seal, ff7_final_part1, ff8_witches, ff9_blackwaltz, ffmq_boss, ffmq_lava
 ff6: ff6_fanatics_dm, ff6_tier1_dm, ff6_tier2_dm, ff6_tier3
 i: iog_whispers
 chorus: ff6_fanatics_chorus, ff6_tier1_chorus, ff6_tier2_chorus
