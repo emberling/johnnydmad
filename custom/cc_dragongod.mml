@@ -170,7 +170,7 @@
 #def trumpet_65=     'trumpetBaseVol*v.27'
 
 
-#def stickBaseVol= v80
+#def stickBaseVol= v120
 #def stick_95=     'stickBaseVol*v.57'
 #def stick_90=     'stickBaseVol*v.51'
 #def stick_85=     'stickBaseVol*v.46'
@@ -246,8 +246,8 @@
 #DRUM "b"= 6c  |7 'clashVol'     p64 %a15        %r20 %e1 mv k0
 #DRUM "s"= 5g+ |E 'sleighVol'    p84     %s1 %y3 %r18 %e1 mv k-4
 ## There are various volumes for the stick, so leave them out of the macros
-#DRUM "t"= 4d  |F                p44     %s7          %e0 mv k0
-#DRUM "u"= 4d+ |F                p44     %s3          %e0 mv k0
+#DRUM "t"= 4e- |F                p44     %s2 %y4      %e0 mv k0
+#DRUM "u"= 4f  |F                p44     %s2 %y3      %e0 mv k0
 
 
 {1}
