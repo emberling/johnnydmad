@@ -8,17 +8,17 @@
 #WAVE 0x21 0x72 ## Violin
 #WAVE 0x22 0x82 ## Trumpet
 #WAVE 0x23 0x7E ## Horn
-#WAVE 0x24 0xD1 ## Triangle Wave to play the synthetic bass
+#WAVE 0x24 0x52 ## Bass
 #WAVE 0x25 0x5A ## Timpani
 #WAVE 0x26 0x28 ## Tubular Bell
 #WAVE 0x27 0x2C ## Orchestra Clash
-#WAVE 0x28 0x8A ## Stick
 #WAVE 0x29 0x71 ## Solo Violin
 #BRR 0x2A; brr/DragonGodVoice1-louder-cropped_8000,  @0bl, a, FFE0
-#BRR 0x2B; brr/DragonGodVoice2-louder_10079,  @0bl, f, FFE0
-#BRR 0x2C; brr/DragonGodVoice3-louder_10079,  @0bl, f, FFE0
-#BRR 0x2D; brr/DragonGodVoice4-louder_10079,  @0bl, f, FFE0
+#BRR 0x2B; brr/DragonGodVoice2-louder_8980,  @0bl, g, FFE0
+#BRR 0x2C; brr/DragonGodVoice3-louder_8980,  @0bl, g, FFE0
+#BRR 0x2D; brr/DragonGodVoice4-louder_8980,  @0bl, g, FFE0
 #WAVE 0x2E 0x6D ## Sleigh Bell
+#WAVE 0x2F 0x4A ## Stick
 
 
 ## Note: Song is in 3/4
@@ -43,6 +43,14 @@
 #def bass_85=     'bassBaseVol*v.46'
 #def bass_80=     'bassBaseVol*v.4'
 
+#def bassbBaseVol= v88 ## 
+#def bassb_95=     'bassbBaseVol*v.57'
+
+#def bassaBaseVol= v180 ## Bass solo section pitch modulation source
+#def bassa_90=     'bassaBaseVol*v.51'
+#def bassa_85=     'bassaBaseVol*v.46'
+#def bassa_80=     'bassaBaseVol*v.4'
+
 #def lowBassBaseVol=  v162 ## 50% higher than bassBaseVol because the low notes don't come out as much
 #def lowBass_100=    'LowBassBaseVol*v.63'
 #def lowBass_95=     'LowBassBaseVol*v.57'
@@ -50,20 +58,21 @@
 #def lowBass_85=     'LowBassBaseVol*v.46'
 #def lowBass_80=     'LowBassBaseVol*v.4'
 
-#def extraBassBaseVol= v120
-#def extraBass_90=     'extraBassBaseVol*v.51'
-#def extraBass_85=     'extraBassBaseVol*v.46'
-#def extraBass_80=     'extraBassBaseVol*v.4'
-#def extraBass_75=     'extraBassBaseVol*v.35'
-#def extraBass_70=     'extraBassBaseVol*v.31'
-#def extraBass_65=     'extraBassBaseVol*v.27'
-#def extraBass_60=     'extraBassBaseVol*v.23'
-#def extraBass_55=     'extraBassBaseVol*v.19'
-#def extraBass_50=     'extraBassBaseVol*v.16'
-#def extraBass_45=     'extraBassBaseVol*v.13'
-#def extraBass_40=     'extraBassBaseVol*v.1'
-#def extraBass_30=     'extraBassBaseVol*v.06'
-#def extraBass_25=     'extraBassBaseVol*v.04'
+#def extraBassBaseVol= v160 ## +0.20 to second layer so that pitch modulation is always present
+#def extraBass_90=     'xtraBassBaseVol*v.51' 'extraBassBaseVol*v.71'
+#def extraBass_85=     'xtraBassBaseVol*v.46' 'extraBassBaseVol*v.66'
+#def extraBass_80=     'xtraBassBaseVol*v.4'  'extraBassBaseVol*v.60'
+#def extraBass_75=     'xtraBassBaseVol*v.35' 'extraBassBaseVol*v.55'
+#def extraBass_70=     'xtraBassBaseVol*v.31' 'extraBassBaseVol*v.51'
+#def extraBass_65=     'xtraBassBaseVol*v.27' 'extraBassBaseVol*v.47'
+#def extraBass_60=     'xtraBassBaseVol*v.23' 'extraBassBaseVol*v.43'
+#def extraBass_55=     'xtraBassBaseVol*v.19' 'extraBassBaseVol*v.39'
+#def extraBass_50=     'xtraBassBaseVol*v.16' 'extraBassBaseVol*v.36'
+#def extraBass_45=     'xtraBassBaseVol*v.13' 'extraBassBaseVol*v.33'
+#def extraBass_40=     'xtraBassBaseVol*v.1'  'extraBassBaseVol*v.30'
+#def extraBass_30=     'xtraBassBaseVol*v.06' 'extraBassBaseVol*v.26'
+#def extraBass_25=     'xtraBassBaseVol*v.04' 'extraBassBaseVol*v.24'
+#def extraBass_00=                            'extraBassBaseVol*v.20'
 
 ## highViolinBaseVol is 113. All violin vols based on it should be derived from that.
 #def violin2Vol=      v138 ## highViolinBaseVol*1.22
@@ -161,7 +170,7 @@
 #def trumpet_65=     'trumpetBaseVol*v.27'
 
 
-#def stickBaseVol= v73
+#def stickBaseVol= v80
 #def stick_95=     'stickBaseVol*v.57'
 #def stick_90=     'stickBaseVol*v.51'
 #def stick_85=     'stickBaseVol*v.46'
@@ -188,18 +197,21 @@
 #def hornRelease= %r26
 
 
-#def extraBassRightPan=  p96
+#def extraBassRightPan=  p72
 #def extraBassCenterPan= p64
-#def extraBassLeftPan=   p32
-
+#def extraBassLeftPan=   p56
+#def extraBassPanbrello = p0,96,32
 
 #def staccatoViolin=            %y0 %s6 %r26
 #def softerStaccatoViolin= %a12 %y0 %s6 %r26
 #def staccatoHighViolin=   %a10 %y0 %s5 %r26
 #def staccatoPiccolo=           %y0 %s6 %r30
 
-#def bass=      |4 o5 %y5 %s5 p64 %e0 mv0,6,160 k0
-#def extraBass= 'bass' k-2 ## detune the extra bass to give it a bit of a weirder, more disconnected feel when layered onto the normal bass
+#def bass=      |4 o5 %y0 %s3 p64 %e0 mv0,6,160 k0 %r3
+#def bassb=     |4 o5 %y2 %s3 p64 %e0 mv0,6,160 k0 %r3
+#def bassa=     @3 o4 %y0 %s3 p64 %e0 mv0,6,160 k0 %r3
+#def basse=     @5 o4 %y0 %s3 p64 %e0 mv0,6,160 k0 %r3 %a11
+#def extraBass= 'basse' k0 m6,12,239
 
 #def piccolo= |0 o3 p64 'staccatoPiccolo' %e1 mv k0
 
@@ -234,8 +246,8 @@
 #DRUM "b"= 6c  |7 'clashVol'     p64 %a15        %r20 %e1 mv k0
 #DRUM "s"= 5g+ |E 'sleighVol'    p84     %s1 %y3 %r18 %e1 mv k-4
 ## There are various volumes for the stick, so leave them out of the macros
-#DRUM "t"= 5d  |8                p44     %s1 %y5      %e0 mv k0
-#DRUM "u"= 5f  |8                p44     %s1 %y5      %e0 mv k0
+#DRUM "t"= 4d  |F                p44     %s7          %e0 mv k0
+#DRUM "u"= 4d+ |F                p44     %s3          %e0 mv k0
 
 
 {1}
@@ -444,24 +456,27 @@ g2.
 ## 6-13
 c1 [5 ^1]
 ## 14-29
+'bassb-o1''bassb_95'
 [32 c8...r8r64]
->
 ## This section will play Bass, channel 11 in VGMTrans output.
 ## We'll also squeeze notes of High Rhythm Violin, channel 3 in VGMTrans output.
 [12
+  'bass-o2' 'bass_95'
   ## 30 / 32 / 34 / 36 / 38 / 40 / 42 / 44 / 46 / 48 / 50 / 52
   g+4.b-4.
   ## 31 / 33 / 35 / 37 / 39 / 41 / 43 / 45 / 47 / 49 / 51 / 53
-  b8^24r48r16 r8 'violin3''violin3_65'g+8 'bass-o2' 'bass_95' r4
+  b8^24r48r16 r8 'violin3''violin3_65'g+8r4
 ]
 l8
+'bassa-o2'
 [16 
   ## 54-69
-  'bass_90'b-<'bass_85'f+f'bass_80'g+'bass_85'f+f>
+  'bassa_90'b-<'bassa_85'f+f'bassa_80'g+'bassa_85'f+f>
 ]
 ## 70
+'bass-o3'
 'lowBass_100'
->f2.
+f2.
 ## 71-76
 [6 ^2.]
 ## 77
@@ -493,14 +508,72 @@ g2.
 ## 14-29
 [8 g1.]
 ## 30-53
-[12 g+1.]
-[8
-  ## 54-69
-  'bell_90'b-1.
+## Low Support Horn, channel 10 in VGMTrans output
+'horn-o1'
+l8
+[3
+  [4
+    ## 30 / 32 / 34 / 36 / 38 / 40 / 42 / 44 / 46 / 48 / 50 / 52
+    'horn_95'g+4.'horn_100'a+4^16r16
+    j2
+    j4,737
+    ## 31 / 35 / 39 / 43 / 47 / 51
+    b16.r32rb'horn_95'a+'horn_95'ba+
+  ]
+  ## 33 / 41 / 49 then back to the loop
+  br16b16b16^48r24g+16^48r24a+16^48r24g+16^48r24]
+  $737
+  ## 37 / 45 / 53
+  <d+16r16d+16r16d+16r16d16r16d16r16d16r16>
 ]
-<'bell_80'
-## 70-77
-[4 f1.]
+## Timpani, channel 18 in VGMTrans output
+'timpani'>'timpani_95'b-8
+l8
+## Bass extra layer, channel 12 in VGMTrans output
+'extraBass-o1''extraBassRightPan' %p1 'extraBassPanbrello'
+## 3 iterations of this loop, with different pans (right -> center -> left)
+[3
+  j1,854
+  'extraBassCenterPan'
+  j2,854
+  'extraBassLeftPan'
+  $854
+  ## 54 / 59 / 64 (one 8th in)
+                    'extraBass_25'f+'extraBass_30'f'extraBass_40'g+'extraBass_45'f+'extraBass_50'f
+  ## 55 / 60 / 65
+  'extraBass_55'>b-<'extraBass_60'f+'extraBass_65'f'extraBass_70'g+'extraBass_75'f+              f
+  ## 56 / 61 / 66
+  'extraBass_80'>b-<'extraBass_85'f+              f'extraBass_90'g+'extraBass_85'f+              f
+  ## 57 / 62 / 67
+  'extraBass_80'>b-<'extraBass_75'f+              f'extraBass_70'g+'extraBass_65'f+'extraBass_60'f
+  ## 58 / 63 / 68
+  'extraBass_55'>b-<'extraBass_50'f+'extraBass_45'f'extraBass_40'g+'extraBass_30'f+'extraBass_25'f
+  ## 59 / 64 / 69
+  'extraBass_00'>b-<
+]
+'extraBassCenterPan'
+## 69 (one 8th in)
+               'extraBass_25'f+'extraBass_35'f'extraBass_40'g+'extraBass_55'f+
+%p0p
+## Timpani, channel 18 in VGMTrans output
+'timpani-o1' 'timpani_100'f24f24f24
+l8
+## 70
+f4.f4'timpani_70'f
+## 71
+'timpani_80'f'timpani_100'f4f4'timpani_65'f
+## 72
+f'timpani_90'f'timpani_100'ff4'timpani_65'f
+## 73
+'timpani_65'f'timpani_100'f4f4'timpani_70'f
+## 74
+'timpani_85'f4.'timpani_100'f4.
+## 75
+'timpani_75'f'timpani_95'f4'timpani_100'f4'timpani_80'f
+## 76
+'timpani_90'f4.f4.
+## 77
+'timpani_85'f'timpani_80'f'timpani_75'f'timpani_90'f'timpani_100'ff
 ;
 
 
@@ -583,7 +656,7 @@ k0
 
 ## High Rhythm Horn, channel 9 in VGMTrans output
 'horn'
-'horn_70' ## Original should be horn_95, but it seems to stand out too much
+'horn_75' ## Original should be horn_95, but it seems to stand out too much
 ## 58-75
 [36 b-16^48'hornRelease'^24^4'hornSustain']
 ## 76
@@ -639,26 +712,15 @@ $
   ## 37 / 45 / 53
   "c4.c4."
 ]
-## 54
-"c2."
-## 55-61
-[7 r2.]
-[4
-  ## 62 / 64 / 66 / 68
-  r4."!!!os4."
-  ## 63 / 65 / 67 / 69
-  ^4. j4 ^4.
+## Tubular Bell, channel 20 in VGMTrans output
+'bell'
+[8
+  ## 54-69
+  'bell_90'b-1.
 ]
-## Combo of Reverse Cymbal, Orchestra Clash, and Sleigh Bell, channels 20-21-23 in VGMTrans output
-"q4."
-[3
-  ## 70 / 72 / 74
-  "!!!ob4.s4."
-  ## 71 / 73 / 75
-  ^2.
-]
-## 76-77
-[4 "!!!os4."]
+<'bell_80'
+## 70-77
+[4 f1.]
 ;
 
 
@@ -696,25 +758,13 @@ l8
 $629
 ## 29
 [4 c16^48'hornRelease'^24'hornSustain'] ^4
-## 
-## This section will play Low Rhythm Violin, channel 5 in VGMTrans output.
-## We'll also squeeze notes of High Rhythm Violin, channel 3 in VGMTrans output
-'violin5-o1' 'softerStaccatoViolin'
-[6
-  [2
-    ## 30 / 32 / 34 / 36 / 38 / 40 / 42 / 44 / 46 / 48 / 50 / 52
-    'violin3''violin3_65'g+4'violin5-o1''softerStaccatoViolin''violin5Quiet_90'g+4g+4
-    j2,733
-    ## 31 / 35 / 39 / 43 / 47 / 51
-    [3 g+4]
-  ]
-  $733
-  ## 33 / 37 / 41 / 45 / 49 / 53
-  g+8.'violin5Quiet_75'g+16'violin5Quiet_85'g+8'violin5Quiet_90'g+8'violin5Quiet_75'g+8'violin5Quiet_85'g+8
-]
+## Tubular Bell, channel 20 in VGMTrans output
+'bell' 'bell_95'
+## 30-53
+[12 g+1.]
 ## High Rhythm Horn, channel 9 in VGMTrans output
 'horn'
-'horn_70' ## Original should be horn_95, but it seems to stand out too much
+'horn_75' ## Original should be horn_95, but it seems to stand out too much
 ## 54-57
 [8 b-16^48'hornRelease'^24^4'hornSustain']
 ## 58-60
@@ -804,50 +854,25 @@ c'timpani_95'cc'timpani_100'c4.
   g+4.'timpani''timpani_100'e-8>g+8<e-8
 ]
 ## 54
->'timpani_95'b-8
-l8
-## Bass extra layer, channel 12 in VGMTrans output
-'extraBass-o1''extraBassRightPan'
-## 3 iterations of this loop, with different pans (right -> center -> left)
-[3
-  j1,854
-  'extraBassCenterPan'
-  j2,854
-  'extraBassLeftPan'
-  $854
-  ## 54 / 59 / 64 (one 8th in)
-                    'extraBass_25'f+'extraBass_30'f'extraBass_40'g+'extraBass_45'f+'extraBass_50'f
-  ## 55 / 60 / 65
-  'extraBass_55'>b-<'extraBass_60'f+'extraBass_65'f'extraBass_70'g+'extraBass_75'f+              f
-  ## 56 / 61 / 66
-  'extraBass_80'>b-<'extraBass_85'f+              f'extraBass_90'g+'extraBass_85'f+              f
-  ## 57 / 62 / 67
-  'extraBass_80'>b-<'extraBass_75'f+              f'extraBass_70'g+'extraBass_65'f+'extraBass_60'f
-  ## 58 / 63 / 68
-  'extraBass_55'>b-<'extraBass_50'f+'extraBass_45'f'extraBass_40'g+'extraBass_30'f+'extraBass_25'f
-  ## 59 / 64 / 69
-  r
+## Orchestra Clash, channel 21 in VGMTrans output
+"!!!o c2."
+## 55-61
+## Seligh Bell, channel 23 in VGMTrans output
+[7 r2.]
+[4
+  ## 62 / 64 / 66 / 68
+  r4."!!!os4."
+  ## 63 / 65 / 67 / 69
+  ^4. j4 ^4.
 ]
-'extraBassCenterPan'
-## 69 (one 8th in)
-               'extraBass_25'f+'extraBass_35'f'extraBass_40'g+'extraBass_55'f+
-## Timpani, channel 18 in VGMTrans output
-'timpani-o1' 'timpani_100'f24f24f24
-l8
-## 70
-f4.f4'timpani_70'f
-## 71
-'timpani_80'f'timpani_100'f4f4'timpani_65'f
-## 72
-f'timpani_90'f'timpani_100'ff4'timpani_65'f
-## 73
-'timpani_65'f'timpani_100'f4f4'timpani_70'f
-## 74
-'timpani_85'f4.'timpani_100'f4.
-## 75
-'timpani_75'f'timpani_95'f4'timpani_100'f4'timpani_80'f
-## 76
-'timpani_90'f4.f4.
-## 77
-'timpani_85'f'timpani_80'f'timpani_75'f'timpani_90'f'timpani_100'ff
+## Combo of Reverse Cymbal, Orchestra Clash, and Sleigh Bell, channels 20-21-23 in VGMTrans output
+"q4."
+[3
+  ## 70 / 72 / 74
+  "!!!ob4.s4."
+  ## 71 / 73 / 75
+  ^2.
+]
+## 76-77
+[4 "!!!os4."]
 ;
