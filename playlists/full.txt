@@ -28,6 +28,7 @@ cc_arni:            prelude, relm, village*2, town, ruintown, forest
 cc_deadsea:         omen3, espers, zozo, owzer, ruin*2, train, ancient, dream, phoenix
 cc_dragonia:        omen3, zozo, owzer, train, ancient*2, dream, phoenix, ktower
 cc_eden:            prelude*2, relm, espers, forest, tomb, dream
+cc_final:           catastrophe, grandfinale, floating, fanatics, ktower
 cc_hydra:           gogo, umaro, zozo, owzer, veldt*2, cave, mount2, gate, dream, phoenix
 cc_world2:          prelude, omen3, daryl, awakening, balance*2, forest
 crys_mountain:      chocobo, blackjack, mountain, mount2*2, serpent, gate, ancient, phoenix
@@ -709,6 +710,7 @@ ct_revolution:      I85,        boss, atma, dmad5
 ct_final:           I85,        boss, atma, dmad5
 ff7_jenova:         I85,        boss, atma, dmad5
 ff7_rebirth:        I88,        boss, atma, dmad5
+cc_final:           I90,              atma, dmad5
 eo3_waves:          I90,        boss, atma, dmad5
 ff6_dmad:           I90,              atma, dmad5
 rs3_devil2:         I90,              atma, dmad5

@@ -23,6 +23,7 @@ cc_arni:            village*2, town
 cc_deadsea:         zozo, ruin*2, train, ancient
 cc_dragonia:        zozo, owzer, ancient*2, dream, phoenix, ktower
 cc_eden:            prelude*2, relm
+cc_final:           catastrophe, grandfinale, floating
 cc_hydra:           umaro, zozo, veldt*2, dream
 cc_world2:          prelude, omen3, awakening, balance*2
 crys_mountain:      chocobo, blackjack, mount2*2, serpent
@@ -730,6 +731,7 @@ ct_revolution:      I85,              atma, dmad5
 ct_final:           I85,              atma, dmad5
 ff7_jenova:         I85,              atma, dmad5
 ff7_rebirth:        I88,              atma, dmad5
+cc_final:           I90,              atma, dmad5
 eo3_waves:          I90,              atma, dmad5
 ff6_dmad:           I90,              atma, dmad5
 rs3_devil2:         I90,              atma, dmad5
