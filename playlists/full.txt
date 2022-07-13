@@ -224,6 +224,7 @@ lu1_prologue:       omen3, empire, catastrophe*2, ruin, ancient
 lu2_castle:         cyan, figaro*2, returners, mountain, engine
 lu2_fortress:       grandfinale, assault, serpent, ancient, floating*2, ktower
 lu2_iris:           prelude, espers, awakening*2, strago, ruin
+lu2_labyrinth:      kefka*2, gogo, umaro, zozo, owzer, cave, train
 lu2_parting:        celes, coin, rachel*2, awakening, gau, ruintown
 lu2_peace:          prelude, relm, awakening*2, village, town, ruintown
 lu2_port:           johnny, moogles, strago, village, town*2, mountain
