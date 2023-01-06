@@ -1,0 +1,280 @@
+#TITLE Fallarbor Town
+#ALBUM Pokemon Ruby // Sapphire // Emerald
+#COMPOSER Junichi Masuda, Go Ichinose
+#ARRANGED HoxNorf
+
+#SHORTNAME PKMN RSE Fallarbor
+
+#WAVE 0x20 0x14 dulcimer
+#WAVE 0x21 0xA7 flute
+#WAVE 0x22 0x65 strings
+#WAVE 0x23 0x59 pizzicato
+#WAVE 0x24 0x60 harp
+#WAVE 0x25 0x85 horn
+#WAVE 0x26 0x20 celesta
+
+#def 0i=   |0 %r15
+#def 0o=   o5
+#def 0v=   v127
+
+#def 1i=   |1 %r15
+#def 1o=   o5
+#def 1v=   v100
+
+#def 2i=   |2
+#def 2o=   o5
+#def 2v=   v100
+
+#def 3i=   |3
+#def 3o=   o4
+#def 3v=   v100
+
+#def 4i=   |4
+#def 4o=   o5
+#def 4v=   v100
+
+#def 5i=   |5
+#def 5o=   o5
+#def 5v=   v127
+
+#def 6i=   |6
+#def 6o=   o5
+#def 6v=   v100
+
+#def 7i=   @5
+#def 7o=   o4
+#def 7v=   v100
+
+{1}
+t148%b0,70%f0,0%v46%x170
+l16%e1$'0v''0i''0o+o1'p64
+f2.d+8d8
+c2.>a+8<c8
+d4d+4f4g4
+f1
+g2.a8a+8
+f4d4>a+4<d+4
+d2.d+8d8
+c1
+g2.f8d+8
+f4d4>a+8r4.
+<d+2d+6d6c6
+d2f2
+g2r8g8a8a+8
+f4d4>a+4<d+4
+d2c32d32c8.>g8a16r16
+a+2
+'1v''1i''1o'
+f+32f16.d+8d8d+8
+f2.d+8d8
+c32d32c2^8.>a+8<c8
+d+32d8..d+4f4g4
+f2.d+8f8
+g+32g4^8^16r8^32g8a8a+16.e32
+f4d4>a+4<d+4
+c+32d4^8^16r32d+48d8^48d+6d6
+c2.
+'2v*v.6''2i''2o+o1'
+f8f+8
+g2r8g+32g16.a8g8
+f4d4>a+8r4.
+<d+2d+24f48d+12^48d6c6
+d4d+4f4f+4
+g4^8^16r8^16g8a8a+8
+<d4c4>a+4f4
+d2c32d32c8.>g8a16r16
+a+2.r2.
+'0v''0i''0o+o1'
+f8d+8d8d+8;
+
+{2}
+l16%e1$'3v''3i''3o'p49
+r4f8r8a8r8<c8r8
+r4>f8r8a8r8g8r8
+r4d+8r+8>a8r8<c8r8
+>f8
+r1^1^2^4^8
+<d16d+16d8>a+8f8<d8f8a+8<d8
+'1v''1i''1o+o1'
+d+16f32d+8^32c16c16>a16a16f16f16d+16d+16c16c16f16f16
+'4v''4i''4o'p76
+r8d+8>a+8<d+8g8a+8<d+8g8
+r8a+8a8a+8f32g32f16d+8d8>a+8
+r8c8>b8<c8f8a8<c8d8
+r8f8e8f8d32d+32d16>a+8f8d8
+r8c8d+8g8r8d+8g8a+8
+r8<f8e8f8d32d+32d16>a+8f8d8
+r8f8a8<c8r8>a8<c8>f8
+r8a+8a8a+16d32f32a+8a+8r2
+<a16r16a8r4f16r16f8
+r4a16r16a8f16r16f8a16r16a8
+r4a+16r16a+8r4f16r16f8
+r4a+16r16a+8f16r16f8a+16r16a+8
+r4a+16r16a+8g16r16g8<d+16r16d+8
+r4>a+16r16a+8a16r16a8a+16r16a+8
+r4<d16r16d8>a+16r16a+8r4
+f16r16f8<c16r16c8>a16r16a8f16r16f8
+'0v''0i''0o'
+a+8<d+8>a+8g8<d+8>a+8g8<d+8
+>d8a+8f8d8a+8f8c+8d8
+d+8<c8>a8f8<c8>a8f8<c8
+d8>a+8f8d8f8d8<c+4
+>a+8<d+8>a+8g8<d+8>a+8g8<d+8
+d8c8>a+8f8a+8f8a+8<c8
+>f8<c8>a8f8<c8>a8f8<f8
+'3v''3i''3o-o1'
+f8r8a+8r8<d8r8f8
+'4v''4i''4o'
+a+32<d32f32a32a+8r2..;
+
+{3}
+l16%e1$'3v''3i''3o-o1'p64
+r1^4
+f8r8a8r8<c8r8
+r1^4
+'5v''5i''5o-o1'
+a+4a4g+4
+g4d+4f4g4
+f4d4>a+4<d+4
+d4>a+4g4<d+8d8
+c4>g4f4<c4
+>g4<c4d+4g4
+f4d4>a+8r8<d+4
+>f4<c4f4a4
+f4a+4d8r8>a+4
+<c4g4<c4d+4
+f4d4>a+4<d+4
+>>f4<c4f4a4
+>a+2r2
+f2.a8<c8
+>f8r8f4a8<c8>f8a8
+a+2.<d8f8
+>a+8r8<a+4a4f4
+d+2.f8g8
+f8r8f4>a+4<d+4
+d4>a+4g4<d+8d8
+c8r8c4>d+4f4
+g4<c4d+4g4
+f4d4>a+8r8<d+4
+>f4<c4f4a4
+f4a+4d8r8>a+4
+<c4g4<c4d+4
+f4d4>a+4<f4
+>>f4<c4f4a4
+>a+2.g+8a8
+a+2<f2;
+
+{4}
+l16%e1$'4v''4i''4o+o1'p75
+r1^1^2^4^8
+f32a32<c32d+32
+f4d4d+4f4
+g4r4a+4r4
+f4r4a+4r4
+f4r4a+4r4
+c4r4f4
+r1^1^1^1^1^1^1^1^2
+'6v''6i''6o+o1'
+a8r4^8f8
+r4^8a8r8f8r8a8
+r4^8a+8r4^8f8
+r4^8a+8r8f8r8a+8
+r4^8a+8r8g8r8<d+8
+r4^8>a+8r8a8r8a+8
+r4^8<d8r8>a+8r4^8
+f8r8<c8r8>a8r8f16r16
+'1v''1i''1o'
+d8d+2r8e32d+16.f8d+8
+d4>a+4f8r4.
+a2<c24d48c12^48>a6f6
+a+4<c4d4d+4
+d+2r8d+8f8g8
+a+4f4d4>a+4
+f2g32a32g8.d8f16r16
+f2.r1^4;
+
+{5}
+l16%e1$'7v*v.5''7i''7o'p123
+r1^1^1
+f2.f+4
+g2a+4a8g8
+f2a+2
+a+2f2
+a1
+a2<c2
+>f2a+2
+f2<c2
+>a+2f2
+a2f2
+a+2d2
+c2d+2
+f4d+8c8d4>a+4
+f8<a8<c8>a8<f8c8>a8<c8
+>>f8<<f8>>a8<a8<f8d+8c8>a8
+>a+8<<f8>>f8<f8<d8>a+8f8a+8
+>f8<<d8>>a+8<f8a8d8<c8>g8
+>a+8<<d+8>a+8g8<g8>a+8<c8c+8
+d8>a+8f8a+8<f8d8>a+8<d8
+>>a+8<<d8>>f8<a+8>a+8<f8a+8b8
+<c8>a8f8a8d+8f8a8<c8
+>>g8<<d+8>a+8g8<d+8>a+8g8<g8
+d8>a+8f8a+8d8f8a+8<d8
+>>a8<<c8>a8f8<d+8>f8a8d+8
+<d8>a+8f8a+8d8f8a+8<d8
+>>a+8<<d+8c8>g8<d8c8>g8<c8
+d8>a+8<f8d8a+8f8d8c8
+>>a8<<c8>c8f8<f8>f8a8f8
+>f8<a+8>f8<d+8<d8>f8d8f8
+>f8<a+8>f8<d8<d8>f8d8f8;
+
+{6}
+l16%e1$'7v*v.5''7i''7o'p4
+r1
+r1
+r1
+d2.c+4
+d+2g4f8d+8
+d2f2
+f2d2
+f1
+c2>g2
+a+2d4d+4
+<c2d+2
+>a+2<d2
+>a2<c2
+>a+2f2
+a2f2
+a+4f8d8>a+4b4
+<c8<f8d+8f8<c8>f8d+8f8
+>c8<<c8>>f8<f8<c8>a8d+8c8
+>f8<d8>d8<d8a+8f8d8f8
+>d8<a+8>f8<d8f8>a8<a8f8
+>g8<a+8g8d+8<d+8>f8g8a8
+a+8f8>a+8<f8<d8>a+8f8a+8
+>f8<a+8>d8<f8>f8a+8<f8f+8
+g8d+8c8d+8>a8<c8d+8f8
+>d+8<a+8g8d+8g8d+8c8<d+8
+>a+8f8d8f8>a+8<d8f8a+8
+>f8<a8f8c8<c8>c8f8>a8
+<a+8f8d8f8>a+8<d8f8a+8
+>g8<<c8>g8d+8<c8>g8d+8g8
+a+8f8<d8>a+8<f8d8>a+8a8
+>f8<a8>a8<c8<c8>c8f8c8
+>d+8<d+8>d+8a+8<a+8d8>f8<d8
+>d8<d8>d8a+8<a+8d8>f8<d8;
+
+{7}
+l16%e1$'2v*v.6''2i''2o'p64
+r1^1^1^4
+a+4a4<c4
+>a+2.a8g8
+f2<d2
+r1
+r1
+d+2.d8c8
+d4>a+4f8r4.
+a2a6g6a6
+a+2<d2
+d+2r8d+8f8g8
+d4>a+4f4<c4
+r1^1^1^1^1^1^1^1^1^1^1^1^1^1^1^1^1^1^1;
