@@ -243,6 +243,7 @@ omf_desert:         magitek*2, engine
 ot_saintsbridge:    relm, village*2, town
 ot_stillsnow:       omen3, narshe*2, ruintown
 ot_treasure:        grandfinale, unforgiven
+pkmnrse_fallarbor:  relm, spinach, strago*2, village, town
 ptsk_level5:        spinach*2, zozo, narshe, strago
 pw_cornered:        metamorphosis*2, grandfinale, engine
 ro_labyrinth:       ruin, cave, train, tomb*2, ancient
