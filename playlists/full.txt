@@ -250,6 +250,7 @@ ot_saintsbridge:    prelude, relm, awakening, strago, village*2, town
 ot_stillsnow:       omen3, awakening, narshe*2, ruintown, ruin
 ot_treasure:        grandfinale, unforgiven, locke
 pkmnrse_fallarbor:  relm, spinach, moogles, strago*2, village, town
+pkmnrse_route101:   relm, moogles*2, strago, village, town
 ptsk_level5:        spinach*2, zozo, narshe, strago, martiallaw
 pw_cornered:        metamorphosis*2, grandfinale, unforgiven, savethem, engine
 ro_labyrinth:       omen3, espers, zozo, owzer, ruin, cave, forest, train, tomb*2, gate, ancient, dream, phoenix
