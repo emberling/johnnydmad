@@ -170,6 +170,7 @@ ff8_world:          prelude, ruin, balance, forest
 ff9_battle:         grandfinale
 ff9_blackwaltz:     empire, owzer, train*2, ruin
 ff9_boss:           metamorphosis*2, grandfinale, assault
+ff9_cleyra:         prelude, relm, village*2
 ff9_dragons:        metamorphosis*2, catastrophe, grandfinale, savethem, floating
 ff9_flamenco:       grandfinale, johnny*2
 ff9_freya:          spinach, owzer, strago, tomb*2, dream

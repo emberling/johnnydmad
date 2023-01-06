@@ -175,6 +175,7 @@ ff8_battle:         grandfinale, assault, savethem, engine, floating
 ff9_battle:         grandfinale
 ff9_blackwaltz:     empire, kefka, owzer, train*2, ruin, fanatics
 ff9_boss:           metamorphosis*2, grandfinale, unforgiven, assault, savethem, engine
+ff9_cleyra:         prelude, relm, village*2
 ff9_dragons:        metamorphosis*2, catastrophe, grandfinale, assault, savethem, floating, phoenix, ktower
 ff9_flamenco:       prelude, grandfinale, chocobo, johnny*2, what, village
 ff9_freya:          prelude, spinach, owzer, zozo, strago, ruintown, ruin, forest, tomb*2, dream
