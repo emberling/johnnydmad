@@ -39,6 +39,7 @@ ct_ayla:            locke*2, savethem
 ct_battle:          grandfinale, unforgiven, assault, magitek, engine, floating
 ct_battle2:         grandfinale, unforgiven
 ct_bobonga:         what, moogles, gogo, umaro, veldt*2
+ct_crisis:          grandfinale, unforgiven*2, engine
 ct_final:           metamorphosis, grandfinale, magitek, engine, floating, ktower
 ct_forest:          zozo, ruin, mountain, cave*2, forest*2, dream
 ct_frog:            cyan, setzer, locke*2, figaro, returners
@@ -600,6 +601,7 @@ bof2_battle:        E25, battle, bat2, bat3
 ff9_battle:         E25, battle, bat2, bat3, bat4
 top_battle:         E27, battle, bat2, bat3
 7th_darkness:       E30, battle, bat2, bat3, bat4
+ct_crisis:          E30, battle, bat2, bat3, bat4
 ff3_battle:         E30, battle, bat2, bat3
 ff7_battle:         E30, battle, bat2, bat3, bat4
 ff8_battle:         E30, battle, bat2, bat3, bat4
@@ -671,6 +673,7 @@ grad3_desert:       I20, mboss
 omf_desert:         I20,        boss
 sf2_balrog:         I20, mboss
 arc_battle:         I25, mboss, boss
+ct_crisis:          I25, mboss, boss
 ff8_laguna:         I25, mboss, boss, atma, dmad5
 ff14_battlem:       I25, mboss
 pw_cornered:        I25, mboss

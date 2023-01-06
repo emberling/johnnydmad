@@ -34,6 +34,7 @@ ct_ayla:            locke*2
 ct_battle:          grandfinale, unforgiven, magitek, engine
 ct_battle2:         grandfinale
 ct_bobonga:         umaro, veldt*2
+ct_crisis:          grandfinale, unforgiven*2, engine
 ct_final:           grandfinale, floating
 ct_forest:          cave*2, forest*2
 ct_frog:            cyan, setzer, locke*2
@@ -699,6 +700,7 @@ ff7_battle:         I15, mboss
 ff8_battle:         I15, mboss
 ff9_siege:          I15, mboss
 omf_desert:         I20,        boss
+ct_crisis:          I25, mboss
 ff8_laguna:         I25, mboss, boss, atma
 pw_cornered:        I25, mboss
 ff6_grandfinale:    I30, mboss, boss
