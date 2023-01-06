@@ -241,6 +241,7 @@ omf_desert:         magitek*2, engine
 ot_saintsbridge:    relm, village*2, town
 ot_stillsnow:       omen3, narshe*2, ruintown
 ot_treasure:        grandfinale, unforgiven
+ptsk_level5:        spinach*2, zozo, narshe, strago
 pw_cornered:        metamorphosis*2, grandfinale, engine
 ro_labyrinth:       ruin, cave, train, tomb*2, ancient
 rs3_devil2:         grandfinale, fanatics
@@ -330,7 +331,6 @@ ct_boss2:       I95, G75, atma*2, metamorphosis, grandfinale, catastrophe
 ct_epoch:       prelude, setzer, chocobo, blackjack*2, johnny, serpent, falcon
 ct_factory:     zozo, narshe, martiallaw, engine, magitek*2
 ct_fair:        johnny, spinach, moogles*2, town, village
-ct_frog:        fanfare, cyan*2, returners
 ct_magus:       H3, I99, G85, atma, dmad5, floating, fanatics, ktower, grandfinale, H:kefka, H:empire, H:falcon, H:phoenix, H:gate, H:train, H:tomb
 ct_mountain:    moogles, gogo, umaro, veldt*2, mountain, engine
 ct_omen:        zozo, train, gate, ancient, magitek, dream, phoenix*2, ktower, H:omen3, H:espers, H:shadow, H:falcon, H:floating

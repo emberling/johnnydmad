@@ -7,12 +7,12 @@
 
 
 #WAVE 0x20 0x65 ## Strings
-#WAVE 0x21 0x60 ## Harp
+#WAVE 0x21 0x58 ## Harp
 #WAVE 0x22 0x04 ## Bass Piano
 
 #WAVE 0x24 0x02 ## Piano 5
 #WAVE 0x25 0x01 ## Piano 6
-#WAVE 0x26 0x52 ## Bass
+#WAVE 0x26 0x57 ## Bass
 #WAVE 0x2A 0x6C ## Tambourine
 #WAVE 0x2B 0x6A ## Shaker
 
@@ -34,17 +34,18 @@
 
 
 #def strings=             |0 o5                          %e1 m
-#def melodyStrings=       'strings' v69         p71     
+#def melodyStrings=       'strings' v56         p71     %a6     v0,18,159
 #def rightSupportStrings= 'strings' v53         p78 %r10
-#def echoStrings=         'strings' v35         p40 %r12
+#def echoStrings=         'strings' v44         p40 %r12        v0,18,151
+#def melodyStringsEcho=   'strings' v13         p40     %a6
 #def harp=                |1 o5     v75         p57      %e1 m
-#def bass=                |6 o6     v50         p64      %e1 m
+#def bass=                |6 o6     v50         p78      %e1 m
 #def piano5=              |4 o5                          %e1 m
-#def secondayPiano5=      'piano5'  v107        p57
+#def secondaryPiano5=     'piano5'  v107        p57
 #def rightSupportPiano5=  'piano5'  v90         p78
 #def piano6=              |5 o4                     %r10 %e1 m
-#def melodyPiano6=        'piano6'  'piano6MP'  p71
-#def echoPiano6=          'piano6'  v50         p40
+#def melodyPiano6=        'piano6'  'piano6MP'  p71            v
+#def echoPiano6=          'piano6'  v67         p40            v
 #def bassPiano=           |2 o5     v107        p64      %e0 m
 
 
@@ -112,11 +113,11 @@ a4'stringsRelease'^4'stringsSustain'e4'stringsRelease'^4
 ## 26
 ^2'stringsSustain'cdec
 ## 27
-g4'stringsRelease'^8'stringsSustain'f16e16f4'stringsRelease'^4
+g4'stringsRelease'^8'stringsSustain'%l1f16e16%l0f4'stringsRelease'^4
 ## 28
 ^2'stringsSustain'>b<cdf
 ## 29
-f4'stringsRelease'^8'stringsSustain'e16d16e4'stringsRelease'^4
+f4'stringsRelease'^8'stringsSustain'%l1e16d16%l0e4'stringsRelease'^4
 ## 30
 ^2'stringsSustain'>e4<c4
 ## 31
@@ -128,7 +129,7 @@ f4'stringsRelease'^8'stringsSustain'e16d16e4'stringsRelease'^4
 
 {2}
 $
-'secondayPiano5-o1'
+'secondaryPiano5-o1'
 l8
 ## 1-2
 [4 a<ece>]
@@ -232,7 +233,7 @@ a<ec>b
 ;
 
 
-{4}
+{5}
 $
 'rightSupportStrings-o1'
 l4
@@ -305,7 +306,7 @@ a1
 ;
 
 
-{5}
+{4}
 ## Delay by 2 beats to set the echo's timing
 r2
 $
@@ -416,8 +417,40 @@ a2e2
 >a1
 ## 16
 ^1
-## 17-32
-[16 r1]
+'melodyStringsEcho+o1'
+l8 r8
+## 17
+e4'stringsRelease'^4'stringsSustain'>a4'stringsRelease'^4
+## 18
+^2'stringsSustain'<c>bag
+## 19
+f4'stringsRelease'^8'stringsSustain'<cc4'stringsRelease'^4
+## 20
+^1'stringsSustain'
+## 21
+f4'stringsRelease'^4'stringsSustain'>b4'stringsRelease'^4
+## 22
+^2'stringsSustain'b<cdf
+## 23
+e4'stringsRelease'^2.
+## 24
+^1'stringsSustain'
+## 25
+a4'stringsRelease'^4'stringsSustain'e4'stringsRelease'^4
+## 26
+^2'stringsSustain'cdec
+## 27
+g4'stringsRelease'^8'stringsSustain'%l1f16e16%l0f4'stringsRelease'^4
+## 28
+^2'stringsSustain'>b<cdf
+## 29
+f4'stringsRelease'^8'stringsSustain'%l1e16d16%l0e4'stringsRelease'^4
+## 30
+^2'stringsSustain'>e4<c4
+## 31
+>a4'stringsRelease'^2.
+## 32
+^2..
 ;
 
 
