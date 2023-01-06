@@ -230,6 +230,7 @@ lu2_submarine:      prelude*2, espers, ruin, cave, tomb
 lu2_town:           village*2, town
 lu2_turret:         savethem*2, mount2, floating
 met3_brain:         metamorphosis*2, catastrophe, grandfinale
+met3_lowernorfair:  empire, ruin, train, gate, fanatics, phoenix*2
 met3_plants:        umaro, magitek, engine*2, dream
 mg64_menu:          chocobo, johnny, moogles*2, village
 mm2_metal:          mount2, magitek*2, engine

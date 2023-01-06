@@ -6,15 +6,14 @@
 #SHORTNAME MET3 Lower Norfair
 
 
-#BRR  0x20; brr/octave75choir,   @7bl, D900, FFE0 ## Octave Chorus
+#BRR  0x20; ../samples/legacy/gh18_ahhs,      5508, 2FF0, F 7 7  0
 #WAVE 0x21 0x85 ## Power Horn
-#WAVE 0x23 0xC3 ## Synth Horn
+#WAVE 0x23 0xC4 ## Synth Horn
 
-#WAVE 0x2A 0x4A ## Stomp, using a low note on a tom
-#WAVE 0x2B 0x9D ## Ticking sound, using a mute triangle
+#WAVE 0x2A 0x0B ## Stomp, using a low note on a bass drum
+#WAVE 0x2B 0x8C ## Ticking sound, using a wood block
 
-
-#def init= t66 %x %v50 %b0,40 %f0,0
+#def init= t66 %v67 %b0,16 %f0,0
 
 
 #def melodyChorusBaseVol=          v80
@@ -68,14 +67,14 @@
 #def lateMelodyHornFade3=         'hornFade*v192,1.27'
 
 
-#def synthHornBaseVol=     v130
+#def synthHornBaseVol=     v133
 #def middleSynthHornVol=   'synthHornBaseVol*v.95'
 #def lateSynthHornHighVol= 'synthHornBaseVol*v.9'
 #def lateSynthHornLowVol=  'synthHornBaseVol*v.8'
 
 
-#def stompBaseVol=     v70
-#def stompFade=      v1,70 ## Keep in line with stompBaseVol
+#def stompBaseVol=     v80
+#def stompFade=      v1,80 ## Keep in line with stompBaseVol
 #def stompFadeToLow=   'stompFade*v255,.7'
 #def stompLowestVol=   'stompBaseVol*v.45'
 #def stompLowerVol=    'stompBaseVol*v.7'
@@ -84,8 +83,18 @@
 #def stompHighVol=     'stompBaseVol*v1.1'
 #def stompHigherVol=   'stompBaseVol*v1.15'
 
-#def tickBaseVol=        v110
-#def tickFade=         v1,110 ## Keep in line with tickBaseVol
+#def stompEchoBaseVol=     v31 ## stompBaseVol x 50/127
+#def stompEchoFade=      v1,31 ## Keep in line with stompEchoBaseVol
+#def stompEchoFadeToLow=   'stompEchoFade*v255,.7'
+#def stompEchoLowestVol=   'stompEchoBaseVol*v.45'
+#def stompEchoLowerVol=    'stompEchoBaseVol*v.7'
+#def stompEchoLowVol=      'stompEchoBaseVol*v.75'
+#def stompEchoMidVol=      'stompEchoBaseVol*v.8'
+#def stompEchoHighVol=     'stompEchoBaseVol*v1.1'
+#def stompEchoHigherVol=   'stompEchoBaseVol*v1.15'
+
+#def tickBaseVol=        v32
+#def tickFade=         v1,32 ## Keep in line with tickBaseVol
 #def tickFadeToLow=      'tickFade*v255,.7'
 #def tickLowestVol=      'tickBaseVol*v.45'
 #def tickLowerVol=       'tickBaseVol*v.7'
@@ -156,20 +165,19 @@
 #def lateMelodyHornFade2Setup=  'lateMelodyHornFadeSetup' 'lateMelodyHornFadeStart2Vol'           'lateMelodyHornFade2'
 #def lateMelodyHornFade3Setup=  'lateMelodyHornFadeSetup' 'lateMelodyHornFadeStart3Vol'           'lateMelodyHornFade3'
 
-#def synthHorn= |3 o4 p64 %e1 m
+#def synthHorn= |3 o5 p64 %e1 m %y0%s2
 #def middleSynthHorn= 'synthHorn' 'middleSynthHornVol'
 
 #cdef ( v0,24,191
 #cdef ) v
 
 ## The stomp is always the same 2 notes, but the volume varies throughout the song so it's excluded from the macro
-#DRUM "s"= 3b |A p64 %e0 %y2 %s2 %r0 m
-#DRUM "t"= 3f |A p64 %e0 %y2 %s2 %r0 m
-
+#DRUM "s"= 4b |A p64 %e0 m
+#DRUM "t"= 4f |A p64 %e0 m
 
 ## The ticking is always the same note (with alternating pans), but the volume varies throughout the song so it's excluded from the macro
-#DRUM "u"= 3c+ |B p15  %y5 %s2 %e0 m
-#DRUM "v"= 3c+ |B p113 %y5 %s2 %e0 m
+#DRUM "u"= 5e |B p15  %y5 %s2 %e0 m
+#DRUM "v"= 5e |B p113 %y5 %s2 %e0 m
 
 {1}
 'init'
@@ -691,7 +699,46 @@ l4
 ]
 ;
 
-
 {8}
-
+## Manual echo track for "stomp" since EDL 5 makes regular echo unusable.
+## The intro starts at measure 4. Measure 1-3 are the same thing but with a lower starting volume and crescendo and only plays after the song loops.
+&2r ## Original echo delay is 32ms, which we can't match exactly - this should be about 37ms
+%j804
+$
+## Stomp, originally channel 4
+'stompEchoLowestVol'
+l8
+'stompEchoFadeToLow'
+[3
+  ## 1-3
+  [4 "st"]
+]
+$804
+## Stomp, originally channel 4
+'stompEchoLowerVol'
+l8
+[3
+  ## 4-6
+  [4 "!!!ost"]
+]
+'stompEchoLowVol'
+[4
+  ## 7-10
+  [4 "st"]
+]
+'stompEchoMidVol'
+[4
+  ## 11-14
+  [4 "st"]
+]
+'stompEchoHighVol'
+[8
+  ## 15-22
+  [4 "st"]
+]
+'stompEchoHigherVol'
+[16
+  ## 23-38
+  [4 "st"]
+]
 ;
