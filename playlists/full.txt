@@ -188,6 +188,7 @@ ff9_siege:          metamorphosis*2, catastrophe, grandfinale, assault, savethem
 ff9_notalone:       prelude, grandfinale, rachel, falcon, dream
 ff9_treno:          prelude, johnny, spinach*2
 ff9_vivi:           spinach, what, moogles, gogo, strago*2, martiallaw
+ff10_ambition:      empire, kefka*2, espers, zozo, train, dream, fanatics
 ff10_calm:          prelude, omen3, espers, ruin, cave*2, forest, tomb, dream
 ff10_gagazet:       omen3*2, espers, gau, umaro, narshe, strago, ruin, veldt
 ff10_seymour:       grandfinale, magitek, engine, dream, floating*2, ktower
@@ -434,7 +435,6 @@ ff9_memoria:    omen3, ruin*2, train*2, tomb, dream, gate, ancient
 ff9_messenger:  H2, dmad5, empire, catastrophe*2, grandfinale, fanatics
 ff9_rose:       prelude, celes*2, coin*2, daryl, cyan
 ff9_world:      strago, ruintown, balance*2, forest
-ffx_ambition:   H2, omen3, kefka, owzer, fanatics*2, dream, gate, phoenix, ancient
 ffx_battle:     I55, G10, battle*2, savethem, bat2, bat3, mboss
 ffx_decision:   relm, awakening, town, martiallaw, forest, village
 ffx_luca:       relm, spinach, town*2
@@ -770,7 +770,7 @@ ct_magusintro: death
 
 [tierboss]
 ct: cc_flame, ct_battle2, ct_lavos, ct_zealpalace
-ff: ff3_eureka, ff4_fiend, ff4_golbez, ff5_excastle, ff5_seal, ff7_final_part1, ff8_witches, ff9_blackwaltz, ffmq_boss, ffmq_lava
+ff: ff3_eureka, ff4_fiend, ff4_golbez, ff5_excastle, ff5_seal, ff7_final_part1, ff8_witches, ff9_blackwaltz, ff10_ambition, ffmq_boss, ffmq_lava
 ff6: ff6_fanatics_dm, ff6_tier1_dm, ff6_tier2_dm, ff6_tier3
 chorus: ff6_fanatics_chorus, ff6_tier1_chorus, ff6_tier2_chorus
 i: iog_whispers

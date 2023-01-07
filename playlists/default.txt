@@ -182,6 +182,7 @@ ff9_hunt:           grandfinale, assault, savethem*2
 ff9_siege:          metamorphosis*2, grandfinale, assault, savethem
 ff9_treno:          spinach*2
 ff9_vivi:           spinach, strago*2, martiallaw
+ff10_ambition:      kefka*2, zozo, train, fanatics
 ff10_calm:          espers, cave*2, forest, tomb
 ff10_gagazet:       omen3*2, gau, narshe, ruin
 ff10_seymour:       grandfinale, magitek, engine, floating*2, ktower
@@ -434,7 +435,6 @@ ff9_memoria:    omen3, ruin*2, train*2, tomb, dream, gate, ancient
 ff9_messenger:  H2, dmad5, empire, catastrophe*2, grandfinale, fanatics
 ff9_rose:       prelude, celes*2, coin*2, daryl, cyan
 ff9_world:      strago, ruintown, balance*2, forest
-ffx_ambition:   H2, omen3, kefka, owzer, fanatics*2, dream, gate, phoenix, ancient
 ffx_battle:     I55, G10, battle*2, savethem, bat2, bat3, mboss
 ffx_decision:   relm, awakening, town, martiallaw, forest, village
 ffx_luca:       relm, spinach, town*2
@@ -624,6 +624,7 @@ ff6_forest:         H:espers, H:owzer, H:mountain, H:cave*2, H:forest, H:tomb, H
 ff6_owzer:          H:relm, H:zozo, H:owzer*2, H:strago, H:train, H:dream, H:ruin
 ff9_blackwaltz:     H:empire, H:kefka, H:owzer, H:train*2, H:ruin, H:fanatics
 ff9_vivi:           H:spinach, H:what, H:moogles, H:gogo, H:strago*2, H:martiallaw
+ff10_ambition:      H:empire, H:kefka*2, H:espers, H:zozo, H:train, H:dream, H:fanatics, H:omen3, H:ruin, H:owzer
 ff10_via:           H:prelude, H:espers, H:zozo, H:owzer, H:tomb*2, H:dream, H:cave, H:serpent
 homm2_sorceress:    H:owzer, H:strago, H:forest, H:train, H:tomb, H:dream*2, H:narshe, H:balance, H:ruin
 lal_labyrinth:      H:omen3, H:espers*2, H:zozo, H:owzer, H:cave, H:train, H:tomb, H:gate, H:ancient, H:dream, H:phoenix
@@ -791,7 +792,7 @@ ct_magusintro: death
 
 [tierboss]
 ct: cc_flame, ct_lavos, ct_zealpalace
-ff: ff3_eureka, ff4_fiend, ff4_golbez, ff5_excastle, ff5_seal, ff7_final_part1, ff8_witches, ff9_blackwaltz, ffmq_boss, ffmq_lava
+ff: ff3_eureka, ff4_fiend, ff4_golbez, ff5_excastle, ff5_seal, ff7_final_part1, ff8_witches, ff9_blackwaltz, ff10_ambition, ffmq_boss, ffmq_lava
 ff6: ff6_fanatics_dm, ff6_tier1_dm, ff6_tier2_dm, ff6_tier3
 chorus: ff6_fanatics_chorus, ff6_tier1_chorus, ff6_tier2_chorus
 i: iog_whispers
