@@ -187,6 +187,7 @@ ff9_flamenco:       prelude, grandfinale, chocobo, johnny*2, what, village
 ff9_freya:          prelude, spinach, owzer, zozo, strago, ruintown, ruin, forest, tomb*2, dream
 ff9_gargan:         kefka, shadow, spinach, what*2, moogles, gogo, umaro, zozo, owzer, engine, dream
 ff9_hunt:           grandfinale, assault, savethem*2, johnny, umaro, phoenix
+ff9_memoria:        espers, narshe, ruin, forest, tomb, dream*2
 ff9_siege:          metamorphosis*2, catastrophe, grandfinale, assault, savethem
 ff9_notalone:       prelude, grandfinale, rachel, falcon, dream
 ff9_treno:          prelude, johnny, spinach*2
@@ -434,7 +435,6 @@ ff9_blackmage:  H4, what, moogles*2, gogo, strago*2, dream, engine
 ff9_dali:       awakening, town*2, ruintown, village
 ff9_extraction: H4, catastrophe*2, espers, shadow, umaro, train, dream, fanatics, H:strago, H:empire, H:martiallaw, H:veldt
 ff9_home:       prelude, gau, spinach*2, ruintown, ruin, tomb
-ff9_memoria:    omen3, ruin*2, train*2, tomb, dream, gate, ancient
 ff9_messenger:  H2, dmad5, empire, catastrophe*2, grandfinale, fanatics
 ff9_rose:       prelude, celes*2, coin*2, daryl, cyan
 ff9_world:      strago, ruintown, balance*2, forest
