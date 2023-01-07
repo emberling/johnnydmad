@@ -98,6 +98,7 @@ ff5_mountain:       setzer, moogles, mountain*2, mount2, engine
 ff5_pirates:        shadow, setzer, returners*2, umaro, veldt, mountain, engine
 ff5_ronka:          catastrophe, ancient, magitek*2, engine, floating, ktower
 ff5_seal:           espers, shadow, gogo, umaro, zozo, owzer, train, tomb, gate*2, ancient
+ff5_town:           strago, village, town*2, ruintown
 ff5_village:        grandfinale, moogles, village*2
 ff5_void2:          setzer, locke, returners, troops, savethem, umaro, mountain, mount2, floating, ktower
 ff6_atma:           metamorphosis, catastrophe, grandfinale, savethem, floating, ktower
