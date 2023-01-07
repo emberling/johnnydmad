@@ -207,6 +207,7 @@ ff14_forthesky:     grandfinale, cyan, figaro, assault, savethem*2, falcon
 ff14_labten:        unforgiven, locke, savethem, falcon, mount2*2, floating
 ff14_remnants:      falcon*2, dream, floating
 ffmq_boss:          grandfinale, unforgiven, magitek, ktower
+ffmq_hill:          metamorphosis*2, grandfinale, unforgiven
 ffmq_faeria:        prelude, johnny, moogles, town*2
 ffmq_final:         grandfinale, floating, ktower
 fft_antipyretic:    empire, catastrophe, grandfinale, troops, assault*2, savethem, train, ancient, phoenix
@@ -628,6 +629,7 @@ top_boss:           E60, battle, bat2, bat3, bat4
 zaol_temple:        E60,                     bat4
 gs_venus:           E65,               bat3, bat4
 ct_tension:         E68,                     bat4
+ffmq_hill:          E68,               bat3, bat4
 ct_undersea:        E70,                     bat4
 ff6_unforgiven:     E70,                     bat4
 ff7_gun:            E70,               bat3, bat4
@@ -687,6 +689,7 @@ ot_treasure:        I35, mboss, boss
 bof2_battle2:       I40, mboss
 doom_e1m1:          I40, mboss
 ff14_labten:        I40, mboss
+ffmq_hill:          I40, mboss, boss
 top_boss:           I40, mboss, boss, atma
 sots_boss:          I45, mboss, boss
 ff6_metamorphosis:  I45, mboss, boss, atma
