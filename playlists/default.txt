@@ -70,6 +70,7 @@ ff1_matoya:         relm, moogles, strago*2
 ff1_volcano:        umaro, mount2, gate*2, floating, phoenix
 ff1_volcano_psx:    gate*2, ancient, dream, phoenix
 ff1_world:          balance*2, forest
+ff2_castle:         gogo, strago*2, village
 ff3_battle:         grandfinale, savethem
 ff3_darkworld:      moogles, serpent, forest*2
 ff3_hyne:           owzer*2, train, ancient, dream, fanatics
