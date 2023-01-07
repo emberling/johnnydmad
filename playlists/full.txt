@@ -258,6 +258,8 @@ omf_desert:         magitek*2, engine, floating, ktower
 ot_saintsbridge:    prelude, relm, awakening, strago, village*2, town
 ot_stillsnow:       omen3, awakening, narshe*2, ruintown, ruin
 ot_treasure:        grandfinale, unforgiven, locke
+pfwotr_warcamp:     omen3, cyan*2, figaro, returners, falcon
+pfwotr_warcamp_nointro: grandfinale, savethem
 pkmnrse_fallarbor:  relm, spinach, moogles, strago*2, village, town
 pkmnrse_route101:   relm, moogles*2, strago, village, town
 ptsk_level5:        spinach*2, zozo, narshe, strago, martiallaw

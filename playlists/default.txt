@@ -252,6 +252,8 @@ omf_desert:         magitek*2, engine
 ot_saintsbridge:    relm, village*2, town
 ot_stillsnow:       omen3, narshe*2, ruintown
 ot_treasure:        grandfinale, unforgiven
+pfwotr_warcamp:     omen3, cyan*2, falcon
+pfwotr_warcamp_nointro: grandfinale, savethem
 pkmnrse_fallarbor:  relm, spinach, strago*2, village, town
 pkmnrse_route101:   relm, moogles*2, village
 ptsk_level5:        spinach*2, zozo, narshe, strago
