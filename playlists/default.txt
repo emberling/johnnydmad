@@ -61,6 +61,7 @@ doom_e1m1:          grandfinale, assault
 doom2_doom:         train*2, phoenix, ktower
 ds4_dungeon:        zozo, gate*2, ancient, magitek, engine
 ds4_lyll:           setzer, chocobo, mount2*2
+duck_moon:          setzer, blackjack*2, johnny
 ebr_prayer:         mount2, floating, phoenix*2, ktower
 eo3_waves:              chaos
 ff1_battle:         grandfinale

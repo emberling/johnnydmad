@@ -66,6 +66,7 @@ doom_e1m1:          grandfinale, unforgiven, assault, magitek
 doom2_doom:         train*2, tomb, dream, fanatics, phoenix, ktower
 ds4_dungeon:        zozo, martiallaw, serpent, cave, gate*2, ancient, magitek, engine, dream, phoenix
 ds4_lyll:           setzer, chocobo, falcon, mountain, mount2*2, serpent
+duck_moon:          grandfinale, setzer, chocobo, blackjack*2, johnny
 ebr_prayer:         mount2, serpent, gate, ancient, magitek, floating, phoenix*2, ktower
 eo3_waves:          ancient, magitek, floating, phoenix, ktower
 ff1_battle:         grandfinale, unforgiven
