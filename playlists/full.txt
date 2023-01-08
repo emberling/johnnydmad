@@ -327,6 +327,7 @@ xg_theme:           prelude*2, relm, village
 xg_weltall:         metamorphosis*2, grandfinale, unforgiven, assault, savethem, floating
 xg_world:           prelude, relm, awakening, village, town, balance*2
 ys4_danan:          omen3, espers, zozo, narshe, strago, ruin, cave, gate, ancient*2, dream, phoenix
+ys8_idance:         setzer, chocobo, blackjack, johnny, mountain, mount2*2, serpent
 zaol_temple:        serpent, train, gate, ancient, engine, dream, floating, fanatics, phoenix, ktower
 
 [legacy]
@@ -590,7 +591,6 @@ ys1_wars:       I25, G90, battle, grandfinale, chocobo, falcon, magitek, floatin
 ys3_house:      shadow, gogo, owzer, strago, village, dream
 ys3_time:       I5, G65, battle, unforgiven, locke, setzer, chocobo, blackjack, gogo, mount2, engine, floating*2, bat2, bat3, mboss
 ys3_wings:      setzer*2, locke, savethem, blackjack, chocobo, serpent*2, mountain, mount2
-ys8_idance:     chocobo, blackjack, johnny*2, falcon*2, mountain, mount2*2, serpent, setzer, dream, ancient
 zlttp_darkworld: troops, assault, umaro, ruin, falcon*2, mount2, serpent, ancient
 zlttp_dungeon:  ruin, train*2, cave, tomb, dream, gate, phoenix, ancient
 zoot_storms:    kefka*2, shadow*2, gogo*2, umaro, owzer, strago, dream*2
