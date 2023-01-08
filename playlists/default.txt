@@ -317,6 +317,7 @@ xc3_alfeto:         omen3, balance*2, cave
 xcx_sylvan:         omen3, espers, narshe, ruin*2, cave, ancient, dream, phoenix
 xg_boss:            grandfinale, assault*2, savethem, floating
 xg_mermaid:         daryl, ruin, train, tomb*2, ancient
+xg_theme:           prelude*2
 xg_weltall:         metamorphosis*2, grandfinale, unforgiven, assault, savethem
 ys4_danan:          omen3, espers, narshe, ruin, ancient*2
 zaol_temple:        train, gate, floating*2, phoenix, ktower
