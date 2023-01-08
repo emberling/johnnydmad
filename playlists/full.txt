@@ -325,6 +325,7 @@ xg_boss:            metamorphosis, grandfinale, troops, assault*2, savethem, ser
 xg_mermaid:         prelude, omen3, daryl, espers, awakening, ruin, train, tomb*2, ancient
 xg_theme:           prelude*2, relm, village
 xg_weltall:         metamorphosis*2, grandfinale, unforgiven, assault, savethem, floating
+xg_world:           prelude, relm, awakening, village, town, balance*2
 ys4_danan:          omen3, espers, zozo, narshe, strago, ruin, cave, gate, ancient*2, dream, phoenix
 zaol_temple:        serpent, train, gate, ancient, engine, dream, floating, fanatics, phoenix, ktower
 
