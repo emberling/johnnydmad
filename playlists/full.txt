@@ -319,6 +319,7 @@ wa_zed:             grandfinale, unforgiven, shadow, setzer, moogles, umaro, gog
 wa2_dungeon2:       setzer, gogo, zozo, martiallaw, mountain, mount2, gate*2, ancient, dream, phoenix
 wa2_heimdal:        metamorphosis, unforgiven, setzer, locke, assault, savethem, falcon, mount2, serpent, gate, engine, phoenix
 xc1_machina:        cyan*2, figaro, returners, troops, martiallaw
+xc3_alfeto:         omen3, ruin, falcon, balance*2, serpent, cave, forest
 xcx_sylvan:         omen3, espers, zozo, narshe, ruin*2, cave, forest, train, tomb, ancient, dream, phoenix
 xg_boss:            metamorphosis, grandfinale, troops, assault*2, savethem, serpent, gate, magitek, engine, floating, fanatics
 xg_mermaid:         prelude, omen3, daryl, espers, awakening, ruin, train, tomb*2, ancient
