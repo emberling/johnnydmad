@@ -3,34 +3,34 @@
 #COMPOSER Mitsuo Singa
 #ARRANGED emberling
 
-#VARIANT *~ enh
-#VARIANT */ nat
-#VARIANT _~ tr
+#VARIANT * enh
+#VARIANT _ tr
 
-#WAVE 0x20 ~0x69~/0x00/
-#WAVE 0x21 ~0x8B~/0x0c/
-#WAVE 0x22 ~0x8C~/0x00/
-#WAVE 0x23 0x1E
-#WAVE 0x24 0x1C
-#WAVE 0x2A 0x22
-#WAVE 0x2B ~0x56~/0x14/
-#WAVE 0x2C ~0x85~/0x00/
-#WAVE 0x2D ~0x84~/0x17/
-#WAVE 0x2E ~0x8E~/0x12/
-#WAVE 0x2F ~0x8F~/0x11/
+#WAVE 0x20 0x72 formerly 0x69 fiddle
+#WAVE 0x21 0x02 formerly 0x8B piano5
+#WAVE 0x22 0x01 formerly 0x8C piano6
+#WAVE 0x23 0x43 formerly 0x1E dist
+#WAVE 0x24 0x51 formerly 0x1C bass
+#WAVE 0x2A 0x0A formerly 0x22 kick
+#WAVE 0x2B 0x1C formerly 0x56 snare
+#WAVE 0x2C 0x4E formerly 0x85 cslap/timbale
+#WAVE 0x2D 0x4A formerly 0x84 toms
+#WAVE 0x2E 0x2D formerly 0x8E crash
+#WAVE 0x2F 0x3D formerly 0x8F hihat
 
-#def global= t145 %x224 %v50 %b0,100 %f0,0
+#def global= t145 %v50 %b0,70 %f0,0
 
-#def vio= ~|0~/@6/ ~v40~/v40/ p40 %e1 ~o5~/o4/ m48,18,239 %r4
+#def vio= |0 v40 p40 %e1 o5 m48,18,239 %r4
 #def rpl= |1 'rpv' p50 %e1 o5 m
 #def rpi= |1 'rpv' 'pr' %e1 o5 m
-#def hpi= ~|2~/|1/ 'hpv' 'pr' %e1 ~o6~/o6/ m
-#def mpi= ~|2~/|1/ 'mpv' 'pr' %e1 ~o6~/o6/ m
+#def hpi= |2 'hpv' 'pr' %e1 o5 m
+#def mpi= |2 'mpv' 'pr' %e1 o5 m
 #def epi= @3 'epv' p64 %e1 o6 m48,18,223 %y3%s3%r8
 #def epiq= @3 'epvq' p64 %e1 o6 m48,18,223 %y3%s3%r8
-#def bas= |4 v40 p64 %e0 o4 m
-#def dis= |3 v48 p70 %e0 o5 m %y2%s3%r5
-#def rpv= v36 
+#def bas= |4 v72 p64 %e0 o4 m
+#def dis= |3 'disv' p70 %e1 o4 m %y2%s2%r5
+#def disv= v48
+#def rpv= v38
 #def hpv= v28 
 #def mpv= v80 
 #def epv= v64
@@ -42,25 +42,25 @@
 #drum "z"=5g |E v48 p96 %e1 %r22
 #drum "k"=5f |A v80 p64 %e0
 #drum "s"=5g |B v80 p64 %e0
-#drum "t-"=5b |B v64 p64 %e0
-#drum "t"=5b |B v64 p64 *%e1* _%e0_
-#drum "u"=5b |B v48 p64 *%e1* _%e0_
-#drum "v"=5b |B v32 p64 *%e1* _%e0_
+#drum "t-"=5a |B v64 p64 %e0
+#drum "t"=5a |B v64 p64 *%e1* _%e0_
+#drum "u"=5a |B v48 p64 *%e1* _%e0_
+#drum "v"=5a |B v32 p64 *%e1* _%e0_
 #drum "p-"=5a |F v32 p50 %e0 %s7%r24
 #drum "p"=5a |F v48 p64 %e0 %s7%r24
 #drum "o-"=5f |F v48 p50 *%e1* %s7%r22 _%e0_
 #drum "o"=5f |F v64 p50 *%e1* %s7%r22 _%e0_
 #drum "r"=6c+ |F v48 p96 *%e1* %y4%s0%r26 _%e0_
-#drum "c"=~4f |C p96 v24 %e0~ /6c |D p96 v24 %e0/
-#drum "c+"=~4f |C p96 v80 %e1~ /6c |D p96 v80 %e1/
-#drum "d"=~4b |C p96 v80 %e1~ /6f |D p96 v80 %e1/
+#drum "c"=5f  |C p96 v12 %e0 
+#drum "c+"=5f |C p96 v40 %e1 
+#drum "d"=5a+ |C p96 v40 %e1 
 
-#drum "j"=~4a+~/4f /'4g ' |D p30 ~v104~/v64/ %e0
-#drum "i"=~5c+~/4g+/'4a+' |D p40 ~v104~/v64/ %e0
-#drum "h"=~5f+~/5c+/'5d+' |D p50 ~v104~/v64/ %e0
-#drum "g"=~5g+~/5d+/'5f ' |D p60 ~v104~/v64/ %e0
-#drum "f"=~5b ~/5f+/'5g+' |D p70 ~v104~/v64/ %e0
-#drum "e"=~6d ~/5a /'5b ' |D p80 ~v104~/v64/ %e0
+#drum "j"=4f+ |D p30 v52 %e0
+#drum "i"=4a  |D p40 v52 %e0
+#drum "h"=5d  |D p50 v52 %e0
+#drum "g"=5e  |D p60 v52 %e0
+#drum "f"=5g  |D p70 v52 %e0
+#drum "e"=5a+ |D p80 v52 %e0
 
 #cdef ( %l1
 #cdef ) %l0
@@ -220,7 +220,7 @@ a4a4.a4a ^b16b.b4b16b.b "!!!oy2^" 'dis'fr16fr16f2.ff ([8e4])
 'rpi' l8 > [3a4aa4aa4]a4aa4aa<c> a4aa4aaa a4aa4a.a.
 'dis' b4<d>be2 a1
 ##28 blank, dist, p.rhythm low
-l8 r1r1r1 e2.ee
+l8 r1r1r1 'disv*v.8' e2.ee
 'rpi' c4.c4.c4> g+4g+4g+4g+g+ a4a4a4aa b.b.b4bbb
 ##36 p.rhythm low, cymbal
 f4f4f4fe f4f4f4fg e4e4e.e.e e4e4e4ee
