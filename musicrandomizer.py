@@ -275,12 +275,12 @@ def song_variant_id(name, idx):
     else:
         return name, ""
 
-def init_playlist(fn=DEFAULT_PLAYLIST_FILE, virtual=None, virtual_source="(virt_playlist)"):
+def init_playlist(fn=DEFAULT_PLAYLIST_FILE, virtual=None):
     if fn is None:
         fn = DEFAULT_PLAYLIST_FILE
     playlist_parser = configparser.ConfigParser()
     if virtual is not None:
-        plfile = playlist_parser.read_string(virtual, source=virtual_source)
+        plfile = playlist_parser.read_string(virtual, source=fn)
     else:
         plfile = playlist_parser.read(fallback_path(os.path.join(PLAYLIST_PATH, fn)))
         if not plfile:
@@ -728,7 +728,7 @@ def set_subpath(subpath):
         if os.path.isabs(subpath):
             BASEPATH = subpath
             
-def process_music(inrom, meta={}, f_chaos=False, f_battle=True, opera=None, eventmodes="", playlist_filename=DEFAULT_PLAYLIST_FILE, subpath=None, freespace=JOHNNYDMAD_FREESPACE, pool_test=False, ext_rng=random):
+def process_music(inrom, meta={}, f_chaos=False, f_battle=True, opera=None, eventmodes="", playlist_filename=DEFAULT_PLAYLIST_FILE, virtual_playlist=None, subpath=None, freespace=JOHNNYDMAD_FREESPACE, pool_test=False, ext_rng=random):
     global random
     global used_song_names
     global used_sample_ids
@@ -783,7 +783,7 @@ def process_music(inrom, meta={}, f_chaos=False, f_battle=True, opera=None, even
 
     # -- load random choices configuration for categories (playlist file)
     # moved to function for reuse in length test mode
-    playlist_map, tierboss_pool = init_playlist(fn=playlist_filename)
+    playlist_map, tierboss_pool = init_playlist(fn=playlist_filename, virtual=virtual_playlist)
     
     track_pools = {}
     intensitytable = {}
