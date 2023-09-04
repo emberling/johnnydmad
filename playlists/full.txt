@@ -230,6 +230,7 @@ lal_labyrinth:      omen3, espers*2, zozo, owzer, cave, train, tomb, gate, ancie
 lal_pogo:           gau, what, moogles, umaro, veldt*2, mountain, forest
 lotr_aragorn:       locke, figaro, returners, falcon, balance, mountain*2
 lotr_hobbits:       prelude, relm, moogles, strago, village, town, balance, mountain, forest*2
+lu1_file:           prelude*2, chocobo, johnny, moogles
 lu1_parting:        prelude, omen3, celes, daryl, rachel, relm, gau*2, ruintown
 lu1_port:           setzer, figaro, johnny, moogles, town*2
 lu1_prologue:       omen3, empire, catastrophe*2, ruin, ancient
@@ -748,6 +749,7 @@ ff6_blackjack:  fanfare
 ff6_fanfare:    fanfare
 ff7_fanfare:    fanfare
 lal_boss:       fanfare
+lu1_file:       fanfare
 lu2_fanfare:    fanfare
 mmx3_zero:      fanfare
 ob_thunder:     fanfare
