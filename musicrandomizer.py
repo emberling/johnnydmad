@@ -292,7 +292,7 @@ def init_playlist(fn=DEFAULT_PLAYLIST_FILE, virtual=None, virtual_source="(virt_
     tierboss_pool = set()
     for section in playlist_parser:
         for k, v in playlist_parser[section].items():
-            if section == "tierboss":
+            if str(section).lower() == "tierboss":
                 tierboss_pool.update([s.strip() for s in v.split(',')])
             elif k in playlist_map:
                 playlist_map[k] += f", {v}"
