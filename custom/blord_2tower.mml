@@ -3,57 +3,58 @@
 #COMPOSER Masanao Akahori
 #ARRANGED emberling
 
-#VARIANT \~ enh
-#VARIANT \/ nat
-#VARIANT _~ tr
+#VARIANT \ enh
+#VARIANT _ tr
+#SFXV ` *
 
-#WAVE 0x20 ~0x1C~/0x1C/ bass
-#WAVE 0x21 ~0x95~/0x00/ lead2 (pluck)
-#WAVE 0x22 ~0x7C~/0x0B/ fat synth
-#WAVE 0x23 ~0xA0~/0x36/ lead1 (square)
-#WAVE 0x24 ~0x3E~/0x3E/ marimba
-#WAVE 0x25 ~0x42~/0x20/ vibraphone
-#WAVE 0x26 ~0x72~/0x0E/ trumpet
-#WAVE 0x27 ~0x82~/0x08/ lead3 (brass)
+#WAVE 0x20 0x55 bass
+#WAVE 0x21 0x15 lead2 (pluck)
+#WAVE 0x22 0xC2 fat synth
+#WAVE 0x23 0x40 lead1 (square)
+#WAVE 0x24 0x23 marimba
+#WAVE 0x25 0x22 vibraphone
+#WAVE 0x26 0x87 trumpet
+#WAVE 0x27 0x89 lead3 (brass)
 
-#WAVE 0x2A ~0x22~/0x22/ kick
-#WAVE 0x2B ~0x7E~/0x21/ snare
-#WAVE 0x2C ~0x8F~/0x11/ hihat open
-#WAVE 0x2D ~0x6E~/0x17/ tom
-#WAVE 0x2E ~0x51~/0x15/ clap
-#WAVE 0x2F ~0x0F~/0x0F/ hihat closed
+#WAVE 0x29 0x2D crash
+#WAVE 0x2A 0x0A kick
+#WAVE 0x2B 0x1D snare
+#WAVE 0x2C 0x3C hihat open
+#WAVE 0x2D 0x4D tom
+#WAVE 0x2E 0x8F clap
+#WAVE 0x2F 0x3A hihat closed
 
-#def global= t135 %x224 %v50 %b0,70 %f0,0
+#def global= t135 %x255 %v50 %b0,70 %f0,0
 
 #def 06= |0 %e0 %k-1 o6      m
-#def 08=~|1~%e1 %k-1~o6~\%r15%a13\ m48,18,239 /@0o5%y1%s1/
-#def 10= |2 %e1 %k-6~o6~     m48,18,239 /o7/
-#def 11= |3 %e1 %k8  o6 %r12 m48,18,239
+#def 08= |1 %e1 %k-1 o5\%r15%a13\ m48,18,239 
+#def 10= |2 %e1 %k-6 o6      m48,18,239 
+#def 11= |3 %e1 %k8  o5 %r12 m48,18,239
 #def 12= |4 %e1 %k8  o6 %r15 m %y5%s0 
-#def 13= |5 %e1 %k-3~o5~%a11 m48,18,239 /o6/
-#def 14= |6 %e1 %k4     \%r15\ ~m~/m48,18,239/         
+#def 13= |5 %e1 %k-3 o5 %a11 m48,18,239 
+#def 14= |6 %e1 %k4    \%r15\ m         
 #def 15= |7 %e1 %k4  o6 %r13 m48,18,239
-#def l3=~|2~/|7/%k4  o6 %r13 m48,18,239 %e1
-#def t3=~|7~%e1 %k-6~o6~     m48,18,239 /|6o7/
-#def t0= |6 %e1 %k-6 ~o6~/o7/ ~m~/m48,18,239/
-#def d0=~|1~%e1 %k-6~o7~\%r15%a11\ m48,18,239 /@0o6%y1%s1/
+#def l3= |2     %k4  o6 %r13 m48,18,239 %e1
+#def t3= |7 %e1 %k-6 o6      m48,18,239 
+#def t0= |6 %e1 %k-6 o6      m \%y0%s6\
+#def d0= |1 %e1 %k-6 o6\%r15%a11\ m48,18,239 
 
 #def 06a= '06' p64 v32
-#def 08a= '08' p74 ~v100~/v50/
-#def 08b= '08' p54 ~v64~/v32/
-#def 08c= '08' p64 ~v40~/v20/
-#def 08e= '08' p39 ~v32~/v16/
+#def 08a= '08' p74 v100
+#def 08b= '08' p54 v64
+#def 08c= '08' p64 v40
+#def 08e= '08' p39 v32
 #def 10a= '10' p64 v38
 #def 10b= 't3' p64 v52
-#def 10c= 't0' p64 v64
+#def 10c= 't0' p64 v48
 #def 10d= 'd0' p64 v38
 #def 11a= '11' p74 v80
 #def 11b= '11' p54 v50
 #def 11e= '11' p39 v20
 #def 12a= '12' p64 v32
 #def 13a= '13' p64 v20
-#def 14a= '14' p64 v88 ~o5~/o6/
-#def 14b= '14' p64 v56 ~o4~/o5/
+#def 14a= '14' p64 v66 o5
+#def 14b= '14' p64 v42 o4
 #def 15a= '15' p54 v56
 #def 15b= '15' p44 v36
 #def 15c= 'l3' p74 v80
@@ -61,14 +62,14 @@
 #def 15e= 'l3' p39 v20
 
 #drum "k"=5a |A v96 %e0 %k0 p64
-#drum "s"=5a |B v96 %e0 %k0 p64
+#drum "s"=5b |B v96 %e0 %k0 p64
 #drum "h"=5a |F v48 %e0 %k0 p64
-#drum "o"=5f |C v72 %e0 %k0 p64
-#drum "y"=5b |C v72 \%e1\ %k0 p64
-#drum "c"=5f |E v72 %e0 %k0 p64
-#drum "t"=4b |D v96 %e0 %k0 p89
-#drum "u"=4g |D v96 %e0 %k0 p64
-#drum "v"=4e |D v96 %e0 %k0 p39
+#drum "o"=5f |C v48 %e0 %k0 p64
+#drum "y"=5b |9 v96 %e1 %r20 %k0 p64
+#drum "c"=6c+|E v72 %e0 %k0 p64
+#drum "t"=4b |D v112 %e0 %k0 p89
+#drum "u"=4g |D v112 %e0 %k0 p64
+#drum "v"=4e |D v112 %e0 %k0 p39
 
 #cdef ( %l1
 #cdef ) %l0
@@ -145,9 +146,13 @@ $327 c8.d8.e8e8.f8.g8
 {4}
 $
 "k4shkhsh"    l16"k8h8s8hhkhk8s4"
-[":h:k8h8s8h8"]    "k4stv8kkk8s8s8"
-[":h:k8h8s8h8"]    "k8h8s8hhkhk8s4"
-[":h:k8h8s8h8"]    "kks8stv8skssktv8"
+#[":h:k8h8s8h8"]    "k4stv8kkk8s8s8"
+#[":h:k8h8s8h8"]    "k8h8s8hhkhk8s4"
+#[":h:k8h8s8h8"]    "kks8stv8skssktv8"
+[3 [":h:k8h8s8h8"] j2,405 j3,406
+"k4stv8kkk8s8s8"]
+$405 ":h:k8h8s8hhkhk8s4"]
+$406 ":h:kks8stv8skssktv8"
 ##
 ["!!!o k8.ks8kh8hk8s4"    "k8hks8k4k8s8o8"
 "k8hks8kh8hk8s4"  j2  "kk8kstk8u8k8s8ss"]
@@ -203,7 +208,7 @@ r4.'14b'<f4'13a'<(dc)d4    '14b'>dga<dga<dg>dgb<dgb<dd
 '08c'[r8d+<r8d+>]r8d+*^    r8d+r8<d+>>r8a+*^r<m3,-1ercd+*^
 [r8d+<r8d+>]r8d+*^    "!!!o y2ckcc8cc8"
 ;
-
+*
 {7}
 $
 r'11e' >d+2.'^'g4    f+4ed+4c+4
@@ -224,10 +229,10 @@ r2.."!!!o o8"    r4."o8c8cc8cc8"
     r8c+crc+crc+rc+crcc+r
 '10d'>'^'a-8.a+8.<c8>'^'c-8.a+8.a8
 ;
-
+*
 $722 l16 '10b'<[3r8c+crc+crc+rc+crcc+r]    r8c+crc+crc+rd+frd+c+r
 [2r8c+crc+crc+rc+crcc+r] ]
-
+*
 {8}
 $
 r1    "^2^8o4."
@@ -249,4 +254,4 @@ g2.^g+a+<c>    '^'g-4.f4.'^'a4
 f4.d+dd+2    '^'d-8.d+8.'^'f-8d+8.d8.>a+8
 g+2..a+<c    '^'d-4.d+4.'^^'f-4
 d+dc2..    r2..
-;
+;*

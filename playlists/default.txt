@@ -12,6 +12,7 @@ arc_battle_nointro: unforgiven, mount2, serpent
 bl_fahrenheit:      setzer, locke
 bl_fahrenheit_nointro: setzer, mount2, blackjack, falcon
 bl_rebels:          setzer, locke*2, savethem
+blord_2tower:       setzer, chocobo*2, blackjack, falcon, mount2
 blord_ruins:        train, ancient, magitek, engine, dream
 bof1_dawn:          setzer, falcon, serpent*2
 bof1_jade:          catastrophe*2, assault, phoenix
@@ -339,7 +340,6 @@ ff9_notalone:       grandfinale
 [legacysongstxtcopypasta]
 # temporarily filling in the rest of the legacy song set here without reviewing the track selections (will be more permissive than desired)
 # relevant battle related tags will be added as well matching the approximate I/G quadrant specified
-blord_2tower:   setzer, locke, chocobo, blackjack, johnny, falcon*2, mount2
 bof2_dragnier:  espers, strago, ruintown, serpent*2, tomb, ancient, gate*2, dream
 bof2_town:      prelude, relm, awakening, village*2, town
 bof2_wander:    espers, awakening, mountain, cave, serpent, forest*2, tomb, dream
