@@ -134,6 +134,9 @@ def add_encoding_if_text(args, kwargs):
     if len(args) and 'b' not in args[0]:
         kwargs["encoding"] = "utf-8"
         
+class PlaylistError(Exception):
+    pass
+    
 class TrackMetadata:
     def __init__(self, file="", title="", album="", composer="", arranged="", menuname=""):
         self.file, self.title, self.album, self.composer, self.arranged, self.menuname = title, album, composer, arranged, menuname
@@ -728,7 +731,7 @@ def set_subpath(subpath):
         if os.path.isabs(subpath):
             BASEPATH = subpath
             
-def process_music(inrom, meta={}, f_chaos=False, f_battle=True, opera=None, eventmodes="", playlist_filename=DEFAULT_PLAYLIST_FILE, virtual_playlist=None, subpath=None, freespace=JOHNNYDMAD_FREESPACE, pool_test=False, ext_rng=random):
+def process_music(inrom, meta={}, f_chaos=False, f_battle=True, opera=None, eventmodes="", playlist_filename=DEFAULT_PLAYLIST_FILE, virtual_playlist=None, subpath=None, freespace=JOHNNYDMAD_FREESPACE, pool_test=False, ext_rng=random, enable_exceptions=False):
     global random
     global used_song_names
     global used_sample_ids
@@ -876,6 +879,8 @@ def process_music(inrom, meta={}, f_chaos=False, f_battle=True, opera=None, even
             
         if attempts >= 1000:
             print("Music randomization failed after 1000 attempts. Your custom music configuration files and/or filters may be too restrictive.")
+            if enable_exceptions:
+                raise PlaylistError("Music randomization failed after 1000 attempts.")
             return inrom
         attempts += 1
         
