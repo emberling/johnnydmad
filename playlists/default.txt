@@ -23,6 +23,7 @@ bof2_dragnier:      omen3, strago, serpent*2, dream
 bof2_evrai:         owzer, tomb*2
 bof2_town:          relm, village*2, town
 bof2_unspoken:      prelude, daryl, coin*2, ruin
+bof2_wander:        cave*2, forest, tomb
 cc_arni:            village*2, town
 cc_deadsea:         zozo, ruin*2, train, ancient
 cc_dragonia:        zozo, owzer, ancient*2, dream, phoenix, ktower
@@ -342,7 +343,6 @@ ff9_notalone:       grandfinale
 [legacysongstxtcopypasta]
 # temporarily filling in the rest of the legacy song set here without reviewing the track selections (will be more permissive than desired)
 # relevant battle related tags will be added as well matching the approximate I/G quadrant specified
-bof2_wander:    espers, awakening, mountain, cave, serpent, forest*2, tomb, dream
 cc_flame:       I75, G95, grandfinale, metamorphosis, catastrophe*2, fanatics*2, assault, mboss, boss, atma, bat4
 cc_harle:       H4, kefka, zozo, owzer, dream*2, train*2, H:prelude, H:omen3, H:empire, H:shadow, H:ruin, H:ruintown, H:forest, H:tomb, H:cave
 cc_home:        prelude, balance, relm*2

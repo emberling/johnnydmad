@@ -3,29 +3,29 @@
 #COMPOSER Yuko Takehara
 #ARRANGED emberling
 
-#WAVE 0x20 0x43
-#WAVE 0x21 0x07
-#WAVE 0x22 0x8B
-#WAVE 0x28 0x2B
-#WAVE 0x2C 0x12
-#WAVE 0x2F 0x0F
+#WAVE 0x20 0xC4 was 0x43
+#WAVE 0x21 0xA5 was 0x07
+#WAVE 0x22 0x02 was 0x8B
+#WAVE 0x28 0x8A was 0x2B
+#WAVE 0x2C 0x2C was 0x12
+#WAVE 0x2F 0x3A was 0x0F
 
-#def init= t121 %x255 %v96 %b0,48 %f0,0
+#def init= t121 %x232 %v54 %b0,48 %f0,0
 
-#def str= |0 o4 's' m 
+#def str= |0 o5 's' m 
 #def flt= |1 o4 'f' m48,18,239
 #def pia= |2 o5 'p' m
 
-#def s= v56
-#def f= v52
-#def p= v80
+#def s= v36
+#def f= v42
+#def p= v112
 
-#drum "y-"= 4a |C v56 %a15%y1%s4%r16
-#drum "y"= 4a |C v72 %a15%y1%s4%r16
-#drum "z"= 4a |C v64 %a2%s7%r15
+#drum "y-"= 5a |C v56 %a15%y1%s4%r16
+#drum "y"= 5a |C v96 %a15%y1%s4%r16
+#drum "z"= 5a |C v64 %a2%s7%r15
 
 #drum "h"= 5f+ |F v32 p89
-#drum "s"= 5a |8 v127 p64
+#drum "s"= 5a |8 v64 p64
 
 #def r= %r20^8%r0
 #def re= %r20^8%r5
