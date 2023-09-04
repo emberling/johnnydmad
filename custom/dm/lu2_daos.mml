@@ -16,7 +16,7 @@
 #WAVE 0x28  0x1B  orchestral snare drum
 #WAVE 0x2C  0x2D  clash cymbal
 
-#def init= t128 %v50 %b0,85 %f0,0 %x248
+#def init= t128 %v50 %b0,100 %f0,0 %x248
 
 #def strings=  |0  o5  m64,24,193 %a14%r1
 #def ostrings= |1  o3  m %y0%s5

@@ -247,6 +247,7 @@ lu2_savior:         metamorphosis*2, grandfinale, assault, savethem, floating, p
 lu2_submarine:      prelude*2, espers, ruin, serpent, cave, forest, tomb, dream
 lu2_town:           relm, awakening, village*2, town, ruintown
 lu2_turret:         savethem*2, mountain, mount2, serpent, floating, fanatics
+lu2_void:           empire, catastrophe, cyan, troops*2, assault, savethem, umaro
 met3_brain:         metamorphosis*2, catastrophe, grandfinale
 met3_lowernorfair:  empire, espers, umaro, ruin, train, gate, dream, fanatics, phoenix*2
 met3_plants:        umaro, zozo, train, ancient, magitek, engine*2, dream
@@ -788,7 +789,7 @@ ff: ff3_eureka, ff4_fiend, ff4_golbez, ff5_excastle, ff5_seal, ff7_final_part1, 
 ff6: ff6_fanatics_dm, ff6_tier1_dm, ff6_tier2_dm, ff6_tier3
 chorus: ff6_fanatics_chorus, ff6_tier1_chorus, ff6_tier2_chorus
 i: iog_whispers
-lufia: lu2_daos
+lufia: lu2_daos, lu2_void
 metroid: met3_brain
 sd: sd2_thanatos
 to: top_boss
