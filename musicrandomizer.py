@@ -37,6 +37,8 @@ except ImportError:
     from mfvitools.insertmfvi import insertmfvi, byte_insert, int_insert, SampleIDError, FreeSpaceError
 
 JOHNNYDMAD_FREESPACE = ["53C5F-9FDFF", "310000-37FFFF", "410000-4FFFFF"]
+DEFAULT_PLAYLIST_FILE = 'default.txt'
+
 TRAIN_SAMPLE_ID = 0x3A
 
 SAMPLE_PATH = 'samples'
@@ -46,7 +48,6 @@ LEGACY_MUSIC_PATH = os.path.join(CUSTOM_MUSIC_PATH, 'legacy')
 STATIC_MUSIC_PATH = 'static_music'
 PLAYLIST_PATH = 'playlists'
 TABLE_PATH = 'tables'
-DEFAULT_PLAYLIST_FILE = 'default.txt'
 LEGACY_LOADBRR_PATH = "../../samples/"
 
 # For LEGACY_LOADBRR_PATH, note that the filenames from tables/legacy.txt that
