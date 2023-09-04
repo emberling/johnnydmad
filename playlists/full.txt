@@ -235,6 +235,7 @@ lu1_parting:        prelude, omen3, celes, daryl, rachel, relm, gau*2, ruintown
 lu1_port:           setzer, figaro, johnny, moogles, town*2
 lu1_prologue:       omen3, empire, catastrophe*2, ruin, ancient
 lu2_castle:         cyan, figaro*2, returners, mountain, engine
+lu2_daos:           empire, kefka, catastrophe*2, fanatics
 lu2_fortress:       grandfinale, assault, serpent, ancient, floating*2, ktower
 lu2_iris:           prelude, espers, awakening*2, strago, ruin
 lu2_labyrinth:      kefka*2, gogo, umaro, zozo, owzer, cave, train
@@ -787,6 +788,7 @@ ff: ff3_eureka, ff4_fiend, ff4_golbez, ff5_excastle, ff5_seal, ff7_final_part1, 
 ff6: ff6_fanatics_dm, ff6_tier1_dm, ff6_tier2_dm, ff6_tier3
 chorus: ff6_fanatics_chorus, ff6_tier1_chorus, ff6_tier2_chorus
 i: iog_whispers
+lufia: lu2_daos
 metroid: met3_brain
 sd: sd2_thanatos
 to: top_boss
