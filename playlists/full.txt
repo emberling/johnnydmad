@@ -37,6 +37,7 @@ cc_final:           catastrophe, grandfinale, floating, fanatics, ktower
 cc_hydra:           gogo, umaro, zozo, owzer, veldt*2, cave, mount2, gate, dream, phoenix
 cc_life:            omen3, rachel*2, ruin
 cc_pyre:            zozo, ruin, cave, train, gate*2, ancient, dream, phoenix
+cc_valley:          moogles, veldt, mountain*2, mount2, forest
 cc_world2:          prelude, omen3, daryl, awakening, balance*2, forest
 crys_mountain:      chocobo, blackjack, mountain, mount2*2, serpent, gate, ancient, phoenix
 crys_tower:         setzer, chocobo, blackjack, moogles, mountain, mount2*2
@@ -348,7 +349,6 @@ cc_flame:       I75, G95, grandfinale, metamorphosis, catastrophe*2, fanatics*2,
 cc_harle:       H4, kefka, zozo, owzer, dream*2, train*2, H:prelude, H:omen3, H:empire, H:shadow, H:ruin, H:ruintown, H:forest, H:tomb, H:cave
 cc_home:        prelude, balance, relm*2
 cc_miguel:      grandfinale, ruin*2, rachel, tomb, train
-cc_valley:      awakening, moogles, veldt, mountain*2, mount2, serpent, forest
 crys_fields:    chocobo, johnny, gogo, moogles*2, mountain, setzer
 ct_bike:        I99, G10, battle, grandfinale, unforgiven, johnny, chocobo*2, serpent, magitek, mboss
 ct_boss:        I99, G30, boss, unforgiven, grandfinale, magitek
