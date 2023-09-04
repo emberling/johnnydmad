@@ -7,47 +7,47 @@
 #VARIANT ~
 #VARIANT / vic
 
-#WAVE 0x28 0x43
-#WAVE 0x29 ~0x73~/0x08/
-#WAVE 0x2A 0x16
-#WAVE 0x2B 0x9A
-#WAVE 0x2C 0x12
-#WAVE 0x2D 0x81
+#WAVE 0x28 0x62
+#WAVE 0x29 ~0x85~/0x7F/
+#WAVE 0x2A 0x5B
+#WAVE 0x2B 0x81
+#WAVE 0x2C 0x2C
+#WAVE 0x2D 0x1F
 
 #def 8i=   |8 m
-#def 8o=   o5
-#def 8v=   v100
-#def 8f= v1,100
+#def 8o=   o6
+#def 8v=   v125
+#def 8f= v1,125
 
 #def 9i=   |9 m48,18,223
 #def 9o=   o5
-#def 9v=   ~v200~/v100/
-#def 9f= ~v1,200~/v1,100/
+#def 9v=   ~v188~/v125/
+#def 9f= ~v1,188~/v1,125/
 
 #def Ai=   |A m
 #def Ao=   o5
-#def Av=   v100
-#def Af= v1,100
+#def Av=   v125
+#def Af= v1,125
 
 #def Bi=   |B m48,18,231
 #def Bo=   o5
-#def Bv=   v100
-#def Bf= v1,100
+#def Bv=   v125
+#def Bf= v1,125
 
 #def Ci=   |C m
 #def Co=   o5
-#def Cv=   v200
-#def Cf= v1,200
+#def Cv=   v170
+#def Cf= v1,170
 
 #def Di=   |D m
 #def Do=   o5
-#def Dv=   v250
-#def Df= v1,250
+#def Dv=   v312
+#def Df= v1,312
 
 ## auto percussion  0x1C
-#drum "h"= 5a+
+#drum "h"= 5f %r20
 ## auto percussion  0x1E
-#drum "i"= 4a
+#drum "i"= 5a 
 
 
 {6}

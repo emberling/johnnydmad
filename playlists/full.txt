@@ -16,6 +16,7 @@ arc_battle:         grandfinale, unforgiven
 arc_battle_nointro: unforgiven, chocobo, mount2, serpent, ancient, floating, phoenix, ktower
 bl_fahrenheit:      setzer, locke, figaro
 bl_fahrenheit_nointro: prelude, setzer, savethem, blackjack, falcon, mountain, mount2, serpent
+bl_rebels:          setzer, locke*2, figaro, returners, savethem
 blord_ruins:        shadow, umaro, zozo, owzer, cave, train, tomb, gate, ancient, magitek, engine, dream
 bof1_dawn:          prelude, espers, cyan, setzer, ruin, falcon, serpent*2, cave
 bof1_jade:          catastrophe*2, assault, umaro, train, floating, phoenix
@@ -338,7 +339,6 @@ zaol_temple:        serpent, train, gate, ancient, engine, dream, floating, fana
 [legacysongstxtcopypasta]
 # temporarily filling in the rest of the legacy song set here without reviewing the track selections (will be more permissive than desired)
 # relevant battle related tags will be added as well matching the approximate I/G quadrant specified
-bl_rebels:      fanfare, locke, figaro, returners, savethem
 blord_2tower:   setzer, locke, chocobo, blackjack, johnny, falcon*2, mount2
 bof2_dragnier:  espers, strago, ruintown, serpent*2, tomb, ancient, gate*2, dream
 bof2_town:      prelude, relm, awakening, village*2, town
@@ -743,6 +743,7 @@ sd3_final3:         I95,        boss, atma, dmad5
 
 [victory]
 bl_fahrenheit:  fanfare
+bl_rebels:      fanfare    
 ct_ayla:        fanfare
 ct_frog:        fanfare
 ff3_warrior:    fanfare
