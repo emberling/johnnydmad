@@ -3,50 +3,63 @@
 #COMPOSER Yasunori Mitsuda
 #ARRANGED emberling
 
-#VARIANT ~ enh
-#VARIANT / nat
-
-#WAVE 0x20 ~0x49~/0x0D/
-#WAVE 0x21 ~0x64~/0x06/
-#WAVE 0x22 0x00
-#WAVE 0x23 0x0A
-#WAVE 0x24 ~0x8B~/0x1B/
-#WAVE 0x28 ~0x8D~/0x24/
-#WAVE 0x2A 0x16
-#WAVE 0x2B ~0x8E~/0x12/
+#WAVE 0x20 0x62 formerly 0x49 strings
+#WAVE 0x21 0x75 formerly 0x64 vox
+#WAVE 0x22 0x02 formerly 0x8B piano
+#WAVE 0x23 0x85 formerly 0x00 horn
+#WAVE 0x24 0x94 formerly 0x0A oboe
+#WAVE 0x25 0x93 formerly 0x0A oboe
+#WAVE 0x26 0x92 formerly 0x0A oboe
+#WAVE 0x27 0x91 formerly 0x0A oboe
+#WAVE 0x28 0x29 formerly 0x8D t.bells
+#WAVE 0x2A 0x5A formerly 0x16 timpani
+#WAVE 0x2B 0x2C formerly 0x8E cymbal
 
 #def global= t90 %x224 %v50 %b0,70 %f0,0
 
-#def string= |0 ~o4~/o5/ %e1 v m48,18,207
-#def choir= |1 ~o3~/o4/ %e1 v m48,18,223
+#def string= |0 o5 %e1 v m
+#def choir= |1 o3 %e1 v m48,18,207
+#def piano= |2 o5 %e1 vm
 #def horn= |3 o5 %e1 v m48,18,223
-#def oboe= |3 o5 %e1 v m48,18,239
-#def piano= |4 o5 %e1 vm
+#def oboe= |4 o5 %e1 v m48,18,239
+
+#def strv= v120
 
 #def 02= 'choir' p44 v80 %r6
 #def 03= 'choir' p84 v64 %r5
 #def 04= 'piano' p90 v64
 #def 05= 'piano' p90 v64
-#def 06= 'string' p40 v52
+#def 06= 'string' p40 'strv*v.52'
 #def 07= 'oboe' p74 v64
 #def 08= 'horn' p84 v64
 #def 09= 'horn' p84 v64
-#def 10= 'string' p20 v64 %r7
-#def 11= 'string' p44 v52 %r3
-#def 12= 'string' p64 v52 %a7%y0%s6%r2
-#def 13= 'string' p80 v52 v0,9,255 m12,18,239 %r7
-#def 14= 'string' p120 v52 %r6
-#def 15= 'string' p80 v52
+#def 10= 'string' p20 'strv*v.64' %r7
+#def 11= 'string' p44 'strv*v.52' %r3
+#def 12= 'string' p64 'strv*v.52' %a7%y0%s6%r2
+#def 13= 'string' p80 'strv*v.52' v0,9,255 m12,18,239 %r7
+#def 14= 'string' p120 'strv*v.52' %r6
+#def 15= 'string' p80 'strv*v.52'
 #def 16= 'piano' p17 v80
 #def 17= 'piano' p17 v80
 #def 18= 'piano' p17 v80
 #def 19= 'piano' p17 v80
 #def 20= 'piano' p17 v80
-#def 21= |A p64 o3 v96
-#def 26= |8 p48 o5 v105 %y2%s1%r12
+#def 21= |A p64 o4 v96
+#def 26= |8 p48 o5 v105 %y1%s1%r12
 
-#drum "z"=5f+ |B p64 v96 %a3
-#drum "y"=5f+ |B p64 v96 %y
+#drum "z"=5a |B p64 v96 %a3
+#drum "y"=5a |B p64 v96 %y
+
+#def o2u= |5
+#def o3u= |6 >
+#def o4u= |7
+#def o3d= |6
+#def o2d= |5 <
+#def o1d= |4
+#def o3uu=|6 >
+#def o4uu=|7 >
+#def o2dd=|5 <
+#def o1dd=|4 <
 
 {1}
 'global'
@@ -57,8 +70,8 @@
 $
 '10' l4 b.<f+^.e.a^. f+.c+.c+ dc+d>a    b.<f+^.e.a^. f+.<c+.>b^1
 >b.<f+^.e.a^. f+.c+.c+ dc+d>a    b.<f+^.e.d.c+ >b1^1
-'07' l8 r4.a<f+g4a4e4d4c+.r16 c+4.>b<f+1.^  ^16r16r4>a<f+g4a4e4d4c+4. e4.>b4.<e4 f+4.g16f+16e2
-^.r.>a<f+g4a4e4d4c+.r16 c+4.>b<f+1^16r16def+ d2^16r16def+e2^16r16e4dc+1^1r8
+'07' l8 r4.a<'o3uu'f+g4'o4u'a4'o3d'e4'o2d'd4c+.r16 c+4.>b<'o3u'f+1.^  ^16r16r4>'o1dd'a<'o3uu'f+g4'o4u'a4'o3d'e4'o2d'd4c+4. 'o3u'e4.>'o2d'b4.<'o3u'e4 f+4.g16f+16e2
+^.r.>'o1dd'a<'o3uu'f+g4'o4u'a4'o3d'e4'o2d'd4c+.r16 c+4.>b<'o3u'f+1^16r16'o2d'd'o3u'ef+ 'o2d'd2^16r16d'o3u'ef+e2^16r16e4'o2d'dc+1^1r8
 
 '10' l4 b.<f+^.e4.a^. f+.c+.c+ dc+d>a    b4.<f+^.e4.a^. f+4.<c+4.>b^1
 >b.<f+^.e.a^. f+.c+.t192,76c+ dc+d>t90a    b.<f+^. e.d^16c+^16 >b1^1

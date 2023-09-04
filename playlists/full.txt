@@ -33,9 +33,10 @@ cc_arni:            prelude, relm, village*2, town, ruintown, forest
 cc_deadsea:         omen3, espers, zozo, owzer, ruin*2, train, ancient, dream, phoenix
 cc_dragonia:        omen3, zozo, owzer, train, ancient*2, dream, phoenix, ktower
 cc_eden:            prelude*2, relm, espers, forest, tomb, dream
-cc_pyre:            zozo, ruin, cave, train, gate*2, ancient, dream, phoenix
 cc_final:           catastrophe, grandfinale, floating, fanatics, ktower
 cc_hydra:           gogo, umaro, zozo, owzer, veldt*2, cave, mount2, gate, dream, phoenix
+cc_life:            omen3, rachel*2, ruin
+cc_pyre:            zozo, ruin, cave, train, gate*2, ancient, dream, phoenix
 cc_world2:          prelude, omen3, daryl, awakening, balance*2, forest
 crys_mountain:      chocobo, blackjack, mountain, mount2*2, serpent, gate, ancient, phoenix
 crys_tower:         setzer, chocobo, blackjack, moogles, mountain, mount2*2
@@ -346,7 +347,6 @@ zaol_temple:        serpent, train, gate, ancient, engine, dream, floating, fana
 cc_flame:       I75, G95, grandfinale, metamorphosis, catastrophe*2, fanatics*2, assault, mboss, boss, atma, bat4
 cc_harle:       H4, kefka, zozo, owzer, dream*2, train*2, H:prelude, H:omen3, H:empire, H:shadow, H:ruin, H:ruintown, H:forest, H:tomb, H:cave
 cc_home:        prelude, balance, relm*2
-cc_life:        omen3, rachel*2
 cc_miguel:      grandfinale, ruin*2, rachel, tomb, train
 cc_valley:      awakening, moogles, veldt, mountain*2, mount2, serpent, forest
 crys_fields:    chocobo, johnny, gogo, moogles*2, mountain, setzer
