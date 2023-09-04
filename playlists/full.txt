@@ -26,6 +26,7 @@ bof2_battle:        grandfinale, unforgiven
 bof2_battle2:       grandfinale, unforgiven
 bof2_dragnier:      omen3, espers, strago, serpent*2, gate, dream
 bof2_evrai:         prelude, omen3, empire, kefka, owzer, train, tomb*2, fanatics
+bof2_town:          relm, village*2, town
 bof2_unspoken:      prelude, celes, daryl, coin*2, ruin, tomb
 cc_arni:            prelude, relm, village*2, town, ruintown, forest
 cc_deadsea:         omen3, espers, zozo, owzer, ruin*2, train, ancient, dream, phoenix
@@ -341,7 +342,6 @@ zaol_temple:        serpent, train, gate, ancient, engine, dream, floating, fana
 [legacysongstxtcopypasta]
 # temporarily filling in the rest of the legacy song set here without reviewing the track selections (will be more permissive than desired)
 # relevant battle related tags will be added as well matching the approximate I/G quadrant specified
-bof2_town:      prelude, relm, awakening, village*2, town
 bof2_wander:    espers, awakening, mountain, cave, serpent, forest*2, tomb, dream
 cc_flame:       I75, G95, grandfinale, metamorphosis, catastrophe*2, fanatics*2, assault, mboss, boss, atma, bat4
 cc_harle:       H4, kefka, zozo, owzer, dream*2, train*2, H:prelude, H:omen3, H:empire, H:shadow, H:ruin, H:ruintown, H:forest, H:tomb, H:cave
