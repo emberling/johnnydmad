@@ -275,16 +275,19 @@ def song_variant_id(name, idx):
     else:
         return name, ""
 
-def init_playlist(fn=DEFAULT_PLAYLIST_FILE):            
+def init_playlist(fn=DEFAULT_PLAYLIST_FILE, virtual=None, virtual_source="(virt_playlist)"):
     if fn is None:
         fn = DEFAULT_PLAYLIST_FILE
     playlist_parser = configparser.ConfigParser()
-    plfile = playlist_parser.read(fallback_path(os.path.join(PLAYLIST_PATH, fn)))
-    if not plfile:
-        plfile = playlist_parser.read(fallback_path(os.path.join(PLAYLIST_PATH, fn + ".txt")))
+    if virtual is not None:
+        plfile = playlist_parser.read_string(virtual, source=virtual_source)
+    else:
+        plfile = playlist_parser.read(fallback_path(os.path.join(PLAYLIST_PATH, fn)))
         if not plfile:
-            print(f"Playlist file {fn} empty or not found, falling back to {DEFAULT_PLAYLIST_FILE}")
-            playlist_parser.read(fallback_path(os.path.join(PLAYLIST_PATH, DEFAULT_PLAYLIST_FILE)))
+            plfile = playlist_parser.read(fallback_path(os.path.join(PLAYLIST_PATH, fn + ".txt")))
+            if not plfile:
+                print(f"Playlist file {fn} empty or not found, falling back to {DEFAULT_PLAYLIST_FILE}")
+                playlist_parser.read(fallback_path(os.path.join(PLAYLIST_PATH, DEFAULT_PLAYLIST_FILE)))
     playlist_map = {}
     tierboss_pool = set()
     for section in playlist_parser:
