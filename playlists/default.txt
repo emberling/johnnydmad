@@ -19,6 +19,7 @@ bof1_jade:          catastrophe*2, assault, phoenix
 bof2_barubary:      grandfinale, unforgiven
 bof2_battle:        grandfinale, unforgiven
 bof2_battle2:       grandfinale, unforgiven
+bof2_dragnier:      omen3, strago, serpent*2, dream
 bof2_evrai:         owzer, tomb*2
 bof2_unspoken:      prelude, daryl, coin*2, ruin
 cc_arni:            village*2, town
@@ -340,7 +341,6 @@ ff9_notalone:       grandfinale
 [legacysongstxtcopypasta]
 # temporarily filling in the rest of the legacy song set here without reviewing the track selections (will be more permissive than desired)
 # relevant battle related tags will be added as well matching the approximate I/G quadrant specified
-bof2_dragnier:  espers, strago, ruintown, serpent*2, tomb, ancient, gate*2, dream
 bof2_town:      prelude, relm, awakening, village*2, town
 bof2_wander:    espers, awakening, mountain, cave, serpent, forest*2, tomb, dream
 cc_flame:       I75, G95, grandfinale, metamorphosis, catastrophe*2, fanatics*2, assault, mboss, boss, atma, bat4

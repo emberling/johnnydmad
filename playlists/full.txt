@@ -24,6 +24,7 @@ bof1_jade:          catastrophe*2, assault, umaro, train, floating, phoenix
 bof2_barubary:      metamorphosis, grandfinale, unforgiven, assault
 bof2_battle:        grandfinale, unforgiven
 bof2_battle2:       grandfinale, unforgiven
+bof2_dragnier:      omen3, espers, strago, serpent*2, gate, dream
 bof2_evrai:         prelude, omen3, empire, kefka, owzer, train, tomb*2, fanatics
 bof2_unspoken:      prelude, celes, daryl, coin*2, ruin, tomb
 cc_arni:            prelude, relm, village*2, town, ruintown, forest
@@ -340,7 +341,6 @@ zaol_temple:        serpent, train, gate, ancient, engine, dream, floating, fana
 [legacysongstxtcopypasta]
 # temporarily filling in the rest of the legacy song set here without reviewing the track selections (will be more permissive than desired)
 # relevant battle related tags will be added as well matching the approximate I/G quadrant specified
-bof2_dragnier:  espers, strago, ruintown, serpent*2, tomb, ancient, gate*2, dream
 bof2_town:      prelude, relm, awakening, village*2, town
 bof2_wander:    espers, awakening, mountain, cave, serpent, forest*2, tomb, dream
 cc_flame:       I75, G95, grandfinale, metamorphosis, catastrophe*2, fanatics*2, assault, mboss, boss, atma, bat4
