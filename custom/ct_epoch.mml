@@ -4,14 +4,14 @@
 #ARRANGED HoxNorf
 ##created with sqspcmml beta 1.1.4
 
-#WAVE 0x20 0x4F
-#WAVE 0x21 0x7B
-#WAVE 0x22 0x1D
-#WAVE 0x23 0x4A
-#WAVE 0x24 0x68
-#WAVE 0x25 0x5A
-#WAVE 0x26 0x21
-#WAVE 0x27 0x22
+#WAVE 0x20 0x98 originally 0x4F saxophone
+#WAVE 0x21 0x13 originally 0x7B 12string guitar
+#WAVE 0x22 0x38 originally 0x1D mute guitar
+#WAVE 0x23 0x51 originally 0x4A bass
+#WAVE 0x24 0x3C originally 0x68 hihat
+#WAVE 0x25 0x3B originally 0x5A hihat
+#WAVE 0x26 0x1D originally 0x21 snare
+#WAVE 0x27 0x0A originally 0x22 kick
 
 #def 0i= |0
 #def 1i= |1
@@ -21,7 +21,7 @@
 #def 0o= o5
 #def 1o= o5
 #def 2o= o5
-#def 3o= o5
+#def 3o= o4
 
 #def 0v=   v100
 #def 0f= v1,100
@@ -29,8 +29,8 @@
 #def 1f= v1,100
 #def 2v=   v100
 #def 2f= v1,100
-#def 3v=   v100
-#def 3f= v1,100
+#def 3v=   v85
+#def 3f= v1,85
 #def 4v=   v100
 #def 4f= v1,100
 #def 5v=   v150
@@ -49,7 +49,7 @@
 
 
 {1}
-t136%v40%b0,70%f0,0%e1
+t136%x208%v40%b0,70%f0,0%e1
 '1i' '1v*v.78'p64'1o'a+8a8a+8a4g4f8g8f8g8f4d4f8^8g8g2^4^1^4.
 '0v*v.62'
 $101
@@ -82,7 +82,7 @@ f8.f8.f2d+8^8d+4.d+4d+4
 ;201
 
 
-{3}
+{6}
 %e1
 $301
 '1i' '1v*v.47'p64'1o''1v*v.55''1o'd4.c2^8d4.c2^8d2^4d4d2^8d8.'1v*v.23'
@@ -96,7 +96,7 @@ f+8^8f+4.f+4f+4d+8.d+8.d+2d+8^8d+4.d+4d+4c+8.c+8.c+2>a+8^8a+4.a+4a+4
 ;301
 
 
-{4}
+{7}
 %e1
 $401
 '1i' '1v*v.47'p64'1o-o1'a+4.a2^8a+4.a2^8<c2^4.g8>b2^8b8.'1v*v.23'b8'1v*v.47'
@@ -111,7 +111,7 @@ c+4>g+8.g+8.g+2g+8^8g4.g4g4
 ;401
 
 
-{5}
+{3}
 %e1
 $501
 '2i' '2v*v.47'p20'2o'[4r1][r8e8f4f16e8f4^16^8f8f8e8f16e8f4^16^8g8g8a8e8
@@ -125,7 +125,7 @@ a8a8a8g16a8a8a16a8a8a8a8a8a16a8a16a8a8a16a16]r1r1r1
 ;501
 
 
-{6}
+{5}
 %e1
 $601
 '3i' '3v*v1.08'p64'3o+o1'g16r16g16r16g16r16f8.r16f16r16f16r16f16r16d+16
@@ -161,7 +161,7 @@ c+4d+8^8>a+4<c+4>g+8a+4
 ;601
 
 
-{7}
+{4}
 
 $701
 '49i' '7v*v1.27'p64{P+}[3" !!!o g4g4g4g4"]"g4g4g8""f8""g16""f8f16"

@@ -50,6 +50,7 @@ ct_bobonga:         what, moogles, gogo, umaro, veldt*2
 ct_boss:            grandfinale, unforgiven, magitek, engine
 ct_boss2:           grandfinale, metamorphosis, assault, floating, phoenix
 ct_crisis:          grandfinale, unforgiven*2, engine
+ct_epoch:           setzer, chocobo, blackjack*2, johnny, falcon
 ct_final:           metamorphosis, grandfinale, magitek, engine, floating, ktower
 ct_forest:          zozo, ruin, mountain, cave*2, forest*2, dream
 ct_frog:            cyan, setzer, locke*2, figaro, returners
@@ -363,7 +364,6 @@ cc_harle:       H4, kefka, zozo, owzer, dream*2, train*2, H:prelude, H:omen3, H:
 cc_home:        prelude, balance, relm*2
 cc_miguel:      grandfinale, ruin*2, rachel, tomb, train
 crys_fields:    chocobo, johnny, gogo, moogles*2, mountain, setzer
-ct_epoch:       prelude, setzer, chocobo, blackjack*2, johnny, serpent, falcon
 ct_factory:     zozo, narshe, martiallaw, engine, magitek*2
 ct_fair:        johnny, spinach, moogles*2, town, village
 ct_magus:       H3, I99, G85, atma, dmad5, floating, fanatics, ktower, grandfinale, H:kefka, H:empire, H:falcon, H:phoenix, H:gate, H:train, H:tomb
