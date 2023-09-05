@@ -277,6 +277,7 @@ lu2_submarine:      prelude*2, espers, ruin, cave, tomb
 lu2_tower:          troops*2, mount2
 lu2_town:           village*2, town
 lu2_turret:         savethem*2, mount2, floating
+lu2_village:        village*2
 lu2_void:           catastrophe, troops*2, umaro
 met3_brain:         metamorphosis*2, catastrophe, grandfinale
 met3_lowernorfair:  empire, ruin, train, gate, fanatics, phoenix*2
