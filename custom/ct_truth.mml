@@ -5,6 +5,9 @@
 #COMPOSER Yasunori Mitsuda
 #ARRANGED emberling
 
+########## ------------------
+#SHORTNAME CT Hidden Truth
+
 #WAVE 0x20 0x62 strings
 #WAVE 0x21 0x01 piano
 #WAVE 0x22 0x08 piano bass

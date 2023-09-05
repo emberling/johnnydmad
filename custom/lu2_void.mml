@@ -3,6 +3,9 @@
 #COMPOSER Yasunori Shiono
 #ARRANGED emberling
 
+########## ------------------
+#SHORTNAME LU2 Void Island
+
 #WAVE 0x20 0x65 strings
 #WAVE 0x21 0x66 strings (fast)
 #WAVE 0x23 0x28 t.bells

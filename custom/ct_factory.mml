@@ -4,6 +4,9 @@
 #ARRANGED emberling
 ##created with sqspcmml beta 1.1.0
 
+########## ------------------
+#SHORTNAME CT Ruined Factory
+
 #WAVE 0x20 0x25 formerly 0x86 marimba
 #def 0i=   |0 %r19
 #def 0o=   o6
