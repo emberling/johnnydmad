@@ -314,6 +314,7 @@ sdlm_landscape:     assault, savethem, gogo, umaro, falcon, mountain, mount2, se
 sdlm_wind:          chocobo, blackjack, mountain*2, mount2, forest
 sf2_balrog:         grandfinale, unforgiven, chocobo, johnny, engine
 smb2_over:          johnny*2, spinach, moogles, gogo
+smb3_credits:       spinach, what, moogles, village
 smrpg_forest:       kefka, spinach, what, moogles, gogo*2, owzer, serpent, forest, train, engine, dream
 smrpg_road2:        chocobo, johnny, spinach*2, what, moogles, gogo, mountain, forest
 so2_world1:         cyan, falcon*2

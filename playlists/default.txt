@@ -308,6 +308,7 @@ sdlm_landscape:     falcon, mountain, mount2, serpent*2, floating
 sdlm_wind:          blackjack, mountain*2, mount2, forest
 sf2_balrog:         grandfinale, johnny
 smb2_over:          johnny*2
+smb3_credits:       spinach, village
 smrpg_forest:       what, moogles, gogo*2, forest, dream
 smrpg_road2:        johnny, spinach*2, moogles, gogo, mountain
 so2_world1:         cyan, falcon*2
