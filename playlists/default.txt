@@ -244,6 +244,7 @@ lu1_town:           village, town*2
 lu1_village:        relm, village*2, town, ruintown
 lu2_battle:             chaos
 lu2_boss:           grandfinale
+lu2_capsule:        spinach*2, what
 lu2_castle:         cyan, figaro*2, returners
 lu2_daos:           empire, catastrophe*2, fanatics
 lu2_fortress:       grandfinale, assault, floating*2, ktower
