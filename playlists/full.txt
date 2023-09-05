@@ -365,6 +365,7 @@ xc1_machina:        cyan*2, figaro, returners, troops, martiallaw
 xc3_alfeto:         omen3, ruin, falcon, balance*2, serpent, cave, forest
 xcx_sylvan:         omen3, espers, zozo, narshe, ruin*2, cave, forest, train, tomb, ancient, dream, phoenix
 xg_boss:            metamorphosis, grandfinale, troops, assault*2, savethem, serpent, gate, magitek, engine, floating, fanatics
+xg_final:           metamorphosis, catastrophe, grandfinale, floating*2, ktower
 xg_mermaid:         prelude, omen3, daryl, espers, awakening, ruin, train, tomb*2, ancient
 xg_theme:           prelude*2, relm, village
 xg_weltall:         metamorphosis*2, grandfinale, unforgiven, assault, savethem, floating
@@ -750,6 +751,7 @@ ff5_decisive:       I80,        boss, atma, dmad5
 ct_magus:           I82,              atma, dmad5
 ff6_atma:           I82,        boss, atma, dmad5
 ffmq_final:         I82,        boss, atma, dmad5
+xg_final:           I82,        boss, atma, dmad5
 ct_revolution:      I85,        boss, atma, dmad5    
 ct_final:           I85,        boss, atma, dmad5
 ff7_jenova:         I85,        boss, atma, dmad5
