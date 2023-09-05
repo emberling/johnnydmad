@@ -73,6 +73,7 @@ ct_tension:         metamorphosis*2
 ct_theme:           grandfinale, setzer, locke*2, assault, savethem, falcon
 ct_town:            prelude, town*2, village
 ct_trial:           kefka*2, owzer, train, dream
+ct_truth:           kefka, catastrophe*2, grandfinale, assault
 ct_undersea:        catastrophe, gate, ancient*2, magitek, floating, phoenix, ktower
 ct_zealpalace:      omen3, empire*2, train, ancient
 cv4_chandeliers:    zozo, owzer*2, train, tomb
@@ -375,7 +376,6 @@ cc_harle:       H4, kefka, zozo, owzer, dream*2, train*2, H:prelude, H:omen3, H:
 cc_home:        prelude, balance, relm*2
 cc_miguel:      grandfinale, ruin*2, rachel, tomb, train
 crys_fields:    chocobo, johnny, gogo, moogles*2, mountain, setzer
-ct_truth:       kefka, grandfinale, catastrophe, assault
 ct_tylair:      I85, G75, atma, metamorphosis*2, catastrophe*2, savethem, grandfinale
 ct_tyran:       catastrophe, umaro*2, floating, ktower, phoenix
 ct_zeal:        relm*2, awakening, owzer, strago*2

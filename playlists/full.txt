@@ -78,6 +78,7 @@ ct_tension:         kefka, metamorphosis*2, catastrophe, assault
 ct_theme:           grandfinale, unforgiven, cyan, setzer, locke*2, assault, savethem, blackjack, falcon, serpent, floating
 ct_town:            prelude, relm, town*2, village
 ct_trial:           kefka*2, owzer, train, dream
+ct_truth:           kefka, metamorphosis, catastrophe*2, grandfinale, assault
 ct_undersea:        catastrophe, zozo, serpent, gate, ancient, magitek, floating, phoenix, ktower
 ct_zealpalace:      omen3, empire*2, owzer, ruin, train, ancient, magitek
 cv4_chandeliers:    gogo, umaro, zozo, owzer*2, train, tomb, dream, fanatics
@@ -375,7 +376,6 @@ cc_harle:       H4, kefka, zozo, owzer, dream*2, train*2, H:prelude, H:omen3, H:
 cc_home:        prelude, balance, relm*2
 cc_miguel:      grandfinale, ruin*2, rachel, tomb, train
 crys_fields:    chocobo, johnny, gogo, moogles*2, mountain, setzer
-ct_truth:       kefka, grandfinale, catastrophe, assault
 ct_tylair:      I85, G75, atma, metamorphosis*2, catastrophe*2, savethem, grandfinale
 ct_tyran:       catastrophe, umaro*2, floating, ktower, phoenix
 ct_zeal:        relm*2, awakening, owzer, strago*2
@@ -656,6 +656,7 @@ fft_trisection:     E70,                     bat4
 lu2_fortress:       E70,                     bat4
 sd3_faith:          E70,               bat3, bat4
 ct_theme:           E75,               bat3, bat4
+ct_truth:           E75,                     bat4
 sd1s_courage:       E75,         bat2, bat3, bat4
 ff9_hunt:           E75,         bat2, bat3, bat4
 ff14_labten:        E75,                     bat4
