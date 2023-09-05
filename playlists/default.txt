@@ -54,6 +54,7 @@ ct_frog:            cyan, setzer, locke*2
 ct_keeper:          espers, ruin, forest, train, dream*2
 ct_lavos:           metamorphosis
 ct_lavos_full:      kefka, catastrophe*2, grandfinale
+ct_lucca:               chaos
 ct_magus:           grandfinale, floating
 ct_mountain:        gogo*2, umaro, veldt
 ct_night:           celes, coin*2, ruin
@@ -784,6 +785,7 @@ bl_rebels:      fanfare
 ct_ayla:        fanfare
 ct_frog:        fanfare
 ct_gato:        fanfare
+ct_lucca:       fanfare
 ct_robo:        fanfare  
 ff3_warrior:    fanfare
 ff4_fanfare:    fanfare
