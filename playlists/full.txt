@@ -60,6 +60,7 @@ ct_keeper:          omen3, espers, zozo, owzer, ruin, forest, train, tomb, gate,
 ct_lavos:           metamorphosis, catastrophe, engine
 ct_lavos_full:      empire, kefka, catastrophe, grandfinale, fanatics
 ct_magus:           grandfinale, floating, fanatics, ktower
+ct_mountain:        what, gogo*2, umaro, veldt, engine
 ct_night:           prelude, omen3, celes, coin*2, rachel, ruin, tomb
 ct_revolution:      catastrophe, grandfinale, assault, savethem, floating*2, ktower
 ct_schala:          omen3, relm, espers*2, awakening, strago
@@ -367,7 +368,6 @@ cc_harle:       H4, kefka, zozo, owzer, dream*2, train*2, H:prelude, H:omen3, H:
 cc_home:        prelude, balance, relm*2
 cc_miguel:      grandfinale, ruin*2, rachel, tomb, train
 crys_fields:    chocobo, johnny, gogo, moogles*2, mountain, setzer
-ct_mountain:    moogles, gogo, umaro, veldt*2, mountain, engine
 ct_omen:        zozo, train, gate, ancient, magitek, dream, phoenix*2, ktower, H:omen3, H:espers, H:shadow, H:falcon, H:floating
 ct_rhythm:      what, veldt*2
 ct_robo:        moogles*2, gogo, engine, fanfare*2
