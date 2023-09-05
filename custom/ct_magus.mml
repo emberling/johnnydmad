@@ -6,15 +6,15 @@
 
 #SFXV ` *
 
-#WAVE 0x20 0x45
-#WAVE 0x21 0x03
-#WAVE 0x22 0x9A
-#WAVE 0x23 0x08
-#WAVE 0x24 0x18
-#WAVE 0x25 0x16
-#WAVE 0x26 0x8E
-#WAVE 0x27 0x55
-#WAVE 0x28 0x00
+#WAVE 0x20 0x62 formerly 0x45 strings
+#WAVE 0x21 0xA2 formerly 0x03 pan flute
+#WAVE 0x22 0x81 formerly 0x9A trumpet
+#WAVE 0x23 0x85 formerly 0x08 horn
+#WAVE 0x24 0x51 formerly 0x18 bass
+#WAVE 0x25 0x5B formerly 0x16 timpani
+#WAVE 0x26 0x2D formerly 0x8E cymbal
+#WAVE 0x27 0x6C formerly 0x55 tambourine
+##WAVE 0x28 0x00 formerly 0x00
 
 #def 3@i= @3
 #def 4@i= @4
@@ -24,11 +24,11 @@
 #def 3i= |3
 #def 4i= |4
 #def 5i= |5
-#def 8i= |8
+##def 8i= |8
 
 #def 3@o= o5
 #def 4@o= o5
-#def 0o= o5
+#def 0o= o6
 #def 1o= o5
 #def 2o= o5
 #def 3o= o5
@@ -42,39 +42,42 @@
 #def 4@f= v1,100
 #def 0v=   v100
 #def 0f= v1,100
-#def 1v=   v67
-#def 1f= v1,67
+#def 1v=   v100
+#def 1f= v1,100
 #def 2v=   v100
 #def 2f= v1,100
 #def 3v=   v100
 #def 3f= v1,100
-#def 4v=   v133
-#def 4f= v1,133
+#def 4v=   v100
+#def 4f= v1,100
 #def 5v=   v100
 #def 5f= v1,100
 #def 6v=   v100
 #def 6f= v1,100
-#def 7v=   v100
-#def 7f= v1,100
+#def 7v=   v85
+#def 7f= v1,85
 #def 8v=   v100
 #def 8f= v1,100
 
-#drum "d"= 5g+ |7 p20
-#drum "g"= 6c |6 p64
+#drum "d"= 5a+ |7 p20
+#drum "g"= 5e |6 p64
 
 #def kefka1= @0v0%n1%c19%s2g+8%r0c+1%n0 r4.
 #def kefka2= v90%p1%e1@3o5%a8m24,+20d8%r27[6m10,+5b16r16m254]%p0%k0 r2r8
 
+#def mvol= %x255
+#def mvoltrans= %x223
+#def mvolmain= %x191
 #cdef ( %l1
 #cdef ) %l0
 
 {1}
-t89%v46%b0,90%f0,0%e1 *
+t89%v46%b0,72%f0,0'mvol'%e1 *
 '4@i' '4@o-o2'p0'4@v*v.00'%a8v0,164,191m40,2r2^4m40,5^2m24,-5^2^4m40,5
 ^2m24,-5^2p255,64m48,21'4@f*v255,.15'a1^4m48,-21^4^1m40,5^1m40,5p255,127
 ^4.'4@f*v255,.00'm24,-5^2m48,21^4.m48,-21^2v * `[11r2.]`
-'3i' '3v*v.00''3f*v144,1.00'p90'3o'a2^4
-$101t119'6v*v.56''6v*v1.13'{P+}%e0[4" !!!o g2"^4^2^4]'1v*v.94'{P-}%e1
+'3i' '3v*v.00''3f*v144,1.00'p90'3o''mvoltrans'a2^4
+$101t119'mvolmain''6v*v.56''6v*v1.13'{P+}%e0[4" !!!o g2"^4^2^4]'1v*v.94'{P-}%e1
 '1i' '1v*v.64'p64'1o+o2'm12,24,205e4^24>b24a24b4.<d4^24>a24g24a4b8<d4e8
 >b4.^4^24a24b24<d4^24>b24<d24e4^24>b24a24b4.<d4^24>a24g24a4b8<d4e8>b4.
 ^2^4
@@ -82,7 +85,7 @@ $101t119'6v*v.56''6v*v1.13'{P+}%e0[4" !!!o g2"^4^2^4]'1v*v.94'{P-}%e1
 e24g24a4^24g24a24<e8d8g8e4c8>b4<c4d4e4g8.^16a8.^16a4.g+4.a16r2r8.m
 ##'8i' '8v*v1.00''8o-o3'm6,12,231%a8p64f1^2r2p90f1^2r4p20f1^2
 [21r4]
-'3i' '3v*v.78'p64'3o+o1'm24,24,195e4f4g4a4b4<c4>b2^4^2^4t89[4r2r4]
+'3i' '3v*v.78'p64'3o+o1'm24,24,195e4f4g4a4b4<c4>'mvol'b2^4^2^4t89[4r2r4]
 '1i' '1v*v.47'p64'1o+o1'm12,24,203m24,2d2^4m0,0d2c4>(b32<c32>)b2^8.^2^4m
 
 ;101
@@ -103,10 +106,9 @@ b2^4^2^4'0v*v.47'e2^4d2c4>b2^4a4g4f4e2^4^2^4^2^4^2^4
 ;201
 
 
-{3}
+{8}
+[12r2r4]
 %e1
-'0i' '0v*v.47'p64'0o-o2'%a8%r4e2^4f2^4e2^4g2^4e2^4f2^4e2^4f2^4
-'1i' '1v*v.47'p64'1o+o1'm12,24,203m24,2d2^4m0,0d2c4>(b32<c32>)b2^8.^2^4m
 $301
 '2i' '2v*v1.00'p90'2o+o1'e24r48e24r12e24r48e24r12d24r12d24r12d24r12e24
 r48e24r12e24r48e24r12>b24r12b24r12b24r12<e24r48e24r12e24r48e24r12d24r12
@@ -131,7 +133,7 @@ g16r4.r16g16r16g16r16g16r4r16a+16a8.]
 ;301
 
 
-{4}
+{3}
 %e1
 '0i' '0v*v.47'p64'0o-o3'%a8%r4e2^4f2^4e2^4g2^4
 '0i' '0v*v.47'p64'0o+o1'%a8%r4e2^4d2c4>b2^4a4g4f4e2^4^2^4^2^4'0f*v144,1.00'
@@ -162,13 +164,14 @@ r48b24r12b24r48b24r12<d24r12d24r12d24r12>b24r48b24r12b24r48b24r12a24r12
 a24r12a24r12b24r48b24r12b24r48b24r12f+24r12f+24r12f+24r12b24r48b24r12b24
 r48b24r12a24r12a24r12a24r12b24r48b24r12b24r48b24r12<d24r12d24r12d24r12
 '0i' '0v*v.47'p28'0o'%a8%r4e2^4d2^4c2^4d2^4e2^4d2^4c2^4d2^4
-r2. 'kefka1' r2 'kefka1' r4 'kefka1'
+##r2. 'kefka1' r2 'kefka1' r4 'kefka1'
+r2. p64'kefka2' r2 p90'kefka2' r4 p20'kefka2' p28
 [11r2r4]'3v*v.94'%e1
 '3i' '3v*v.00''3f*v144,1.00'p90'3o+o1'e2^4
 ;701
 
 
-{6}
+{5}
 %e1
 [4r2r4]
 '0i' '0v*v.47'p64'0o-o3'%a8%r4e2^4f2^4e2^4f2^4e2^4f2^4e2^4g2^4
@@ -185,10 +188,10 @@ b4e2^4[7r2r4]
 ;601
 
 
-{5}
+{4}
 %e1
-[8r2r4]
-'0i' '0v*v.47'p64'0o-o2'%a8%r4e2^4f2^4e2^4g2^4
+'0i' '0v*v.47'p64'0o-o2'%a8%r4e2^4f2^4e2^4g2^4e2^4f2^4e2^4f2^4
+'1i' '1v*v.47'p64'1o+o1'm12,24,203m24,2d2^4m0,0d2c4>(b32<c32>)b2^8.^2^4m
 $501'5v*v1.27'%e0
 '5i' '5v*v1.27'p64'5o-o2'[4e8'5v*v.70'e16'5v*v1.00'e16'5v*v1.27'e8f8'5v*v.70'
 f16'5v*v1.00'f16'5v*v1.27'f8e8'5v*v.70'e16'5v*v1.00'e16'5v*v1.27'e8g8'5v*v.70'
@@ -209,12 +212,14 @@ e48e48e48e48e48e48e48%e0e2^4[6r2r4]'3v*v1.00'%e1
 ;501
 
 
-{8}
-[12r2r4]
+{6}
+[8r2r4]
+'0i' '0v*v.47'p64'0o-o2'%a8%r4e2^4f2^4e2^4g2^4
 $801'7v*v.94''7v*v.94'{P+}[16" !!!o d16"'7v*v.62'"d16d16d16"'7v*v.94'"d8
 "'7v*v.62'"d16d16d16d16"'7v*v.94'"d8"]{P-}
 '2i' '2v*v.78'p64'2o'%e1[8e12r24e24r48e24r12e24r12e24r48e24r12e24r12]
-r2. p64'kefka2' r2 p90'kefka2' r4 p20'kefka2'
+##r2. p64'kefka2' r2 p90'kefka2' r4 p20'kefka2'
+r2. p64'kefka1' r2 p90'kefka1' r4 p20'kefka1' p64
 '6v*v.94''6v*v1.13'{P+}%e0[" !!!o g2"^4[3^2^4]][4r2r4]
 ;801
 
