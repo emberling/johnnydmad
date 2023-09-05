@@ -269,6 +269,7 @@ lu2_battle:         unforgiven
 lu2_boss:           grandfinale
 lu2_capsule:        spinach*2, what, moogles, strago
 lu2_castle:         cyan, figaro*2, returners, mountain, engine
+lu2_cave:           umaro, zozo, owzer, cave, gate*2, ancient, engine, phoenix
 lu2_daos:           empire, kefka, catastrophe*2, fanatics
 lu2_fortress:       grandfinale, assault, serpent, ancient, floating*2, ktower
 lu2_iris:           prelude, espers, awakening*2, strago, ruin
