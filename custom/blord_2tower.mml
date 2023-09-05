@@ -3,7 +3,7 @@
 #COMPOSER Masanao Akahori
 #ARRANGED emberling
 
-#VARIANT \ enh
+#VARIANT \ 
 #VARIANT _ tr
 #SFXV ` *
 
@@ -73,7 +73,7 @@
 
 #cdef ( %l1
 #cdef ) %l0
-#cdef * m3,2
+#cdef ~ m3,2
 #def ^= m6,1
 #def ^^= m12,1
 
@@ -199,14 +199,14 @@ r4.'14a'a+4'13a'(a+'^'a)a+4    '10a'<'^'c4>g+4'^'d4c4
 [r4.'14b'<c4'13a'(<c>a+)<c4]
 r4.'14b'<f4'13a'<(dc)d4    '14b'>dga<dga<dg>dgb<dgb<dd
 ##
-['08c'[r8d+<r8d+>]r8d+*^    r8d+<r8d+>>r8a+*^r<'^'f-rcd+*^ j2,623
+['08c'[r8d+<r8d+>]r8d+~^    r8d+<r8d+>>r8a+~^r<'^'f-rcd+~^ j2,623
 [r8d+r8<d+>]r4    r8d+r8<d+"!!!o o8c8cc8cc8"]$623
 '10c'c8.'^^'d-2^g+8.'^'a ^1
 ##
-'08c'r8m3,-1er8<d+>r8 d+r8<d+>r8 d+*^     r8d+r8<d+>>r8a+*^r<m3,-1ercd+*^
-[r8d+<r8d+>]r8d+*^    r8d+r8<d+>"!!!o o8c8cc8cc8"
-'08c'[r8d+<r8d+>]r8d+*^    r8d+r8<d+>>r8a+*^r<m3,-1ercd+*^
-[r8d+<r8d+>]r8d+*^    "!!!o y2ckcc8cc8"
+'08c'r8m3,-1er8<d+>r8 d+r8<d+>r8 d+~^     r8d+r8<d+>>r8a+~^r<m3,-1ercd+~^
+[r8d+<r8d+>]r8d+~^    r8d+r8<d+>"!!!o o8c8cc8cc8"
+'08c'[r8d+<r8d+>]r8d+~^    r8d+r8<d+>>r8a+~^r<m3,-1ercd+~^
+[r8d+<r8d+>]r8d+~^    "!!!o y2ckcc8cc8"
 ;
 *
 {7}
@@ -230,8 +230,10 @@ r2.."!!!o o8"    r4."o8c8cc8cc8"
 '10d'>'^'a-8.a+8.<c8>'^'c-8.a+8.a8
 ;
 *
-$722 l16 '10b'<[3r8c+crc+crc+rc+crcc+r]    r8c+crc+crc+rd+frd+c+r
-[2r8c+crc+crc+rc+crcc+r] ]
+## $722 l16 '10b'<[3r8c+crc+crc+rc+crcc+r]    r8c+crc+crc+rd+frd+c+r
+##               [2r8c+crc+crc+rc+crcc+r] ]
+$722 l16 '10b'<[5r8c+crc+crc+rc+crcc+r j3,9722]]
+     $9722       r8c+crc+crc+rd+frd+c+r]
 *
 {8}
 $
