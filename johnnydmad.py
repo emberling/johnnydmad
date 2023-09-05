@@ -158,6 +158,7 @@ def johnnydmad(args):
             print()
             if i.startswith("pl "):
                 playlist = i[3:]
+                kw["playlist_filename"] = playlist
                 print_playlist(playlist)
                 continue
             break
