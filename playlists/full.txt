@@ -249,6 +249,7 @@ lu1_shopping:       prelude*2, johnny, spinach, village, town
 lu1_town:           moogles, village, town*2
 lu1_village:        relm, strago, village*2, town, ruintown
 lu2_battle:         unforgiven
+lu2_boss:           grandfinale
 lu2_castle:         cyan, figaro*2, returners, mountain, engine
 lu2_daos:           empire, kefka, catastrophe*2, fanatics
 lu2_fortress:       grandfinale, assault, serpent, ancient, floating*2, ktower
@@ -491,7 +492,6 @@ lu1_final:      I70, G70, atma, dmad5, catastrophe, grandfinale, floating, ktowe
 lu1_spoils:     prelude, omen3, daryl, awakening, forest, tomb
 lu1_world:      cyan, johnny, falcon, balance*2, mountain, serpent
 lu2_battle3:    I85, G99, atma*2, grandfinale, dmad5
-lu2_boss:       I95, G40, boss*2, grandfinale
 lu2_mountain:   fanfare, cyan*2, figaro, returners*2, mountain, engine, mount2
 lu2_narvick:    omen3, empire, shadow, cyan, zozo, narshe, strago, martiallaw, ruintown*2, ruin, forest, tomb, espers
 lu2_world:      awakening, mountain, serpent, balance*2, forest
@@ -713,6 +713,7 @@ totr_sboss:         I50, mboss, boss, atma
 xg_weltall:         I50, mboss, boss, atma
 ct_theme:           I52,              atma, dmad5
 ff9_hunt:           I52, mboss, boss, atma
+lu2_boss:           I52,        boss
 fft_trisection:     I55,        boss, atma, dmad5
 ff7_gun:            I55,              atma
 top_spirit:         I55, mboss, boss, atma, dmad5
