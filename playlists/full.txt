@@ -45,6 +45,7 @@ ct_600ad:           prelude, omen3, relm, gau, strago, ruin*2, forest
 ct_ayla:            locke*2, savethem
 ct_battle:          grandfinale, unforgiven, assault, magitek, engine, floating
 ct_battle2:         grandfinale, unforgiven
+ct_bike:            grandfinale, unforgiven, chocobo*2, blackjack, engine
 ct_bobonga:         what, moogles, gogo, umaro, veldt*2
 ct_crisis:          grandfinale, unforgiven*2, engine
 ct_final:           metamorphosis, grandfinale, magitek, engine, floating, ktower
@@ -350,7 +351,6 @@ cc_harle:       H4, kefka, zozo, owzer, dream*2, train*2, H:prelude, H:omen3, H:
 cc_home:        prelude, balance, relm*2
 cc_miguel:      grandfinale, ruin*2, rachel, tomb, train
 crys_fields:    chocobo, johnny, gogo, moogles*2, mountain, setzer
-ct_bike:        I99, G10, battle, grandfinale, unforgiven, johnny, chocobo*2, serpent, magitek, mboss
 ct_boss:        I99, G30, boss, unforgiven, grandfinale, magitek
 ct_boss2:       I95, G75, atma*2, metamorphosis, grandfinale, catastrophe
 ct_epoch:       prelude, setzer, chocobo, blackjack*2, johnny, serpent, falcon
