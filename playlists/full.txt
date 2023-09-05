@@ -759,6 +759,7 @@ bl_fahrenheit:  fanfare
 bl_rebels:      fanfare    
 ct_ayla:        fanfare
 ct_frog:        fanfare
+ct_gato:        fanfare
 ct_robo:        fanfare    
 ff3_warrior:    fanfare
 ff4_fanfare:    fanfare
