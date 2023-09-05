@@ -42,6 +42,7 @@ ct_battle:          grandfinale, unforgiven, magitek, engine
 ct_battle2:         grandfinale
 ct_bike:            unforgiven, chocobo*2, blackjack
 ct_bobonga:         umaro, veldt*2
+ct_boss:            grandfinale, unforgiven
 ct_crisis:          grandfinale, unforgiven*2, engine
 ct_final:           grandfinale, floating
 ct_forest:          cave*2, forest*2
@@ -351,7 +352,6 @@ cc_harle:       H4, kefka, zozo, owzer, dream*2, train*2, H:prelude, H:omen3, H:
 cc_home:        prelude, balance, relm*2
 cc_miguel:      grandfinale, ruin*2, rachel, tomb, train
 crys_fields:    chocobo, johnny, gogo, moogles*2, mountain, setzer
-ct_boss:        I99, G30, boss, unforgiven, grandfinale, magitek
 ct_boss2:       I95, G75, atma*2, metamorphosis, grandfinale, catastrophe
 ct_epoch:       prelude, setzer, chocobo, blackjack*2, johnny, serpent, falcon
 ct_factory:     zozo, narshe, martiallaw, engine, magitek*2
@@ -727,6 +727,7 @@ doom_e1m1:          I40, mboss
 ff14_labten:        I40, mboss
 ffmq_hill:          I40, mboss
 top_boss:           I40, mboss, boss
+ct_boss:            I45, mboss, boss
 ff7_hurry2:         I45, mboss, boss
 ff6_boss:           I50,        boss
 totr_sboss:         I50,        boss
