@@ -280,6 +280,7 @@ lu2_port:           johnny, moogles, strago, village, town*2, mountain
 lu2_priphea:        prelude, celes, daryl, coin, rachel, relm*2, village, town, ruintown
 lu2_savior:         metamorphosis*2, grandfinale, assault, savethem, floating, phoenix, ktower
 lu2_submarine:      prelude*2, espers, ruin, serpent, cave, forest, tomb, dream
+lu2_tower:          figaro, troops*2, savethem, mount2
 lu2_town:           relm, awakening, village*2, town, ruintown
 lu2_turret:         savethem*2, mountain, mount2, serpent, floating, fanatics
 lu2_void:           empire, catastrophe, cyan, troops*2, assault, savethem, umaro

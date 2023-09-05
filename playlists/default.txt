@@ -274,6 +274,7 @@ lu2_port:           village, town*2
 lu2_priphea:        daryl, rachel, relm*2, village, ruintown
 lu2_savior:         metamorphosis*2, grandfinale, savethem, floating
 lu2_submarine:      prelude*2, espers, ruin, cave, tomb
+lu2_tower:          troops*2, mount2
 lu2_town:           village*2, town
 lu2_turret:         savethem*2, mount2, floating
 lu2_void:           catastrophe, troops*2, umaro
@@ -635,6 +636,7 @@ ct_magus:           H:floating, H:kefka, H:fanatics, H:ktower
 ct_omen:            H:omen3, H:zozo, H:train, H:gate, H:ancient, H:dream, H:floating, H:phoenix*2, H:ktower, H:catastrophe
 ct_sewer:           H:gogo, H:zozo, H:owzer*2, H:martiallaw, H:cave, H:train, H:dream, H:kefka, H:zozo
 ct_zealpalace:      H:omen3, H:empire*2, H:owzer, H:ruin, H:train, H:ancient, H:magitek
+cv3_aquarius:       H:assault, H:gate, H:magitek, H:engine, H:floating*2, H:ktower
 cv4_chandeliers:    H:gogo, H:umaro, H:zozo, H:owzer*2, H:train, H:tomb, H:dream, H:fanatics, H:serpent
 dc2_palmbrinks:     H:kefka, H:grandfinale, H:spinach, H:what*2, H:moogles, H:gogo, H:train
 doom2_doom:         H:train*2, H:tomb, H:dream, H:fanatics, H:phoenix, H:ktower, H:owzer, H:zozo, H:ruin, H:cave
