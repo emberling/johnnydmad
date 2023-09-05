@@ -77,6 +77,7 @@ ct_truth:           kefka, catastrophe*2, grandfinale, assault
 ct_tylair:          metamorphosis*2, catastrophe, grandfinale, assault
 ct_tyran:           umaro, floating*2, ktower
 ct_undersea:        catastrophe, gate, ancient*2, magitek, floating, phoenix, ktower
+ct_zeal:            relm, strago*2
 ct_zealpalace:      omen3, empire*2, train, ancient
 cv4_chandeliers:    zozo, owzer*2, train, tomb
 dc2_garden:         relm, awakening*2, gau, ruintown, forest
@@ -378,7 +379,6 @@ cc_harle:       H4, kefka, zozo, owzer, dream*2, train*2, H:prelude, H:omen3, H:
 cc_home:        prelude, balance, relm*2
 cc_miguel:      grandfinale, ruin*2, rachel, tomb, train
 crys_fields:    chocobo, johnny, gogo, moogles*2, mountain, setzer
-ct_zeal:        relm*2, awakening, owzer, strago*2
 cv3_aquarius:   H2, I35, G55, magitek, floating, ktower, assault*2
 cv4_beginning:  H2, I00, G35, battle, locke, falcon, floating, mount2, phoenix, gate, ancient, assault*2, train, bat2, bat3
 ds4_world:      setzer, chocobo, blackjack, moogles, strago, mountain
