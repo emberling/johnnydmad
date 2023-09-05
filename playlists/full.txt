@@ -64,6 +64,7 @@ ct_mountain:        what, gogo*2, umaro, veldt, engine
 ct_night:           prelude, omen3, celes, coin*2, rachel, ruin, tomb
 ct_omen:            omen3, zozo, train, gate, ancient, dream, floating, phoenix*2, ktower
 ct_revolution:      catastrophe, grandfinale, assault, savethem, floating*2, ktower
+ct_robo:            locke, moogles, engine
 ct_schala:          omen3, relm, espers*2, awakening, strago
 ct_seal:            omen3, espers, zozo, owzer, narshe, ruintown, ruin, train, tomb*2, gate, dream
 ct_sewer:           gogo, zozo, owzer*2, martiallaw, cave, train, dream
@@ -370,7 +371,6 @@ cc_home:        prelude, balance, relm*2
 cc_miguel:      grandfinale, ruin*2, rachel, tomb, train
 crys_fields:    chocobo, johnny, gogo, moogles*2, mountain, setzer
 ct_rhythm:      what, veldt*2
-ct_robo:        moogles*2, gogo, engine, fanfare*2
 ct_spekkio:     spinach*2, moogles*2, what, grandfinale, village
 ct_town:        prelude, relm, town*2
 ct_truth:       kefka, grandfinale, catastrophe, assault
@@ -759,6 +759,7 @@ bl_fahrenheit:  fanfare
 bl_rebels:      fanfare    
 ct_ayla:        fanfare
 ct_frog:        fanfare
+ct_robo:        fanfare    
 ff3_warrior:    fanfare
 ff4_fanfare:    fanfare
 ff6_blackjack:  fanfare
