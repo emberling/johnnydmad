@@ -4,35 +4,35 @@
 #ARRANGED emberling
 # Converted from binary by mfvitools
 
-#WAVE 0x20 -- 0x0B
-#WAVE 0x21 -- 0x9A
-#WAVE 0x22 -- 0x73
-#WAVE 0x23 -- 0x02
-#WAVE 0x24 -- 0x16
-#WAVE 0x28 -- 0x14
-#WAVE 0x29 -- 0x50
+#WAVE 0x20 -- 0xB3 -- formerly 0x0B
+#WAVE 0x21 -- 0x81 -- formerly 0x9A
+#WAVE 0x22 -- 0x85 -- formerly 0x73
+#WAVE 0x23 -- 0x51 -- formerly 0x02
+#WAVE 0x24 -- 0x5C -- formerly 0x16
+#WAVE 0x28 -- 0x1F -- formerly 0x14
+#WAVE 0x29 -- 0x2D -- formerly 0x50
 
-#drum "a"=5a |8 p80
-#drum "b"=5a |8 p80 v96
-#drum "c"=5a |8 p80 v88
-#drum "d"=5a |8 p80 v80
-#drum "e"=5a |8 p80 v72
-#drum "f"=5a |8 p80 v64
-#drum "x"=5a |8 p80 v56
-#drum "h"=5a |8 p80 v48
+#drum "a"=5e |8 p80     %a14%r17
+#drum "b"=5e |8 p80 v48 %a14%r17
+#drum "c"=5e |8 p80 v44 %a14%r17
+#drum "d"=5e |8 p80 v40 %a14%r17
+#drum "e"=5e |8 p80 v36 %a14%r17
+#drum "f"=5e |8 p80 v32 %a14%r17
+#drum "x"=5e |8 p80 v28 %a14%r17
+#drum "h"=5e |8 p80 v24 %a14%r17
 
-#drum "g"=5g |9 p64 v127
+#drum "g"=5d+ |9 p64 v127
 
-#def 0o= o6
+#def 0o= o5
 #def 1o= o5
 #def 2o= o5
-#def 3o= o6
+#def 3o= o5
 #def 4o= o6
 
-#def 0v= v64
+#def 0v= v80
 
 {1}
-l16t150%x232%v40%b0,85%f0,0{FD}127%e1%k2r4|1v127p64'1o+o1'm12,24,198[2r4g6r12f4.  
+l16t150%x192%v40%b0,85%f0,0{FD}127%e1%k2r4|1v127p64'1o+o1'm12,24,198[2r4g6r12f4.  
 r8e6r12v85e24r24v100e24r24v100e24r24d+4.  ^rr4d8.rc+4.  r8c8v85c24v100c24r24v127c24r24v85c24r24v100c24r24v127>b8.rb8.  
 r<] $1 [2r4v120d+^48>g+r48<c+r48c4.r24>g+  r48a+r48d+r48c+r48c2r4  
 r4<d+^48>g+24r24<c+24r24c4.r24>g+r48  a+24r24<c24r24c+24r24g+4.r24g+24r24a+24r24g+24r24f+24r24  
@@ -81,7 +81,7 @@ r24v60d+24r24v70f24r24v80f24r24v90f24r24v100f24r24]
 ;7
 
 l16
-{2}
+{6}
 l16{FD}120%e1%k2r4|2v80p64'2o'[2r4g8.  
 rf4.^re4.^  rd+4.^rr4d8.  rc+4.^rc4.^  r>b4.^r<] $10 |0'0v*v.5'p64'0o-o1'[2[3fr8.fr4  
 r48grr24gr8.]a+r8.a+r4  r48g+rr24g+r8.][2[2a+r8.a+r4  r48g+r48a+r48a+r8.]j2,8 [2g+r8.g+r4  
@@ -111,7 +111,7 @@ gr8.<c+rr24c+r48c+r48g+r48c+r48c+r8.  [4v120crr24v100cr48v120crr24v100cr48v120cr
 ;13
 
 l16
-{6}
+{2}
 l16{FD}127%k2|4p64v100'4o-o3'g12v120g12v127g12g4v80g12v100g12v127g12a+4  
 a+12v60a+12v80a+12v127<c+4v80c+12v100c+12v127c+12c4  v80c12v100c12v127c12>b4v80b12v100b12v127b12a+4  
 a+12v60a+12v80a+12v127a4v80a12v100a12v127a12g+4  v80g+12v100g+12v127g+12g4v80g12v100g12v127g12a+4  

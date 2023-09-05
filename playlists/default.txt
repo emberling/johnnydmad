@@ -43,6 +43,7 @@ ct_battle2:         grandfinale
 ct_bike:            unforgiven, chocobo*2, blackjack
 ct_bobonga:         umaro, veldt*2
 ct_boss:            grandfinale, unforgiven
+ct_boss2:           grandfinale, metamorphosis, floating
 ct_crisis:          grandfinale, unforgiven*2, engine
 ct_final:           grandfinale, floating
 ct_forest:          cave*2, forest*2
@@ -352,7 +353,6 @@ cc_harle:       H4, kefka, zozo, owzer, dream*2, train*2, H:prelude, H:omen3, H:
 cc_home:        prelude, balance, relm*2
 cc_miguel:      grandfinale, ruin*2, rachel, tomb, train
 crys_fields:    chocobo, johnny, gogo, moogles*2, mountain, setzer
-ct_boss2:       I95, G75, atma*2, metamorphosis, grandfinale, catastrophe
 ct_epoch:       prelude, setzer, chocobo, blackjack*2, johnny, serpent, falcon
 ct_factory:     zozo, narshe, martiallaw, engine, magitek*2
 ct_fair:        johnny, spinach, moogles*2, town, village
@@ -749,6 +749,7 @@ ff4_fiend:          I75,              atma, dmad5
 ff9_dragons:        I75,              atma, dmad5
 fft_antipyretic:    I75,              atma, dmad5
 sd1s_courage:       I75, mboss, boss, atma
+ct_boss2:           I80,              atma, dmad5
 ff5_decisive:       I80,              atma, dmad5
 ff6_atma:           I82,              atma, dmad5
 ffmq_final:         I82,              atma, dmad5
