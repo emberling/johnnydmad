@@ -29,6 +29,7 @@ cc_deadsea:         zozo, ruin*2, train, ancient
 cc_dragonia:        zozo, owzer, ancient*2, dream, phoenix, ktower
 cc_eden:            prelude*2, relm
 cc_final:           catastrophe, grandfinale, floating
+cc_home:            prelude, balance*2
 cc_hydra:           umaro, zozo, veldt*2, dream
 cc_life:            omen3, rachel*2
 cc_pyre:            cave, train, gate*2, phoenix
@@ -381,7 +382,6 @@ ff9_notalone:       grandfinale
 # relevant battle related tags will be added as well matching the approximate I/G quadrant specified
 cc_flame:       I75, G95, grandfinale, metamorphosis, catastrophe*2, fanatics*2, assault, mboss, boss, atma, bat4
 cc_harle:       H4, kefka, zozo, owzer, dream*2, train*2, H:prelude, H:omen3, H:empire, H:shadow, H:ruin, H:ruintown, H:forest, H:tomb, H:cave
-cc_home:        prelude, balance, relm*2
 cc_miguel:      grandfinale, ruin*2, rachel, tomb, train
 crys_fields:    chocobo, johnny, gogo, moogles*2, mountain, setzer
 cv4_beginning:  H2, I00, G35, battle, locke, falcon, floating, mount2, phoenix, gate, ancient, assault*2, train, bat2, bat3
