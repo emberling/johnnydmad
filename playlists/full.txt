@@ -50,6 +50,7 @@ ct_bobonga:         what, moogles, gogo, umaro, veldt*2
 ct_boss:            grandfinale, unforgiven, magitek, engine
 ct_boss2:           grandfinale, metamorphosis, assault, floating, phoenix
 ct_crisis:          grandfinale, unforgiven*2, engine
+ct_dome:            shadow, zozo*2, owzer, narshe, martiallaw, ruin
 ct_epoch:           setzer, chocobo, blackjack*2, johnny, falcon
 ct_factory:         zozo, narshe, martiallaw, train, magitek*2, engine
 ct_fair:            johnny, spinach, moogles*2, village, town

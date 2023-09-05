@@ -45,6 +45,7 @@ ct_bobonga:         umaro, veldt*2
 ct_boss:            grandfinale, unforgiven
 ct_boss2:           grandfinale, metamorphosis, floating
 ct_crisis:          grandfinale, unforgiven*2, engine
+ct_dome:            zozo*2, narshe, martiallaw, ruin
 ct_epoch:           setzer, blackjack*2, falcon
 ct_factory:         zozo, martiallaw, magitek*2, engine
 ct_fair:            johnny, moogles*2, village, town
