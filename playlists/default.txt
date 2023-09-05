@@ -57,6 +57,7 @@ ct_lavos_full:      kefka, catastrophe*2, grandfinale
 ct_magus:           grandfinale, floating
 ct_mountain:        gogo*2, umaro, veldt
 ct_night:           celes, coin*2, ruin
+ct_omen:            zozo, ancient, floating, phoenix*2, ktower
 ct_revolution:      grandfinale, floating*2, ktower
 ct_schala:          omen3, relm, espers*2, strago
 ct_seal:            espers, zozo, narshe, ruin, tomb*2
@@ -368,7 +369,6 @@ cc_harle:       H4, kefka, zozo, owzer, dream*2, train*2, H:prelude, H:omen3, H:
 cc_home:        prelude, balance, relm*2
 cc_miguel:      grandfinale, ruin*2, rachel, tomb, train
 crys_fields:    chocobo, johnny, gogo, moogles*2, mountain, setzer
-ct_omen:        zozo, train, gate, ancient, magitek, dream, phoenix*2, ktower, H:omen3, H:espers, H:shadow, H:falcon, H:floating
 ct_rhythm:      what, veldt*2
 ct_robo:        moogles*2, gogo, engine, fanfare*2
 ct_spekkio:     spinach*2, moogles*2, what, grandfinale, village
@@ -629,6 +629,8 @@ xcx_sylvan:         W:omen3, W:espers, W:zozo, W:narshe, W:ruin*2, W:cave, W:for
 ff6_train:          H:empire, H:gogo, H:umaro, H:zozo, H:owzer, H:train*2, H:tomb, H:dream, H:cave, H:gate, H:kefka, H:phoenix, H:veldt
 blord_ruins:        H:shadow, H:umaro, H:zozo, H:owzer, H:cave, H:train, H:tomb, H:gate, H:ancient, H:magitek, H:engine, H:dream, H:narshe, H:ruin
 cc_dragonia:        H:omen3, H:zozo, H:owzer, H:train, H:ancient*2, H:dream, H:phoenix, H:ktower, H:cave, H:gogo, H:gate, H:falcon, H:ruin
+ct_magus:           H:floating, H:kefka, H:fanatics, H:ktower
+ct_omen:            H:omen3, H:zozo, H:train, H:gate, H:ancient, H:dream, H:floating, H:phoenix*2, H:ktower, H:catastrophe
 ct_sewer:           H:gogo, H:zozo, H:owzer*2, H:martiallaw, H:cave, H:train, H:dream, H:kefka, H:zozo
 ct_zealpalace:      H:omen3, H:empire*2, H:owzer, H:ruin, H:train, H:ancient, H:magitek
 cv4_chandeliers:    H:gogo, H:umaro, H:zozo, H:owzer*2, H:train, H:tomb, H:dream, H:fanatics, H:serpent
