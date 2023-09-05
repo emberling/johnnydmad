@@ -241,6 +241,7 @@ lal_pogo:           gau, what, moogles, umaro, veldt*2, mountain, forest
 lotr_aragorn:       locke, figaro, returners, falcon, balance, mountain*2
 lotr_hobbits:       prelude, relm, moogles, strago, village, town, balance, mountain, forest*2
 lu1_file:           prelude*2, chocobo, johnny, moogles
+lu1_motif:          daryl, coin, awakening, gau*2, ruin
 lu1_parting:        prelude, omen3, celes, daryl, rachel, relm, gau*2, ruintown
 lu1_port:           setzer, figaro, johnny, moogles, town*2
 lu1_prologue:       omen3, empire, catastrophe*2, ruin, ancient
