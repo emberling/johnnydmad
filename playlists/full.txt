@@ -14,6 +14,7 @@
 7th_town:           prelude, relm, narshe, strago, town, ruintown*2
 arc_battle:         grandfinale, unforgiven
 arc_battle_nointro: unforgiven, chocobo, mount2, serpent, ancient, floating, phoenix, ktower
+bg3_camp:           omen3, celes, coin, awakening, ruin*2
 bl_fahrenheit:      setzer, locke, figaro
 bl_fahrenheit_nointro: prelude, setzer, savethem, blackjack, falcon, mountain, mount2, serpent
 bl_rebels:          setzer, locke*2, figaro, returners, savethem
