@@ -1,0 +1,97 @@
+01: prelude,        pre:
+04: omen3,          open:
+5D: assault,        intro:                    
+21: espers,         esper:
+05: awakening,      awake:
+17: narshe,         narshe:
+1B: empire,         empire:
+0D: locke,          locke:
+0A: figaro,         figaro:
+0B: coin,           coin:
+16: kefka,          kefka:
+18: cave,           cave:
+06: balance,        wob:
+2A: town,           town:
+07: shadow,         shadow:
+13: chocobo,        choco:
+5C: village,        town2:                    
+23: mountain,       koltz:
+32: unforgiven,     danger:
+2E: returners,      banon:
+2B: what,           what:
+1C: troops,         troops:
+0C: cyan,           cyan:
+51: forest,         forest:                   
+20: train,          train:
+09: gau,            gau:
+19: veldt,          veldt:
+28: serpent,        trench:
+1D: martiallaw,     etown:
+1A: savethem,       protec:
+0E: rachel,         rachel:
+29: zozo,           zozo:
+3D: spinach,        rag:
+10: setzer,         setzer:
+35: blackjack,      flight:
+15: johnny,         bar:
+47: magitek,        mtek:                     
+59: gate,           gate:                     
+1F: metamorphosis,  hurry:
+31: moogles,        mog:
+12: celes,          celes:
+08: strago,         strago:
+0F: relm,           relm:
+4B: floating,       fc:                       
+36: catastrophe,    doom:
+4F: ruin,           wor:                      
+34: ruintown,       rtown:
+5B: engine,         engine:                   
+55: tomb,           tomb:                     
+11: daryl,          daryl:
+4C: falcon,         falcon:                   
+5A: mount2,         mtzozo:                   
+37: owzer,          owzer:
+30: umaro,          umaro:
+2D: gogo,           gogo:
+56: dream,          dream:                    
+57: ancient,        odin:                     
+58: phoenix,        fenix:                    
+4D: fanatics,       cult:                     
+4E: ktower,         ktower:                   
+24: battle,         battle:
+5E: bat2,           bat2:                     
+5F: bat3,           bat3:                     
+60: bat4,           bat4:                     
+61: mboss,          mboss:                    
+14: boss,           boss:
+22: grandfinale,    ultros:
+33: atma,           boss2:
+3B: dmad123,        dmad1:
+50: dmad5,          final:                    
+2F: fanfare,        vict:
+38: sleep,          sleep:
+3E: death,          RIP:
+02: omen1,          Omen I
+03: omen2,          Omen II
+41: opera_intro,    Overture I
+42: opera_draco,    Overture II
+43: opera_overture, Overture III
+27: aria,           Aria di Mezzo Carattere
+26: wed_dance,      The Wedding Waltz I
+44: wed_attack,     The Wedding Waltz II
+45: wed_duel,       The Wedding Waltz III     
+46: wed_rafters,    The Wedding Waltz IV      
+52: dmad4,          Dancing Mad II            
+53: ending1,        Balance Is Restored I     
+54: ending2,        Balance Is Restored II    
+25: fanfareslow,    Unused Fanfare
+1E: sfxwater,       SFX: Waterfall
+2C: sfxcrowd,       SFX: Crowd Noise
+39: sfxwind,        SFX: Wind
+3A: sfxwaves,       SFX: Waves
+3C: sfxtrain,       SFX: Train Stopping
+3F: sfxchocobo,     SFX: Chocobos Running
+40: sfxrain,        SFX: Waterfall 2
+48: sfxespers,      SFX: New Continent        
+49: sfxcranes,      SFX: Crane Activation     
+4A: sfxfire,        SFX: Fire                 
