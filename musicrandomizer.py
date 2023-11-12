@@ -36,7 +36,7 @@ except ImportError:
     from mfvitools.mml2mfvi import mml_to_akao, get_variant_list, get_brr_imports
     from mfvitools.insertmfvi import insertmfvi, byte_insert, int_insert, SampleIDError, FreeSpaceError
 
-JOHNNYDMAD_FREESPACE = ["340000-3FFFFF"]
+JOHNNYDMAD_FREESPACE = ["330000-3FFFFF"]
 TRAIN_SAMPLE_ID = 0x3A
 
 SAMPLE_PATH = 'samples'
@@ -133,7 +133,10 @@ def open_fallback(fn, *args, **kwargs):
 def add_encoding_if_text(args, kwargs):
     if len(args) and 'b' not in args[0]:
         kwargs["encoding"] = "utf-8"
-        
+
+class PlaylistError(Exception):
+    pass    
+
 class TrackMetadata:
     def __init__(self, file="", title="", album="", composer="", arranged="", menuname=""):
         self.file, self.title, self.album, self.composer, self.arranged, self.menuname = title, album, composer, arranged, menuname
@@ -883,6 +886,8 @@ def process_music(inrom, meta={}, f_chaos={}, f_dupes=False, f_battle=True, oper
             
         if attempts >= 1000:
             print("Music randomization failed after 1000 attempts. Your custom music configuration files and/or filters may be too restrictive.")
+            if enable_exceptions:
+                raise PlaylistError("Music randomization failed after 1000 attempts.")
             return inrom
         attempts += 1
         
