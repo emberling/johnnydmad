@@ -28,7 +28,7 @@ def print_progress_bar(cur, max):
 def johnnydmad():
     print("jdm chaos")
     try:
-        with open("../worldscollide/seedbot.smc", "rb") as f:
+        with open("../WorldsCollide/seedbot.smc", "rb") as f:
             inrom = f.read()
     except IOError:
         while True:
