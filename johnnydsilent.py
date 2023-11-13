@@ -50,7 +50,7 @@ def johnnydmad():
     outrom = process_formation_music_by_table(outrom)
     outrom = process_map_music(outrom)
 
-    with open("../worldscollide/seedbot.smc", "wb") as f:
+    with open("../WorldsCollide/seedbot.smc", "wb") as f:
         f.write(outrom)
 
     sp = get_music_spoiler()
