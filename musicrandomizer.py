@@ -62,7 +62,7 @@ def initialize(rng=pyrandom):
     global instmap, legacy_instmap
     global random
     
-    BASEPATH = os.getcwd()
+    BASEPATH = os.getcwd()+'/johnnydmad/'
     SUBPATH = ""
     
     used_sample_ids = set()

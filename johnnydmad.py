@@ -25,10 +25,15 @@ def print_progress_bar(cur, max):
     print(f"\r[{boxtext:<50}] {cur}/{max}", end="", flush=True)
 
 
-def johnnydmad():
-    print("jdm standard")
+async def johnnydmad(c, filename):
+    if c == "chaos":
+        print("jdm chaos")
+    elif c == "standard":
+        print("jdm standard")
+    else:
+        print("jdm silent")
     try:
-        with open("../WorldsCollide/seedbot.smc", "rb") as f:
+        with open("WorldsCollide/seeds/" + filename + ".smc", "rb") as f:
             inrom = f.read()
     except IOError:
         while True:
@@ -40,19 +45,23 @@ def johnnydmad():
                 continue
             break
         
-    f_chaos = False
+    f_chaos = c
+    f_dupes = False
     kw = {}
     force_dm = None
     metadata = {}
-    outrom = process_music(inrom, meta=metadata, f_chaos=f_chaos, **kw)
+    if c == "silent":
+        kw["playlist_filename"] = "silence.txt"
+        f_dupes = True
+    outrom = process_music(inrom, meta=metadata, f_chaos=f_chaos, f_dupes=f_dupes, **kw)
     outrom = process_formation_music_by_table(outrom)
     outrom = process_map_music(outrom)
 
-    with open("../WorldsCollide/seedbot.smc", "wb") as f:
+    with open("WorldsCollide/seeds/"+filename+".smc", "wb") as f:
         f.write(outrom)
 
     sp = get_music_spoiler()
-    with open("spoiler.txt", "w") as f:
+    with open("WorldsCollide/seeds/"+filename+"_spoiler.txt", "w") as f:
         f.write(sp)
 
 
