@@ -232,6 +232,7 @@ ff12_crystal:       omen3, espers*2, narshe, ruin, cave, forest, train, tomb, ga
 ff12_ozmone:        chocobo, johnny, what, moogles, gogo, strago, veldt*2, mountain
 ff12_paramina:      omen3, empire, espers, umaro, zozo, narshe, martiallaw, ruin*2, forest, train, tomb, gate, ancient
 ff14_azyslla:       zozo, ruin, train, magitek, floating*2, ktower
+ff14_battledt:      grandfinale, setzer, chocobo, veldt*2, johnny, moogles
 ff14_battlem:       metamorphosis, grandfinale, unforgiven, assault, savethem
 ff14_burn:          ruin*2, train, omen3, narshe, ancient, martiallaw, ruintown
 ff14_forthesky:     grandfinale, cyan, figaro, assault, savethem*2, falcon
@@ -626,6 +627,7 @@ ct_battle2:         E10, battle, bat2, bat3
 doom_e1m1:          E15, battle, bat2
 ff6_battle:         E15, battle, bat2, bat3
 ff7_battle_ff6:     E15, battle, bat2, bat3
+ff14_battledt:      E15, battle, bat2, bat3, bat4
 lu2_battle:         E15, battle, bat2, bat3
 ff1_battle:         E20, battle, bat2, bat3
 bof2_battle:        E25, battle, bat2, bat3
@@ -694,6 +696,7 @@ ff1_battle:         I00, mboss
 ff6_battle:         I00, mboss
 ff7_battle_ff6:     I00, mboss
 ff5_hurry:          I02, mboss
+ff14_battledt:      I02, mboss
 7th_darkness:       I05, mboss
 ct_tension:         I05, mboss
 bof2_battle:        I10, mboss
