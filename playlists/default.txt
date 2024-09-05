@@ -229,6 +229,7 @@ ff14_azyslla:       floating*2, ktower
 ff14_battledt:      grandfinale, setzer, chocobo, veldt*2, johnny
 ff14_battlem:       metamorphosis, grandfinale, assault
 ff14_burn:          ruin*2, train, omen3, narshe, ancient, martiallaw, ruintown
+ff14_fate_ff6:      grandfinale, unforgiven, savethem
 ff14_forthesky:     grandfinale, cyan, savethem*2
 ff14_labten:        unforgiven, savethem, mount2*2
 ff14_remnants:      falcon*2
@@ -724,6 +725,7 @@ lal_boss:           E90,                     bat4
 sd1_boss:           E90,                     bat4
 bof2_barubary:      E95,                     bat4
 ff6_boss:           E95,                     bat4
+ff14_fate_ff6:      E95,               bat3, bat4
 
 [boss]
 # mboss (miniboss) plays in event encounters like Marshal, Leader, Rizopas
@@ -756,6 +758,7 @@ top_boss:           I40, mboss, boss
 ct_boss:            I45, mboss, boss
 ff7_hurry2:         I45, mboss, boss
 ff6_boss:           I50,        boss
+ff14_fate_ff6:      I50,        boss
 totr_sboss:         I50,        boss
 xg_weltall:         I50,        boss        
 ff9_hunt:           I52, mboss, boss
