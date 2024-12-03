@@ -138,8 +138,8 @@ class PlaylistError(Exception):
     pass
     
 class TrackMetadata:
-    def __init__(self, file="", title="", album="", composer="", arranged="", menuname=""):
-        self.file, self.title, self.album, self.composer, self.arranged, self.menuname = title, album, composer, arranged, menuname
+    def __init__(self, file="", title="", album="", composer="", transcribe="", arranged="", menuname=""):
+        self.file, self.title, self.album, self.composer, self.transcribe, self.arranged, self.menuname = title, album, composer, transcribe, arranged, menuname
         
 class TracklistEntry:
     def __init__(self, name):
@@ -373,10 +373,12 @@ def add_to_spoiler(track, mml=None, fn=None, tl=None):
     title = re.search("(?<=#TITLE )([^;\n]*)", mml, re.IGNORECASE)
     album = re.search("(?<=#ALBUM )([^;\n]*)", mml, re.IGNORECASE)
     composer = re.search("(?<=#COMPOSER )([^;\n]*)", mml, re.IGNORECASE)
+    transcribe = re.search("(?<=#TRANS )([^;\n]*)", mml, re.IGNORECASE)
     arranged = re.search("(?<=#ARRANGED )([^;\n]*)", mml, re.IGNORECASE)
     title = title.group(0) if title else "??"
     album = album.group(0) if album else "??"
     composer = composer.group(0) if composer else "??"
+    transcribe = transcribe.group(0) if transcribe else "??"
     arranged = arranged.group(0) if arranged else "??"
     
     if song and song.variant and song.variant != "_default_":
@@ -396,6 +398,7 @@ def add_to_spoiler(track, mml=None, fn=None, tl=None):
     text = (f"{id:02}. {track:<{track_name_width}}-> {fn}{vartext}{dirtext}" "\n"
             + indent + f"{album} -- {title}" "\n"
             + indent + f"Composed by {composer}" "\n"
+            + indent + f"Referencing transcription(s) by {transcribe}" "\n"
             + indent + f"Ripped and/or arranged by {arranged}" "\n")
     if track in track_name_ids:
         menuname = get_jukebox_title(mml, fn)
