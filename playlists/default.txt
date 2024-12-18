@@ -343,6 +343,7 @@ so2_world1_b:       espers, gate, phoenix
 sots_boss:          grandfinale, dream
 sots_boss_nointro:  cyan*2, mountain, cave
 st_dungeon:         cave*2, train, dream
+sth1_final:         ktower*2
 sth1_hill:          chocobo*2, blackjack
 sth1_marble:        zozo*2, engine
 sth1_spring:        johnny*2, moogles
@@ -711,6 +712,7 @@ ct_tension:         E68,                     bat4
 ffmq_hill:          E68,                     bat4
 ff6_unforgiven:     E70,                     bat4
 ff7_gun:            E70,               bat3, bat4
+sth1_final:         E70,                     bat4
 ct_theme:           E75,                     bat4
 sd1s_courage:       E75,               bat3, bat4
 ff9_hunt:           E75,               bat3, bat4
@@ -770,6 +772,7 @@ ff5_boss:           I60,        boss, atma
 lu2_savior:         I60, mboss,             dmad5
 sd3_faith:          I60,        boss, atma
 ffmq_boss:          I65,        boss, atma
+sth1_final:         I65,                    dmad5
 bof2_barubary:      I67, mboss
 ct_tylair:          I70, mboss, boss, atma    
 ff10_seymour:       I70,              atma, dmad5
