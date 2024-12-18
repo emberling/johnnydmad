@@ -349,7 +349,8 @@ so2_world1_b:       omen3, empire, espers, umaro, zozo, ruin, gate, ancient, dre
 sots_boss:          grandfinale, gogo, owzer, serpent, dream
 sots_boss_nointro:  cyan*2, moogles, mountain, mount2, cave, forest
 st_dungeon:         espers, shadow, gogo, umaro, serpent, cave*2, train, ancient, dream
-sth1_spring:         shadow, setzer, blackjack, johnny*2, moogles, martiallaw
+sth1_marble:        gogo, zozo*2, train, gate, magitek, engine
+sth1_spring:        shadow, setzer, blackjack, johnny*2, moogles, martiallaw
 tn_darkworld:       omen3, espers, zozo, ruin*2, falcon, cave, forest, train, tomb, ancient
 top_battle:         grandfinale, unforgiven, falcon, mount2, gate, magitek, engine
 top_boss:           unforgiven, engine
