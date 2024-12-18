@@ -343,6 +343,7 @@ so2_world1_b:       espers, gate, phoenix
 sots_boss:          grandfinale, dream
 sots_boss_nointro:  cyan*2, mountain, cave
 st_dungeon:         cave*2, train, dream
+sth1_hill:          chocobo*2, blackjack
 sth1_marble:        zozo*2, engine
 sth1_spring:        johnny*2, moogles
 tn_darkworld:       omen3, espers, ruin*2, falcon, cave
