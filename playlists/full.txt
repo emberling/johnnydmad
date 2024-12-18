@@ -238,6 +238,7 @@ ff14_battlem:       metamorphosis, grandfinale, unforgiven, assault, savethem
 ff14_burn:          ruin*2, train, omen3, narshe, ancient, martiallaw, ruintown
 ff14_fate_ff6:      grandfinale, unforgiven, magitek, floating, savethem
 ff14_forthesky:     grandfinale, cyan, figaro, assault, savethem*2, falcon
+ff14_holminster:    metamorphosis, assault, floating*2, phoenix, ktower
 ff14_labten:        unforgiven, locke, savethem, falcon, mount2*2, floating
 ff14_remnants:      falcon*2, dream, floating
 ffmq_boss:          grandfinale, unforgiven, magitek, ktower
@@ -667,6 +668,7 @@ ffmq_hill:          E68,               bat3, bat4
 ct_undersea:        E70,                     bat4
 ff6_unforgiven:     E70,                     bat4
 ff7_gun:            E70,               bat3, bat4
+ff14_holminster:    E70,                     bat4
 fft_trisection:     E70,                     bat4
 lu2_fortress:       E70,                     bat4
 sd3_faith:          E70,               bat3, bat4
