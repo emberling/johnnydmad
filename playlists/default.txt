@@ -83,6 +83,7 @@ ct_undersea:        catastrophe, gate, ancient*2, magitek, floating, phoenix, kt
 ct_zeal:            relm, strago*2
 ct_zealpalace:      omen3, empire*2, train, ancient
 cv3_aquarius:       assault, magitek, floating*2, ktower
+cv4_beginning:      assault*2, mount2, gate, phoenix
 cv4_chandeliers:    zozo, owzer*2, train, tomb
 dc2_garden:         relm, awakening*2, gau, ruintown, forest
 dc2_palmbrinks:     spinach, what, zozo
@@ -392,7 +393,6 @@ cc_flame:       I75, G95, grandfinale, metamorphosis, catastrophe*2, fanatics*2,
 cc_harle:       H4, kefka, zozo, owzer, dream*2, train*2, H:prelude, H:omen3, H:empire, H:shadow, H:ruin, H:ruintown, H:forest, H:tomb, H:cave
 cc_miguel:      grandfinale, ruin*2, rachel, tomb, train
 crys_fields:    chocobo, johnny, gogo, moogles*2, mountain, setzer
-cv4_beginning:  H2, I00, G35, battle, locke, falcon, floating, mount2, phoenix, gate, ancient, assault*2, train, bat2, bat3
 ds4_world:      setzer, chocobo, blackjack, moogles, strago, mountain
 fe15_whatlies:  I40, G80, grandfinale, cyan, savethem, assault, falcon*2, mount2, omen3, balance, ancient, bat4
 ff1_bossb:      I85, G70, grandfinale, boss, atma, savethem, catastrophe, bat4
@@ -707,6 +707,7 @@ mmx3_seahorse:      E55,                     bat4
 pw_cornered:        E55,         bat2,       bat4
 crys_mountain:      E60,         bat2, bat3
 cv3_aquarius:       E60,         bat2, bat3, bat4
+cv4_beginning:      E60,               bat3, bat4
 top_boss:           E60,               bat3, bat4
 ct_tension:         E68,                     bat4
 ffmq_hill:          E68,                     bat4
