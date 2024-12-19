@@ -826,6 +826,7 @@ mmx3_zero:      fanfare
 sd3_steel:      fanfare
 
 [sleep]
+ff1_sleep: sleep
 ff4_inn: sleep
 ff5_inn: sleep
 ff6_inn: sleep
