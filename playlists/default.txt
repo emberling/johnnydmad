@@ -841,6 +841,7 @@ rs2_inn: sleep
 
 [death]
 cc_gameover: death
+ff1_death: death
 ff5_death: death
 ff6_death: death
 ff7_death: death
