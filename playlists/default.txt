@@ -33,6 +33,7 @@ cc_final:           catastrophe, grandfinale, floating
 cc_home:            prelude, balance*2
 cc_hydra:           umaro, zozo, veldt*2, dream
 cc_life:            omen3, rachel*2
+cc_miguel:          omen3, grandfinale, ruin*2, gau, tomb
 cc_pyre:            cave, train, gate*2, phoenix
 cc_valley:          veldt, mountain*2, mount2
 cc_world2:          prelude, omen3, awakening, balance*2
@@ -392,7 +393,6 @@ ff9_notalone:       grandfinale
 # relevant battle related tags will be added as well matching the approximate I/G quadrant specified
 cc_flame:       I75, G95, grandfinale, metamorphosis, catastrophe*2, fanatics*2, assault, mboss, boss, atma, bat4
 cc_harle:       H4, kefka, zozo, owzer, dream*2, train*2, H:prelude, H:omen3, H:empire, H:shadow, H:ruin, H:ruintown, H:forest, H:tomb, H:cave
-cc_miguel:      grandfinale, ruin*2, rachel, tomb, train
 crys_fields:    chocobo, johnny, gogo, moogles*2, mountain, setzer
 ds4_world:      setzer, chocobo, blackjack, moogles, strago, mountain
 fe15_whatlies:  I40, G80, grandfinale, cyan, savethem, assault, falcon*2, mount2, omen3, balance, ancient, bat4

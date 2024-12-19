@@ -38,6 +38,7 @@ cc_final:           catastrophe, grandfinale, floating, fanatics, ktower
 cc_home:            prelude, relm, strago, balance*2
 cc_hydra:           gogo, umaro, zozo, owzer, veldt*2, cave, mount2, gate, dream, phoenix
 cc_life:            omen3, rachel*2, ruin
+cc_miguel:          omen3, grandfinale, coin, gau, ruin*2, tomb
 cc_pyre:            zozo, ruin, cave, train, gate*2, ancient, dream, phoenix
 cc_valley:          moogles, veldt, mountain*2, mount2, forest
 cc_world2:          prelude, omen3, daryl, awakening, balance*2, forest
@@ -392,7 +393,6 @@ zaol_temple:        serpent, train, gate, ancient, engine, dream, floating, fana
 # relevant battle related tags will be added as well matching the approximate I/G quadrant specified
 cc_flame:       I75, G95, grandfinale, metamorphosis, catastrophe*2, fanatics*2, assault, mboss, boss, atma, bat4
 cc_harle:       H4, kefka, zozo, owzer, dream*2, train*2, H:prelude, H:omen3, H:empire, H:shadow, H:ruin, H:ruintown, H:forest, H:tomb, H:cave
-cc_miguel:      grandfinale, ruin*2, rachel, tomb, train
 crys_fields:    chocobo, johnny, gogo, moogles*2, mountain, setzer
 ds4_world:      setzer, chocobo, blackjack, moogles, strago, mountain
 fe15_whatlies:  I40, G80, grandfinale, cyan, savethem, assault, falcon*2, mount2, omen3, balance, ancient, bat4
