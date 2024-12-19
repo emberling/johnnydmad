@@ -99,6 +99,7 @@ eo3_waves:              chaos
 ff1_battle:         grandfinale
 ff1_end:            prelude, village, town*2
 ff1_matoya:         relm, moogles, strago*2
+ff1_town:           village, town*2
 ff1_volcano:        umaro, mount2, gate*2, floating, phoenix
 ff1_volcano_psx:    gate*2, ancient, dream, phoenix
 ff1_world:          balance*2, forest

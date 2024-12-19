@@ -104,6 +104,7 @@ eo3_waves:          ancient, magitek, floating, phoenix, ktower
 ff1_battle:         grandfinale, unforgiven
 ff1_end:            prelude, relm, village, town*2, ruintown
 ff1_matoya:         relm, moogles, strago*2, village, dream
+ff1_town:           relm, village, town*2, ruintown
 ff1_volcano:        gogo, umaro, mountain, mount2, serpent, gate*2, floating, phoenix, ktower
 ff1_volcano_psx:    umaro, zozo, owzer, serpent, cave, gate*2, ancient, dream, phoenix
 ff1_world:          relm, cyan, strago, balance*2, forest
