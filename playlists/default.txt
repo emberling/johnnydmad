@@ -99,6 +99,7 @@ eo3_waves:              chaos
 ff1_battle:         grandfinale
 ff1_end:            prelude, village, town*2
 ff1_matoya:         relm, moogles, strago*2
+ff1_mboss:          grandfinale, unforgiven
 ff1_town:           village, town*2
 ff1_volcano:        umaro, mount2, gate*2, floating, phoenix
 ff1_volcano_psx:    gate*2, ancient, dream, phoenix
@@ -712,6 +713,7 @@ cv3_aquarius:       E60,         bat2, bat3, bat4
 cv4_beginning:      E60,               bat3, bat4
 top_boss:           E60,               bat3, bat4
 ct_tension:         E68,                     bat4
+ff1_mboss:          E68,                     bat4
 ffmq_hill:          E68,                     bat4
 ff6_unforgiven:     E70,                     bat4
 ff7_gun:            E70,               bat3, bat4
@@ -764,6 +766,7 @@ ff14_labten:        I40, mboss
 ffmq_hill:          I40, mboss
 top_boss:           I40, mboss, boss
 ct_boss:            I45, mboss, boss
+ff1_mboss:          I45, mboss, boss
 ff7_hurry2:         I45, mboss, boss
 ff6_boss:           I50,        boss
 ff14_fate_ff6:      I50,        boss
