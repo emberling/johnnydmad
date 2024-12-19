@@ -98,6 +98,7 @@ ebr_prayer:         mount2, floating, phoenix*2, ktower
 eo3_waves:              chaos
 ff1_battle:         grandfinale
 ff1_end:            prelude, village, town*2
+ff1_fiend2:         grandfinale, assault
 ff1_matoya:         relm, moogles, strago*2
 ff1_mboss:          grandfinale, unforgiven
 ff1_town:           village, town*2
@@ -398,7 +399,6 @@ cc_harle:       H4, kefka, zozo, owzer, dream*2, train*2, H:prelude, H:omen3, H:
 crys_fields:    chocobo, johnny, gogo, moogles*2, mountain, setzer
 ds4_world:      setzer, chocobo, blackjack, moogles, strago, mountain
 fe15_whatlies:  I40, G80, grandfinale, cyan, savethem, assault, falcon*2, mount2, omen3, balance, ancient, bat4
-ff1_bossb:      I85, G70, grandfinale, boss, atma, savethem, catastrophe, bat4
 ff1_dungeon:    I85, G25, metamorphosis, grandfinale, unforgiven, floating, gate, phoenix, mboss
 ff2_battle2:    I75, G75, metamorphosis, catastrophe, grandfinale, assault*2, bat3, bat4
 ff2_battleb:    H4, train, kefka, gogo, owzer*2, espers, fanatics*2, grandfinale, dream*2, gate, H:I50, H:G30, H:prelude, H:omen3, H:shadow, H:strago, H:balance, H:cave, H:forest, H:tomb, H:engine
@@ -788,6 +788,7 @@ totr_pathboss:      I70,              atma, dmad5
 xg_boss:            I70,        boss, atma
 ff9_boss:           I72, mboss, boss, atma
 sd1_boss:           I72, mboss, boss, atma, dmad5
+ff1_fiend2:         I75,              atma
 ff4_fiend:          I75,              atma, dmad5
 ff9_dragons:        I75,              atma, dmad5
 fft_antipyretic:    I75,              atma, dmad5
