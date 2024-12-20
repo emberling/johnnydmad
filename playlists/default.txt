@@ -124,6 +124,7 @@ ff4_golbez:         kefka, train, owzer, fanatics*2
 ff4_illusion:       espers*2, cave, forest, tomb, dream
 ff4_moon:           zozo, ruin*2, train
 ff4_mysidia:        what, strago*2
+ff4_prologue:       prelude, omen3*2
 ff4_restless:       metamorphosis, grandfinale, unforgiven*2, assault
 ff4_rosa:           celes, rachel*2, awakening
 ff4_world:          falcon, balance*2, serpent
@@ -422,7 +423,6 @@ ff4_calcobrena: kefka, grandfinale, gogo, dream
 ff4_damcyan:    omen3, cyan, zozo, strago, ruintown*2, martiallaw, cave, tomb
 ff4_giant:      gogo, magitek, floating*2, falcon, ktower, mount2, phoenix, engine*2
 ff4_giant_remix: blackjack*2, setzer, serpent
-ff4_prologue:   prelude*2, omen3, grandfinale
 ff4_redwings:   omen3, figaro, setzer, troops*2, umaro, engine, assault
 ff4_rydia:      prelude, celes, daryl, coin, relm*2, awakening, gau, town, village
 ff4_somewhere:  shadow, empire, zozo, ruin, train
