@@ -220,6 +220,7 @@ ff7_jenova:         grandfinale, floating
 ff7_judgment:       catastrophe, assault, umaro, magitek, engine, floating, ktower*2
 ff7_mako:           omen3, zozo, ruin, train, magitek*2
 ff7_materia:        prelude, what*2
+ff7_planet:         omen3, espers*2, train, gate, dream, phoenix
 ff7_rebirth:        grandfinale, floating
 ff7_sadbar:         gau, martiallaw*2, ruintown
 ff7_temple:         omen3, espers, forest, tomb, dream
@@ -461,7 +462,6 @@ ff7_costa:      prelude, spinach*2, town, veldt, moogles, village
 ff7_desert:     prelude, omen3, gau, ruin*2, train, tomb, zozo, cave
 ff7_hurry:      I99, G00, unforgiven, magitek, floating, engine, assault*2, mboss
 ff7_pizza:      shadow, zozo, narshe, martiallaw*2, train, cave, engine, magitek
-ff7_planet:     H2, omen3, shadow, zozo, ruin*2, train, espers, tomb, dream, gate*2, phoenix, ancient
 ff7_reunion:    omen3, owzer, strago, ruin, train, espers, serpent, forest, dream
 ff7_snow:       W4, narshe, ruin*2, espers, serpent, forest, W:prelude*2, W:omen3, W:daryl, W:coin, W:gau, W:what, W:zozo, W:ruintown, W:mountain, W:train
 ff7_tifa:       prelude, rachel, relm*2, awakening*2, ruintown
