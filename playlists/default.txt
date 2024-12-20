@@ -133,6 +133,7 @@ ff4_somewhere:      omen3, empire, shadow, martiallaw*2
 ff4_troia:          prelude, relm, village*2, town
 ff4_underworld:     balance, cave*2
 ff4_world:          falcon, balance*2, serpent
+ff4_whale:          setzer, blackjack*2
 ff5_airship:        setzer, blackjack*2, mount2
 ff5_book:           zozo, owzer, ruin, train*2, tomb, gate, ancient
 ff5_boss:           catastrophe, grandfinale, savethem
@@ -431,7 +432,6 @@ ff4_giant_remix: blackjack*2, setzer, serpent
 ff4_rydia:      prelude, celes, daryl, coin, relm*2, awakening, gau, town, village
 ff4_sorrow:     prelude, coin*2, ruin
 ff4_town:       town*2, village
-ff4_whale:      fanfare, grandfinale, blackjack*2
 ff4_zeromus:    I95, G90, atma, dmad5
 ff4_zot:        kefka, troops, fanatics, assault
 ff5_bal:        fanfare, cyan, figaro, returners*2, troops, mount2
@@ -832,6 +832,7 @@ ct_lucca:       fanfare
 ct_robo:        fanfare  
 ff3_warrior:    fanfare
 ff4_fanfare:    fanfare
+ff4_whale:      fanfare
 ff6_fanfare:    fanfare
 ff7_fanfare:    fanfare
 lal_boss:       fanfare
