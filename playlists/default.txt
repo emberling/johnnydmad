@@ -225,6 +225,7 @@ ff7_rebirth:        grandfinale, floating
 ff7_sadbar:         gau, martiallaw*2, ruintown
 ff7_temple:         omen3, espers, forest, tomb, dream
 ff8_battle:         grandfinale, assault, savethem
+ff8_heresy:         kefka, owzer, ruin, fanatics*2
 ff8_laguna:         grandfinale, magitek
 ff8_world:          prelude, ruin, balance, forest
 ff9_battle:         grandfinale
@@ -467,7 +468,6 @@ ff7_snow:       W4, narshe, ruin*2, espers, serpent, forest, W:prelude*2, W:omen
 ff7_tifa:       prelude, rachel, relm*2, awakening*2, ruintown
 ff7_weapon:     I85, G80, boss, atma, metamorphosis, catastrophe*2, assault*2, savethem, ktower, bat3, bat4
 ff8_boss:       I85, G65, boss*2, grandfinale, floating
-ff8_heresy:     H2, empire, kefka, catastrophe, owzer, ruin, fanatics*2
 ff8_horizon:    prelude, coin, gau, town*2, ruintown, village
 ff8_landing:    I80, G65, boss, atma, metamorphosis, grandfinale, savethem*2, ktower, phoenix, assault*2, bat4
 ff8_lion:       I80, G80, atma*2, dmad5
@@ -873,9 +873,10 @@ ct_magusintro: death
 
 [tierboss]
 ct: cc_flame, ct_lavos, ct_zealpalace
-ff: ff3_eureka, ff4_fiend, ff4_golbez, ff5_excastle, ff5_seal, ff7_final_part1, ff8_witches, ff9_blackwaltz, ff10_ambition, ffmq_boss, ffmq_lava
+ff: ff3_eureka, ff4_fiend, ff4_golbez, ff5_excastle, ff5_seal
 ff6: ff6_fanatics_dm, ff6_tier1_dm, ff6_tier2_dm, ff6_tier3
 chorus: ff6_fanatics_chorus, ff6_tier1_chorus, ff6_tier2_chorus
+ffmore: ff7_final_part1, ff8_heresy, ff8_witches, ff9_blackwaltz, ff10_ambition, ffmq_boss, ffmq_lava
 i: iog_whispers
 lufia: lu2_daos, lu2_void
 metroid: met3_brain
