@@ -97,6 +97,7 @@ duck_moon:          setzer, blackjack*2, johnny
 ebr_prayer:         mount2, floating, phoenix*2, ktower
 eo3_waves:              chaos
 ff1_battle:         grandfinale
+ff1_dungeon:        gate, floating, phoenix*2
 ff1_end:            prelude, village, town*2
 ff1_fiend1:         grandfinale, savethem
 ff1_fiend2:         grandfinale, assault
@@ -404,7 +405,6 @@ cc_harle:       H4, kefka, zozo, owzer, dream*2, train*2, H:prelude, H:omen3, H:
 crys_fields:    chocobo, johnny, gogo, moogles*2, mountain, setzer
 ds4_world:      setzer, chocobo, blackjack, moogles, strago, mountain
 fe15_whatlies:  I40, G80, grandfinale, cyan, savethem, assault, falcon*2, mount2, omen3, balance, ancient, bat4
-ff1_dungeon:    I85, G25, metamorphosis, grandfinale, unforgiven, floating, gate, phoenix, mboss
 ff2_battle2:    I75, G75, metamorphosis, catastrophe, grandfinale, assault*2, bat3, bat4
 ff2_battleb:    H4, train, kefka, gogo, owzer*2, espers, fanatics*2, grandfinale, dream*2, gate, H:I50, H:G30, H:prelude, H:omen3, H:shadow, H:strago, H:balance, H:cave, H:forest, H:tomb, H:engine
 ff2_theme:      prelude, awakening, ruintown, ruin, balance, gau, forest*2
@@ -784,6 +784,7 @@ ff1_fiend1:         I60,        boss, atma
 ff5_boss:           I60,        boss, atma
 lu2_savior:         I60, mboss,             dmad5
 sd3_faith:          I60,        boss, atma
+ff1_dungeon:        I65,              atma
 ffmq_boss:          I65,        boss, atma
 sth1_final:         I65,                    dmad5
 bof2_barubary:      I67, mboss
