@@ -4,6 +4,11 @@
 #TRANS VGMTrans
 #ARRANGED emberling
 
+#VARIANT ~_
+#VARIANT ~` tier1
+#VARIANT ?` tier2
+#VARIANT ?_ tier3
+
 #WAVE 0x20 0xB0
 #WAVE 0x21 0xB7
 #WAVE 0x22 0xF2
@@ -27,7 +32,7 @@
 #def t=    v127
 #def tf= v1,127
 
-{1} 'init' %e1
+{1} $4441 'init' %e1
 'organmid+o1*v.15' ## v80 ex30
 d1>g+1<c+1>g1
 ^1^1 [24 %r1 ^8 %r0 ^8]
@@ -40,9 +45,10 @@ $
 'piano-o2' l4
 [f1.fg+  ^1.g+g   ^1.ga+    ^1.a+b
  ^1.b<c  ^1.c>b   ^1.b<c    ^1^1>]
+`:4441`
 ;
 
-{2} %e1
+{2} $4442 %e1
 'organalt+o1*v.15' v0,18,191
 d1>g+1<c+1>g1
 [8 ^1]
@@ -62,10 +68,10 @@ dgfg  dfef
 'pilayer-o2' l4
 [f1.fg+  ^1.g+g   ^1.ga+    ^1.a+b
  ^1.b<c  ^1.c>b   ^1.b<c    ^1^1>]
-m
+m`:4442`
 ;
 
-{3} %e1
+{3} $4443 %e1
 'layermid+o1*v.15'
 d1>g+1<c+1>g1
 'organsub*v.32' ## v65 ex80
@@ -85,9 +91,10 @@ $ ## 07 11 15
 ## 20 28
 l4
 [16 fr fr fr fr]
+`:4443`
 ;
 
-{4} %e1
+{4} $4444 %e1
 r1r1r1r1
 'layersub*v.32' ## v65 ex80
 [3 d4c+16r8.] d4>a+16r8.<
@@ -110,9 +117,10 @@ $
 'organalt+o1*v.24' l4 v0,18,191
 f1.fg+  ^1.g+g   ^1.ga+    ^1.a+b
 ^1.b<c  ^1.c>b   ^1.b<c    ^1^1 v
+`:4444`
 ;
 
-{5} %e1
+{5} $4445 %e1
 r1r1r1r1
 'organsub-o1*v.32' ## v65 ex80
 [4 g4r4] [4 a+4r4] [4 g+4r4] [4 g4r4]
@@ -127,9 +135,10 @@ $
 [8 fr fr fr fr]
 ## 28
 <[16 cr] [>[4 br]<[4 cr]]
+`:4445`
 ;
 
-{6} %e1
+{6} $4446 %e1
 r1r1r1r1
 'layersub-o1*v.32' ## v65 ex80
 [4 g4r4] [4 a+4r4] [4 g+4r4] [4 g4r4]
@@ -153,9 +162,10 @@ dgfg  dfef
 'layermid+o1*v.24' l4
 f1.fg+  ^1.g+g   ^1.ga+    ^1.a+b
 ^1.b<c  ^1.c>b   ^1.b<c    ^1^1
+`:4446`
 ;
 
-{7} %e1
+{7} $4447 %e1
 [12r1]
 $
 'layermid*v.32' p64 ## v65 ex80
@@ -170,9 +180,10 @@ $
 ## 28
 'organsub-o1*v.32' l4
 [8 fr fr fr fr]
+`:4447`
 ;
 
-{8} %e1
+{8} $4448 %e1
 [12r1]
 $
 [8r1]
@@ -185,5 +196,6 @@ f1 [7^1]
 [ 't*v.05''tf*v180,.80'[16f16]'tf*v180,.05'[16f16] ^1 j2 ^1]
 j2 ^2. 't*v.4'f12't*v.6'f12't*v.8'f12
 ] ^1
+`:4448`
 ;
 
