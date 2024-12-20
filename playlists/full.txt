@@ -120,6 +120,7 @@ ff3_hyne:           kefka, owzer*2, strago, train, ancient, dream, fanatics
 ff3_warrior:        prelude, cyan, locke, figaro*2, returners
 ff4_babil:          figaro, returners, troops*2, savethem, mount2
 ff4_baron:          cyan, figaro, returners, troops*2
+ff4_bomb:           empire, metamorphosis, catastrophe*2, shadow, zozo
 ff4_cave:           espers, awakening, narshe, balance, cave*2, forest, tomb, ancient, dream
 ff4_fiend:          catastrophe, grandfinale, savethem, floating, phoenix, ktower
 ff4_golbez:         omen3, empire, kefka, catastrophe, owzer, train, fanatics*2
@@ -414,7 +415,6 @@ ff3_eureka:     mountain, mount2, espers, dream, serpent, falcon, setzer
 ff3_world:      prelude, relm, village, balance*2
 ff4_airship:    blackjack*2, fanfare
 ff4_battle:     I15, G5, battle, grandfinale, unforgiven, chocobo, johnny, blackjack, bat2
-ff4_bomb:       metamorphosis, catastrophe, assault
 ff4_boss:       I65, G50, savethem, metamorphosis, grandfinale, boss*2
 ff4_calcobrena: kefka, grandfinale, gogo, dream
 ff4_damcyan:    omen3, cyan, zozo, strago, ruintown*2, martiallaw, cave, tomb
