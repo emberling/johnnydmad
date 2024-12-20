@@ -103,6 +103,7 @@ ebr_prayer:         mount2, serpent, gate, ancient, magitek, floating, phoenix*2
 eo3_waves:          ancient, magitek, floating, phoenix, ktower
 ff1_battle:         grandfinale, unforgiven
 ff1_end:            prelude, relm, village, town*2, ruintown
+ff1_fiend1:         grandfinale, assault, savethem
 ff1_fiend2:         grandfinale, assault, savethem
 ff1_matoya:         relm, moogles, strago*2, village, dream
 ff1_mboss:          metamorphosis, grandfinale, unforgiven, assault
@@ -750,6 +751,7 @@ fft_trisection:     I55,        boss, atma, dmad5
 ff7_gun:            I55,              atma
 top_spirit:         I55, mboss, boss, atma, dmad5
 bof1_jade:          I60,        boss, atma, dmad5
+ff1_fiend1:         I60,        boss, atma
 ff5_boss:           I60,        boss, atma
 lu2_savior:         I60, mboss, boss, atma, dmad5
 sd3_faith:          I60,        boss, atma, dmad5

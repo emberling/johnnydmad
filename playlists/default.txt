@@ -98,6 +98,7 @@ ebr_prayer:         mount2, floating, phoenix*2, ktower
 eo3_waves:              chaos
 ff1_battle:         grandfinale
 ff1_end:            prelude, village, town*2
+ff1_fiend1:         grandfinale, savethem
 ff1_fiend2:         grandfinale, assault
 ff1_matoya:         relm, moogles, strago*2
 ff1_mboss:          grandfinale, unforgiven
@@ -775,6 +776,7 @@ xg_weltall:         I50,        boss
 ff9_hunt:           I52, mboss, boss
 lu2_boss:           I52,        boss
 top_spirit:         I55,        boss, atma        
+ff1_fiend1:         I60,        boss, atma
 ff5_boss:           I60,        boss, atma
 lu2_savior:         I60, mboss,             dmad5
 sd3_faith:          I60,        boss, atma
