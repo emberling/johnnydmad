@@ -203,6 +203,7 @@ def tierboss_test(test_song, playlist_filename=None, **kwargs):
     
 def pool_test(inrom, battle_only=False, playlist_filename=None, **kwargs):
     results = {}
+    results_by_song = {}
     iterations = 10000
     
     print()
@@ -212,6 +213,23 @@ def pool_test(inrom, battle_only=False, playlist_filename=None, **kwargs):
             if track not in results:
                 results[track] = []
             results[track].append(song)
+            if not battle_only:
+                vsong = song
+                if track == "train":
+                    if len(song) > 3:
+                        if song[-3:] == ":tr":
+                            vsong = song[:-3]
+                elif track in ["assault", "zozo", "ruin"]:
+                    if len(song) > 4:
+                        if song[-4:] == ":sfx":
+                            vsong = song[:-4]
+                elif track in ["tier1", "tier2", "tier3"]:
+                    vsong += " (DM)"
+                if vsong not in results_by_song:
+                    results_by_song[vsong] = {}
+                if track not in results_by_song[vsong]:
+                    results_by_song[vsong][track] = 0
+                results_by_song[vsong][track] += 1
         print_progress_bar(i, iterations)
     print()
     
@@ -234,6 +252,23 @@ def pool_test(inrom, battle_only=False, playlist_filename=None, **kwargs):
         for song, reps in rank:
             pct = (reps / iterations) * 100
             print(f"    {pct:04.1f}% {song:<{songlen}} ({reps} / {iterations})")
+            
+    if not battle_only:
+        print("\n * * * * * * * * * *\n")
+        song_order = sorted(results_by_song.items(), key=itemgetter(0))
+        for song, songtracks in song_order:
+            song_count = 0
+            for track, track_count in songtracks.items():
+                song_count += track_count
+            pct = (song_count / iterations) * 100
+            print(f"{song.upper()} appears in {pct:.1f}% of seeds:")
+            
+            rank = sorted(songtracks.items(), key=itemgetter(1), reverse=True)
+            for track, track_count in rank:
+                pct = (track_count / iterations) * 100
+                share = (track_count / song_count) * 100
+                print(f"    {pct:4.1f}% ({share:4.1f}%) as {track}")
+            
         
 def mass_test(sort, playlist_filename=None, **kwargs):
     global used_song_names
