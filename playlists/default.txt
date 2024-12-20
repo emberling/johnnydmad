@@ -113,8 +113,9 @@ ff3_battle:         grandfinale, savethem
 ff3_darkworld:      moogles, serpent, forest*2
 ff3_hyne:           owzer*2, train, ancient, dream, fanatics
 ff3_warrior:        cyan, locke, figaro*2, returners
-ff4_cave:           balance, cave*2, forest, tomb
 ff4_babil:          returners, troops*2, mount2
+ff4_baron:          cyan, figaro, troops*2
+ff4_cave:           balance, cave*2, forest, tomb
 ff4_fiend:          catastrophe, grandfinale, savethem
 ff4_golbez:         kefka, train, owzer, fanatics*2
 ff4_moon:           zozo, ruin*2, train
@@ -412,7 +413,6 @@ ff2_theme:      prelude, awakening, ruintown, ruin, balance, gau, forest*2
 ff3_eureka:     mountain, mount2, espers, dream, serpent, falcon, setzer
 ff3_world:      prelude, relm, village, balance*2
 ff4_airship:    blackjack*2, fanfare
-ff4_baron:      figaro, troops*2, returners, engine
 ff4_battle:     I15, G5, battle, grandfinale, unforgiven, chocobo, johnny, blackjack, bat2
 ff4_bomb:       metamorphosis, catastrophe, assault
 ff4_boss:       I65, G50, savethem, metamorphosis, grandfinale, boss*2
