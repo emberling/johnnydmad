@@ -356,6 +356,9 @@ sth1_hill:          chocobo*2, blackjack
 sth1_marble:        zozo*2, engine
 sth1_spring:        johnny*2, moogles
 tn_darkworld:       omen3, espers, ruin*2, falcon, cave
+tob_velvet:         omen3, rachel, awakening
+tob_velvet_part1:   gau, ruin, tomb
+tob_velvet_part2:   locke
 top_battle:         grandfinale, mount2, gate
 top_boss:           unforgiven, engine
 top_morlia:         zozo, gate, ancient*2, phoenix

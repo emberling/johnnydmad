@@ -362,6 +362,9 @@ sth1_hill:          setzer, chocobo*2, blackjack, johnny, moogles
 sth1_marble:        gogo, zozo*2, train, gate, magitek, engine
 sth1_spring:        shadow, setzer, blackjack, johnny*2, moogles, martiallaw
 tn_darkworld:       omen3, espers, zozo, ruin*2, falcon, cave, forest, train, tomb, ancient
+tob_velvet:         omen3, rachel, awakening
+tob_velvet_part1:   gau, ruin, tomb, ancient
+tob_velvet_part2:   locke
 top_battle:         grandfinale, unforgiven, falcon, mount2, gate, magitek, engine
 top_boss:           unforgiven, engine
 top_morlia:         zozo, cave, train, tomb, gate, ancient*2, phoenix
