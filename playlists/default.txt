@@ -100,6 +100,7 @@ ff1_battle:         grandfinale
 ff1_end:            prelude, village, town*2
 ff1_fiend1:         grandfinale, savethem
 ff1_fiend2:         grandfinale, assault
+ff1_final:          grandfinale
 ff1_matoya:         relm, moogles, strago*2
 ff1_mboss:          grandfinale, unforgiven
 ff1_town:           village, town*2
@@ -807,6 +808,7 @@ ff7_jenova:         I85,              atma, dmad5
 ff7_rebirth:        I88,              atma, dmad5
 cc_final:           I90,              atma, dmad5
 eo3_waves:          I90,              atma, dmad5
+ff1_final:          I90,              atma, dmad5
 ff6_dmad:           I90,              atma, dmad5
 rs3_devil2:         I90,              atma, dmad5
 ff6_final:          I95,              atma, dmad5
