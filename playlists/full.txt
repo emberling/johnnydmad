@@ -121,6 +121,7 @@ ff3_warrior:        prelude, cyan, locke, figaro*2, returners
 ff4_babil:          figaro, returners, troops*2, savethem, mount2
 ff4_baron:          cyan, figaro, returners, troops*2
 ff4_bomb:           empire, metamorphosis, catastrophe*2, shadow, zozo
+ff4_boss:           grandfinale, unforgiven
 ff4_cave:           espers, awakening, narshe, balance, cave*2, forest, tomb, ancient, dream
 ff4_fiend:          catastrophe, grandfinale, savethem, floating, phoenix, ktower
 ff4_golbez:         omen3, empire, kefka, catastrophe, owzer, train, fanatics*2
@@ -415,7 +416,6 @@ ff3_eureka:     mountain, mount2, espers, dream, serpent, falcon, setzer
 ff3_world:      prelude, relm, village, balance*2
 ff4_airship:    blackjack*2, fanfare
 ff4_battle:     I15, G5, battle, grandfinale, unforgiven, chocobo, johnny, blackjack, bat2
-ff4_boss:       I65, G50, savethem, metamorphosis, grandfinale, boss*2
 ff4_calcobrena: kefka, grandfinale, gogo, dream
 ff4_damcyan:    omen3, cyan, zozo, strago, ruintown*2, martiallaw, cave, tomb
 ff4_giant:      gogo, magitek, floating*2, falcon, ktower, mount2, phoenix, engine*2
@@ -669,6 +669,7 @@ cv3_aquarius:       E60, battle, bat2, bat3, bat4
 cv4_beginning:      E60,         bat2, bat3, bat4
 top_boss:           E60, battle, bat2, bat3, bat4
 zaol_temple:        E60,                     bat4
+ff4_boss:           E65,               bat3, bat4
 gs_venus:           E65,               bat3, bat4
 ct_tension:         E68,                     bat4
 ff1_mboss:          E68,                     bat4
@@ -749,6 +750,7 @@ ff14_fate_ff6:      I50, mboss, boss, atma
 totr_sboss:         I50, mboss, boss, atma
 xg_weltall:         I50, mboss, boss, atma
 ct_theme:           I52,              atma, dmad5
+ff4_boss:           I52,        boss, atma
 ff9_hunt:           I52, mboss, boss, atma
 lu2_boss:           I52,        boss
 fft_trisection:     I55,        boss, atma, dmad5
