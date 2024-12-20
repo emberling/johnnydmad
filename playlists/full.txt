@@ -123,6 +123,7 @@ ff4_baron:          cyan, figaro, returners, troops*2
 ff4_bomb:           empire, metamorphosis, catastrophe*2, shadow, zozo
 ff4_boss:           grandfinale, unforgiven
 ff4_cave:           espers, awakening, narshe, balance, cave*2, forest, tomb, ancient, dream
+ff4_elder:          omen3, espers, owzer, narshe, strago*2, ruin
 ff4_fiend:          catastrophe, grandfinale, savethem, floating, phoenix, ktower
 ff4_golbez:         omen3, empire, kefka, catastrophe, owzer, train, fanatics*2
 ff4_illusion:       omen3, relm, espers*2, awakening, owzer, narshe, strago, cave, forest, tomb, dream
@@ -421,7 +422,6 @@ ff4_calcobrena: kefka, grandfinale, gogo, dream
 ff4_damcyan:    omen3, cyan, zozo, strago, ruintown*2, martiallaw, cave, tomb
 ff4_giant:      gogo, magitek, floating*2, falcon, ktower, mount2, phoenix, engine*2
 ff4_giant_remix: blackjack*2, setzer, serpent
-ff4_longway:    omen3, ruin, forest, tomb, train
 ff4_prologue:   prelude*2, omen3, grandfinale
 ff4_redwings:   omen3, figaro, setzer, troops*2, umaro, engine, assault
 ff4_rydia:      prelude, celes, daryl, coin, relm*2, awakening, gau, town, village
