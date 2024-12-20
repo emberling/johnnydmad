@@ -129,6 +129,7 @@ ff4_redwings:       omen3, returners, troops*2
 ff4_redwings_lunar: grandfinale, assault
 ff4_restless:       metamorphosis, grandfinale, unforgiven*2, assault
 ff4_rosa:           celes, rachel*2, awakening
+ff4_somewhere:      omen3, empire, shadow, martiallaw*2
 ff4_world:          falcon, balance*2, serpent
 ff5_airship:        setzer, blackjack*2, mount2
 ff5_book:           zozo, owzer, ruin, train*2, tomb, gate, ancient
@@ -426,7 +427,6 @@ ff4_damcyan:    omen3, cyan, zozo, strago, ruintown*2, martiallaw, cave, tomb
 ff4_giant:      gogo, magitek, floating*2, falcon, ktower, mount2, phoenix, engine*2
 ff4_giant_remix: blackjack*2, setzer, serpent
 ff4_rydia:      prelude, celes, daryl, coin, relm*2, awakening, gau, town, village
-ff4_somewhere:  shadow, empire, zozo, ruin, train
 ff4_sorrow:     prelude, coin*2, ruin
 ff4_town:       town*2, village
 ff4_troia:      moogles, town, relm*2, awakening, village

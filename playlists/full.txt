@@ -134,6 +134,7 @@ ff4_redwings:       omen3, figaro, returners, troops*2
 ff4_redwings_lunar: empire, grandfinale, assault
 ff4_restless:       metamorphosis, catastrophe, grandfinale, unforgiven*2, assault, engine
 ff4_rosa:           prelude, celes, daryl, coin, relm, rachel*2, awakening, village, ruin
+ff4_somewhere:      omen3, empire, shadow, zozo, martiallaw*2
 ff4_world:          blackjack, ruin, falcon, balance*2, mountain, serpent
 ff5_airship:        setzer, locke, savethem, chocobo, blackjack*2, falcon, mountain, mount2, serpent, floating
 ff5_book:           empire, zozo, owzer, ruin, cave, train*2, tomb, gate, ancient, dream
@@ -426,7 +427,6 @@ ff4_damcyan:    omen3, cyan, zozo, strago, ruintown*2, martiallaw, cave, tomb
 ff4_giant:      gogo, magitek, floating*2, falcon, ktower, mount2, phoenix, engine*2
 ff4_giant_remix: blackjack*2, setzer, serpent
 ff4_rydia:      prelude, celes, daryl, coin, relm*2, awakening, gau, town, village
-ff4_somewhere:  shadow, empire, zozo, ruin, train
 ff4_sorrow:     prelude, coin*2, ruin
 ff4_town:       town*2, village
 ff4_troia:      moogles, town, relm*2, awakening, village
