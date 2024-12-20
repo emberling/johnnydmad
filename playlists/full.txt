@@ -224,6 +224,7 @@ ff7_hurry2:         metamorphosis*2, grandfinale, unforgiven, assault, savethem,
 ff7_jenova:         grandfinale, magitek, floating, phoenix, ktower
 ff7_judgment:       empire, catastrophe, troops, assault, umaro, serpent, train, ancient, magitek, engine, dream, floating, ktower*2
 ff7_mako:           omen3, empire, catastrophe, espers, zozo, ruin, train, ancient, magitek*2, fanatics, ktower
+ff7_materia:        prelude, what*2, gogo, owzer
 ff7_rebirth:        grandfinale, floating, ktower
 ff7_sadbar:         prelude, gau, zozo, narshe, martiallaw*2, ruintown, ruin
 ff7_temple:         omen3, espers, ruin, cave, forest, tomb, gate, dream
@@ -459,7 +460,6 @@ ff7_boss:       I80, G60, boss*2, atma, grandfinale, unforgiven, magitek
 ff7_costa:      prelude, spinach*2, town, veldt, moogles, village
 ff7_desert:     prelude, omen3, gau, ruin*2, train, tomb, zozo, cave
 ff7_hurry:      I99, G00, unforgiven, magitek, floating, engine, assault*2, mboss
-ff7_materia:    prelude, kefka, shadow, spinach, what*2, owzer, strago, dream*2
 ff7_pizza:      shadow, zozo, narshe, martiallaw*2, train, cave, engine, magitek
 ff7_planet:     H2, omen3, shadow, zozo, ruin*2, train, espers, tomb, dream, gate*2, phoenix, ancient
 ff7_reunion:    omen3, owzer, strago, ruin, train, espers, serpent, forest, dream
