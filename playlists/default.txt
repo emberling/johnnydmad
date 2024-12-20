@@ -134,6 +134,7 @@ ff4_troia:          prelude, relm, village*2, town
 ff4_underworld:     balance, cave*2
 ff4_world:          falcon, balance*2, serpent
 ff4_whale:          setzer, blackjack*2
+ff4_zot:            empire, kefka, train, fanatics*2
 ff5_airship:        setzer, blackjack*2, mount2
 ff5_book:           zozo, owzer, ruin, train*2, tomb, gate, ancient
 ff5_boss:           catastrophe, grandfinale, savethem
@@ -433,7 +434,6 @@ ff4_rydia:      prelude, celes, daryl, coin, relm*2, awakening, gau, town, villa
 ff4_sorrow:     prelude, coin*2, ruin
 ff4_town:       town*2, village
 ff4_zeromus:    I95, G90, atma, dmad5
-ff4_zot:        kefka, troops, fanatics, assault
 ff5_bal:        fanfare, cyan, figaro, returners*2, troops, mount2
 ff5_battle:     I10, G10, battle*2, bat2
 ff5_bridge:     I65, G70, atma, grandfinale, unforgiven, savethem
