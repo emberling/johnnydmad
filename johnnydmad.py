@@ -131,7 +131,7 @@ def johnnydmad(args):
         print(f"Generating spoiler log")
         sp = get_music_spoiler()
         print(f"Outputting spoiler log to location {spoiler_outfile}")
-        with open(spoiler_outfile, "w") as f:
+        with open(spoiler_outfile, "w", encoding="utf-8") as f:
             f.write(sp)
             
     kw = {}
