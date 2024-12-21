@@ -6,6 +6,9 @@
 #TRANS mfvitools
 #ARRANGED emberling
 
+########## ------------------
+#SHORTNAME FF4 Tower of Babil
+
 #WAVE 0x20 0x35
 #WAVE 0x21 0x65
 #WAVE 0x22 0x81
