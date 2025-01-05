@@ -179,13 +179,22 @@ class Tracklist:
         self[name].file = os.path.join(STATIC_MUSIC_PATH, name + '.mml')
         used_song_names.add(song_usage_id(name))
         
-    def add_random(self, name, pool, idx=None, allow_duplicates=False):
+    def add_random(self, name, pool, idx=None, allow_duplicates=False, motif=False):
         self.dupe_check(name, "add_random")
         self[name] = TracklistEntry(name)
         self[name].is_fixed = False
         
         if not allow_duplicates:
             pool = [p for p in pool if song_usage_id(p) not in used_song_names]
+        if motif:
+            active_prefixes = set()
+            for song in used_song_names:
+                prefix = song.split('_')[0]
+                if prefix != "ff6":
+                    active_prefixes.add(prefix)
+            motif_pool = [p for p in pool if p.split('_')[0] in active_prefixes]
+            if len(motif_pool):
+                pool = motif_pool
         if len(pool) < 1:
             print(f"info: pool for {name} is empty, rerolling tracklist")
             # input() #debug, #TODO remove
@@ -734,7 +743,7 @@ def set_subpath(subpath):
         if os.path.isabs(subpath):
             BASEPATH = subpath
             
-def process_music(inrom, meta={}, f_chaos=False, f_battle=True, opera=None, eventmodes="", playlist_filename=DEFAULT_PLAYLIST_FILE, virtual_playlist=None, subpath=None, freespace=JOHNNYDMAD_FREESPACE, pool_test=False, ext_rng=random, enable_exceptions=False):
+def process_music(inrom, meta={}, f_chaos=False, f_motif=False, f_battle=True, opera=None, eventmodes="", playlist_filename=DEFAULT_PLAYLIST_FILE, virtual_playlist=None, subpath=None, freespace=JOHNNYDMAD_FREESPACE, pool_test=False, ext_rng=random, enable_exceptions=False):
     global random
     global used_song_names
     global used_sample_ids
@@ -917,6 +926,15 @@ def process_music(inrom, meta={}, f_chaos=False, f_battle=True, opera=None, even
                     if not track_pool:
                         prog_attempts += 1
                         continue
+                    if f_motif:
+                        # motif: 5x preference to existing prefixes
+                        active_prefixes = set()
+                        for song in temp_used_song_names:
+                            prefix = song.split('_')[0]
+                            active_prefixes.add(prefix)
+                        for candidate in copy.copy(track_pool):
+                            if candidate.split('_')[0] in active_prefixes:
+                                track_pool.extend( [candidate] * 4)
                     choice = random.choice(track_pool)
                     if i == 3:
                         prog_max = intensitytable[cat][choice]
@@ -929,7 +947,7 @@ def process_music(inrom, meta={}, f_chaos=False, f_battle=True, opera=None, even
                     break
             # add to tracklist
             for i, choice in prog_choices.items():
-                ok = tracklist.add_random(progression[cat][i], [choice])
+                ok = tracklist.add_random(progression[cat][i], [choice], motif=f_motif)
                 if not ok:
                     processing_failed = True
                     break
@@ -974,7 +992,7 @@ def process_music(inrom, meta={}, f_chaos=False, f_battle=True, opera=None, even
                     continue
                 if track not in track_pools:
                     track_pools[track] = []
-                ok = tracklist.add_random(track, track_pools[track])
+                ok = tracklist.add_random(track, track_pools[track], motif=f_motif)
                 if not ok:
                     processing_failed = True
                     break

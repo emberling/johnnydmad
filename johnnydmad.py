@@ -109,11 +109,12 @@ def johnnydmad(args):
             raise Exception(f"Input file {infile} not found")
         
     f_chaos = False
+    f_motif = False
     force_dm = None
     def generate_rom():
         print('Generating rom with randomized music')
         metadata = {}
-        outrom = process_music(inrom, meta=metadata, f_chaos=f_chaos, freespace=freespace, playlist_filename=playlist)
+        outrom = process_music(inrom, meta=metadata, f_chaos=f_chaos, f_motif=f_motif, freespace=freespace, playlist_filename=playlist)
         outrom = process_formation_music_by_table(outrom)
         outrom = process_map_music(outrom)
 
@@ -147,7 +148,8 @@ def johnnydmad(args):
         while True:
             print()
             print("press enter to continue or type:")
-            print('    "chaos" to test chaotic mode')
+            print('    "chaos" to toggle chaotic mode')
+            print('    "motif" to toggle motif mode (prefer songs from same game)')
             print('    "sfxv" to check songs for errors, sorted by longest sequence variant')
             print('    "mem" to check songs for errors, sorted by highest memory use variant')
             print('    "pool" to simulate many seeds and report the observed probability pools for each track')
@@ -161,9 +163,13 @@ def johnnydmad(args):
                 kw["playlist_filename"] = playlist
                 print_playlist(playlist)
                 continue
+            if i == "chaos":
+                f_chaos = True
+                continue
+            if i == "motif":
+                f_motif = True
+                continue
             break
-        if i == "chaos":
-            f_chaos = True
         if i == "sfxv":
             mass_test("sfx", **kw)
         elif i == "mem":
