@@ -348,7 +348,8 @@ rs3_underwater:     omen3, espers, narshe, ruin, serpent, cave, forest, tomb, an
 rtrek_world:        prelude, rachel, relm, awakening*2, gau, ruintown, ruin
 saga3_ruins:        espers, zozo*2, owzer, ruin, cave, tomb, dream
 sd1_boss:           grandfinale, unforgiven, chocobo, mount2, serpent, magitek, engine, floating*2, ktower
-sd1s_courage:       grandfinale, setzer, locke, savethem*2, johnny
+sd1_courage:       grandfinale, setzer, locke, savethem*2, johnny
+sd1_field:          locke, savethem*2, falcon, mount2
 sd2_dwarf:          prelude, grandfinale, johnny, spinach, what, moogles, village
 sd2_field:          relm, espers, balance, mountain, serpent, cave, forest, tomb, dream
 sd2_final:          metamorphosis, catastrophe, grandfinale, savethem, falcon, floating
@@ -543,10 +544,9 @@ rs3_gwain:      H2, catastrophe, assault, umaro, phoenix, dream, fanatics*2, pho
 rs3_julian:     prelude, chocobo, johnny, village, forest
 rs3_sarah:      prelude, celes, daryl, coin, gau, ruintown*2
 rsms_battle:    I50, G65, battle*2, unforgiven, bat2, bat3, mboss
-sd1s_decision:  empire*2, shadow, gau, owzer, narshe, ruin*2, train*2, tomb*2, phoenix, ancient
-sd1s_fate:      omen3, empire, celes, narshe, ruin*2, train, forest, ruintown*2
-sd1s_field:     I35, G75, battle, grandfinale, savethem*2, falcon*2, mount2
-sd1s_risingsun: celes*2, rachel, relm, gau, awakening, martiallaw, ruintown*2, forest
+sd1_decision:   empire*2, shadow, gau, owzer, narshe, ruin*2, train*2, tomb*2, phoenix, ancient
+sd1_fate:       omen3, empire, celes, narshe, ruin*2, train, forest, ruintown*2
+sd1_risingsun:  celes*2, rachel, relm, gau, awakening, martiallaw, ruintown*2, forest
 sd2_8bells:     W4, omen3, awakening, narshe, ruin, train, espers, cave, tomb, dream, gate, phoenix, ancient, W:forest, W:serpent*2, W:balance, W:ruintown
 sd2_always:     relm*2, chocobo, spinach, moogles*2, gogo, town, village*2
 sd2_angel:      omen3*2, celes*2, rachel*2, tomb
@@ -685,11 +685,12 @@ ff7_gun:            E70,               bat3, bat4
 ff14_holminster:    E70,                     bat4
 fft_trisection:     E70,                     bat4
 lu2_fortress:       E70,                     bat4
+sd1_field:          E70,               bat3, bat4
 sd3_faith:          E70,               bat3, bat4
 sth1_final:         E70,                     bat4
 ct_theme:           E75,               bat3, bat4
 ct_truth:           E75,                     bat4
-sd1s_courage:       E75,         bat2, bat3, bat4
+sd1_courage:        E75,         bat2, bat3, bat4
 ff9_hunt:           E75,         bat2, bat3, bat4
 ff14_labten:        E75,                     bat4
 ot_treasure:        E77,         bat2, bat3, bat4
@@ -781,7 +782,7 @@ ff1_fiend2:         I75,        boss, atma
 ff4_fiend:          I75,        boss, atma, dmad5    
 ff9_dragons:        I75, mboss,       atma, dmad5
 fft_antipyretic:    I75,        boss, atma, dmad5
-sd1s_courage:       I75, mboss, boss, atma
+sd1_courage:        I75, mboss, boss, atma
 ct_boss2:           I80,        boss, atma, dmad5
 ff5_decisive:       I80,        boss, atma, dmad5
 ct_magus:           I82,              atma, dmad5
