@@ -207,6 +207,7 @@ ff6_veldt:          umaro, veldt*2
 ff6_what:           what*2
 ff6_zozo:           shadow, zozo*2, narshe, martiallaw, train
 ff6_zozo_orig:      zozo
+ff7_5years:         empire*2, awakening, zozo, narshe, ruin, tomb
 ff7_aerith:         celes*2, daryl, coin, rachel, awakening
 ff7_battle:         grandfinale, unforgiven, savethem
 ff7_battle_ff6:     grandfinale, unforgiven
@@ -463,7 +464,6 @@ ff5_world1:     prelude, cyan, returners, strago
 ff5_world2:     W2, awakening, ruin, balance*2, serpent, espers, forest, dream, ancient
 ff5_world3:     omen3, celes, espers, awakening, gau, ruintown, ruin, balance, cave, forest, tomb, dream
 ff6_town2:      relm*2, johnny, moogles, strago, town, village
-ff7_5years:     omen3, empire*2, celes, daryl, zozo, narshe, ruin*2, train, forest, tomb
 ff7_boss:       I80, G60, boss*2, atma, grandfinale, unforgiven, magitek
 ff7_costa:      prelude, spinach*2, town, veldt, moogles, village
 ff7_desert:     prelude, omen3, gau, ruin*2, train, tomb, zozo, cave
