@@ -249,6 +249,8 @@ ff9_notalone:       prelude, grandfinale, rachel, falcon, dream
 ff9_trancekuja:     kefka, dream, ktower
 ff9_treno:          prelude, johnny, spinach*2
 ff9_vivi:           spinach, what, moogles, gogo, strago*2, martiallaw
+ff9_wicked:         empire, kefka*2, fanatics
+ff9_wicked_nointro: catastrophe, zozo, ruin, train, dream
 ff10_ambition:      empire, kefka*2, espers, zozo, train, dream, fanatics
 ff10_calm:          prelude, omen3, espers, ruin, cave*2, forest, tomb, dream
 ff10_gagazet:       omen3*2, espers, gau, umaro, narshe, strago, ruin, veldt
@@ -853,7 +855,8 @@ ct: cc_flame, ct_battle2, ct_lavos, ct_zealpalace
 ff: ff3_eureka, ff4_fiend, ff4_golbez, ff5_excastle, ff5_seal
 ff6: ff6_fanatics_dm, ff6_tier1_dm, ff6_tier2_dm, ff6_tier3
 chorus: ff6_fanatics_chorus, ff6_tier1_chorus, ff6_tier2_chorus
-ffmore: ff7_final_part1, ff8_heresy, ff8_witches, ff9_blackwaltz, ff10_ambition, ffmq_boss, ffmq_lava
+fff: ff7_final_part1, ff8_heresy, ff8_witches, ff9_blackwaltz, ff9_wicked
+ffff: ff10_ambition, ffmq_boss, ffmq_lava
 i: iog_whispers
 lufia: lu2_daos, lu2_void
 metroid: met3_brain

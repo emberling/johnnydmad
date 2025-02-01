@@ -243,6 +243,8 @@ ff9_siege:          metamorphosis*2, grandfinale, assault, savethem
 ff9_trancekuja:     kefka, ktower
 ff9_treno:          spinach*2
 ff9_vivi:           spinach, strago*2, martiallaw
+ff9_wicked:         empire, kefka*2
+ff9_wicked_nointro: chaos
 ff10_ambition:      kefka*2, zozo, train, fanatics
 ff10_calm:          espers, cave*2, forest, tomb
 ff10_gagazet:       omen3*2, gau, narshe, ruin
@@ -878,7 +880,8 @@ ct: cc_flame, ct_lavos, ct_zealpalace
 ff: ff3_eureka, ff4_fiend, ff4_golbez, ff5_excastle, ff5_seal
 ff6: ff6_fanatics_dm, ff6_tier1_dm, ff6_tier2_dm, ff6_tier3
 chorus: ff6_fanatics_chorus, ff6_tier1_chorus, ff6_tier2_chorus
-ffmore: ff7_final_part1, ff8_heresy, ff8_witches, ff9_blackwaltz, ff10_ambition, ffmq_boss, ffmq_lava
+fff: ff7_final_part1, ff8_heresy, ff8_witches, ff9_blackwaltz, ff9_wicked
+ffff: ff10_ambition, ffmq_boss, ffmq_lava
 i: iog_whispers
 lufia: lu2_daos, lu2_void
 metroid: met3_brain
