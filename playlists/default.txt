@@ -307,6 +307,7 @@ lu2_fortress:       grandfinale, assault, floating*2, ktower
 lu2_iris:           prelude, awakening*2, ruin
 lu2_labyrinth:      kefka*2, umaro, zozo, owzer, cave
 lu2_lexis:          what*2, moogles, gogo
+lu2_mountain:       figaro*2, returners, mount2
 lu2_parting:        coin, rachel*2, awakening, gau, ruintown
 lu2_peace:          prelude, relm, awakening*2
 lu2_port:           village, town*2
@@ -528,7 +529,6 @@ lu1_final:      I70, G70, atma, dmad5, catastrophe, grandfinale, floating, ktowe
 lu1_spoils:     prelude, omen3, daryl, awakening, forest, tomb
 lu1_world:      cyan, johnny, falcon, balance*2, mountain, serpent
 lu2_battle3:    I85, G99, atma*2, grandfinale, dmad5
-lu2_mountain:   fanfare, cyan*2, figaro, returners*2, mountain, engine, mount2
 lu2_narvick:    omen3, empire, shadow, cyan, zozo, narshe, strago, martiallaw, ruintown*2, ruin, forest, tomb, espers
 lu2_world:      awakening, mountain, serpent, balance*2, forest
 met3_crateria:  H4, zozo, ruin, train, gate, dream, fanatics*2, tomb, H:prelude, H:assault, H:cave, H:ancient, H:phoenix
@@ -848,6 +848,7 @@ ff7_fanfare:    fanfare
 lal_boss:       fanfare
 lu1_file:       fanfare
 lu2_fanfare:    fanfare
+lu2_mountain:   fanfare
 mmx3_zero:      fanfare
 sd3_steel:      fanfare
 
