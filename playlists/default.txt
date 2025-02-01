@@ -396,6 +396,7 @@ totr_downfall:      omen3, shadow*2, zozo, tomb
 totr_mountain:      setzer, locke, falcon, mountain, mount2*2, serpent
 totr_pathboss:      grandfinale, magitek, floating, ktower
 totr_sboss:         grandfinale, engine
+totr_spirit:        grandfinale
 totr_underworld:    grandfinale, gate, magitek, floating*2, phoenix, ktower
 wa_zed:             grandfinale, shadow, setzer, gogo*2
 wa2_dungeon2:       zozo, martiallaw, mount2, gate*2, phoenix
@@ -610,7 +611,6 @@ totr_arrow:     I75, G60, boss, grandfinale
 totr_ruins:     H2, shadow, gogo, zozo, serpent, train, tomb, gate, ancient, engine, dream, H:cave, H:magitek, H:phoenix
 totr_ship:      setzer, figaro, returners*2
 totr_sion:      prelude, awakening, forest, train, dream*2, cyan, gau
-totr_spirit:    I99, G75, atma*2, grandfinale, dmad5
 totr_wind:      prelude, relm, awakening, strago, village, mountain, moogles
 totr_worlds:    omen3, celes, rachel*2, awakening, ruin, serpent, tomb, dream, phoenix, balance
 tyr_theme:      omen3, assault, magitek, floating, dream, ktower
@@ -827,6 +827,7 @@ rs3_devil2:         I90,              atma, dmad5
 ff6_final:          I95,              atma, dmad5
 sd2_final:          I95,              atma, dmad5
 sd3_final3:         I95,              atma, dmad5
+totr_spirit:        I95,              atma, dmad5
 
 [victory]
 bl_fahrenheit:  fanfare
