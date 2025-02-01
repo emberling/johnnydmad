@@ -245,6 +245,7 @@ ff9_hunt:           grandfinale, assault, savethem*2, johnny, umaro, phoenix
 ff9_memoria:        espers, narshe, ruin, forest, tomb, dream*2
 ff9_siege:          metamorphosis*2, catastrophe, grandfinale, assault, savethem
 ff9_notalone:       prelude, grandfinale, rachel, falcon, dream
+ff9_trancekuja:     kefka, dream, ktower
 ff9_treno:          prelude, johnny, spinach*2
 ff9_vivi:           spinach, what, moogles, gogo, strago*2, martiallaw
 ff10_ambition:      empire, kefka*2, espers, zozo, train, dream, fanatics
@@ -480,7 +481,6 @@ ff9_blackmage:  H4, what, moogles*2, gogo, strago*2, dream, engine
 ff9_dali:       awakening, town*2, ruintown, village
 ff9_extraction: H4, catastrophe*2, espers, shadow, umaro, train, dream, fanatics, H:strago, H:empire, H:martiallaw, H:veldt
 ff9_home:       prelude, gau, spinach*2, ruintown, ruin, tomb
-ff9_messenger:  H2, dmad5, empire, catastrophe*2, grandfinale, fanatics
 ff9_rose:       prelude, celes*2, coin*2, daryl, cyan
 ff9_world:      strago, ruintown, balance*2, forest
 ffx_battle:     I55, G10, battle*2, savethem, bat2, bat3, mboss
@@ -782,6 +782,7 @@ ct_boss2:           I80,        boss, atma, dmad5
 ff5_decisive:       I80,        boss, atma, dmad5
 ct_magus:           I82,              atma, dmad5
 ff6_atma:           I82,        boss, atma, dmad5
+ff9_trancekuja:     I82,              atma, dmad5
 ffmq_final:         I82,        boss, atma, dmad5
 xg_final:           I82,        boss, atma, dmad5
 ct_revolution:      I85,        boss, atma, dmad5    

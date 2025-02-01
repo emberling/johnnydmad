@@ -239,6 +239,7 @@ ff9_gargan:         spinach, what*2, gogo, umaro
 ff9_hunt:           grandfinale, assault, savethem*2
 ff9_memoria:        ruin, forest, tomb, dream*2
 ff9_siege:          metamorphosis*2, grandfinale, assault, savethem
+ff9_trancekuja:     kefka, ktower
 ff9_treno:          spinach*2
 ff9_vivi:           spinach, strago*2, martiallaw
 ff10_ambition:      kefka*2, zozo, train, fanatics
@@ -480,7 +481,6 @@ ff9_blackmage:  H4, what, moogles*2, gogo, strago*2, dream, engine
 ff9_dali:       awakening, town*2, ruintown, village
 ff9_extraction: H4, catastrophe*2, espers, shadow, umaro, train, dream, fanatics, H:strago, H:empire, H:martiallaw, H:veldt
 ff9_home:       prelude, gau, spinach*2, ruintown, ruin, tomb
-ff9_messenger:  H2, dmad5, empire, catastrophe*2, grandfinale, fanatics
 ff9_rose:       prelude, celes*2, coin*2, daryl, cyan
 ff9_world:      strago, ruintown, balance*2, forest
 ffx_battle:     I55, G10, battle*2, savethem, bat2, bat3, mboss
@@ -807,6 +807,7 @@ ct_boss2:           I80,              atma, dmad5
 ff5_decisive:       I80,              atma, dmad5
 ct_magus:           I82,              atma, dmad5
 ff6_atma:           I82,              atma, dmad5
+ff9_trancekuja:     I82,              atma, dmad5
 ffmq_final:         I82,              atma, dmad5
 xg_final:           I82,              atma, dmad5
 ct_revolution:      I85,              atma, dmad5    
