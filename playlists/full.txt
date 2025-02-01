@@ -230,6 +230,7 @@ ff7_rebirth:        grandfinale, floating, ktower
 ff7_sadbar:         prelude, gau, zozo, narshe, martiallaw*2, ruintown, ruin
 ff7_temple:         omen3, espers, ruin, cave, forest, tomb, gate, dream
 ff8_battle:         grandfinale, assault, savethem, engine, floating
+ff8_cavern:         omen3, espers, zozo, narshe, ruin, cave*2, tomb, ancient, dream
 ff8_heresy:         kefka, catastrophe, owzer, ruin, train, fanatics*2
 ff8_laguna:         grandfinale, unforgiven, chocobo, blackjack, johnny, magitek, ktower
 ff8_world:          prelude, what, narshe, ruin, balance*2, forest

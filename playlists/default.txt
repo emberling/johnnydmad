@@ -225,6 +225,7 @@ ff7_rebirth:        grandfinale, floating
 ff7_sadbar:         gau, martiallaw*2, ruintown
 ff7_temple:         omen3, espers, forest, tomb, dream
 ff8_battle:         grandfinale, assault, savethem
+ff8_cavern:         zozo, narshe, ruin, cave*2, tomb
 ff8_heresy:         kefka, owzer, ruin, fanatics*2
 ff8_laguna:         grandfinale, magitek
 ff8_world:          prelude, ruin, balance, forest
