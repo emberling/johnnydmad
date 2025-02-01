@@ -410,6 +410,9 @@ xg_mermaid:         daryl, ruin, train, tomb*2, ancient
 xg_theme:           prelude*2
 xg_weltall:         metamorphosis*2, grandfinale, unforgiven, assault, savethem
 xg_world:           relm, awakening, balance*2
+xg_yggdrasil:       figaro, returners
+xg_yggdrasil_part1: locke, troops
+xg_yggdrasil_part2: prelude, returners
 ys4_danan:          omen3, espers, narshe, ruin, ancient*2
 ys8_idance:         setzer, blackjack, johnny, mountain, mount2*2, serpent
 zaol_temple:        train, gate, floating*2, phoenix, ktower
