@@ -17,7 +17,7 @@
 #WAVE 0x25 0x55
 #WAVE 0x26 0x28
 
-#def init= t130 %v50 %b0,100 %f0,0
+#def init= t130 %v50 %b0,100 %f0,0 %x255
 
 #def organsub= |0 o6 v135 p65 %a12
 #def layersub= |1 o3 v105 p65
