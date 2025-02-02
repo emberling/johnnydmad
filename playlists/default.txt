@@ -361,6 +361,7 @@ sd3_counterpoint:   umaro, veldt*2
 sd3_faith:          metamorphosis, grandfinale, floating, ktower
 sd3_final3:         grandfinale, unforgiven, falcon*2, floating, ktower
 sd3_flight:         setzer, blackjack*2, falcon, serpent
+sd3_fusion:         grandfinale, unforgiven, engine
 sd3_holyland:       strago, ruintown, ruin, forest, tomb*2
 sd3_pray:           rachel, awakening, ruintown*2, ruin
 sd3_steel:          figaro*2, returners
@@ -813,6 +814,7 @@ fft_antipyretic:    I75,              atma, dmad5
 sd1_courage:        I75, mboss, boss, atma
 ct_boss2:           I80,              atma, dmad5
 ff5_decisive:       I80,              atma, dmad5
+sd3_fusion:         I80,        boss, atma, dmad5
 ct_magus:           I82,              atma, dmad5
 ff6_atma:           I82,              atma, dmad5
 ff9_trancekuja:     I82,              atma, dmad5
