@@ -307,10 +307,10 @@ def mass_test(sort, playlist_filename=None, **kwargs):
             mml = tl[trackname].mml
             if tl[trackname].is_legacy:
                 legacy_files.add(song)
-                iset = mml_to_akao(mml, variant=variant, inst_only=True)
+                iset = mml_to_akao(mml, variant=variant, inst_only=True, use_extra_commands=True)
                 mml = append_legacy_imports(mml, iset, raw_inst=True)
             mml = apply_variant(mml, type, trackname, variant=variant)
-            bin = mml_to_akao(mml, song + ' ' + trackname, sfxmode=use_sfx, variant=variant)[0]
+            bin = mml_to_akao(mml, song + ' ' + trackname, sfxmode=use_sfx, variant=variant, use_extra_commands=True)[0]
             binsizes[type] = len(bin)
             
             if song not in jukebox_titles:
