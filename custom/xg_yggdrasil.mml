@@ -242,7 +242,7 @@ _ ## harp for part2-only
 d4>>a4
 _
 ;
-'sub129'
+*'sub129'*
 
 {2} %e1
 * ## part1 start
@@ -472,7 +472,7 @@ a+2.'r'^8%r aa+    <c2.'r'^8%r>a+<c
 's*v.190' d2d2d4d2. ## vol.78 vel.80
 ~ ## part2 end
 ;
-'sub587'
+~'sub587'~
 
 {6} %e1
 * ## part1 start
@@ -593,7 +593,7 @@ gr4.. gr4.. gr8. gr8. r2
 gr4.. gr4.. gr8. gr8.
 ~ ## part2 end
 ;
-'sub797'
+~'sub797'~
 
 {8} %e1
 * ## part1 start
