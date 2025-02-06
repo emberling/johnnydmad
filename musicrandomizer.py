@@ -331,11 +331,11 @@ def init_instmap():
                 print(f"warning: invalid entry {k} in brr_legacy.txt")
             
 def get_jukebox_title(mml, fn):
-    n = re.search("(?<=#SHORTNAME )([^;\n]*)", mml, re.IGNORECASE)
+    n = re.search(r"(?<=#SHORTNAME )([^;\n]*)", mml, re.IGNORECASE)
     if n:
         n = n.group(0)
     else:
-        title = re.search("(?<=#TITLE )([^;\n]*)", mml, re.IGNORECASE)
+        title = re.search(r"(?<=#TITLE )([^;\n]*)", mml, re.IGNORECASE)
         if title:
             title = title.group(0)
             n = os.path.basename(fn).split('.')[0].split('_')[0].upper() + " "
@@ -379,11 +379,11 @@ def add_to_spoiler(track, mml=None, fn=None, tl=None):
         else:
             id = 1000
         
-    title = re.search("(?<=#TITLE )([^;\n]*)", mml, re.IGNORECASE)
-    album = re.search("(?<=#ALBUM )([^;\n]*)", mml, re.IGNORECASE)
-    composer = re.search("(?<=#COMPOSER )([^;\n]*)", mml, re.IGNORECASE)
-    transcribe = re.search("(?<=#TRANS )([^;\n]*)", mml, re.IGNORECASE)
-    arranged = re.search("(?<=#ARRANGED )([^;\n]*)", mml, re.IGNORECASE)
+    title = re.search(r"(?<=#TITLE )([^;\n]*)", mml, re.IGNORECASE)
+    album = re.search(r"(?<=#ALBUM )([^;\n]*)", mml, re.IGNORECASE)
+    composer = re.search(r"(?<=#COMPOSER )([^;\n]*)", mml, re.IGNORECASE)
+    transcribe = re.search(r"(?<=#TRANS )([^;\n]*)", mml, re.IGNORECASE)
+    arranged = re.search(r"(?<=#ARRANGED )([^;\n]*)", mml, re.IGNORECASE)
     title = title.group(0) if title else "??"
     album = album.group(0) if album else "??"
     composer = composer.group(0) if composer else "??"
@@ -498,13 +498,13 @@ def apply_variant(mml, vartype, name="", variant="_default_", check_size=False):
         use_sfxv = True
         append_mml = "append_wind.mml"
         try:
-            mml = re.sub("\{[^}']*?([0-9]+)[^}]*?\}", wind_increment, mml)
+            mml = re.sub(r"\{[^}']*?([0-9]+)[^}]*?\}", wind_increment, mml)
         except ValueError:
             print("WARNING: failed to add wind sounds ({})".format(name))
     elif vartype == "train":
         append_mml = "append_train.mml"
-        mml = re.sub("#BRR 0x2F", "#### 0x2F", mml)
-        mml = re.sub("\{[^}]*?([0-9]+)[^}]*?\}", "$888\g<1>", mml)
+        mml = re.sub(r"#BRR 0x2F", "#### 0x2F", mml)
+        mml = re.sub(r"\{[^}]*?([0-9]+)[^}]*?\}", r"$888\g<1>", mml)
         for i in range(1,9):
             if "$888{}".format(i) not in mml:
                 mml = mml + "\n$888{} r;".format(i)
@@ -548,7 +548,7 @@ def generate_tierboss_mml(pool, force_include=None):
                 
             self.orig_mml = self.mml
             
-            uids = re.search("(?<=#UID )([^;\n]*)", self.mml, re.IGNORECASE)
+            uids = re.search(r"(?<=#UID )([^;\n]*)", self.mml, re.IGNORECASE)
             self.uids = [s.strip() for s in uids.group(0).split(',')] if uids else []
 
             # build sample table
@@ -659,8 +659,8 @@ def generate_tierboss_mml(pool, force_include=None):
                     new_text = f"(|){new - 0x20:X}"
                     tier.mml = re.sub(f"@0x{old:02X}", new_text, tier.mml, flags=re.IGNORECASE)
                     tier.mml = re.sub(f"@{old}", new_text, tier.mml, flags=re.IGNORECASE)
-                    tier.mml = re.sub(f"\|{old - 0x20:X}", new_text, tier.mml, flags=re.IGNORECASE)
-                tier.mml = re.sub("\(\|\)", "|", tier.mml)
+                    tier.mml = re.sub(f"\\|{old - 0x20:X}", new_text, tier.mml, flags=re.IGNORECASE)
+                tier.mml = re.sub(r"\(\|\)", "|", tier.mml)
                 
             # regex & merge segments
             if n > 1:
@@ -687,14 +687,14 @@ def generate_tierboss_mml(pool, force_include=None):
                     v = tier.variant
                     tier.mml = re.sub(keep[v], "", tier.mml)
                     tier.mml = re.sub(discard[v], "?", tier.mml)
-                    tier.mml = re.sub("j([0-9]+),([0-9]+)", f"j\g<1>,{prefix[v]}\g<2>", tier.mml)
-                    tier.mml = re.sub("([;:\$])([0-9]+)(?![,0-9])", f"\g<1>{prefix[v]}\g<2>", tier.mml)
+                    tier.mml = re.sub("j([0-9]+),([0-9]+)", f"j\\g<1>,{prefix[v]}\\g<2>", tier.mml)
+                    tier.mml = re.sub(r"([;:\$])([0-9]+)(?![,0-9])", f"\\g<1>{prefix[v]}\\g<2>", tier.mml)
                     if next[v]:
-                        tier.mml = re.sub(f"([;:]){prefix[v]}444([0-9])", f"\g<1>{next[v]}\g<2>", tier.mml)
+                        tier.mml = re.sub(f"([;:]){prefix[v]}444([0-9])", f"\\g<1>{next[v]}\\g<2>", tier.mml)
                     else:
                         tier.mml = re.sub(f"([;:]){prefix[v]}444([0-9])", "", tier.mml)
                     if prev[v]:
-                        tier.mml = re.sub(f"\${prefix[v]}444([0-9])", f"${prev[v]}\g<1>", tier.mml)
+                        tier.mml = re.sub(f"\\${prefix[v]}444([0-9])", f"${prev[v]}\\g<1>", tier.mml)
                         tier.mml = re.sub("{.*?}", "", tier.mml)
                     else:
                         # BCEX 4 discards {1} type entry points entirely and uses the $4441
@@ -702,10 +702,10 @@ def generate_tierboss_mml(pool, force_include=None):
                         # why I did it this way? I'm going to try using the {1} style from
                         # here on out; if this causes issues the old regex is commented here
                         ##tier.mml = re.sub(f"\${prefix[v]}444([0-9])", "{\g<1>}", tier.mml)
-                        tier.mml = re.sub(f"\${prefix[v]}444([0-9])", "", tier.mml)
-                    tier.mml = re.sub("#VARIANT|#WAVE|#BRR", "#", tier.mml, flags=re.IGNORECASE)
-                    tier.mml = re.sub("#def\s+(\S+)\s*=", f"#def {prefix[v]}\g<1>=", tier.mml, flags=re.IGNORECASE)
-                    tier.mml = re.sub("'(.*?)'", f"'{prefix[v]}\g<1>'", tier.mml)
+                        tier.mml = re.sub(f"\\${prefix[v]}444([0-9])", "", tier.mml)
+                    tier.mml = re.sub(r"#VARIANT|#WAVE|#BRR", "#", tier.mml, flags=re.IGNORECASE)
+                    tier.mml = re.sub(r"#def\s+(\S+)\s*=", f"#def {prefix[v]}\\g<1>=", tier.mml, flags=re.IGNORECASE)
+                    tier.mml = re.sub("'(.*?)'", f"'{prefix[v]}\\g<1>'", tier.mml)
                     tier.mml = re.sub('"', perc[v], tier.mml)
                     mml += tier.mml + "\n"
                 mml += mml_sample_text
