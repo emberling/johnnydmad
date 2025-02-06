@@ -130,6 +130,7 @@ ff4_redwings_lunar: grandfinale, assault
 ff4_restless:       metamorphosis, grandfinale, unforgiven*2, assault
 ff4_rosa:           celes, rachel*2, awakening
 ff4_somewhere:      omen3, empire, shadow, martiallaw*2
+ff4_town:           town*2, village
 ff4_troia:          prelude, relm, village*2, town
 ff4_underworld:     balance, cave*2
 ff4_world:          falcon, balance*2, serpent
@@ -448,7 +449,6 @@ ff4_giant:      gogo, magitek, floating*2, falcon, ktower, mount2, phoenix, engi
 ff4_giant_remix: blackjack*2, setzer, serpent
 ff4_rydia:      prelude, celes, daryl, coin, relm*2, awakening, gau, town, village
 ff4_sorrow:     prelude, coin*2, ruin
-ff4_town:       town*2, village
 ff4_zeromus:    I95, G90, atma, dmad5
 ff5_bal:        fanfare, cyan, figaro, returners*2, troops, mount2
 ff5_battle:     I10, G10, battle*2, bat2
